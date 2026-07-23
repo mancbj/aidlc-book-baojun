@@ -3,13 +3,13 @@
   "chapters": {
     "rows": [
       {
-        "done": 2,
+        "done": 5,
         "href": "details.html#chapter-CH-01",
         "id": "CH-01",
-        "next_gap": "example",
-        "next_gap_label": "案例",
+        "next_gap": "review",
+        "next_gap_label": "审校",
         "number": 1,
-        "percent": 33.3,
+        "percent": 83.3,
         "question": "当代码生成成本骤降而输出仍具有概率性时，为什么需要重新设计 SDLC，而不只是给旧流程增加 AI？",
         "stages": [
           {
@@ -27,20 +27,20 @@
           {
             "label": "案例",
             "name": "example",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "实验",
             "name": "experiment",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "图示",
             "name": "figure",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "审校",
@@ -505,21 +505,21 @@
     ],
     "stage_totals": {
       "example": {
-        "done": 1,
+        "done": 2,
         "label": "案例",
-        "percent": 10.0,
+        "percent": 20.0,
         "total": 10
       },
       "experiment": {
-        "done": 1,
+        "done": 2,
         "label": "实验",
-        "percent": 10.0,
+        "percent": 20.0,
         "total": 10
       },
       "figure": {
-        "done": 1,
+        "done": 2,
         "label": "图示",
-        "percent": 10.0,
+        "percent": 20.0,
         "total": 10
       },
       "framework": {
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-23T09:30:00Z",
+  "generated_at": "2026-07-23T10:00:00Z",
   "goal": {
     "all_tasks_done": false,
     "current_day": 15,
@@ -598,97 +598,37 @@
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-23T09:30:00Z",
-  "latest_snapshot": "../progress/snapshots/20260723T093000Z-6194c0-working-tree-205855a89d83.json",
+  "latest_fact_update": "2026-07-23T10:00:00Z",
+  "latest_snapshot": "../progress/snapshots/20260723T100000Z-5c02a2-working-tree-3f854deadfea.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
         }
       ],
       "artifacts": [
         {
-          "path": "book/chapters/ch01-ai-native-sdlc.md",
+          "path": "planning/reviews/ch-01-writing-review.md",
           "required": true
         }
       ],
       "day": 15,
       "dependencies": [
-        "D15-T01"
+        "D15-T02"
       ],
-      "href": "details.html#task-D15-T02",
-      "id": "D15-T02",
+      "href": "details.html#task-D15-T03",
+      "id": "D15-T03",
       "owner": "author",
       "planned_date": "2026-08-04",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-01 · 完成章节可读稿"
+      "title": "CH-01 · 完成章节审校与证据对齐"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "active",
-      "before": "preview",
-      "id": "EVT-84922e8002f47050",
-      "object_id": "v0.2-draft",
-      "object_type": "cycle",
-      "occurred_at": "2026-07-23T07:10:00Z",
-      "source_id": "24c7d233ac12-working-tree-e99f63e7946f",
-      "summary": "v0.2-draft 已由真实发布回执激活",
-      "type": "cycle_opened"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "backlog",
-      "id": "EVT-e5ea15236ddb35c3",
-      "object_id": "D14-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T07:10:00Z",
-      "source_id": "24c7d233ac12-working-tree-e99f63e7946f",
-      "summary": "D14-T03 · 建立 v0.2 草案：backlog → done",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-4a803ebc32e5a1a1",
-      "object_id": "CH-04:question",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-23T07:25:00Z",
-      "source_id": "77358db635fc-working-tree-3f20ab8be686",
-      "summary": "CH-04 · 上下文工程：Memory Bank 与 Standards · 问题：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "verified",
-      "before": "planned",
-      "id": "EVT-6b94ab7f22a00a31",
-      "object_id": "EXP-04-01:status",
-      "object_type": "experiment",
-      "occurred_at": "2026-07-23T08:20:00Z",
-      "source_id": "2796ba530ed1-working-tree-5eeb8b224c3a",
-      "summary": "EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验 · status：planned → verified",
-      "type": "experiment_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "v0.2 first content-experiment-build loop completed",
-      "before": null,
-      "id": "EVT-58ca7bbfaf00b745",
-      "object_id": "C02-T03",
-      "object_type": "project",
-      "occurred_at": "2026-07-23T08:40:00Z",
-      "source_id": "4d1547dab2f9-working-tree-5adbad9d3fa3",
-      "summary": "v0.2 first content-experiment-build loop completed",
-      "type": "build_completed"
-    },
     {
       "actor": "chenbaojun",
       "after": "10 chapter writing sprint task cards planned",
@@ -748,14 +688,74 @@
       "source_id": "3494956194c0-working-tree-205855a89d83",
       "summary": "D15-T02 · CH-01 · 完成章节可读稿：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-dc18a0029b041b61",
+      "object_id": "CH-01:example",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-23T10:00:00Z",
+      "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
+      "summary": "CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 案例：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-ec7063b5ea43e17f",
+      "object_id": "CH-01:experiment",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-23T10:00:00Z",
+      "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
+      "summary": "CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 实验：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-4035834a1ba66016",
+      "object_id": "CH-01:figure",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-23T10:00:00Z",
+      "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
+      "summary": "CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 图示：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-2215b656b86ea492",
+      "object_id": "D15-T02",
+      "object_type": "task",
+      "occurred_at": "2026-07-23T10:00:00Z",
+      "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
+      "summary": "D15-T02 · CH-01 · 完成章节可读稿：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-1cd91832c3ba8393",
+      "object_id": "D15-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-23T10:00:00Z",
+      "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
+      "summary": "D15-T03 · CH-01 · 完成章节审校与证据对齐：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "3494956194c0-working-tree-205855a89d83",
+  "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
   "tasks": {
-    "done": 43,
-    "percent": 59.7,
+    "done": 44,
+    "percent": 61.1,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 41,
+        "done": 42,
         "has_sample": true,
-        "percent": 58.6,
+        "percent": 60.0,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 28,
+      "backlog": 27,
       "blocked": 0,
-      "done": 43,
+      "done": 44,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -914,10 +914,10 @@
       {
         "blocked": 0,
         "day": 15,
-        "done": 1,
+        "done": 2,
         "href": "details.html#day-15",
         "is_current": true,
-        "percent": 33.3,
+        "percent": 66.7,
         "total": 3
       },
       {
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 59.3
+    "weighted_percent": 60.7
   }
 }

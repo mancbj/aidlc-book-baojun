@@ -4,19 +4,19 @@
 
 - 目标：v0.1 已发布；十章写作冲刺
 - 当前：Day 15 / 24，剩余 9 个计划日
-- 总进度：43/72（59.7%）
-- 加权进度：59.3%
-- Must：41/70（58.6%）
+- 总进度：44/72（61.1%）
+- 加权进度：60.7%
+- Must：42/70（60.0%）
 - Should：2/2（100.0%）
 - 阻塞：0
 - 反馈：1 条；accepted 0 条
 - 下一周期：尚未激活
-- 事实最近更新：2026-07-23T09:30:00Z
-- 来源：`3494956194c0-working-tree-205855a89d83`
+- 事实最近更新：2026-07-23T10:00:00Z
+- 来源：`bccb2b5c02a2-working-tree-3f854deadfea`
 
 ## 下一动作
 
-1. **D15-T02 · CH-01 · 完成章节可读稿** — MUST / 可开始 / Day 15
+1. **D15-T03 · CH-01 · 完成章节审校与证据对齐** — MUST / 可开始 / Day 15
 
 ## 阻塞
 
@@ -24,16 +24,16 @@
 
 ## 最近关键更新
 
+- `2026-07-23T10:00:00Z` · D15-T03 · CH-01 · 完成章节审校与证据对齐：backlog → ready (`EVT-1cd91832c3ba8393`)
+- `2026-07-23T10:00:00Z` · D15-T02 · CH-01 · 完成章节可读稿：ready → done (`EVT-2215b656b86ea492`)
+- `2026-07-23T10:00:00Z` · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 图示：pending → done (`EVT-4035834a1ba66016`)
+- `2026-07-23T10:00:00Z` · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 实验：pending → done (`EVT-ec7063b5ea43e17f`)
+- `2026-07-23T10:00:00Z` · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 案例：pending → done (`EVT-dc18a0029b041b61`)
 - `2026-07-23T09:30:00Z` · D15-T02 · CH-01 · 完成章节可读稿：backlog → ready (`EVT-91a284f56a66fa3d`)
 - `2026-07-23T09:30:00Z` · D15-T01 · CH-01 · 锁定章节论证骨架：ready → done (`EVT-08533c293b77af0e`)
 - `2026-07-23T09:30:00Z` · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 问题：pending → done (`EVT-88ff1b6e1535d527`)
 - `2026-07-23T09:30:00Z` · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 框架：pending → done (`EVT-c18655ddda037c72`)
 - `2026-07-23T09:00:00Z` · 10 chapter writing sprint task cards planned (`EVT-42fd3577bced01ca`)
-- `2026-07-23T08:40:00Z` · v0.2 first content-experiment-build loop completed (`EVT-58ca7bbfaf00b745`)
-- `2026-07-23T08:20:00Z` · EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验 · status：planned → verified (`EVT-6b94ab7f22a00a31`)
-- `2026-07-23T07:25:00Z` · CH-04 · 上下文工程：Memory Bank 与 Standards · 问题：pending → done (`EVT-4a803ebc32e5a1a1`)
-- `2026-07-23T07:10:00Z` · D14-T03 · 建立 v0.2 草案：backlog → done (`EVT-e5ea15236ddb35c3`)
-- `2026-07-23T07:10:00Z` · v0.2-draft 已由真实发布回执激活 (`EVT-84922e8002f47050`)
 
 ## 下钻入口
 

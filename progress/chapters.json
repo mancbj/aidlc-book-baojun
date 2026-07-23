@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-23T09:30:00Z",
+  "updated": "2026-07-23T10:00:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -19,15 +19,15 @@
         },
         {
           "name": "example",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "experiment",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "figure",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "review",
@@ -36,9 +36,14 @@
       ],
       "evidence_links": [
         "book/chapters/ch01-ai-native-sdlc.md",
-        "progress/tasks.json#D15-T01"
+        "progress/tasks.json#D15-T01",
+        "book/images/fig0-1.svg",
+        "progress/experiments.json#EXP-01-01",
+        "progress/experiments.json#EXP-01-02",
+        "progress/experiments.json#EXP-01-03",
+        "progress/tasks.json#D15-T02"
       ],
-      "updated": "2026-07-23T09:30:00Z"
+      "updated": "2026-07-23T10:00:00Z"
     },
     {
       "id": "CH-02",

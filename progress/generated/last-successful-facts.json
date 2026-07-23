@@ -5,7 +5,12 @@
         {
           "evidence_links": [
             "book/chapters/ch01-ai-native-sdlc.md",
-            "progress/tasks.json#D15-T01"
+            "progress/tasks.json#D15-T01",
+            "book/images/fig0-1.svg",
+            "progress/experiments.json#EXP-01-01",
+            "progress/experiments.json#EXP-01-02",
+            "progress/experiments.json#EXP-01-03",
+            "progress/tasks.json#D15-T02"
           ],
           "id": "CH-01",
           "number": 1,
@@ -22,15 +27,15 @@
             },
             {
               "name": "example",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "experiment",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "figure",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "review",
@@ -38,7 +43,7 @@
             }
           ],
           "title": "AI 原生 SDLC：从概率智能到确定性交付",
-          "updated": "2026-07-23T09:30:00Z"
+          "updated": "2026-07-23T10:00:00Z"
         },
         {
           "evidence_links": [],
@@ -371,7 +376,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-23T09:30:00Z"
+      "updated": "2026-07-23T10:00:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -2725,7 +2730,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
             }
           ],
@@ -2748,11 +2753,11 @@
           "phase": "progress",
           "planned_date": "2026-08-04",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-01 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:30:00Z"
+          "updated": "2026-07-23T10:00:00Z"
         },
         {
           "acceptance": [
@@ -2780,11 +2785,11 @@
           "phase": "progress",
           "planned_date": "2026-08-04",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-01 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-23T10:00:00Z"
         },
         {
           "acceptance": [
@@ -3651,9 +3656,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-23T09:30:00Z"
+      "updated": "2026-07-23T10:00:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "3494956194c0-working-tree-205855a89d83"
+  "source_id": "bccb2b5c02a2-working-tree-3f854deadfea"
 }
