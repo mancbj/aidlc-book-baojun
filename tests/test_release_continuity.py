@@ -108,7 +108,12 @@ def make_ready(root: Path) -> None:
     tasks_path = root / "progress/tasks.json"
     tasks = json.loads(tasks_path.read_text(encoding="utf-8"))
     for task in tasks["tasks"]:
-        if task["id"] != "D14-T03":
+        if task["id"] == "D14-T03":
+            task["status"] = "backlog"
+            task["updated"] = TIMESTAMP
+            for item in task["acceptance"]:
+                item["passed"] = False
+        else:
             task["status"] = "done"
             task["updated"] = TIMESTAMP
             for item in task["acceptance"]:
@@ -379,6 +384,9 @@ class FeedbackValidationTests(unittest.TestCase):
 class ProgressContinuityTests(unittest.TestCase):
     def test_feedback_and_cycle_changes_create_stable_events(self):
         previous = core.load_facts(REPO_ROOT)
+        previous["cycles"]["active_cycle"] = None
+        previous["cycles"]["cycles"][0]["status"] = "preview"
+        previous["cycles"]["cycles"][0]["origin_release"] = None
         current = copy.deepcopy(previous)
         current["feedback"]["decisions"] = [
             {
@@ -629,8 +637,8 @@ class PublishedCycleTests(unittest.TestCase):
                 if line.strip()
             }
             self.assertEqual("C02-T01", current["next_actions"][0]["id"])
-            self.assertEqual(2, result["new_event_count"])
-            self.assertTrue({"cycle_opened", "release_published"}.issubset(event_types))
+            self.assertEqual(1, result["new_event_count"])
+            self.assertIn("release_published", event_types)
             self.assertIn("working-tree", current["source_id"])
 
 

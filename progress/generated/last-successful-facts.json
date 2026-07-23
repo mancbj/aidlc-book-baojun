@@ -365,7 +365,7 @@
       "updated": "2026-07-23T03:56:40Z"
     },
     "cycles": {
-      "active_cycle": null,
+      "active_cycle": "v0.2-draft",
       "cycles": [
         {
           "accepted_feedback": [],
@@ -377,15 +377,56 @@
           },
           "carried_gaps": [
             {
-              "code": "FB-001",
+              "code": "READER-RESPONSES",
               "object": "Reader-A/B/C",
               "priority": "known-gap"
             }
           ],
+          "carried_tasks": [
+            {
+              "id": "D14-T03",
+              "priority": "should",
+              "status": "backlog",
+              "title": "建立 v0.2 草案"
+            }
+          ],
           "id": "v0.2-draft",
           "monthly_target": "v0.2 readable release",
-          "origin_release": null,
-          "status": "preview",
+          "origin_release": {
+            "assets": [
+              {
+                "bytes": 4294684,
+                "content_type": "application/zip",
+                "digest": "sha256:3e27cc20ba0b89b5449408ee5aa2467427f35dc3519cb9c6748a32ef617c925f",
+                "name": "aidlc-book-v0.1-html.zip",
+                "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.1/aidlc-book-v0.1-html.zip"
+              },
+              {
+                "bytes": 3891318,
+                "content_type": "application/pdf",
+                "digest": "sha256:05510145b4ea31fc2ec6c0a107422ebd2c5fd6ee143184ebfa3f4de7f53fd02f",
+                "name": "aidlc-book-v0.1.pdf",
+                "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.1/aidlc-book-v0.1.pdf"
+              },
+              {
+                "bytes": 772,
+                "content_type": "application/json",
+                "digest": "sha256:75a2f0904c03419f0ad90695fd08ece7e136c5b3c0496e61cb923af2da5be280",
+                "name": "release-manifest.json",
+                "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.1/release-manifest.json"
+              }
+            ],
+            "published_at": "2026-07-23T06:35:30Z",
+            "readiness_source_id": "73d7a5241872b0872786567709b097d844161dd0",
+            "release_id": "RE_kwDOTg7wic4VXjZD",
+            "schema_version": "1.0.0",
+            "source_sha": "73d7a5241872b0872786567709b097d844161dd0",
+            "status": "published",
+            "tag": "v0.1",
+            "url": "https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.1",
+            "version": "v0.1"
+          },
+          "status": "active",
           "tasks": [
             {
               "acceptance": [
@@ -428,7 +469,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-23T05:42:01Z"
+      "updated": "2026-07-23T07:00:59Z"
     },
     "experiments": {
       "experiments": [
@@ -2616,7 +2657,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "下一周期至少有一个依赖已满足的 Must"
             }
           ],
@@ -2636,16 +2677,16 @@
           "phase": "release",
           "planned_date": "2026-08-03",
           "priority": "should",
-          "status": "backlog",
+          "status": "done",
           "title": "建立 v0.2 草案",
           "type": "release",
           "unblock_action": "",
-          "updated": "2026-07-21T07:14:12Z"
+          "updated": "2026-07-23T07:00:59Z"
         }
       ],
       "updated": "2026-07-23T06:28:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "73d7a5241872b0872786567709b097d844161dd0"
+  "source_id": "24c7d233ac12-working-tree-e99f63e7946f"
 }

@@ -1211,7 +1211,7 @@
       "title": "建立 v0.2 草案",
       "type": "release",
       "phase": "release",
-      "status": "backlog",
+      "status": "done",
       "priority": "should",
       "owner": "author",
       "day": 14,
@@ -1228,12 +1228,12 @@
       "acceptance": [
         {
           "text": "下一周期至少有一个依赖已满足的 Must",
-          "passed": false
+          "passed": true
         }
       ],
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-21T07:14:12Z"
+      "updated": "2026-07-23T07:00:59Z"
     }
   ]
 }
