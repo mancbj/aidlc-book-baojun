@@ -1,0 +1,49 @@
+name: 缺陷报告
+description: 报告事实、生成、页面、构建或发布问题
+title: "[Bug] "
+labels:
+  - "type:bug"
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: 有关联任务则填写稳定 ID；否则填写 N/A。
+      placeholder: D08-T02 或 N/A
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Priority
+      options: [must, should, could]
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 期望结果
+      description: 修复后应观察到什么？
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果与复现步骤
+      placeholder: "1. 运行 ...\n2. 打开 ...\n3. 观察到 ..."
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: 受影响产物
+      description: 每行一个仓库相对路径；未知时填写待定位。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      value: "- [ ] 原复现步骤不再失败\n- [ ] 新增回归测试"
+    validations:
+      required: true

@@ -1,0 +1,163 @@
+name: Prepare and Publish Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version such as v0.1 or v0.1-rc.1
+        required: true
+        type: string
+      pdf_path:
+        description: Optional repository-relative verified PDF path
+        required: false
+        type: string
+      publish:
+        description: Create a draft GitHub Release after building
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      version: ${{ steps.version.outputs.value }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: Resolve and validate version
+        id: version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            version="$GITHUB_REF_NAME"
+          else
+            version="$INPUT_VERSION"
+          fi
+          python3 - "$version" <<'PY'
+          import re, sys
+          if not re.fullmatch(r"v\d+\.\d+(?:\.\d+)?(?:-[0-9A-Za-z.-]+)?", sys.argv[1]):
+              raise SystemExit("invalid release version")
+          PY
+          echo "value=$version" >> "$GITHUB_OUTPUT"
+      - run: python3 scripts/ci_check.py --budget-seconds 60
+
+  build:
+    needs: [validate, readiness]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: Download the exact readiness evidence
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: v0.1-readiness
+          path: .artifacts/readiness
+      - name: Prepare immutable release candidate
+        env:
+          VERSION: ${{ needs.validate.outputs.version }}
+          PDF_PATH: ${{ inputs.pdf_path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(
+            "$VERSION"
+            --output ".artifacts/release/$VERSION"
+            --commit-sha "$GITHUB_SHA"
+            --readiness .artifacts/readiness/readiness.json
+            --release-notes .artifacts/readiness/release-notes.md
+          )
+          if [ -n "$PDF_PATH" ]; then
+            args+=(--pdf "$PDF_PATH")
+          fi
+          python3 scripts/prepare_release.py "${args[@]}"
+      - name: Upload candidate for review or publish
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-candidate
+          path: .artifacts/release/${{ needs.validate.outputs.version }}
+          retention-days: 14
+          if-no-files-found: error
+
+  readiness:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: Evaluate v0.1 Definition of Done and always keep the gap report
+        id: gate
+        continue-on-error: true
+        run: >-
+          python3 scripts/check_release_readiness.py
+          --json-report .artifacts/readiness/readiness.json
+          --markdown-report .artifacts/readiness/readiness.md
+      - name: Render notes only for a ready source
+        if: steps.gate.outcome == 'success'
+        run: >-
+          python3 scripts/render_release_notes.py
+          --readiness .artifacts/readiness/readiness.json
+          --output .artifacts/readiness/release-notes.md
+          --require-ready
+      - name: Upload readiness or the sorted blocker report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: v0.1-readiness
+          path: .artifacts/readiness
+          retention-days: 30
+          if-no-files-found: error
+      - name: Enforce readiness before build or publish
+        if: steps.gate.outcome != 'success'
+        run: |
+          echo "v0.1 readiness is blocked; download v0.1-readiness for the sorted repair list." >&2
+          exit 1
+
+  publish:
+    needs: [validate, readiness, build]
+    if: github.event_name == 'push' || inputs.publish == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Download the exact reviewed candidate
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: release-candidate
+          path: .artifacts/candidate
+      - name: Refuse overwrite and create draft Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.validate.outputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$VERSION" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $VERSION already exists; refusing overwrite." >&2
+            exit 1
+          fi
+          gh release create "$VERSION" .artifacts/candidate/* \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "$VERSION" \
+            --draft \
+            --generate-notes \
+            --notes-file .artifacts/candidate/release-notes.md

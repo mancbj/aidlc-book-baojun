@@ -1,0 +1,28 @@
+.DS_Store
+Thumbs.db
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+.venv/
+venv/
+env/
+
+.env
+.env.*
+!env.example
+*.pem
+*.key
+
+.tmp/
+.artifacts/
+*.log
+
+# Author-local working material and reference archives.
+# These directories must not be published to the GitHub book repository.
+/working-book/
+/specs.md-portal/
+/github_repo_reference_ai-agent-book-main/

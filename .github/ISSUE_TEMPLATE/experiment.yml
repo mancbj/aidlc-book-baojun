@@ -1,0 +1,62 @@
+name: 实验任务
+description: 创建 SHIP、KEEP-EXT 或 ALREADY 实验证据任务
+title: "[Experiment] "
+labels:
+  - "type:experiment"
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      placeholder: D04-T02
+    validations:
+      required: true
+  - type: input
+    id: experiment_id
+    attributes:
+      label: Experiment ID
+      placeholder: EXP-02-01
+    validations:
+      required: true
+  - type: input
+    id: chapter
+    attributes:
+      label: Chapter
+      placeholder: CH-02
+    validations:
+      required: true
+  - type: dropdown
+    id: triage
+    attributes:
+      label: Triage
+      options: [SHIP, KEEP-EXT, ALREADY]
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: [must, should, could]
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标
+      description: 说明实验要验证或证伪的判断。
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: 产物
+      description: 列出实现、样例输入、样例输出、README 与测试路径。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      value: "- [ ] 可在 10 分钟内复现\n- [ ] 结果包含指标与结论"
+    validations:
+      required: true

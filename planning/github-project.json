@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "authority": "repository-to-project",
+  "identity_field": "Task ID",
+  "fields": [
+    {"name": "Status", "type": "single-select", "options": ["Backlog", "Ready", "In Progress", "Review", "Done", "Blocked"]},
+    {"name": "Priority", "type": "single-select", "options": ["Must", "Should", "Could"]},
+    {"name": "Type", "type": "single-select", "options": ["Writing", "Experiment", "Engineering", "Review", "Release"]},
+    {"name": "Day", "type": "number"},
+    {"name": "Chapter", "type": "text"},
+    {"name": "Experiment", "type": "text"},
+    {"name": "Milestone", "type": "text"},
+    {"name": "Artifact", "type": "text"},
+    {"name": "Task ID", "type": "text"}
+  ],
+  "status_mapping": {
+    "backlog": "Backlog",
+    "ready": "Ready",
+    "in-progress": "In Progress",
+    "review": "Review",
+    "done": "Done",
+    "blocked": "Blocked"
+  },
+  "views": [
+    {"name": "Board", "layout": "board", "group_by": "Status", "sort": ["Priority", "Day"]},
+    {"name": "Roadmap", "layout": "roadmap", "date_model": "Day 1-14", "sort": ["Day", "Priority"]},
+    {"name": "Chapters", "layout": "table", "group_by": "Chapter", "filter": "Chapter is not empty"},
+    {"name": "Experiments", "layout": "table", "group_by": "Experiment", "filter": "Type = Experiment"}
+  ],
+  "sync": {
+    "default_mode": "dry-run",
+    "marker": "aidlc-task",
+    "divergence_policy": "report-and-stop",
+    "missing_permission_policy": "degraded-no-write"
+  }
+}

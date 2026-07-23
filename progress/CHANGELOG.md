@@ -1,0 +1,551 @@
+# Progress Changelog
+
+> 由进度生成器根据关键状态变化自动追加。完整机器事件见 [`events/events.jsonl`](events/events.jsonl)。
+
+## 2026-07-21T08:39:07Z · `working-tree-5c9b6ebc6169`
+
+快照：[`20260721T083907Z-working-tree-5c9b6ebc6169.json`](snapshots/20260721T083907Z-working-tree-5c9b6ebc6169.json)
+
+- **system_initialized** · 进度系统已建立第一份可审计基线 (`EVT-0a41bb39ebd9ba18`)
+
+## 2026-07-22T03:51:07Z · `working-tree-5028e5732c36`
+
+快照：[`20260722T035107Z-working-tree-5028e5732c36.json`](snapshots/20260722T035107Z-working-tree-5028e5732c36.json)
+
+- **milestone_reached** · D01-T01 核心公式与书籍封面已纳入书稿 (`EVT-83b96d851bc5c268`)
+- **task_status_changed** · D01-T01 · 写核心公式：ready → done (`EVT-a3d1295ca3df40ae`)
+
+## 2026-07-22T03:56:25Z · `working-tree-70e064d2e7a5`
+
+快照：[`20260722T035625Z-working-tree-70e064d2e7a5.json`](snapshots/20260722T035625Z-working-tree-70e064d2e7a5.json)
+
+- **task_status_changed** · D01-T02 · 确定目标读者：backlog → in-progress (`EVT-82572a31f5f6b50c`)
+
+## 2026-07-22T03:57:15Z · `working-tree-176fa4180948`
+
+快照：[`20260722T035715Z-working-tree-176fa4180948.json`](snapshots/20260722T035715Z-working-tree-176fa4180948.json)
+
+- **task_status_changed** · D01-T02 · 确定目标读者：in-progress → done (`EVT-e9984d7f4174cd9b`)
+
+## 2026-07-22T05:22:30Z · `working-tree-29031b17d6c3`
+
+快照：[`20260722T052230Z-working-tree-29031b17d6c3.json`](snapshots/20260722T052230Z-working-tree-29031b17d6c3.json)
+
+- **task_status_changed** · D01-T03 · 确认十章目录：backlog → in-progress (`EVT-0afb00d062431168`)
+
+## 2026-07-22T05:26:04Z · `working-tree-cd36e91527b5`
+
+快照：[`20260722T052604Z-working-tree-cd36e91527b5.json`](snapshots/20260722T052604Z-working-tree-cd36e91527b5.json)
+
+- **milestone_reached** · Day 1 基础定位完成：核心公式、目标读者与十章目录已版本化 (`EVT-e992f809a4bac1f2`)
+- **task_status_changed** · D01-T03 · 确认十章目录：in-progress → done (`EVT-e23b916a0d8e6a7a`)
+
+## 2026-07-22T05:39:06Z · `working-tree-4b7f11132b09`
+
+快照：[`20260722T053906Z-working-tree-4b7f11132b09.json`](snapshots/20260722T053906Z-working-tree-4b7f11132b09.json)
+
+- **milestone_reached** · 十章目录完成 specs.md 官网资料审视并升级为工程化 v2 (`EVT-7f1ea25eb4783301`)
+
+## 2026-07-22T05:47:09Z · `working-tree-4b7f11132b09`
+
+快照：[`20260722T053906Z-working-tree-4b7f11132b09.json`](snapshots/20260722T053906Z-working-tree-4b7f11132b09.json)
+
+- **milestone_reached** · 新增 Part 0 鸟瞰导读：核心公式、生命周期、叙事结构与阅读路线 (`EVT-7003422e66067eb5`)
+
+## 2026-07-22T05:54:45Z · `working-tree-a8725a0bb479`
+
+快照：[`20260722T055445Z-working-tree-a8725a0bb479.json`](snapshots/20260722T055445Z-working-tree-a8725a0bb479.json)
+
+- **feedback_decided** · 作者确认十章目录 v3，可进入 Day 2 仓库建设 (`EVT-06f1f6fb7c25fdd8`)
+- **task_status_changed** · D02-T01 · 创建仓库骨架：backlog → in-progress (`EVT-c22ca1c16899e8b8`)
+
+## 2026-07-22T05:57:27Z · `working-tree-804035c79337`
+
+快照：[`20260722T055727Z-working-tree-804035c79337.json`](snapshots/20260722T055727Z-working-tree-804035c79337.json)
+
+- **task_status_changed** · D02-T01 · 创建仓库骨架：in-progress → done (`EVT-43ca23051c7f5bdc`)
+
+## 2026-07-22T06:08:21Z · `working-tree-62873192f538`
+
+快照：[`20260722T060821Z-working-tree-62873192f538.json`](snapshots/20260722T060821Z-working-tree-62873192f538.json)
+
+- **experiment_changed** · EXP-01-03 · 行动指南静态导航参考 · status：ready → planned (`EVT-ddd46a07f5e9c2ed`)
+- **experiment_changed** · EXP-01-03 · 行动指南静态导航参考 · triage：ALREADY → KEEP-EXT (`EVT-3dd4e7f638a9318a`)
+- **milestone_reached** · 本地工作稿与参考资料已迁出公开 GitHub 仓库边界 (`EVT-62e9a9dd8a125503`)
+
+## 2026-07-22T06:14:00Z · `working-tree-c50a0f6c5cb2`
+
+快照：[`20260722T061400Z-working-tree-c50a0f6c5cb2.json`](snapshots/20260722T061400Z-working-tree-c50a0f6c5cb2.json)
+
+- **task_status_changed** · D02-T02 · 完成 README 第一版：backlog → in-progress (`EVT-60a322695c2bcc01`)
+
+## 2026-07-22T06:16:24Z · `working-tree-323991aab43c`
+
+快照：[`20260722T061624Z-working-tree-323991aab43c.json`](snapshots/20260722T061624Z-working-tree-323991aab43c.json)
+
+- **task_status_changed** · D02-T02 · 完成 README 第一版：in-progress → done (`EVT-c07e16ceec0c4d99`)
+
+## 2026-07-22T06:23:26Z · `working-tree-513467ea1828`
+
+快照：[`20260722T062326Z-working-tree-513467ea1828.json`](snapshots/20260722T062326Z-working-tree-513467ea1828.json)
+
+- **task_status_changed** · D02-T03 · 定义任务模型：backlog → in-progress (`EVT-aaaf0163f272831e`)
+
+## 2026-07-22T06:27:35Z · `working-tree-6c88a7104192`
+
+快照：[`20260722T062735Z-working-tree-6c88a7104192.json`](snapshots/20260722T062735Z-working-tree-6c88a7104192.json)
+
+- **task_status_changed** · D02-T03 · 定义任务模型：in-progress → done (`EVT-aaaf7412ba60dc7a`)
+
+## 2026-07-22T06:30:33Z · `working-tree-ef00d1b125d2`
+
+快照：[`20260722T063033Z-working-tree-ef00d1b125d2.json`](snapshots/20260722T063033Z-working-tree-ef00d1b125d2.json)
+
+- **task_status_changed** · D03-T01 · 建立 30 项实验池：backlog → in-progress (`EVT-4981f75ee13b4f11`)
+
+## 2026-07-22T06:35:34Z · `working-tree-429575f379a7`
+
+快照：[`20260722T063534Z-working-tree-429575f379a7.json`](snapshots/20260722T063534Z-working-tree-429575f379a7.json)
+
+- **task_status_changed** · D03-T01 · 建立 30 项实验池：in-progress → done (`EVT-8ca93ef20108ce64`)
+
+## 2026-07-22T06:46:59Z · `working-tree-ee9d12a9d7da`
+
+快照：[`20260722T064659Z-working-tree-ee9d12a9d7da.json`](snapshots/20260722T064659Z-working-tree-ee9d12a9d7da.json)
+
+- **task_status_changed** · D03-T02 · 完成实验初步分类：backlog → in-progress (`EVT-97e979b96223f3ed`)
+
+## 2026-07-22T06:51:25Z · `working-tree-8c6c32f63edc`
+
+快照：[`20260722T065125Z-working-tree-8c6c32f63edc.json`](snapshots/20260722T065125Z-working-tree-8c6c32f63edc.json)
+
+- **experiment_changed** · EXP-07-01 · 仓库确定性门禁组合器 · status：planned → ready (`EVT-4a68713de097a6b1`)
+- **experiment_changed** · EXP-07-01 · 仓库确定性门禁组合器 · triage：SHIP → ALREADY (`EVT-9760d1a2467757bb`)
+- **experiment_changed** · EXP-08-01 · 发布候选来源清单校验器 · status：planned → ready (`EVT-8415b72f7b9e7299`)
+- **experiment_changed** · EXP-08-01 · 发布候选来源清单校验器 · triage：SHIP → ALREADY (`EVT-10196bee4ec7a2c3`)
+- **task_status_changed** · D03-T02 · 完成实验初步分类：in-progress → done (`EVT-dfe5355c3e8d1b10`)
+
+## 2026-07-22T06:55:04Z · `working-tree-73b1e00c065f`
+
+快照：[`20260722T065504Z-working-tree-73b1e00c065f.json`](snapshots/20260722T065504Z-working-tree-73b1e00c065f.json)
+
+- **task_status_changed** · D03-T03 · 选择并拆解样章：backlog → in-progress (`EVT-ae32499435a7c05b`)
+
+## 2026-07-22T07:00:00Z · `working-tree-43a2d3f9ecba`
+
+快照：[`20260722T070000Z-working-tree-43a2d3f9ecba.json`](snapshots/20260722T070000Z-working-tree-43a2d3f9ecba.json)
+
+- **milestone_reached** · v0.1 样章已选定 CH-03《Inception：从 Intent 到可执行计划》，六阶段提纲完成 (`EVT-badb209c3ff7c3ae`)
+- **task_status_changed** · D03-T03 · 选择并拆解样章：in-progress → done (`EVT-d2b542dbf4a1340c`)
+
+## 2026-07-22T07:04:26Z · `working-tree-9c630b18da00`
+
+快照：[`20260722T070426Z-working-tree-9c630b18da00.json`](snapshots/20260722T070426Z-working-tree-9c630b18da00.json)
+
+- **task_status_changed** · D04-T01 · 定义样章实验：backlog → in-progress (`EVT-5d0b566700b286db`)
+
+## 2026-07-22T07:09:04Z · `working-tree-d9cf37965c92`
+
+快照：[`20260722T070904Z-working-tree-d9cf37965c92.json`](snapshots/20260722T070904Z-working-tree-d9cf37965c92.json)
+
+- **experiment_changed** · EXP-03-01 · Intent 到 Story 追踪链生成器 · status：planned → ready (`EVT-2e1ffd58d5112250`)
+- **task_status_changed** · D04-T01 · 定义样章实验：in-progress → done (`EVT-b097c4388b61e3e3`)
+
+## 2026-07-22T07:13:27Z · `working-tree-ef00dfb47170`
+
+快照：[`20260722T071327Z-working-tree-ef00dfb47170.json`](snapshots/20260722T071327Z-working-tree-ef00dfb47170.json)
+
+- **task_status_changed** · D04-T02 · 准备最小 Demo 骨架：backlog → in-progress (`EVT-892f18313d36f185`)
+
+## 2026-07-22T07:16:35Z · `working-tree-af04757ac0b0`
+
+快照：[`20260722T071635Z-working-tree-af04757ac0b0.json`](snapshots/20260722T071635Z-working-tree-af04757ac0b0.json)
+
+- **task_status_changed** · D04-T02 · 准备最小 Demo 骨架：in-progress → done (`EVT-d43dc6143832b516`)
+
+## 2026-07-22T07:28:59Z · `working-tree-51bdfaeedc14`
+
+快照：[`20260722T072859Z-working-tree-51bdfaeedc14.json`](snapshots/20260722T072859Z-working-tree-51bdfaeedc14.json)
+
+- **task_status_changed** · D04-T03 · 定义完整性校验用例：backlog → in-progress (`EVT-15c24df1788eccb7`)
+
+## 2026-07-22T07:31:12Z · `working-tree-5714ba584ed7`
+
+快照：[`20260722T073112Z-working-tree-5714ba584ed7.json`](snapshots/20260722T073112Z-working-tree-5714ba584ed7.json)
+
+- **task_status_changed** · D04-T03 · 定义完整性校验用例：in-progress → done (`EVT-bf6f1a479a70d63c`)
+
+## 2026-07-22T07:37:23Z · `working-tree-f796234f79dc`
+
+快照：[`20260722T073723Z-working-tree-f796234f79dc.json`](snapshots/20260722T073723Z-working-tree-f796234f79dc.json)
+
+- **task_status_changed** · D05-T01 · 实现最小实验：backlog → in-progress (`EVT-cd72058b4d8ec11c`)
+
+## 2026-07-22T07:41:09Z · `working-tree-4ca08e2f6ca3`
+
+快照：[`20260722T074109Z-working-tree-4ca08e2f6ca3.json`](snapshots/20260722T074109Z-working-tree-4ca08e2f6ca3.json)
+
+- **experiment_changed** · EXP-03-01 · Intent 到 Story 追踪链生成器 · status：ready → in-progress (`EVT-eb603941f36a1a89`)
+- **task_status_changed** · D05-T01 · 实现最小实验：in-progress → done (`EVT-fa74c269dff223b9`)
+
+## 2026-07-22T07:45:14Z · `working-tree-5d29a69bb32e`
+
+快照：[`20260722T074514Z-working-tree-5d29a69bb32e.json`](snapshots/20260722T074514Z-working-tree-5d29a69bb32e.json)
+
+- **task_status_changed** · D05-T02 · 保存成功与失败样例：backlog → in-progress (`EVT-c303ab2381bfac0d`)
+
+## 2026-07-22T07:51:24Z · `working-tree-fa2707d5854b`
+
+快照：[`20260722T075124Z-working-tree-fa2707d5854b.json`](snapshots/20260722T075124Z-working-tree-fa2707d5854b.json)
+
+- **experiment_changed** · EXP-03-01 · Intent 到 Story 追踪链生成器 · status：in-progress → verified (`EVT-f1e9c24b89763ae2`)
+- **task_status_changed** · D05-T02 · 保存成功与失败样例：in-progress → done (`EVT-9661f703df12ff2c`)
+
+## 2026-07-22T07:54:48Z · `working-tree-34fe3243c662`
+
+快照：[`20260722T075448Z-working-tree-34fe3243c662.json`](snapshots/20260722T075448Z-working-tree-34fe3243c662.json)
+
+- **task_status_changed** · D05-T03 · 生成第一份进度聚合：backlog → in-progress (`EVT-0bef0ff865645d87`)
+
+## 2026-07-22T07:56:32Z · `working-tree-a36db77e3fa7`
+
+快照：[`20260722T075632Z-working-tree-a36db77e3fa7.json`](snapshots/20260722T075632Z-working-tree-a36db77e3fa7.json)
+
+- **task_status_changed** · D05-T03 · 生成第一份进度聚合：in-progress → done (`EVT-28563013d137eb81`)
+
+## 2026-07-22T08:00:44Z · `working-tree-5d011612b291`
+
+快照：[`20260722T080044Z-working-tree-5d011612b291.json`](snapshots/20260722T080044Z-working-tree-5d011612b291.json)
+
+- **task_status_changed** · D06-T01 · 定义关键事件类型：backlog → in-progress (`EVT-24ba63896af6fd18`)
+
+## 2026-07-22T08:03:16Z · `working-tree-7ee9b7b702cb`
+
+快照：[`20260722T080316Z-working-tree-7ee9b7b702cb.json`](snapshots/20260722T080316Z-working-tree-7ee9b7b702cb.json)
+
+- **task_status_changed** · D06-T01 · 定义关键事件类型：in-progress → done (`EVT-a7bb289e0aedf625`)
+
+## 2026-07-22T08:07:03Z · `working-tree-8819d751aa01`
+
+快照：[`20260722T080703Z-working-tree-8819d751aa01.json`](snapshots/20260722T080703Z-working-tree-8819d751aa01.json)
+
+- **task_status_changed** · D06-T02 · 实现状态差异记录：backlog → in-progress (`EVT-11ef3a2cb0c9e489`)
+
+## 2026-07-22T08:09:53Z · `working-tree-e600d3273d76`
+
+快照：[`20260722T080953Z-working-tree-e600d3273d76.json`](snapshots/20260722T080953Z-working-tree-e600d3273d76.json)
+
+- **task_status_changed** · D06-T02 · 实现状态差异记录：in-progress → done (`EVT-ac058659abbe3ec9`)
+
+## 2026-07-22T08:14:17Z · `working-tree-d4bdf2b206df`
+
+快照：[`20260722T081417Z-working-tree-d4bdf2b206df.json`](snapshots/20260722T081417Z-working-tree-d4bdf2b206df.json)
+
+- **task_status_changed** · D06-T03 · 生成第一张核心图：backlog → in-progress (`EVT-a7430647c65e275f`)
+
+## 2026-07-22T08:16:45Z · `working-tree-15b876bccd25`
+
+快照：[`20260722T081645Z-working-tree-15b876bccd25.json`](snapshots/20260722T081645Z-working-tree-15b876bccd25.json)
+
+- **task_status_changed** · D06-T03 · 生成第一张核心图：in-progress → done (`EVT-78555da12abb2862`)
+
+## 2026-07-22T08:25:45Z · `working-tree-15b876bccd25`
+
+快照：[`20260722T081645Z-working-tree-15b876bccd25.json`](snapshots/20260722T081645Z-working-tree-15b876bccd25.json)
+
+- **milestone_reached** · 图 0-1 已按 SVG 风格规约重绘为 720×960 竖版核心图 (`EVT-99c4099102c05ba9`)
+
+## 2026-07-22T08:44:24Z · `working-tree-15b876bccd25`
+
+快照：[`20260722T081645Z-working-tree-15b876bccd25.json`](snapshots/20260722T081645Z-working-tree-15b876bccd25.json)
+
+- **milestone_reached** · 图 0-1 已升级为 IBM Carbon 16:9 宽屏无外围边框版本 (`EVT-28c958f17f616825`)
+
+## 2026-07-22T09:03:44Z · `working-tree-15b876bccd25`
+
+快照：[`20260722T081645Z-working-tree-15b876bccd25.json`](snapshots/20260722T081645Z-working-tree-15b876bccd25.json)
+
+- **milestone_reached** · 技术专著级 SVG Skill 已建立，图 0-1 通过新版 Skill 重构与自动审计 (`EVT-27c85fa5b32423ea`)
+
+## 2026-07-22T09:09:27Z · `working-tree-f53f7626de8e`
+
+快照：[`20260722T090927Z-working-tree-f53f7626de8e.json`](snapshots/20260722T090927Z-working-tree-f53f7626de8e.json)
+
+- **task_status_changed** · D07-T01 · 生成快照与变更日志：backlog → in-progress (`EVT-bbcc94f953ecc47a`)
+
+## 2026-07-22T09:12:15Z · `working-tree-b162327ed41e`
+
+快照：[`20260722T091215Z-working-tree-b162327ed41e.json`](snapshots/20260722T091215Z-working-tree-b162327ed41e.json)
+
+- **task_status_changed** · D07-T01 · 生成快照与变更日志：in-progress → done (`EVT-27aa7011245224db`)
+
+## 2026-07-22T09:17:48Z · `working-tree-1bcb58482fe5`
+
+快照：[`20260722T091748Z-working-tree-1bcb58482fe5.json`](snapshots/20260722T091748Z-working-tree-1bcb58482fe5.json)
+
+- **task_status_changed** · D07-T02 · 跑通最小书稿构建：backlog → in-progress (`EVT-6ddd8f97f9925196`)
+
+## 2026-07-22T10:17:50Z · `working-tree-b385eb277dc3`
+
+快照：[`20260722T101750Z-working-tree-b385eb277dc3.json`](snapshots/20260722T101750Z-working-tree-b385eb277dc3.json)
+
+- **task_status_changed** · D07-T02 · 跑通最小书稿构建：in-progress → done (`EVT-7760c1333fec54ad`)
+
+## 2026-07-23T01:15:49Z · `working-tree-08f56b6ea9cc`
+
+快照：[`20260723T011549Z-working-tree-08f56b6ea9cc.json`](snapshots/20260723T011549Z-working-tree-08f56b6ea9cc.json)
+
+- **task_status_changed** · D07-T03 · 建立 v0.0.1 时间锚点：backlog → in-progress (`EVT-d9bd39560ff97f9a`)
+
+## 2026-07-23T01:19:42Z · `working-tree-60b81a05bbf9`
+
+快照：[`20260723T011942Z-working-tree-60b81a05bbf9.json`](snapshots/20260723T011942Z-working-tree-60b81a05bbf9.json)
+
+- **task_status_changed** · D07-T03 · 建立 v0.0.1 时间锚点：in-progress → done (`EVT-4e431886337db150`)
+
+## 2026-07-23T01:28:13Z · `working-tree-3ba20c87b7d9`
+
+快照：[`20260723T012813Z-working-tree-3ba20c87b7d9.json`](snapshots/20260723T012813Z-working-tree-3ba20c87b7d9.json)
+
+- **task_status_changed** · D08-T01 · 推进样章可读稿：backlog → in-progress (`EVT-cef867dba515a515`)
+
+## 2026-07-23T01:36:45Z · `working-tree-31fb9338ed5f`
+
+快照：[`20260723T013645Z-working-tree-31fb9338ed5f.json`](snapshots/20260723T013645Z-working-tree-31fb9338ed5f.json)
+
+- **task_status_changed** · D08-T01 · 推进样章可读稿：in-progress → done (`EVT-e3bb0ed03f4f0e4a`)
+
+## 2026-07-23T01:38:46Z · `working-tree-faad10cc9abc`
+
+快照：[`20260723T013846Z-working-tree-faad10cc9abc.json`](snapshots/20260723T013846Z-working-tree-faad10cc9abc.json)
+
+- **chapter_stage_changed** · CH-03 · Inception：从 Intent 到可执行计划 · 案例：pending → done (`EVT-c7efe099b23771c3`)
+- **chapter_stage_changed** · CH-03 · Inception：从 Intent 到可执行计划 · 实验：pending → done (`EVT-a3a1d07900129eb9`)
+- **chapter_stage_changed** · CH-03 · Inception：从 Intent 到可执行计划 · 图示：pending → done (`EVT-e5d3a2d5eaa34f50`)
+- **chapter_stage_changed** · CH-03 · Inception：从 Intent 到可执行计划 · 框架：pending → done (`EVT-1033048c3e722692`)
+- **chapter_stage_changed** · CH-03 · Inception：从 Intent 到可执行计划 · 问题：pending → done (`EVT-1d532309abad41e5`)
+
+## 2026-07-23T01:48:12Z · `working-tree-0c8cd81cfe88`
+
+快照：[`20260723T014812Z-working-tree-0c8cd81cfe88.json`](snapshots/20260723T014812Z-working-tree-0c8cd81cfe88.json)
+
+- **task_status_changed** · D08-T02 · 渲染驾驶舱核心指标：backlog → in-progress (`EVT-43c068ae77539874`)
+
+## 2026-07-23T01:50:41Z · `working-tree-ceb1519cb922`
+
+快照：[`20260723T015041Z-working-tree-ceb1519cb922.json`](snapshots/20260723T015041Z-working-tree-ceb1519cb922.json)
+
+- **task_status_changed** · D08-T02 · 渲染驾驶舱核心指标：in-progress → done (`EVT-c21961cc16f31b74`)
+
+## 2026-07-23T01:58:32Z · `working-tree-514ac97e2319`
+
+快照：[`20260723T015832Z-working-tree-514ac97e2319.json`](snapshots/20260723T015832Z-working-tree-514ac97e2319.json)
+
+- **task_status_changed** · D08-T03 · 渲染时间线与生产线：backlog → in-progress (`EVT-9eea2b6001984e81`)
+
+## 2026-07-23T02:02:22Z · `working-tree-5f4113d740c0`
+
+快照：[`20260723T020222Z-working-tree-5f4113d740c0.json`](snapshots/20260723T020222Z-working-tree-5f4113d740c0.json)
+
+- **task_status_changed** · D08-T03 · 渲染时间线与生产线：in-progress → done (`EVT-13bc3ef3c6b9c820`)
+
+## 2026-07-23T02:24:05Z · `working-tree-036284430efd`
+
+快照：[`20260723T022405Z-working-tree-036284430efd.json`](snapshots/20260723T022405Z-working-tree-036284430efd.json)
+
+- **task_status_changed** · D09-T01 · 增加任务与产物下钻：backlog → in-progress (`EVT-75ac4e6e8fe65ab5`)
+
+## 2026-07-23T02:29:08Z · `working-tree-d6054bf41c1c`
+
+快照：[`20260723T022908Z-working-tree-d6054bf41c1c.json`](snapshots/20260723T022908Z-working-tree-d6054bf41c1c.json)
+
+- **task_status_changed** · D09-T01 · 增加任务与产物下钻：in-progress → done (`EVT-26aadf1484a85613`)
+
+## 2026-07-23T02:36:52Z · `working-tree-9a238dc010e8`
+
+快照：[`20260723T023652Z-working-tree-9a238dc010e8.json`](snapshots/20260723T023652Z-working-tree-9a238dc010e8.json)
+
+- **task_status_changed** · D09-T02 · 完成响应式与键盘检查：backlog → in-progress (`EVT-46110f68b8a6ef74`)
+
+## 2026-07-23T02:39:53Z · `working-tree-dd887469b5a5`
+
+快照：[`20260723T023953Z-working-tree-dd887469b5a5.json`](snapshots/20260723T023953Z-working-tree-dd887469b5a5.json)
+
+- **task_status_changed** · D09-T02 · 完成响应式与键盘检查：in-progress → done (`EVT-3522e5f826c8b419`)
+
+## 2026-07-23T02:42:37Z · `working-tree-6889f67ebff3`
+
+快照：[`20260723T024237Z-working-tree-6889f67ebff3.json`](snapshots/20260723T024237Z-working-tree-6889f67ebff3.json)
+
+- **task_status_changed** · D09-T03 · 完成 30 秒下一动作测试：backlog → in-progress (`EVT-cf45b527ce940d1e`)
+
+## 2026-07-23T02:46:16Z · `working-tree-8a9f9c0280eb`
+
+快照：[`20260723T024616Z-working-tree-8a9f9c0280eb.json`](snapshots/20260723T024616Z-working-tree-8a9f9c0280eb.json)
+
+- **task_status_changed** · D09-T03 · 完成 30 秒下一动作测试：in-progress → done (`EVT-d7a30f8a48165498`)
+
+## 2026-07-23T02:49:54Z · `working-tree-9f8fa590dabf`
+
+快照：[`20260723T024954Z-working-tree-9f8fa590dabf.json`](snapshots/20260723T024954Z-working-tree-9f8fa590dabf.json)
+
+- **task_status_changed** · D10-T01 · 创建 Issue 与 PR 模板：backlog → in-progress (`EVT-1f8c268b58f41c9d`)
+
+## 2026-07-23T02:51:09Z · `working-tree-2399bc0cacbb`
+
+快照：[`20260723T025109Z-working-tree-2399bc0cacbb.json`](snapshots/20260723T025109Z-working-tree-2399bc0cacbb.json)
+
+- **task_status_changed** · D10-T01 · 创建 Issue 与 PR 模板：in-progress → done (`EVT-0dcf01ad56cd51b7`)
+
+## 2026-07-23T02:54:38Z · `working-tree-307dd553cecb`
+
+快照：[`20260723T025438Z-working-tree-307dd553cecb.json`](snapshots/20260723T025438Z-working-tree-307dd553cecb.json)
+
+- **task_status_changed** · D10-T02 · 定义标签与里程碑：backlog → in-progress (`EVT-8eded905b5f58680`)
+
+## 2026-07-23T02:57:26Z · `working-tree-25b89dd621f5`
+
+快照：[`20260723T025726Z-working-tree-25b89dd621f5.json`](snapshots/20260723T025726Z-working-tree-25b89dd621f5.json)
+
+- **task_status_changed** · D10-T02 · 定义标签与里程碑：in-progress → done (`EVT-12029e4b25f059b1`)
+
+## 2026-07-23T03:00:53Z · `working-tree-84faf1a4895a`
+
+快照：[`20260723T030053Z-working-tree-84faf1a4895a.json`](snapshots/20260723T030053Z-working-tree-84faf1a4895a.json)
+
+- **task_status_changed** · D10-T03 · 配置 GitHub Projects 视图：backlog → in-progress (`EVT-5094c528b5a8fc84`)
+
+## 2026-07-23T03:03:35Z · `working-tree-3974fef0ec1e`
+
+快照：[`20260723T030335Z-working-tree-3974fef0ec1e.json`](snapshots/20260723T030335Z-working-tree-3974fef0ec1e.json)
+
+- **task_status_changed** · D10-T03 · 配置 GitHub Projects 视图：in-progress → done (`EVT-fd99cb66d198163c`)
+
+## 2026-07-23T03:07:16Z · `working-tree-912ee386e759`
+
+快照：[`20260723T030716Z-working-tree-912ee386e759.json`](snapshots/20260723T030716Z-working-tree-912ee386e759.json)
+
+- **task_status_changed** · D11-T01 · 配置 Pull Request 校验：backlog → in-progress (`EVT-76f61e27ae2ccaff`)
+
+## 2026-07-23T03:11:17Z · `working-tree-3bcd2be4a998`
+
+快照：[`20260723T031117Z-working-tree-3bcd2be4a998.json`](snapshots/20260723T031117Z-working-tree-3bcd2be4a998.json)
+
+- **task_status_changed** · D11-T01 · 配置 Pull Request 校验：in-progress → done (`EVT-21042179d51db1d6`)
+
+## 2026-07-23T03:13:22Z · `working-tree-538e618b3cdd`
+
+快照：[`20260723T031322Z-working-tree-538e618b3cdd.json`](snapshots/20260723T031322Z-working-tree-538e618b3cdd.json)
+
+- **task_status_changed** · D11-T02 · 配置 Pages 发布：backlog → in-progress (`EVT-080786953dc9b25b`)
+
+## 2026-07-23T03:18:11Z · `working-tree-a667edde6fb3`
+
+快照：[`20260723T031811Z-working-tree-a667edde6fb3.json`](snapshots/20260723T031811Z-working-tree-a667edde6fb3.json)
+
+- **task_status_changed** · D11-T02 · 配置 Pages 发布：in-progress → done (`EVT-507d5cabe1bb6943`)
+
+## 2026-07-23T03:29:14Z · `working-tree-ba9e12513cdf`
+
+快照：[`20260723T032914Z-working-tree-ba9e12513cdf.json`](snapshots/20260723T032914Z-working-tree-ba9e12513cdf.json)
+
+- **task_status_changed** · D11-T03 · 配置 Tag Release：backlog → in-progress (`EVT-7625ae0a2db1e92f`)
+
+## 2026-07-23T03:33:43Z · `working-tree-04ee6364ef8a`
+
+快照：[`20260723T033343Z-working-tree-04ee6364ef8a.json`](snapshots/20260723T033343Z-working-tree-04ee6364ef8a.json)
+
+- **task_status_changed** · D11-T03 · 配置 Tag Release：in-progress → done (`EVT-76edc7249999a201`)
+
+## 2026-07-23T03:51:25Z · `working-tree-e5d7646a1c0b`
+
+快照：[`20260723T035125Z-working-tree-e5d7646a1c0b.json`](snapshots/20260723T035125Z-working-tree-e5d7646a1c0b.json)
+
+- **task_status_changed** · D12-T01 · 完成样章第一轮审校：backlog → in-progress (`EVT-6dc40a740412fcb7`)
+
+## 2026-07-23T03:55:53Z · `working-tree-c6cfdb713703`
+
+快照：[`20260723T035553Z-working-tree-c6cfdb713703.json`](snapshots/20260723T035553Z-working-tree-c6cfdb713703.json)
+
+- **chapter_stage_changed** · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 审校：pending → done (`EVT-792b57cc0db996f6`)
+- **task_status_changed** · D12-T01 · 完成样章第一轮审校：in-progress → done (`EVT-63b76b2f846d62eb`)
+
+## 2026-07-23T03:57:17Z · `working-tree-0707ada78bf6`
+
+快照：[`20260723T035717Z-working-tree-0707ada78bf6.json`](snapshots/20260723T035717Z-working-tree-0707ada78bf6.json)
+
+- **chapter_stage_changed** · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 审校：done → pending (`EVT-3a7eee64dc39db11`)
+- **chapter_stage_changed** · CH-03 · Inception：从 Intent 到可执行计划 · 审校：pending → done (`EVT-8d5022aaa461056a`)
+
+## 2026-07-23T05:13:06Z · `working-tree-8e0a6139202b`
+
+快照：[`20260723T051306Z-working-tree-8e0a6139202b.json`](snapshots/20260723T051306Z-working-tree-8e0a6139202b.json)
+
+- **task_status_changed** · D12-T02 · 完成学习路线：backlog → in-progress (`EVT-1594ecbb6942b149`)
+
+## 2026-07-23T05:14:53Z · `working-tree-d3219ea30f6b`
+
+快照：[`20260723T051453Z-working-tree-d3219ea30f6b.json`](snapshots/20260723T051453Z-working-tree-d3219ea30f6b.json)
+
+- **task_status_changed** · D12-T02 · 完成学习路线：in-progress → done (`EVT-5954c8103794e08f`)
+
+## 2026-07-23T05:20:56Z · `working-tree-a215a5b7cdcd`
+
+快照：[`20260723T052056Z-working-tree-a215a5b7cdcd.json`](snapshots/20260723T052056Z-working-tree-a215a5b7cdcd.json)
+
+- **task_status_changed** · D12-T03 · 准备试读反馈入口：backlog → in-progress (`EVT-a36334b85ffaeee1`)
+
+## 2026-07-23T05:23:18Z · `working-tree-30dd42252ed3`
+
+快照：[`20260723T052318Z-working-tree-30dd42252ed3.json`](snapshots/20260723T052318Z-working-tree-30dd42252ed3.json)
+
+- **task_status_changed** · D12-T03 · 准备试读反馈入口：in-progress → done (`EVT-0e813131c523e59c`)
+
+## 2026-07-23T05:26:10Z · `working-tree-f89e56da2a12`
+
+快照：[`20260723T052610Z-working-tree-f89e56da2a12.json`](snapshots/20260723T052610Z-working-tree-f89e56da2a12.json)
+
+- **task_status_changed** · D13-T01 · 邀请三位试读者：backlog → in-progress (`EVT-1e00ddd0392d847b`)
+
+## 2026-07-23T05:27:51Z · `working-tree-fc86c72748d9`
+
+快照：[`20260723T052751Z-working-tree-fc86c72748d9.json`](snapshots/20260723T052751Z-working-tree-fc86c72748d9.json)
+
+- **task_status_changed** · D13-T01 · 邀请三位试读者：in-progress → blocked (`EVT-b507df0affd2e6eb`)
+
+## 2026-07-23T05:33:35Z · `working-tree-e9e61c21b45c`
+
+快照：[`20260723T053335Z-working-tree-e9e61c21b45c.json`](snapshots/20260723T053335Z-working-tree-e9e61c21b45c.json)
+
+- **task_status_changed** · D13-T01 · 邀请三位试读者：blocked → done (`EVT-ab43c23cf3ccc998`)
+
+## 2026-07-23T05:42:01Z · `working-tree-09883b6837b4`
+
+快照：[`20260723T054201Z-working-tree-09883b6837b4.json`](snapshots/20260723T054201Z-working-tree-09883b6837b4.json)
+
+- **feedback_decided** · FB-001 · Reader-A/B/C：deferred (`EVT-d44eefb59f302eda`)
+- **task_status_changed** · D13-T02 · 处理发布阻断反馈：backlog → done (`EVT-d11925c6d10596fd`)
+
+## 2026-07-23T05:49:41Z · `working-tree-2cf6f596de2a`
+
+快照：[`20260723T054941Z-working-tree-2cf6f596de2a.json`](snapshots/20260723T054941Z-working-tree-2cf6f596de2a.json)
+
+- **task_status_changed** · D13-T03 · 生成 v0.1 Release Candidate：backlog → done (`EVT-e396ed46a17deb7b`)
+
+## 2026-07-23T06:00:28Z · `working-tree-43f64d73f0d9`
+
+快照：[`20260723T060028Z-working-tree-43f64d73f0d9.json`](snapshots/20260723T060028Z-working-tree-43f64d73f0d9.json)
+
+- **task_status_changed** · D14-T01 · 复核 v0.1 Definition of Done：backlog → done (`EVT-73371c01fbd5226f`)
+
+## 2026-07-23T06:06:24Z · `working-tree-e7a8af7de9b3`
+
+快照：[`20260723T060624Z-working-tree-e7a8af7de9b3.json`](snapshots/20260723T060624Z-working-tree-e7a8af7de9b3.json)
+
+- **task_status_changed** · D14-T02 · 发布 v0.1：backlog → blocked (`EVT-df61d6dc19e493b1`)
+
+## 2026-07-23T06:29:21Z · `working-tree-9c291125f68d`
+
+快照：[`20260723T062921Z-working-tree-9c291125f68d.json`](snapshots/20260723T062921Z-working-tree-9c291125f68d.json)
+
+- **task_status_changed** · D14-T02 · 发布 v0.1：blocked → done (`EVT-537d82e20d6f860e`)

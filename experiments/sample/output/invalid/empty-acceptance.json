@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-03-01",
+  "source_digest": "sha256:5419613351ae5f96a5bde07e230b0e3882371f374013bee90efffcb5e52281ff",
+  "valid": false,
+  "metrics": {
+    "requirement_coverage_percent": 100.0,
+    "orphan_story_count": 0,
+    "acceptance_completeness_percent": 50.0,
+    "invalid_reference_count": 0
+  },
+  "traces": [
+    {
+      "requirement_id": "FR-001",
+      "unit_ids": [
+        "UNIT-001"
+      ],
+      "story_ids": [
+        "STORY-001"
+      ]
+    },
+    {
+      "requirement_id": "NFR-001",
+      "unit_ids": [
+        "UNIT-001"
+      ],
+      "story_ids": [
+        "STORY-002"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": "E_ACCEPTANCE",
+      "path": "$.stories[0].acceptance",
+      "message": "Story 验收必须至少包含一个非空项。",
+      "value": []
+    }
+  ]
+}

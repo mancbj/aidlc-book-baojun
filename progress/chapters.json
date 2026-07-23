@@ -1,0 +1,364 @@
+{
+  "schema_version": "1.0.0",
+  "updated": "2026-07-23T03:56:40Z",
+  "chapters": [
+    {
+      "id": "CH-01",
+      "number": 1,
+      "title": "AI 原生 SDLC：从概率智能到确定性交付",
+      "question": "当代码生成成本骤降而输出仍具有概率性时，为什么需要重新设计 SDLC，而不只是给旧流程增加 AI？",
+      "reader_outcome": "能够区分 AI-Assisted、AI-Driven 与 Agentic 三种范式，并用核心公式解释 AI-DLC 的必要性和边界",
+      "stages": [
+        {
+          "name": "question",
+          "status": "pending"
+        },
+        {
+          "name": "framework",
+          "status": "pending"
+        },
+        {
+          "name": "example",
+          "status": "pending"
+        },
+        {
+          "name": "experiment",
+          "status": "pending"
+        },
+        {
+          "name": "figure",
+          "status": "pending"
+        },
+        {
+          "name": "review",
+          "status": "pending"
+        }
+      ],
+      "evidence_links": [],
+      "updated": "2026-07-22T05:39:06Z"
+    },
+    {
+      "id": "CH-02",
+      "number": 2,
+      "title": "人的判断与反向对话",
+      "question": "当 AI 主动提议、分解和执行时，人应如何设定目的地、保留责任并选择验证检查点？",
+      "reader_outcome": "能够定义意图、边界、不可委托判断、人工检查点和最终责任人",
+      "stages": [
+        {
+          "name": "question",
+          "status": "pending"
+        },
+        {
+          "name": "framework",
+          "status": "pending"
+        },
+        {
+          "name": "example",
+          "status": "pending"
+        },
+        {
+          "name": "experiment",
+          "status": "pending"
+        },
+        {
+          "name": "figure",
+          "status": "pending"
+        },
+        {
+          "name": "review",
+          "status": "pending"
+        }
+      ],
+      "evidence_links": [],
+      "updated": "2026-07-22T05:39:06Z"
+    },
+    {
+      "id": "CH-03",
+      "number": 3,
+      "title": "Inception：从 Intent 到可执行计划",
+      "question": "AI 如何把一个高层 Intent 分解成可独立交付的 Unit、可验收的 Story 和可执行的 Bolt，而不丢失人的目标与边界？",
+      "reader_outcome": "能够完成 Intent、Requirements、System Context、Unit、Story 与 Bolt Plan 的可追溯分解",
+      "stages": [
+        {
+          "name": "question",
+          "status": "done"
+        },
+        {
+          "name": "framework",
+          "status": "done"
+        },
+        {
+          "name": "example",
+          "status": "done"
+        },
+        {
+          "name": "experiment",
+          "status": "done"
+        },
+        {
+          "name": "figure",
+          "status": "done"
+        },
+        {
+          "name": "review",
+          "status": "done"
+        }
+      ],
+      "evidence_links": [
+        "book/chapters/sample.md",
+        "planning/sample-chapter-decision.md",
+        "planning/sample-experiment.md",
+        "experiments/sample/README.md",
+        "experiments/sample/output/sample.json",
+        "book/images/fig0-1.svg",
+        "planning/reviews/sample-chapter.md"
+      ],
+      "updated": "2026-07-23T03:54:35Z"
+    },
+    {
+      "id": "CH-04",
+      "number": 4,
+      "title": "上下文工程：Memory Bank 与 Standards",
+      "question": "如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？",
+      "reader_outcome": "能够设计最小 Memory Bank、Standards 目录、工件引用和变更同步规则",
+      "stages": [
+        {
+          "name": "question",
+          "status": "pending"
+        },
+        {
+          "name": "framework",
+          "status": "pending"
+        },
+        {
+          "name": "example",
+          "status": "pending"
+        },
+        {
+          "name": "experiment",
+          "status": "pending"
+        },
+        {
+          "name": "figure",
+          "status": "pending"
+        },
+        {
+          "name": "review",
+          "status": "pending"
+        }
+      ],
+      "evidence_links": [],
+      "updated": "2026-07-22T05:39:06Z"
+    },
+    {
+      "id": "CH-05",
+      "number": 5,
+      "title": "Bolts：为快速执行选择正确轨道",
+      "question": "如何按领域复杂度、风险和可逆性选择 Bolt 范围、类型与阶段门禁，使速度提高而错误不级联？",
+      "reader_outcome": "能够拆分小时到天级 Bolt，并在 DDD Construction 与 Simple Construction 之间作出有依据的选择",
+      "stages": [
+        {
+          "name": "question",
+          "status": "pending"
+        },
+        {
+          "name": "framework",
+          "status": "pending"
+        },
+        {
+          "name": "example",
+          "status": "pending"
+        },
+        {
+          "name": "experiment",
+          "status": "pending"
+        },
+        {
+          "name": "figure",
+          "status": "pending"
+        },
+        {
+          "name": "review",
+          "status": "pending"
+        }
+      ],
+      "evidence_links": [],
+      "updated": "2026-07-22T05:39:06Z"
+    },
+    {
+      "id": "CH-06",
+      "number": 6,
+      "title": "Exsecutio：把提议贯彻为交付候选",
+      "question": "如何让 AI 沿计划、执行、验证、纠偏和 Walkthrough 持续推进，直到生成物满足完成定义并可被下一阶段接收？",
+      "reader_outcome": "能够运行完整 Bolt，并保留阶段决策、文件变化、测试结果、失败修正与完成凭证",
+      "stages": [
+        {
+          "name": "question",
+          "status": "pending"
+        },
+        {
+          "name": "framework",
+          "status": "pending"
+        },
+        {
+          "name": "example",
+          "status": "pending"
+        },
+        {
+          "name": "experiment",
+          "status": "pending"
+        },
+        {
+          "name": "figure",
+          "status": "pending"
+        },
+        {
+          "name": "review",
+          "status": "pending"
+        }
+      ],
+      "evidence_links": [],
+      "updated": "2026-07-22T05:39:06Z"
+    },
+    {
+      "id": "CH-07",
+      "number": 7,
+      "title": "验证：把人类检查点变成有效损失函数",
+      "question": "如何组合确定性检查、独立测试、模型评审和人工判断，证明 AI 参与的结果正确，而不是把模型自评当证据？",
+      "reader_outcome": "能够按复杂度、可逆性、安全影响和数据风险选择验证强度并建立分层证据链",
+      "stages": [
+        {
+          "name": "question",
+          "status": "pending"
+        },
+        {
+          "name": "framework",
+          "status": "pending"
+        },
+        {
+          "name": "example",
+          "status": "pending"
+        },
+        {
+          "name": "experiment",
+          "status": "pending"
+        },
+        {
+          "name": "figure",
+          "status": "pending"
+        },
+        {
+          "name": "review",
+          "status": "pending"
+        }
+      ],
+      "evidence_links": [],
+      "updated": "2026-07-22T05:39:06Z"
+    },
+    {
+      "id": "CH-08",
+      "number": 8,
+      "title": "Operations：从交付候选到可持续运行",
+      "question": "如何通过 Build、Deploy、Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？",
+      "reader_outcome": "能够定义构建凭证、环境门禁、部署策略、冒烟验证、监控指标和回滚 Runbook",
+      "stages": [
+        {
+          "name": "question",
+          "status": "pending"
+        },
+        {
+          "name": "framework",
+          "status": "pending"
+        },
+        {
+          "name": "example",
+          "status": "pending"
+        },
+        {
+          "name": "experiment",
+          "status": "pending"
+        },
+        {
+          "name": "figure",
+          "status": "pending"
+        },
+        {
+          "name": "review",
+          "status": "pending"
+        }
+      ],
+      "evidence_links": [],
+      "updated": "2026-07-22T05:39:06Z"
+    },
+    {
+      "id": "CH-09",
+      "number": 9,
+      "title": "适配性工程：选择正确的 Flow 与治理强度",
+      "question": "如何根据任务复杂度、代码库现状、监管要求和团队规模，在 Simple、FIRE 与 AI-DLC 之间选择，而不过度或不足工程化？",
+      "reader_outcome": "能够使用风险与仪式矩阵选择 Flow、检查点数量和运行范围并解释选择代价",
+      "stages": [
+        {
+          "name": "question",
+          "status": "pending"
+        },
+        {
+          "name": "framework",
+          "status": "pending"
+        },
+        {
+          "name": "example",
+          "status": "pending"
+        },
+        {
+          "name": "experiment",
+          "status": "pending"
+        },
+        {
+          "name": "figure",
+          "status": "pending"
+        },
+        {
+          "name": "review",
+          "status": "pending"
+        }
+      ],
+      "evidence_links": [],
+      "updated": "2026-07-22T05:39:06Z"
+    },
+    {
+      "id": "CH-10",
+      "number": 10,
+      "title": "组织与度量：从 Agent 分工到研发操作系统",
+      "question": "如何重构人、Agent、协作节奏与度量体系，并判断哪些 AI-DLC 实践值得在组织内规模化？",
+      "reader_outcome": "能够设计 Agent 与人的责任图、Mob 协作节奏和业务价值记分卡",
+      "stages": [
+        {
+          "name": "question",
+          "status": "pending"
+        },
+        {
+          "name": "framework",
+          "status": "pending"
+        },
+        {
+          "name": "example",
+          "status": "pending"
+        },
+        {
+          "name": "experiment",
+          "status": "pending"
+        },
+        {
+          "name": "figure",
+          "status": "pending"
+        },
+        {
+          "name": "review",
+          "status": "pending"
+        }
+      ],
+      "evidence_links": [],
+      "updated": "2026-07-22T05:39:06Z"
+    }
+  ]
+}

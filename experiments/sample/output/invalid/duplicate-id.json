@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-03-01",
+  "source_digest": "sha256:6a6eec48927216cbf32582543135b0ae820dc126a9956d50af39d725a7dc2bcf",
+  "valid": false,
+  "metrics": {
+    "requirement_coverage_percent": 100.0,
+    "orphan_story_count": 0,
+    "acceptance_completeness_percent": 100.0,
+    "invalid_reference_count": 0
+  },
+  "traces": [
+    {
+      "requirement_id": "FR-001",
+      "unit_ids": [
+        "UNIT-001"
+      ],
+      "story_ids": [
+        "STORY-001"
+      ]
+    },
+    {
+      "requirement_id": "NFR-001",
+      "unit_ids": [
+        "UNIT-001"
+      ],
+      "story_ids": [
+        "STORY-002"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": "E_DUPLICATE_ID",
+      "path": "$.units[1].id",
+      "message": "同类对象 ID 重复。",
+      "value": "UNIT-001"
+    }
+  ]
+}

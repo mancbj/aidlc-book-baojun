@@ -1,0 +1,4 @@
+interface:
+  display_name: "SVG Technical Diagram"
+  short_description: "生成技术专著与顶级咨询报告质感的可编辑 SVG 图表"
+  default_prompt: "Use $svg-technical-diagram to create a precise, publication-grade editable SVG diagram."

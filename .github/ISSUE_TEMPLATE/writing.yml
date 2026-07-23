@@ -1,0 +1,59 @@
+name: 写作任务
+description: 创建章节、审校、图示或说明文档任务
+title: "[Writing] "
+labels:
+  - "type:writing"
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: 使用 progress/tasks.json 中的稳定 ID；尚未入池时填写 N/A 并在目标中解释。
+      placeholder: D01-T01
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: [must, should, could]
+    validations:
+      required: true
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options: [foundation, progress, github, release]
+    validations:
+      required: true
+  - type: input
+    id: chapter
+    attributes:
+      label: Chapter
+      description: 适用时填写 CH-NN；不适用填写 N/A。
+      placeholder: CH-02
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标
+      description: 描述读者或项目在完成后能够观察到的结果。
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: 产物
+      description: 每行一个仓库相对路径。
+      placeholder: book/chapters/ch02.md
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 使用可判断通过/失败的清单。
+      value: "- [ ] "
+    validations:
+      required: true

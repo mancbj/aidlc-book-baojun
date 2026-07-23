@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-03-01",
+  "source_digest": "sha256:56d07a10d4788bd964624ec5ac49248125c81cde275dc7152fe8872f07829ced",
+  "valid": false,
+  "metrics": {
+    "requirement_coverage_percent": 50.0,
+    "orphan_story_count": 0,
+    "acceptance_completeness_percent": 100.0,
+    "invalid_reference_count": 1
+  },
+  "traces": [
+    {
+      "requirement_id": "FR-001",
+      "unit_ids": [],
+      "story_ids": []
+    },
+    {
+      "requirement_id": "NFR-001",
+      "unit_ids": [
+        "UNIT-001"
+      ],
+      "story_ids": [
+        "STORY-001",
+        "STORY-002"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": "E_UNKNOWN_REF",
+      "path": "$.units[0].requirement_refs",
+      "message": "Unit 引用了未知 Requirement。",
+      "value": "FR-404"
+    }
+  ]
+}

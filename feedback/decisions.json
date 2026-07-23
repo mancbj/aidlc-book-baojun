@@ -1,0 +1,40 @@
+{
+  "decisions": [
+    {
+      "acceptance": [],
+      "created_at": "2026-07-23T05:42:01Z",
+      "decided_at": "2026-07-23T05:42:01Z",
+      "decision": "deferred",
+      "id": "FB-001",
+      "linked_task": "",
+      "object": "Reader-A/B/C",
+      "reason": "未收到真实回复时不能伪造 responded；v0.1 保留反馈入口和匿名槽位，后续回复进入下一周期处理。",
+      "revisit_when": "任一 Reader 槽位收到真实回复，或 v0.2-draft 激活后的第一次反馈整理。",
+      "source": "release-readiness",
+      "summary": "截至 D13-T02，三位试读者已线下邀请但尚未收到可记录回复；按 v0.1 policy 作为 known gap，不阻断 RC。",
+      "target_cycle": "v0.2-draft"
+    }
+  ],
+  "readers": [
+    {
+      "id": "Reader-A",
+      "invited_at": "2026-07-23T05:32:21Z",
+      "responded_at": null,
+      "status": "invited"
+    },
+    {
+      "id": "Reader-B",
+      "invited_at": "2026-07-23T05:32:21Z",
+      "responded_at": null,
+      "status": "invited"
+    },
+    {
+      "id": "Reader-C",
+      "invited_at": "2026-07-23T05:32:21Z",
+      "responded_at": null,
+      "status": "invited"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "updated": "2026-07-23T05:42:01Z"
+}

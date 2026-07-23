@@ -1,0 +1,923 @@
+{
+  "captured_at": "2026-07-22T05:26:04Z",
+  "events": [
+    {
+      "actor": "author-with-codex",
+      "after": "Day 1 基础定位完成：核心公式、目标读者与十章目录已版本化",
+      "before": null,
+      "id": "EVT-e992f809a4bac1f2",
+      "object_id": "DAY-01",
+      "object_type": "project",
+      "occurred_at": "2026-07-22T05:26:04Z",
+      "source_id": "working-tree-cd36e91527b5",
+      "summary": "Day 1 基础定位完成：核心公式、目标读者与十章目录已版本化",
+      "type": "milestone_reached"
+    },
+    {
+      "actor": "author-with-codex",
+      "after": "done",
+      "before": "in-progress",
+      "id": "EVT-e23b916a0d8e6a7a",
+      "object_id": "D01-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-22T05:26:04Z",
+      "source_id": "working-tree-cd36e91527b5",
+      "summary": "D01-T03 · 确认十章目录：in-progress → done",
+      "type": "task_status_changed"
+    }
+  ],
+  "metrics": {
+    "blockers": [],
+    "chapters": {
+      "rows": [
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-01",
+          "id": "CH-01",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 1,
+          "percent": 0.0,
+          "question": "AI-DLC 要解决的根本矛盾是什么？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "概率智能与确定性交付",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-02",
+          "id": "CH-02",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 2,
+          "percent": 0.0,
+          "question": "哪些判断必须由人保留，又如何把它们转化为 AI 可执行的约束？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "意图、边界与责任",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-03",
+          "id": "CH-03",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 3,
+          "percent": 0.0,
+          "question": "如何把生成、推理、工具调用与执行组合成边界清晰的工程能力？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "从生成模型到工程能力",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-04",
+          "id": "CH-04",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 4,
+          "percent": 0.0,
+          "question": "如何组织上下文、记忆与交接，使单个或多个 Agent 在长任务中持续对齐？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "上下文与 Agent 协作",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-05",
+          "id": "CH-05",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 5,
+          "percent": 0.0,
+          "question": "如何用版本化事实、规格、接口和质量门禁约束概率性输出？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "Engineering：为不确定性铺设工程轨道",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-06",
+          "id": "CH-06",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 6,
+          "percent": 0.0,
+          "question": "如何设计持续推进执行、验证、纠偏和发布的闭环，直到生成物成为可交付系统？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "Exsecutio：把生成贯彻到交付",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-07",
+          "id": "CH-07",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 7,
+          "percent": 0.0,
+          "question": "如何验证 AI 参与的结果正确，而不把模型自评当作交付证据？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "验证：用独立证据证明正确",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-08",
+          "id": "CH-08",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 8,
+          "percent": 0.0,
+          "question": "如何发现运行偏差、完成回滚与恢复，并把反馈转化为下一轮改进？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "反馈与恢复：在偏差中持续演进",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-09",
+          "id": "CH-09",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 9,
+          "percent": 0.0,
+          "question": "如何把个人 AI 工作流产品化为共享平台，同时控制安全、合规与成本？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "平台与治理：从个人实践到团队能力",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-10",
+          "id": "CH-10",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 10,
+          "percent": 0.0,
+          "question": "如何重构角色、协作节奏与度量体系，并决定哪些 AI-DLC 实践值得规模化？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "组织与度量：规模化 AI-DLC",
+          "total": 6
+        }
+      ],
+      "stage_totals": {
+        "example": {
+          "done": 0,
+          "label": "案例",
+          "percent": 0.0,
+          "total": 10
+        },
+        "experiment": {
+          "done": 0,
+          "label": "实验",
+          "percent": 0.0,
+          "total": 10
+        },
+        "figure": {
+          "done": 0,
+          "label": "图示",
+          "percent": 0.0,
+          "total": 10
+        },
+        "framework": {
+          "done": 0,
+          "label": "框架",
+          "percent": 0.0,
+          "total": 10
+        },
+        "question": {
+          "done": 0,
+          "label": "问题",
+          "percent": 0.0,
+          "total": 10
+        },
+        "review": {
+          "done": 0,
+          "label": "审校",
+          "percent": 0.0,
+          "total": 10
+        }
+      },
+      "total": 10
+    },
+    "cycles": {
+      "active_cycle": null,
+      "href": "details.html#cycles",
+      "preview_count": 1,
+      "rows": [
+        {
+          "carried_gap_total": 0,
+          "carried_task_total": 0,
+          "href": "details.html#cycle-v0.2-draft",
+          "id": "v0.2-draft",
+          "monthly_target": "v0.2 readable release",
+          "status": "preview",
+          "task_done": 0,
+          "task_total": 3
+        }
+      ]
+    },
+    "experiments": {
+      "href": "details.html#experiments",
+      "status_counts": {
+        "planned": 29,
+        "ready": 1
+      },
+      "total": 30,
+      "triage_counts": {
+        "ALREADY": 1,
+        "KEEP-EXT": 9,
+        "SHIP": 20
+      }
+    },
+    "feedback": {
+      "decision_counts": {
+        "accepted": 0,
+        "deferred": 0,
+        "pending": 0,
+        "rejected": 0
+      },
+      "href": "details.html#feedback",
+      "reader_counts": {
+        "invited": 0,
+        "not-invited": 3,
+        "responded": 0
+      },
+      "total": 0,
+      "unresolved_accepted": 0
+    },
+    "generated_at": "2026-07-22T05:26:04Z",
+    "goal": {
+      "all_tasks_done": false,
+      "current_day": 2,
+      "days_remaining": 12,
+      "name": "两周形成可发布 v0.1",
+      "total_days": 14
+    },
+    "latest_fact_update": "2026-07-22T05:26:04Z",
+    "next_actions": [
+      {
+        "acceptance": [
+          {
+            "passed": false,
+            "text": "职责目录和事实源边界已说明"
+          }
+        ],
+        "artifacts": [
+          {
+            "path": "docs/REPOSITORY-GUIDE.md",
+            "required": true
+          }
+        ],
+        "day": 2,
+        "dependencies": [
+          "D01-T03"
+        ],
+        "href": "details.html#task-D02-T01",
+        "id": "D02-T01",
+        "owner": "author",
+        "planned_date": "2026-07-22",
+        "priority": "must",
+        "status": "backlog",
+        "status_label": "待排期",
+        "title": "创建仓库骨架"
+      }
+    ],
+    "recent_events": [
+      {
+        "actor": "codex",
+        "after": "initialized",
+        "before": null,
+        "id": "EVT-0a41bb39ebd9ba18",
+        "object_id": "github-writing-system",
+        "object_type": "system",
+        "occurred_at": "2026-07-21T08:39:07Z",
+        "source_id": "working-tree-5c9b6ebc6169",
+        "summary": "进度系统已建立第一份可审计基线",
+        "type": "system_initialized"
+      },
+      {
+        "actor": "author-with-codex",
+        "after": "D01-T01 核心公式与书籍封面已纳入书稿",
+        "before": null,
+        "id": "EVT-83b96d851bc5c268",
+        "object_id": "D01-T01-assets",
+        "object_type": "project",
+        "occurred_at": "2026-07-22T03:51:07Z",
+        "source_id": "working-tree-5028e5732c36",
+        "summary": "D01-T01 核心公式与书籍封面已纳入书稿",
+        "type": "milestone_reached"
+      },
+      {
+        "actor": "author-with-codex",
+        "after": "done",
+        "before": "ready",
+        "id": "EVT-a3d1295ca3df40ae",
+        "object_id": "D01-T01",
+        "object_type": "task",
+        "occurred_at": "2026-07-22T03:51:07Z",
+        "source_id": "working-tree-5028e5732c36",
+        "summary": "D01-T01 · 写核心公式：ready → done",
+        "type": "task_status_changed"
+      },
+      {
+        "actor": "author-with-codex",
+        "after": "in-progress",
+        "before": "backlog",
+        "id": "EVT-82572a31f5f6b50c",
+        "object_id": "D01-T02",
+        "object_type": "task",
+        "occurred_at": "2026-07-22T03:56:25Z",
+        "source_id": "working-tree-70e064d2e7a5",
+        "summary": "D01-T02 · 确定目标读者：backlog → in-progress",
+        "type": "task_status_changed"
+      },
+      {
+        "actor": "author-with-codex",
+        "after": "done",
+        "before": "in-progress",
+        "id": "EVT-e9984d7f4174cd9b",
+        "object_id": "D01-T02",
+        "object_type": "task",
+        "occurred_at": "2026-07-22T03:57:15Z",
+        "source_id": "working-tree-176fa4180948",
+        "summary": "D01-T02 · 确定目标读者：in-progress → done",
+        "type": "task_status_changed"
+      },
+      {
+        "actor": "author-with-codex",
+        "after": "in-progress",
+        "before": "backlog",
+        "id": "EVT-0afb00d062431168",
+        "object_id": "D01-T03",
+        "object_type": "task",
+        "occurred_at": "2026-07-22T05:22:30Z",
+        "source_id": "working-tree-29031b17d6c3",
+        "summary": "D01-T03 · 确认十章目录：backlog → in-progress",
+        "type": "task_status_changed"
+      },
+      {
+        "actor": "author-with-codex",
+        "after": "Day 1 基础定位完成：核心公式、目标读者与十章目录已版本化",
+        "before": null,
+        "id": "EVT-e992f809a4bac1f2",
+        "object_id": "DAY-01",
+        "object_type": "project",
+        "occurred_at": "2026-07-22T05:26:04Z",
+        "source_id": "working-tree-cd36e91527b5",
+        "summary": "Day 1 基础定位完成：核心公式、目标读者与十章目录已版本化",
+        "type": "milestone_reached"
+      },
+      {
+        "actor": "author-with-codex",
+        "after": "done",
+        "before": "in-progress",
+        "id": "EVT-e23b916a0d8e6a7a",
+        "object_id": "D01-T03",
+        "object_type": "task",
+        "occurred_at": "2026-07-22T05:26:04Z",
+        "source_id": "working-tree-cd36e91527b5",
+        "summary": "D01-T03 · 确认十章目录：in-progress → done",
+        "type": "task_status_changed"
+      }
+    ],
+    "release_message": "",
+    "schema_version": "1.0.0",
+    "source_id": "working-tree-cd36e91527b5",
+    "tasks": {
+      "done": 3,
+      "percent": 7.1,
+      "priority": {
+        "could": {
+          "done": 0,
+          "has_sample": false,
+          "percent": 0.0,
+          "total": 0
+        },
+        "must": {
+          "done": 3,
+          "has_sample": true,
+          "percent": 7.5,
+          "total": 40
+        },
+        "should": {
+          "done": 0,
+          "has_sample": true,
+          "percent": 0.0,
+          "total": 2
+        }
+      },
+      "status_counts": {
+        "backlog": 39,
+        "blocked": 0,
+        "done": 3,
+        "in-progress": 0,
+        "ready": 0,
+        "review": 0
+      },
+      "timeline": [
+        {
+          "blocked": 0,
+          "day": 1,
+          "done": 3,
+          "href": "details.html#day-01",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 2,
+          "done": 0,
+          "href": "details.html#day-02",
+          "is_current": true,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 3,
+          "done": 0,
+          "href": "details.html#day-03",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 4,
+          "done": 0,
+          "href": "details.html#day-04",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 5,
+          "done": 0,
+          "href": "details.html#day-05",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 6,
+          "done": 0,
+          "href": "details.html#day-06",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 7,
+          "done": 0,
+          "href": "details.html#day-07",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 8,
+          "done": 0,
+          "href": "details.html#day-08",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 9,
+          "done": 0,
+          "href": "details.html#day-09",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 10,
+          "done": 0,
+          "href": "details.html#day-10",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 11,
+          "done": 0,
+          "href": "details.html#day-11",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 12,
+          "done": 0,
+          "href": "details.html#day-12",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 13,
+          "done": 0,
+          "href": "details.html#day-13",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 14,
+          "done": 0,
+          "href": "details.html#day-14",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        }
+      ],
+      "total": 42,
+      "weighted_percent": 7.3
+    }
+  },
+  "schema_version": "1.0.0",
+  "source_id": "working-tree-cd36e91527b5"
+}

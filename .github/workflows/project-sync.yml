@@ -1,0 +1,96 @@
+name: Project Projection
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: OWNER/REPO
+        required: true
+        type: string
+      project_owner:
+        description: Project user or organization login
+        required: true
+        type: string
+      project_number:
+        description: Project V2 number
+        required: true
+        type: number
+      project_owner_type:
+        description: user or organization
+        required: true
+        default: user
+        type: choice
+        options: [user, organization]
+      apply:
+        description: Apply remote Issue/Project mutations
+        required: true
+        default: false
+        type: boolean
+      force_reproject:
+        description: Repository status overwrites an explicitly reported Project divergence
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  project:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: Validate facts before projection
+        run: python3 scripts/validate_project.py
+      - name: Build the one-way projection without secrets
+        if: ${{ inputs.apply == false }}
+        env:
+          REPOSITORY: ${{ inputs.repository }}
+          PROJECT_OWNER: ${{ inputs.project_owner }}
+          PROJECT_NUMBER: ${{ inputs.project_number }}
+          PROJECT_OWNER_TYPE: ${{ inputs.project_owner_type }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/sync_github_project.py \
+            --repository "$REPOSITORY" \
+            --project-owner "$PROJECT_OWNER" \
+            --project-number "$PROJECT_NUMBER" \
+            --project-owner-type "$PROJECT_OWNER_TYPE" \
+            --report .artifacts/project-sync-report.json
+      - name: Apply the explicitly authorized one-way projection
+        if: ${{ inputs.apply == true }}
+        env:
+          PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+          REPOSITORY: ${{ inputs.repository }}
+          PROJECT_OWNER: ${{ inputs.project_owner }}
+          PROJECT_NUMBER: ${{ inputs.project_number }}
+          PROJECT_OWNER_TYPE: ${{ inputs.project_owner_type }}
+          FORCE_REPROJECT: ${{ inputs.force_reproject }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(
+            --repository "$REPOSITORY"
+            --project-owner "$PROJECT_OWNER"
+            --project-number "$PROJECT_NUMBER"
+            --project-owner-type "$PROJECT_OWNER_TYPE"
+            --apply
+            --report .artifacts/project-sync-report.json
+          )
+          if [ "$FORCE_REPROJECT" = "true" ]; then args+=(--force-reproject); fi
+          python3 scripts/sync_github_project.py "${args[@]}"
+      - name: Confirm repository facts were not modified
+        run: git diff --exit-code -- progress/tasks.json progress/chapters.json progress/experiments.json
+      - name: Upload projection report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: project-sync-report
+          path: .artifacts/project-sync-report.json
+          retention-days: 14
+          if-no-files-found: warn

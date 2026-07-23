@@ -1,0 +1,18 @@
+labels:
+  - {name: "type:writing", color: "0f62fe", description: "书稿、图示或编辑工作"}
+  - {name: "type:experiment", color: "8a3ffc", description: "可复现实验与证据"}
+  - {name: "type:engineering", color: "005d5d", description: "工具、脚本和自动化"}
+  - {name: "type:review", color: "007d79", description: "事实、技术、语言或安全审校"}
+  - {name: "type:release", color: "24a148", description: "构建与版本发布"}
+  - {name: "type:bug", color: "da1e28", description: "可复现缺陷"}
+  - {name: "type:feedback", color: "6929c4", description: "读者或协作者反馈"}
+  - {name: "priority:must", color: "a2191f", description: "v0.1 必须完成"}
+  - {name: "priority:should", color: "f1c21b", description: "重要但可降级"}
+  - {name: "priority:could", color: "c6c6c6", description: "有余力时完成"}
+  - {name: "phase:foundation", color: "78a9ff", description: "事实与基础结构"}
+  - {name: "phase:progress", color: "4589ff", description: "进度、事件和驾驶舱"}
+  - {name: "phase:github", color: "0043ce", description: "GitHub 协作和自动化"}
+  - {name: "phase:release", color: "198038", description: "审校、发布和反馈"}
+  - {name: "object:chapter", color: "a56eff", description: "章节生产线"}
+  - {name: "object:experiment", color: "009d9a", description: "实验治理队列"}
+  - {name: "status:blocked", color: "fa4d56", description: "存在原因和解除动作的阻塞"}

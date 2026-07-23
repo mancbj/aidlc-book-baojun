@@ -1,0 +1,260 @@
+#!/usr/bin/env python3
+"""Build a self-contained GitHub Pages tree with source metadata."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import html
+import json
+import os
+import shutil
+import tempfile
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Dict, Iterable, Optional, Sequence
+
+from progress_core import load_facts, source_identity
+
+
+GENERATED_MARKER = ".aidlc-generated"
+
+
+def now_utc() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def source_id(root: Path) -> str:
+    return source_identity(root, load_facts(root))
+
+
+def _copy_if_exists(root: Path, relative: str, destination: Path) -> None:
+    source = root / relative
+    if not source.exists():
+        return
+    target = destination / relative
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if source.is_dir():
+        shutil.copytree(source, target, dirs_exist_ok=True)
+    else:
+        shutil.copy2(source, target)
+
+
+def _replace_generated_directory(staged: Path, output: Path) -> None:
+    output = output.resolve()
+    if output.exists():
+        marker = output / GENERATED_MARKER
+        if not marker.is_file():
+            raise RuntimeError(
+                f"拒绝替换没有 {GENERATED_MARKER} 标记的目录：{output}"
+            )
+        shutil.rmtree(output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(staged), str(output))
+
+
+def _publish_index(source: str, commit: str, generated_at: str, workflow_run: str) -> str:
+    return f"""<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>AI-DLC Book · Pages 发布成功</title>
+  <style>
+    :root {{
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --text: #252a31;
+      --muted: #5f6671;
+      --border: #dde1e7;
+      --blue: #0f62fe;
+    }}
+    * {{ box-sizing: border-box; }}
+    body {{
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif;
+      line-height: 1.5;
+    }}
+    main {{
+      width: min(760px, calc(100vw - 48px));
+      padding: 40px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }}
+    .eyebrow {{
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }}
+    h1 {{ margin: 0 0 12px; font-size: clamp(28px, 4vw, 44px); line-height: 1.12; }}
+    p {{ margin: 0 0 24px; color: var(--muted); }}
+    dl {{
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr);
+      gap: 10px 18px;
+      margin: 0 0 28px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fbfcfe;
+    }}
+    dt {{ color: var(--muted); }}
+    dd {{ margin: 0; overflow-wrap: anywhere; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
+    a.button {{
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 18px;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 650;
+    }}
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">GitHub Pages · Published</p>
+    <h1>AI-DLC Book 发布页面已生成</h1>
+    <p>这是可审计的 Pages 入口。进入驾驶舱前，先确认本次页面对应的来源提交和事实源身份。</p>
+    <dl aria-label="发布来源">
+      <dt>Source commit</dt><dd>{html.escape(commit)}</dd>
+      <dt>Source facts</dt><dd>{html.escape(source)}</dd>
+      <dt>Generated at</dt><dd>{html.escape(generated_at)}</dd>
+      <dt>Workflow run</dt><dd>{html.escape(workflow_run)}</dd>
+    </dl>
+    <a class="button" href="site/index.html">打开写作进度驾驶舱 →</a>
+  </main>
+</body>
+</html>
+"""
+
+
+def build_pages(
+    root: Path,
+    output: Path,
+    generated_at: Optional[str] = None,
+    commit_sha: Optional[str] = None,
+    workflow_run: Optional[str] = None,
+) -> Dict[str, object]:
+    root = root.resolve()
+    output = output.resolve()
+    if output == root or root in output.parents and output.name in {"site", "progress", "docs", "book"}:
+        raise RuntimeError("输出目录不能覆盖仓库根目录或人工/权威目录。")
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    temporary = Path(tempfile.mkdtemp(prefix=".pages-build-", dir=str(output.parent)))
+    try:
+        (temporary / GENERATED_MARKER).write_text("generated by scripts/prepare_pages.py\n", encoding="utf-8")
+        for relative in (
+            ".github",
+            "site",
+            "progress",
+            "book",
+            "experiments",
+            "planning",
+            "docs",
+            "scripts",
+            "tests",
+            "feedback",
+            "releases",
+            "writer-chats",
+        ):
+            _copy_if_exists(root, relative, temporary)
+        for relative in (
+            "README.md",
+            "EXPERIMENT_TRIAGE.md",
+            "memory-bank/intents/001-github-writing-system/inception-log.md",
+        ):
+            _copy_if_exists(root, relative, temporary)
+
+        timestamp = generated_at or now_utc()
+        commit = commit_sha or os.environ.get("GITHUB_SHA") or source_id(root)
+        source = source_id(root)
+        run_id = workflow_run or os.environ.get("GITHUB_RUN_ID", "local")
+        (temporary / ".nojekyll").write_text("", encoding="utf-8")
+        (temporary / "index.html").write_text(
+            _publish_index(source, commit, timestamp, run_id),
+            encoding="utf-8",
+        )
+        files = {}
+        for path in sorted(temporary.rglob("*")):
+            if path.is_file() and path.name not in {"publish-manifest.json", GENERATED_MARKER}:
+                relative = str(path.relative_to(temporary))
+                files[relative] = {"sha256": file_sha256(path), "bytes": path.stat().st_size}
+        manifest = {
+            "schema_version": "1.0.0",
+            "source_id": source,
+            "commit_sha": commit,
+            "generated_at": timestamp,
+            "workflow_run": run_id,
+            "entrypoint": "site/index.html",
+            "file_count": len(files),
+            "files": files,
+        }
+        (temporary / "publish-manifest.json").write_text(
+            json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        _replace_generated_directory(temporary, output)
+        return manifest
+    except Exception:
+        if temporary.exists():
+            shutil.rmtree(temporary)
+        raise
+
+
+def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="构造 GitHub Pages 发布树。")
+    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--output", type=Path, default=Path(".artifacts/pages"))
+    parser.add_argument("--generated-at")
+    parser.add_argument("--commit-sha")
+    parser.add_argument("--workflow-run")
+    return parser.parse_args(argv)
+
+
+def main(argv: Optional[Sequence[str]] = None) -> int:
+    args = parse_args(argv)
+    root = args.root.resolve()
+    output = args.output if args.output.is_absolute() else root / args.output
+    try:
+        manifest = build_pages(
+            root,
+            output,
+            generated_at=args.generated_at,
+            commit_sha=args.commit_sha,
+            workflow_run=args.workflow_run,
+        )
+    except (OSError, RuntimeError, json.JSONDecodeError) as exc:
+        print(f"[ERROR] Pages build failed: {exc}")
+        return 1
+    print(
+        f"[INFO] Pages build passed: output={output}, files={manifest['file_count']}, "
+        f"source={manifest['source_id']}, commit={manifest['commit_sha']}"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

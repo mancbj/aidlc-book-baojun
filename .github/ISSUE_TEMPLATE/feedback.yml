@@ -1,0 +1,48 @@
+name: 读者反馈
+description: 提交阅读、实验复现或使用体验反馈
+title: "[Feedback] "
+labels:
+  - "type:feedback"
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: 若反馈不对应现有任务，填写 N/A。
+      placeholder: D12-T02 或 N/A
+    validations:
+      required: true
+  - type: input
+    id: object
+    attributes:
+      label: 章节或实验
+      description: 填写 CH-NN、EXP-NN-NN 或 N/A。
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 你原本想完成什么
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: 观察与证据
+      description: 描述困惑、成功点、复现结果或建议，不要包含秘密和个人敏感信息。
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: 相关产物
+      description: 列出相关路径或填写 N/A。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 你认为怎样算改进完成
+      value: "- [ ] "
+    validations:
+      required: true

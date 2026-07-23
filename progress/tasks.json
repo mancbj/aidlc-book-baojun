@@ -1,0 +1,1239 @@
+{
+  "schema_version": "1.0.0",
+  "source": "memory-bank/intents/001-github-writing-system/execution-roadmap.md",
+  "updated": "2026-07-23T06:28:00Z",
+  "tasks": [
+    {
+      "id": "D01-T01",
+      "title": "写核心公式",
+      "type": "writing",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 1,
+      "planned_date": "2026-07-21",
+      "dependencies": [],
+      "artifacts": [
+        {
+          "path": "book/manifesto.md",
+          "required": true
+        },
+        {
+          "path": "book/images/cover.png",
+          "required": false
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "工作公式和五条“不是”已填写",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T03:51:07Z"
+    },
+    {
+      "id": "D01-T02",
+      "title": "确定目标读者",
+      "type": "writing",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 1,
+      "planned_date": "2026-07-21",
+      "dependencies": [
+        "D01-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/readers.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "至少定义一个主要读者和三个可观察结果",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T03:57:15Z"
+    },
+    {
+      "id": "D01-T03",
+      "title": "确认十章目录",
+      "type": "writing",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 1,
+      "planned_date": "2026-07-21",
+      "dependencies": [
+        "D01-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "book/toc.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "十章各有一个不重复的核心问题",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T05:26:04Z"
+    },
+    {
+      "id": "D02-T01",
+      "title": "创建仓库骨架",
+      "type": "engineering",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 2,
+      "planned_date": "2026-07-22",
+      "dependencies": [
+        "D01-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "docs/REPOSITORY-GUIDE.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "职责目录和事实源边界已说明",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T05:57:27Z"
+    },
+    {
+      "id": "D02-T02",
+      "title": "完成 README 第一版",
+      "type": "writing",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 2,
+      "planned_date": "2026-07-22",
+      "dependencies": [
+        "D02-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "README.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "定位、章节、实验、计划、校验和贡献入口齐全",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T06:16:24Z"
+    },
+    {
+      "id": "D02-T03",
+      "title": "定义任务模型",
+      "type": "engineering",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 2,
+      "planned_date": "2026-07-22",
+      "dependencies": [
+        "D02-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "progress/schemas/task-schema.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "必需字段、六种状态和条件门禁已定义",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T06:27:35Z"
+    },
+    {
+      "id": "D03-T01",
+      "title": "建立 30 项实验池",
+      "type": "experiment",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 3,
+      "planned_date": "2026-07-23",
+      "dependencies": [
+        "D02-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "progress/experiments.json",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "实验记录不少于 30 项",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T06:35:34Z"
+    },
+    {
+      "id": "D03-T02",
+      "title": "完成实验初步分类",
+      "type": "experiment",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 3,
+      "planned_date": "2026-07-23",
+      "dependencies": [
+        "D03-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "EXPERIMENT_TRIAGE.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "SHIP、KEEP-EXT、ALREADY 规则和样例可校验",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T06:51:25Z"
+    },
+    {
+      "id": "D03-T03",
+      "title": "选择并拆解样章",
+      "type": "writing",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 3,
+      "planned_date": "2026-07-23",
+      "dependencies": [
+        "D03-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/sample-chapter-decision.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "第 2、3、4 章中选定一章并形成六阶段提纲",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T07:00:00Z"
+    },
+    {
+      "id": "D04-T01",
+      "title": "定义样章实验",
+      "type": "experiment",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 4,
+      "planned_date": "2026-07-24",
+      "dependencies": [
+        "D03-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/sample-experiment.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "输入、输出、命令、指标、失败案例和验收齐全",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T07:09:04Z"
+    },
+    {
+      "id": "D04-T02",
+      "title": "准备最小 Demo 骨架",
+      "type": "experiment",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 4,
+      "planned_date": "2026-07-24",
+      "dependencies": [
+        "D04-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "experiments/sample/README.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "README、env.example、样例输入输出路径已定义",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T07:16:35Z"
+    },
+    {
+      "id": "D04-T03",
+      "title": "定义完整性校验用例",
+      "type": "engineering",
+      "phase": "foundation",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 4,
+      "planned_date": "2026-07-24",
+      "dependencies": [
+        "D04-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "tests/test_validate_project.py",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "覆盖重复、断链、循环、虚假完成和时间戳",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T07:31:12Z"
+    },
+    {
+      "id": "D05-T01",
+      "title": "实现最小实验",
+      "type": "experiment",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 5,
+      "planned_date": "2026-07-25",
+      "dependencies": [
+        "D04-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "experiments/sample/quickstart.py",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "新读者可按 README 在 10 分钟内运行",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T07:41:09Z"
+    },
+    {
+      "id": "D05-T02",
+      "title": "保存成功与失败样例",
+      "type": "experiment",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 5,
+      "planned_date": "2026-07-25",
+      "dependencies": [
+        "D05-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "experiments/sample/output/README.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "至少一份成功结果和一份失败说明",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T07:51:24Z"
+    },
+    {
+      "id": "D05-T03",
+      "title": "生成第一份进度聚合",
+      "type": "engineering",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 5,
+      "planned_date": "2026-07-25",
+      "dependencies": [
+        "D05-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "progress/generated/current.json",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "同一事实源重复聚合结果等价",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T07:56:32Z"
+    },
+    {
+      "id": "D06-T01",
+      "title": "定义关键事件类型",
+      "type": "engineering",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 6,
+      "planned_date": "2026-07-26",
+      "dependencies": [
+        "D05-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "progress/schemas/event-schema.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "任务、章节、实验、构建、里程碑和发布事件齐全",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T08:03:16Z"
+    },
+    {
+      "id": "D06-T02",
+      "title": "实现状态差异记录",
+      "type": "engineering",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 6,
+      "planned_date": "2026-07-26",
+      "dependencies": [
+        "D06-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "scripts/record_events.py",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "真实变化生成事件且重复运行不重复追加",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T08:09:53Z"
+    },
+    {
+      "id": "D06-T03",
+      "title": "生成第一张核心图",
+      "type": "writing",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 6,
+      "planned_date": "2026-07-26",
+      "dependencies": [
+        "D06-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "book/images/fig0-1.svg",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "图能独立说明核心公式并保留可编辑源",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T08:16:45Z"
+    },
+    {
+      "id": "D07-T01",
+      "title": "生成快照与变更日志",
+      "type": "engineering",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 7,
+      "planned_date": "2026-07-27",
+      "dependencies": [
+        "D06-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "progress/snapshots/README.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "快照关联提交且失败不覆盖成功产物",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T09:12:15Z"
+    },
+    {
+      "id": "D07-T02",
+      "title": "跑通最小书稿构建",
+      "type": "engineering",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 7,
+      "planned_date": "2026-07-27",
+      "dependencies": [
+        "D07-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "scripts/build_book.sh",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "一条命令生成 HTML 或 PDF 候选",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-22T10:17:50Z"
+    },
+    {
+      "id": "D07-T03",
+      "title": "建立 v0.0.1 时间锚点",
+      "type": "release",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 7,
+      "planned_date": "2026-07-27",
+      "dependencies": [
+        "D07-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/releases/v0.0.1.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "内部版本列出完成项、缺口和第二周风险",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T01:19:14Z"
+    },
+    {
+      "id": "D08-T01",
+      "title": "推进样章可读稿",
+      "type": "writing",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 8,
+      "planned_date": "2026-07-28",
+      "dependencies": [
+        "D07-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "book/chapters/sample.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "样章达到 60%–80% 且实践观点有证据入口",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T01:32:26Z"
+    },
+    {
+      "id": "D08-T02",
+      "title": "渲染驾驶舱核心指标",
+      "type": "engineering",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 8,
+      "planned_date": "2026-07-28",
+      "dependencies": [
+        "D08-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "site/index.html",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "展示总体、Day、倒计时、阶段和下一动作",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T01:50:20Z"
+    },
+    {
+      "id": "D08-T03",
+      "title": "渲染时间线与生产线",
+      "type": "engineering",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 8,
+      "planned_date": "2026-07-28",
+      "dependencies": [
+        "D08-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "site/progress.html",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "展示时间线、章节、实验、阻塞和最近事件",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T02:01:46Z"
+    },
+    {
+      "id": "D09-T01",
+      "title": "增加任务与产物下钻",
+      "type": "engineering",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 9,
+      "planned_date": "2026-07-29",
+      "dependencies": [
+        "D08-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "site/progress.html",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "核心卡片能到达任务、产物或 GitHub 链接",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T02:28:45Z"
+    },
+    {
+      "id": "D09-T02",
+      "title": "完成响应式与键盘检查",
+      "type": "review",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 9,
+      "planned_date": "2026-07-29",
+      "dependencies": [
+        "D09-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/reviews/dashboard-accessibility.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "360px 无横向溢出且主要导航键盘可用",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T02:39:31Z"
+    },
+    {
+      "id": "D09-T03",
+      "title": "完成 30 秒下一动作测试",
+      "type": "review",
+      "phase": "progress",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 9,
+      "planned_date": "2026-07-29",
+      "dependencies": [
+        "D09-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/reviews/next-action-test.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "首次使用者 30 秒内找到下一项 Must",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T02:45:49Z"
+    },
+    {
+      "id": "D10-T01",
+      "title": "创建 Issue 与 PR 模板",
+      "type": "engineering",
+      "phase": "github",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 10,
+      "planned_date": "2026-07-30",
+      "dependencies": [
+        "D09-T03"
+      ],
+      "artifacts": [
+        {
+          "path": ".github/pull_request_template.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "协作模板要求任务 ID、产物和验收",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T02:50:33Z"
+    },
+    {
+      "id": "D10-T02",
+      "title": "定义标签与里程碑",
+      "type": "engineering",
+      "phase": "github",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 10,
+      "planned_date": "2026-07-30",
+      "dependencies": [
+        "D10-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/github-taxonomy.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "标签体系和 v0.0.1/v0.1 完成条件已定义",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T02:57:02Z"
+    },
+    {
+      "id": "D10-T03",
+      "title": "配置 GitHub Projects 视图",
+      "type": "engineering",
+      "phase": "github",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 10,
+      "planned_date": "2026-07-30",
+      "dependencies": [
+        "D10-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/github-project.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "Board、Roadmap、Chapter、Experiment 视图可复现",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T03:03:06Z"
+    },
+    {
+      "id": "D11-T01",
+      "title": "配置 Pull Request 校验",
+      "type": "engineering",
+      "phase": "github",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 11,
+      "planned_date": "2026-07-31",
+      "dependencies": [
+        "D10-T03"
+      ],
+      "artifacts": [
+        {
+          "path": ".github/workflows/validate.yml",
+          "required": true
+        },
+        {
+          "path": "planning/reviews/pr-validation-gate.md",
+          "required": false
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "坏数据 PR 被阻止且 Fork 不读取秘密",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T03:10:54Z"
+    },
+    {
+      "id": "D11-T02",
+      "title": "配置 Pages 发布",
+      "type": "engineering",
+      "phase": "github",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 11,
+      "planned_date": "2026-07-31",
+      "dependencies": [
+        "D11-T01"
+      ],
+      "artifacts": [
+        {
+          "path": ".github/workflows/pages.yml",
+          "required": true
+        },
+        {
+          "path": "planning/reviews/pages-publish-gate.md",
+          "required": false
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "成功页面标注来源提交",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T03:17:42Z"
+    },
+    {
+      "id": "D11-T03",
+      "title": "配置 Tag Release",
+      "type": "engineering",
+      "phase": "github",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 11,
+      "planned_date": "2026-07-31",
+      "dependencies": [
+        "D11-T02"
+      ],
+      "artifacts": [
+        {
+          "path": ".github/workflows/release.yml",
+          "required": true
+        },
+        {
+          "path": "planning/reviews/tag-release-gate.md",
+          "required": false
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "版本标签生成候选产物和 Release Notes",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T03:32:59Z"
+    },
+    {
+      "id": "D12-T01",
+      "title": "完成样章第一轮审校",
+      "type": "review",
+      "phase": "release",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 12,
+      "planned_date": "2026-08-01",
+      "dependencies": [
+        "D11-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/reviews/sample-chapter.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "问题包含影响、建议和对应文件",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T03:55:25Z"
+    },
+    {
+      "id": "D12-T02",
+      "title": "完成学习路线",
+      "type": "writing",
+      "phase": "release",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 12,
+      "planned_date": "2026-08-01",
+      "dependencies": [
+        "D12-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "docs/LEARNING.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "包含入门、实践和可跳读路径",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T05:14:28Z"
+    },
+    {
+      "id": "D12-T03",
+      "title": "准备试读反馈入口",
+      "type": "review",
+      "phase": "release",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 12,
+      "planned_date": "2026-08-01",
+      "dependencies": [
+        "D12-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/feedback-template.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "反馈能记录接受、拒绝或延期决策",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T05:22:56Z"
+    },
+    {
+      "id": "D13-T01",
+      "title": "邀请三位试读者",
+      "type": "review",
+      "phase": "release",
+      "status": "done",
+      "priority": "should",
+      "owner": "author",
+      "day": 13,
+      "planned_date": "2026-08-02",
+      "dependencies": [
+        "D12-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/reader-invitations.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "三位读者收到只依赖 README 的试读说明",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T05:32:21Z"
+    },
+    {
+      "id": "D13-T02",
+      "title": "处理发布阻断反馈",
+      "type": "review",
+      "phase": "release",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 13,
+      "planned_date": "2026-08-02",
+      "dependencies": [
+        "D13-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/reviews/release-blockers.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "阻断项关闭，非阻断项进入下一周期",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T05:42:01Z"
+    },
+    {
+      "id": "D13-T03",
+      "title": "生成 v0.1 Release Candidate",
+      "type": "release",
+      "phase": "release",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 13,
+      "planned_date": "2026-08-02",
+      "dependencies": [
+        "D13-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "releases/v0.1-rc/README.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "Must 校验全通过且缺口公开",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T05:58:00Z"
+    },
+    {
+      "id": "D14-T01",
+      "title": "复核 v0.1 Definition of Done",
+      "type": "review",
+      "phase": "release",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 14,
+      "planned_date": "2026-08-03",
+      "dependencies": [
+        "D13-T03"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/releases/v0.1-checklist.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "所有不可再缩范围逐项有证据",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T06:10:00Z"
+    },
+    {
+      "id": "D14-T02",
+      "title": "发布 v0.1",
+      "type": "release",
+      "phase": "release",
+      "status": "done",
+      "priority": "must",
+      "owner": "author",
+      "day": 14,
+      "planned_date": "2026-08-03",
+      "dependencies": [
+        "D14-T01"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/releases/v0.1.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "公开产物关联同一来源提交",
+          "passed": true
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-23T06:28:00Z"
+    },
+    {
+      "id": "D14-T03",
+      "title": "建立 v0.2 草案",
+      "type": "release",
+      "phase": "release",
+      "status": "backlog",
+      "priority": "should",
+      "owner": "author",
+      "day": 14,
+      "planned_date": "2026-08-03",
+      "dependencies": [
+        "D14-T02"
+      ],
+      "artifacts": [
+        {
+          "path": "planning/releases/v0.2-draft.md",
+          "required": true
+        }
+      ],
+      "acceptance": [
+        {
+          "text": "下一周期至少有一个依赖已满足的 Must",
+          "passed": false
+        }
+      ],
+      "blocker_reason": "",
+      "unblock_action": "",
+      "updated": "2026-07-21T07:14:12Z"
+    }
+  ]
+}

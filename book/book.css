@@ -1,0 +1,75 @@
+:root {
+  color-scheme: light;
+  --paper: #ffffff;
+  --ground: #f1f2f4;
+  --ink: #252a31;
+  --muted: #5f6671;
+  --line: #dde1e7;
+  --blue: #0f62fe;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  max-width: 920px;
+  margin: 32px auto;
+  padding: 64px;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.78;
+}
+body::before {
+  content: "AI-DRIVEN DEVELOPMENT LIFE CYCLE";
+  display: block;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+h1, h2, h3, h4 { line-height: 1.3; scroll-margin-top: 24px; }
+h1 { margin: 0 0 40px; font-size: 40px; letter-spacing: -.025em; }
+h2 { margin: 58px 0 18px; padding-top: 8px; font-size: 28px; }
+h3 { margin: 38px 0 14px; font-size: 21px; }
+p { margin: 0 0 18px; }
+strong { font-weight: 700; }
+a { color: #0043ce; text-underline-offset: 3px; }
+nav#TOC {
+  margin: 40px 0 56px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--blue);
+  border-radius: 4px;
+  background: #f7f8fa;
+}
+nav#TOC::before { content: "CONTENTS"; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+nav#TOC ul { margin: 12px 0 0; }
+img { max-width: 100%; height: auto; }
+img.book-cover { display: block; max-height: 720px; margin: 24px auto 56px; object-fit: contain; }
+img.core-figure { display: block; margin: 28px auto; }
+img.mermaid-diagram { display: block; margin: 30px auto; }
+figure { margin: 30px 0; text-align: center; }
+figcaption { margin-top: 8px; color: var(--muted); font-size: 12px; }
+blockquote { margin: 28px 0; padding: 18px 24px; border-left: 5px solid var(--blue); background: #f7f8fa; }
+blockquote p { margin: 0; }
+code { padding: .12em .34em; border-radius: 3px; background: #f2f4f8; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .9em; }
+pre { padding: 20px; overflow: auto; border: 1px solid var(--line); border-radius: 4px; background: #f7f8fa; line-height: 1.55; }
+pre code { padding: 0; background: none; }
+table { width: 100%; margin: 26px 0 34px; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: #f7f8fa; font-weight: 700; }
+hr { margin: 56px 0; border: 0; border-top: 1px solid var(--line); }
+
+@media (max-width: 720px) {
+  body { margin: 0; padding: 32px 22px; }
+  h1 { font-size: 32px; }
+  table { display: block; overflow-x: auto; }
+}
+
+@media print {
+  body { max-width: none; margin: 0; padding: 0; }
+  a { color: inherit; }
+  pre { white-space: pre-wrap; }
+}

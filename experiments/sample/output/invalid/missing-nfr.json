@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-03-01",
+  "source_digest": "sha256:35ec8f34ed6a5f6c9f149fd261372c73313c47567ac1c4f70f88aa4094057cd1",
+  "valid": false,
+  "metrics": {
+    "requirement_coverage_percent": 100.0,
+    "orphan_story_count": 0,
+    "acceptance_completeness_percent": 100.0,
+    "invalid_reference_count": 0
+  },
+  "traces": [
+    {
+      "requirement_id": "FR-001",
+      "unit_ids": [
+        "UNIT-001"
+      ],
+      "story_ids": [
+        "STORY-001"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": "E_MISSING_NFR",
+      "path": "$.requirements",
+      "message": "至少需要一个 non-functional Requirement。",
+      "value": null
+    }
+  ]
+}

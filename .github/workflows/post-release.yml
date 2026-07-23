@@ -1,0 +1,102 @@
+name: Open the Next Update Cycle
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: post-release-${{ github.event.release.tag_name }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.event.release.tag_name == 'v0.1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: Validate the tagged source
+        run: python3 scripts/ci_check.py --budget-seconds 60
+      - name: Create receipt, activate cycle and record visual events
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/open_next_cycle.py \
+            --release-event "$GITHUB_EVENT_PATH" \
+            --source-sha "$GITHUB_SHA" \
+            --apply
+          python3 scripts/generate_progress.py \
+            --actor github-actions \
+            --event-type release_published \
+            --event-object "$RELEASE_TAG" \
+            --event-summary "$RELEASE_TAG 已公开发布并开启下一周期"
+          mkdir -p .artifacts
+          tar -czf .artifacts/next-cycle-record.tgz \
+            releases/v0.1/release.json \
+            planning/releases/v0.2-draft.md \
+            progress/cycles.json progress/generated progress/events progress/snapshots progress/CHANGELOG.md \
+            site/index.html site/details.html site/data/progress.json
+      - name: Upload recoverable next-cycle record
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: next-cycle-record-${{ github.event.release.tag_name }}
+          path: .artifacts/next-cycle-record.tgz
+          retention-days: 30
+          if-no-files-found: error
+
+  propose:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: next-cycle-record-${{ github.event.release.tag_name }}
+          path: .artifacts
+      - name: Open a reviewable automation Pull Request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -xzf .artifacts/next-cycle-record.tgz
+          branch="automation/${RELEASE_TAG}-next-cycle-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            releases/v0.1/release.json \
+            planning/releases/v0.2-draft.md \
+            progress/cycles.json progress/generated progress/events progress/snapshots progress/CHANGELOG.md \
+            site/index.html site/details.html site/data/progress.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git switch -c "$branch"
+          git commit -m "[cycle] open v0.2 after ${RELEASE_TAG} [skip ci]"
+          if ! git push origin "$branch"; then
+            echo "::warning::Cannot push next-cycle branch; use the retained artifact to open a maintainer PR."
+            exit 0
+          fi
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "[cycle] Open v0.2 after ${RELEASE_TAG}" \
+            --body "Generated from the published ${RELEASE_TAG} receipt. Review cycle tasks, carried gaps, events and dashboard before merge."

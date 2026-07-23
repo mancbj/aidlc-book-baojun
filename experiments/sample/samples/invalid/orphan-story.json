@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "intent": {
+    "id": "INT-001",
+    "statement": "两周内发布可公开试读的 AI-DLC 图书 v0.1",
+    "outcomes": [
+      "陌生读者能阅读样章并运行一个实验"
+    ],
+    "constraints": [
+      "Git 仓库是唯一事实源",
+      "本地工作资料不进入公开仓库"
+    ]
+  },
+  "requirements": [
+    {
+      "id": "FR-001",
+      "type": "functional",
+      "text": "提供可读样章",
+      "acceptance": [
+        "样章六阶段均为非占位内容"
+      ]
+    },
+    {
+      "id": "NFR-001",
+      "type": "non-functional",
+      "text": "所有进度可追溯",
+      "acceptance": [
+        "关键状态变化产生版本化事件"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "UNIT-001",
+      "title": "GitHub Writing System",
+      "responsibilities": [
+        "维护书稿、实验和进度事实源"
+      ],
+      "requirement_refs": [
+        "NFR-001"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": "STORY-001",
+      "unit_id": "UNIT-001",
+      "title": "形成可读样章",
+      "requirement_refs": [
+        "FR-001"
+      ],
+      "acceptance": [
+        "读者可以从 README 打开样章"
+      ]
+    },
+    {
+      "id": "STORY-002",
+      "unit_id": "UNIT-001",
+      "title": "记录关键更新",
+      "requirement_refs": [
+        "NFR-001"
+      ],
+      "acceptance": [
+        "任务完成后事件时间线新增一条记录"
+      ]
+    }
+  ]
+}

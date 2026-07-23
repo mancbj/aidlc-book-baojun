@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-03-01",
+  "source_digest": "sha256:8a8b82f5ea73bdd28574381b12bc1c5ed53b94728f4a358143d33fe20c007161",
+  "valid": false,
+  "metrics": {
+    "requirement_coverage_percent": 50.0,
+    "orphan_story_count": 1,
+    "acceptance_completeness_percent": 100.0,
+    "invalid_reference_count": 0
+  },
+  "traces": [
+    {
+      "requirement_id": "FR-001",
+      "unit_ids": [],
+      "story_ids": []
+    },
+    {
+      "requirement_id": "NFR-001",
+      "unit_ids": [
+        "UNIT-001"
+      ],
+      "story_ids": [
+        "STORY-002"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": "E_ORPHAN_STORY",
+      "path": "$.stories[STORY-001]",
+      "message": "Story 缺少可贯通的 Unit → Requirement 上游路径。",
+      "value": "STORY-001"
+    }
+  ]
+}

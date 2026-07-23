@@ -1,0 +1,936 @@
+{
+  "schema_version": "1.0.0",
+  "source": "Confirmed ten-chapter structure v3 and author-local specs.md portal crawl",
+  "updated": "2026-07-22T07:05:40Z",
+  "experiments": [
+    {
+      "id": "EXP-01-01",
+      "name": "同一 Intent 多次生成方差基线",
+      "chapter": "CH-01",
+      "triage": "SHIP",
+      "effort": "S",
+      "inputs": [
+        "同一功能 Intent、固定模型与提示"
+      ],
+      "outputs": [
+        "多次生成结果与结构化差异报告"
+      ],
+      "metrics": [
+        "结构差异率",
+        "测试通过率方差"
+      ],
+      "command": "python3 experiments/exp-01-01/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：多次生成结果与结构化差异报告",
+        "记录指标：结构差异率、测试通过率方差"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-01-01",
+      "readme_path": "experiments/exp-01-01/README.md",
+      "sample_input": "experiments/exp-01-01/samples/input.json",
+      "sample_output": "experiments/exp-01-01/output/sample.json",
+      "test_path": "experiments/exp-01-01/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-01-02",
+      "name": "AI-Assisted 与 AI-Driven 对照实验",
+      "chapter": "CH-01",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "同一小型功能、AI-Assisted 与 AI-Driven 两套工作流"
+      ],
+      "outputs": [
+        "两组交付记录与证据链对照"
+      ],
+      "metrics": [
+        "人工往返次数",
+        "缺陷逃逸数",
+        "端到端耗时"
+      ],
+      "command": "python3 experiments/exp-01-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：两组交付记录与证据链对照",
+        "记录指标：人工往返次数、缺陷逃逸数、端到端耗时"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-01-02",
+      "readme_path": "experiments/exp-01-02/README.md",
+      "sample_input": "experiments/exp-01-02/samples/input.json",
+      "sample_output": "experiments/exp-01-02/output/sample.json",
+      "test_path": "experiments/exp-01-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-01-03",
+      "name": "AI-DLC 三阶段官方流程复现",
+      "chapter": "CH-01",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方 AI-DLC 方法说明与同一示例 Intent"
+      ],
+      "outputs": [
+        "Inception、Construction、Operations 流程轨迹"
+      ],
+      "metrics": [
+        "工件完整率",
+        "检查点数量"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：Inception、Construction、Operations 流程轨迹",
+        "记录指标：工件完整率、检查点数量"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/methodology/what-is-ai-dlc",
+      "pinned_version": "sha256:9cd45974f4bd264ca4a357f79e1171e8ea23ea44ddd9d1060c8ab3c24b60ec39",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "Inception、Construction、Operations 流程轨迹"
+    },
+    {
+      "id": "EXP-02-01",
+      "name": "不可委托判断清单生成器",
+      "chapter": "CH-02",
+      "triage": "SHIP",
+      "effort": "S",
+      "inputs": [
+        "项目目标、风险、约束与责任角色"
+      ],
+      "outputs": [
+        "人类判断点与责任边界清单"
+      ],
+      "metrics": [
+        "判断点覆盖率",
+        "未归属责任数"
+      ],
+      "command": "python3 experiments/exp-02-01/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：人类判断点与责任边界清单",
+        "记录指标：判断点覆盖率、未归属责任数"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-02-01",
+      "readme_path": "experiments/exp-02-01/README.md",
+      "sample_input": "experiments/exp-02-01/samples/input.json",
+      "sample_output": "experiments/exp-02-01/output/sample.json",
+      "test_path": "experiments/exp-02-01/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-02-02",
+      "name": "反向对话澄清收益实验",
+      "chapter": "CH-02",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "同一模糊需求、有无澄清提问的两组会话"
+      ],
+      "outputs": [
+        "需求决策日志与实现差异报告"
+      ],
+      "metrics": [
+        "实现后需求变更数",
+        "关键遗漏数",
+        "澄清轮次"
+      ],
+      "command": "python3 experiments/exp-02-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：需求决策日志与实现差异报告",
+        "记录指标：实现后需求变更数、关键遗漏数、澄清轮次"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-02-02",
+      "readme_path": "experiments/exp-02-02/README.md",
+      "sample_input": "experiments/exp-02-02/samples/input.json",
+      "sample_output": "experiments/exp-02-02/output/sample.json",
+      "test_path": "experiments/exp-02-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-02-03",
+      "name": "四 Agent 人机检查点会话复现",
+      "chapter": "CH-02",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方 Agent 职责说明与示例任务"
+      ],
+      "outputs": [
+        "路由、提议、人工审批与交接记录"
+      ],
+      "metrics": [
+        "检查点遵循率",
+        "无依据批准数"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：路由、提议、人工审批与交接记录",
+        "记录指标：检查点遵循率、无依据批准数"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/agents/overview",
+      "pinned_version": "sha256:37725f7af797f4e7589afb48686349a940384029e0f46d76cda8ddd747141953",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "路由、提议、人工审批与交接记录"
+    },
+    {
+      "id": "EXP-03-01",
+      "name": "Intent 到 Story 追踪链生成器",
+      "chapter": "CH-03",
+      "triage": "SHIP",
+      "effort": "S",
+      "inputs": [
+        "包含 Intent、Requirements、Units 与 Stories 的候选分解 JSON"
+      ],
+      "outputs": [
+        "确定性追踪报告 JSON，包含双向链路、指标与稳定错误代码"
+      ],
+      "metrics": [
+        "需求覆盖率",
+        "孤立 Story 数",
+        "验收完整率",
+        "无效引用数"
+      ],
+      "command": "python3 experiments/sample/quickstart.py --input experiments/sample/samples/input.json --output experiments/sample/output/sample.json",
+      "acceptance": [
+        "合法样例以退出码 0 生成 valid=true 的稳定追踪报告",
+        "五类坏样例以退出码 2 失败并返回预期错误代码",
+        "重复运行产生字节一致的输出，测试命令全部通过"
+      ],
+      "status": "verified",
+      "updated": "2026-07-22T07:51:24Z",
+      "repository_path": "experiments/sample",
+      "readme_path": "experiments/sample/README.md",
+      "sample_input": "experiments/sample/samples/input.json",
+      "sample_output": "experiments/sample/output/sample.json",
+      "test_path": "experiments/sample/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-03-02",
+      "name": "Unit 与 Bolt 依赖 DAG 校验器",
+      "chapter": "CH-03",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "Unit、Story 与 Bolt 依赖清单"
+      ],
+      "outputs": [
+        "依赖图与异常报告"
+      ],
+      "metrics": [
+        "循环依赖数",
+        "跨 Unit 耦合边数",
+        "未满足前置数"
+      ],
+      "command": "python3 experiments/exp-03-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：依赖图与异常报告",
+        "记录指标：循环依赖数、跨 Unit 耦合边数、未满足前置数"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-03-02",
+      "readme_path": "experiments/exp-03-02/README.md",
+      "sample_input": "experiments/exp-03-02/samples/input.json",
+      "sample_output": "experiments/exp-03-02/output/sample.json",
+      "test_path": "experiments/exp-03-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-03-03",
+      "name": "Inception Agent 完整分解复现",
+      "chapter": "CH-03",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方 Inception 流程与示例 Intent"
+      ],
+      "outputs": [
+        "Requirements、System Context、Units、Stories、Bolt Plan"
+      ],
+      "metrics": [
+        "工件完整率",
+        "追踪链接覆盖率"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：Requirements、System Context、Units、Stories、Bolt Plan",
+        "记录指标：工件完整率、追踪链接覆盖率"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/agents/inception-agent",
+      "pinned_version": "sha256:d65ec6e39e641b3009ef88f78cf22aaa19e127a35f75f0e6bcff671dc66f416a",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "Requirements、System Context、Units、Stories、Bolt Plan"
+    },
+    {
+      "id": "EXP-04-01",
+      "name": "Memory Bank 冷启动恢复 A/B 实验",
+      "chapter": "CH-04",
+      "triage": "SHIP",
+      "effort": "S",
+      "inputs": [
+        "同一项目问题、有无 Memory Bank 的两组新会话"
+      ],
+      "outputs": [
+        "首轮行动与上下文恢复对照报告"
+      ],
+      "metrics": [
+        "上下文恢复准确率",
+        "首个动作错误率",
+        "补充提问数"
+      ],
+      "command": "python3 experiments/exp-04-01/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：首轮行动与上下文恢复对照报告",
+        "记录指标：上下文恢复准确率、首个动作错误率、补充提问数"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-04-01",
+      "readme_path": "experiments/exp-04-01/README.md",
+      "sample_input": "experiments/exp-04-01/samples/input.json",
+      "sample_output": "experiments/exp-04-01/output/sample.json",
+      "test_path": "experiments/exp-04-01/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-04-02",
+      "name": "Standards 漂移检测器",
+      "chapter": "CH-04",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "版本化 Standards 与生成工件"
+      ],
+      "outputs": [
+        "规则违反项与版本差异报告"
+      ],
+      "metrics": [
+        "规则覆盖率",
+        "误报率",
+        "漂移项数量"
+      ],
+      "command": "python3 experiments/exp-04-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：规则违反项与版本差异报告",
+        "记录指标：规则覆盖率、误报率、漂移项数量"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-04-02",
+      "readme_path": "experiments/exp-04-02/README.md",
+      "sample_input": "experiments/exp-04-02/samples/input.json",
+      "sample_output": "experiments/exp-04-02/output/sample.json",
+      "test_path": "experiments/exp-04-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-04-03",
+      "name": "官方 Memory Bank 结构复现",
+      "chapter": "CH-04",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方目录规范与示例项目"
+      ],
+      "outputs": [
+        "可由新会话加载的最小 Memory Bank"
+      ],
+      "metrics": [
+        "必需文件完整率",
+        "引用有效率"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：可由新会话加载的最小 Memory Bank",
+        "记录指标：必需文件完整率、引用有效率"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/core-concepts/memory-bank",
+      "pinned_version": "sha256:1ecdfd4c857ede2240282b4a80b57e1bb9f91e2d91894b8fec0f5e6d1a7de978",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "可由新会话加载的最小 Memory Bank"
+    },
+    {
+      "id": "EXP-05-01",
+      "name": "Bolt 尺寸估算器",
+      "chapter": "CH-05",
+      "triage": "SHIP",
+      "effort": "S",
+      "inputs": [
+        "Stories、复杂度、风险与依赖"
+      ],
+      "outputs": [
+        "Bolt 范围、预计时长与拆分建议"
+      ],
+      "metrics": [
+        "工期估算误差",
+        "范围溢出项数"
+      ],
+      "command": "python3 experiments/exp-05-01/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：Bolt 范围、预计时长与拆分建议",
+        "记录指标：工期估算误差、范围溢出项数"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-05-01",
+      "readme_path": "experiments/exp-05-01/README.md",
+      "sample_input": "experiments/exp-05-01/samples/input.json",
+      "sample_output": "experiments/exp-05-01/output/sample.json",
+      "test_path": "experiments/exp-05-01/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-05-02",
+      "name": "DDD 与 Simple Bolt 选择器",
+      "chapter": "CH-05",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "任务描述、领域复杂度、风险与可逆性"
+      ],
+      "outputs": [
+        "Bolt 类型建议与选择依据"
+      ],
+      "metrics": [
+        "专家判断一致率",
+        "过度工程化数",
+        "不足工程化数"
+      ],
+      "command": "python3 experiments/exp-05-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：Bolt 类型建议与选择依据",
+        "记录指标：专家判断一致率、过度工程化数、不足工程化数"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-05-02",
+      "readme_path": "experiments/exp-05-02/README.md",
+      "sample_input": "experiments/exp-05-02/samples/input.json",
+      "sample_output": "experiments/exp-05-02/output/sample.json",
+      "test_path": "experiments/exp-05-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-05-03",
+      "name": "官方 Bolt 类型检查点复现",
+      "chapter": "CH-05",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方 Bolt 类型指南与两个对照任务"
+      ],
+      "outputs": [
+        "DDD 与 Simple 两条阶段记录"
+      ],
+      "metrics": [
+        "阶段完整率",
+        "检查点遵循率"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：DDD 与 Simple 两条阶段记录",
+        "记录指标：阶段完整率、检查点遵循率"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/guides/bolt-types",
+      "pinned_version": "sha256:32d73fc5231f81eabaf9c881e1c64f3353882c605c729bfbbca9f5bb4aa0b481",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "DDD 与 Simple 两条阶段记录"
+    },
+    {
+      "id": "EXP-06-01",
+      "name": "Plan–Walkthrough 偏差审计器",
+      "chapter": "CH-06",
+      "triage": "SHIP",
+      "effort": "S",
+      "inputs": [
+        "Implementation Plan、代码变更与 Walkthrough"
+      ],
+      "outputs": [
+        "计划项、实际变更与未声明偏差表"
+      ],
+      "metrics": [
+        "交付项覆盖率",
+        "未声明变更数"
+      ],
+      "command": "python3 experiments/exp-06-01/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：计划项、实际变更与未声明偏差表",
+        "记录指标：交付项覆盖率、未声明变更数"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-06-01",
+      "readme_path": "experiments/exp-06-01/README.md",
+      "sample_input": "experiments/exp-06-01/samples/input.json",
+      "sample_output": "experiments/exp-06-01/output/sample.json",
+      "test_path": "experiments/exp-06-01/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-06-02",
+      "name": "失败—修复—复测闭环记录器",
+      "chapter": "CH-06",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "失败日志、修复提交与测试结果"
+      ],
+      "outputs": [
+        "按时间排序的修复证据链"
+      ],
+      "metrics": [
+        "修复轮次",
+        "回归通过率",
+        "证据完整率"
+      ],
+      "command": "python3 experiments/exp-06-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：按时间排序的修复证据链",
+        "记录指标：修复轮次、回归通过率、证据完整率"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-06-02",
+      "readme_path": "experiments/exp-06-02/README.md",
+      "sample_input": "experiments/exp-06-02/samples/input.json",
+      "sample_output": "experiments/exp-06-02/output/sample.json",
+      "test_path": "experiments/exp-06-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-06-03",
+      "name": "端到端 Bolt 执行复现",
+      "chapter": "CH-06",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方 Bolt 教程与示例 Story"
+      ],
+      "outputs": [
+        "从计划到测试报告的完整 Bolt 工件"
+      ],
+      "metrics": [
+        "完成耗时",
+        "工件完整率"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：从计划到测试报告的完整 Bolt 工件",
+        "记录指标：完成耗时、工件完整率"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/learn/aidlc-bolt-execution",
+      "pinned_version": "sha256:fe6252a58966ef23ac663a313c1a62094a1d70f08ce1bb536fdc950721f21bb2",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "从计划到测试报告的完整 Bolt 工件"
+    },
+    {
+      "id": "EXP-07-01",
+      "name": "仓库确定性门禁组合器",
+      "chapter": "CH-07",
+      "triage": "ALREADY",
+      "effort": "S",
+      "inputs": [
+        "代码仓库、验收标准与测试命令"
+      ],
+      "outputs": [
+        "六类门禁结果、退出码与总耗时"
+      ],
+      "metrics": [
+        "通过检查数",
+        "失败检查数",
+        "总耗时"
+      ],
+      "command": "python3 scripts/ci_check.py",
+      "acceptance": [
+        "ci_check.py 聚合事实校验、连续性、GitHub 配置、测试、干运行与链接审计",
+        "任一子检查失败时整体以非零退出码失败"
+      ],
+      "status": "ready",
+      "updated": "2026-07-22T06:48:12Z",
+      "reused_implementation": "scripts/ci_check.py",
+      "cross_chapter_references": [
+        "CH-04",
+        "CH-06",
+        "CH-08"
+      ]
+    },
+    {
+      "id": "EXP-07-02",
+      "name": "独立评审分歧矩阵",
+      "chapter": "CH-07",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "交付候选、测试证据、独立模型评审与人工 Rubric"
+      ],
+      "outputs": [
+        "多方判断及分歧归因矩阵"
+      ],
+      "metrics": [
+        "评审一致率",
+        "新增风险数",
+        "人工推翻率"
+      ],
+      "command": "python3 experiments/exp-07-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：多方判断及分歧归因矩阵",
+        "记录指标：评审一致率、新增风险数、人工推翻率"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-07-02",
+      "readme_path": "experiments/exp-07-02/README.md",
+      "sample_input": "experiments/exp-07-02/samples/input.json",
+      "sample_output": "experiments/exp-07-02/output/sample.json",
+      "test_path": "experiments/exp-07-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-07-03",
+      "name": "分层验证检查点复现",
+      "chapter": "CH-07",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方三阶段与检查点说明、注入缺陷的示例候选"
+      ],
+      "outputs": [
+        "缺陷在不同检查层的发现记录"
+      ],
+      "metrics": [
+        "缺陷逃逸数",
+        "首次发现阶段",
+        "验证耗时"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：缺陷在不同检查层的发现记录",
+        "记录指标：缺陷逃逸数、首次发现阶段、验证耗时"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/methodology/three-phases",
+      "pinned_version": "sha256:29411a610e2f4466e1c903adb62212d60c048e5918b9d2bb4907fd45bd2e3c44",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "缺陷在不同检查层的发现记录"
+    },
+    {
+      "id": "EXP-08-01",
+      "name": "发布候选来源清单校验器",
+      "chapter": "CH-08",
+      "triage": "ALREADY",
+      "effort": "S",
+      "inputs": [
+        "发布候选、源提交、构建日志与文件哈希"
+      ],
+      "outputs": [
+        "可追溯 Release Manifest 与异常报告"
+      ],
+      "metrics": [
+        "来源完整率",
+        "哈希不一致数"
+      ],
+      "command": "python3 scripts/check_release_readiness.py && python3 scripts/prepare_release.py --help",
+      "acceptance": [
+        "readiness 来源必须与当前事实源一致，否则拒绝构造候选",
+        "生成的 release-manifest.json 记录来源、文件哈希与构建时间"
+      ],
+      "status": "ready",
+      "updated": "2026-07-22T06:48:12Z",
+      "reused_implementation": "scripts/check_release_readiness.py; scripts/prepare_release.py",
+      "cross_chapter_references": [
+        "CH-06",
+        "CH-07"
+      ]
+    },
+    {
+      "id": "EXP-08-02",
+      "name": "回滚桌面演练模拟器",
+      "chapter": "CH-08",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "部署拓扑、故障场景、监控信号与 Runbook"
+      ],
+      "outputs": [
+        "发现、决策、回滚和恢复时间线"
+      ],
+      "metrics": [
+        "发现到回滚耗时",
+        "数据损失窗口",
+        "Runbook 缺口数"
+      ],
+      "command": "python3 experiments/exp-08-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：发现、决策、回滚和恢复时间线",
+        "记录指标：发现到回滚耗时、数据损失窗口、Runbook 缺口数"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-08-02",
+      "readme_path": "experiments/exp-08-02/README.md",
+      "sample_input": "experiments/exp-08-02/samples/input.json",
+      "sample_output": "experiments/exp-08-02/output/sample.json",
+      "test_path": "experiments/exp-08-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-08-03",
+      "name": "Operations 四阶段复现",
+      "chapter": "CH-08",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方 Operations 流程与可部署示例"
+      ],
+      "outputs": [
+        "Build、Deploy、Verify、Monitor 四阶段凭证"
+      ],
+      "metrics": [
+        "阶段完成率",
+        "回滚就绪度"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：Build、Deploy、Verify、Monitor 四阶段凭证",
+        "记录指标：阶段完成率、回滚就绪度"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/agents/operations-agent",
+      "pinned_version": "sha256:dfef24406c8875dc920c3223eb5d415cec007afb3ba99e66191446d8b8f95338",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "Build、Deploy、Verify、Monitor 四阶段凭证"
+    },
+    {
+      "id": "EXP-09-01",
+      "name": "Simple/FIRE/AI-DLC Flow 选择器",
+      "chapter": "CH-09",
+      "triage": "SHIP",
+      "effort": "S",
+      "inputs": [
+        "任务复杂度、代码库状态、团队规模与合规要求"
+      ],
+      "outputs": [
+        "Flow 建议、理由与不适用条件"
+      ],
+      "metrics": [
+        "专家判断一致率",
+        "选择理由完整率"
+      ],
+      "command": "python3 experiments/exp-09-01/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：Flow 建议、理由与不适用条件",
+        "记录指标：专家判断一致率、选择理由完整率"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-09-01",
+      "readme_path": "experiments/exp-09-01/README.md",
+      "sample_input": "experiments/exp-09-01/samples/input.json",
+      "sample_output": "experiments/exp-09-01/output/sample.json",
+      "test_path": "experiments/exp-09-01/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-09-02",
+      "name": "风险到检查点预算模拟器",
+      "chapter": "CH-09",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "风险清单、可逆性、影响范围与自治偏好"
+      ],
+      "outputs": [
+        "检查点数量、位置与成本收益估算"
+      ],
+      "metrics": [
+        "关键风险覆盖率",
+        "非必要检查点数",
+        "预计审阅成本"
+      ],
+      "command": "python3 experiments/exp-09-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：检查点数量、位置与成本收益估算",
+        "记录指标：关键风险覆盖率、非必要检查点数、预计审阅成本"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-09-02",
+      "readme_path": "experiments/exp-09-02/README.md",
+      "sample_input": "experiments/exp-09-02/samples/input.json",
+      "sample_output": "experiments/exp-09-02/output/sample.json",
+      "test_path": "experiments/exp-09-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-09-03",
+      "name": "Brownfield Flow 选择案例复现",
+      "chapter": "CH-09",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方 Flow 决策指南与棕地项目案例"
+      ],
+      "outputs": [
+        "Simple、FIRE、AI-DLC 三方案对照决策"
+      ],
+      "metrics": [
+        "决策依据覆盖率",
+        "预估流程开销"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：Simple、FIRE、AI-DLC 三方案对照决策",
+        "记录指标：决策依据覆盖率、预估流程开销"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/architecture/choose-flow",
+      "pinned_version": "sha256:0af0a8b0344a245e7d2a3a08c92da32a5a6d1076e9a00712420be0a6723db685",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "Simple、FIRE、AI-DLC 三方案对照决策"
+    },
+    {
+      "id": "EXP-10-01",
+      "name": "人–Agent 责任 RACI 生成器",
+      "chapter": "CH-10",
+      "triage": "SHIP",
+      "effort": "S",
+      "inputs": [
+        "研发活动、四类 Agent 与团队角色"
+      ],
+      "outputs": [
+        "责任、审批、协作和知会矩阵"
+      ],
+      "metrics": [
+        "无负责人决策数",
+        "责任冲突数"
+      ],
+      "command": "python3 experiments/exp-10-01/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：责任、审批、协作和知会矩阵",
+        "记录指标：无负责人决策数、责任冲突数"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-10-01",
+      "readme_path": "experiments/exp-10-01/README.md",
+      "sample_input": "experiments/exp-10-01/samples/input.json",
+      "sample_output": "experiments/exp-10-01/output/sample.json",
+      "test_path": "experiments/exp-10-01/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-10-02",
+      "name": "AI-DLC 价值记分卡",
+      "chapter": "CH-10",
+      "triage": "SHIP",
+      "effort": "M",
+      "inputs": [
+        "交付基线、AI-DLC 运行记录、缺陷与业务结果"
+      ],
+      "outputs": [
+        "周期、质量、审阅负担与业务价值看板"
+      ],
+      "metrics": [
+        "交付周期变化",
+        "缺陷逃逸率",
+        "人工审阅负担",
+        "业务结果变化"
+      ],
+      "command": "python3 experiments/exp-10-02/quickstart.py --sample",
+      "acceptance": [
+        "生成或复现：周期、质量、审阅负担与业务价值看板",
+        "记录指标：交付周期变化、缺陷逃逸率、人工审阅负担、业务结果变化"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "repository_path": "experiments/exp-10-02",
+      "readme_path": "experiments/exp-10-02/README.md",
+      "sample_input": "experiments/exp-10-02/samples/input.json",
+      "sample_output": "experiments/exp-10-02/output/sample.json",
+      "test_path": "experiments/exp-10-02/tests/test_demo.py"
+    },
+    {
+      "id": "EXP-10-03",
+      "name": "Mob 协作与 Agent 交接复现",
+      "chapter": "CH-10",
+      "triage": "KEEP-EXT",
+      "effort": "L",
+      "inputs": [
+        "官方 AI-DLC 与 Agile 对照、团队协作案例"
+      ],
+      "outputs": [
+        "Mob Elaboration、Mob Construction 与交接日志"
+      ],
+      "metrics": [
+        "交接信息损失率",
+        "决策一致率",
+        "协作耗时"
+      ],
+      "command": "See reproduction_steps",
+      "acceptance": [
+        "生成或复现：Mob Elaboration、Mob Construction 与交接日志",
+        "记录指标：交接信息损失率、决策一致率、协作耗时"
+      ],
+      "status": "planned",
+      "updated": "2026-07-22T06:33:31Z",
+      "external_source": "https://specs.md/methodology/ai-dlc-vs-agile",
+      "pinned_version": "sha256:1fffdb9c183ca0f19f2706e466ba2105bb0c54297df705d18d545d874ff35235",
+      "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
+      "reproduction_steps": [
+        "打开 external_source，并核对 pinned_version 对应的作者本地抓取副本",
+        "按本实验 inputs 执行参考流程并保留阶段工件",
+        "用 metrics 对 sample_result 进行记录和比较"
+      ],
+      "sample_result": "Mob Elaboration、Mob Construction 与交接日志"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "updated": "2026-07-23T05:42:01Z",
+  "active_cycle": null,
+  "cycles": [
+    {
+      "id": "v0.2-draft",
+      "status": "preview",
+      "origin_release": null,
+      "monthly_target": "v0.2 readable release",
+      "cadence": {
+        "content_per_week": 1,
+        "experiment_per_week": 1,
+        "build_or_review_per_week": 1,
+        "release_per_month": 1
+      },
+      "accepted_feedback": [],
+      "carried_gaps": [
+        {
+          "code": "FB-001",
+          "object": "Reader-A/B/C",
+          "priority": "known-gap"
+        }
+      ],
+      "tasks": [
+        {"id": "C02-T01", "title": "完成下一节可读内容", "kind": "content", "priority": "must", "status": "ready", "dependencies": [], "acceptance": ["一节内容完成审校并关联证据"]},
+        {"id": "C02-T02", "title": "运行并更新一次实验", "kind": "experiment", "priority": "must", "status": "backlog", "dependencies": ["C02-T01"], "acceptance": ["命令、输入、输出、指标和结论可复现"]},
+        {"id": "C02-T03", "title": "完成一次构建与审校", "kind": "build-review", "priority": "must", "status": "backlog", "dependencies": ["C02-T02"], "acceptance": ["CI、链接、构建和审校门禁通过"]}
+      ]
+    }
+  ]
+}
