@@ -29,7 +29,7 @@ def render_current_markdown(projection: Dict[str, Any], recent_events: Sequence[
         "> 本文件由 `python3 scripts/generate_progress.py` 自动生成，请勿手工维护统计数字。",
         "",
         f"- 目标：{goal['name']}",
-        f"- 当前：Day {goal['current_day']} / 14，剩余 {goal['days_remaining']} 个计划日",
+        f"- 当前：Day {goal['current_day']} / {goal['total_days']}，剩余 {goal['days_remaining']} 个计划日",
         f"- 总进度：{tasks['done']}/{tasks['total']}（{_pct(tasks['percent'])}）",
         f"- 加权进度：{_pct(tasks['weighted_percent'])}",
         f"- Must：{must['done']}/{must['total']}（{_pct(must['percent'])}）",
@@ -367,7 +367,7 @@ def render_dashboard(projection: Dict[str, Any], recent_events: Sequence[Dict[st
         [
             _metric_card("总体进度", _pct(tasks["percent"]), f"{tasks['done']} / {tasks['total']} 项完成", "blue"),
             _metric_card("Day 进度", f"{current_day['done']}/{current_day['total']}", f"Day {current_day['day']} · {_pct(current_day['percent'])}"),
-            _metric_card("倒计时", f"{goal['days_remaining']} 天", f"当前 Day {goal['current_day']} / 14"),
+            _metric_card("倒计时", f"{goal['days_remaining']} 天", f"当前 Day {goal['current_day']} / {goal['total_days']}"),
             _metric_card("章节阶段", f"{stage_done}/{stage_total}", f"十章六阶段 · {_pct((stage_done * 100 / stage_total) if stage_total else 0)}"),
             _metric_card("下一动作", next_value, next_detail),
             _metric_card("阻塞", str(len(projection["blockers"])), "需要先解除的任务", "red" if projection["blockers"] else "green"),
@@ -520,7 +520,7 @@ def render_dashboard(projection: Dict[str, Any], recent_events: Sequence[Dict[st
     </section>
 
     <section class="section" aria-labelledby="timeline-title">
-      <div class="section__heading"><div><p class="eyebrow">02 · TIMELINE</p><h2 id="timeline-title">14 天时间线</h2></div><a href="../planning/14-day-v0.1.md">查看详细计划 →</a></div>
+      <div class="section__heading"><div><p class="eyebrow">02 · TIMELINE</p><h2 id="timeline-title">任务时间线</h2></div><a href="../planning/14-day-v0.1.md">查看 v0.1 计划 →</a></div>
       <div class="timeline">{timeline}</div>
     </section>
 
@@ -596,7 +596,7 @@ def render_progress_page(
     )
     compass_cards = "".join(
         [
-            _render_core_link("INPUT", "任务事实源", "任务 JSON 是 14 天行动与验收的权威输入。", "#task-drilldown", "打开任务下钻"),
+            _render_core_link("INPUT", "任务事实源", "任务 JSON 是行动、写作卡片与验收的权威输入。", "#task-drilldown", "打开任务下钻"),
             _render_core_link("OUTPUT", "产物索引", "每个任务声明的必需产物都能回到任务和文件。", "#artifact-drilldown", "打开产物下钻"),
             _render_core_link("GITHUB", "协作入口", "Issue、PR、Workflow 和 Projects 是后续多人协作入口。", "#github-drilldown", "打开 GitHub 链接"),
             _render_core_link("TRACE", "事件账本", "关键更新自动写入事件、快照和变更日志。", "#event-production", "查看最近事件"),
@@ -643,7 +643,7 @@ def render_progress_page(
       </div>
       <aside class="hero__meta" aria-label="生成信息">
         <p><span>下一动作</span><a class="hero__action" href="{_e(next_action['href']) if next_action else 'details.html#tasks'}"><strong>{_e((next_action['id'] + ' · ' + next_action['title']) if next_action else (projection['release_message'] or '暂无下一动作'))}</strong></a></p>
-        <p><span>两周目标</span><strong>{_e(goal['name'])}</strong></p>
+        <p><span>当前目标</span><strong>{_e(goal['name'])}</strong></p>
         <p><span>页面生成时间</span><strong>{_e(projection['generated_at'])}</strong></p>
       </aside>
     </section>
@@ -655,7 +655,7 @@ def render_progress_page(
     </section>
 
     <section class="section" id="timeline-production" aria-labelledby="timeline-production-title">
-      <div class="section__heading"><div><p class="eyebrow">02 · TIMELINE</p><h2 id="timeline-production-title">14 天时间线</h2></div><a href="../planning/14-day-v0.1.md">查看详细计划 →</a></div>
+      <div class="section__heading"><div><p class="eyebrow">02 · TIMELINE</p><h2 id="timeline-production-title">任务时间线</h2></div><a href="../planning/14-day-v0.1.md">查看 v0.1 计划 →</a></div>
       {timeline_html}
     </section>
 
@@ -711,7 +711,8 @@ def render_details(
     cycles = facts.get("cycles", {}).get("cycles", [])
 
     day_sections = []
-    for day in range(1, 15):
+    task_days = sorted({int(item.get("day")) for item in tasks if isinstance(item.get("day"), int)})
+    for day in task_days:
         task_cards = []
         for task in (item for item in tasks if item.get("day") == day):
             artifact_items = []
@@ -737,6 +738,41 @@ def render_details(
         day_sections.append(
             f'<section class="detail-day" id="day-{day:02d}" aria-labelledby="day-{day:02d}-title">'
             f'<h2 id="day-{day:02d}-title">Day {day:02d}</h2><div class="detail-grid">{"".join(task_cards)}</div></section>'
+        )
+
+    writing_card_labels = {
+        "outline": "01 · 论证骨架",
+        "draft": "02 · 可读稿",
+        "review": "03 · 审校证据",
+    }
+    chapter_writing_sections = []
+    for chapter in sorted(chapters, key=lambda item: item.get("number", 999)):
+        chapter_tasks = sorted(
+            (item for item in tasks if item.get("chapter") == chapter.get("id")),
+            key=lambda item: item.get("id", ""),
+        )
+        if not chapter_tasks:
+            continue
+        cards = []
+        for task in chapter_tasks:
+            artifacts = "".join(
+                f'<li><code>{_e(item["path"])}</code>{" · 必需" if item.get("required") else ""}</li>'
+                for item in task.get("artifacts", [])
+            ) or "<li>未声明产物</li>"
+            dependencies = ", ".join(task.get("dependencies", [])) or "无"
+            card_label = writing_card_labels.get(task.get("card", ""), task.get("card", "写作卡片"))
+            cards.append(
+                f'<article class="detail-card detail-card--compact" id="chapter-writing-{_e(task["id"])}">'
+                f'<div class="detail-card__head"><span class="eyebrow">{_e(card_label)} · {_e(task["id"])}</span>{_status_badge(task["status"])}</div>'
+                f'<h3>{_e(task["title"])}</h3><p>Day {int(task["day"]):02d} · 计划：{_e(task["planned_date"])} · 依赖：{_e(dependencies)}</p>'
+                f'<p>{_e("; ".join(item.get("text", "") for item in task.get("acceptance", [])))}</p>'
+                f'<h4>产物</h4><ul>{artifacts}</ul><a class="text-link" href="#task-{_e(task["id"])}">跳到任务卡 →</a></article>'
+            )
+        done = sum(1 for item in chapter_tasks if item.get("status") == "done")
+        chapter_writing_sections.append(
+            f'<section class="detail-day" id="chapter-writing-{_e(chapter["id"])}" aria-labelledby="chapter-writing-{_e(chapter["id"])}-title">'
+            f'<h3 id="chapter-writing-{_e(chapter["id"])}-title">{_e(chapter["id"])} · {_e(chapter["title"])} <small>{done}/{len(chapter_tasks)}</small></h3>'
+            f'<div class="detail-grid">{"".join(cards)}</div></section>'
         )
 
     chapter_cards = []
@@ -814,8 +850,9 @@ def render_details(
   <header class="topbar"><a class="brand" href="../README.md"><span>AI-DLC</span> BOOK OPS</a><nav aria-label="主要导航"><a href="index.html">驾驶舱</a><a href="progress.html">生产线</a><a aria-current="page" href="details.html">对象下钻</a><a href="../progress/generated/current.md">文字摘要</a></nav></header>
   <main id="main" class="details-main">
     <section class="details-hero"><p class="eyebrow">DRILLDOWN · {_e(projection['source_id'])}</p><h1>从鸟瞰进入<br>具体对象</h1><p>每个 Task ID、章节阶段和实验都保留稳定锚点，并链接到对应产物或权威事实源。</p></section>
-    <nav class="anchor-nav" aria-label="对象下钻目录"><a href="#tasks">14 天任务</a><a href="#chapters">十章生产线</a><a href="#experiments">30 个实验</a><a href="#feedback">反馈</a><a href="#cycles">下一周期</a></nav>
-    <section class="details-group" id="tasks"><p class="eyebrow">TASKS</p><h2>14 天任务</h2>{''.join(day_sections)}</section>
+    <nav class="anchor-nav" aria-label="对象下钻目录"><a href="#tasks">任务时间线</a><a href="#chapter-writing-cards">十章写作卡片</a><a href="#chapters">十章生产线</a><a href="#experiments">30 个实验</a><a href="#feedback">反馈</a><a href="#cycles">下一周期</a></nav>
+    <section class="details-group" id="tasks"><p class="eyebrow">TASKS</p><h2>任务时间线</h2>{''.join(day_sections)}</section>
+    <section class="details-group" id="chapter-writing-cards"><p class="eyebrow">WRITING CARDS</p><h2>十章写作任务卡片</h2>{''.join(chapter_writing_sections) or '<p class="empty-state">尚未定义章节写作卡片。</p>'}</section>
     <section class="details-group" id="chapters"><p class="eyebrow">CHAPTERS</p><h2>十章生产线</h2><div class="detail-grid">{''.join(chapter_cards)}</div></section>
     <section class="details-group" id="experiments"><p class="eyebrow">EXPERIMENTS</p><h2>实验治理队列</h2>{''.join(triage_sections)}</section>
     <section class="details-group" id="feedback"><p class="eyebrow">FEEDBACK</p><h2>反馈决策</h2><div class="detail-grid">{''.join(feedback_cards)}</div></section>

@@ -4,7 +4,7 @@
 
 ## 权威事实
 
-- `tasks.json`：14 天任务
+- `tasks.json`：路线图任务、写作卡片、依赖与验收
 - `chapters.json`：十章六阶段状态
 - `experiments.json`：实验治理记录
 - `schemas/`：字段和门禁说明

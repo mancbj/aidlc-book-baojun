@@ -65,7 +65,7 @@ class CollaborationAndSecurityTests(unittest.TestCase):
 
     def test_pull_request_metadata_accepts_completed_template(self):
         body = """## 关联任务
-D01-T01
+D15-T01
 ## 产物
 README.md
 ## 测试与构建

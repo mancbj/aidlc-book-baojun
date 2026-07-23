@@ -28,7 +28,7 @@
 | `status` | enum | 六种状态之一，见第 4 节 | 进度与下一动作 |
 | `priority` | enum | `must` / `should` / `could` | 排序及加权进度 |
 | `owner` | string | 非空 | 唯一责任人或角色 |
-| `day` | integer | `1`–`14` | 两周路线中的相对日 |
+| `day` | integer | `1`–`99` | 路线图中的相对日；D01–D14 保留 v0.1，两周后续写作冲刺可继续递增 |
 | `planned_date` | string | 有效日期，格式 `YYYY-MM-DD` | 日历锚点 |
 | `dependencies` | array[string] | 只引用已知任务 ID；不得自引用或形成环 | 开始与完成门禁 |
 | `artifacts` | array[Artifact] | 至少一项 | 可验证产物 |
@@ -110,7 +110,7 @@ backlog / ready / in-progress / review → blocked → ready / in-progress
 
 ## 6. 下一动作与鸟瞰规则
 
-驾驶舱将 `done` 和 `blocked` 排除出普通下一动作列表，并只显示依赖已经完成的候选任务。候选排序为：
+驾驶舱将 `done` 和 `blocked` 排除出普通下一动作列表，并只显示依赖已经完成的候选任务。时间线按事实源中的最小/最大 `day` 动态生成，不再假定只存在 14 天。候选排序为：
 
 1. 状态：`review` → `in-progress` → `ready` → `backlog`。
 2. 优先级：`must` → `should` → `could`。

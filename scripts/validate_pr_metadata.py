@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Optional, Sequence
 
 
-TASK_ID_RE = re.compile(r"\bD(?:0[1-9]|1[0-4])-T\d{2}\b")
+TASK_ID_RE = re.compile(r"\bD(?:0[1-9]|[1-9]\d)-T\d{2}\b")
 REQUIRED_SECTIONS = ("## 测试与构建", "## 验收", "## 产物")
 
 
@@ -31,7 +31,7 @@ def body_from_event(path: Path) -> Optional[str]:
 def validate_body(body: str) -> list[str]:
     issues = []
     if not TASK_ID_RE.search(body):
-        issues.append("缺少有效 Task ID（D01-T01 至 D14-TNN）。")
+        issues.append("缺少有效 Task ID（D01-T01 至 D99-TNN）。")
     for section in REQUIRED_SECTIONS:
         if section not in body:
             issues.append(f"缺少段落：{section}")

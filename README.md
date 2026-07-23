@@ -101,7 +101,7 @@
 7. 关键事件、历史快照和 Changelog。
 8. 反馈入口、Release Notes 和下一更新周期。
 
-逐日任务见[14 天行动计划](planning/14-day-v0.1.md)。任务状态、依赖、产物和验收的唯一权威源是 [progress/tasks.json](progress/tasks.json)。
+v0.1 逐日任务见[14 天行动计划](planning/14-day-v0.1.md)。后续十章写作冲刺继续沿用同一任务事实源：任务状态、依赖、产物和验收的唯一权威源是 [progress/tasks.json](progress/tasks.json)。
 
 ## 从这里开始
 
@@ -122,8 +122,8 @@
 
 ## 自动进度与鸟瞰入口
 
-- [鸟瞰驾驶舱](site/index.html)：14 天时间线、章节矩阵、实验治理、阻塞和下一动作。
-- [对象下钻](site/details.html)：逐任务、逐章节和逐实验检查事实。
+- [鸟瞰驾驶舱](site/index.html)：任务时间线、章节矩阵、实验治理、阻塞和下一动作。
+- [对象下钻](site/details.html)：逐任务、十章写作卡片、逐章节和逐实验检查事实。
 - [GitHub 文字摘要](progress/generated/current.md)：无需打开 HTML 即可查看当前状态。
 - [关键更新日志](progress/CHANGELOG.md)：自动追加的人类可读历史。
 - [机器事件账本](progress/events/events.jsonl)：稳定 ID 的 JSONL 审计记录。
@@ -136,7 +136,7 @@ README 不手工维护完成率；所有数字从版本化事实源自动生成�
 | 内容 | 唯一权威来源 | 人类入口或投影 |
 | --- | --- | --- |
 | 书稿、Part 0 与目录 | `book/` | README、未来 HTML/PDF |
-| 14 天任务、依赖与验收 | `progress/tasks.json` | 行动计划、Dashboard、GitHub Projects |
+| 路线图任务、写作卡片、依赖与验收 | `progress/tasks.json` | 行动计划、Dashboard、对象下钻、GitHub Projects |
 | 十章六阶段生产状态 | `progress/chapters.json` | Dashboard 章节矩阵 |
 | 实验池与分类 | `progress/experiments.json` | 实验治理说明、Release Notes |
 | 反馈决定 | `feedback/decisions.json` | 反馈摘要和修订任务 |

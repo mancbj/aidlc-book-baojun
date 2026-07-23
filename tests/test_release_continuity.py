@@ -526,7 +526,8 @@ class ReadinessAndReleaseTests(unittest.TestCase):
             )
         else:
             self.assertEqual(0, report["summary"]["blockers"])
-        self.assertEqual(42, len(audit["tasks"]))
+        source_task_count = len(json.loads((REPO_ROOT / "progress/tasks.json").read_text(encoding="utf-8"))["tasks"])
+        self.assertEqual(source_task_count, len(audit["tasks"]))
         self.assertEqual(before, digest(REPO_ROOT / "progress/tasks.json"))
 
     def test_blocked_readiness_cannot_build_a_release_candidate(self):

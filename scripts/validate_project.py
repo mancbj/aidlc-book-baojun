@@ -284,14 +284,14 @@ class ProjectValidator:
             )
 
             day = task.get("day")
-            if not isinstance(day, int) or isinstance(day, bool) or not 1 <= day <= 14:
+            if not isinstance(day, int) or isinstance(day, bool) or not 1 <= day <= 99:
                 self.error(
                     source,
                     object_id,
                     "day",
                     day,
-                    "day 必须是 1–14 的整数。",
-                    "使用当前 14 天路线中的相对 Day。",
+                    "day 必须是 1–99 的整数。",
+                    "使用当前路线图中的相对 Day。",
                 )
             self.validate_date(
                 task.get("planned_date"), source, object_id, "planned_date"
@@ -1005,4 +1005,3 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-

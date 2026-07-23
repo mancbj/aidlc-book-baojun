@@ -240,7 +240,8 @@ def aggregate_progress(
         }
 
     unfinished = [task for task in tasks if task.get("status") != "done"]
-    current_day = min((int(task["day"]) for task in unfinished), default=14)
+    max_day = max((int(task["day"]) for task in tasks), default=14)
+    current_day = min((int(task["day"]) for task in unfinished), default=max_day)
     all_done = bool(tasks) and not unfinished
 
     next_candidates = []
@@ -291,7 +292,7 @@ def aggregate_progress(
         blockers.append(item)
 
     timeline = []
-    for day in range(1, 15):
+    for day in range(1, max_day + 1):
         day_tasks = [task for task in tasks if task.get("day") == day]
         day_done = sum(task.get("status") == "done" for task in day_tasks)
         day_blocked = sum(task.get("status") == "blocked" for task in day_tasks)
@@ -394,7 +395,7 @@ def aggregate_progress(
     if active_cycle:
         release_message = "v0.1 已发布；执行下一周期首个 Must"
     elif not tasks:
-        release_message = "尚未创建任务，请先初始化 14 天任务事实源"
+        release_message = "尚未创建任务，请先初始化任务事实源"
     elif all_done:
         release_message = (
             "v0.1 已完成；执行下一周期首个 Must"
@@ -409,10 +410,10 @@ def aggregate_progress(
         "source_id": source_id,
         "latest_fact_update": latest_fact_update,
         "goal": {
-            "name": "两周形成可发布 v0.1",
-            "total_days": 14,
+            "name": "v0.1 已发布；十章写作冲刺",
+            "total_days": max_day,
             "current_day": current_day,
-            "days_remaining": max(14 - current_day, 0),
+            "days_remaining": max(max_day - current_day, 0),
             "all_tasks_done": all_done,
         },
         "tasks": {

@@ -590,30 +590,43 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-23T08:40:00Z",
+  "generated_at": "2026-07-23T09:00:00Z",
   "goal": {
-    "all_tasks_done": true,
-    "current_day": 14,
-    "days_remaining": 0,
-    "name": "两周形成可发布 v0.1",
-    "total_days": 14
+    "all_tasks_done": false,
+    "current_day": 15,
+    "days_remaining": 9,
+    "name": "v0.1 已发布；十章写作冲刺",
+    "total_days": 24
   },
-  "latest_fact_update": "2026-07-23T08:40:00Z",
-  "latest_snapshot": "../progress/snapshots/20260723T084000Z-dab2f9-working-tree-5adbad9d3fa3.json",
-  "next_actions": [],
-  "recent_events": [
+  "latest_fact_update": "2026-07-23T09:00:00Z",
+  "latest_snapshot": "../progress/snapshots/20260723T090000Z-0adfa8-working-tree-8743e094f7c6.json",
+  "next_actions": [
     {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "backlog",
-      "id": "EVT-e396ed46a17deb7b",
-      "object_id": "D13-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T05:49:41Z",
-      "source_id": "working-tree-2cf6f596de2a",
-      "summary": "D13-T03 · 生成 v0.1 Release Candidate：backlog → done",
-      "type": "task_status_changed"
-    },
+      "acceptance": [
+        {
+          "passed": false,
+          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "book/chapters/ch01-ai-native-sdlc.md",
+          "required": true
+        }
+      ],
+      "day": 15,
+      "dependencies": [],
+      "href": "details.html#task-D15-T01",
+      "id": "D15-T01",
+      "owner": "author",
+      "planned_date": "2026-08-04",
+      "priority": "must",
+      "status": "ready",
+      "status_label": "可开始",
+      "title": "CH-01 · 锁定章节论证骨架"
+    }
+  ],
+  "recent_events": [
     {
       "actor": "chenbaojun",
       "after": "done",
@@ -721,14 +734,26 @@
       "source_id": "4d1547dab2f9-working-tree-5adbad9d3fa3",
       "summary": "v0.2 first content-experiment-build loop completed",
       "type": "build_completed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "10 chapter writing sprint task cards planned",
+      "before": null,
+      "id": "EVT-42fd3577bced01ca",
+      "object_id": "writing-sprint",
+      "object_type": "project",
+      "occurred_at": "2026-07-23T09:00:00Z",
+      "source_id": "e8de9e0adfa8-working-tree-8743e094f7c6",
+      "summary": "10 chapter writing sprint task cards planned",
+      "type": "milestone_reached"
     }
   ],
-  "release_message": "准备 v0.1 发布；等待真实发布回执激活下一周期",
+  "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "4d1547dab2f9-working-tree-5adbad9d3fa3",
+  "source_id": "e8de9e0adfa8-working-tree-8743e094f7c6",
   "tasks": {
     "done": 42,
-    "percent": 100.0,
+    "percent": 58.3,
     "priority": {
       "could": {
         "done": 0,
@@ -739,8 +764,8 @@
       "must": {
         "done": 40,
         "has_sample": true,
-        "percent": 100.0,
-        "total": 40
+        "percent": 57.1,
+        "total": 70
       },
       "should": {
         "done": 2,
@@ -750,11 +775,11 @@
       }
     },
     "status_counts": {
-      "backlog": 0,
+      "backlog": 29,
       "blocked": 0,
       "done": 42,
       "in-progress": 0,
-      "ready": 0,
+      "ready": 1,
       "review": 0
     },
     "timeline": [
@@ -880,12 +905,102 @@
         "day": 14,
         "done": 3,
         "href": "details.html#day-14",
-        "is_current": true,
+        "is_current": false,
         "percent": 100.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 15,
+        "done": 0,
+        "href": "details.html#day-15",
+        "is_current": true,
+        "percent": 0.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 16,
+        "done": 0,
+        "href": "details.html#day-16",
+        "is_current": false,
+        "percent": 0.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 17,
+        "done": 0,
+        "href": "details.html#day-17",
+        "is_current": false,
+        "percent": 0.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 18,
+        "done": 0,
+        "href": "details.html#day-18",
+        "is_current": false,
+        "percent": 0.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 19,
+        "done": 0,
+        "href": "details.html#day-19",
+        "is_current": false,
+        "percent": 0.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 20,
+        "done": 0,
+        "href": "details.html#day-20",
+        "is_current": false,
+        "percent": 0.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 21,
+        "done": 0,
+        "href": "details.html#day-21",
+        "is_current": false,
+        "percent": 0.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 22,
+        "done": 0,
+        "href": "details.html#day-22",
+        "is_current": false,
+        "percent": 0.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 23,
+        "done": 0,
+        "href": "details.html#day-23",
+        "is_current": false,
+        "percent": 0.0,
+        "total": 3
+      },
+      {
+        "blocked": 0,
+        "day": 24,
+        "done": 0,
+        "href": "details.html#day-24",
+        "is_current": false,
+        "percent": 0.0,
         "total": 3
       }
     ],
-    "total": 42,
-    "weighted_percent": 100.0
+    "total": 72,
+    "weighted_percent": 57.9
   }
 }

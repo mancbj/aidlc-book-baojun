@@ -196,7 +196,7 @@ class GeneratorIntegrationTests(unittest.TestCase):
             "倒计时",
             "章节阶段",
             "下一动作",
-            "14 天时间线",
+            "任务时间线",
             "十章六阶段生产线",
             "实验治理队列",
             "阻塞中心",
@@ -209,7 +209,7 @@ class GeneratorIntegrationTests(unittest.TestCase):
         for text in (
             "时间线与",
             "生产线鸟瞰",
-            "14 天时间线",
+            "任务时间线",
             "章节生产线",
             "实验生产线",
             "阻塞中心",
@@ -230,6 +230,7 @@ class GeneratorIntegrationTests(unittest.TestCase):
         ):
             self.assertIn(text, progress)
         self.assertIn('id="task-D01-T01"', details)
+        self.assertIn('id="chapter-writing-cards"', details)
         self.assertIn('id="chapter-CH-01"', details)
         self.assertIn('id="experiment-EXP-01-03"', details)
 

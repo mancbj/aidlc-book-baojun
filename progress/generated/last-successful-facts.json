@@ -2688,11 +2688,969 @@
           "type": "release",
           "unblock_action": "",
           "updated": "2026-07-23T07:00:59Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch01-ai-native-sdlc.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-01",
+          "day": 15,
+          "dependencies": [],
+          "id": "D15-T01",
+          "notes": "每日一章写作冲刺：AI 原生 SDLC：从概率智能到确定性交付 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-04",
+          "priority": "must",
+          "status": "ready",
+          "title": "CH-01 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch01-ai-native-sdlc.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-01",
+          "day": 15,
+          "dependencies": [
+            "D15-T01"
+          ],
+          "id": "D15-T02",
+          "notes": "每日一章写作冲刺：AI 原生 SDLC：从概率智能到确定性交付 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-04",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-01 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-01-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-01",
+          "day": 15,
+          "dependencies": [
+            "D15-T02"
+          ],
+          "id": "D15-T03",
+          "notes": "每日一章写作冲刺：AI 原生 SDLC：从概率智能到确定性交付 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-04",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-01 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch02-human-judgment.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-02",
+          "day": 16,
+          "dependencies": [
+            "D15-T03"
+          ],
+          "id": "D16-T01",
+          "notes": "每日一章写作冲刺：人的判断与反向对话 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-05",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-02 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch02-human-judgment.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-02",
+          "day": 16,
+          "dependencies": [
+            "D16-T01"
+          ],
+          "id": "D16-T02",
+          "notes": "每日一章写作冲刺：人的判断与反向对话 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-05",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-02 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-02-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-02",
+          "day": 16,
+          "dependencies": [
+            "D16-T02"
+          ],
+          "id": "D16-T03",
+          "notes": "每日一章写作冲刺：人的判断与反向对话 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-05",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-02 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch03-inception.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-03",
+          "day": 17,
+          "dependencies": [
+            "D16-T03"
+          ],
+          "id": "D17-T01",
+          "notes": "每日一章写作冲刺：Inception：从 Intent 到可执行计划 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-06",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-03 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch03-inception.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-03",
+          "day": 17,
+          "dependencies": [
+            "D17-T01"
+          ],
+          "id": "D17-T02",
+          "notes": "每日一章写作冲刺：Inception：从 Intent 到可执行计划 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-06",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-03 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-03-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-03",
+          "day": 17,
+          "dependencies": [
+            "D17-T02"
+          ],
+          "id": "D17-T03",
+          "notes": "每日一章写作冲刺：Inception：从 Intent 到可执行计划 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-06",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-03 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch04-memory-bank-standards.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-04",
+          "day": 18,
+          "dependencies": [
+            "D17-T03"
+          ],
+          "id": "D18-T01",
+          "notes": "每日一章写作冲刺：上下文工程：Memory Bank 与 Standards 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-07",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-04 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch04-memory-bank-standards.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-04",
+          "day": 18,
+          "dependencies": [
+            "D18-T01"
+          ],
+          "id": "D18-T02",
+          "notes": "每日一章写作冲刺：上下文工程：Memory Bank 与 Standards 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-07",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-04 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-04-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-04",
+          "day": 18,
+          "dependencies": [
+            "D18-T02"
+          ],
+          "id": "D18-T03",
+          "notes": "每日一章写作冲刺：上下文工程：Memory Bank 与 Standards 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-07",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-04 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch05-bolts.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-05",
+          "day": 19,
+          "dependencies": [
+            "D18-T03"
+          ],
+          "id": "D19-T01",
+          "notes": "每日一章写作冲刺：Bolts：为快速执行选择正确轨道 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-08",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-05 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch05-bolts.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-05",
+          "day": 19,
+          "dependencies": [
+            "D19-T01"
+          ],
+          "id": "D19-T02",
+          "notes": "每日一章写作冲刺：Bolts：为快速执行选择正确轨道 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-08",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-05 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-05-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-05",
+          "day": 19,
+          "dependencies": [
+            "D19-T02"
+          ],
+          "id": "D19-T03",
+          "notes": "每日一章写作冲刺：Bolts：为快速执行选择正确轨道 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-08",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-05 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch06-exsecutio.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-06",
+          "day": 20,
+          "dependencies": [
+            "D19-T03"
+          ],
+          "id": "D20-T01",
+          "notes": "每日一章写作冲刺：Exsecutio：把提议贯彻为交付候选 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-09",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-06 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch06-exsecutio.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-06",
+          "day": 20,
+          "dependencies": [
+            "D20-T01"
+          ],
+          "id": "D20-T02",
+          "notes": "每日一章写作冲刺：Exsecutio：把提议贯彻为交付候选 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-09",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-06 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-06-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-06",
+          "day": 20,
+          "dependencies": [
+            "D20-T02"
+          ],
+          "id": "D20-T03",
+          "notes": "每日一章写作冲刺：Exsecutio：把提议贯彻为交付候选 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-09",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-06 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch07-verification.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-07",
+          "day": 21,
+          "dependencies": [
+            "D20-T03"
+          ],
+          "id": "D21-T01",
+          "notes": "每日一章写作冲刺：验证：把人类检查点变成有效损失函数 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-10",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-07 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch07-verification.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-07",
+          "day": 21,
+          "dependencies": [
+            "D21-T01"
+          ],
+          "id": "D21-T02",
+          "notes": "每日一章写作冲刺：验证：把人类检查点变成有效损失函数 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-10",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-07 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-07-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-07",
+          "day": 21,
+          "dependencies": [
+            "D21-T02"
+          ],
+          "id": "D21-T03",
+          "notes": "每日一章写作冲刺：验证：把人类检查点变成有效损失函数 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-10",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-07 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch08-operations.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-08",
+          "day": 22,
+          "dependencies": [
+            "D21-T03"
+          ],
+          "id": "D22-T01",
+          "notes": "每日一章写作冲刺：Operations：从交付候选到可持续运行 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-11",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-08 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch08-operations.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-08",
+          "day": 22,
+          "dependencies": [
+            "D22-T01"
+          ],
+          "id": "D22-T02",
+          "notes": "每日一章写作冲刺：Operations：从交付候选到可持续运行 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-11",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-08 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-08-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-08",
+          "day": 22,
+          "dependencies": [
+            "D22-T02"
+          ],
+          "id": "D22-T03",
+          "notes": "每日一章写作冲刺：Operations：从交付候选到可持续运行 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-11",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-08 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch09-adaptive-engineering.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-09",
+          "day": 23,
+          "dependencies": [
+            "D22-T03"
+          ],
+          "id": "D23-T01",
+          "notes": "每日一章写作冲刺：适配性工程：选择正确的 Flow 与治理强度 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-12",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-09 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch09-adaptive-engineering.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-09",
+          "day": 23,
+          "dependencies": [
+            "D23-T01"
+          ],
+          "id": "D23-T02",
+          "notes": "每日一章写作冲刺：适配性工程：选择正确的 Flow 与治理强度 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-12",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-09 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-09-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-09",
+          "day": 23,
+          "dependencies": [
+            "D23-T02"
+          ],
+          "id": "D23-T03",
+          "notes": "每日一章写作冲刺：适配性工程：选择正确的 Flow 与治理强度 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-12",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-09 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch10-organization-metrics.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "outline",
+          "chapter": "CH-10",
+          "day": 24,
+          "dependencies": [
+            "D23-T03"
+          ],
+          "id": "D24-T01",
+          "notes": "每日一章写作冲刺：组织与度量：从 Agent 分工到研发操作系统 的 锁定章节论证骨架 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-13",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-10 · 锁定章节论证骨架",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "book/chapters/ch10-organization-metrics.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "draft",
+          "chapter": "CH-10",
+          "day": 24,
+          "dependencies": [
+            "D24-T01"
+          ],
+          "id": "D24-T02",
+          "notes": "每日一章写作冲刺：组织与度量：从 Agent 分工到研发操作系统 的 完成章节可读稿 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-13",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-10 · 完成章节可读稿",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
+        },
+        {
+          "acceptance": [
+            {
+              "passed": false,
+              "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "planning/reviews/ch-10-writing-review.md",
+              "required": true
+            }
+          ],
+          "blocker_reason": "",
+          "card": "review",
+          "chapter": "CH-10",
+          "day": 24,
+          "dependencies": [
+            "D24-T02"
+          ],
+          "id": "D24-T03",
+          "notes": "每日一章写作冲刺：组织与度量：从 Agent 分工到研发操作系统 的 完成章节审校与证据对齐 卡片。",
+          "owner": "author",
+          "phase": "progress",
+          "planned_date": "2026-08-13",
+          "priority": "must",
+          "status": "backlog",
+          "title": "CH-10 · 完成章节审校与证据对齐",
+          "type": "writing",
+          "unblock_action": "",
+          "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-23T06:28:00Z"
+      "updated": "2026-07-23T09:00:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "4d1547dab2f9-working-tree-5adbad9d3fa3"
+  "source_id": "e8de9e0adfa8-working-tree-8743e094f7c6"
 }

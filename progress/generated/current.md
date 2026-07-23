@@ -2,21 +2,21 @@
 
 > 本文件由 `python3 scripts/generate_progress.py` 自动生成，请勿手工维护统计数字。
 
-- 目标：两周形成可发布 v0.1
-- 当前：Day 14 / 14，剩余 0 个计划日
-- 总进度：42/42（100.0%）
-- 加权进度：100.0%
-- Must：40/40（100.0%）
+- 目标：v0.1 已发布；十章写作冲刺
+- 当前：Day 15 / 24，剩余 9 个计划日
+- 总进度：42/72（58.3%）
+- 加权进度：57.9%
+- Must：40/70（57.1%）
 - Should：2/2（100.0%）
 - 阻塞：0
 - 反馈：1 条；accepted 0 条
 - 下一周期：尚未激活
-- 事实最近更新：2026-07-23T08:40:00Z
-- 来源：`4d1547dab2f9-working-tree-5adbad9d3fa3`
+- 事实最近更新：2026-07-23T09:00:00Z
+- 来源：`e8de9e0adfa8-working-tree-8743e094f7c6`
 
 ## 下一动作
 
-准备 v0.1 发布；等待真实发布回执激活下一周期
+1. **D15-T01 · CH-01 · 锁定章节论证骨架** — MUST / 可开始 / Day 15
 
 ## 阻塞
 
@@ -24,6 +24,7 @@
 
 ## 最近关键更新
 
+- `2026-07-23T09:00:00Z` · 10 chapter writing sprint task cards planned (`EVT-42fd3577bced01ca`)
 - `2026-07-23T08:40:00Z` · v0.2 first content-experiment-build loop completed (`EVT-58ca7bbfaf00b745`)
 - `2026-07-23T08:20:00Z` · EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验 · status：planned → verified (`EVT-6b94ab7f22a00a31`)
 - `2026-07-23T07:25:00Z` · CH-04 · 上下文工程：Memory Bank 与 Standards · 问题：pending → done (`EVT-4a803ebc32e5a1a1`)
@@ -33,7 +34,6 @@
 - `2026-07-23T06:29:21Z` · D14-T02 · 发布 v0.1：blocked → done (`EVT-537d82e20d6f860e`)
 - `2026-07-23T06:06:24Z` · D14-T02 · 发布 v0.1：backlog → blocked (`EVT-df61d6dc19e493b1`)
 - `2026-07-23T06:00:28Z` · D14-T01 · 复核 v0.1 Definition of Done：backlog → done (`EVT-73371c01fbd5226f`)
-- `2026-07-23T05:49:41Z` · D13-T03 · 生成 v0.1 Release Candidate：backlog → done (`EVT-e396ed46a17deb7b`)
 
 ## 下钻入口
 
