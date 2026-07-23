@@ -715,8 +715,8 @@ class PublishedCycleTests(unittest.TestCase):
                 if line.strip()
             }
             self.assertEqual("C02-T01", current["next_actions"][0]["id"])
-            self.assertEqual(1, result["new_event_count"])
-            self.assertIn("release_published", event_types)
+            self.assertEqual(2, result["new_event_count"])
+            self.assertTrue({"cycle_opened", "release_published"}.issubset(event_types))
             self.assertIn("working-tree", current["source_id"])
 
 

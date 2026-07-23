@@ -544,7 +544,7 @@
     "total": 10
   },
   "cycles": {
-    "active_cycle": "v0.2-draft",
+    "active_cycle": null,
     "href": "details.html#cycles",
     "preview_count": 0,
     "rows": [
@@ -554,8 +554,8 @@
         "href": "details.html#cycle-v0.2-draft",
         "id": "v0.2-draft",
         "monthly_target": "v0.2 readable release",
-        "status": "active",
-        "task_done": 2,
+        "status": "complete",
+        "task_done": 3,
         "task_total": 3
       }
     ]
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-23T08:20:00Z",
+  "generated_at": "2026-07-23T08:40:00Z",
   "goal": {
     "all_tasks_done": true,
     "current_day": 14,
@@ -598,45 +598,10 @@
     "name": "两周形成可发布 v0.1",
     "total_days": 14
   },
-  "latest_fact_update": "2026-07-23T08:20:00Z",
-  "latest_snapshot": "../progress/snapshots/20260723T082000Z-530ed1-working-tree-5eeb8b224c3a.json",
-  "next_actions": [
-    {
-      "acceptance": [
-        {
-          "passed": false,
-          "text": "CI、链接、构建和审校门禁通过"
-        }
-      ],
-      "artifacts": [],
-      "day": "CYCLE",
-      "dependencies": [
-        "C02-T02"
-      ],
-      "href": "details.html#cycle-task-C02-T03",
-      "id": "C02-T03",
-      "owner": "author",
-      "planned_date": "v0.2 readable release",
-      "priority": "must",
-      "scope_label": "v0.2-draft",
-      "status": "ready",
-      "status_label": "可开始",
-      "title": "完成一次构建与审校"
-    }
-  ],
+  "latest_fact_update": "2026-07-23T08:40:00Z",
+  "latest_snapshot": "../progress/snapshots/20260723T084000Z-dab2f9-working-tree-5adbad9d3fa3.json",
+  "next_actions": [],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "backlog",
-      "id": "EVT-d11925c6d10596fd",
-      "object_id": "D13-T02",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T05:42:01Z",
-      "source_id": "working-tree-09883b6837b4",
-      "summary": "D13-T02 · 处理发布阻断反馈：backlog → done",
-      "type": "task_status_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "done",
@@ -744,11 +709,23 @@
       "source_id": "2796ba530ed1-working-tree-5eeb8b224c3a",
       "summary": "EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验 · status：planned → verified",
       "type": "experiment_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "v0.2 first content-experiment-build loop completed",
+      "before": null,
+      "id": "EVT-58ca7bbfaf00b745",
+      "object_id": "C02-T03",
+      "object_type": "project",
+      "occurred_at": "2026-07-23T08:40:00Z",
+      "source_id": "4d1547dab2f9-working-tree-5adbad9d3fa3",
+      "summary": "v0.2 first content-experiment-build loop completed",
+      "type": "build_completed"
     }
   ],
-  "release_message": "v0.1 已发布；执行下一周期首个 Must",
+  "release_message": "准备 v0.1 发布；等待真实发布回执激活下一周期",
   "schema_version": "1.0.0",
-  "source_id": "2796ba530ed1-working-tree-5eeb8b224c3a",
+  "source_id": "4d1547dab2f9-working-tree-5adbad9d3fa3",
   "tasks": {
     "done": 42,
     "percent": 100.0,

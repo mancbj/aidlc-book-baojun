@@ -1,5 +1,5 @@
 {
-  "active_cycle": "v0.2-draft",
+  "active_cycle": null,
   "cycles": [
     {
       "accepted_feedback": [],
@@ -60,7 +60,7 @@
         "url": "https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.1",
         "version": "v0.1"
       },
-      "status": "active",
+      "status": "complete",
       "tasks": [
         {
           "acceptance": [
@@ -96,12 +96,12 @@
           "id": "C02-T03",
           "kind": "build-review",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "完成一次构建与审校"
         }
       ]
     }
   ],
   "schema_version": "1.0.0",
-  "updated": "2026-07-23T07:00:59Z"
+  "updated": "2026-07-23T08:40:00Z"
 }

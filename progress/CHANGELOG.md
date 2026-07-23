@@ -574,3 +574,9 @@
 快照：[`20260723T082000Z-530ed1-working-tree-5eeb8b224c3a.json`](snapshots/20260723T082000Z-530ed1-working-tree-5eeb8b224c3a.json)
 
 - **experiment_changed** · EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验 · status：planned → verified (`EVT-6b94ab7f22a00a31`)
+
+## 2026-07-23T08:40:00Z · `4d1547dab2f9-working-tree-5adbad9d3fa3`
+
+快照：[`20260723T084000Z-dab2f9-working-tree-5adbad9d3fa3.json`](snapshots/20260723T084000Z-dab2f9-working-tree-5adbad9d3fa3.json)
+
+- **build_completed** · v0.2 first content-experiment-build loop completed (`EVT-58ca7bbfaf00b745`)
