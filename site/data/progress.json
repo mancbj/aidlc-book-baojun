@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-23T08:20:00Z",
+  "generated_at": "2026-07-23T08:45:25Z",
   "goal": {
     "all_tasks_done": true,
     "current_day": 14,
@@ -599,7 +599,7 @@
     "total_days": 14
   },
   "latest_fact_update": "2026-07-23T08:20:00Z",
-  "latest_snapshot": "../progress/snapshots/20260723T082000Z-530ed1-working-tree-5eeb8b224c3a.json",
+  "latest_snapshot": "../progress/snapshots/20260723T084525Z-b2f9496e1fd5755aedc85cbf34c05856.json",
   "next_actions": [
     {
       "acceptance": [
@@ -748,7 +748,7 @@
   ],
   "release_message": "v0.1 已发布；执行下一周期首个 Must",
   "schema_version": "1.0.0",
-  "source_id": "2796ba530ed1-working-tree-5eeb8b224c3a",
+  "source_id": "4d1547dab2f9496e1fd5755aedc85cbf34c05856",
   "tasks": {
     "done": 42,
     "percent": 100.0,
