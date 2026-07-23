@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-04-01",
+  "question": "请继续推进下一任务。",
+  "expected_context": {
+    "active_cycle": "v0.2-draft",
+    "next_action": "C02-T02",
+    "next_action_title": "运行并更新一次实验",
+    "required_evidence_paths": [
+      "progress/cycles.json",
+      "progress/experiments.json",
+      "progress/events/events.jsonl"
+    ],
+    "excluded_paths": [
+      "specs.md-portal/",
+      "github_repo_reference_ai-agent-book-main/",
+      "working-book/"
+    ],
+    "required_terms": [
+      "𝓔 = Engineering with Exsecutio",
+      "Exsecutio"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "with_memory_bank",
+      "sources_used": [
+        "progress/generated/current.json",
+        "progress/cycles.json",
+        "progress/experiments.json",
+        "memory-bank/standards/coding-standards.md",
+        "memory-bank/standards/tech-stack.md"
+      ],
+      "active_cycle": "v0.2-draft",
+      "first_action": "C02-T02",
+      "first_action_title": "运行并更新一次实验",
+      "planned_updates": [
+        "progress/cycles.json",
+        "progress/experiments.json",
+        "progress/events/events.jsonl"
+      ],
+      "excluded_paths_respected": [
+        "specs.md-portal/",
+        "github_repo_reference_ai-agent-book-main/",
+        "working-book/"
+      ],
+      "terms_preserved": [
+        "𝓔 = Engineering with Exsecutio",
+        "Exsecutio"
+      ],
+      "clarifying_questions": []
+    },
+    {
+      "id": "without_memory_bank",
+      "sources_used": [
+        "recent_chat_summary"
+      ],
+      "active_cycle": "v0.1",
+      "first_action": "D14-T03",
+      "first_action_title": "建立 v0.2 草案",
+      "planned_updates": [
+        "planning/releases/v0.2-draft.md"
+      ],
+      "excluded_paths_respected": [
+        "specs.md-portal/"
+      ],
+      "terms_preserved": [
+        "𝓔 = Engineering with Execution"
+      ],
+      "clarifying_questions": [
+        "v0.1 是否已经发布？",
+        "下一任务编号是什么？",
+        "哪些目录需要上传到 GitHub？"
+      ]
+    }
+  ]
+}

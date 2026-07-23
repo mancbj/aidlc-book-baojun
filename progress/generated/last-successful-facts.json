@@ -455,7 +455,7 @@
               "id": "C02-T02",
               "kind": "experiment",
               "priority": "must",
-              "status": "ready",
+              "status": "done",
               "title": "运行并更新一次实验"
             },
             {
@@ -468,7 +468,7 @@
               "id": "C02-T03",
               "kind": "build-review",
               "priority": "must",
-              "status": "backlog",
+              "status": "ready",
               "title": "完成一次构建与审校"
             }
           ]
@@ -783,10 +783,10 @@
           "repository_path": "experiments/exp-04-01",
           "sample_input": "experiments/exp-04-01/samples/input.json",
           "sample_output": "experiments/exp-04-01/output/sample.json",
-          "status": "planned",
+          "status": "verified",
           "test_path": "experiments/exp-04-01/tests/test_demo.py",
           "triage": "SHIP",
-          "updated": "2026-07-22T06:33:31Z"
+          "updated": "2026-07-23T08:20:00Z"
         },
         {
           "acceptance": [
@@ -2694,5 +2694,5 @@
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "77358db635fc-working-tree-3f20ab8be686"
+  "source_id": "2796ba530ed1-working-tree-5eeb8b224c3a"
 }

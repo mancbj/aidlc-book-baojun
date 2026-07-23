@@ -83,7 +83,7 @@
           "id": "C02-T02",
           "kind": "experiment",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "运行并更新一次实验"
         },
         {
@@ -96,7 +96,7 @@
           "id": "C02-T03",
           "kind": "build-review",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "完成一次构建与审校"
         }
       ]

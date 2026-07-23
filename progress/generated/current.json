@@ -555,7 +555,7 @@
         "id": "v0.2-draft",
         "monthly_target": "v0.2 readable release",
         "status": "active",
-        "task_done": 1,
+        "task_done": 2,
         "task_total": 3
       }
     ]
@@ -563,9 +563,9 @@
   "experiments": {
     "href": "details.html#experiments",
     "status_counts": {
-      "planned": 27,
+      "planned": 26,
       "ready": 2,
-      "verified": 1
+      "verified": 2
     },
     "total": 30,
     "triage_counts": {
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-23T07:25:00Z",
+  "generated_at": "2026-07-23T08:20:00Z",
   "goal": {
     "all_tasks_done": true,
     "current_day": 14,
@@ -598,45 +598,33 @@
     "name": "两周形成可发布 v0.1",
     "total_days": 14
   },
-  "latest_fact_update": "2026-07-23T07:25:00Z",
-  "latest_snapshot": "../progress/snapshots/20260723T072500Z-b635fc-working-tree-3f20ab8be686.json",
+  "latest_fact_update": "2026-07-23T08:20:00Z",
+  "latest_snapshot": "../progress/snapshots/20260723T082000Z-530ed1-working-tree-5eeb8b224c3a.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "命令、输入、输出、指标和结论可复现"
+          "text": "CI、链接、构建和审校门禁通过"
         }
       ],
       "artifacts": [],
       "day": "CYCLE",
       "dependencies": [
-        "C02-T01"
+        "C02-T02"
       ],
-      "href": "details.html#cycle-task-C02-T02",
-      "id": "C02-T02",
+      "href": "details.html#cycle-task-C02-T03",
+      "id": "C02-T03",
       "owner": "author",
       "planned_date": "v0.2 readable release",
       "priority": "must",
       "scope_label": "v0.2-draft",
       "status": "ready",
       "status_label": "可开始",
-      "title": "运行并更新一次实验"
+      "title": "完成一次构建与审校"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "deferred",
-      "before": null,
-      "id": "EVT-d44eefb59f302eda",
-      "object_id": "FB-001",
-      "object_type": "feedback",
-      "occurred_at": "2026-07-23T05:42:01Z",
-      "source_id": "working-tree-09883b6837b4",
-      "summary": "FB-001 · Reader-A/B/C：deferred",
-      "type": "feedback_decided"
-    },
     {
       "actor": "chenbaojun",
       "after": "done",
@@ -744,11 +732,23 @@
       "source_id": "77358db635fc-working-tree-3f20ab8be686",
       "summary": "CH-04 · 上下文工程：Memory Bank 与 Standards · 问题：pending → done",
       "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-6b94ab7f22a00a31",
+      "object_id": "EXP-04-01:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-23T08:20:00Z",
+      "source_id": "2796ba530ed1-working-tree-5eeb8b224c3a",
+      "summary": "EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验 · status：planned → verified",
+      "type": "experiment_changed"
     }
   ],
   "release_message": "v0.1 已发布；执行下一周期首个 Must",
   "schema_version": "1.0.0",
-  "source_id": "77358db635fc-working-tree-3f20ab8be686",
+  "source_id": "2796ba530ed1-working-tree-5eeb8b224c3a",
   "tasks": {
     "done": 42,
     "percent": 100.0,

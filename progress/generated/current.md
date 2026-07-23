@@ -11,12 +11,12 @@
 - 阻塞：0
 - 反馈：1 条；accepted 0 条
 - 下一周期：v0.2-draft
-- 事实最近更新：2026-07-23T07:25:00Z
-- 来源：`77358db635fc-working-tree-3f20ab8be686`
+- 事实最近更新：2026-07-23T08:20:00Z
+- 来源：`2796ba530ed1-working-tree-5eeb8b224c3a`
 
 ## 下一动作
 
-1. **C02-T02 · 运行并更新一次实验** — MUST / 可开始 / v0.2-draft
+1. **C02-T03 · 完成一次构建与审校** — MUST / 可开始 / v0.2-draft
 
 ## 阻塞
 
@@ -24,6 +24,7 @@
 
 ## 最近关键更新
 
+- `2026-07-23T08:20:00Z` · EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验 · status：planned → verified (`EVT-6b94ab7f22a00a31`)
 - `2026-07-23T07:25:00Z` · CH-04 · 上下文工程：Memory Bank 与 Standards · 问题：pending → done (`EVT-4a803ebc32e5a1a1`)
 - `2026-07-23T07:10:00Z` · D14-T03 · 建立 v0.2 草案：backlog → done (`EVT-e5ea15236ddb35c3`)
 - `2026-07-23T07:10:00Z` · v0.2-draft 已由真实发布回执激活 (`EVT-84922e8002f47050`)
@@ -33,7 +34,6 @@
 - `2026-07-23T06:00:28Z` · D14-T01 · 复核 v0.1 Definition of Done：backlog → done (`EVT-73371c01fbd5226f`)
 - `2026-07-23T05:49:41Z` · D13-T03 · 生成 v0.1 Release Candidate：backlog → done (`EVT-e396ed46a17deb7b`)
 - `2026-07-23T05:42:01Z` · D13-T02 · 处理发布阻断反馈：backlog → done (`EVT-d11925c6d10596fd`)
-- `2026-07-23T05:42:01Z` · FB-001 · Reader-A/B/C：deferred (`EVT-d44eefb59f302eda`)
 
 ## 下钻入口
 

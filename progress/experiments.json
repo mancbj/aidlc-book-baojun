@@ -304,8 +304,8 @@
         "生成或复现：首轮行动与上下文恢复对照报告",
         "记录指标：上下文恢复准确率、首个动作错误率、补充提问数"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-23T08:20:00Z",
       "repository_path": "experiments/exp-04-01",
       "readme_path": "experiments/exp-04-01/README.md",
       "sample_input": "experiments/exp-04-01/samples/input.json",

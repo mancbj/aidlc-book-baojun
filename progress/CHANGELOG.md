@@ -568,3 +568,9 @@
 快照：[`20260723T072500Z-b635fc-working-tree-3f20ab8be686.json`](snapshots/20260723T072500Z-b635fc-working-tree-3f20ab8be686.json)
 
 - **chapter_stage_changed** · CH-04 · 上下文工程：Memory Bank 与 Standards · 问题：pending → done (`EVT-4a803ebc32e5a1a1`)
+
+## 2026-07-23T08:20:00Z · `2796ba530ed1-working-tree-5eeb8b224c3a`
+
+快照：[`20260723T082000Z-530ed1-working-tree-5eeb8b224c3a.json`](snapshots/20260723T082000Z-530ed1-working-tree-5eeb8b224c3a.json)
+
+- **experiment_changed** · EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验 · status：planned → verified (`EVT-6b94ab7f22a00a31`)

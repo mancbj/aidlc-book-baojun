@@ -1,0 +1,150 @@
+{
+  "conclusion": "Memory Bank 与 Standards 组恢复了当前周期、下一动作、证据路径、排除边界和专用术语；无 Memory Bank 组出现首个动作错误和术语漂移。",
+  "experiment_id": "EXP-04-01",
+  "metrics": {
+    "delta": {
+      "accuracy_gain_percent": 100.0,
+      "clarification_reduction": 3
+    },
+    "with_memory_bank": {
+      "clarification_question_count": 0,
+      "context_recovery_accuracy_percent": 100.0,
+      "first_action_error": false
+    },
+    "without_memory_bank": {
+      "clarification_question_count": 3,
+      "context_recovery_accuracy_percent": 0.0,
+      "first_action_error": true
+    }
+  },
+  "results": [
+    {
+      "checks": [
+        {
+          "actual": "v0.2-draft",
+          "expected": "v0.2-draft",
+          "name": "active_cycle",
+          "passed": true
+        },
+        {
+          "actual": "C02-T02",
+          "expected": "C02-T02",
+          "name": "next_action",
+          "passed": true
+        },
+        {
+          "actual": [
+            "progress/cycles.json",
+            "progress/experiments.json",
+            "progress/events/events.jsonl"
+          ],
+          "expected": [
+            "progress/cycles.json",
+            "progress/experiments.json",
+            "progress/events/events.jsonl"
+          ],
+          "name": "evidence_paths",
+          "passed": true
+        },
+        {
+          "actual": [
+            "specs.md-portal/",
+            "github_repo_reference_ai-agent-book-main/",
+            "working-book/"
+          ],
+          "expected": [
+            "specs.md-portal/",
+            "github_repo_reference_ai-agent-book-main/",
+            "working-book/"
+          ],
+          "name": "excluded_paths",
+          "passed": true
+        },
+        {
+          "actual": [
+            "𝓔 = Engineering with Exsecutio",
+            "Exsecutio"
+          ],
+          "expected": [
+            "𝓔 = Engineering with Exsecutio",
+            "Exsecutio"
+          ],
+          "name": "terms_preserved",
+          "passed": true
+        }
+      ],
+      "clarification_question_count": 0,
+      "context_recovery_accuracy_percent": 100.0,
+      "first_action_error": false,
+      "id": "with_memory_bank",
+      "sources_used": [
+        "progress/generated/current.json",
+        "progress/cycles.json",
+        "progress/experiments.json",
+        "memory-bank/standards/coding-standards.md",
+        "memory-bank/standards/tech-stack.md"
+      ]
+    },
+    {
+      "checks": [
+        {
+          "actual": "v0.1",
+          "expected": "v0.2-draft",
+          "name": "active_cycle",
+          "passed": false
+        },
+        {
+          "actual": "D14-T03",
+          "expected": "C02-T02",
+          "name": "next_action",
+          "passed": false
+        },
+        {
+          "actual": [
+            "planning/releases/v0.2-draft.md"
+          ],
+          "expected": [
+            "progress/cycles.json",
+            "progress/experiments.json",
+            "progress/events/events.jsonl"
+          ],
+          "name": "evidence_paths",
+          "passed": false
+        },
+        {
+          "actual": [
+            "specs.md-portal/"
+          ],
+          "expected": [
+            "specs.md-portal/",
+            "github_repo_reference_ai-agent-book-main/",
+            "working-book/"
+          ],
+          "name": "excluded_paths",
+          "passed": false
+        },
+        {
+          "actual": [
+            "𝓔 = Engineering with Execution"
+          ],
+          "expected": [
+            "𝓔 = Engineering with Exsecutio",
+            "Exsecutio"
+          ],
+          "name": "terms_preserved",
+          "passed": false
+        }
+      ],
+      "clarification_question_count": 3,
+      "context_recovery_accuracy_percent": 0.0,
+      "first_action_error": true,
+      "id": "without_memory_bank",
+      "sources_used": [
+        "recent_chat_summary"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:8b37fb7b0e58b4f509d9b47797dd0a885dbb5723c1d75cadd43d29f7dc6bdd7b",
+  "valid": true
+}

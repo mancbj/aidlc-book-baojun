@@ -91,3 +91,5 @@ Standards 的价值不在于显得正式，而在于把人类判断提前放进�
 - `progress/chapters.json`：十章六阶段生产线事实源。
 - `memory-bank/standards/coding-standards.md` 与 `memory-bank/standards/tech-stack.md`：当前项目 Standards 入口。
 - `planning/releases/v0.2-draft.md`：v0.2 持续更新周期草案。
+- `experiments/exp-04-01/README.md`：Memory Bank 冷启动恢复 A/B 实验说明。
+- `experiments/exp-04-01/output/sample.json`：C02-T02 生成的可复现实验输出。
