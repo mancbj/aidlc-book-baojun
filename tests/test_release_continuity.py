@@ -554,6 +554,7 @@ class PublishedCycleTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             base = Path(temp)
             root = copy_fixture(base)
+            (root / "releases/v0.1/release.json").unlink(missing_ok=True)
             event = base / "event.json"
             release_event(event)
             cycles_before = digest(root / "progress/cycles.json")

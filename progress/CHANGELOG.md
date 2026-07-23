@@ -549,3 +549,9 @@
 快照：[`20260723T062921Z-working-tree-9c291125f68d.json`](snapshots/20260723T062921Z-working-tree-9c291125f68d.json)
 
 - **task_status_changed** · D14-T02 · 发布 v0.1：blocked → done (`EVT-537d82e20d6f860e`)
+
+## 2026-07-23T06:38:10Z · `73d7a5241872b0872786567709b097d844161dd0`
+
+快照：[`20260723T063810Z-1872b0872786567709b097d844161dd0.json`](snapshots/20260723T063810Z-1872b0872786567709b097d844161dd0.json)
+
+- **release_published** · v0.1 published at https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.1 (`EVT-35bbafd0f063486d`)

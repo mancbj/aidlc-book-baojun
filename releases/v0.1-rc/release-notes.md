@@ -1,6 +1,6 @@
 # v0.1 Release Notes Candidate
 
-> Readiness: **READY** · Source `working-tree-9c291125f68d` · Generated `2026-07-23T06:29:32Z`
+> Readiness: **READY** · Source `73d7a5241872b0872786567709b097d844161dd0` · Generated `2026-07-23T06:38:36Z`
 
 ## 新增内容
 
@@ -21,7 +21,7 @@
 
 ## 产物与来源
 
-- Source commit/fingerprint：`working-tree-9c291125f68d`
+- Source commit/fingerprint：`73d7a5241872b0872786567709b097d844161dd0`
 - HTML：候选 manifest 生成后填写文件名和 SHA-256。
 - PDF：条件式；缺少经过验证的 PDF 时明确 skipped，不创建占位文件。
 - 驾驶舱：`site/index.html`

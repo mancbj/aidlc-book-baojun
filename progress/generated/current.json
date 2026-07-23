@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-23T06:29:21Z",
+  "generated_at": "2026-07-23T06:38:10Z",
   "goal": {
     "all_tasks_done": false,
     "current_day": 14,
@@ -599,7 +599,7 @@
     "total_days": 14
   },
   "latest_fact_update": "2026-07-23T06:28:00Z",
-  "latest_snapshot": "../progress/snapshots/20260723T062921Z-working-tree-9c291125f68d.json",
+  "latest_snapshot": "../progress/snapshots/20260723T063810Z-1872b0872786567709b097d844161dd0.json",
   "next_actions": [
     {
       "acceptance": [
@@ -629,18 +629,6 @@
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "in-progress",
-      "id": "EVT-0e813131c523e59c",
-      "object_id": "D12-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T05:23:18Z",
-      "source_id": "working-tree-30dd42252ed3",
-      "summary": "D12-T03 · 准备试读反馈入口：in-progress → done",
-      "type": "task_status_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "in-progress",
@@ -748,11 +736,23 @@
       "source_id": "working-tree-9c291125f68d",
       "summary": "D14-T02 · 发布 v0.1：blocked → done",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "v0.1 published at https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.1",
+      "before": null,
+      "id": "EVT-35bbafd0f063486d",
+      "object_id": "v0.1",
+      "object_type": "project",
+      "occurred_at": "2026-07-23T06:38:10Z",
+      "source_id": "73d7a5241872b0872786567709b097d844161dd0",
+      "summary": "v0.1 published at https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.1",
+      "type": "release_published"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "working-tree-9c291125f68d",
+  "source_id": "73d7a5241872b0872786567709b097d844161dd0",
   "tasks": {
     "done": 41,
     "percent": 97.6,

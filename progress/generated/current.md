@@ -12,7 +12,7 @@
 - 反馈：1 条；accepted 0 条
 - 下一周期：尚未激活
 - 事实最近更新：2026-07-23T06:28:00Z
-- 来源：`working-tree-9c291125f68d`
+- 来源：`73d7a5241872b0872786567709b097d844161dd0`
 
 ## 下一动作
 
@@ -24,6 +24,7 @@
 
 ## 最近关键更新
 
+- `2026-07-23T06:38:10Z` · v0.1 published at https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.1 (`EVT-35bbafd0f063486d`)
 - `2026-07-23T06:29:21Z` · D14-T02 · 发布 v0.1：blocked → done (`EVT-537d82e20d6f860e`)
 - `2026-07-23T06:06:24Z` · D14-T02 · 发布 v0.1：backlog → blocked (`EVT-df61d6dc19e493b1`)
 - `2026-07-23T06:00:28Z` · D14-T01 · 复核 v0.1 Definition of Done：backlog → done (`EVT-73371c01fbd5226f`)
@@ -33,7 +34,6 @@
 - `2026-07-23T05:33:35Z` · D13-T01 · 邀请三位试读者：blocked → done (`EVT-ab43c23cf3ccc998`)
 - `2026-07-23T05:27:51Z` · D13-T01 · 邀请三位试读者：in-progress → blocked (`EVT-b507df0affd2e6eb`)
 - `2026-07-23T05:26:10Z` · D13-T01 · 邀请三位试读者：backlog → in-progress (`EVT-1e00ddd0392d847b`)
-- `2026-07-23T05:23:18Z` · D12-T03 · 准备试读反馈入口：in-progress → done (`EVT-0e813131c523e59c`)
 
 ## 下钻入口
 

@@ -2,8 +2,8 @@
 
 > 本报告只比较事实与证据，不自动修改 `progress/tasks.json`。
 
-- Source: `working-tree-9c291125f68d`
-- Generated: `2026-07-23T06:29:33Z`
+- Source: `73d7a5241872b0872786567709b097d844161dd0`
+- Generated: `2026-07-23T06:38:37Z`
 
 | Task | Priority | State | Evidence class | Next action |
 |---|---|---|---|---|

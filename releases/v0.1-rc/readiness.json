@@ -18,11 +18,11 @@
       "priority": "known-gap"
     }
   ],
-  "generated_at": "2026-07-23T06:29:32Z",
+  "generated_at": "2026-07-23T06:38:36Z",
   "next_action": "构造同源候选并执行人工发布审阅。",
   "policy": "planning/releases/v0.1-policy.json",
   "schema_version": "1.0.0",
-  "source_id": "working-tree-9c291125f68d",
+  "source_id": "73d7a5241872b0872786567709b097d844161dd0",
   "status": "ready",
   "summary": {
     "blockers": 0,
