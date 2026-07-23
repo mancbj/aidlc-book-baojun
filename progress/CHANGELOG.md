@@ -549,3 +549,10 @@
 快照：[`20260723T062921Z-working-tree-9c291125f68d.json`](snapshots/20260723T062921Z-working-tree-9c291125f68d.json)
 
 - **task_status_changed** · D14-T02 · 发布 v0.1：blocked → done (`EVT-537d82e20d6f860e`)
+
+## 2026-07-23T06:35:47Z · `73d7a5241872-working-tree-b1e8548a7be9`
+
+快照：[`20260723T063547Z-241872-working-tree-b1e8548a7be9.json`](snapshots/20260723T063547Z-241872-working-tree-b1e8548a7be9.json)
+
+- **cycle_opened** · v0.2-draft 已由真实发布回执激活 (`EVT-7c85442c44c93f21`)
+- **release_published** · v0.1 已公开发布并开启下一周期 (`EVT-9aa2df94f86aaaa6`)

@@ -544,17 +544,17 @@
     "total": 10
   },
   "cycles": {
-    "active_cycle": null,
+    "active_cycle": "v0.2-draft",
     "href": "details.html#cycles",
-    "preview_count": 1,
+    "preview_count": 0,
     "rows": [
       {
         "carried_gap_total": 1,
-        "carried_task_total": 0,
+        "carried_task_total": 1,
         "href": "details.html#cycle-v0.2-draft",
         "id": "v0.2-draft",
         "monthly_target": "v0.2 readable release",
-        "status": "preview",
+        "status": "active",
         "task_done": 0,
         "task_total": 3
       }
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-23T06:34:21Z",
+  "generated_at": "2026-07-23T06:35:47Z",
   "goal": {
     "all_tasks_done": false,
     "current_day": 14,
@@ -598,61 +598,31 @@
     "name": "两周形成可发布 v0.1",
     "total_days": 14
   },
-  "latest_fact_update": "2026-07-23T06:28:00Z",
-  "latest_snapshot": "../progress/snapshots/20260723T063421Z-1872b0872786567709b097d844161dd0.json",
+  "latest_fact_update": "2026-07-23T06:35:47Z",
+  "latest_snapshot": "../progress/snapshots/20260723T063547Z-241872-working-tree-b1e8548a7be9.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "下一周期至少有一个依赖已满足的 Must"
+          "text": "一节内容完成审校并关联证据"
         }
       ],
-      "artifacts": [
-        {
-          "path": "planning/releases/v0.2-draft.md",
-          "required": true
-        }
-      ],
-      "day": 14,
-      "dependencies": [
-        "D14-T02"
-      ],
-      "href": "details.html#task-D14-T03",
-      "id": "D14-T03",
+      "artifacts": [],
+      "day": "CYCLE",
+      "dependencies": [],
+      "href": "details.html#cycle-task-C02-T01",
+      "id": "C02-T01",
       "owner": "author",
-      "planned_date": "2026-08-03",
-      "priority": "should",
-      "status": "backlog",
-      "status_label": "待排期",
-      "title": "建立 v0.2 草案"
+      "planned_date": "v0.2 readable release",
+      "priority": "must",
+      "scope_label": "v0.2-draft",
+      "status": "ready",
+      "status_label": "可开始",
+      "title": "完成下一节可读内容"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "in-progress",
-      "id": "EVT-0e813131c523e59c",
-      "object_id": "D12-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T05:23:18Z",
-      "source_id": "working-tree-30dd42252ed3",
-      "summary": "D12-T03 · 准备试读反馈入口：in-progress → done",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "in-progress",
-      "before": "backlog",
-      "id": "EVT-1e00ddd0392d847b",
-      "object_id": "D13-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T05:26:10Z",
-      "source_id": "working-tree-f89e56da2a12",
-      "summary": "D13-T01 · 邀请三位试读者：backlog → in-progress",
-      "type": "task_status_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "blocked",
@@ -748,11 +718,35 @@
       "source_id": "working-tree-9c291125f68d",
       "summary": "D14-T02 · 发布 v0.1：blocked → done",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "github-actions",
+      "after": "active",
+      "before": "preview",
+      "id": "EVT-7c85442c44c93f21",
+      "object_id": "v0.2-draft",
+      "object_type": "cycle",
+      "occurred_at": "2026-07-23T06:35:47Z",
+      "source_id": "73d7a5241872-working-tree-b1e8548a7be9",
+      "summary": "v0.2-draft 已由真实发布回执激活",
+      "type": "cycle_opened"
+    },
+    {
+      "actor": "github-actions",
+      "after": "v0.1 已公开发布并开启下一周期",
+      "before": null,
+      "id": "EVT-9aa2df94f86aaaa6",
+      "object_id": "v0.1",
+      "object_type": "project",
+      "occurred_at": "2026-07-23T06:35:47Z",
+      "source_id": "73d7a5241872-working-tree-b1e8548a7be9",
+      "summary": "v0.1 已公开发布并开启下一周期",
+      "type": "release_published"
     }
   ],
-  "release_message": "",
+  "release_message": "v0.1 已发布；执行下一周期首个 Must",
   "schema_version": "1.0.0",
-  "source_id": "73d7a5241872b0872786567709b097d844161dd0",
+  "source_id": "73d7a5241872-working-tree-b1e8548a7be9",
   "tasks": {
     "done": 41,
     "percent": 97.6,

@@ -1,32 +1,84 @@
 {
-  "schema_version": "1.0.0",
-  "updated": "2026-07-23T05:42:01Z",
-  "active_cycle": null,
+  "active_cycle": "v0.2-draft",
   "cycles": [
     {
-      "id": "v0.2-draft",
-      "status": "preview",
-      "origin_release": null,
-      "monthly_target": "v0.2 readable release",
+      "accepted_feedback": [],
       "cadence": {
+        "build_or_review_per_week": 1,
         "content_per_week": 1,
         "experiment_per_week": 1,
-        "build_or_review_per_week": 1,
         "release_per_month": 1
       },
-      "accepted_feedback": [],
       "carried_gaps": [
         {
-          "code": "FB-001",
+          "code": "READER-RESPONSES",
           "object": "Reader-A/B/C",
           "priority": "known-gap"
         }
       ],
+      "carried_tasks": [
+        {
+          "id": "D14-T03",
+          "priority": "should",
+          "status": "backlog",
+          "title": "建立 v0.2 草案"
+        }
+      ],
+      "id": "v0.2-draft",
+      "monthly_target": "v0.2 readable release",
+      "origin_release": {
+        "published_at": "2026-07-23T06:35:30Z",
+        "readiness_source_id": "73d7a5241872b0872786567709b097d844161dd0",
+        "release_id": 358495811,
+        "schema_version": "1.0.0",
+        "source_sha": "73d7a5241872b0872786567709b097d844161dd0",
+        "status": "published",
+        "tag": "v0.1",
+        "url": "https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.1",
+        "version": "v0.1"
+      },
+      "status": "active",
       "tasks": [
-        {"id": "C02-T01", "title": "完成下一节可读内容", "kind": "content", "priority": "must", "status": "ready", "dependencies": [], "acceptance": ["一节内容完成审校并关联证据"]},
-        {"id": "C02-T02", "title": "运行并更新一次实验", "kind": "experiment", "priority": "must", "status": "backlog", "dependencies": ["C02-T01"], "acceptance": ["命令、输入、输出、指标和结论可复现"]},
-        {"id": "C02-T03", "title": "完成一次构建与审校", "kind": "build-review", "priority": "must", "status": "backlog", "dependencies": ["C02-T02"], "acceptance": ["CI、链接、构建和审校门禁通过"]}
+        {
+          "acceptance": [
+            "一节内容完成审校并关联证据"
+          ],
+          "dependencies": [],
+          "id": "C02-T01",
+          "kind": "content",
+          "priority": "must",
+          "status": "ready",
+          "title": "完成下一节可读内容"
+        },
+        {
+          "acceptance": [
+            "命令、输入、输出、指标和结论可复现"
+          ],
+          "dependencies": [
+            "C02-T01"
+          ],
+          "id": "C02-T02",
+          "kind": "experiment",
+          "priority": "must",
+          "status": "backlog",
+          "title": "运行并更新一次实验"
+        },
+        {
+          "acceptance": [
+            "CI、链接、构建和审校门禁通过"
+          ],
+          "dependencies": [
+            "C02-T02"
+          ],
+          "id": "C02-T03",
+          "kind": "build-review",
+          "priority": "must",
+          "status": "backlog",
+          "title": "完成一次构建与审校"
+        }
       ]
     }
-  ]
+  ],
+  "schema_version": "1.0.0",
+  "updated": "2026-07-23T06:35:47Z"
 }
