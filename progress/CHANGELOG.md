@@ -586,3 +586,12 @@
 快照：[`20260723T090000Z-0adfa8-working-tree-8743e094f7c6.json`](snapshots/20260723T090000Z-0adfa8-working-tree-8743e094f7c6.json)
 
 - **milestone_reached** · 10 chapter writing sprint task cards planned (`EVT-42fd3577bced01ca`)
+
+## 2026-07-23T09:30:00Z · `3494956194c0-working-tree-205855a89d83`
+
+快照：[`20260723T093000Z-6194c0-working-tree-205855a89d83.json`](snapshots/20260723T093000Z-6194c0-working-tree-205855a89d83.json)
+
+- **chapter_stage_changed** · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 框架：pending → done (`EVT-c18655ddda037c72`)
+- **chapter_stage_changed** · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 问题：pending → done (`EVT-88ff1b6e1535d527`)
+- **task_status_changed** · D15-T01 · CH-01 · 锁定章节论证骨架：ready → done (`EVT-08533c293b77af0e`)
+- **task_status_changed** · D15-T02 · CH-01 · 完成章节可读稿：backlog → ready (`EVT-91a284f56a66fa3d`)

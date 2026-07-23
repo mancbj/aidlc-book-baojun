@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-23T03:56:40Z",
+  "updated": "2026-07-23T09:30:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -11,11 +11,11 @@
       "stages": [
         {
           "name": "question",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "framework",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "example",
@@ -34,8 +34,11 @@
           "status": "pending"
         }
       ],
-      "evidence_links": [],
-      "updated": "2026-07-22T05:39:06Z"
+      "evidence_links": [
+        "book/chapters/ch01-ai-native-sdlc.md",
+        "progress/tasks.json#D15-T01"
+      ],
+      "updated": "2026-07-23T09:30:00Z"
     },
     {
       "id": "CH-02",

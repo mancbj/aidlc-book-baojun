@@ -3,7 +3,10 @@
     "chapters": {
       "chapters": [
         {
-          "evidence_links": [],
+          "evidence_links": [
+            "book/chapters/ch01-ai-native-sdlc.md",
+            "progress/tasks.json#D15-T01"
+          ],
           "id": "CH-01",
           "number": 1,
           "question": "当代码生成成本骤降而输出仍具有概率性时，为什么需要重新设计 SDLC，而不只是给旧流程增加 AI？",
@@ -11,11 +14,11 @@
           "stages": [
             {
               "name": "question",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "framework",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "example",
@@ -35,7 +38,7 @@
             }
           ],
           "title": "AI 原生 SDLC：从概率智能到确定性交付",
-          "updated": "2026-07-22T05:39:06Z"
+          "updated": "2026-07-23T09:30:00Z"
         },
         {
           "evidence_links": [],
@@ -368,7 +371,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-23T03:56:40Z"
+      "updated": "2026-07-23T09:30:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -2692,7 +2695,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
             }
           ],
@@ -2713,11 +2716,11 @@
           "phase": "progress",
           "planned_date": "2026-08-04",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-01 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-23T09:30:00Z"
         },
         {
           "acceptance": [
@@ -2745,11 +2748,11 @@
           "phase": "progress",
           "planned_date": "2026-08-04",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-01 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-23T09:30:00Z"
         },
         {
           "acceptance": [
@@ -3648,9 +3651,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-23T09:00:00Z"
+      "updated": "2026-07-23T09:30:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "e8de9e0adfa8-working-tree-8743e094f7c6"
+  "source_id": "3494956194c0-working-tree-205855a89d83"
 }

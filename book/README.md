@@ -5,6 +5,7 @@
 - [manifesto.md](manifesto.md)：核心公式及边界
 - [part-00-overview.md](part-00-overview.md)：AI-DLC 鸟瞰图、全书叙事结构与阅读路线
 - [toc.md](toc.md)：Part 0 导读、十章结构与实验方向
+- [chapters/ch01-ai-native-sdlc.md](chapters/ch01-ai-native-sdlc.md)：CH-01 论证骨架稿
 - [chapters/sample.md](chapters/sample.md)：CH-03 v0.1 可读样章
 - [chapters/ch04-memory-bank-standards.md](chapters/ch04-memory-bank-standards.md)：CH-04 v0.2 第一节可读稿
 - [chapter-template.md](chapter-template.md)：章节六阶段生产线
