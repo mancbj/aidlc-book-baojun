@@ -3,13 +3,13 @@
   "chapters": {
     "rows": [
       {
-        "done": 5,
+        "done": 6,
         "href": "details.html#chapter-CH-01",
         "id": "CH-01",
-        "next_gap": "review",
-        "next_gap_label": "审校",
+        "next_gap": null,
+        "next_gap_label": "已完成",
         "number": 1,
-        "percent": 83.3,
+        "percent": 100.0,
         "question": "当代码生成成本骤降而输出仍具有概率性时，为什么需要重新设计 SDLC，而不只是给旧流程增加 AI？",
         "stages": [
           {
@@ -45,8 +45,8 @@
           {
             "label": "审校",
             "name": "review",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           }
         ],
         "title": "AI 原生 SDLC：从概率智能到确定性交付",
@@ -535,9 +535,9 @@
         "total": 10
       },
       "review": {
-        "done": 1,
+        "done": 2,
         "label": "审校",
-        "percent": 10.0,
+        "percent": 20.0,
         "total": 10
       }
     },
@@ -590,81 +590,45 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-23T10:00:00Z",
+  "generated_at": "2026-07-23T10:30:00Z",
   "goal": {
     "all_tasks_done": false,
-    "current_day": 15,
-    "days_remaining": 9,
+    "current_day": 16,
+    "days_remaining": 8,
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-23T10:00:00Z",
-  "latest_snapshot": "../progress/snapshots/20260723T100000Z-5c02a2-working-tree-3f854deadfea.json",
+  "latest_fact_update": "2026-07-23T10:30:00Z",
+  "latest_snapshot": "../progress/snapshots/20260723T103000Z-16d328-working-tree-cf379f1d4a64.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
         }
       ],
       "artifacts": [
         {
-          "path": "planning/reviews/ch-01-writing-review.md",
+          "path": "book/chapters/ch02-human-judgment.md",
           "required": true
         }
       ],
-      "day": 15,
+      "day": 16,
       "dependencies": [
-        "D15-T02"
+        "D15-T03"
       ],
-      "href": "details.html#task-D15-T03",
-      "id": "D15-T03",
+      "href": "details.html#task-D16-T01",
+      "id": "D16-T01",
       "owner": "author",
-      "planned_date": "2026-08-04",
+      "planned_date": "2026-08-05",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-01 · 完成章节审校与证据对齐"
+      "title": "CH-02 · 锁定章节论证骨架"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "10 chapter writing sprint task cards planned",
-      "before": null,
-      "id": "EVT-42fd3577bced01ca",
-      "object_id": "writing-sprint",
-      "object_type": "project",
-      "occurred_at": "2026-07-23T09:00:00Z",
-      "source_id": "e8de9e0adfa8-working-tree-8743e094f7c6",
-      "summary": "10 chapter writing sprint task cards planned",
-      "type": "milestone_reached"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-c18655ddda037c72",
-      "object_id": "CH-01:framework",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-23T09:30:00Z",
-      "source_id": "3494956194c0-working-tree-205855a89d83",
-      "summary": "CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 框架：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-88ff1b6e1535d527",
-      "object_id": "CH-01:question",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-23T09:30:00Z",
-      "source_id": "3494956194c0-working-tree-205855a89d83",
-      "summary": "CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 问题：pending → done",
-      "type": "chapter_stage_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "done",
@@ -748,14 +712,50 @@
       "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
       "summary": "D15-T03 · CH-01 · 完成章节审校与证据对齐：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-b0deafeb48ae35e8",
+      "object_id": "CH-01:review",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-23T10:30:00Z",
+      "source_id": "f0d8c616d328-working-tree-cf379f1d4a64",
+      "summary": "CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 审校：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-0470ef937c19bacd",
+      "object_id": "D15-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-23T10:30:00Z",
+      "source_id": "f0d8c616d328-working-tree-cf379f1d4a64",
+      "summary": "D15-T03 · CH-01 · 完成章节审校与证据对齐：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-fd273f1f5b880f60",
+      "object_id": "D16-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-23T10:30:00Z",
+      "source_id": "f0d8c616d328-working-tree-cf379f1d4a64",
+      "summary": "D16-T01 · CH-02 · 锁定章节论证骨架：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
+  "source_id": "f0d8c616d328-working-tree-cf379f1d4a64",
   "tasks": {
-    "done": 44,
-    "percent": 61.1,
+    "done": 45,
+    "percent": 62.5,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 42,
+        "done": 43,
         "has_sample": true,
-        "percent": 60.0,
+        "percent": 61.4,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 27,
+      "backlog": 26,
       "blocked": 0,
-      "done": 44,
+      "done": 45,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -914,10 +914,10 @@
       {
         "blocked": 0,
         "day": 15,
-        "done": 2,
+        "done": 3,
         "href": "details.html#day-15",
-        "is_current": true,
-        "percent": 66.7,
+        "is_current": false,
+        "percent": 100.0,
         "total": 3
       },
       {
@@ -925,7 +925,7 @@
         "day": 16,
         "done": 0,
         "href": "details.html#day-16",
-        "is_current": false,
+        "is_current": true,
         "percent": 0.0,
         "total": 3
       },
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 60.7
+    "weighted_percent": 62.1
   }
 }

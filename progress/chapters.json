@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-23T10:00:00Z",
+  "updated": "2026-07-23T10:30:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -31,7 +31,7 @@
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
       "evidence_links": [
@@ -41,9 +41,11 @@
         "progress/experiments.json#EXP-01-01",
         "progress/experiments.json#EXP-01-02",
         "progress/experiments.json#EXP-01-03",
-        "progress/tasks.json#D15-T02"
+        "progress/tasks.json#D15-T02",
+        "planning/reviews/ch-01-writing-review.md",
+        "progress/tasks.json#D15-T03"
       ],
-      "updated": "2026-07-23T10:00:00Z"
+      "updated": "2026-07-23T10:30:00Z"
     },
     {
       "id": "CH-02",

@@ -10,7 +10,9 @@
             "progress/experiments.json#EXP-01-01",
             "progress/experiments.json#EXP-01-02",
             "progress/experiments.json#EXP-01-03",
-            "progress/tasks.json#D15-T02"
+            "progress/tasks.json#D15-T02",
+            "planning/reviews/ch-01-writing-review.md",
+            "progress/tasks.json#D15-T03"
           ],
           "id": "CH-01",
           "number": 1,
@@ -39,11 +41,11 @@
             },
             {
               "name": "review",
-              "status": "pending"
+              "status": "done"
             }
           ],
           "title": "AI 原生 SDLC：从概率智能到确定性交付",
-          "updated": "2026-07-23T10:00:00Z"
+          "updated": "2026-07-23T10:30:00Z"
         },
         {
           "evidence_links": [],
@@ -376,7 +378,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-23T10:00:00Z"
+      "updated": "2026-07-23T10:30:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -2762,7 +2764,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
             }
           ],
@@ -2785,11 +2787,11 @@
           "phase": "progress",
           "planned_date": "2026-08-04",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-01 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T10:00:00Z"
+          "updated": "2026-07-23T10:30:00Z"
         },
         {
           "acceptance": [
@@ -2817,11 +2819,11 @@
           "phase": "progress",
           "planned_date": "2026-08-05",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-02 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-23T10:30:00Z"
         },
         {
           "acceptance": [
@@ -3656,9 +3658,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-23T10:00:00Z"
+      "updated": "2026-07-23T10:30:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "bccb2b5c02a2-working-tree-3f854deadfea"
+  "source_id": "f0d8c616d328-working-tree-cf379f1d4a64"
 }

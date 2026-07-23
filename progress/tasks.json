@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "memory-bank/intents/001-github-writing-system/execution-roadmap.md",
-  "updated": "2026-07-23T10:00:00Z",
+  "updated": "2026-07-23T10:30:00Z",
   "tasks": [
     {
       "id": "D01-T01",
@@ -1306,7 +1306,7 @@
       "type": "writing",
       "card": "review",
       "chapter": "CH-01",
-      "status": "ready",
+      "status": "done",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1315,7 +1315,7 @@
       "acceptance": [
         {
           "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接",
-          "passed": false
+          "passed": true
         }
       ],
       "artifacts": [
@@ -1327,7 +1327,7 @@
       "notes": "每日一章写作冲刺：AI 原生 SDLC：从概率智能到确定性交付 的 完成章节审校与证据对齐 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-23T10:00:00Z"
+      "updated": "2026-07-23T10:30:00Z"
     },
     {
       "id": "D16-T01",
@@ -1338,7 +1338,7 @@
       "type": "writing",
       "card": "outline",
       "chapter": "CH-02",
-      "status": "backlog",
+      "status": "ready",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1359,7 +1359,7 @@
       "notes": "每日一章写作冲刺：人的判断与反向对话 的 锁定章节论证骨架 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-23T09:00:00Z"
+      "updated": "2026-07-23T10:30:00Z"
     },
     {
       "id": "D16-T02",

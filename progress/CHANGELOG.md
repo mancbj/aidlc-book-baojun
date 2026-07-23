@@ -605,3 +605,11 @@
 - **chapter_stage_changed** · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 图示：pending → done (`EVT-4035834a1ba66016`)
 - **task_status_changed** · D15-T02 · CH-01 · 完成章节可读稿：ready → done (`EVT-2215b656b86ea492`)
 - **task_status_changed** · D15-T03 · CH-01 · 完成章节审校与证据对齐：backlog → ready (`EVT-1cd91832c3ba8393`)
+
+## 2026-07-23T10:30:00Z · `f0d8c616d328-working-tree-cf379f1d4a64`
+
+快照：[`20260723T103000Z-16d328-working-tree-cf379f1d4a64.json`](snapshots/20260723T103000Z-16d328-working-tree-cf379f1d4a64.json)
+
+- **chapter_stage_changed** · CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 审校：pending → done (`EVT-b0deafeb48ae35e8`)
+- **task_status_changed** · D15-T03 · CH-01 · 完成章节审校与证据对齐：ready → done (`EVT-0470ef937c19bacd`)
+- **task_status_changed** · D16-T01 · CH-02 · 锁定章节论证骨架：backlog → ready (`EVT-fd273f1f5b880f60`)
