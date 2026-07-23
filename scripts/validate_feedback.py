@@ -230,7 +230,6 @@ def validate_cycle_document(document: Dict[str, Any], source: str) -> List[Conti
             add(object_id, "tasks", "cycle 必须至少有一个任务。", "创建依赖已满足的 Must。")
             continue
         by_id = {}
-        ready_must = 0
         kinds = set()
         for task in tasks:
             task_id = task.get("id") if isinstance(task, dict) else None
@@ -249,16 +248,22 @@ def validate_cycle_document(document: Dict[str, Any], source: str) -> List[Conti
                 add(task_id, "acceptance", "cycle task 必须有验收。", "提供二元标准。")
             if not isinstance(task.get("dependencies"), list):
                 add(task_id, "dependencies", "dependencies 必须是数组。", "无依赖时使用 []。")
-            if task.get("priority") == "must" and task.get("status") == "ready" and not task.get("dependencies"):
-                ready_must += 1
         for task_id, task in by_id.items():
             for dependency in task.get("dependencies", []):
                 if dependency not in by_id:
                     add(task_id, "dependencies", "cycle task 引用未知依赖。", "修正为同周期 Task ID。")
+        ready_must = sum(
+            1
+            for task in by_id.values()
+            if task.get("priority") == "must"
+            and task.get("status") == "ready"
+            and isinstance(task.get("dependencies"), list)
+            and all(by_id.get(dependency, {}).get("status") == "done" for dependency in task.get("dependencies", []))
+        )
         if not {"content", "experiment", "build-review"}.issubset(kinds):
             add(object_id, "tasks.kind", "周期缺少内容、实验或构建审校节奏任务。", "至少各创建一项。")
         if status == "active" and ready_must < 1:
-            add(object_id, "tasks", "active cycle 必须有依赖已满足的 ready Must。", "解除首个 Must 依赖。")
+            add(object_id, "tasks", "active cycle 必须有依赖已满足的 ready Must。", "将下一个可执行 Must 设为 ready，并确保其依赖已 done。")
     if active_count > 1:
         add("document", "active_cycle", "只能有一个 active cycle。", "完成或降级其他周期。")
     active_id = document.get("active_cycle")

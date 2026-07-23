@@ -196,6 +196,24 @@ def make_ready(root: Path) -> None:
     )
 
 
+def reset_v02_cycle_preview(root: Path) -> None:
+    cycles_path = root / "progress/cycles.json"
+    cycles = json.loads(cycles_path.read_text(encoding="utf-8"))
+    cycle = cycles["cycles"][0]
+    cycles["active_cycle"] = None
+    cycle["status"] = "preview"
+    cycle["origin_release"] = None
+    cycle["accepted_feedback"] = []
+    cycle["carried_tasks"] = []
+    cycle["carried_gaps"] = []
+    for task in cycle["tasks"]:
+        if task["id"] == "C02-T01":
+            task["status"] = "ready"
+        elif task["id"] in {"C02-T02", "C02-T03"}:
+            task["status"] = "backlog"
+    write_json(cycles_path, cycles)
+
+
 def initialize_git(root: Path) -> str:
     commands = (
         ("git", "init", "-q"),
@@ -382,6 +400,60 @@ class FeedbackValidationTests(unittest.TestCase):
 
 
 class ProgressContinuityTests(unittest.TestCase):
+    def test_active_cycle_accepts_ready_must_with_done_dependencies(self):
+        document = {
+            "schema_version": "1.0.0",
+            "updated": TIMESTAMP,
+            "active_cycle": "v0.2-draft",
+            "cycles": [
+                {
+                    "id": "v0.2-draft",
+                    "status": "active",
+                    "origin_release": {"status": "published"},
+                    "monthly_target": "v0.2 readable release",
+                    "cadence": {
+                        "content_per_week": 1,
+                        "experiment_per_week": 1,
+                        "build_or_review_per_week": 1,
+                        "release_per_month": 1,
+                    },
+                    "accepted_feedback": [],
+                    "carried_tasks": [],
+                    "carried_gaps": [],
+                    "tasks": [
+                        {
+                            "id": "C02-T01",
+                            "title": "完成下一节可读内容",
+                            "kind": "content",
+                            "priority": "must",
+                            "status": "done",
+                            "dependencies": [],
+                            "acceptance": ["一节内容完成审校并关联证据"],
+                        },
+                        {
+                            "id": "C02-T02",
+                            "title": "运行并更新一次实验",
+                            "kind": "experiment",
+                            "priority": "must",
+                            "status": "ready",
+                            "dependencies": ["C02-T01"],
+                            "acceptance": ["命令、输入、输出、指标和结论可复现"],
+                        },
+                        {
+                            "id": "C02-T03",
+                            "title": "完成一次构建与审校",
+                            "kind": "build-review",
+                            "priority": "must",
+                            "status": "backlog",
+                            "dependencies": ["C02-T02"],
+                            "acceptance": ["CI、链接、构建和审校门禁通过"],
+                        },
+                    ],
+                }
+            ],
+        }
+        self.assertEqual([], continuity.validate_cycle_document(document, "fixture"))
+
     def test_feedback_and_cycle_changes_create_stable_events(self):
         previous = core.load_facts(REPO_ROOT)
         previous["cycles"]["active_cycle"] = None
@@ -414,6 +486,11 @@ class ProgressContinuityTests(unittest.TestCase):
         cycle["status"] = "active"
         cycle["origin_release"] = {"status": "published"}
         facts["cycles"]["active_cycle"] = cycle["id"]
+        for task in cycle["tasks"]:
+            if task["id"] == "C02-T01":
+                task["status"] = "ready"
+            elif task["id"] in {"C02-T02", "C02-T03"}:
+                task["status"] = "backlog"
         projection = core.aggregate_progress(facts, "source", TIMESTAMP)
         self.assertEqual("C02-T01", projection["next_actions"][0]["id"])
         self.assertIn("下一周期", projection["release_message"])
@@ -589,6 +666,7 @@ class PublishedCycleTests(unittest.TestCase):
             base = Path(temp)
             root = copy_fixture(base)
             make_ready(root)
+            reset_v02_cycle_preview(root)
             source_sha = initialize_git(root)
             event = base / "event.json"
             release_event(event)

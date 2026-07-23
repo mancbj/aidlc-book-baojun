@@ -153,20 +153,20 @@
         "total": 6
       },
       {
-        "done": 0,
+        "done": 1,
         "href": "details.html#chapter-CH-04",
         "id": "CH-04",
-        "next_gap": "question",
-        "next_gap_label": "问题",
+        "next_gap": "framework",
+        "next_gap_label": "框架",
         "number": 4,
-        "percent": 0.0,
+        "percent": 16.7,
         "question": "如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？",
         "stages": [
           {
             "label": "问题",
             "name": "question",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "框架",
@@ -529,9 +529,9 @@
         "total": 10
       },
       "question": {
-        "done": 1,
+        "done": 2,
         "label": "问题",
-        "percent": 10.0,
+        "percent": 20.0,
         "total": 10
       },
       "review": {
@@ -555,7 +555,7 @@
         "id": "v0.2-draft",
         "monthly_target": "v0.2 readable release",
         "status": "active",
-        "task_done": 0,
+        "task_done": 1,
         "task_total": 3
       }
     ]
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-23T07:10:00Z",
+  "generated_at": "2026-07-23T07:25:00Z",
   "goal": {
     "all_tasks_done": true,
     "current_day": 14,
@@ -598,43 +598,33 @@
     "name": "两周形成可发布 v0.1",
     "total_days": 14
   },
-  "latest_fact_update": "2026-07-23T07:00:59Z",
-  "latest_snapshot": "../progress/snapshots/20260723T071000Z-33ac12-working-tree-e99f63e7946f.json",
+  "latest_fact_update": "2026-07-23T07:25:00Z",
+  "latest_snapshot": "../progress/snapshots/20260723T072500Z-b635fc-working-tree-3f20ab8be686.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "一节内容完成审校并关联证据"
+          "text": "命令、输入、输出、指标和结论可复现"
         }
       ],
       "artifacts": [],
       "day": "CYCLE",
-      "dependencies": [],
-      "href": "details.html#cycle-task-C02-T01",
-      "id": "C02-T01",
+      "dependencies": [
+        "C02-T01"
+      ],
+      "href": "details.html#cycle-task-C02-T02",
+      "id": "C02-T02",
       "owner": "author",
       "planned_date": "v0.2 readable release",
       "priority": "must",
       "scope_label": "v0.2-draft",
       "status": "ready",
       "status_label": "可开始",
-      "title": "完成下一节可读内容"
+      "title": "运行并更新一次实验"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "blocked",
-      "id": "EVT-ab43c23cf3ccc998",
-      "object_id": "D13-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T05:33:35Z",
-      "source_id": "working-tree-e9e61c21b45c",
-      "summary": "D13-T01 · 邀请三位试读者：blocked → done",
-      "type": "task_status_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "deferred",
@@ -742,11 +732,23 @@
       "source_id": "24c7d233ac12-working-tree-e99f63e7946f",
       "summary": "D14-T03 · 建立 v0.2 草案：backlog → done",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-4a803ebc32e5a1a1",
+      "object_id": "CH-04:question",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-23T07:25:00Z",
+      "source_id": "77358db635fc-working-tree-3f20ab8be686",
+      "summary": "CH-04 · 上下文工程：Memory Bank 与 Standards · 问题：pending → done",
+      "type": "chapter_stage_changed"
     }
   ],
   "release_message": "v0.1 已发布；执行下一周期首个 Must",
   "schema_version": "1.0.0",
-  "source_id": "24c7d233ac12-working-tree-e99f63e7946f",
+  "source_id": "77358db635fc-working-tree-3f20ab8be686",
   "tasks": {
     "done": 42,
     "percent": 100.0,

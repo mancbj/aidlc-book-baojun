@@ -70,7 +70,7 @@
           "id": "C02-T01",
           "kind": "content",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "完成下一节可读内容"
         },
         {
@@ -83,7 +83,7 @@
           "id": "C02-T02",
           "kind": "experiment",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "运行并更新一次实验"
         },
         {

@@ -5,6 +5,8 @@
 - [manifesto.md](manifesto.md)：核心公式及边界
 - [part-00-overview.md](part-00-overview.md)：AI-DLC 鸟瞰图、全书叙事结构与阅读路线
 - [toc.md](toc.md)：Part 0 导读、十章结构与实验方向
+- [chapters/sample.md](chapters/sample.md)：CH-03 v0.1 可读样章
+- [chapters/ch04-memory-bank-standards.md](chapters/ch04-memory-bank-standards.md)：CH-04 v0.2 第一节可读稿
 - [chapter-template.md](chapter-template.md)：章节六阶段生产线
 - [images/cover.png](images/cover.png)：作者定稿封面（1200 × 1600 PNG）
 - [images/README.md](images/README.md)：视觉资产来源与校验信息

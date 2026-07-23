@@ -26,6 +26,8 @@ SOURCE_FILES = (
     Path("book/manifesto.md"),
     Path("book/part-00-overview.md"),
     Path("book/toc.md"),
+    Path("book/chapters/sample.md"),
+    Path("book/chapters/ch04-memory-bank-standards.md"),
 )
 SUPPORT_FILES = (
     Path("book/book.css"),

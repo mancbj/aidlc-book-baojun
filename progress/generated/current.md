@@ -11,12 +11,12 @@
 - 阻塞：0
 - 反馈：1 条；accepted 0 条
 - 下一周期：v0.2-draft
-- 事实最近更新：2026-07-23T07:00:59Z
-- 来源：`24c7d233ac12-working-tree-e99f63e7946f`
+- 事实最近更新：2026-07-23T07:25:00Z
+- 来源：`77358db635fc-working-tree-3f20ab8be686`
 
 ## 下一动作
 
-1. **C02-T01 · 完成下一节可读内容** — MUST / 可开始 / v0.2-draft
+1. **C02-T02 · 运行并更新一次实验** — MUST / 可开始 / v0.2-draft
 
 ## 阻塞
 
@@ -24,6 +24,7 @@
 
 ## 最近关键更新
 
+- `2026-07-23T07:25:00Z` · CH-04 · 上下文工程：Memory Bank 与 Standards · 问题：pending → done (`EVT-4a803ebc32e5a1a1`)
 - `2026-07-23T07:10:00Z` · D14-T03 · 建立 v0.2 草案：backlog → done (`EVT-e5ea15236ddb35c3`)
 - `2026-07-23T07:10:00Z` · v0.2-draft 已由真实发布回执激活 (`EVT-84922e8002f47050`)
 - `2026-07-23T06:38:10Z` · v0.1 published at https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.1 (`EVT-35bbafd0f063486d`)
@@ -33,7 +34,6 @@
 - `2026-07-23T05:49:41Z` · D13-T03 · 生成 v0.1 Release Candidate：backlog → done (`EVT-e396ed46a17deb7b`)
 - `2026-07-23T05:42:01Z` · D13-T02 · 处理发布阻断反馈：backlog → done (`EVT-d11925c6d10596fd`)
 - `2026-07-23T05:42:01Z` · FB-001 · Reader-A/B/C：deferred (`EVT-d44eefb59f302eda`)
-- `2026-07-23T05:33:35Z` · D13-T01 · 邀请三位试读者：blocked → done (`EVT-ab43c23cf3ccc998`)
 
 ## 下钻入口
 

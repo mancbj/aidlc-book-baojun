@@ -124,7 +124,7 @@
       "stages": [
         {
           "name": "question",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "framework",
@@ -147,8 +147,14 @@
           "status": "pending"
         }
       ],
-      "evidence_links": [],
-      "updated": "2026-07-22T05:39:06Z"
+      "evidence_links": [
+        "book/chapters/ch04-memory-bank-standards.md",
+        "planning/reviews/ch04-c02-t01.md",
+        "progress/cycles.json",
+        "memory-bank/standards/coding-standards.md",
+        "memory-bank/standards/tech-stack.md"
+      ],
+      "updated": "2026-07-23T07:25:00Z"
     },
     {
       "id": "CH-05",

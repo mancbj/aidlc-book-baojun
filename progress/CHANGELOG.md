@@ -562,3 +562,9 @@
 
 - **cycle_opened** · v0.2-draft 已由真实发布回执激活 (`EVT-84922e8002f47050`)
 - **task_status_changed** · D14-T03 · 建立 v0.2 草案：backlog → done (`EVT-e5ea15236ddb35c3`)
+
+## 2026-07-23T07:25:00Z · `77358db635fc-working-tree-3f20ab8be686`
+
+快照：[`20260723T072500Z-b635fc-working-tree-3f20ab8be686.json`](snapshots/20260723T072500Z-b635fc-working-tree-3f20ab8be686.json)
+
+- **chapter_stage_changed** · CH-04 · 上下文工程：Memory Bank 与 Standards · 问题：pending → done (`EVT-4a803ebc32e5a1a1`)
