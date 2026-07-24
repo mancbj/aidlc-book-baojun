@@ -768,3 +768,12 @@
 - **chapter_stage_changed** · CH-07 · 验证：把人类检查点变成有效损失函数 · 审校：pending → done (`EVT-99c4968e06939bc0`)
 - **task_status_changed** · D21-T03 · CH-07 · 完成章节审校与证据对齐：ready → done (`EVT-ec958f01416b6113`)
 - **task_status_changed** · D22-T01 · CH-08 · 锁定章节论证骨架：backlog → ready (`EVT-aea0b5cb811031f2`)
+
+## 2026-07-24T11:20:00Z · `a2b81be73f81-working-tree-ef8a3e8ba9eb`
+
+快照：[`20260724T112000Z-e73f81-working-tree-ef8a3e8ba9eb.json`](snapshots/20260724T112000Z-e73f81-working-tree-ef8a3e8ba9eb.json)
+
+- **chapter_stage_changed** · CH-08 · Operations：从交付候选到可持续运行 · 框架：pending → done (`EVT-eb75ac65d96a7d23`)
+- **chapter_stage_changed** · CH-08 · Operations：从交付候选到可持续运行 · 问题：pending → done (`EVT-0301c08b7398808c`)
+- **task_status_changed** · D22-T01 · CH-08 · 锁定章节论证骨架：ready → done (`EVT-ac7478b0a9fccc73`)
+- **task_status_changed** · D22-T02 · CH-08 · 完成章节可读稿：backlog → ready (`EVT-cdfdb9f19d8ab977`)

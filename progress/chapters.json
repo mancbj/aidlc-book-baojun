@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T10:50:00Z",
+  "updated": "2026-07-24T11:20:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -348,11 +348,11 @@
       "stages": [
         {
           "name": "question",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "framework",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "example",
@@ -371,8 +371,20 @@
           "status": "pending"
         }
       ],
-      "evidence_links": [],
-      "updated": "2026-07-22T05:39:06Z"
+      "evidence_links": [
+        "progress/tasks.json#D22-T01",
+        "book/chapters/ch08-operations.md",
+        "scripts/check_release_readiness.py",
+        "scripts/prepare_release.py",
+        "scripts/prepare_pages.py",
+        ".github/workflows/pages.yml",
+        ".github/workflows/release.yml",
+        "planning/releases/v0.1-policy.json",
+        "progress/experiments.json#EXP-08-01",
+        "progress/experiments.json#EXP-08-02",
+        "progress/experiments.json#EXP-08-03"
+      ],
+      "updated": "2026-07-24T11:20:00Z"
     },
     {
       "id": "CH-09",

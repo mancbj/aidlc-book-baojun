@@ -33,6 +33,7 @@ SOURCE_FILES = (
     Path("book/chapters/ch05-bolts.md"),
     Path("book/chapters/ch06-exsecutio.md"),
     Path("book/chapters/ch07-verification.md"),
+    Path("book/chapters/ch08-operations.md"),
 )
 SUPPORT_FILES = (
     Path("book/book.css"),

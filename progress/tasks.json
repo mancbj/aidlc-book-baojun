@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "memory-bank/intents/001-github-writing-system/execution-roadmap.md",
-  "updated": "2026-07-24T10:50:00Z",
+  "updated": "2026-07-24T11:20:00Z",
   "tasks": [
     {
       "id": "D01-T01",
@@ -1914,7 +1914,7 @@
       "type": "writing",
       "card": "outline",
       "chapter": "CH-08",
-      "status": "ready",
+      "status": "done",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1923,7 +1923,7 @@
       "acceptance": [
         {
           "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲",
-          "passed": false
+          "passed": true
         }
       ],
       "artifacts": [
@@ -1935,7 +1935,7 @@
       "notes": "每日一章写作冲刺：Operations：从交付候选到可持续运行 的 锁定章节论证骨架 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-24T10:50:00Z"
+      "updated": "2026-07-24T11:20:00Z"
     },
     {
       "id": "D22-T02",
@@ -1946,7 +1946,7 @@
       "type": "writing",
       "card": "draft",
       "chapter": "CH-08",
-      "status": "backlog",
+      "status": "ready",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1967,7 +1967,7 @@
       "notes": "每日一章写作冲刺：Operations：从交付候选到可持续运行 的 完成章节可读稿 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-23T09:00:00Z"
+      "updated": "2026-07-24T11:20:00Z"
     },
     {
       "id": "D22-T03",
