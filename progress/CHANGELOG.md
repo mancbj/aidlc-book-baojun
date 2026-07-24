@@ -831,3 +831,13 @@
 - **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 问题：pending → done (`EVT-7bb667dc08f48c49`)
 - **task_status_changed** · D24-T01 · CH-10 · 锁定章节论证骨架：ready → done (`EVT-65545471bfacf24c`)
 - **task_status_changed** · D24-T02 · CH-10 · 完成章节可读稿：backlog → ready (`EVT-a0047b9747d6cd61`)
+
+## 2026-07-24T13:37:53Z · `7e5db21f2422-working-tree-7f64e8cbf353`
+
+快照：[`20260724T133753Z-1f2422-working-tree-7f64e8cbf353.json`](snapshots/20260724T133753Z-1f2422-working-tree-7f64e8cbf353.json)
+
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 案例：pending → done (`EVT-df55ff9cac01af5f`)
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 实验：pending → done (`EVT-0ada25e62ec3c739`)
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 图示：pending → done (`EVT-48a441304cc8a6be`)
+- **task_status_changed** · D24-T02 · CH-10 · 完成章节可读稿：ready → done (`EVT-bfa89664b88d2f56`)
+- **task_status_changed** · D24-T03 · CH-10 · 完成章节审校与证据对齐：backlog → ready (`EVT-ed9b285e3c45c9f4`)

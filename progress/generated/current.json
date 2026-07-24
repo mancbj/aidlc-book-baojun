@@ -453,13 +453,13 @@
         "total": 6
       },
       {
-        "done": 2,
+        "done": 5,
         "href": "details.html#chapter-CH-10",
         "id": "CH-10",
-        "next_gap": "example",
-        "next_gap_label": "案例",
+        "next_gap": "review",
+        "next_gap_label": "审校",
         "number": 10,
-        "percent": 33.3,
+        "percent": 83.3,
         "question": "如何重构人、Agent、协作节奏与度量体系，并判断哪些 AI-DLC 实践值得在组织内规模化？",
         "stages": [
           {
@@ -477,20 +477,20 @@
           {
             "label": "案例",
             "name": "example",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "实验",
             "name": "experiment",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "图示",
             "name": "figure",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "审校",
@@ -505,21 +505,21 @@
     ],
     "stage_totals": {
       "example": {
-        "done": 9,
+        "done": 10,
         "label": "案例",
-        "percent": 90.0,
+        "percent": 100.0,
         "total": 10
       },
       "experiment": {
-        "done": 9,
+        "done": 10,
         "label": "实验",
-        "percent": 90.0,
+        "percent": 100.0,
         "total": 10
       },
       "figure": {
-        "done": 9,
+        "done": 10,
         "label": "图示",
-        "percent": 90.0,
+        "percent": 100.0,
         "total": 10
       },
       "framework": {
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T13:36:52Z",
+  "generated_at": "2026-07-24T13:37:53Z",
   "goal": {
     "all_tasks_done": false,
     "current_day": 24,
@@ -598,97 +598,37 @@
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T13:36:49Z",
-  "latest_snapshot": "../progress/snapshots/20260724T133652Z-87b05b-working-tree-3fd212566612.json",
+  "latest_fact_update": "2026-07-24T13:37:50Z",
+  "latest_snapshot": "../progress/snapshots/20260724T133753Z-1f2422-working-tree-7f64e8cbf353.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
         }
       ],
       "artifacts": [
         {
-          "path": "book/chapters/ch10-organization-metrics.md",
+          "path": "planning/reviews/ch-10-writing-review.md",
           "required": true
         }
       ],
       "day": 24,
       "dependencies": [
-        "D24-T01"
+        "D24-T02"
       ],
-      "href": "details.html#task-D24-T02",
-      "id": "D24-T02",
+      "href": "details.html#task-D24-T03",
+      "id": "D24-T03",
       "owner": "author",
       "planned_date": "2026-08-13",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-10 · 完成章节可读稿"
+      "title": "CH-10 · 完成章节审校与证据对齐"
     }
   ],
   "recent_events": [
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-0b1b0d42e4075a6b",
-      "object_id": "CH-09:figure",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:35:10Z",
-      "source_id": "edaac8aeca94-working-tree-1f9d2304afc7",
-      "summary": "CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 图示：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-1e23a21822554347",
-      "object_id": "D23-T02",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:35:10Z",
-      "source_id": "edaac8aeca94-working-tree-1f9d2304afc7",
-      "summary": "D23-T02 · CH-09 · 完成章节可读稿：ready → done",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-915f24c8d98e81ef",
-      "object_id": "D23-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:35:10Z",
-      "source_id": "edaac8aeca94-working-tree-1f9d2304afc7",
-      "summary": "D23-T03 · CH-09 · 完成章节审校与证据对齐：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-ffa1f8997416f11d",
-      "object_id": "CH-09:review",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:36:01Z",
-      "source_id": "3d1db5e83ff4-working-tree-2e5ddccccd33",
-      "summary": "CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 审校：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-4bca3aebeed899d9",
-      "object_id": "D23-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:36:01Z",
-      "source_id": "3d1db5e83ff4-working-tree-2e5ddccccd33",
-      "summary": "D23-T03 · CH-09 · 完成章节审校与证据对齐：ready → done",
-      "type": "task_status_changed"
-    },
     {
       "actor": "ubuntu",
       "after": "ready",
@@ -748,14 +688,74 @@
       "source_id": "62648787b05b-working-tree-3fd212566612",
       "summary": "D24-T02 · CH-10 · 完成章节可读稿：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-df55ff9cac01af5f",
+      "object_id": "CH-10:example",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T13:37:53Z",
+      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
+      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 案例：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-0ada25e62ec3c739",
+      "object_id": "CH-10:experiment",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T13:37:53Z",
+      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
+      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 实验：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-48a441304cc8a6be",
+      "object_id": "CH-10:figure",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T13:37:53Z",
+      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
+      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 图示：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-bfa89664b88d2f56",
+      "object_id": "D24-T02",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T13:37:53Z",
+      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
+      "summary": "D24-T02 · CH-10 · 完成章节可读稿：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-ed9b285e3c45c9f4",
+      "object_id": "D24-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T13:37:53Z",
+      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
+      "summary": "D24-T03 · CH-10 · 完成章节审校与证据对齐：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "62648787b05b-working-tree-3fd212566612",
+  "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
   "tasks": {
-    "done": 70,
-    "percent": 97.2,
+    "done": 71,
+    "percent": 98.6,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 68,
+        "done": 69,
         "has_sample": true,
-        "percent": 97.1,
+        "percent": 98.6,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 1,
+      "backlog": 0,
       "blocked": 0,
-      "done": 70,
+      "done": 71,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -995,14 +995,14 @@
       {
         "blocked": 0,
         "day": 24,
-        "done": 1,
+        "done": 2,
         "href": "details.html#day-24",
         "is_current": true,
-        "percent": 33.3,
+        "percent": 66.7,
         "total": 3
       }
     ],
     "total": 72,
-    "weighted_percent": 97.2
+    "weighted_percent": 98.6
   }
 }

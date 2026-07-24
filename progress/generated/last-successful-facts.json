@@ -445,7 +445,11 @@
             "book/chapters/ch10-organization-metrics.md",
             "progress/experiments.json#EXP-10-01",
             "progress/experiments.json#EXP-10-02",
-            "progress/experiments.json#EXP-10-03"
+            "progress/experiments.json#EXP-10-03",
+            "progress/tasks.json#D24-T02",
+            "book/chapters/ch10-organization-metrics.md#04--example以本书写作系统试点为例",
+            "book/chapters/ch10-organization-metrics.md#06--experiment三个验证方向",
+            "book/chapters/ch10-organization-metrics.md#07--figure研发操作系统三层图"
           ],
           "id": "CH-10",
           "number": 10,
@@ -462,15 +466,15 @@
             },
             {
               "name": "example",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "experiment",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "figure",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "review",
@@ -478,11 +482,11 @@
             }
           ],
           "title": "组织与度量：从 Agent 分工到研发操作系统",
-          "updated": "2026-07-24T13:36:49Z"
+          "updated": "2026-07-24T13:37:50Z"
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T13:36:49Z"
+      "updated": "2026-07-24T13:37:50Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3700,7 +3704,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
             }
           ],
@@ -3723,11 +3727,11 @@
           "phase": "progress",
           "planned_date": "2026-08-13",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-10 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T13:36:49Z"
+          "updated": "2026-07-24T13:37:50Z"
         },
         {
           "acceptance": [
@@ -3755,16 +3759,16 @@
           "phase": "progress",
           "planned_date": "2026-08-13",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-10 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T13:37:50Z"
         }
       ],
-      "updated": "2026-07-24T13:36:49Z"
+      "updated": "2026-07-24T13:37:50Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "62648787b05b-working-tree-3fd212566612"
+  "source_id": "7e5db21f2422-working-tree-7f64e8cbf353"
 }
