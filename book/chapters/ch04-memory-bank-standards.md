@@ -6,8 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-04 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D18-T01 · 锁定章节论证骨架 |
-| Draft Completeness | 正式十章生产线论证骨架；已有第一节可读稿，等待 D18-T02 扩展为完整可读稿 |
+| Writing Sprint Card | D18-T02 · 完成章节可读稿 |
+| Draft Completeness | 正式十章生产线可读稿；等待 D18-T03 审校与证据对齐 |
 | Primary Question | 如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？ |
 | Reader Outcome | 能够设计最小 Memory Bank、Standards 目录、工件引用和变更同步规则 |
 | Related Experiments | `EXP-04-01` |
@@ -145,11 +145,11 @@ Memory Bank 和 Standards 如果只新增不整理，很快会退化成噪音库
 
 本段结论：**上下文工程的第三项价值，是让上下文在持续更新中保持可恢复、可审计和可执行。**
 
-## 04 · Example Skeleton：本书项目的最小 Memory Bank
+## 04 · Example：本书项目的最小 Memory Bank
 
-D18-T02 可读稿将用本书项目自身作为例子，展示一个最小 Memory Bank 如何支撑“继续下一任务”。
+我们用本书项目自身作为例子。假设一个全新的 Agent 会话只收到一句话：“继续下一任务。”如果它只依赖聊天印象，很容易把“下一任务”理解成最近提到过的任务、v0.1 发布尾声，甚至重复已经完成的工作。要让它稳定接住工作，项目必须把“继续”翻译成可读取的事实。
 
-最小例子结构如下：
+当前最小 Memory Bank 可以分为五类入口：
 
 ```text
 Current State
@@ -178,9 +178,31 @@ Update Protocol
   ci_check.py
 ```
 
-这个例子要展示一个关键对比：没有 Memory Bank 的会话会把“继续”理解成模糊请求；有 Memory Bank 的会话会先读取当前周期、任务依赖、排除目录、专用术语和证据路径，再决定下一动作。两者的差别不是语气差别，而是恢复机制差别。
+第一类是 Current State。`progress/tasks.json` 告诉 Agent 哪些任务已经 done，哪个任务 ready，依赖是否满足；`progress/chapters.json` 告诉它每一章的六阶段生产线状态；`progress/generated/current.json` 是面向驾驶舱和下一动作的聚合投影。没有这类事实源，“继续”就只能靠猜。
 
-## 05 · Experiment & Figure Entry
+第二类是 Intent & Scope。`memory-bank/intents/001-github-writing-system/requirements.md` 和 `memory-bank/story-index.md` 让 Agent 知道当前系统最初服务于什么目标：不是单纯写几章文章，而是建立一套可在 GitHub 上持续写作、自动记录、可视化追踪和发布的系统。Scope 也包括“不做什么”：`specs.md-portal/`、`github_repo_reference_ai-agent-book-main/`、`working-book/` 不作为后续 GitHub 仓库对象上传。
+
+第三类是 Standards。`memory-bank/standards/coding-standards.md` 规定了任务、JSON、链接、生成文件和测试的基本约束；`memory-bank/standards/tech-stack.md` 规定了本项目的静态技术栈；`working-book/SVG_STYLE_GUIDE.md` 则保存了图表风格判断。它们共同防止 AI 把“我觉得也不错”当成项目标准。
+
+第四类是 Evidence Links。任务完成不能只停留在一句“已完成”。它应该能回到事件账本、快照、审校记录、实验输出和构建清单。例如 D17-T03 关闭 CH-03 时，证据同时落在 `planning/reviews/ch-03-writing-review.md`、`progress/events/events.jsonl`、`progress/snapshots/` 和驾驶舱对象下钻里。这样，新会话不必信任上一轮 Agent 的自述，可以沿着证据复核。
+
+第五类是 Update Protocol。`validate_project.py` 负责检查事实源，`generate_progress.py` 负责从事实源生成事件、快照和页面，`ci_check.py` 负责把校验串成持续集成门禁。上下文不是人工整理出来的一页“项目简介”，而是每次任务推进后自动变硬的一组工件。
+
+所以，一个带 Memory Bank 的会话会这样理解“继续下一任务”：
+
+```text
+读取事实源
+  → 找到 ready 任务
+  → 检查依赖与边界
+  → 修改对应章节或产物
+  → 更新任务/章节事实源
+  → 生成事件、快照、驾驶舱
+  → 运行校验并提交证据
+```
+
+没有 Memory Bank 的会话也许能写出流畅文本，但它不知道自己是否在正确任务上；有 Memory Bank 的会话不只是更“有记性”，而是拥有恢复、执行和交接的轨道。
+
+## 05 · Experiment：冷启动恢复 A/B 检查
 
 本章证据入口是 `EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验`。它比较两组候选首轮行动：
 
@@ -194,7 +216,19 @@ Update Protocol
 | with_memory_bank | 100.0% | false | 0 |
 | without_memory_bank | 0.0% | true | 3 |
 
-这组结果不能证明所有项目都会得到同样数字，但能支撑本章的局部观点：版本化事实源与 Standards 可以把“下一步是什么、边界在哪里、证据落哪里、术语如何保留”从聊天猜测转成结构化恢复。
+从仓库根目录运行：
+
+```bash
+python3 experiments/exp-04-01/quickstart.py --sample
+```
+
+输出位于 `experiments/exp-04-01/output/sample.json`。实验只用 Python 标准库，不联网，不调用模型。它检查五件事：当前周期、下一动作、证据路径、排除目录和专用术语是否恢复正确。
+
+这组结果不能证明所有项目都会得到同样数字，也不能证明 AI 一定理解了业务语义。它只能支撑一个更窄、也更可靠的结论：**当关键上下文被写成版本化事实源和 Standards 时，新会话更容易恢复正确行动边界；当上下文只存在于聊天印象里，首个动作错误和术语漂移会更容易出现。**
+
+这正是 AI-DLC 需要实验的地方。我们不要求实验证明“Memory Bank 永远有效”，只要求它把一个可观察差异放到桌面上：同样一句“继续下一任务”，有无工程化上下文，恢复质量可以完全不同。
+
+## 06 · Figure：新会话冷启动恢复栈
 
 本章图示方向为“新会话冷启动恢复栈”：
 
@@ -212,17 +246,40 @@ Events / Snapshots / Dashboard
 Next Session Recovers from Updated Facts
 ```
 
+这张图要强调一个闭环，而不是一个资料夹。新会话先读取 Current State、Intent & Scope、Standards 和 Evidence Links，推导出下一步安全动作；执行后，它必须通过 Update Protocol 把变化写回事实源，并触发 Events、Snapshots 和 Dashboard。下一次会话再从更新后的事实源恢复。
+
+图中至少应有三层视觉权重：
+
+1. 一级：`New Session → Next Safe Action → Updated Facts` 的主流程。
+2. 二级：Current State、Intent & Scope、Standards、Evidence Links 四类输入。
+3. 三级：Events、Snapshots、Dashboard 等审计输出。
+
 若后续生成独立 SVG，可命名为 `book/images/ch04-memory-bank-stack.svg`，保持技术专著级、宽屏、瑞士网格、IBM Carbon 倾向的克制风格，并避免把 Memory Bank 画成普通资料库。
 
-## 06 · D18-T02 Writing Plan
+## 07 · Boundary：本章不解决什么
 
-D18-T02 将把本骨架扩展为完整可读稿。重点动作：
+为了避免 Memory Bank 变成一个装万物的篮子，本章必须划清边界。
 
-1. 扩写五层上下文栈，让每层都有“为什么需要、保存什么、不保存什么”。
-2. 把本书项目的真实文件组织写成最小 Memory Bank 案例。
-3. 将 `EXP-04-01` 的实验输出写成有限度的证据，不夸大为普遍结论。
-4. 补充“资料库 vs Memory Bank”“记忆更多 vs 恢复更准”的对照。
-5. 增加读者练习：为自己的项目设计一个 6 文件以内的最小 Memory Bank。
+第一，本章不讨论“无限长期记忆”。AI-DLC 关注的是工程恢复，不是让模型保存所有对话、资料和偏好。长期记忆如果没有结构、校验和更新规则，只会把旧假设保存得更久。
+
+第二，本章不替代第 5、6 章的 Bolt 执行机制。Memory Bank 告诉 Agent 当前状态和约束，Bolt 决定某个执行批次怎样被设计、实现、测试和验收。上下文正确不等于执行正确。
+
+第三，本章不替代第 8 章的 Operations。事件、快照和驾驶舱可以支撑发布前后的可追踪性，但部署验证、监控和恢复策略仍需要单独展开。
+
+第四，本章不要求所有团队复制本书目录。读者要复制的是原则：当前状态版本化，人的判断标准化，证据路径可追踪，更新协议可自动校验。具体文件名可以不同，但四件事不能缺。
+
+## Reader Exercise
+
+选择你自己的一个项目，用 20 分钟设计一个 6 文件以内的最小 Memory Bank。
+
+1. 写一个 `current-state` 文件：说明当前周期、下一动作、已完成/阻塞状态。
+2. 写一个 `intent-and-scope` 文件：说明目标、边界和明确不做的事。
+3. 写一个 `standards` 文件：列出 5 条 AI 不能“顺手优化”的规则。
+4. 写一个 `evidence-index` 文件：列出任务、实验、审校、发布或构建证据入口。
+5. 写一个 `update-protocol` 文件：说明完成任务后必须更新哪些事实源。
+6. 删除一个不必要文件，确保 Memory Bank 不是资料库。
+
+完成后，用一句话测试它：让一个完全不了解项目的新会话只读取这组文件，然后回答“下一步安全动作是什么？”如果它还需要大量猜测，你的 Memory Bank 不是太小，而是还不够硬。
 
 ## References
 

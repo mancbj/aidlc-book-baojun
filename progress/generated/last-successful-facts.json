@@ -142,6 +142,7 @@
         },
         {
           "evidence_links": [
+            "progress/tasks.json#D18-T02",
             "experiments/exp-04-01/README.md",
             "experiments/exp-04-01/output/sample.json",
             "progress/tasks.json#D18-T01",
@@ -166,15 +167,15 @@
             },
             {
               "name": "example",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "experiment",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "figure",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "review",
@@ -182,7 +183,7 @@
             }
           ],
           "title": "上下文工程：Memory Bank 与 Standards",
-          "updated": "2026-07-24T05:20:00Z"
+          "updated": "2026-07-24T05:50:00Z"
         },
         {
           "evidence_links": [],
@@ -396,7 +397,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T05:20:00Z"
+      "updated": "2026-07-24T05:50:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3038,7 +3039,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
             }
           ],
@@ -3061,11 +3062,11 @@
           "phase": "progress",
           "planned_date": "2026-08-07",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-04 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T05:20:00Z"
+          "updated": "2026-07-24T05:50:00Z"
         },
         {
           "acceptance": [
@@ -3093,11 +3094,11 @@
           "phase": "progress",
           "planned_date": "2026-08-07",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-04 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T05:50:00Z"
         },
         {
           "acceptance": [
@@ -3676,9 +3677,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T05:20:00Z"
+      "updated": "2026-07-24T05:50:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "fa5a968ee57d-working-tree-d72b10eb146a"
+  "source_id": "d5b4f0721d8e-working-tree-442a70aaa95c"
 }
