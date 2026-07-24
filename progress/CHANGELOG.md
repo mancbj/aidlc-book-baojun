@@ -622,3 +622,13 @@
 - **chapter_stage_changed** · CH-02 · 人的判断与反向对话 · 问题：pending → done (`EVT-895feadee0efa27b`)
 - **task_status_changed** · D16-T01 · CH-02 · 锁定章节论证骨架：ready → done (`EVT-22b6db48e56c6554`)
 - **task_status_changed** · D16-T02 · CH-02 · 完成章节可读稿：backlog → ready (`EVT-460abcd59b754a58`)
+
+## 2026-07-24T02:50:00Z · `8ca367914e9e-working-tree-e112e9a895a8`
+
+快照：[`20260724T025000Z-914e9e-working-tree-e112e9a895a8.json`](snapshots/20260724T025000Z-914e9e-working-tree-e112e9a895a8.json)
+
+- **chapter_stage_changed** · CH-02 · 人的判断与反向对话 · 案例：pending → done (`EVT-c95450c3742f3e0c`)
+- **chapter_stage_changed** · CH-02 · 人的判断与反向对话 · 实验：pending → done (`EVT-9147d81200749fbb`)
+- **chapter_stage_changed** · CH-02 · 人的判断与反向对话 · 图示：pending → done (`EVT-06b2da7a3bc5f474`)
+- **task_status_changed** · D16-T02 · CH-02 · 完成章节可读稿：ready → done (`EVT-6518110f848208ee`)
+- **task_status_changed** · D16-T03 · CH-02 · 完成章节审校与证据对齐：backlog → ready (`EVT-1a523a5121f1729e`)

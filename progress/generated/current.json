@@ -53,13 +53,13 @@
         "total": 6
       },
       {
-        "done": 2,
+        "done": 5,
         "href": "details.html#chapter-CH-02",
         "id": "CH-02",
-        "next_gap": "example",
-        "next_gap_label": "案例",
+        "next_gap": "review",
+        "next_gap_label": "审校",
         "number": 2,
-        "percent": 33.3,
+        "percent": 83.3,
         "question": "当 AI 主动提议、分解和执行时，人应如何设定目的地、保留责任并选择验证检查点？",
         "stages": [
           {
@@ -77,20 +77,20 @@
           {
             "label": "案例",
             "name": "example",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "实验",
             "name": "experiment",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "图示",
             "name": "figure",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "审校",
@@ -505,21 +505,21 @@
     ],
     "stage_totals": {
       "example": {
-        "done": 2,
+        "done": 3,
         "label": "案例",
-        "percent": 20.0,
+        "percent": 30.0,
         "total": 10
       },
       "experiment": {
-        "done": 2,
+        "done": 3,
         "label": "实验",
-        "percent": 20.0,
+        "percent": 30.0,
         "total": 10
       },
       "figure": {
-        "done": 2,
+        "done": 3,
         "label": "图示",
-        "percent": 20.0,
+        "percent": 30.0,
         "total": 10
       },
       "framework": {
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T02:20:00Z",
+  "generated_at": "2026-07-24T02:50:00Z",
   "goal": {
     "all_tasks_done": false,
     "current_day": 16,
@@ -598,97 +598,37 @@
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T02:20:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T022000Z-aebd45-working-tree-e82bea0f12be.json",
+  "latest_fact_update": "2026-07-24T02:50:00Z",
+  "latest_snapshot": "../progress/snapshots/20260724T025000Z-914e9e-working-tree-e112e9a895a8.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
         }
       ],
       "artifacts": [
         {
-          "path": "book/chapters/ch02-human-judgment.md",
+          "path": "planning/reviews/ch-02-writing-review.md",
           "required": true
         }
       ],
       "day": 16,
       "dependencies": [
-        "D16-T01"
+        "D16-T02"
       ],
-      "href": "details.html#task-D16-T02",
-      "id": "D16-T02",
+      "href": "details.html#task-D16-T03",
+      "id": "D16-T03",
       "owner": "author",
       "planned_date": "2026-08-05",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-02 · 完成章节可读稿"
+      "title": "CH-02 · 完成章节审校与证据对齐"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-4035834a1ba66016",
-      "object_id": "CH-01:figure",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-23T10:00:00Z",
-      "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
-      "summary": "CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 图示：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-2215b656b86ea492",
-      "object_id": "D15-T02",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T10:00:00Z",
-      "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
-      "summary": "D15-T02 · CH-01 · 完成章节可读稿：ready → done",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-1cd91832c3ba8393",
-      "object_id": "D15-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T10:00:00Z",
-      "source_id": "bccb2b5c02a2-working-tree-3f854deadfea",
-      "summary": "D15-T03 · CH-01 · 完成章节审校与证据对齐：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-b0deafeb48ae35e8",
-      "object_id": "CH-01:review",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-23T10:30:00Z",
-      "source_id": "f0d8c616d328-working-tree-cf379f1d4a64",
-      "summary": "CH-01 · AI 原生 SDLC：从概率智能到确定性交付 · 审校：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-0470ef937c19bacd",
-      "object_id": "D15-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T10:30:00Z",
-      "source_id": "f0d8c616d328-working-tree-cf379f1d4a64",
-      "summary": "D15-T03 · CH-01 · 完成章节审校与证据对齐：ready → done",
-      "type": "task_status_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "ready",
@@ -748,14 +688,74 @@
       "source_id": "4d9d28aebd45-working-tree-e82bea0f12be",
       "summary": "D16-T02 · CH-02 · 完成章节可读稿：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-c95450c3742f3e0c",
+      "object_id": "CH-02:example",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T02:50:00Z",
+      "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
+      "summary": "CH-02 · 人的判断与反向对话 · 案例：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-9147d81200749fbb",
+      "object_id": "CH-02:experiment",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T02:50:00Z",
+      "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
+      "summary": "CH-02 · 人的判断与反向对话 · 实验：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-06b2da7a3bc5f474",
+      "object_id": "CH-02:figure",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T02:50:00Z",
+      "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
+      "summary": "CH-02 · 人的判断与反向对话 · 图示：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-6518110f848208ee",
+      "object_id": "D16-T02",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T02:50:00Z",
+      "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
+      "summary": "D16-T02 · CH-02 · 完成章节可读稿：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-1a523a5121f1729e",
+      "object_id": "D16-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T02:50:00Z",
+      "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
+      "summary": "D16-T03 · CH-02 · 完成章节审校与证据对齐：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "4d9d28aebd45-working-tree-e82bea0f12be",
+  "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
   "tasks": {
-    "done": 46,
-    "percent": 63.9,
+    "done": 47,
+    "percent": 65.3,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 44,
+        "done": 45,
         "has_sample": true,
-        "percent": 62.9,
+        "percent": 64.3,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 25,
+      "backlog": 24,
       "blocked": 0,
-      "done": 46,
+      "done": 47,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -923,10 +923,10 @@
       {
         "blocked": 0,
         "day": 16,
-        "done": 1,
+        "done": 2,
         "href": "details.html#day-16",
         "is_current": true,
-        "percent": 33.3,
+        "percent": 66.7,
         "total": 3
       },
       {
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 63.6
+    "weighted_percent": 65.0
   }
 }

@@ -50,7 +50,11 @@
         {
           "evidence_links": [
             "book/chapters/ch02-human-judgment.md",
-            "progress/tasks.json#D16-T01"
+            "progress/tasks.json#D16-T01",
+            "progress/tasks.json#D16-T02",
+            "progress/experiments.json#EXP-02-01",
+            "progress/experiments.json#EXP-02-02",
+            "progress/experiments.json#EXP-02-03"
           ],
           "id": "CH-02",
           "number": 2,
@@ -67,15 +71,15 @@
             },
             {
               "name": "example",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "experiment",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "figure",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "review",
@@ -83,7 +87,7 @@
             }
           ],
           "title": "人的判断与反向对话",
-          "updated": "2026-07-24T02:20:00Z"
+          "updated": "2026-07-24T02:50:00Z"
         },
         {
           "evidence_links": [
@@ -381,7 +385,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T02:20:00Z"
+      "updated": "2026-07-24T02:50:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -2831,7 +2835,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
             }
           ],
@@ -2854,11 +2858,11 @@
           "phase": "progress",
           "planned_date": "2026-08-05",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-02 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T02:20:00Z"
+          "updated": "2026-07-24T02:50:00Z"
         },
         {
           "acceptance": [
@@ -2886,11 +2890,11 @@
           "phase": "progress",
           "planned_date": "2026-08-05",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-02 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T02:50:00Z"
         },
         {
           "acceptance": [
@@ -3661,9 +3665,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T02:20:00Z"
+      "updated": "2026-07-24T02:50:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "4d9d28aebd45-working-tree-e82bea0f12be"
+  "source_id": "8ca367914e9e-working-tree-e112e9a895a8"
 }
