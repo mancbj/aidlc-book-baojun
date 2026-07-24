@@ -13,7 +13,7 @@
 - [chapters/ch05-bolts.md](chapters/ch05-bolts.md)：CH-05 正式十章生产线可读稿
 - [chapters/ch06-exsecutio.md](chapters/ch06-exsecutio.md)：CH-06 正式十章生产线可读稿
 - [chapters/ch07-verification.md](chapters/ch07-verification.md)：CH-07 正式十章生产线可读稿
-- [chapters/ch08-operations.md](chapters/ch08-operations.md)：CH-08 正式十章生产线论证骨架
+- [chapters/ch08-operations.md](chapters/ch08-operations.md)：CH-08 正式十章生产线可读稿与审校记录入口
 - [chapter-template.md](chapter-template.md)：章节六阶段生产线
 - [images/cover.png](images/cover.png)：作者定稿封面（1200 × 1600 PNG）
 - [images/README.md](images/README.md)：视觉资产来源与校验信息

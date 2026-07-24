@@ -353,13 +353,13 @@
         "total": 6
       },
       {
-        "done": 5,
+        "done": 6,
         "href": "details.html#chapter-CH-08",
         "id": "CH-08",
-        "next_gap": "review",
-        "next_gap_label": "审校",
+        "next_gap": null,
+        "next_gap_label": "已完成",
         "number": 8,
-        "percent": 83.3,
+        "percent": 100.0,
         "question": "如何通过 Build、Deploy、Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？",
         "stages": [
           {
@@ -395,8 +395,8 @@
           {
             "label": "审校",
             "name": "review",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           }
         ],
         "title": "Operations：从交付候选到可持续运行",
@@ -535,9 +535,9 @@
         "total": 10
       },
       "review": {
-        "done": 7,
+        "done": 8,
         "label": "审校",
-        "percent": 70.0,
+        "percent": 80.0,
         "total": 10
       }
     },
@@ -590,81 +590,45 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T13:21:52Z",
+  "generated_at": "2026-07-24T13:25:13Z",
   "goal": {
     "all_tasks_done": false,
-    "current_day": 22,
-    "days_remaining": 2,
+    "current_day": 23,
+    "days_remaining": 1,
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T11:50:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T132152Z-302d595aaf30418a359322e193ad1a2e.json",
+  "latest_fact_update": "2026-07-24T13:24:18Z",
+  "latest_snapshot": "../progress/snapshots/20260724T132513Z-4d21a3-working-tree-9543d484106c.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
         }
       ],
       "artifacts": [
         {
-          "path": "planning/reviews/ch-08-writing-review.md",
+          "path": "book/chapters/ch09-adaptive-engineering.md",
           "required": true
         }
       ],
-      "day": 22,
+      "day": 23,
       "dependencies": [
-        "D22-T02"
+        "D22-T03"
       ],
-      "href": "details.html#task-D22-T03",
-      "id": "D22-T03",
+      "href": "details.html#task-D23-T01",
+      "id": "D23-T01",
       "owner": "author",
-      "planned_date": "2026-08-11",
+      "planned_date": "2026-08-12",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-08 · 完成章节审校与证据对齐"
+      "title": "CH-09 · 锁定章节论证骨架"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-aea0b5cb811031f2",
-      "object_id": "D22-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T10:50:00Z",
-      "source_id": "0fc69637e83b-working-tree-54d5cadafee7",
-      "summary": "D22-T01 · CH-08 · 锁定章节论证骨架：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-eb75ac65d96a7d23",
-      "object_id": "CH-08:framework",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T11:20:00Z",
-      "source_id": "a2b81be73f81-working-tree-ef8a3e8ba9eb",
-      "summary": "CH-08 · Operations：从交付候选到可持续运行 · 框架：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-0301c08b7398808c",
-      "object_id": "CH-08:question",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T11:20:00Z",
-      "source_id": "a2b81be73f81-working-tree-ef8a3e8ba9eb",
-      "summary": "CH-08 · Operations：从交付候选到可持续运行 · 问题：pending → done",
-      "type": "chapter_stage_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "done",
@@ -748,14 +712,50 @@
       "source_id": "6b204e78d971-working-tree-88db0557527c",
       "summary": "D22-T03 · CH-08 · 完成章节审校与证据对齐：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-49a13127502b86e5",
+      "object_id": "CH-08:review",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T13:25:13Z",
+      "source_id": "aae4fb4d21a3-working-tree-9543d484106c",
+      "summary": "CH-08 · Operations：从交付候选到可持续运行 · 审校：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-a0c4e5ceb9a9644c",
+      "object_id": "D22-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T13:25:13Z",
+      "source_id": "aae4fb4d21a3-working-tree-9543d484106c",
+      "summary": "D22-T03 · CH-08 · 完成章节审校与证据对齐：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-4b268ea2b94cf154",
+      "object_id": "D23-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T13:25:13Z",
+      "source_id": "aae4fb4d21a3-working-tree-9543d484106c",
+      "summary": "D23-T01 · CH-09 · 锁定章节论证骨架：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "6bdf8677302d595aaf30418a359322e193ad1a2e",
+  "source_id": "aae4fb4d21a3-working-tree-9543d484106c",
   "tasks": {
-    "done": 65,
-    "percent": 90.3,
+    "done": 66,
+    "percent": 91.7,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 63,
+        "done": 64,
         "has_sample": true,
-        "percent": 90.0,
+        "percent": 91.4,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 6,
+      "backlog": 5,
       "blocked": 0,
-      "done": 65,
+      "done": 66,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -977,10 +977,10 @@
       {
         "blocked": 0,
         "day": 22,
-        "done": 2,
+        "done": 3,
         "href": "details.html#day-22",
-        "is_current": true,
-        "percent": 66.7,
+        "is_current": false,
+        "percent": 100.0,
         "total": 3
       },
       {
@@ -988,7 +988,7 @@
         "day": 23,
         "done": 0,
         "href": "details.html#day-23",
-        "is_current": false,
+        "is_current": true,
         "percent": 0.0,
         "total": 3
       },
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 90.2
+    "weighted_percent": 91.6
   }
 }

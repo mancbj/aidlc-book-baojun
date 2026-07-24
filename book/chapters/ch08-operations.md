@@ -6,8 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-08 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D22-T02 · 完成章节可读稿 |
-| Draft Completeness | 正式十章生产线可读稿；等待 D22-T03 审校与证据对齐 |
+| Writing Sprint Card | D22-T03 · 完成章节审校与证据对齐 |
+| Draft Completeness | 正式十章生产线可读稿；D22-T03 五类审校已完成 |
 | Primary Question | 如何通过 Build、Deploy、Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？ |
 | Reader Outcome | 能够定义构建凭证、环境门禁、部署策略、冒烟验证、监控指标和回滚 Runbook |
 | Related Experiments | `EXP-08-01`、`EXP-08-02`、`EXP-08-03` |
@@ -223,7 +223,7 @@ deploy
 
 ### 4.2 Release：版本候选的运行链
 
-Release 链路由 `.github/workflows/release.yml` 描述。它的核心 job 是 `validate`、`readiness`、`build` 和 `publish`。
+Release 链路由 `.github/workflows/release.yml` 描述。它的核心 job 依赖顺序是 `validate` → `readiness` → `build` → `publish`（YAML 声明顺序可能不同，以 `needs` 为准）。
 
 ```text
 validate
@@ -231,16 +231,19 @@ validate
   ci_check.py
 
 readiness
+  needs: validate
   check_release_readiness.py
   render_release_notes.py
   upload v0.1-readiness
 
 build
+  needs: [validate, readiness]
   download exact readiness evidence
   prepare_release.py
   upload release-candidate
 
 publish
+  needs: [validate, readiness, build]
   refuse overwrite
   gh release create ... --draft
 ```
