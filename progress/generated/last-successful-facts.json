@@ -245,7 +245,11 @@
             "memory-bank/bolts/002-github-writing-system-ui/test-walkthrough.md",
             "progress/experiments.json#EXP-06-01",
             "progress/experiments.json#EXP-06-02",
-            "progress/experiments.json#EXP-06-03"
+            "progress/experiments.json#EXP-06-03",
+            "progress/tasks.json#D20-T02",
+            "book/chapters/ch06-exsecutio.md#04--example以本书进度驾驶舱-bolt-为例",
+            "book/chapters/ch06-exsecutio.md#06--experiment三个验证方向",
+            "book/chapters/ch06-exsecutio.md#07--figureexsecutio-执行闭环"
           ],
           "id": "CH-06",
           "number": 6,
@@ -262,15 +266,15 @@
             },
             {
               "name": "example",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "experiment",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "figure",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "review",
@@ -278,7 +282,7 @@
             }
           ],
           "title": "Exsecutio：把提议贯彻为交付候选",
-          "updated": "2026-07-24T08:20:00Z"
+          "updated": "2026-07-24T08:50:00Z"
         },
         {
           "evidence_links": [],
@@ -422,7 +426,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T08:20:00Z"
+      "updated": "2026-07-24T08:50:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3256,7 +3260,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
             }
           ],
@@ -3279,11 +3283,11 @@
           "phase": "progress",
           "planned_date": "2026-08-09",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-06 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T08:20:00Z"
+          "updated": "2026-07-24T08:50:00Z"
         },
         {
           "acceptance": [
@@ -3311,11 +3315,11 @@
           "phase": "progress",
           "planned_date": "2026-08-09",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-06 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T08:50:00Z"
         },
         {
           "acceptance": [
@@ -3702,9 +3706,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T08:20:00Z"
+      "updated": "2026-07-24T08:50:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "a777e7896d7d-working-tree-464205689405"
+  "source_id": "8d5aaf301947-working-tree-a4ecba522c46"
 }
