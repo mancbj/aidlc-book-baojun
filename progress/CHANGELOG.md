@@ -714,3 +714,12 @@
 - **chapter_stage_changed** · CH-05 · Bolts：为快速执行选择正确轨道 · 审校：pending → done (`EVT-ef45380e7b842b10`)
 - **task_status_changed** · D19-T03 · CH-05 · 完成章节审校与证据对齐：ready → done (`EVT-727c42140ae3befb`)
 - **task_status_changed** · D20-T01 · CH-06 · 锁定章节论证骨架：backlog → ready (`EVT-77d1e8715e71f1d9`)
+
+## 2026-07-24T08:20:00Z · `a777e7896d7d-working-tree-464205689405`
+
+快照：[`20260724T082000Z-896d7d-working-tree-464205689405.json`](snapshots/20260724T082000Z-896d7d-working-tree-464205689405.json)
+
+- **chapter_stage_changed** · CH-06 · Exsecutio：把提议贯彻为交付候选 · 框架：pending → done (`EVT-5d6ff2ca23126b18`)
+- **chapter_stage_changed** · CH-06 · Exsecutio：把提议贯彻为交付候选 · 问题：pending → done (`EVT-521230e4fea8a21e`)
+- **task_status_changed** · D20-T01 · CH-06 · 锁定章节论证骨架：ready → done (`EVT-db6e458d2a2e21e7`)
+- **task_status_changed** · D20-T02 · CH-06 · 完成章节可读稿：backlog → ready (`EVT-c27955051d1851f0`)

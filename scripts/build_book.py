@@ -31,6 +31,7 @@ SOURCE_FILES = (
     Path("book/chapters/ch03-inception.md"),
     Path("book/chapters/ch04-memory-bank-standards.md"),
     Path("book/chapters/ch05-bolts.md"),
+    Path("book/chapters/ch06-exsecutio.md"),
 )
 SUPPORT_FILES = (
     Path("book/book.css"),

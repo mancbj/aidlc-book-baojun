@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T07:50:00Z",
+  "updated": "2026-07-24T08:20:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -244,11 +244,11 @@
       "stages": [
         {
           "name": "question",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "framework",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "example",
@@ -267,8 +267,18 @@
           "status": "pending"
         }
       ],
-      "evidence_links": [],
-      "updated": "2026-07-22T05:39:06Z"
+      "evidence_links": [
+        "progress/tasks.json#D20-T01",
+        "book/chapters/ch06-exsecutio.md",
+        "memory-bank/bolts/002-github-writing-system-ui/bolt.md",
+        "memory-bank/bolts/002-github-writing-system-ui/implementation-plan.md",
+        "memory-bank/bolts/002-github-writing-system-ui/implementation-walkthrough.md",
+        "memory-bank/bolts/002-github-writing-system-ui/test-walkthrough.md",
+        "progress/experiments.json#EXP-06-01",
+        "progress/experiments.json#EXP-06-02",
+        "progress/experiments.json#EXP-06-03"
+      ],
+      "updated": "2026-07-24T08:20:00Z"
     },
     {
       "id": "CH-07",

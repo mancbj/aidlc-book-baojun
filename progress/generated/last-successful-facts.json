@@ -236,7 +236,17 @@
           "updated": "2026-07-24T07:50:00Z"
         },
         {
-          "evidence_links": [],
+          "evidence_links": [
+            "progress/tasks.json#D20-T01",
+            "book/chapters/ch06-exsecutio.md",
+            "memory-bank/bolts/002-github-writing-system-ui/bolt.md",
+            "memory-bank/bolts/002-github-writing-system-ui/implementation-plan.md",
+            "memory-bank/bolts/002-github-writing-system-ui/implementation-walkthrough.md",
+            "memory-bank/bolts/002-github-writing-system-ui/test-walkthrough.md",
+            "progress/experiments.json#EXP-06-01",
+            "progress/experiments.json#EXP-06-02",
+            "progress/experiments.json#EXP-06-03"
+          ],
           "id": "CH-06",
           "number": 6,
           "question": "如何让 AI 沿计划、执行、验证、纠偏和 Walkthrough 持续推进，直到生成物满足完成定义并可被下一阶段接收？",
@@ -244,11 +254,11 @@
           "stages": [
             {
               "name": "question",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "framework",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "example",
@@ -268,7 +278,7 @@
             }
           ],
           "title": "Exsecutio：把提议贯彻为交付候选",
-          "updated": "2026-07-22T05:39:06Z"
+          "updated": "2026-07-24T08:20:00Z"
         },
         {
           "evidence_links": [],
@@ -412,7 +422,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T07:50:00Z"
+      "updated": "2026-07-24T08:20:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3214,7 +3224,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
             }
           ],
@@ -3237,11 +3247,11 @@
           "phase": "progress",
           "planned_date": "2026-08-09",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-06 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T07:50:00Z"
+          "updated": "2026-07-24T08:20:00Z"
         },
         {
           "acceptance": [
@@ -3269,11 +3279,11 @@
           "phase": "progress",
           "planned_date": "2026-08-09",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-06 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T08:20:00Z"
         },
         {
           "acceptance": [
@@ -3692,9 +3702,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T07:50:00Z"
+      "updated": "2026-07-24T08:20:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "e80cfd494755-working-tree-8b835bd10268"
+  "source_id": "a777e7896d7d-working-tree-464205689405"
 }
