@@ -37,6 +37,12 @@ SUPPORT_FILES = (
     Path("book/images/fig0-1.svg"),
 )
 MERMAID_BLOCK = re.compile(r"^```mermaid[^\n]*\n(.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL)
+COVER_MARKDOWN = "![《深入理解 AI-DLC》书籍封面](images/cover.png){.book-cover width=42%}"
+PDF_FULL_PAGE_COVER = r"""\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\noindent\makebox[\paperwidth][c]{\includegraphics[width=\paperwidth,height=\paperheight]{\detokenize{__PDF_COVER_PATH__}}}
+\clearpage
+\restoregeometry"""
 
 
 def sha256(path: Path) -> str:
@@ -131,6 +137,12 @@ def render_mermaid_sources(
     for source_number, relative_path in enumerate(SOURCE_FILES, start=1):
         source_path = root / relative_path
         source_text = source_path.read_text(encoding="utf-8")
+        source_changed = False
+        if output_format == "pdf" and relative_path == Path("book/build-frontmatter.md"):
+            next_text = source_text.replace(COVER_MARKDOWN, PDF_FULL_PAGE_COVER)
+            next_text = next_text.replace("__PDF_COVER_PATH__", (root / "book/images/cover.png").as_posix())
+            source_changed = next_text != source_text
+            source_text = next_text
 
         def replace(match: re.Match[str]) -> str:
             nonlocal diagram_number
@@ -168,7 +180,7 @@ def render_mermaid_sources(
             )
 
         rendered_text = MERMAID_BLOCK.sub(replace, source_text)
-        if rendered_text == source_text:
+        if rendered_text == source_text and not source_changed:
             rendered_sources.append(str(source_path))
             continue
         rendered_source = work / f"source-{output_format}-{source_number:02d}-{source_path.name}"
