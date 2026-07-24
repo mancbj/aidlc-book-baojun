@@ -398,7 +398,11 @@
             "book/chapters/ch09-adaptive-engineering.md",
             "progress/experiments.json#EXP-09-01",
             "progress/experiments.json#EXP-09-02",
-            "progress/experiments.json#EXP-09-03"
+            "progress/experiments.json#EXP-09-03",
+            "progress/tasks.json#D23-T02",
+            "book/chapters/ch09-adaptive-engineering.md#04--example三类任务的-flow-对照与-swap-test",
+            "book/chapters/ch09-adaptive-engineering.md#06--experiment三个验证方向",
+            "book/chapters/ch09-adaptive-engineering.md#07--figure风险—仪式矩阵"
           ],
           "id": "CH-09",
           "number": 9,
@@ -415,15 +419,15 @@
             },
             {
               "name": "example",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "experiment",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "figure",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "review",
@@ -431,7 +435,7 @@
             }
           ],
           "title": "适配性工程：选择正确的 Flow 与治理强度",
-          "updated": "2026-07-24T13:30:27Z"
+          "updated": "2026-07-24T13:35:07Z"
         },
         {
           "evidence_links": [],
@@ -470,7 +474,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T13:30:27Z"
+      "updated": "2026-07-24T13:35:07Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3592,7 +3596,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
             }
           ],
@@ -3615,11 +3619,11 @@
           "phase": "progress",
           "planned_date": "2026-08-12",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-09 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T13:30:27Z"
+          "updated": "2026-07-24T13:35:07Z"
         },
         {
           "acceptance": [
@@ -3647,11 +3651,11 @@
           "phase": "progress",
           "planned_date": "2026-08-12",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-09 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T13:35:07Z"
         },
         {
           "acceptance": [
@@ -3750,9 +3754,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T13:30:27Z"
+      "updated": "2026-07-24T13:35:07Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "e36b75fcc217-working-tree-5ac95c82aa4a"
+  "source_id": "edaac8aeca94-working-tree-1f9d2304afc7"
 }
