@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T06:20:00Z",
+  "updated": "2026-07-24T06:50:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -196,11 +196,11 @@
       "stages": [
         {
           "name": "question",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "framework",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "example",
@@ -219,8 +219,18 @@
           "status": "pending"
         }
       ],
-      "evidence_links": [],
-      "updated": "2026-07-22T05:39:06Z"
+      "evidence_links": [
+        "progress/tasks.json#D19-T01",
+        "book/chapters/ch05-bolts.md",
+        "memory-bank/bolts/001-github-writing-system-ui/bolt.md",
+        "memory-bank/bolts/002-github-writing-system-ui/bolt.md",
+        "memory-bank/bolts/003-github-writing-system-ui/bolt.md",
+        "memory-bank/bolts/004-github-writing-system-ui/bolt.md",
+        "progress/experiments.json#EXP-05-01",
+        "progress/experiments.json#EXP-05-02",
+        "progress/experiments.json#EXP-05-03"
+      ],
+      "updated": "2026-07-24T06:50:00Z"
     },
     {
       "id": "CH-06",

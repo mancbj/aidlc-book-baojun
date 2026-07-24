@@ -4,19 +4,19 @@
 
 - 目标：v0.1 已发布；十章写作冲刺
 - 当前：Day 19 / 24，剩余 5 个计划日
-- 总进度：54/72（75.0%）
-- 加权进度：74.8%
-- Must：52/70（74.3%）
+- 总进度：55/72（76.4%）
+- 加权进度：76.2%
+- Must：53/70（75.7%）
 - Should：2/2（100.0%）
 - 阻塞：0
 - 反馈：1 条；accepted 0 条
 - 下一周期：尚未激活
-- 事实最近更新：2026-07-24T06:20:00Z
-- 来源：`f0387fc378ae-working-tree-c387dc352135`
+- 事实最近更新：2026-07-24T06:50:00Z
+- 来源：`7a681b134ad2-working-tree-4ff63055def5`
 
 ## 下一动作
 
-1. **D19-T01 · CH-05 · 锁定章节论证骨架** — MUST / 可开始 / Day 19
+1. **D19-T02 · CH-05 · 完成章节可读稿** — MUST / 可开始 / Day 19
 
 ## 阻塞
 
@@ -24,16 +24,16 @@
 
 ## 最近关键更新
 
+- `2026-07-24T06:50:00Z` · D19-T02 · CH-05 · 完成章节可读稿：backlog → ready (`EVT-43a829339e4d683b`)
+- `2026-07-24T06:50:00Z` · D19-T01 · CH-05 · 锁定章节论证骨架：ready → done (`EVT-f0a130d68badadfd`)
+- `2026-07-24T06:50:00Z` · CH-05 · Bolts：为快速执行选择正确轨道 · 问题：pending → done (`EVT-0a478e63e6724117`)
+- `2026-07-24T06:50:00Z` · CH-05 · Bolts：为快速执行选择正确轨道 · 框架：pending → done (`EVT-f34b5606b5275a27`)
 - `2026-07-24T06:20:00Z` · D19-T01 · CH-05 · 锁定章节论证骨架：backlog → ready (`EVT-818320be4ab80325`)
 - `2026-07-24T06:20:00Z` · D18-T03 · CH-04 · 完成章节审校与证据对齐：ready → done (`EVT-41964dae0c5f2653`)
 - `2026-07-24T06:20:00Z` · CH-04 · 上下文工程：Memory Bank 与 Standards · 审校：pending → done (`EVT-aa75b9c8df4633c8`)
 - `2026-07-24T05:50:00Z` · D18-T03 · CH-04 · 完成章节审校与证据对齐：backlog → ready (`EVT-a04be7492bf1c5ae`)
 - `2026-07-24T05:50:00Z` · D18-T02 · CH-04 · 完成章节可读稿：ready → done (`EVT-fa5fba90522ced3a`)
 - `2026-07-24T05:50:00Z` · CH-04 · 上下文工程：Memory Bank 与 Standards · 图示：pending → done (`EVT-0f166c6f8b806abc`)
-- `2026-07-24T05:50:00Z` · CH-04 · 上下文工程：Memory Bank 与 Standards · 实验：pending → done (`EVT-a68a4a1ba7d262a1`)
-- `2026-07-24T05:50:00Z` · CH-04 · 上下文工程：Memory Bank 与 Standards · 案例：pending → done (`EVT-1f78e6a781969402`)
-- `2026-07-24T05:20:00Z` · D18-T02 · CH-04 · 完成章节可读稿：backlog → ready (`EVT-1445c840726f3ca7`)
-- `2026-07-24T05:20:00Z` · D18-T01 · CH-04 · 锁定章节论证骨架：ready → done (`EVT-598981509c22f9cc`)
 
 ## 下钻入口
 

@@ -188,7 +188,17 @@
           "updated": "2026-07-24T06:20:00Z"
         },
         {
-          "evidence_links": [],
+          "evidence_links": [
+            "progress/tasks.json#D19-T01",
+            "book/chapters/ch05-bolts.md",
+            "memory-bank/bolts/001-github-writing-system-ui/bolt.md",
+            "memory-bank/bolts/002-github-writing-system-ui/bolt.md",
+            "memory-bank/bolts/003-github-writing-system-ui/bolt.md",
+            "memory-bank/bolts/004-github-writing-system-ui/bolt.md",
+            "progress/experiments.json#EXP-05-01",
+            "progress/experiments.json#EXP-05-02",
+            "progress/experiments.json#EXP-05-03"
+          ],
           "id": "CH-05",
           "number": 5,
           "question": "如何按领域复杂度、风险和可逆性选择 Bolt 范围、类型与阶段门禁，使速度提高而错误不级联？",
@@ -196,11 +206,11 @@
           "stages": [
             {
               "name": "question",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "framework",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "example",
@@ -220,7 +230,7 @@
             }
           ],
           "title": "Bolts：为快速执行选择正确轨道",
-          "updated": "2026-07-22T05:39:06Z"
+          "updated": "2026-07-24T06:50:00Z"
         },
         {
           "evidence_links": [],
@@ -399,7 +409,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T06:20:00Z"
+      "updated": "2026-07-24T06:50:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3105,7 +3115,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
             }
           ],
@@ -3128,11 +3138,11 @@
           "phase": "progress",
           "planned_date": "2026-08-08",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-05 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T06:20:00Z"
+          "updated": "2026-07-24T06:50:00Z"
         },
         {
           "acceptance": [
@@ -3160,11 +3170,11 @@
           "phase": "progress",
           "planned_date": "2026-08-08",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-05 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T06:50:00Z"
         },
         {
           "acceptance": [
@@ -3679,9 +3689,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T06:20:00Z"
+      "updated": "2026-07-24T06:50:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "f0387fc378ae-working-tree-c387dc352135"
+  "source_id": "7a681b134ad2-working-tree-4ff63055def5"
 }
