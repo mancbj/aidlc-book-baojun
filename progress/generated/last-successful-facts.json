@@ -249,7 +249,9 @@
             "progress/tasks.json#D20-T02",
             "book/chapters/ch06-exsecutio.md#04--example以本书进度驾驶舱-bolt-为例",
             "book/chapters/ch06-exsecutio.md#06--experiment三个验证方向",
-            "book/chapters/ch06-exsecutio.md#07--figureexsecutio-执行闭环"
+            "book/chapters/ch06-exsecutio.md#07--figureexsecutio-执行闭环",
+            "progress/tasks.json#D20-T03",
+            "planning/reviews/ch-06-writing-review.md"
           ],
           "id": "CH-06",
           "number": 6,
@@ -278,11 +280,11 @@
             },
             {
               "name": "review",
-              "status": "pending"
+              "status": "done"
             }
           ],
           "title": "Exsecutio：把提议贯彻为交付候选",
-          "updated": "2026-07-24T08:50:00Z"
+          "updated": "2026-07-24T09:20:00Z"
         },
         {
           "evidence_links": [],
@@ -426,7 +428,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T08:50:00Z"
+      "updated": "2026-07-24T09:20:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3292,7 +3294,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
             }
           ],
@@ -3315,11 +3317,11 @@
           "phase": "progress",
           "planned_date": "2026-08-09",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-06 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T08:50:00Z"
+          "updated": "2026-07-24T09:20:00Z"
         },
         {
           "acceptance": [
@@ -3347,11 +3349,11 @@
           "phase": "progress",
           "planned_date": "2026-08-10",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-07 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T09:20:00Z"
         },
         {
           "acceptance": [
@@ -3706,9 +3708,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T08:50:00Z"
+      "updated": "2026-07-24T09:20:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "8d5aaf301947-working-tree-a4ecba522c46"
+  "source_id": "b528626336c4-working-tree-6e82bd7342f2"
 }

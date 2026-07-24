@@ -6,8 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-06 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D20-T02 · 完成章节可读稿 |
-| Draft Completeness | 正式十章生产线可读稿；等待 D20-T03 审校与证据对齐 |
+| Writing Sprint Card | D20-T03 · 完成章节审校与证据对齐 |
+| Draft Completeness | 正式十章生产线可读稿；D20-T03 五类审校已完成 |
 | Primary Question | 如何让 AI 沿计划、执行、验证、纠偏和 Walkthrough 持续推进，直到生成物满足完成定义并可被下一阶段接收？ |
 | Reader Outcome | 能够运行完整 Bolt，并保留阶段决策、文件变化、测试结果、失败修正与完成凭证 |
 | Related Experiments | `EXP-06-01`、`EXP-06-02`、`EXP-06-03` |

@@ -733,3 +733,11 @@
 - **chapter_stage_changed** · CH-06 · Exsecutio：把提议贯彻为交付候选 · 图示：pending → done (`EVT-df942f44559d1361`)
 - **task_status_changed** · D20-T02 · CH-06 · 完成章节可读稿：ready → done (`EVT-940d398be6c6c7b5`)
 - **task_status_changed** · D20-T03 · CH-06 · 完成章节审校与证据对齐：backlog → ready (`EVT-7d37a9229730bd4d`)
+
+## 2026-07-24T09:20:00Z · `b528626336c4-working-tree-6e82bd7342f2`
+
+快照：[`20260724T092000Z-6336c4-working-tree-6e82bd7342f2.json`](snapshots/20260724T092000Z-6336c4-working-tree-6e82bd7342f2.json)
+
+- **chapter_stage_changed** · CH-06 · Exsecutio：把提议贯彻为交付候选 · 审校：pending → done (`EVT-947d5e2fd2349113`)
+- **task_status_changed** · D20-T03 · CH-06 · 完成章节审校与证据对齐：ready → done (`EVT-59a6f032b1072c00`)
+- **task_status_changed** · D21-T01 · CH-07 · 锁定章节论证骨架：backlog → ready (`EVT-78f8b409607ef0e9`)

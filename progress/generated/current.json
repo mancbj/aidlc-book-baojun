@@ -253,13 +253,13 @@
         "total": 6
       },
       {
-        "done": 5,
+        "done": 6,
         "href": "details.html#chapter-CH-06",
         "id": "CH-06",
-        "next_gap": "review",
-        "next_gap_label": "审校",
+        "next_gap": null,
+        "next_gap_label": "已完成",
         "number": 6,
-        "percent": 83.3,
+        "percent": 100.0,
         "question": "如何让 AI 沿计划、执行、验证、纠偏和 Walkthrough 持续推进，直到生成物满足完成定义并可被下一阶段接收？",
         "stages": [
           {
@@ -295,8 +295,8 @@
           {
             "label": "审校",
             "name": "review",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           }
         ],
         "title": "Exsecutio：把提议贯彻为交付候选",
@@ -535,9 +535,9 @@
         "total": 10
       },
       "review": {
-        "done": 5,
+        "done": 6,
         "label": "审校",
-        "percent": 50.0,
+        "percent": 60.0,
         "total": 10
       }
     },
@@ -590,81 +590,45 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T08:50:00Z",
+  "generated_at": "2026-07-24T09:20:00Z",
   "goal": {
     "all_tasks_done": false,
-    "current_day": 20,
-    "days_remaining": 4,
+    "current_day": 21,
+    "days_remaining": 3,
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T08:50:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T085000Z-301947-working-tree-a4ecba522c46.json",
+  "latest_fact_update": "2026-07-24T09:20:00Z",
+  "latest_snapshot": "../progress/snapshots/20260724T092000Z-6336c4-working-tree-6e82bd7342f2.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
         }
       ],
       "artifacts": [
         {
-          "path": "planning/reviews/ch-06-writing-review.md",
+          "path": "book/chapters/ch07-verification.md",
           "required": true
         }
       ],
-      "day": 20,
+      "day": 21,
       "dependencies": [
-        "D20-T02"
+        "D20-T03"
       ],
-      "href": "details.html#task-D20-T03",
-      "id": "D20-T03",
+      "href": "details.html#task-D21-T01",
+      "id": "D21-T01",
       "owner": "author",
-      "planned_date": "2026-08-09",
+      "planned_date": "2026-08-10",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-06 · 完成章节审校与证据对齐"
+      "title": "CH-07 · 锁定章节论证骨架"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-77d1e8715e71f1d9",
-      "object_id": "D20-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T07:50:00Z",
-      "source_id": "e80cfd494755-working-tree-8b835bd10268",
-      "summary": "D20-T01 · CH-06 · 锁定章节论证骨架：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-5d6ff2ca23126b18",
-      "object_id": "CH-06:framework",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T08:20:00Z",
-      "source_id": "a777e7896d7d-working-tree-464205689405",
-      "summary": "CH-06 · Exsecutio：把提议贯彻为交付候选 · 框架：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-521230e4fea8a21e",
-      "object_id": "CH-06:question",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T08:20:00Z",
-      "source_id": "a777e7896d7d-working-tree-464205689405",
-      "summary": "CH-06 · Exsecutio：把提议贯彻为交付候选 · 问题：pending → done",
-      "type": "chapter_stage_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "done",
@@ -748,14 +712,50 @@
       "source_id": "8d5aaf301947-working-tree-a4ecba522c46",
       "summary": "D20-T03 · CH-06 · 完成章节审校与证据对齐：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-947d5e2fd2349113",
+      "object_id": "CH-06:review",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T09:20:00Z",
+      "source_id": "b528626336c4-working-tree-6e82bd7342f2",
+      "summary": "CH-06 · Exsecutio：把提议贯彻为交付候选 · 审校：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-59a6f032b1072c00",
+      "object_id": "D20-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T09:20:00Z",
+      "source_id": "b528626336c4-working-tree-6e82bd7342f2",
+      "summary": "D20-T03 · CH-06 · 完成章节审校与证据对齐：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-78f8b409607ef0e9",
+      "object_id": "D21-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T09:20:00Z",
+      "source_id": "b528626336c4-working-tree-6e82bd7342f2",
+      "summary": "D21-T01 · CH-07 · 锁定章节论证骨架：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "8d5aaf301947-working-tree-a4ecba522c46",
+  "source_id": "b528626336c4-working-tree-6e82bd7342f2",
   "tasks": {
-    "done": 59,
-    "percent": 81.9,
+    "done": 60,
+    "percent": 83.3,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 57,
+        "done": 58,
         "has_sample": true,
-        "percent": 81.4,
+        "percent": 82.9,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 12,
+      "backlog": 11,
       "blocked": 0,
-      "done": 59,
+      "done": 60,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -959,10 +959,10 @@
       {
         "blocked": 0,
         "day": 20,
-        "done": 2,
+        "done": 3,
         "href": "details.html#day-20",
-        "is_current": true,
-        "percent": 66.7,
+        "is_current": false,
+        "percent": 100.0,
         "total": 3
       },
       {
@@ -970,7 +970,7 @@
         "day": 21,
         "done": 0,
         "href": "details.html#day-21",
-        "is_current": false,
+        "is_current": true,
         "percent": 0.0,
         "total": 3
       },
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 81.8
+    "weighted_percent": 83.2
   }
 }

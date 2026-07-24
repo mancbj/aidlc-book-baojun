@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T08:50:00Z",
+  "updated": "2026-07-24T09:20:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -264,7 +264,7 @@
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
       "evidence_links": [
@@ -280,9 +280,11 @@
         "progress/tasks.json#D20-T02",
         "book/chapters/ch06-exsecutio.md#04--example以本书进度驾驶舱-bolt-为例",
         "book/chapters/ch06-exsecutio.md#06--experiment三个验证方向",
-        "book/chapters/ch06-exsecutio.md#07--figureexsecutio-执行闭环"
+        "book/chapters/ch06-exsecutio.md#07--figureexsecutio-执行闭环",
+        "progress/tasks.json#D20-T03",
+        "planning/reviews/ch-06-writing-review.md"
       ],
-      "updated": "2026-07-24T08:50:00Z"
+      "updated": "2026-07-24T09:20:00Z"
     },
     {
       "id": "CH-07",
