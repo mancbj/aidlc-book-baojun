@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "memory-bank/intents/001-github-writing-system/execution-roadmap.md",
-  "updated": "2026-07-24T11:20:00Z",
+  "updated": "2026-07-24T11:50:00Z",
   "tasks": [
     {
       "id": "D01-T01",
@@ -1946,7 +1946,7 @@
       "type": "writing",
       "card": "draft",
       "chapter": "CH-08",
-      "status": "ready",
+      "status": "done",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1955,7 +1955,7 @@
       "acceptance": [
         {
           "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习",
-          "passed": false
+          "passed": true
         }
       ],
       "artifacts": [
@@ -1967,7 +1967,7 @@
       "notes": "每日一章写作冲刺：Operations：从交付候选到可持续运行 的 完成章节可读稿 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-24T11:20:00Z"
+      "updated": "2026-07-24T11:50:00Z"
     },
     {
       "id": "D22-T03",
@@ -1978,7 +1978,7 @@
       "type": "writing",
       "card": "review",
       "chapter": "CH-08",
-      "status": "backlog",
+      "status": "ready",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1999,7 +1999,7 @@
       "notes": "每日一章写作冲刺：Operations：从交付候选到可持续运行 的 完成章节审校与证据对齐 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-23T09:00:00Z"
+      "updated": "2026-07-24T11:50:00Z"
     },
     {
       "id": "D23-T01",

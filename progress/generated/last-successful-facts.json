@@ -351,7 +351,11 @@
             "planning/releases/v0.1-policy.json",
             "progress/experiments.json#EXP-08-01",
             "progress/experiments.json#EXP-08-02",
-            "progress/experiments.json#EXP-08-03"
+            "progress/experiments.json#EXP-08-03",
+            "progress/tasks.json#D22-T02",
+            "book/chapters/ch08-operations.md#04--example以本书-pages-与-release-链路为例",
+            "book/chapters/ch08-operations.md#06--experiment三个验证方向",
+            "book/chapters/ch08-operations.md#07--figureoperations-运行闭环"
           ],
           "id": "CH-08",
           "number": 8,
@@ -368,15 +372,15 @@
             },
             {
               "name": "example",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "experiment",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "figure",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "review",
@@ -384,7 +388,7 @@
             }
           ],
           "title": "Operations：从交付候选到可持续运行",
-          "updated": "2026-07-24T11:20:00Z"
+          "updated": "2026-07-24T11:50:00Z"
         },
         {
           "evidence_links": [],
@@ -458,7 +462,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T11:20:00Z"
+      "updated": "2026-07-24T11:50:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3484,7 +3488,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
             }
           ],
@@ -3507,11 +3511,11 @@
           "phase": "progress",
           "planned_date": "2026-08-11",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-08 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T11:20:00Z"
+          "updated": "2026-07-24T11:50:00Z"
         },
         {
           "acceptance": [
@@ -3539,11 +3543,11 @@
           "phase": "progress",
           "planned_date": "2026-08-11",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-08 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T11:50:00Z"
         },
         {
           "acceptance": [
@@ -3738,9 +3742,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T11:20:00Z"
+      "updated": "2026-07-24T11:50:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "a2b81be73f81-working-tree-ef8a3e8ba9eb"
+  "source_id": "6b204e78d971-working-tree-88db0557527c"
 }

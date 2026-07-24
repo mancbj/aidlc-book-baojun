@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T11:20:00Z",
+  "updated": "2026-07-24T11:50:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -356,15 +356,15 @@
         },
         {
           "name": "example",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "experiment",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "figure",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "review",
@@ -382,9 +382,13 @@
         "planning/releases/v0.1-policy.json",
         "progress/experiments.json#EXP-08-01",
         "progress/experiments.json#EXP-08-02",
-        "progress/experiments.json#EXP-08-03"
+        "progress/experiments.json#EXP-08-03",
+        "progress/tasks.json#D22-T02",
+        "book/chapters/ch08-operations.md#04--example以本书-pages-与-release-链路为例",
+        "book/chapters/ch08-operations.md#06--experiment三个验证方向",
+        "book/chapters/ch08-operations.md#07--figureoperations-运行闭环"
       ],
-      "updated": "2026-07-24T11:20:00Z"
+      "updated": "2026-07-24T11:50:00Z"
     },
     {
       "id": "CH-09",

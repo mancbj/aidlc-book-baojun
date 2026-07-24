@@ -777,3 +777,13 @@
 - **chapter_stage_changed** · CH-08 · Operations：从交付候选到可持续运行 · 问题：pending → done (`EVT-0301c08b7398808c`)
 - **task_status_changed** · D22-T01 · CH-08 · 锁定章节论证骨架：ready → done (`EVT-ac7478b0a9fccc73`)
 - **task_status_changed** · D22-T02 · CH-08 · 完成章节可读稿：backlog → ready (`EVT-cdfdb9f19d8ab977`)
+
+## 2026-07-24T11:50:00Z · `6b204e78d971-working-tree-88db0557527c`
+
+快照：[`20260724T115000Z-78d971-working-tree-88db0557527c.json`](snapshots/20260724T115000Z-78d971-working-tree-88db0557527c.json)
+
+- **chapter_stage_changed** · CH-08 · Operations：从交付候选到可持续运行 · 案例：pending → done (`EVT-6c9c24ad9fcf1f2d`)
+- **chapter_stage_changed** · CH-08 · Operations：从交付候选到可持续运行 · 实验：pending → done (`EVT-f44d1186ab7f29b8`)
+- **chapter_stage_changed** · CH-08 · Operations：从交付候选到可持续运行 · 图示：pending → done (`EVT-1f9e107441c7adf7`)
+- **task_status_changed** · D22-T02 · CH-08 · 完成章节可读稿：ready → done (`EVT-e79deee64f90df07`)
+- **task_status_changed** · D22-T03 · CH-08 · 完成章节审校与证据对齐：backlog → ready (`EVT-6430e1f2df75e170`)
