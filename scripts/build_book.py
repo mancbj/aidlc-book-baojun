@@ -35,6 +35,7 @@ SOURCE_FILES = (
     Path("book/chapters/ch07-verification.md"),
     Path("book/chapters/ch08-operations.md"),
     Path("book/chapters/ch09-adaptive-engineering.md"),
+    Path("book/chapters/ch10-organization-metrics.md"),
 )
 SUPPORT_FILES = (
     Path("book/book.css"),
