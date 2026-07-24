@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T09:20:00Z",
+  "updated": "2026-07-24T09:50:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -295,11 +295,11 @@
       "stages": [
         {
           "name": "question",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "framework",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "example",
@@ -318,8 +318,19 @@
           "status": "pending"
         }
       ],
-      "evidence_links": [],
-      "updated": "2026-07-22T05:39:06Z"
+      "evidence_links": [
+        "progress/tasks.json#D21-T01",
+        "book/chapters/ch07-verification.md",
+        "scripts/ci_check.py",
+        "scripts/validate_project.py",
+        "scripts/validate_feedback.py",
+        "scripts/validate_github_config.py",
+        "scripts/check_internal_links.py",
+        "progress/experiments.json#EXP-07-01",
+        "progress/experiments.json#EXP-07-02",
+        "progress/experiments.json#EXP-07-03"
+      ],
+      "updated": "2026-07-24T09:50:00Z"
     },
     {
       "id": "CH-08",

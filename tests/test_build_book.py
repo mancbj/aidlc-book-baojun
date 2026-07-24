@@ -69,6 +69,7 @@ class BuildBookTest(unittest.TestCase):
             self.assertIn("第 4 章 · 上下文工程", visible_text)
             self.assertIn("第 5 章 · Bolts", visible_text)
             self.assertIn("第 6 章 · Exsecutio", visible_text)
+            self.assertIn("第 7 章 · 验证", visible_text)
             self.assertIn("第 10 章", visible_text)
             self.assertIn("TOC", parser.ids)
             self.assertGreaterEqual(len(parser.images), 5)
@@ -84,7 +85,7 @@ class BuildBookTest(unittest.TestCase):
             self.assertEqual("html", manifest["format"])
             self.assertTrue(manifest["pandoc"].startswith("pandoc "))
             self.assertEqual("11.16.0", manifest["diagram_engine"])
-            self.assertEqual(14, len(manifest["sources"]))
+            self.assertEqual(15, len(manifest["sources"]))
             self.assertEqual({"deep-understanding-ai-dlc.html"}, {item["path"] for item in manifest["outputs"]})
             self.assertTrue(all(len(item["sha256"]) == 64 for item in manifest["sources"] + manifest["outputs"]))
 

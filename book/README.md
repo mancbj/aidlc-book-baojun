@@ -11,7 +11,8 @@
 - [chapters/sample.md](chapters/sample.md)：CH-03 v0.1 样章证据副本
 - [chapters/ch04-memory-bank-standards.md](chapters/ch04-memory-bank-standards.md)：CH-04 正式十章生产线可读稿
 - [chapters/ch05-bolts.md](chapters/ch05-bolts.md)：CH-05 正式十章生产线可读稿
-- [chapters/ch06-exsecutio.md](chapters/ch06-exsecutio.md)：CH-06 正式十章生产线论证骨架
+- [chapters/ch06-exsecutio.md](chapters/ch06-exsecutio.md)：CH-06 正式十章生产线可读稿
+- [chapters/ch07-verification.md](chapters/ch07-verification.md)：CH-07 正式十章生产线论证骨架
 - [chapter-template.md](chapter-template.md)：章节六阶段生产线
 - [images/cover.png](images/cover.png)：作者定稿封面（1200 × 1600 PNG）
 - [images/README.md](images/README.md)：视觉资产来源与校验信息

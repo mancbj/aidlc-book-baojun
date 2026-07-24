@@ -741,3 +741,12 @@
 - **chapter_stage_changed** · CH-06 · Exsecutio：把提议贯彻为交付候选 · 审校：pending → done (`EVT-947d5e2fd2349113`)
 - **task_status_changed** · D20-T03 · CH-06 · 完成章节审校与证据对齐：ready → done (`EVT-59a6f032b1072c00`)
 - **task_status_changed** · D21-T01 · CH-07 · 锁定章节论证骨架：backlog → ready (`EVT-78f8b409607ef0e9`)
+
+## 2026-07-24T09:50:00Z · `881e01e3530a-working-tree-1e8ce983d46b`
+
+快照：[`20260724T095000Z-e3530a-working-tree-1e8ce983d46b.json`](snapshots/20260724T095000Z-e3530a-working-tree-1e8ce983d46b.json)
+
+- **chapter_stage_changed** · CH-07 · 验证：把人类检查点变成有效损失函数 · 框架：pending → done (`EVT-a0c779a02625a23e`)
+- **chapter_stage_changed** · CH-07 · 验证：把人类检查点变成有效损失函数 · 问题：pending → done (`EVT-d40ffed3c27b505e`)
+- **task_status_changed** · D21-T01 · CH-07 · 锁定章节论证骨架：ready → done (`EVT-4cfa65d993ad4c04`)
+- **task_status_changed** · D21-T02 · CH-07 · 完成章节可读稿：backlog → ready (`EVT-96903dd564c88c3c`)

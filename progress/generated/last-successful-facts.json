@@ -287,7 +287,18 @@
           "updated": "2026-07-24T09:20:00Z"
         },
         {
-          "evidence_links": [],
+          "evidence_links": [
+            "progress/tasks.json#D21-T01",
+            "book/chapters/ch07-verification.md",
+            "scripts/ci_check.py",
+            "scripts/validate_project.py",
+            "scripts/validate_feedback.py",
+            "scripts/validate_github_config.py",
+            "scripts/check_internal_links.py",
+            "progress/experiments.json#EXP-07-01",
+            "progress/experiments.json#EXP-07-02",
+            "progress/experiments.json#EXP-07-03"
+          ],
           "id": "CH-07",
           "number": 7,
           "question": "如何组合确定性检查、独立测试、模型评审和人工判断，证明 AI 参与的结果正确，而不是把模型自评当证据？",
@@ -295,11 +306,11 @@
           "stages": [
             {
               "name": "question",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "framework",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "example",
@@ -319,7 +330,7 @@
             }
           ],
           "title": "验证：把人类检查点变成有效损失函数",
-          "updated": "2026-07-22T05:39:06Z"
+          "updated": "2026-07-24T09:50:00Z"
         },
         {
           "evidence_links": [],
@@ -428,7 +439,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T09:20:00Z"
+      "updated": "2026-07-24T09:50:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3326,7 +3337,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
             }
           ],
@@ -3349,11 +3360,11 @@
           "phase": "progress",
           "planned_date": "2026-08-10",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-07 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T09:20:00Z"
+          "updated": "2026-07-24T09:50:00Z"
         },
         {
           "acceptance": [
@@ -3381,11 +3392,11 @@
           "phase": "progress",
           "planned_date": "2026-08-10",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-07 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T09:50:00Z"
         },
         {
           "acceptance": [
@@ -3708,9 +3719,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T09:20:00Z"
+      "updated": "2026-07-24T09:50:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "b528626336c4-working-tree-6e82bd7342f2"
+  "source_id": "881e01e3530a-working-tree-1e8ce983d46b"
 }
