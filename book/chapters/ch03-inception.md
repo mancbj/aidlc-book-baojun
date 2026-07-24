@@ -6,8 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-03 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D17-T02 · 完成章节可读稿 |
-| Draft Completeness | 正式十章生产线可读稿；基于 v0.1 样章迁移精炼，等待 D17-T03 审校与证据对齐 |
+| Writing Sprint Card | D17-T03 · 完成章节审校与证据对齐 |
+| Draft Completeness | 正式十章生产线可读稿；D17-T03 五类审校已完成 |
 | Primary Question | AI 如何把一个高层 Intent 分解成可独立交付的 Unit、可验收的 Story 和可执行的 Bolt，而不丢失人的目标与边界？ |
 | Reader Outcome | 能够完成 Intent、Requirements、System Context、Unit、Story 与 Bolt Plan 的可追溯分解 |
 | Related Experiments | `EXP-03-01` |
@@ -178,7 +178,7 @@ flowchart TB
 
 ## 06 · Review：可读稿自检与后续审校入口
 
-本章已从 v0.1 样章迁移为正式十章生产线的 CH-03 可读稿。旧样章 `book/chapters/sample.md` 继续作为 v0.1 发布证据保留；本文件从 D17-T02 起作为书稿构建入口和后续审校对象。D17-T03 将完成正式章节审校与证据对齐。
+本章已从 v0.1 样章迁移为正式十章生产线的 CH-03 可读稿。旧样章 `book/chapters/sample.md` 继续作为 v0.1 发布证据保留；本文件从 D17-T02 起作为书稿构建入口和后续审校对象。D17-T03 正式审校记录见 `planning/reviews/ch-03-writing-review.md`。
 
 第一轮五类审校记录见 `planning/reviews/sample-chapter.md`。后续公开前仍可继续做语言润色和图示增强，但既有审校已确认它具备进入 v0.1 候选门禁的基本证据链。
 
@@ -214,4 +214,5 @@ flowchart TB
 - `experiments/sample/output/README.md`：成功与失败样例说明。
 - `book/images/fig0-1.svg`：全书 AI-DLC 核心图。
 - `book/chapters/sample.md`：v0.1 样章证据副本。
+- `planning/reviews/ch-03-writing-review.md`：正式十章生产线 CH-03 五类审校记录。
 - `progress/chapters.json`：章节事实源与阶段状态。

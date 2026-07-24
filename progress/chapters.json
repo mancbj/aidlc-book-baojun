@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T04:20:00Z",
+  "updated": "2026-07-24T04:50:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -124,6 +124,8 @@
         }
       ],
       "evidence_links": [
+        "progress/tasks.json#D17-T03",
+        "planning/reviews/ch-03-writing-review.md",
         "progress/tasks.json#D17-T02",
         "scripts/build_book.py",
         "progress/tasks.json#D17-T01",
@@ -136,7 +138,7 @@
         "book/images/fig0-1.svg",
         "planning/reviews/sample-chapter.md"
       ],
-      "updated": "2026-07-24T04:20:00Z"
+      "updated": "2026-07-24T04:50:00Z"
     },
     {
       "id": "CH-04",

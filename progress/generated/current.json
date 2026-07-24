@@ -590,69 +590,45 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T04:20:00Z",
+  "generated_at": "2026-07-24T04:50:00Z",
   "goal": {
     "all_tasks_done": false,
-    "current_day": 17,
-    "days_remaining": 7,
+    "current_day": 18,
+    "days_remaining": 6,
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T04:20:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T042000Z-dc5587-working-tree-1d51f3e9e832.json",
+  "latest_fact_update": "2026-07-24T04:50:00Z",
+  "latest_snapshot": "../progress/snapshots/20260724T045000Z-aeb873-working-tree-232c0b9cba27.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
         }
       ],
       "artifacts": [
         {
-          "path": "planning/reviews/ch-03-writing-review.md",
+          "path": "book/chapters/ch04-memory-bank-standards.md",
           "required": true
         }
       ],
-      "day": 17,
+      "day": 18,
       "dependencies": [
-        "D17-T02"
+        "D17-T03"
       ],
-      "href": "details.html#task-D17-T03",
-      "id": "D17-T03",
+      "href": "details.html#task-D18-T01",
+      "id": "D18-T01",
       "owner": "author",
-      "planned_date": "2026-08-06",
+      "planned_date": "2026-08-07",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-03 · 完成章节审校与证据对齐"
+      "title": "CH-04 · 锁定章节论证骨架"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-06b2da7a3bc5f474",
-      "object_id": "CH-02:figure",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T02:50:00Z",
-      "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
-      "summary": "CH-02 · 人的判断与反向对话 · 图示：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-6518110f848208ee",
-      "object_id": "D16-T02",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T02:50:00Z",
-      "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
-      "summary": "D16-T02 · CH-02 · 完成章节可读稿：ready → done",
-      "type": "task_status_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "ready",
@@ -748,14 +724,38 @@
       "source_id": "006b2ddc5587-working-tree-1d51f3e9e832",
       "summary": "D17-T03 · CH-03 · 完成章节审校与证据对齐：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-2ccfa867dd6ed118",
+      "object_id": "D17-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T04:50:00Z",
+      "source_id": "a14ae8aeb873-working-tree-232c0b9cba27",
+      "summary": "D17-T03 · CH-03 · 完成章节审校与证据对齐：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-f7fa2658445bae48",
+      "object_id": "D18-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T04:50:00Z",
+      "source_id": "a14ae8aeb873-working-tree-232c0b9cba27",
+      "summary": "D18-T01 · CH-04 · 锁定章节论证骨架：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "006b2ddc5587-working-tree-1d51f3e9e832",
+  "source_id": "a14ae8aeb873-working-tree-232c0b9cba27",
   "tasks": {
-    "done": 50,
-    "percent": 69.4,
+    "done": 51,
+    "percent": 70.8,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 48,
+        "done": 49,
         "has_sample": true,
-        "percent": 68.6,
+        "percent": 70.0,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 21,
+      "backlog": 20,
       "blocked": 0,
-      "done": 50,
+      "done": 51,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -932,10 +932,10 @@
       {
         "blocked": 0,
         "day": 17,
-        "done": 2,
+        "done": 3,
         "href": "details.html#day-17",
-        "is_current": true,
-        "percent": 66.7,
+        "is_current": false,
+        "percent": 100.0,
         "total": 3
       },
       {
@@ -943,7 +943,7 @@
         "day": 18,
         "done": 0,
         "href": "details.html#day-18",
-        "is_current": false,
+        "is_current": true,
         "percent": 0.0,
         "total": 3
       },
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 69.2
+    "weighted_percent": 70.6
   }
 }
