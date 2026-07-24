@@ -1,0 +1,1050 @@
+{
+  "captured_at": "2026-07-24T07:50:00Z",
+  "events": [
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-ef45380e7b842b10",
+      "object_id": "CH-05:review",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T07:50:00Z",
+      "source_id": "e80cfd494755-working-tree-8b835bd10268",
+      "summary": "CH-05 · Bolts：为快速执行选择正确轨道 · 审校：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-727c42140ae3befb",
+      "object_id": "D19-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T07:50:00Z",
+      "source_id": "e80cfd494755-working-tree-8b835bd10268",
+      "summary": "D19-T03 · CH-05 · 完成章节审校与证据对齐：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-77d1e8715e71f1d9",
+      "object_id": "D20-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T07:50:00Z",
+      "source_id": "e80cfd494755-working-tree-8b835bd10268",
+      "summary": "D20-T01 · CH-06 · 锁定章节论证骨架：backlog → ready",
+      "type": "task_status_changed"
+    }
+  ],
+  "metrics": {
+    "blockers": [],
+    "chapters": {
+      "rows": [
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-01",
+          "id": "CH-01",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 1,
+          "percent": 100.0,
+          "question": "当代码生成成本骤降而输出仍具有概率性时，为什么需要重新设计 SDLC，而不只是给旧流程增加 AI？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "AI 原生 SDLC：从概率智能到确定性交付",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-02",
+          "id": "CH-02",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 2,
+          "percent": 100.0,
+          "question": "当 AI 主动提议、分解和执行时，人应如何设定目的地、保留责任并选择验证检查点？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "人的判断与反向对话",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-03",
+          "id": "CH-03",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 3,
+          "percent": 100.0,
+          "question": "AI 如何把一个高层 Intent 分解成可独立交付的 Unit、可验收的 Story 和可执行的 Bolt，而不丢失人的目标与边界？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "Inception：从 Intent 到可执行计划",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-04",
+          "id": "CH-04",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 4,
+          "percent": 100.0,
+          "question": "如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "上下文工程：Memory Bank 与 Standards",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-05",
+          "id": "CH-05",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 5,
+          "percent": 100.0,
+          "question": "如何按领域复杂度、风险和可逆性选择 Bolt 范围、类型与阶段门禁，使速度提高而错误不级联？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "Bolts：为快速执行选择正确轨道",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-06",
+          "id": "CH-06",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 6,
+          "percent": 0.0,
+          "question": "如何让 AI 沿计划、执行、验证、纠偏和 Walkthrough 持续推进，直到生成物满足完成定义并可被下一阶段接收？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "Exsecutio：把提议贯彻为交付候选",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-07",
+          "id": "CH-07",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 7,
+          "percent": 0.0,
+          "question": "如何组合确定性检查、独立测试、模型评审和人工判断，证明 AI 参与的结果正确，而不是把模型自评当证据？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "验证：把人类检查点变成有效损失函数",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-08",
+          "id": "CH-08",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 8,
+          "percent": 0.0,
+          "question": "如何通过 Build、Deploy、Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "Operations：从交付候选到可持续运行",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-09",
+          "id": "CH-09",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 9,
+          "percent": 0.0,
+          "question": "如何根据任务复杂度、代码库现状、监管要求和团队规模，在 Simple、FIRE 与 AI-DLC 之间选择，而不过度或不足工程化？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "适配性工程：选择正确的 Flow 与治理强度",
+          "total": 6
+        },
+        {
+          "done": 0,
+          "href": "details.html#chapter-CH-10",
+          "id": "CH-10",
+          "next_gap": "question",
+          "next_gap_label": "问题",
+          "number": 10,
+          "percent": 0.0,
+          "question": "如何重构人、Agent、协作节奏与度量体系，并判断哪些 AI-DLC 实践值得在组织内规模化？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "pending",
+              "status_label": "待开始"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "pending",
+              "status_label": "待开始"
+            }
+          ],
+          "title": "组织与度量：从 Agent 分工到研发操作系统",
+          "total": 6
+        }
+      ],
+      "stage_totals": {
+        "example": {
+          "done": 5,
+          "label": "案例",
+          "percent": 50.0,
+          "total": 10
+        },
+        "experiment": {
+          "done": 5,
+          "label": "实验",
+          "percent": 50.0,
+          "total": 10
+        },
+        "figure": {
+          "done": 5,
+          "label": "图示",
+          "percent": 50.0,
+          "total": 10
+        },
+        "framework": {
+          "done": 5,
+          "label": "框架",
+          "percent": 50.0,
+          "total": 10
+        },
+        "question": {
+          "done": 5,
+          "label": "问题",
+          "percent": 50.0,
+          "total": 10
+        },
+        "review": {
+          "done": 5,
+          "label": "审校",
+          "percent": 50.0,
+          "total": 10
+        }
+      },
+      "total": 10
+    },
+    "cycles": {
+      "active_cycle": null,
+      "href": "details.html#cycles",
+      "preview_count": 0,
+      "rows": [
+        {
+          "carried_gap_total": 1,
+          "carried_task_total": 1,
+          "href": "details.html#cycle-v0.2-draft",
+          "id": "v0.2-draft",
+          "monthly_target": "v0.2 readable release",
+          "status": "complete",
+          "task_done": 3,
+          "task_total": 3
+        }
+      ]
+    },
+    "experiments": {
+      "href": "details.html#experiments",
+      "status_counts": {
+        "planned": 26,
+        "ready": 2,
+        "verified": 2
+      },
+      "total": 30,
+      "triage_counts": {
+        "ALREADY": 2,
+        "KEEP-EXT": 10,
+        "SHIP": 18
+      }
+    },
+    "feedback": {
+      "decision_counts": {
+        "accepted": 0,
+        "deferred": 1,
+        "pending": 0,
+        "rejected": 0
+      },
+      "href": "details.html#feedback",
+      "reader_counts": {
+        "invited": 3,
+        "not-invited": 0,
+        "responded": 0
+      },
+      "total": 1,
+      "unresolved_accepted": 0
+    },
+    "generated_at": "2026-07-24T07:50:00Z",
+    "goal": {
+      "all_tasks_done": false,
+      "current_day": 20,
+      "days_remaining": 4,
+      "name": "v0.1 已发布；十章写作冲刺",
+      "total_days": 24
+    },
+    "latest_fact_update": "2026-07-24T07:50:00Z",
+    "next_actions": [
+      {
+        "acceptance": [
+          {
+            "passed": false,
+            "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+          }
+        ],
+        "artifacts": [
+          {
+            "path": "book/chapters/ch06-exsecutio.md",
+            "required": true
+          }
+        ],
+        "day": 20,
+        "dependencies": [
+          "D19-T03"
+        ],
+        "href": "details.html#task-D20-T01",
+        "id": "D20-T01",
+        "owner": "author",
+        "planned_date": "2026-08-09",
+        "priority": "must",
+        "status": "ready",
+        "status_label": "可开始",
+        "title": "CH-06 · 锁定章节论证骨架"
+      }
+    ],
+    "recent_events": [
+      {
+        "actor": "chenbaojun",
+        "after": "done",
+        "before": "ready",
+        "id": "EVT-f0a130d68badadfd",
+        "object_id": "D19-T01",
+        "object_type": "task",
+        "occurred_at": "2026-07-24T06:50:00Z",
+        "source_id": "7a681b134ad2-working-tree-4ff63055def5",
+        "summary": "D19-T01 · CH-05 · 锁定章节论证骨架：ready → done",
+        "type": "task_status_changed"
+      },
+      {
+        "actor": "chenbaojun",
+        "after": "ready",
+        "before": "backlog",
+        "id": "EVT-43a829339e4d683b",
+        "object_id": "D19-T02",
+        "object_type": "task",
+        "occurred_at": "2026-07-24T06:50:00Z",
+        "source_id": "7a681b134ad2-working-tree-4ff63055def5",
+        "summary": "D19-T02 · CH-05 · 完成章节可读稿：backlog → ready",
+        "type": "task_status_changed"
+      },
+      {
+        "actor": "chenbaojun",
+        "after": "done",
+        "before": "pending",
+        "id": "EVT-da160f14fdd25491",
+        "object_id": "CH-05:example",
+        "object_type": "chapter_stage",
+        "occurred_at": "2026-07-24T07:20:00Z",
+        "source_id": "71a28cdb1885-working-tree-a65e405acac2",
+        "summary": "CH-05 · Bolts：为快速执行选择正确轨道 · 案例：pending → done",
+        "type": "chapter_stage_changed"
+      },
+      {
+        "actor": "chenbaojun",
+        "after": "done",
+        "before": "pending",
+        "id": "EVT-7fe52e54653df788",
+        "object_id": "CH-05:experiment",
+        "object_type": "chapter_stage",
+        "occurred_at": "2026-07-24T07:20:00Z",
+        "source_id": "71a28cdb1885-working-tree-a65e405acac2",
+        "summary": "CH-05 · Bolts：为快速执行选择正确轨道 · 实验：pending → done",
+        "type": "chapter_stage_changed"
+      },
+      {
+        "actor": "chenbaojun",
+        "after": "done",
+        "before": "pending",
+        "id": "EVT-b16668e14c67c097",
+        "object_id": "CH-05:figure",
+        "object_type": "chapter_stage",
+        "occurred_at": "2026-07-24T07:20:00Z",
+        "source_id": "71a28cdb1885-working-tree-a65e405acac2",
+        "summary": "CH-05 · Bolts：为快速执行选择正确轨道 · 图示：pending → done",
+        "type": "chapter_stage_changed"
+      },
+      {
+        "actor": "chenbaojun",
+        "after": "done",
+        "before": "ready",
+        "id": "EVT-a2535d5c1724804d",
+        "object_id": "D19-T02",
+        "object_type": "task",
+        "occurred_at": "2026-07-24T07:20:00Z",
+        "source_id": "71a28cdb1885-working-tree-a65e405acac2",
+        "summary": "D19-T02 · CH-05 · 完成章节可读稿：ready → done",
+        "type": "task_status_changed"
+      },
+      {
+        "actor": "chenbaojun",
+        "after": "ready",
+        "before": "backlog",
+        "id": "EVT-682b5f4aba40f51b",
+        "object_id": "D19-T03",
+        "object_type": "task",
+        "occurred_at": "2026-07-24T07:20:00Z",
+        "source_id": "71a28cdb1885-working-tree-a65e405acac2",
+        "summary": "D19-T03 · CH-05 · 完成章节审校与证据对齐：backlog → ready",
+        "type": "task_status_changed"
+      },
+      {
+        "actor": "chenbaojun",
+        "after": "done",
+        "before": "pending",
+        "id": "EVT-ef45380e7b842b10",
+        "object_id": "CH-05:review",
+        "object_type": "chapter_stage",
+        "occurred_at": "2026-07-24T07:50:00Z",
+        "source_id": "e80cfd494755-working-tree-8b835bd10268",
+        "summary": "CH-05 · Bolts：为快速执行选择正确轨道 · 审校：pending → done",
+        "type": "chapter_stage_changed"
+      },
+      {
+        "actor": "chenbaojun",
+        "after": "done",
+        "before": "ready",
+        "id": "EVT-727c42140ae3befb",
+        "object_id": "D19-T03",
+        "object_type": "task",
+        "occurred_at": "2026-07-24T07:50:00Z",
+        "source_id": "e80cfd494755-working-tree-8b835bd10268",
+        "summary": "D19-T03 · CH-05 · 完成章节审校与证据对齐：ready → done",
+        "type": "task_status_changed"
+      },
+      {
+        "actor": "chenbaojun",
+        "after": "ready",
+        "before": "backlog",
+        "id": "EVT-77d1e8715e71f1d9",
+        "object_id": "D20-T01",
+        "object_type": "task",
+        "occurred_at": "2026-07-24T07:50:00Z",
+        "source_id": "e80cfd494755-working-tree-8b835bd10268",
+        "summary": "D20-T01 · CH-06 · 锁定章节论证骨架：backlog → ready",
+        "type": "task_status_changed"
+      }
+    ],
+    "release_message": "",
+    "schema_version": "1.0.0",
+    "source_id": "e80cfd494755-working-tree-8b835bd10268",
+    "tasks": {
+      "done": 57,
+      "percent": 79.2,
+      "priority": {
+        "could": {
+          "done": 0,
+          "has_sample": false,
+          "percent": 0.0,
+          "total": 0
+        },
+        "must": {
+          "done": 55,
+          "has_sample": true,
+          "percent": 78.6,
+          "total": 70
+        },
+        "should": {
+          "done": 2,
+          "has_sample": true,
+          "percent": 100.0,
+          "total": 2
+        }
+      },
+      "status_counts": {
+        "backlog": 14,
+        "blocked": 0,
+        "done": 57,
+        "in-progress": 0,
+        "ready": 1,
+        "review": 0
+      },
+      "timeline": [
+        {
+          "blocked": 0,
+          "day": 1,
+          "done": 3,
+          "href": "details.html#day-01",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 2,
+          "done": 3,
+          "href": "details.html#day-02",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 3,
+          "done": 3,
+          "href": "details.html#day-03",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 4,
+          "done": 3,
+          "href": "details.html#day-04",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 5,
+          "done": 3,
+          "href": "details.html#day-05",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 6,
+          "done": 3,
+          "href": "details.html#day-06",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 7,
+          "done": 3,
+          "href": "details.html#day-07",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 8,
+          "done": 3,
+          "href": "details.html#day-08",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 9,
+          "done": 3,
+          "href": "details.html#day-09",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 10,
+          "done": 3,
+          "href": "details.html#day-10",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 11,
+          "done": 3,
+          "href": "details.html#day-11",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 12,
+          "done": 3,
+          "href": "details.html#day-12",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 13,
+          "done": 3,
+          "href": "details.html#day-13",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 14,
+          "done": 3,
+          "href": "details.html#day-14",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 15,
+          "done": 3,
+          "href": "details.html#day-15",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 16,
+          "done": 3,
+          "href": "details.html#day-16",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 17,
+          "done": 3,
+          "href": "details.html#day-17",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 18,
+          "done": 3,
+          "href": "details.html#day-18",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 19,
+          "done": 3,
+          "href": "details.html#day-19",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 20,
+          "done": 0,
+          "href": "details.html#day-20",
+          "is_current": true,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 21,
+          "done": 0,
+          "href": "details.html#day-21",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 22,
+          "done": 0,
+          "href": "details.html#day-22",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 23,
+          "done": 0,
+          "href": "details.html#day-23",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 24,
+          "done": 0,
+          "href": "details.html#day-24",
+          "is_current": false,
+          "percent": 0.0,
+          "total": 3
+        }
+      ],
+      "total": 72,
+      "weighted_percent": 79.0
+    }
+  },
+  "schema_version": "1.0.0",
+  "source_id": "e80cfd494755-working-tree-8b835bd10268"
+}

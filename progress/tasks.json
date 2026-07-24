@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "memory-bank/intents/001-github-writing-system/execution-roadmap.md",
-  "updated": "2026-07-24T07:20:00Z",
+  "updated": "2026-07-24T07:50:00Z",
   "tasks": [
     {
       "id": "D01-T01",
@@ -1690,7 +1690,7 @@
       "type": "writing",
       "card": "review",
       "chapter": "CH-05",
-      "status": "ready",
+      "status": "done",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1699,7 +1699,7 @@
       "acceptance": [
         {
           "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接",
-          "passed": false
+          "passed": true
         }
       ],
       "artifacts": [
@@ -1711,7 +1711,7 @@
       "notes": "每日一章写作冲刺：Bolts：为快速执行选择正确轨道 的 完成章节审校与证据对齐 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-24T07:20:00Z"
+      "updated": "2026-07-24T07:50:00Z"
     },
     {
       "id": "D20-T01",
@@ -1722,7 +1722,7 @@
       "type": "writing",
       "card": "outline",
       "chapter": "CH-06",
-      "status": "backlog",
+      "status": "ready",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1743,7 +1743,7 @@
       "notes": "每日一章写作冲刺：Exsecutio：把提议贯彻为交付候选 的 锁定章节论证骨架 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-23T09:00:00Z"
+      "updated": "2026-07-24T07:50:00Z"
     },
     {
       "id": "D20-T02",

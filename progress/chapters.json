@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T07:20:00Z",
+  "updated": "2026-07-24T07:50:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -216,10 +216,12 @@
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
       "evidence_links": [
+        "planning/reviews/ch-05-writing-review.md",
+        "progress/tasks.json#D19-T03",
         "progress/tasks.json#D19-T02",
         "progress/tasks.json#D19-T01",
         "book/chapters/ch05-bolts.md",
@@ -231,7 +233,7 @@
         "progress/experiments.json#EXP-05-02",
         "progress/experiments.json#EXP-05-03"
       ],
-      "updated": "2026-07-24T07:20:00Z"
+      "updated": "2026-07-24T07:50:00Z"
     },
     {
       "id": "CH-06",

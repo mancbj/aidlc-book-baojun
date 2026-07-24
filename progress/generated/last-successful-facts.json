@@ -189,6 +189,8 @@
         },
         {
           "evidence_links": [
+            "planning/reviews/ch-05-writing-review.md",
+            "progress/tasks.json#D19-T03",
             "progress/tasks.json#D19-T02",
             "progress/tasks.json#D19-T01",
             "book/chapters/ch05-bolts.md",
@@ -227,11 +229,11 @@
             },
             {
               "name": "review",
-              "status": "pending"
+              "status": "done"
             }
           ],
           "title": "Bolts：为快速执行选择正确轨道",
-          "updated": "2026-07-24T07:20:00Z"
+          "updated": "2026-07-24T07:50:00Z"
         },
         {
           "evidence_links": [],
@@ -410,7 +412,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T07:20:00Z"
+      "updated": "2026-07-24T07:50:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3180,7 +3182,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
             }
           ],
@@ -3203,11 +3205,11 @@
           "phase": "progress",
           "planned_date": "2026-08-08",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-05 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T07:20:00Z"
+          "updated": "2026-07-24T07:50:00Z"
         },
         {
           "acceptance": [
@@ -3235,11 +3237,11 @@
           "phase": "progress",
           "planned_date": "2026-08-09",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-06 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T07:50:00Z"
         },
         {
           "acceptance": [
@@ -3690,9 +3692,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T07:20:00Z"
+      "updated": "2026-07-24T07:50:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "71a28cdb1885-working-tree-a65e405acac2"
+  "source_id": "e80cfd494755-working-tree-8b835bd10268"
 }

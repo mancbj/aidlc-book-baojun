@@ -6,8 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-05 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D19-T02 · 完成章节可读稿 |
-| Draft Completeness | 正式十章生产线可读稿；等待 D19-T03 审校与证据对齐 |
+| Writing Sprint Card | D19-T03 · 完成章节审校与证据对齐 |
+| Draft Completeness | 正式十章生产线可读稿；D19-T03 五类审校已完成 |
 | Primary Question | 如何按领域复杂度、风险和可逆性选择 Bolt 范围、类型与阶段门禁，使速度提高而错误不级联？ |
 | Reader Outcome | 能够拆分小时到天级 Bolt，并在 DDD Construction 与 Simple Construction 之间作出有依据的选择 |
 | Related Experiments | `EXP-05-01`、`EXP-05-02`、`EXP-05-03` |
@@ -241,3 +241,4 @@ High Domain Complexity / Cross-boundary Risk / Hard to Reverse
 - `memory-bank/bolts/004-github-writing-system-ui/bolt.md`：样章审校、反馈、v0.1 发布与下一周期 Bolt。
 - `progress/experiments.json`：`EXP-05-01`、`EXP-05-02`、`EXP-05-03` 实验治理状态。
 - `book/toc.md`：CH-05 核心问题、读者结果和实验方向。
+- `planning/reviews/ch-05-writing-review.md`：正式十章生产线 CH-05 五类审校记录。
