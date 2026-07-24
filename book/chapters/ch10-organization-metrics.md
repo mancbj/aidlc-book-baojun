@@ -6,8 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-10 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D24-T02 · 完成章节可读稿 |
-| Draft Completeness | 正式十章生产线可读稿；等待 D24-T03 审校与证据对齐 |
+| Writing Sprint Card | D24-T03 · 完成章节审校与证据对齐 |
+| Draft Completeness | 正式十章生产线可读稿；D24-T03 五类审校已完成 |
 | Primary Question | 如何重构人、Agent、协作节奏与度量体系，并判断哪些 AI-DLC 实践值得在组织内规模化？ |
 | Reader Outcome | 能够设计 Master/Inception/Construction/Operations 与人的责任图、Mob 协作节奏和业务价值记分卡 |
 | Related Experiments | `EXP-10-01`、`EXP-10-02`、`EXP-10-03` |

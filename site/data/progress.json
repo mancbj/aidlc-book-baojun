@@ -453,13 +453,13 @@
         "total": 6
       },
       {
-        "done": 5,
+        "done": 6,
         "href": "details.html#chapter-CH-10",
         "id": "CH-10",
-        "next_gap": "review",
-        "next_gap_label": "审校",
+        "next_gap": null,
+        "next_gap_label": "已完成",
         "number": 10,
-        "percent": 83.3,
+        "percent": 100.0,
         "question": "如何重构人、Agent、协作节奏与度量体系，并判断哪些 AI-DLC 实践值得在组织内规模化？",
         "stages": [
           {
@@ -495,8 +495,8 @@
           {
             "label": "审校",
             "name": "review",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           }
         ],
         "title": "组织与度量：从 Agent 分工到研发操作系统",
@@ -535,9 +535,9 @@
         "total": 10
       },
       "review": {
-        "done": 9,
+        "done": 10,
         "label": "审校",
-        "percent": 90.0,
+        "percent": 100.0,
         "total": 10
       }
     },
@@ -590,69 +590,18 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T13:37:53Z",
+  "generated_at": "2026-07-24T13:38:41Z",
   "goal": {
-    "all_tasks_done": false,
+    "all_tasks_done": true,
     "current_day": 24,
     "days_remaining": 0,
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T13:37:50Z",
-  "latest_snapshot": "../progress/snapshots/20260724T133753Z-1f2422-working-tree-7f64e8cbf353.json",
-  "next_actions": [
-    {
-      "acceptance": [
-        {
-          "passed": false,
-          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "planning/reviews/ch-10-writing-review.md",
-          "required": true
-        }
-      ],
-      "day": 24,
-      "dependencies": [
-        "D24-T02"
-      ],
-      "href": "details.html#task-D24-T03",
-      "id": "D24-T03",
-      "owner": "author",
-      "planned_date": "2026-08-13",
-      "priority": "must",
-      "status": "ready",
-      "status_label": "可开始",
-      "title": "CH-10 · 完成章节审校与证据对齐"
-    }
-  ],
+  "latest_fact_update": "2026-07-24T13:38:38Z",
+  "latest_snapshot": "../progress/snapshots/20260724T133841Z-d8d483-working-tree-8c4ac3b7145a.json",
+  "next_actions": [],
   "recent_events": [
-    {
-      "actor": "ubuntu",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-836738c7e3177730",
-      "object_id": "D24-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:36:01Z",
-      "source_id": "3d1db5e83ff4-working-tree-2e5ddccccd33",
-      "summary": "D24-T01 · CH-10 · 锁定章节论证骨架：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-f773aaac4e0125e8",
-      "object_id": "CH-10:framework",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:36:52Z",
-      "source_id": "62648787b05b-working-tree-3fd212566612",
-      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 框架：pending → done",
-      "type": "chapter_stage_changed"
-    },
     {
       "actor": "ubuntu",
       "after": "done",
@@ -748,14 +697,38 @@
       "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
       "summary": "D24-T03 · CH-10 · 完成章节审校与证据对齐：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-7cf955da5ca8a05f",
+      "object_id": "CH-10:review",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T13:38:41Z",
+      "source_id": "57eaced8d483-working-tree-8c4ac3b7145a",
+      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 审校：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-99a95d46813cabff",
+      "object_id": "D24-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T13:38:41Z",
+      "source_id": "57eaced8d483-working-tree-8c4ac3b7145a",
+      "summary": "D24-T03 · CH-10 · 完成章节审校与证据对齐：ready → done",
+      "type": "task_status_changed"
     }
   ],
-  "release_message": "",
+  "release_message": "准备 v0.1 发布；等待真实发布回执激活下一周期",
   "schema_version": "1.0.0",
-  "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
+  "source_id": "57eaced8d483-working-tree-8c4ac3b7145a",
   "tasks": {
-    "done": 71,
-    "percent": 98.6,
+    "done": 72,
+    "percent": 100.0,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +737,9 @@
         "total": 0
       },
       "must": {
-        "done": 69,
+        "done": 70,
         "has_sample": true,
-        "percent": 98.6,
+        "percent": 100.0,
         "total": 70
       },
       "should": {
@@ -779,9 +752,9 @@
     "status_counts": {
       "backlog": 0,
       "blocked": 0,
-      "done": 71,
+      "done": 72,
       "in-progress": 0,
-      "ready": 1,
+      "ready": 0,
       "review": 0
     },
     "timeline": [
@@ -995,14 +968,14 @@
       {
         "blocked": 0,
         "day": 24,
-        "done": 2,
+        "done": 3,
         "href": "details.html#day-24",
         "is_current": true,
-        "percent": 66.7,
+        "percent": 100.0,
         "total": 3
       }
     ],
     "total": 72,
-    "weighted_percent": 98.6
+    "weighted_percent": 100.0
   }
 }

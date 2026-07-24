@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T13:37:50Z",
+  "updated": "2026-07-24T13:38:38Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -468,7 +468,7 @@
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
       "evidence_links": [
@@ -480,9 +480,11 @@
         "progress/tasks.json#D24-T02",
         "book/chapters/ch10-organization-metrics.md#04--example以本书写作系统试点为例",
         "book/chapters/ch10-organization-metrics.md#06--experiment三个验证方向",
-        "book/chapters/ch10-organization-metrics.md#07--figure研发操作系统三层图"
+        "book/chapters/ch10-organization-metrics.md#07--figure研发操作系统三层图",
+        "planning/reviews/ch-10-writing-review.md",
+        "progress/tasks.json#D24-T03"
       ],
-      "updated": "2026-07-24T13:37:50Z"
+      "updated": "2026-07-24T13:38:38Z"
     }
   ]
 }

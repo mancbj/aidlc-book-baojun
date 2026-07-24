@@ -841,3 +841,10 @@
 - **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 图示：pending → done (`EVT-48a441304cc8a6be`)
 - **task_status_changed** · D24-T02 · CH-10 · 完成章节可读稿：ready → done (`EVT-bfa89664b88d2f56`)
 - **task_status_changed** · D24-T03 · CH-10 · 完成章节审校与证据对齐：backlog → ready (`EVT-ed9b285e3c45c9f4`)
+
+## 2026-07-24T13:38:41Z · `57eaced8d483-working-tree-8c4ac3b7145a`
+
+快照：[`20260724T133841Z-d8d483-working-tree-8c4ac3b7145a.json`](snapshots/20260724T133841Z-d8d483-working-tree-8c4ac3b7145a.json)
+
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 审校：pending → done (`EVT-7cf955da5ca8a05f`)
+- **task_status_changed** · D24-T03 · CH-10 · 完成章节审校与证据对齐：ready → done (`EVT-99a95d46813cabff`)
