@@ -7,6 +7,7 @@
 - [toc.md](toc.md)：Part 0 导读、十章结构与实验方向
 - [chapters/ch01-ai-native-sdlc.md](chapters/ch01-ai-native-sdlc.md)：CH-01 可读稿与审校记录入口
 - [chapters/ch02-human-judgment.md](chapters/ch02-human-judgment.md)：CH-02 论证骨架稿
+- [chapters/ch03-inception.md](chapters/ch03-inception.md)：CH-03 正式十章生产线论证骨架
 - [chapters/sample.md](chapters/sample.md)：CH-03 v0.1 可读样章
 - [chapters/ch04-memory-bank-standards.md](chapters/ch04-memory-bank-standards.md)：CH-04 v0.2 第一节可读稿
 - [chapter-template.md](chapter-template.md)：章节六阶段生产线

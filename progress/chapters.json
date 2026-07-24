@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T03:20:00Z",
+  "updated": "2026-07-24T03:50:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -124,6 +124,8 @@
         }
       ],
       "evidence_links": [
+        "progress/tasks.json#D17-T01",
+        "book/chapters/ch03-inception.md",
         "book/chapters/sample.md",
         "planning/sample-chapter-decision.md",
         "planning/sample-experiment.md",
@@ -132,7 +134,7 @@
         "book/images/fig0-1.svg",
         "planning/reviews/sample-chapter.md"
       ],
-      "updated": "2026-07-23T03:54:35Z"
+      "updated": "2026-07-24T03:50:00Z"
     },
     {
       "id": "CH-04",

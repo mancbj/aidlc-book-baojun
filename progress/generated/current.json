@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T03:20:00Z",
+  "generated_at": "2026-07-24T03:50:00Z",
   "goal": {
     "all_tasks_done": false,
     "current_day": 17,
@@ -598,14 +598,14 @@
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T03:20:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T032000Z-1d0d6f-working-tree-eb44f7c25d25.json",
+  "latest_fact_update": "2026-07-24T03:50:00Z",
+  "latest_snapshot": "../progress/snapshots/20260724T035000Z-c73956-working-tree-f37d4d161c57.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+          "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
         }
       ],
       "artifacts": [
@@ -616,43 +616,19 @@
       ],
       "day": 17,
       "dependencies": [
-        "D16-T03"
+        "D17-T01"
       ],
-      "href": "details.html#task-D17-T01",
-      "id": "D17-T01",
+      "href": "details.html#task-D17-T02",
+      "id": "D17-T02",
       "owner": "author",
       "planned_date": "2026-08-06",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-03 · 锁定章节论证骨架"
+      "title": "CH-03 · 完成章节可读稿"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-22b6db48e56c6554",
-      "object_id": "D16-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T02:20:00Z",
-      "source_id": "4d9d28aebd45-working-tree-e82bea0f12be",
-      "summary": "D16-T01 · CH-02 · 锁定章节论证骨架：ready → done",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-460abcd59b754a58",
-      "object_id": "D16-T02",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T02:20:00Z",
-      "source_id": "4d9d28aebd45-working-tree-e82bea0f12be",
-      "summary": "D16-T02 · CH-02 · 完成章节可读稿：backlog → ready",
-      "type": "task_status_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "done",
@@ -748,14 +724,38 @@
       "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25",
       "summary": "D17-T01 · CH-03 · 锁定章节论证骨架：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-3a76a5925806f5fb",
+      "object_id": "D17-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T03:50:00Z",
+      "source_id": "9e6c7cc73956-working-tree-f37d4d161c57",
+      "summary": "D17-T01 · CH-03 · 锁定章节论证骨架：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-b45321037cc122cd",
+      "object_id": "D17-T02",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T03:50:00Z",
+      "source_id": "9e6c7cc73956-working-tree-f37d4d161c57",
+      "summary": "D17-T02 · CH-03 · 完成章节可读稿：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25",
+  "source_id": "9e6c7cc73956-working-tree-f37d4d161c57",
   "tasks": {
-    "done": 48,
-    "percent": 66.7,
+    "done": 49,
+    "percent": 68.1,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 46,
+        "done": 47,
         "has_sample": true,
-        "percent": 65.7,
+        "percent": 67.1,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 23,
+      "backlog": 22,
       "blocked": 0,
-      "done": 48,
+      "done": 49,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -932,10 +932,10 @@
       {
         "blocked": 0,
         "day": 17,
-        "done": 0,
+        "done": 1,
         "href": "details.html#day-17",
         "is_current": true,
-        "percent": 0.0,
+        "percent": 33.3,
         "total": 3
       },
       {
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 66.4
+    "weighted_percent": 67.8
   }
 }

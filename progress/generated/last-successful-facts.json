@@ -93,6 +93,8 @@
         },
         {
           "evidence_links": [
+            "progress/tasks.json#D17-T01",
+            "book/chapters/ch03-inception.md",
             "book/chapters/sample.md",
             "planning/sample-chapter-decision.md",
             "planning/sample-experiment.md",
@@ -132,7 +134,7 @@
             }
           ],
           "title": "Inception：从 Intent 到可执行计划",
-          "updated": "2026-07-23T03:54:35Z"
+          "updated": "2026-07-24T03:50:00Z"
         },
         {
           "evidence_links": [
@@ -387,7 +389,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T03:20:00Z"
+      "updated": "2026-07-24T03:50:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -2901,7 +2903,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
             }
           ],
@@ -2924,11 +2926,11 @@
           "phase": "progress",
           "planned_date": "2026-08-06",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-03 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T03:20:00Z"
+          "updated": "2026-07-24T03:50:00Z"
         },
         {
           "acceptance": [
@@ -2956,11 +2958,11 @@
           "phase": "progress",
           "planned_date": "2026-08-06",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-03 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T03:50:00Z"
         },
         {
           "acceptance": [
@@ -3667,9 +3669,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T03:20:00Z"
+      "updated": "2026-07-24T03:50:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25"
+  "source_id": "9e6c7cc73956-working-tree-f37d4d161c57"
 }
