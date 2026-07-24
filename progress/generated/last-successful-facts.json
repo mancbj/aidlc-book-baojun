@@ -48,7 +48,10 @@
           "updated": "2026-07-23T10:30:00Z"
         },
         {
-          "evidence_links": [],
+          "evidence_links": [
+            "book/chapters/ch02-human-judgment.md",
+            "progress/tasks.json#D16-T01"
+          ],
           "id": "CH-02",
           "number": 2,
           "question": "当 AI 主动提议、分解和执行时，人应如何设定目的地、保留责任并选择验证检查点？",
@@ -56,11 +59,11 @@
           "stages": [
             {
               "name": "question",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "framework",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "example",
@@ -80,7 +83,7 @@
             }
           ],
           "title": "人的判断与反向对话",
-          "updated": "2026-07-22T05:39:06Z"
+          "updated": "2026-07-24T02:20:00Z"
         },
         {
           "evidence_links": [
@@ -378,7 +381,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-23T10:30:00Z"
+      "updated": "2026-07-24T02:20:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -2796,7 +2799,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
             }
           ],
@@ -2819,11 +2822,11 @@
           "phase": "progress",
           "planned_date": "2026-08-05",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-02 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T10:30:00Z"
+          "updated": "2026-07-24T02:20:00Z"
         },
         {
           "acceptance": [
@@ -2851,11 +2854,11 @@
           "phase": "progress",
           "planned_date": "2026-08-05",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-02 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T02:20:00Z"
         },
         {
           "acceptance": [
@@ -3658,9 +3661,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-23T10:30:00Z"
+      "updated": "2026-07-24T02:20:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "f0d8c616d328-working-tree-cf379f1d4a64"
+  "source_id": "4d9d28aebd45-working-tree-e82bea0f12be"
 }

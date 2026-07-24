@@ -64,6 +64,7 @@ class BuildBookTest(unittest.TestCase):
             self.assertIn("𝓔 = Engineering with Exsecutio", visible_text)
             self.assertIn("Part 00 · 鸟瞰 AI-DLC", visible_text)
             self.assertIn("第 1 章 · AI 原生 SDLC", visible_text)
+            self.assertIn("第 2 章 · 人的判断与反向对话", visible_text)
             self.assertIn("第 3 章 · Inception", visible_text)
             self.assertIn("第 4 章 · 上下文工程", visible_text)
             self.assertIn("第 10 章", visible_text)
@@ -81,7 +82,7 @@ class BuildBookTest(unittest.TestCase):
             self.assertEqual("html", manifest["format"])
             self.assertTrue(manifest["pandoc"].startswith("pandoc "))
             self.assertEqual("11.16.0", manifest["diagram_engine"])
-            self.assertEqual(11, len(manifest["sources"]))
+            self.assertEqual(12, len(manifest["sources"]))
             self.assertEqual({"deep-understanding-ai-dlc.html"}, {item["path"] for item in manifest["outputs"]})
             self.assertTrue(all(len(item["sha256"]) == 64 for item in manifest["sources"] + manifest["outputs"]))
 
