@@ -647,3 +647,10 @@
 
 - **task_status_changed** · D17-T01 · CH-03 · 锁定章节论证骨架：ready → done (`EVT-3a76a5925806f5fb`)
 - **task_status_changed** · D17-T02 · CH-03 · 完成章节可读稿：backlog → ready (`EVT-b45321037cc122cd`)
+
+## 2026-07-24T04:20:00Z · `006b2ddc5587-working-tree-1d51f3e9e832`
+
+快照：[`20260724T042000Z-dc5587-working-tree-1d51f3e9e832.json`](snapshots/20260724T042000Z-dc5587-working-tree-1d51f3e9e832.json)
+
+- **task_status_changed** · D17-T02 · CH-03 · 完成章节可读稿：ready → done (`EVT-92cebf71f4cef3ee`)
+- **task_status_changed** · D17-T03 · CH-03 · 完成章节审校与证据对齐：backlog → ready (`EVT-cd9a7fd46ecf3f7f`)

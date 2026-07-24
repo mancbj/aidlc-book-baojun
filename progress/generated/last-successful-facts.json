@@ -93,6 +93,8 @@
         },
         {
           "evidence_links": [
+            "progress/tasks.json#D17-T02",
+            "scripts/build_book.py",
             "progress/tasks.json#D17-T01",
             "book/chapters/ch03-inception.md",
             "book/chapters/sample.md",
@@ -134,7 +136,7 @@
             }
           ],
           "title": "Inception：从 Intent 到可执行计划",
-          "updated": "2026-07-24T03:50:00Z"
+          "updated": "2026-07-24T04:20:00Z"
         },
         {
           "evidence_links": [
@@ -389,7 +391,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T03:50:00Z"
+      "updated": "2026-07-24T04:20:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -2935,7 +2937,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
             }
           ],
@@ -2958,11 +2960,11 @@
           "phase": "progress",
           "planned_date": "2026-08-06",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-03 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T03:50:00Z"
+          "updated": "2026-07-24T04:20:00Z"
         },
         {
           "acceptance": [
@@ -2990,11 +2992,11 @@
           "phase": "progress",
           "planned_date": "2026-08-06",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-03 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T04:20:00Z"
         },
         {
           "acceptance": [
@@ -3669,9 +3671,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T03:50:00Z"
+      "updated": "2026-07-24T04:20:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "9e6c7cc73956-working-tree-f37d4d161c57"
+  "source_id": "006b2ddc5587-working-tree-1d51f3e9e832"
 }

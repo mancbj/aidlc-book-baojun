@@ -28,7 +28,7 @@ SOURCE_FILES = (
     Path("book/toc.md"),
     Path("book/chapters/ch01-ai-native-sdlc.md"),
     Path("book/chapters/ch02-human-judgment.md"),
-    Path("book/chapters/sample.md"),
+    Path("book/chapters/ch03-inception.md"),
     Path("book/chapters/ch04-memory-bank-standards.md"),
 )
 SUPPORT_FILES = (
