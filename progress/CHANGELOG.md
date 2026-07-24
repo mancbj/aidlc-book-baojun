@@ -795,3 +795,12 @@
 - **chapter_stage_changed** · CH-08 · Operations：从交付候选到可持续运行 · 审校：pending → done (`EVT-49a13127502b86e5`)
 - **task_status_changed** · D22-T03 · CH-08 · 完成章节审校与证据对齐：ready → done (`EVT-a0c4e5ceb9a9644c`)
 - **task_status_changed** · D23-T01 · CH-09 · 锁定章节论证骨架：backlog → ready (`EVT-4b268ea2b94cf154`)
+
+## 2026-07-24T13:30:30Z · `e36b75fcc217-working-tree-5ac95c82aa4a`
+
+快照：[`20260724T133030Z-fcc217-working-tree-5ac95c82aa4a.json`](snapshots/20260724T133030Z-fcc217-working-tree-5ac95c82aa4a.json)
+
+- **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 框架：pending → done (`EVT-22bccd2c7dce08e0`)
+- **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 问题：pending → done (`EVT-4b894778a418c5cb`)
+- **task_status_changed** · D23-T01 · CH-09 · 锁定章节论证骨架：ready → done (`EVT-4e078d899ff8008b`)
+- **task_status_changed** · D23-T02 · CH-09 · 完成章节可读稿：backlog → ready (`EVT-15336d3ae6e665ec`)
