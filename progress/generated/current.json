@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T11:50:00Z",
+  "generated_at": "2026-07-24T13:21:52Z",
   "goal": {
     "all_tasks_done": false,
     "current_day": 22,
@@ -599,7 +599,7 @@
     "total_days": 24
   },
   "latest_fact_update": "2026-07-24T11:50:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T115000Z-78d971-working-tree-88db0557527c.json",
+  "latest_snapshot": "../progress/snapshots/20260724T132152Z-302d595aaf30418a359322e193ad1a2e.json",
   "next_actions": [
     {
       "acceptance": [
@@ -752,7 +752,7 @@
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "6b204e78d971-working-tree-88db0557527c",
+  "source_id": "6bdf8677302d595aaf30418a359322e193ad1a2e",
   "tasks": {
     "done": 65,
     "percent": 90.3,
