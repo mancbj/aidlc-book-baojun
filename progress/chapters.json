@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T05:50:00Z",
+  "updated": "2026-07-24T06:20:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -169,10 +169,12 @@
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
       "evidence_links": [
+        "planning/reviews/ch-04-writing-review.md",
+        "progress/tasks.json#D18-T03",
         "progress/tasks.json#D18-T02",
         "experiments/exp-04-01/README.md",
         "experiments/exp-04-01/output/sample.json",
@@ -183,7 +185,7 @@
         "memory-bank/standards/coding-standards.md",
         "memory-bank/standards/tech-stack.md"
       ],
-      "updated": "2026-07-24T05:50:00Z"
+      "updated": "2026-07-24T06:20:00Z"
     },
     {
       "id": "CH-05",

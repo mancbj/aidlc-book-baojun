@@ -142,6 +142,8 @@
         },
         {
           "evidence_links": [
+            "planning/reviews/ch-04-writing-review.md",
+            "progress/tasks.json#D18-T03",
             "progress/tasks.json#D18-T02",
             "experiments/exp-04-01/README.md",
             "experiments/exp-04-01/output/sample.json",
@@ -179,11 +181,11 @@
             },
             {
               "name": "review",
-              "status": "pending"
+              "status": "done"
             }
           ],
           "title": "上下文工程：Memory Bank 与 Standards",
-          "updated": "2026-07-24T05:50:00Z"
+          "updated": "2026-07-24T06:20:00Z"
         },
         {
           "evidence_links": [],
@@ -397,7 +399,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T05:50:00Z"
+      "updated": "2026-07-24T06:20:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3071,7 +3073,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
             }
           ],
@@ -3094,11 +3096,11 @@
           "phase": "progress",
           "planned_date": "2026-08-07",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-04 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T05:50:00Z"
+          "updated": "2026-07-24T06:20:00Z"
         },
         {
           "acceptance": [
@@ -3126,11 +3128,11 @@
           "phase": "progress",
           "planned_date": "2026-08-08",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-05 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T06:20:00Z"
         },
         {
           "acceptance": [
@@ -3677,9 +3679,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T05:50:00Z"
+      "updated": "2026-07-24T06:20:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "d5b4f0721d8e-working-tree-442a70aaa95c"
+  "source_id": "f0387fc378ae-working-tree-c387dc352135"
 }

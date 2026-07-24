@@ -6,8 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-04 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D18-T02 · 完成章节可读稿 |
-| Draft Completeness | 正式十章生产线可读稿；等待 D18-T03 审校与证据对齐 |
+| Writing Sprint Card | D18-T03 · 完成章节审校与证据对齐 |
+| Draft Completeness | 正式十章生产线可读稿；D18-T03 五类审校已完成 |
 | Primary Question | 如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？ |
 | Reader Outcome | 能够设计最小 Memory Bank、Standards 目录、工件引用和变更同步规则 |
 | Related Experiments | `EXP-04-01` |
@@ -290,3 +290,4 @@ Next Session Recovers from Updated Facts
 - `planning/releases/v0.2-draft.md`：v0.2 持续更新周期草案。
 - `experiments/exp-04-01/README.md`：Memory Bank 冷启动恢复 A/B 实验说明。
 - `experiments/exp-04-01/output/sample.json`：C02-T02 生成的可复现实验输出。
+- `planning/reviews/ch-04-writing-review.md`：正式十章生产线 CH-04 五类审校记录。

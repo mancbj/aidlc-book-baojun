@@ -679,3 +679,11 @@
 - **chapter_stage_changed** · CH-04 · 上下文工程：Memory Bank 与 Standards · 图示：pending → done (`EVT-0f166c6f8b806abc`)
 - **task_status_changed** · D18-T02 · CH-04 · 完成章节可读稿：ready → done (`EVT-fa5fba90522ced3a`)
 - **task_status_changed** · D18-T03 · CH-04 · 完成章节审校与证据对齐：backlog → ready (`EVT-a04be7492bf1c5ae`)
+
+## 2026-07-24T06:20:00Z · `f0387fc378ae-working-tree-c387dc352135`
+
+快照：[`20260724T062000Z-c378ae-working-tree-c387dc352135.json`](snapshots/20260724T062000Z-c378ae-working-tree-c387dc352135.json)
+
+- **chapter_stage_changed** · CH-04 · 上下文工程：Memory Bank 与 Standards · 审校：pending → done (`EVT-aa75b9c8df4633c8`)
+- **task_status_changed** · D18-T03 · CH-04 · 完成章节审校与证据对齐：ready → done (`EVT-41964dae0c5f2653`)
+- **task_status_changed** · D19-T01 · CH-05 · 锁定章节论证骨架：backlog → ready (`EVT-818320be4ab80325`)
