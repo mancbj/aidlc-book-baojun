@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T04:50:00Z",
+  "updated": "2026-07-24T05:20:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -153,7 +153,7 @@
         },
         {
           "name": "framework",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "example",
@@ -173,13 +173,16 @@
         }
       ],
       "evidence_links": [
+        "experiments/exp-04-01/README.md",
+        "experiments/exp-04-01/output/sample.json",
+        "progress/tasks.json#D18-T01",
         "book/chapters/ch04-memory-bank-standards.md",
         "planning/reviews/ch04-c02-t01.md",
         "progress/cycles.json",
         "memory-bank/standards/coding-standards.md",
         "memory-bank/standards/tech-stack.md"
       ],
-      "updated": "2026-07-23T07:25:00Z"
+      "updated": "2026-07-24T05:20:00Z"
     },
     {
       "id": "CH-05",

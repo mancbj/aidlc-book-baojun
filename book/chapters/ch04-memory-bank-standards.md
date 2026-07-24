@@ -6,7 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-04 |
 | Status Source | `progress/chapters.json` |
-| Draft Completeness | v0.2 第一节可读稿；`question` 阶段完成 |
+| Writing Sprint Card | D18-T01 · 锁定章节论证骨架 |
+| Draft Completeness | 正式十章生产线论证骨架；已有第一节可读稿，等待 D18-T02 扩展为完整可读稿 |
 | Primary Question | 如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？ |
 | Reader Outcome | 能够设计最小 Memory Bank、Standards 目录、工件引用和变更同步规则 |
 | Related Experiments | `EXP-04-01` |
@@ -83,6 +84,145 @@ Standards 的价值不在于显得正式，而在于把人类判断提前放进�
 3. 上下文工程的目标不是更长上下文，而是更可靠、更可校验、更能持续更新的事实源。
 
 如果读者能带着这三句话进入第 4 章后续部分，就已经越过了上下文工程最容易误解的一道门：AI-DLC 不追求把聊天变长，而是把工程事实变硬。
+
+## 02 · Framework：最小可恢复上下文栈
+
+CH-04 的框架不是“把所有资料都喂给 AI”，而是设计一组足够小、足够硬、足够可验证的上下文工件，让一个全新会话能恢复当前状态，并继续遵守人的判断与工程标准。
+
+本章采用五层上下文栈：
+
+```text
+Current State
+  当前周期、下一动作、完成/阻塞状态
+
+Intent & Scope
+  目标、边界、不做什么、公开/本地资料边界
+
+Standards
+  技术栈、编码规则、术语、视觉风格、发布门禁
+
+Evidence Links
+  任务、章节、实验、事件、快照、构建清单、审校记录
+
+Update Protocol
+  何时更新、谁更新、如何校验、如何生成可视化记录
+```
+
+这五层共同回答新会话的五个恢复问题：
+
+1. 我现在处在什么周期，下一步是什么？
+2. 这个任务服务于哪个 Intent，边界在哪里？
+3. 哪些规则不能被“顺手优化”？
+4. 我做出的判断和变更应该落到哪些证据入口？
+5. 我完成后如何让下一次会话也能恢复？
+
+在这套框架中，Memory Bank 负责保存可恢复事实，Standards 负责保存可继承约束，事件与快照负责保存变化路径。它们共同构成 `𝓔 = Engineering with Exsecutio` 在上下文层面的实现：人的判断不只是说出来，而是固化为下一次 AI 执行必须继承的轨道。
+
+### Gate
+
+- [x] 核心问题只有一个：新会话如何恢复正确上下文并持续遵守工程约束。
+- [x] 读者结果可以观察：能设计最小 Memory Bank、Standards 目录、工件引用和变更同步规则。
+- [x] 本章不把 Memory Bank 写成“更长聊天历史”或“万能长期记忆”。
+- [x] 本章不展开 Bolt 内部执行、发布监控或多 Agent 组织治理。
+
+## 03 · Three-Part Argument：为什么上下文工程决定连续交付
+
+### 第一段：聊天历史不能承担工程事实源
+
+聊天历史适合交流，却不适合承担持续交付的事实源。它缺少稳定结构，难以被脚本校验，也无法天然区分“已完成事实”“旧计划”“临时想法”和“作者最终判断”。如果 Agent 只依赖聊天印象继续推进，最容易出现目标漂移、边界遗忘和状态误判。
+
+本段结论：**上下文工程的第一项价值，是把必须继承的当前事实从聊天历史中抽离出来，放进版本化、可校验、可追踪的工件。**
+
+### 第二段：Standards 把人的判断变成可继承约束
+
+人的判断如果只停留在一轮对话里，就会在下一轮执行中衰减。术语不能改、目录不能上传、图表风格不能漂移、发布状态不能手工伪造，这些都不是模型通过“聪明”就能稳定猜中的偏好，而是需要被明确写入 Standards 的工程约束。
+
+本段结论：**上下文工程的第二项价值，是把人的判断固化成新会话必须读取并遵守的标准。**
+
+### 第三段：更新协议让上下文持续变硬，而不是持续变脏
+
+Memory Bank 和 Standards 如果只新增不整理，很快会退化成噪音库。AI-DLC 需要把更新动作本身工程化：状态变化进入事实源，关键变化进入事件账本，阶段结果生成快照，驾驶舱从事实源投影，审校记录回到章节证据链。这样，上下文不是越积越重，而是随着每次交付变得更可恢复。
+
+本段结论：**上下文工程的第三项价值，是让上下文在持续更新中保持可恢复、可审计和可执行。**
+
+## 04 · Example Skeleton：本书项目的最小 Memory Bank
+
+D18-T02 可读稿将用本书项目自身作为例子，展示一个最小 Memory Bank 如何支撑“继续下一任务”。
+
+最小例子结构如下：
+
+```text
+Current State
+  progress/generated/current.json
+  progress/tasks.json
+  progress/cycles.json
+
+Intent & Scope
+  memory-bank/intents/001-github-writing-system/requirements.md
+  memory-bank/story-index.md
+
+Standards
+  memory-bank/standards/coding-standards.md
+  memory-bank/standards/tech-stack.md
+  working-book/SVG_STYLE_GUIDE.md
+
+Evidence Links
+  progress/events/events.jsonl
+  progress/snapshots/
+  planning/reviews/
+  .artifacts/book/build-manifest.json
+
+Update Protocol
+  validate_project.py
+  generate_progress.py
+  ci_check.py
+```
+
+这个例子要展示一个关键对比：没有 Memory Bank 的会话会把“继续”理解成模糊请求；有 Memory Bank 的会话会先读取当前周期、任务依赖、排除目录、专用术语和证据路径，再决定下一动作。两者的差别不是语气差别，而是恢复机制差别。
+
+## 05 · Experiment & Figure Entry
+
+本章证据入口是 `EXP-04-01 · Memory Bank 冷启动恢复 A/B 实验`。它比较两组候选首轮行动：
+
+- `with_memory_bank`：读取版本化事实源、周期、章节、标准和排除边界后行动。
+- `without_memory_bank`：只依赖聊天印象和模糊项目背景行动。
+
+当前样例输出显示：
+
+| Group | Context Recovery | First Action Error | Clarification Questions |
+|---|---:|---:|---:|
+| with_memory_bank | 100.0% | false | 0 |
+| without_memory_bank | 0.0% | true | 3 |
+
+这组结果不能证明所有项目都会得到同样数字，但能支撑本章的局部观点：版本化事实源与 Standards 可以把“下一步是什么、边界在哪里、证据落哪里、术语如何保留”从聊天猜测转成结构化恢复。
+
+本章图示方向为“新会话冷启动恢复栈”：
+
+```text
+New Agent Session
+  ↓
+Read Current State + Intent + Standards + Evidence
+  ↓
+Derive Next Safe Action
+  ↓
+Execute and Update Facts
+  ↓
+Events / Snapshots / Dashboard
+  ↺
+Next Session Recovers from Updated Facts
+```
+
+若后续生成独立 SVG，可命名为 `book/images/ch04-memory-bank-stack.svg`，保持技术专著级、宽屏、瑞士网格、IBM Carbon 倾向的克制风格，并避免把 Memory Bank 画成普通资料库。
+
+## 06 · D18-T02 Writing Plan
+
+D18-T02 将把本骨架扩展为完整可读稿。重点动作：
+
+1. 扩写五层上下文栈，让每层都有“为什么需要、保存什么、不保存什么”。
+2. 把本书项目的真实文件组织写成最小 Memory Bank 案例。
+3. 将 `EXP-04-01` 的实验输出写成有限度的证据，不夸大为普遍结论。
+4. 补充“资料库 vs Memory Bank”“记忆更多 vs 恢复更准”的对照。
+5. 增加读者练习：为自己的项目设计一个 6 文件以内的最小 Memory Bank。
 
 ## References
 

@@ -153,13 +153,13 @@
         "total": 6
       },
       {
-        "done": 1,
+        "done": 2,
         "href": "details.html#chapter-CH-04",
         "id": "CH-04",
-        "next_gap": "framework",
-        "next_gap_label": "框架",
+        "next_gap": "example",
+        "next_gap_label": "案例",
         "number": 4,
-        "percent": 16.7,
+        "percent": 33.3,
         "question": "如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？",
         "stages": [
           {
@@ -171,8 +171,8 @@
           {
             "label": "框架",
             "name": "framework",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "案例",
@@ -523,9 +523,9 @@
         "total": 10
       },
       "framework": {
-        "done": 3,
+        "done": 4,
         "label": "框架",
-        "percent": 30.0,
+        "percent": 40.0,
         "total": 10
       },
       "question": {
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T04:50:00Z",
+  "generated_at": "2026-07-24T05:20:00Z",
   "goal": {
     "all_tasks_done": false,
     "current_day": 18,
@@ -598,14 +598,14 @@
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T04:50:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T045000Z-aeb873-working-tree-232c0b9cba27.json",
+  "latest_fact_update": "2026-07-24T05:20:00Z",
+  "latest_snapshot": "../progress/snapshots/20260724T052000Z-8ee57d-working-tree-d72b10eb146a.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
+          "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
         }
       ],
       "artifacts": [
@@ -616,55 +616,19 @@
       ],
       "day": 18,
       "dependencies": [
-        "D17-T03"
+        "D18-T01"
       ],
-      "href": "details.html#task-D18-T01",
-      "id": "D18-T01",
+      "href": "details.html#task-D18-T02",
+      "id": "D18-T02",
       "owner": "author",
       "planned_date": "2026-08-07",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-04 · 锁定章节论证骨架"
+      "title": "CH-04 · 完成章节可读稿"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-1a523a5121f1729e",
-      "object_id": "D16-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T02:50:00Z",
-      "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
-      "summary": "D16-T03 · CH-02 · 完成章节审校与证据对齐：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-f47011badbffeaea",
-      "object_id": "CH-02:review",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T03:20:00Z",
-      "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25",
-      "summary": "CH-02 · 人的判断与反向对话 · 审校：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-3897a7663bb04a56",
-      "object_id": "D16-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T03:20:00Z",
-      "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25",
-      "summary": "D16-T03 · CH-02 · 完成章节审校与证据对齐：ready → done",
-      "type": "task_status_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "ready",
@@ -748,14 +712,50 @@
       "source_id": "a14ae8aeb873-working-tree-232c0b9cba27",
       "summary": "D18-T01 · CH-04 · 锁定章节论证骨架：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-8134ebb94e71fd59",
+      "object_id": "CH-04:framework",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T05:20:00Z",
+      "source_id": "fa5a968ee57d-working-tree-d72b10eb146a",
+      "summary": "CH-04 · 上下文工程：Memory Bank 与 Standards · 框架：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-598981509c22f9cc",
+      "object_id": "D18-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T05:20:00Z",
+      "source_id": "fa5a968ee57d-working-tree-d72b10eb146a",
+      "summary": "D18-T01 · CH-04 · 锁定章节论证骨架：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-1445c840726f3ca7",
+      "object_id": "D18-T02",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T05:20:00Z",
+      "source_id": "fa5a968ee57d-working-tree-d72b10eb146a",
+      "summary": "D18-T02 · CH-04 · 完成章节可读稿：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "a14ae8aeb873-working-tree-232c0b9cba27",
+  "source_id": "fa5a968ee57d-working-tree-d72b10eb146a",
   "tasks": {
-    "done": 51,
-    "percent": 70.8,
+    "done": 52,
+    "percent": 72.2,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 49,
+        "done": 50,
         "has_sample": true,
-        "percent": 70.0,
+        "percent": 71.4,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 20,
+      "backlog": 19,
       "blocked": 0,
-      "done": 51,
+      "done": 52,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -941,10 +941,10 @@
       {
         "blocked": 0,
         "day": 18,
-        "done": 0,
+        "done": 1,
         "href": "details.html#day-18",
         "is_current": true,
-        "percent": 0.0,
+        "percent": 33.3,
         "total": 3
       },
       {
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 70.6
+    "weighted_percent": 72.0
   }
 }

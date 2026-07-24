@@ -142,6 +142,9 @@
         },
         {
           "evidence_links": [
+            "experiments/exp-04-01/README.md",
+            "experiments/exp-04-01/output/sample.json",
+            "progress/tasks.json#D18-T01",
             "book/chapters/ch04-memory-bank-standards.md",
             "planning/reviews/ch04-c02-t01.md",
             "progress/cycles.json",
@@ -159,7 +162,7 @@
             },
             {
               "name": "framework",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "example",
@@ -179,7 +182,7 @@
             }
           ],
           "title": "上下文工程：Memory Bank 与 Standards",
-          "updated": "2026-07-23T07:25:00Z"
+          "updated": "2026-07-24T05:20:00Z"
         },
         {
           "evidence_links": [],
@@ -393,7 +396,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T04:50:00Z"
+      "updated": "2026-07-24T05:20:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3003,7 +3006,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
             }
           ],
@@ -3026,11 +3029,11 @@
           "phase": "progress",
           "planned_date": "2026-08-07",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-04 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T04:50:00Z"
+          "updated": "2026-07-24T05:20:00Z"
         },
         {
           "acceptance": [
@@ -3058,11 +3061,11 @@
           "phase": "progress",
           "planned_date": "2026-08-07",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-04 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T05:20:00Z"
         },
         {
           "acceptance": [
@@ -3673,9 +3676,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T04:50:00Z"
+      "updated": "2026-07-24T05:20:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "a14ae8aeb873-working-tree-232c0b9cba27"
+  "source_id": "fa5a968ee57d-working-tree-d72b10eb146a"
 }
