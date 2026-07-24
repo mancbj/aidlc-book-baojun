@@ -54,7 +54,9 @@
             "progress/tasks.json#D16-T02",
             "progress/experiments.json#EXP-02-01",
             "progress/experiments.json#EXP-02-02",
-            "progress/experiments.json#EXP-02-03"
+            "progress/experiments.json#EXP-02-03",
+            "planning/reviews/ch-02-writing-review.md",
+            "progress/tasks.json#D16-T03"
           ],
           "id": "CH-02",
           "number": 2,
@@ -83,11 +85,11 @@
             },
             {
               "name": "review",
-              "status": "pending"
+              "status": "done"
             }
           ],
           "title": "人的判断与反向对话",
-          "updated": "2026-07-24T02:50:00Z"
+          "updated": "2026-07-24T03:20:00Z"
         },
         {
           "evidence_links": [
@@ -385,7 +387,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T02:50:00Z"
+      "updated": "2026-07-24T03:20:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -2867,7 +2869,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
             }
           ],
@@ -2890,11 +2892,11 @@
           "phase": "progress",
           "planned_date": "2026-08-05",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-02 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T02:50:00Z"
+          "updated": "2026-07-24T03:20:00Z"
         },
         {
           "acceptance": [
@@ -2922,11 +2924,11 @@
           "phase": "progress",
           "planned_date": "2026-08-06",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-03 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T03:20:00Z"
         },
         {
           "acceptance": [
@@ -3665,9 +3667,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T02:50:00Z"
+      "updated": "2026-07-24T03:20:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "8ca367914e9e-working-tree-e112e9a895a8"
+  "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25"
 }

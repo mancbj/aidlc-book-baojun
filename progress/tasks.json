@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "memory-bank/intents/001-github-writing-system/execution-roadmap.md",
-  "updated": "2026-07-24T02:50:00Z",
+  "updated": "2026-07-24T03:20:00Z",
   "tasks": [
     {
       "id": "D01-T01",
@@ -1402,7 +1402,7 @@
       "type": "writing",
       "card": "review",
       "chapter": "CH-02",
-      "status": "ready",
+      "status": "done",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1411,7 +1411,7 @@
       "acceptance": [
         {
           "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接",
-          "passed": false
+          "passed": true
         }
       ],
       "artifacts": [
@@ -1423,7 +1423,7 @@
       "notes": "每日一章写作冲刺：人的判断与反向对话 的 完成章节审校与证据对齐 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-24T02:50:00Z"
+      "updated": "2026-07-24T03:20:00Z"
     },
     {
       "id": "D17-T01",
@@ -1434,7 +1434,7 @@
       "type": "writing",
       "card": "outline",
       "chapter": "CH-03",
-      "status": "backlog",
+      "status": "ready",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1455,7 +1455,7 @@
       "notes": "每日一章写作冲刺：Inception：从 Intent 到可执行计划 的 锁定章节论证骨架 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-23T09:00:00Z"
+      "updated": "2026-07-24T03:20:00Z"
     },
     {
       "id": "D17-T02",

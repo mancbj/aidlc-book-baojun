@@ -53,13 +53,13 @@
         "total": 6
       },
       {
-        "done": 5,
+        "done": 6,
         "href": "details.html#chapter-CH-02",
         "id": "CH-02",
-        "next_gap": "review",
-        "next_gap_label": "审校",
+        "next_gap": null,
+        "next_gap_label": "已完成",
         "number": 2,
-        "percent": 83.3,
+        "percent": 100.0,
         "question": "当 AI 主动提议、分解和执行时，人应如何设定目的地、保留责任并选择验证检查点？",
         "stages": [
           {
@@ -95,8 +95,8 @@
           {
             "label": "审校",
             "name": "review",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           }
         ],
         "title": "人的判断与反向对话",
@@ -535,9 +535,9 @@
         "total": 10
       },
       "review": {
-        "done": 2,
+        "done": 3,
         "label": "审校",
-        "percent": 20.0,
+        "percent": 30.0,
         "total": 10
       }
     },
@@ -590,81 +590,45 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T02:50:00Z",
+  "generated_at": "2026-07-24T03:20:00Z",
   "goal": {
     "all_tasks_done": false,
-    "current_day": 16,
-    "days_remaining": 8,
+    "current_day": 17,
+    "days_remaining": 7,
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T02:50:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T025000Z-914e9e-working-tree-e112e9a895a8.json",
+  "latest_fact_update": "2026-07-24T03:20:00Z",
+  "latest_snapshot": "../progress/snapshots/20260724T032000Z-1d0d6f-working-tree-eb44f7c25d25.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
         }
       ],
       "artifacts": [
         {
-          "path": "planning/reviews/ch-02-writing-review.md",
+          "path": "book/chapters/ch03-inception.md",
           "required": true
         }
       ],
-      "day": 16,
+      "day": 17,
       "dependencies": [
-        "D16-T02"
+        "D16-T03"
       ],
-      "href": "details.html#task-D16-T03",
-      "id": "D16-T03",
+      "href": "details.html#task-D17-T01",
+      "id": "D17-T01",
       "owner": "author",
-      "planned_date": "2026-08-05",
+      "planned_date": "2026-08-06",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-02 · 完成章节审校与证据对齐"
+      "title": "CH-03 · 锁定章节论证骨架"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-fd273f1f5b880f60",
-      "object_id": "D16-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-23T10:30:00Z",
-      "source_id": "f0d8c616d328-working-tree-cf379f1d4a64",
-      "summary": "D16-T01 · CH-02 · 锁定章节论证骨架：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-5f206fd92aa81566",
-      "object_id": "CH-02:framework",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T02:20:00Z",
-      "source_id": "4d9d28aebd45-working-tree-e82bea0f12be",
-      "summary": "CH-02 · 人的判断与反向对话 · 框架：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-895feadee0efa27b",
-      "object_id": "CH-02:question",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T02:20:00Z",
-      "source_id": "4d9d28aebd45-working-tree-e82bea0f12be",
-      "summary": "CH-02 · 人的判断与反向对话 · 问题：pending → done",
-      "type": "chapter_stage_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "done",
@@ -748,14 +712,50 @@
       "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
       "summary": "D16-T03 · CH-02 · 完成章节审校与证据对齐：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-f47011badbffeaea",
+      "object_id": "CH-02:review",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T03:20:00Z",
+      "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25",
+      "summary": "CH-02 · 人的判断与反向对话 · 审校：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-3897a7663bb04a56",
+      "object_id": "D16-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T03:20:00Z",
+      "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25",
+      "summary": "D16-T03 · CH-02 · 完成章节审校与证据对齐：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-a85390fc80acf6c9",
+      "object_id": "D17-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T03:20:00Z",
+      "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25",
+      "summary": "D17-T01 · CH-03 · 锁定章节论证骨架：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "8ca367914e9e-working-tree-e112e9a895a8",
+  "source_id": "2685fb1d0d6f-working-tree-eb44f7c25d25",
   "tasks": {
-    "done": 47,
-    "percent": 65.3,
+    "done": 48,
+    "percent": 66.7,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 45,
+        "done": 46,
         "has_sample": true,
-        "percent": 64.3,
+        "percent": 65.7,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 24,
+      "backlog": 23,
       "blocked": 0,
-      "done": 47,
+      "done": 48,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -923,10 +923,10 @@
       {
         "blocked": 0,
         "day": 16,
-        "done": 2,
+        "done": 3,
         "href": "details.html#day-16",
-        "is_current": true,
-        "percent": 66.7,
+        "is_current": false,
+        "percent": 100.0,
         "total": 3
       },
       {
@@ -934,7 +934,7 @@
         "day": 17,
         "done": 0,
         "href": "details.html#day-17",
-        "is_current": false,
+        "is_current": true,
         "percent": 0.0,
         "total": 3
       },
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 65.0
+    "weighted_percent": 66.4
   }
 }
