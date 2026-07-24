@@ -303,13 +303,13 @@
         "total": 6
       },
       {
-        "done": 5,
+        "done": 6,
         "href": "details.html#chapter-CH-07",
         "id": "CH-07",
-        "next_gap": "review",
-        "next_gap_label": "审校",
+        "next_gap": null,
+        "next_gap_label": "已完成",
         "number": 7,
-        "percent": 83.3,
+        "percent": 100.0,
         "question": "如何组合确定性检查、独立测试、模型评审和人工判断，证明 AI 参与的结果正确，而不是把模型自评当证据？",
         "stages": [
           {
@@ -345,8 +345,8 @@
           {
             "label": "审校",
             "name": "review",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           }
         ],
         "title": "验证：把人类检查点变成有效损失函数",
@@ -535,9 +535,9 @@
         "total": 10
       },
       "review": {
-        "done": 6,
+        "done": 7,
         "label": "审校",
-        "percent": 60.0,
+        "percent": 70.0,
         "total": 10
       }
     },
@@ -590,81 +590,45 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T10:20:00Z",
+  "generated_at": "2026-07-24T10:50:00Z",
   "goal": {
     "all_tasks_done": false,
-    "current_day": 21,
-    "days_remaining": 3,
+    "current_day": 22,
+    "days_remaining": 2,
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T10:20:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T102000Z-f98371-working-tree-62a79357c56a.json",
+  "latest_fact_update": "2026-07-24T10:50:00Z",
+  "latest_snapshot": "../progress/snapshots/20260724T105000Z-37e83b-working-tree-54d5cadafee7.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
         }
       ],
       "artifacts": [
         {
-          "path": "planning/reviews/ch-07-writing-review.md",
+          "path": "book/chapters/ch08-operations.md",
           "required": true
         }
       ],
-      "day": 21,
+      "day": 22,
       "dependencies": [
-        "D21-T02"
+        "D21-T03"
       ],
-      "href": "details.html#task-D21-T03",
-      "id": "D21-T03",
+      "href": "details.html#task-D22-T01",
+      "id": "D22-T01",
       "owner": "author",
-      "planned_date": "2026-08-10",
+      "planned_date": "2026-08-11",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-07 · 完成章节审校与证据对齐"
+      "title": "CH-08 · 锁定章节论证骨架"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-78f8b409607ef0e9",
-      "object_id": "D21-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T09:20:00Z",
-      "source_id": "b528626336c4-working-tree-6e82bd7342f2",
-      "summary": "D21-T01 · CH-07 · 锁定章节论证骨架：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-a0c779a02625a23e",
-      "object_id": "CH-07:framework",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T09:50:00Z",
-      "source_id": "881e01e3530a-working-tree-1e8ce983d46b",
-      "summary": "CH-07 · 验证：把人类检查点变成有效损失函数 · 框架：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-d40ffed3c27b505e",
-      "object_id": "CH-07:question",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T09:50:00Z",
-      "source_id": "881e01e3530a-working-tree-1e8ce983d46b",
-      "summary": "CH-07 · 验证：把人类检查点变成有效损失函数 · 问题：pending → done",
-      "type": "chapter_stage_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "done",
@@ -748,14 +712,50 @@
       "source_id": "f660b5f98371-working-tree-62a79357c56a",
       "summary": "D21-T03 · CH-07 · 完成章节审校与证据对齐：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-99c4968e06939bc0",
+      "object_id": "CH-07:review",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T10:50:00Z",
+      "source_id": "0fc69637e83b-working-tree-54d5cadafee7",
+      "summary": "CH-07 · 验证：把人类检查点变成有效损失函数 · 审校：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-ec958f01416b6113",
+      "object_id": "D21-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T10:50:00Z",
+      "source_id": "0fc69637e83b-working-tree-54d5cadafee7",
+      "summary": "D21-T03 · CH-07 · 完成章节审校与证据对齐：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-aea0b5cb811031f2",
+      "object_id": "D22-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T10:50:00Z",
+      "source_id": "0fc69637e83b-working-tree-54d5cadafee7",
+      "summary": "D22-T01 · CH-08 · 锁定章节论证骨架：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "f660b5f98371-working-tree-62a79357c56a",
+  "source_id": "0fc69637e83b-working-tree-54d5cadafee7",
   "tasks": {
-    "done": 62,
-    "percent": 86.1,
+    "done": 63,
+    "percent": 87.5,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 60,
+        "done": 61,
         "has_sample": true,
-        "percent": 85.7,
+        "percent": 87.1,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 9,
+      "backlog": 8,
       "blocked": 0,
-      "done": 62,
+      "done": 63,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -968,10 +968,10 @@
       {
         "blocked": 0,
         "day": 21,
-        "done": 2,
+        "done": 3,
         "href": "details.html#day-21",
-        "is_current": true,
-        "percent": 66.7,
+        "is_current": false,
+        "percent": 100.0,
         "total": 3
       },
       {
@@ -979,7 +979,7 @@
         "day": 22,
         "done": 0,
         "href": "details.html#day-22",
-        "is_current": false,
+        "is_current": true,
         "percent": 0.0,
         "total": 3
       },
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 86.0
+    "weighted_percent": 87.4
   }
 }

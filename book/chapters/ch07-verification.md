@@ -6,8 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-07 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D21-T02 · 完成章节可读稿 |
-| Draft Completeness | 正式十章生产线可读稿；等待 D21-T03 审校与证据对齐 |
+| Writing Sprint Card | D21-T03 · 完成章节审校与证据对齐 |
+| Draft Completeness | 正式十章生产线可读稿；D21-T03 五类审校已完成 |
 | Primary Question | 如何组合确定性检查、独立测试、模型评审和人工判断，证明 AI 参与的结果正确，而不是把模型自评当证据？ |
 | Reader Outcome | 能够按复杂度、可逆性、安全影响和数据风险选择验证强度并建立分层证据链 |
 | Related Experiments | `EXP-07-01`、`EXP-07-02`、`EXP-07-03` |

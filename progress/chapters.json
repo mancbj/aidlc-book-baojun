@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T10:20:00Z",
+  "updated": "2026-07-24T10:50:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -315,7 +315,7 @@
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
       "evidence_links": [
@@ -333,9 +333,11 @@
         "book/chapters/ch07-verification.md#05--example以本书-ci-门禁为例",
         "book/chapters/ch07-verification.md#07--experiment三个验证方向",
         "book/chapters/ch07-verification.md#08--figure分层验证证据链",
-        "tests/test_build_book.py"
+        "tests/test_build_book.py",
+        "progress/tasks.json#D21-T03",
+        "planning/reviews/ch-07-writing-review.md"
       ],
-      "updated": "2026-07-24T10:20:00Z"
+      "updated": "2026-07-24T10:50:00Z"
     },
     {
       "id": "CH-08",

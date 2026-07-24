@@ -302,7 +302,9 @@
             "book/chapters/ch07-verification.md#05--example以本书-ci-门禁为例",
             "book/chapters/ch07-verification.md#07--experiment三个验证方向",
             "book/chapters/ch07-verification.md#08--figure分层验证证据链",
-            "tests/test_build_book.py"
+            "tests/test_build_book.py",
+            "progress/tasks.json#D21-T03",
+            "planning/reviews/ch-07-writing-review.md"
           ],
           "id": "CH-07",
           "number": 7,
@@ -331,11 +333,11 @@
             },
             {
               "name": "review",
-              "status": "pending"
+              "status": "done"
             }
           ],
           "title": "验证：把人类检查点变成有效损失函数",
-          "updated": "2026-07-24T10:20:00Z"
+          "updated": "2026-07-24T10:50:00Z"
         },
         {
           "evidence_links": [],
@@ -444,7 +446,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T10:20:00Z"
+      "updated": "2026-07-24T10:50:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3406,7 +3408,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
             }
           ],
@@ -3429,11 +3431,11 @@
           "phase": "progress",
           "planned_date": "2026-08-10",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-07 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T10:20:00Z"
+          "updated": "2026-07-24T10:50:00Z"
         },
         {
           "acceptance": [
@@ -3461,11 +3463,11 @@
           "phase": "progress",
           "planned_date": "2026-08-11",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-08 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T10:50:00Z"
         },
         {
           "acceptance": [
@@ -3724,9 +3726,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T10:20:00Z"
+      "updated": "2026-07-24T10:50:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "f660b5f98371-working-tree-62a79357c56a"
+  "source_id": "0fc69637e83b-working-tree-54d5cadafee7"
 }
