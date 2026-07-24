@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "version": "v0.2",
+  "html_required": true,
+  "pdf_required": true,
+  "minimum_chapters": 10,
+  "sample_chapter": "book/chapters/sample.md",
+  "sample_minimum_characters": 1500,
+  "core_figure": "book/images/fig0-1.svg",
+  "sample_review": "planning/reviews/sample-chapter.md",
+  "learning_guide": "docs/LEARNING.md",
+  "reader_guide": "docs/READER-GUIDE.md",
+  "feedback_template": "planning/feedback-template.md",
+  "feedback_facts": "feedback/decisions.json",
+  "validated_experiment_statuses": ["verified"],
+  "required_review_categories": [
+    "技术正确性与过度承诺",
+    "重复内容与概念边界",
+    "结构连贯性与读者路径",
+    "术语一致性",
+    "正文与实验/图/练习对应"
+  ],
+  "placeholder_markers": ["待填写", "CH-NN", "DNN-TNN", "Lorem ipsum", "TODO"],
+  "next_version": "v0.3-draft",
+  "notes": "v0.2 readable release：十章正式生产线可读稿与审校完成；保留 Reader 回复 known-gap。"
+}

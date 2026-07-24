@@ -12,28 +12,48 @@ from typing import Optional, Sequence
 def render(root: Path, readiness: dict) -> str:
     current = json.loads((root / "progress/generated/current.json").read_text(encoding="utf-8"))
     experiments = json.loads((root / "progress/experiments.json").read_text(encoding="utf-8"))["experiments"]
+    chapters = json.loads((root / "progress/chapters.json").read_text(encoding="utf-8"))["chapters"]
     triage = {name: sum(item["triage"] == name for item in experiments) for name in ("SHIP", "KEEP-EXT", "ALREADY")}
     gaps = readiness.get("gaps", [])
     gap_lines = [f"- **{item['priority']} · {item['code']}** — `{item['object']}`：{item['fix']}" for item in gaps]
     if not gap_lines:
         gap_lines = ["- 无发布阻断缺口。"]
+    version = str(readiness.get("version", "v0.1"))
+    done_chapters = sum(
+        1
+        for chapter in chapters
+        if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
+    )
+    if version.startswith("v0.2"):
+        highlights = [
+            "- 正式十章生产线可读稿与五类审校全部完成（CH-01～CH-10）。",
+            "- CH-08 Operations、CH-09 适配性工程、CH-10 组织与度量闭合交付闭环到规模化。",
+            "- 进度事实源、事件、快照与驾驶舱同步到十章完成状态。",
+            "- 书稿 HTML / PDF 与 Pages 候选一并进入 Release 资产。",
+        ]
+        next_goal = "v0.3 draft：推进 planned 实验实现、独立章节 SVG，并消化 Reader 反馈缺口。"
+    else:
+        highlights = [
+            "- GitHub 原生写作事实、进度、事件、快照和鸟瞰驾驶舱。",
+            "- Issue/PR、CI、Pages、Release 与 Projects 自动化入口。",
+            "- 五类审校、反馈决策、发布门禁和下一周期机制。",
+        ]
+        next_goal = "v0.2 draft 保持每周一节、一次实验、一次构建/审校和每月可读 Release；只有真实 v0.1 published receipt 后才激活。"
     return "\n".join(
         [
-            f"# {readiness['version']} Release Notes Candidate",
+            f"# {version} Release Notes Candidate",
             "",
             f"> Readiness: **{readiness['status'].upper()}** · Source `{readiness['source_id']}` · Generated `{readiness['generated_at']}`",
             "",
             "## 新增内容",
             "",
-            "- GitHub 原生写作事实、进度、事件、快照和鸟瞰驾驶舱。",
-            "- Issue/PR、CI、Pages、Release 与 Projects 自动化入口。",
-            "- 五类审校、反馈决策、发布门禁和下一周期机制。",
+            *highlights,
             "",
             "## 关键指标",
             "",
             f"- 任务：{current['tasks']['done']}/{current['tasks']['total']}（{current['tasks']['percent']:.1f}%）",
             f"- Must：{current['tasks']['priority']['must']['done']}/{current['tasks']['priority']['must']['total']}",
-            f"- 章节：{current['chapters']['total']}",
+            f"- 章节：{done_chapters}/{current['chapters']['total']} 六阶段完成",
             f"- 实验：SHIP {triage['SHIP']} · KEEP-EXT {triage['KEEP-EXT']} · ALREADY {triage['ALREADY']}",
             "",
             "## 已知缺口",
@@ -43,14 +63,15 @@ def render(root: Path, readiness: dict) -> str:
             "## 产物与来源",
             "",
             f"- Source commit/fingerprint：`{readiness['source_id']}`",
-            "- HTML：候选 manifest 生成后填写文件名和 SHA-256。",
+            "- Pages HTML zip：候选 manifest 生成后填写文件名和 SHA-256。",
+            "- 书稿 HTML：通过 `--book-html` 纳入时记录文件名和 SHA-256。",
             "- PDF：条件式；缺少经过验证的 PDF 时明确 skipped，不创建占位文件。",
             "- 驾驶舱：`site/index.html`",
             "- 反馈：`planning/feedback-template.md` 或 GitHub Feedback Issue Form",
             "",
             "## 下一版本目标",
             "",
-            "v0.2 draft 保持每周一节、一次实验、一次构建/审校和每月可读 Release；只有真实 v0.1 published receipt 后才激活。",
+            next_goal,
             "",
         ]
     )
