@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T13:35:07Z",
+  "updated": "2026-07-24T13:35:57Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -421,7 +421,7 @@
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
       "evidence_links": [
@@ -433,9 +433,11 @@
         "progress/tasks.json#D23-T02",
         "book/chapters/ch09-adaptive-engineering.md#04--example三类任务的-flow-对照与-swap-test",
         "book/chapters/ch09-adaptive-engineering.md#06--experiment三个验证方向",
-        "book/chapters/ch09-adaptive-engineering.md#07--figure风险—仪式矩阵"
+        "book/chapters/ch09-adaptive-engineering.md#07--figure风险—仪式矩阵",
+        "planning/reviews/ch-09-writing-review.md",
+        "progress/tasks.json#D23-T03"
       ],
-      "updated": "2026-07-24T13:35:07Z"
+      "updated": "2026-07-24T13:35:57Z"
     },
     {
       "id": "CH-10",

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "memory-bank/intents/001-github-writing-system/execution-roadmap.md",
-  "updated": "2026-07-24T13:35:07Z",
+  "updated": "2026-07-24T13:35:57Z",
   "tasks": [
     {
       "id": "D01-T01",
@@ -2074,7 +2074,7 @@
       "type": "writing",
       "card": "review",
       "chapter": "CH-09",
-      "status": "ready",
+      "status": "done",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -2083,7 +2083,7 @@
       "acceptance": [
         {
           "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接",
-          "passed": false
+          "passed": true
         }
       ],
       "artifacts": [
@@ -2095,7 +2095,7 @@
       "notes": "每日一章写作冲刺：适配性工程：选择正确的 Flow 与治理强度 的 完成章节审校与证据对齐 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-24T13:35:07Z"
+      "updated": "2026-07-24T13:35:57Z"
     },
     {
       "id": "D24-T01",
@@ -2106,7 +2106,7 @@
       "type": "writing",
       "card": "outline",
       "chapter": "CH-10",
-      "status": "backlog",
+      "status": "ready",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -2127,7 +2127,7 @@
       "notes": "每日一章写作冲刺：组织与度量：从 Agent 分工到研发操作系统 的 锁定章节论证骨架 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-23T09:00:00Z"
+      "updated": "2026-07-24T13:35:57Z"
     },
     {
       "id": "D24-T02",

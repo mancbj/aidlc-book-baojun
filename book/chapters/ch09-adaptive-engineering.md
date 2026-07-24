@@ -6,8 +6,8 @@
 |-------|-------|
 | Chapter ID | CH-09 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D23-T02 · 完成章节可读稿 |
-| Draft Completeness | 正式十章生产线可读稿；等待 D23-T03 审校与证据对齐 |
+| Writing Sprint Card | D23-T03 · 完成章节审校与证据对齐 |
+| Draft Completeness | 正式十章生产线可读稿；D23-T03 五类审校已完成 |
 | Primary Question | 如何根据任务复杂度、代码库现状、监管要求和团队规模，在 Simple、FIRE 与 AI-DLC 之间选择，而不过度或不足工程化？ |
 | Reader Outcome | 能够使用风险—仪式矩阵选择 Flow、检查点数量与运行范围，并解释选择代价 |
 | Related Experiments | `EXP-09-01`、`EXP-09-02`、`EXP-09-03` |

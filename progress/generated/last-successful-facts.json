@@ -402,7 +402,9 @@
             "progress/tasks.json#D23-T02",
             "book/chapters/ch09-adaptive-engineering.md#04--example三类任务的-flow-对照与-swap-test",
             "book/chapters/ch09-adaptive-engineering.md#06--experiment三个验证方向",
-            "book/chapters/ch09-adaptive-engineering.md#07--figure风险—仪式矩阵"
+            "book/chapters/ch09-adaptive-engineering.md#07--figure风险—仪式矩阵",
+            "planning/reviews/ch-09-writing-review.md",
+            "progress/tasks.json#D23-T03"
           ],
           "id": "CH-09",
           "number": 9,
@@ -431,11 +433,11 @@
             },
             {
               "name": "review",
-              "status": "pending"
+              "status": "done"
             }
           ],
           "title": "适配性工程：选择正确的 Flow 与治理强度",
-          "updated": "2026-07-24T13:35:07Z"
+          "updated": "2026-07-24T13:35:57Z"
         },
         {
           "evidence_links": [],
@@ -474,7 +476,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T13:35:07Z"
+      "updated": "2026-07-24T13:35:57Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3628,7 +3630,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
             }
           ],
@@ -3651,11 +3653,11 @@
           "phase": "progress",
           "planned_date": "2026-08-12",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-09 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T13:35:07Z"
+          "updated": "2026-07-24T13:35:57Z"
         },
         {
           "acceptance": [
@@ -3683,11 +3685,11 @@
           "phase": "progress",
           "planned_date": "2026-08-13",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-10 · 锁定章节论证骨架",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T13:35:57Z"
         },
         {
           "acceptance": [
@@ -3754,9 +3756,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T13:35:07Z"
+      "updated": "2026-07-24T13:35:57Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "edaac8aeca94-working-tree-1f9d2304afc7"
+  "source_id": "3d1db5e83ff4-working-tree-2e5ddccccd33"
 }

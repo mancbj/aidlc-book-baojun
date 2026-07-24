@@ -814,3 +814,11 @@
 - **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 图示：pending → done (`EVT-0b1b0d42e4075a6b`)
 - **task_status_changed** · D23-T02 · CH-09 · 完成章节可读稿：ready → done (`EVT-1e23a21822554347`)
 - **task_status_changed** · D23-T03 · CH-09 · 完成章节审校与证据对齐：backlog → ready (`EVT-915f24c8d98e81ef`)
+
+## 2026-07-24T13:36:01Z · `3d1db5e83ff4-working-tree-2e5ddccccd33`
+
+快照：[`20260724T133601Z-e83ff4-working-tree-2e5ddccccd33.json`](snapshots/20260724T133601Z-e83ff4-working-tree-2e5ddccccd33.json)
+
+- **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 审校：pending → done (`EVT-ffa1f8997416f11d`)
+- **task_status_changed** · D23-T03 · CH-09 · 完成章节审校与证据对齐：ready → done (`EVT-4bca3aebeed899d9`)
+- **task_status_changed** · D24-T01 · CH-10 · 锁定章节论证骨架：backlog → ready (`EVT-836738c7e3177730`)

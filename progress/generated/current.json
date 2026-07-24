@@ -403,13 +403,13 @@
         "total": 6
       },
       {
-        "done": 5,
+        "done": 6,
         "href": "details.html#chapter-CH-09",
         "id": "CH-09",
-        "next_gap": "review",
-        "next_gap_label": "审校",
+        "next_gap": null,
+        "next_gap_label": "已完成",
         "number": 9,
-        "percent": 83.3,
+        "percent": 100.0,
         "question": "如何根据任务复杂度、代码库现状、监管要求和团队规模，在 Simple、FIRE 与 AI-DLC 之间选择，而不过度或不足工程化？",
         "stages": [
           {
@@ -445,8 +445,8 @@
           {
             "label": "审校",
             "name": "review",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           }
         ],
         "title": "适配性工程：选择正确的 Flow 与治理强度",
@@ -535,9 +535,9 @@
         "total": 10
       },
       "review": {
-        "done": 8,
+        "done": 9,
         "label": "审校",
-        "percent": 80.0,
+        "percent": 90.0,
         "total": 10
       }
     },
@@ -590,81 +590,45 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T13:35:10Z",
+  "generated_at": "2026-07-24T13:36:01Z",
   "goal": {
     "all_tasks_done": false,
-    "current_day": 23,
-    "days_remaining": 1,
+    "current_day": 24,
+    "days_remaining": 0,
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T13:35:07Z",
-  "latest_snapshot": "../progress/snapshots/20260724T133510Z-aeca94-working-tree-1f9d2304afc7.json",
+  "latest_fact_update": "2026-07-24T13:35:57Z",
+  "latest_snapshot": "../progress/snapshots/20260724T133601Z-e83ff4-working-tree-2e5ddccccd33.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
+          "text": "章节核心问题、读者结果、三段论证骨架已写入章节稿或提纲"
         }
       ],
       "artifacts": [
         {
-          "path": "planning/reviews/ch-09-writing-review.md",
+          "path": "book/chapters/ch10-organization-metrics.md",
           "required": true
         }
       ],
-      "day": 23,
+      "day": 24,
       "dependencies": [
-        "D23-T02"
+        "D23-T03"
       ],
-      "href": "details.html#task-D23-T03",
-      "id": "D23-T03",
+      "href": "details.html#task-D24-T01",
+      "id": "D24-T01",
       "owner": "author",
-      "planned_date": "2026-08-12",
+      "planned_date": "2026-08-13",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-09 · 完成章节审校与证据对齐"
+      "title": "CH-10 · 锁定章节论证骨架"
     }
   ],
   "recent_events": [
-    {
-      "actor": "ubuntu",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-4b268ea2b94cf154",
-      "object_id": "D23-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:25:13Z",
-      "source_id": "aae4fb4d21a3-working-tree-9543d484106c",
-      "summary": "D23-T01 · CH-09 · 锁定章节论证骨架：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-22bccd2c7dce08e0",
-      "object_id": "CH-09:framework",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:30:30Z",
-      "source_id": "e36b75fcc217-working-tree-5ac95c82aa4a",
-      "summary": "CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 框架：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-4b894778a418c5cb",
-      "object_id": "CH-09:question",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:30:30Z",
-      "source_id": "e36b75fcc217-working-tree-5ac95c82aa4a",
-      "summary": "CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 问题：pending → done",
-      "type": "chapter_stage_changed"
-    },
     {
       "actor": "ubuntu",
       "after": "done",
@@ -748,14 +712,50 @@
       "source_id": "edaac8aeca94-working-tree-1f9d2304afc7",
       "summary": "D23-T03 · CH-09 · 完成章节审校与证据对齐：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-ffa1f8997416f11d",
+      "object_id": "CH-09:review",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T13:36:01Z",
+      "source_id": "3d1db5e83ff4-working-tree-2e5ddccccd33",
+      "summary": "CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 审校：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-4bca3aebeed899d9",
+      "object_id": "D23-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T13:36:01Z",
+      "source_id": "3d1db5e83ff4-working-tree-2e5ddccccd33",
+      "summary": "D23-T03 · CH-09 · 完成章节审校与证据对齐：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "ubuntu",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-836738c7e3177730",
+      "object_id": "D24-T01",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T13:36:01Z",
+      "source_id": "3d1db5e83ff4-working-tree-2e5ddccccd33",
+      "summary": "D24-T01 · CH-10 · 锁定章节论证骨架：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "edaac8aeca94-working-tree-1f9d2304afc7",
+  "source_id": "3d1db5e83ff4-working-tree-2e5ddccccd33",
   "tasks": {
-    "done": 68,
-    "percent": 94.4,
+    "done": 69,
+    "percent": 95.8,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 66,
+        "done": 67,
         "has_sample": true,
-        "percent": 94.3,
+        "percent": 95.7,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 3,
+      "backlog": 2,
       "blocked": 0,
-      "done": 68,
+      "done": 69,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -986,10 +986,10 @@
       {
         "blocked": 0,
         "day": 23,
-        "done": 2,
+        "done": 3,
         "href": "details.html#day-23",
-        "is_current": true,
-        "percent": 66.7,
+        "is_current": false,
+        "percent": 100.0,
         "total": 3
       },
       {
@@ -997,12 +997,12 @@
         "day": 24,
         "done": 0,
         "href": "details.html#day-24",
-        "is_current": false,
+        "is_current": true,
         "percent": 0.0,
         "total": 3
       }
     ],
     "total": 72,
-    "weighted_percent": 94.4
+    "weighted_percent": 95.8
   }
 }
