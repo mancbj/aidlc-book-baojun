@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "memory-bank/intents/001-github-writing-system/execution-roadmap.md",
-  "updated": "2026-07-24T09:50:00Z",
+  "updated": "2026-07-24T10:20:00Z",
   "tasks": [
     {
       "id": "D01-T01",
@@ -1850,7 +1850,7 @@
       "type": "writing",
       "card": "draft",
       "chapter": "CH-07",
-      "status": "ready",
+      "status": "done",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1859,7 +1859,7 @@
       "acceptance": [
         {
           "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习",
-          "passed": false
+          "passed": true
         }
       ],
       "artifacts": [
@@ -1871,7 +1871,7 @@
       "notes": "每日一章写作冲刺：验证：把人类检查点变成有效损失函数 的 完成章节可读稿 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-24T09:50:00Z"
+      "updated": "2026-07-24T10:20:00Z"
     },
     {
       "id": "D21-T03",
@@ -1882,7 +1882,7 @@
       "type": "writing",
       "card": "review",
       "chapter": "CH-07",
-      "status": "backlog",
+      "status": "ready",
       "priority": "must",
       "owner": "author",
       "dependencies": [
@@ -1903,7 +1903,7 @@
       "notes": "每日一章写作冲刺：验证：把人类检查点变成有效损失函数 的 完成章节审校与证据对齐 卡片。",
       "blocker_reason": "",
       "unblock_action": "",
-      "updated": "2026-07-23T09:00:00Z"
+      "updated": "2026-07-24T10:20:00Z"
     },
     {
       "id": "D22-T01",

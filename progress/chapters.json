@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T09:50:00Z",
+  "updated": "2026-07-24T10:20:00Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -303,15 +303,15 @@
         },
         {
           "name": "example",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "experiment",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "figure",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "review",
@@ -328,9 +328,14 @@
         "scripts/check_internal_links.py",
         "progress/experiments.json#EXP-07-01",
         "progress/experiments.json#EXP-07-02",
-        "progress/experiments.json#EXP-07-03"
+        "progress/experiments.json#EXP-07-03",
+        "progress/tasks.json#D21-T02",
+        "book/chapters/ch07-verification.md#05--example以本书-ci-门禁为例",
+        "book/chapters/ch07-verification.md#07--experiment三个验证方向",
+        "book/chapters/ch07-verification.md#08--figure分层验证证据链",
+        "tests/test_build_book.py"
       ],
-      "updated": "2026-07-24T09:50:00Z"
+      "updated": "2026-07-24T10:20:00Z"
     },
     {
       "id": "CH-08",

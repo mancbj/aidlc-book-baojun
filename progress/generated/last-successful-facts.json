@@ -297,7 +297,12 @@
             "scripts/check_internal_links.py",
             "progress/experiments.json#EXP-07-01",
             "progress/experiments.json#EXP-07-02",
-            "progress/experiments.json#EXP-07-03"
+            "progress/experiments.json#EXP-07-03",
+            "progress/tasks.json#D21-T02",
+            "book/chapters/ch07-verification.md#05--example以本书-ci-门禁为例",
+            "book/chapters/ch07-verification.md#07--experiment三个验证方向",
+            "book/chapters/ch07-verification.md#08--figure分层验证证据链",
+            "tests/test_build_book.py"
           ],
           "id": "CH-07",
           "number": 7,
@@ -314,15 +319,15 @@
             },
             {
               "name": "example",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "experiment",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "figure",
-              "status": "pending"
+              "status": "done"
             },
             {
               "name": "review",
@@ -330,7 +335,7 @@
             }
           ],
           "title": "验证：把人类检查点变成有效损失函数",
-          "updated": "2026-07-24T09:50:00Z"
+          "updated": "2026-07-24T10:20:00Z"
         },
         {
           "evidence_links": [],
@@ -439,7 +444,7 @@
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-24T09:50:00Z"
+      "updated": "2026-07-24T10:20:00Z"
     },
     "cycles": {
       "active_cycle": null,
@@ -3369,7 +3374,7 @@
         {
           "acceptance": [
             {
-              "passed": false,
+              "passed": true,
               "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
             }
           ],
@@ -3392,11 +3397,11 @@
           "phase": "progress",
           "planned_date": "2026-08-10",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "title": "CH-07 · 完成章节可读稿",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-24T09:50:00Z"
+          "updated": "2026-07-24T10:20:00Z"
         },
         {
           "acceptance": [
@@ -3424,11 +3429,11 @@
           "phase": "progress",
           "planned_date": "2026-08-10",
           "priority": "must",
-          "status": "backlog",
+          "status": "ready",
           "title": "CH-07 · 完成章节审校与证据对齐",
           "type": "writing",
           "unblock_action": "",
-          "updated": "2026-07-23T09:00:00Z"
+          "updated": "2026-07-24T10:20:00Z"
         },
         {
           "acceptance": [
@@ -3719,9 +3724,9 @@
           "updated": "2026-07-23T09:00:00Z"
         }
       ],
-      "updated": "2026-07-24T09:50:00Z"
+      "updated": "2026-07-24T10:20:00Z"
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "881e01e3530a-working-tree-1e8ce983d46b"
+  "source_id": "f660b5f98371-working-tree-62a79357c56a"
 }

@@ -750,3 +750,13 @@
 - **chapter_stage_changed** · CH-07 · 验证：把人类检查点变成有效损失函数 · 问题：pending → done (`EVT-d40ffed3c27b505e`)
 - **task_status_changed** · D21-T01 · CH-07 · 锁定章节论证骨架：ready → done (`EVT-4cfa65d993ad4c04`)
 - **task_status_changed** · D21-T02 · CH-07 · 完成章节可读稿：backlog → ready (`EVT-96903dd564c88c3c`)
+
+## 2026-07-24T10:20:00Z · `f660b5f98371-working-tree-62a79357c56a`
+
+快照：[`20260724T102000Z-f98371-working-tree-62a79357c56a.json`](snapshots/20260724T102000Z-f98371-working-tree-62a79357c56a.json)
+
+- **chapter_stage_changed** · CH-07 · 验证：把人类检查点变成有效损失函数 · 案例：pending → done (`EVT-202205db56a6f05c`)
+- **chapter_stage_changed** · CH-07 · 验证：把人类检查点变成有效损失函数 · 实验：pending → done (`EVT-89bbb46eb46ffdf0`)
+- **chapter_stage_changed** · CH-07 · 验证：把人类检查点变成有效损失函数 · 图示：pending → done (`EVT-018dcf8cbaaef669`)
+- **task_status_changed** · D21-T02 · CH-07 · 完成章节可读稿：ready → done (`EVT-1042a7fd7f03bc22`)
+- **task_status_changed** · D21-T03 · CH-07 · 完成章节审校与证据对齐：backlog → ready (`EVT-9dcd3dd22886045f`)

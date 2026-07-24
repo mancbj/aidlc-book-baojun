@@ -303,13 +303,13 @@
         "total": 6
       },
       {
-        "done": 2,
+        "done": 5,
         "href": "details.html#chapter-CH-07",
         "id": "CH-07",
-        "next_gap": "example",
-        "next_gap_label": "案例",
+        "next_gap": "review",
+        "next_gap_label": "审校",
         "number": 7,
-        "percent": 33.3,
+        "percent": 83.3,
         "question": "如何组合确定性检查、独立测试、模型评审和人工判断，证明 AI 参与的结果正确，而不是把模型自评当证据？",
         "stages": [
           {
@@ -327,20 +327,20 @@
           {
             "label": "案例",
             "name": "example",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "实验",
             "name": "experiment",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "图示",
             "name": "figure",
-            "status": "pending",
-            "status_label": "待开始"
+            "status": "done",
+            "status_label": "已完成"
           },
           {
             "label": "审校",
@@ -505,21 +505,21 @@
     ],
     "stage_totals": {
       "example": {
-        "done": 6,
+        "done": 7,
         "label": "案例",
-        "percent": 60.0,
+        "percent": 70.0,
         "total": 10
       },
       "experiment": {
-        "done": 6,
+        "done": 7,
         "label": "实验",
-        "percent": 60.0,
+        "percent": 70.0,
         "total": 10
       },
       "figure": {
-        "done": 6,
+        "done": 7,
         "label": "图示",
-        "percent": 60.0,
+        "percent": 70.0,
         "total": 10
       },
       "framework": {
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T09:50:00Z",
+  "generated_at": "2026-07-24T10:20:00Z",
   "goal": {
     "all_tasks_done": false,
     "current_day": 21,
@@ -598,97 +598,37 @@
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T09:50:00Z",
-  "latest_snapshot": "../progress/snapshots/20260724T095000Z-e3530a-working-tree-1e8ce983d46b.json",
+  "latest_fact_update": "2026-07-24T10:20:00Z",
+  "latest_snapshot": "../progress/snapshots/20260724T102000Z-f98371-working-tree-62a79357c56a.json",
   "next_actions": [
     {
       "acceptance": [
         {
           "passed": false,
-          "text": "章节正文覆盖问题、框架、例子、实验/图入口和读者练习"
+          "text": "审校记录覆盖技术正确性、结构连贯性、术语一致性和证据链接"
         }
       ],
       "artifacts": [
         {
-          "path": "book/chapters/ch07-verification.md",
+          "path": "planning/reviews/ch-07-writing-review.md",
           "required": true
         }
       ],
       "day": 21,
       "dependencies": [
-        "D21-T01"
+        "D21-T02"
       ],
-      "href": "details.html#task-D21-T02",
-      "id": "D21-T02",
+      "href": "details.html#task-D21-T03",
+      "id": "D21-T03",
       "owner": "author",
       "planned_date": "2026-08-10",
       "priority": "must",
       "status": "ready",
       "status_label": "可开始",
-      "title": "CH-07 · 完成章节可读稿"
+      "title": "CH-07 · 完成章节审校与证据对齐"
     }
   ],
   "recent_events": [
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-df942f44559d1361",
-      "object_id": "CH-06:figure",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T08:50:00Z",
-      "source_id": "8d5aaf301947-working-tree-a4ecba522c46",
-      "summary": "CH-06 · Exsecutio：把提议贯彻为交付候选 · 图示：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-940d398be6c6c7b5",
-      "object_id": "D20-T02",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T08:50:00Z",
-      "source_id": "8d5aaf301947-working-tree-a4ecba522c46",
-      "summary": "D20-T02 · CH-06 · 完成章节可读稿：ready → done",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-7d37a9229730bd4d",
-      "object_id": "D20-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T08:50:00Z",
-      "source_id": "8d5aaf301947-working-tree-a4ecba522c46",
-      "summary": "D20-T03 · CH-06 · 完成章节审校与证据对齐：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-947d5e2fd2349113",
-      "object_id": "CH-06:review",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T09:20:00Z",
-      "source_id": "b528626336c4-working-tree-6e82bd7342f2",
-      "summary": "CH-06 · Exsecutio：把提议贯彻为交付候选 · 审校：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "chenbaojun",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-59a6f032b1072c00",
-      "object_id": "D20-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T09:20:00Z",
-      "source_id": "b528626336c4-working-tree-6e82bd7342f2",
-      "summary": "D20-T03 · CH-06 · 完成章节审校与证据对齐：ready → done",
-      "type": "task_status_changed"
-    },
     {
       "actor": "chenbaojun",
       "after": "ready",
@@ -748,14 +688,74 @@
       "source_id": "881e01e3530a-working-tree-1e8ce983d46b",
       "summary": "D21-T02 · CH-07 · 完成章节可读稿：backlog → ready",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-202205db56a6f05c",
+      "object_id": "CH-07:example",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T10:20:00Z",
+      "source_id": "f660b5f98371-working-tree-62a79357c56a",
+      "summary": "CH-07 · 验证：把人类检查点变成有效损失函数 · 案例：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-89bbb46eb46ffdf0",
+      "object_id": "CH-07:experiment",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T10:20:00Z",
+      "source_id": "f660b5f98371-working-tree-62a79357c56a",
+      "summary": "CH-07 · 验证：把人类检查点变成有效损失函数 · 实验：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "pending",
+      "id": "EVT-018dcf8cbaaef669",
+      "object_id": "CH-07:figure",
+      "object_type": "chapter_stage",
+      "occurred_at": "2026-07-24T10:20:00Z",
+      "source_id": "f660b5f98371-working-tree-62a79357c56a",
+      "summary": "CH-07 · 验证：把人类检查点变成有效损失函数 · 图示：pending → done",
+      "type": "chapter_stage_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "done",
+      "before": "ready",
+      "id": "EVT-1042a7fd7f03bc22",
+      "object_id": "D21-T02",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T10:20:00Z",
+      "source_id": "f660b5f98371-working-tree-62a79357c56a",
+      "summary": "D21-T02 · CH-07 · 完成章节可读稿：ready → done",
+      "type": "task_status_changed"
+    },
+    {
+      "actor": "chenbaojun",
+      "after": "ready",
+      "before": "backlog",
+      "id": "EVT-9dcd3dd22886045f",
+      "object_id": "D21-T03",
+      "object_type": "task",
+      "occurred_at": "2026-07-24T10:20:00Z",
+      "source_id": "f660b5f98371-working-tree-62a79357c56a",
+      "summary": "D21-T03 · CH-07 · 完成章节审校与证据对齐：backlog → ready",
+      "type": "task_status_changed"
     }
   ],
   "release_message": "",
   "schema_version": "1.0.0",
-  "source_id": "881e01e3530a-working-tree-1e8ce983d46b",
+  "source_id": "f660b5f98371-working-tree-62a79357c56a",
   "tasks": {
-    "done": 61,
-    "percent": 84.7,
+    "done": 62,
+    "percent": 86.1,
     "priority": {
       "could": {
         "done": 0,
@@ -764,9 +764,9 @@
         "total": 0
       },
       "must": {
-        "done": 59,
+        "done": 60,
         "has_sample": true,
-        "percent": 84.3,
+        "percent": 85.7,
         "total": 70
       },
       "should": {
@@ -777,9 +777,9 @@
       }
     },
     "status_counts": {
-      "backlog": 10,
+      "backlog": 9,
       "blocked": 0,
-      "done": 61,
+      "done": 62,
       "in-progress": 0,
       "ready": 1,
       "review": 0
@@ -968,10 +968,10 @@
       {
         "blocked": 0,
         "day": 21,
-        "done": 1,
+        "done": 2,
         "href": "details.html#day-21",
         "is_current": true,
-        "percent": 33.3,
+        "percent": 66.7,
         "total": 3
       },
       {
@@ -1003,6 +1003,6 @@
       }
     ],
     "total": 72,
-    "weighted_percent": 84.6
+    "weighted_percent": 86.0
   }
 }
