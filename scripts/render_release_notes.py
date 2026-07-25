@@ -24,7 +24,15 @@ def render(root: Path, readiness: dict) -> str:
         for chapter in chapters
         if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
     )
-    if version.startswith("v0.8.003"):
+    if version.startswith("v0.8.004"):
+        highlights = [
+            "- PDF 封面改为按 A4 页面高度铺满、水平居中裁切，消除底部白带。",
+            "- 公式等号后 `𝓔（人的判断 + AI 能力）` 提升到主公式同级字号，并按共同视觉中线对齐。",
+            "- 保持实验 verified=30/30 与既有术语/证据边界，不覆盖已发布 v0.8.003 资产。",
+            "- Reader 无真实回复时继续保留 `READER-RESPONSES` known-gap。",
+        ]
+        next_goal = "v0.8.005：消化真实 Reader 反馈，或开启新内容周期。"
+    elif version.startswith("v0.8.003"):
         highlights = [
             "- 驾驶舱与进度投影同步到实验 verified=30/30，并激活 `v0.8.003-draft` 维护周期。",
             "- patch-grain 文档对齐：`VERSIONING.md`、`docs/RELEASE-AUTOMATION.md`、`releases/README.md`。",
