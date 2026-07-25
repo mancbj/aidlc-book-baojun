@@ -44,5 +44,5 @@ AI-DLC 的目标不是“生成得更快”，而是“更快地交付正确”�
 - 文字来源：作者提供的 `深入理解AI-DLC_书籍封面与概要介绍.html`。
 - HTML SHA-256：`70cb33ff2acae776eec35a68ead34bc9941a37512b9a08fde37ca597db5392f4`。
 - 封面归档：[images/cover.png](images/cover.png)。
-- 封面 SHA-256：`017a80a5f8a46b9e7e50e4087bd0b6012dc38990c336b107d4947dc30a00883e`。
+- 封面 SHA-256：`3f65e3994f0369d6570171e8fdddd761217719edc23dde63e2a2b2e087af09ac`。
 - 纳入时间：`2026-07-22T03:51:07Z`。

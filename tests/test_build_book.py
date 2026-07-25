@@ -19,6 +19,17 @@ HAS_MERMAID = shutil.which("mmdc") is not None
 HAS_TECTONIC = shutil.which("tectonic") is not None
 
 
+class CoverLayoutContractTest(unittest.TestCase):
+    def test_pdf_cover_fills_page_by_height_without_forced_width(self):
+        source = (REPO_ROOT / "scripts/build_book.py").read_text(encoding="utf-8")
+        cover = source.split('PDF_FULL_PAGE_COVER = r"""', 1)[1].split('"""', 1)[0]
+
+        self.assertIn(r"width=0.75\paperheight,height=\paperheight", cover)
+        self.assertIn("keepaspectratio=false", cover)
+        self.assertIn(r"\AtPageLowerLeft", cover)
+        self.assertNotIn(r"width=\paperwidth,height=\paperheight", cover)
+
+
 class CandidateParser(HTMLParser):
     def __init__(self):
         super().__init__()

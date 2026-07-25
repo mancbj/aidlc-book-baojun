@@ -65,7 +65,8 @@ MERMAID_BLOCK = re.compile(r"^```mermaid[^\n]*\n(.*?)^```[ \t]*$", re.MULTILINE 
 COVER_MARKDOWN = "![《深入理解 AI-DLC》书籍封面](images/cover.png){.book-cover width=42%}"
 PDF_FULL_PAGE_COVER = r"""\newgeometry{margin=0pt}
 \thispagestyle{empty}
-\noindent\makebox[\paperwidth][c]{\includegraphics[width=\paperwidth,height=\paperheight]{\detokenize{__PDF_COVER_PATH__}}}
+\AddToShipoutPictureBG*{\AtPageLowerLeft{\makebox[\paperwidth][c]{\includegraphics[width=0.75\paperheight,height=\paperheight,keepaspectratio=false]{\detokenize{__PDF_COVER_PATH__}}}}}
+\null
 \clearpage
 \restoregeometry"""
 
