@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.3",
+  "publish_threshold": 92,
+  "weights": {
+    "content": 50,
+    "html": 25,
+    "pdf": 25
+  },
+  "hard_gates": [
+    "ci_check_pass",
+    "internal_links_errors_zero",
+    "no_release_meta_leak",
+    "pdf_no_missing_glyphs",
+    "pdf_fonts_embedded",
+    "exsecutio_spelling_preserved",
+    "ten_chapters_present"
+  ],
+  "baseline_commit": "577fec6",
+  "current_round": "00",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "baseline",
+      "decision": "KEEP",
+      "content": 18,
+      "html": 12,
+      "pdf": 13,
+      "total": 43,
+      "notes": "基线 HTML/PDF 均大量泄漏 Metadata、Writing Sprint Card、Gate、Review Notes 与生产验收段；字体已嵌入，112 页 A4。"
+    }
+  ]
+}
