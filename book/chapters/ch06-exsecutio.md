@@ -274,12 +274,10 @@ Plan 在这里扮演了两个角色：它给 AI 一个清晰任务边界，也�
 本章实验入口包括三项：
 
 - `EXP-06-01 · Plan–Walkthrough 偏差审计器`：比较 Implementation Plan、代码变更与 Walkthrough，生成计划项、实际变更与未声明偏差表。运行：`python3 experiments/exp-06-01/quickstart.py --sample`。
-- `EXP-06-02 · 失败—修复—复测闭环记录器`：根据失败日志、修复提交和测试结果，生成按时间排序的修复证据链。
+- `EXP-06-02 · 失败—修复—复测闭环记录器`：根据失败日志、修复提交和测试结果，生成按时间排序的修复证据链。运行：`python3 experiments/exp-06-02/quickstart.py --sample`。
 - `EXP-06-03 · 端到端 Bolt 执行复现`：参考官方 Bolt 教程与示例 Story，复现从计划到测试报告的完整 Bolt 工件。
 
-其中 `EXP-06-01` 已 verified：样例报告在 `experiments/exp-06-01/output/sample.json`。它证明计划、实际变更和 Walkthrough 可以被对齐审计；未声明变更计为 deviation，不自动视为错误。`EXP-06-02` 与 `EXP-06-03` 仍为 `planned`，不得写成已验证结论。
-
-三项实验分别服务于本章的三个弱点。
+其中 `EXP-06-01` 与 `EXP-06-02` 已 verified。`EXP-06-01` 样例在 `experiments/exp-06-01/output/sample.json`，证明计划、实际变更和 Walkthrough 可对齐审计；未声明变更计为 deviation，不自动视为错误。`EXP-06-02` 样例在 `experiments/exp-06-02/output/sample.json`，证明失败、修复提交与复测可连成时间序证据链，并给出修复轮次、回归通过率与证据完整率；证据完整不等于修复质量最优。`EXP-06-03` 仍为 `planned`。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
@@ -287,7 +285,7 @@ Plan 在这里扮演了两个角色：它给 AI 一个清晰任务边界，也�
 | `EXP-06-02` | 失败、修复和复测是否能形成连续证据链 | 不证明一次通过比多轮修复更好 |
 | `EXP-06-03` | 官方 Bolt 执行流程能否被复现为完整工件 | 不把外部教程写成本书唯一实现 |
 
-`EXP-06-01` 已把第一类偏差审计落到可复现工件。第二类判断——Exsecutio 是否降低陌生审阅者的复核成本、失败记录是否提高后续修复准确率——仍依赖 `EXP-06-02` / `EXP-06-03`，在完成前只能作为假设。
+前两类审计已落到可复现工件。第三类判断——Exsecutio 是否降低陌生审阅者的复核成本——仍依赖 `EXP-06-03`，在完成前只能作为假设。
 
 ## 07 · Figure：Exsecutio 执行闭环
 
