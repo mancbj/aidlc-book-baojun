@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.7",
+  "publish_threshold": 92,
+  "dimension_minimums": {
+    "experiments": 44
+  },
+  "weights": {
+    "experiments": 50,
+    "chapter_evidence": 15,
+    "reader_feedback": 15,
+    "release": 20
+  },
+  "hard_gates": [
+    "ci_check_pass",
+    "internal_links_errors_zero",
+    "four_target_experiments_verified",
+    "ship_verified_18_of_18",
+    "verified_experiment_tests_in_ci",
+    "no_live_model_calls_in_experiments",
+    "exsecutio_spelling_preserved",
+    "runtime_verify_boundary_preserved",
+    "reader_feedback_not_fabricated",
+    "readiness_ready"
+  ],
+  "baseline_commit": "90007dd",
+  "current_round": "00",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "baseline-and-scope",
+      "decision": "KEEP",
+      "experiments": 28,
+      "chapter_evidence": 10,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 50,
+      "notes": "SHIP verified=14/18；剩余四个需冻结会话/评审夹具；Reader responded=0/3。"
+    }
+  ]
+}
