@@ -24,9 +24,6 @@ def render(root: Path, readiness: dict) -> str:
         for chapter in chapters
         if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
     )
-    if version.startswith("v0.8.002") or version.startswith("v0.8.00") and not version.startswith("v0.8.001"):
-        # Prefer exact patch notes for v0.8.002+; fall through carefully below for 001.
-        pass
     if version.startswith("v0.8.002"):
         highlights = [
             "- 四个 KEEP-EXT 收尾转 verified：`EXP-07-03`、`EXP-08-03`、`EXP-09-03`、`EXP-10-03`（triage 不改写为 SHIP）。",
@@ -43,7 +40,7 @@ def render(root: Path, readiness: dict) -> str:
             "- CH-01 / CH-02 / CH-03 / CH-06 证据边界收紧；Reader 无真实回复时保留 `READER-RESPONSES` known-gap。",
         ]
         next_goal = "v0.8.002：消化真实 Reader 反馈，并推进剩余 KEEP-EXT（07-03 / 08-03 / 09-03 / 10-03）。"
-    elif version.startswith("v0.8.") :
+    elif version.startswith("v0.8."):
         highlights = [
             "- 继续 patch-grain 发布（见 `planning/releases/VERSIONING.md`）。",
             "- 推进 KEEP-EXT / Reader 反馈治理，并保持合同测试可复现。",
