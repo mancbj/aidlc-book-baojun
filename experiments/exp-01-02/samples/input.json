@@ -1,0 +1,35 @@
+{
+  "experiment_id": "EXP-01-02",
+  "feature": {
+    "id": "FEAT-READER-FEEDBACK",
+    "name": "试读反馈入口",
+    "intent_summary": "读者可提交章节试读反馈，作者可查看摘要并将阻断问题转为修订任务；不处理营销订阅。"
+  },
+  "workflow_records": [
+    {
+      "record_id": "WF-ASSISTED-20260720",
+      "workflow_mode": "ai_assisted",
+      "human_roundtrips": 9,
+      "escaped_defects": 2,
+      "elapsed_minutes": 88,
+      "evidence_links": [
+        "chat/session-20260720-assist-01.json",
+        "pull-request/pr-417-diff.patch"
+      ]
+    },
+    {
+      "record_id": "WF-DRIVEN-20260721",
+      "workflow_mode": "ai_driven",
+      "human_roundtrips": 4,
+      "escaped_defects": 0,
+      "elapsed_minutes": 132,
+      "evidence_links": [
+        "progress/tasks.json#D12-T03",
+        "feedback/template.md",
+        "site/reader-feedback.html",
+        "tests/test_reader_feedback.py",
+        "progress/events.jsonl#evt-20260721-complete"
+      ]
+    }
+  ]
+}

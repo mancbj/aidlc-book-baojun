@@ -199,18 +199,22 @@ def make_ready(root: Path) -> None:
 def reset_v02_cycle_preview(root: Path) -> None:
     cycles_path = root / "progress/cycles.json"
     cycles = json.loads(cycles_path.read_text(encoding="utf-8"))
-    cycle = cycles["cycles"][0]
     cycles["active_cycle"] = None
-    cycle["status"] = "preview"
-    cycle["origin_release"] = None
-    cycle["accepted_feedback"] = []
-    cycle["carried_tasks"] = []
-    cycle["carried_gaps"] = []
-    for task in cycle["tasks"]:
-        if task["id"] == "C02-T01":
-            task["status"] = "ready"
-        elif task["id"] in {"C02-T02", "C02-T03"}:
-            task["status"] = "backlog"
+    for cycle in cycles["cycles"]:
+        if cycle.get("id") == "v0.2-draft":
+            cycle["status"] = "preview"
+            cycle["origin_release"] = None
+            cycle["accepted_feedback"] = []
+            cycle["carried_tasks"] = []
+            cycle["carried_gaps"] = []
+            for task in cycle["tasks"]:
+                if task["id"] == "C02-T01":
+                    task["status"] = "ready"
+                elif task["id"] in {"C02-T02", "C02-T03"}:
+                    task["status"] = "backlog"
+        elif cycle.get("status") == "active":
+            # Later patch maintenance cycles must not block v0.1→v0.2 fixture replay.
+            cycle["status"] = "complete"
     write_json(cycles_path, cycles)
 
 
@@ -558,6 +562,7 @@ class ReadinessAndReleaseTests(unittest.TestCase):
                 root=REPO_ROOT,
                 output=base / "candidate",
                 pdf=None,
+                book_html=None,
                 readiness=readiness_path,
                 release_notes=None,
                 generated_at=TIMESTAMP,
@@ -589,6 +594,7 @@ class ReadinessAndReleaseTests(unittest.TestCase):
                 root=root,
                 output=base / "candidate",
                 pdf=None,
+                book_html=None,
                 readiness=readiness_path,
                 release_notes=notes_path,
                 generated_at=TIMESTAMP,
@@ -616,6 +622,7 @@ class ReadinessAndReleaseTests(unittest.TestCase):
                 root=root,
                 output=base / "candidate",
                 pdf=None,
+                book_html=None,
                 readiness=readiness_path,
                 release_notes=None,
                 generated_at=TIMESTAMP,

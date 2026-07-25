@@ -1,0 +1,59 @@
+{
+  "comparison": {
+    "ai_assisted": {
+      "end_to_end_minutes": 88.0,
+      "escaped_defects": 2,
+      "evidence_link_count": 2,
+      "evidence_links": [
+        "chat/session-20260720-assist-01.json",
+        "pull-request/pr-417-diff.patch"
+      ],
+      "human_roundtrips": 9,
+      "record_id": "WF-ASSISTED-20260720",
+      "workflow_mode": "ai_assisted"
+    },
+    "ai_driven": {
+      "end_to_end_minutes": 132.0,
+      "escaped_defects": 0,
+      "evidence_link_count": 5,
+      "evidence_links": [
+        "progress/tasks.json#D12-T03",
+        "feedback/template.md",
+        "site/reader-feedback.html",
+        "tests/test_reader_feedback.py",
+        "progress/events.jsonl#evt-20260721-complete"
+      ],
+      "human_roundtrips": 4,
+      "record_id": "WF-DRIVEN-20260721",
+      "workflow_mode": "ai_driven"
+    }
+  },
+  "experiment_id": "EXP-01-02",
+  "feature": {
+    "id": "FEAT-READER-FEEDBACK",
+    "intent_summary": "读者可提交章节试读反馈，作者可查看摘要并将阻断问题转为修订任务；不处理营销订阅。",
+    "name": "试读反馈入口"
+  },
+  "limitation": "对照报告仅汇总输入中冻结的两套交付记录与证据链；它不证明 AI-Assisted 或 AI-Driven 在全部团队、任务或约束下更优。",
+  "metrics": {
+    "ai_assisted": {
+      "end_to_end_minutes": 88.0,
+      "escaped_defects": 2,
+      "human_roundtrips": 9
+    },
+    "ai_driven": {
+      "end_to_end_minutes": 132.0,
+      "escaped_defects": 0,
+      "human_roundtrips": 4
+    },
+    "delta": {
+      "end_to_end_minutes_delta": 44.0,
+      "escaped_defect_delta": -2,
+      "human_roundtrip_delta": -5
+    }
+  },
+  "observation": "同一功能「试读反馈入口」：AI-Assisted 人工往返 9 次、缺陷逃逸 2 项、端到端 88.0 分钟；AI-Driven 分别为 4 次、0 项、132.0 分钟。",
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:6652c3374b4759d28e6a36851851d370cb930afe3e797d8df76fd0f612e8253c",
+  "valid": true
+}

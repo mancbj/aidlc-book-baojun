@@ -1,0 +1,96 @@
+{
+  "bolt_estimates": [
+    {
+      "estimated_hours": 17.75,
+      "id": "BOLT-CATALOG-ORDER",
+      "scope_overflow": true,
+      "split_suggestions": [
+        {
+          "reason": "estimated_hours_exceeds_max_bolt_hours",
+          "story_ids": [
+            "STORY-CATALOG-API"
+          ],
+          "suggested_bolt_id": "BOLT-CATALOG-ORDER-SPLIT-01"
+        },
+        {
+          "reason": "estimated_hours_exceeds_max_bolt_hours",
+          "story_ids": [
+            "STORY-ORDER-CREATE"
+          ],
+          "suggested_bolt_id": "BOLT-CATALOG-ORDER-SPLIT-02"
+        }
+      ],
+      "story_estimates": [
+        {
+          "complexity": 2,
+          "dependency_count": 0,
+          "estimated_hours": 6.0,
+          "risk": 1,
+          "story_id": "STORY-CATALOG-API"
+        },
+        {
+          "complexity": 4,
+          "dependency_count": 1,
+          "estimated_hours": 11.75,
+          "risk": 3,
+          "story_id": "STORY-ORDER-CREATE"
+        }
+      ],
+      "story_ids": [
+        "STORY-CATALOG-API",
+        "STORY-ORDER-CREATE"
+      ]
+    },
+    {
+      "estimated_hours": 14.25,
+      "id": "BOLT-RECEIPT",
+      "scope_overflow": false,
+      "split_suggestions": [],
+      "story_estimates": [
+        {
+          "complexity": 5,
+          "dependency_count": 1,
+          "estimated_hours": 14.25,
+          "risk": 4,
+          "story_id": "STORY-ORDER-RECEIPT"
+        }
+      ],
+      "story_ids": [
+        "STORY-ORDER-RECEIPT"
+      ]
+    },
+    {
+      "estimated_hours": 4.5,
+      "id": "BOLT-ADMIN",
+      "scope_overflow": false,
+      "split_suggestions": [],
+      "story_estimates": [
+        {
+          "complexity": 1,
+          "dependency_count": 0,
+          "estimated_hours": 4.5,
+          "risk": 1,
+          "story_id": "STORY-ADMIN-AUDIT"
+        }
+      ],
+      "story_ids": [
+        "STORY-ADMIN-AUDIT"
+      ]
+    }
+  ],
+  "estimation_config": {
+    "base_hours_per_story": 2.0,
+    "complexity_factor": 1.5,
+    "dependency_factor": 0.75,
+    "max_bolt_hours": 16.0,
+    "risk_factor": 1.0
+  },
+  "experiment_id": "EXP-05-01",
+  "limitation": "预计时长来自固定启发式系数与输入字段；它不证明真实世界排期或交付工期的准确性。",
+  "metrics": {
+    "schedule_estimation_error_percent": 3.26,
+    "scope_overflow_count": 1
+  },
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:ab5ef59cafb2d8444ee05d81d5d4b1deae26441d3461d2c1ebbe8820ce388e6d"
+}

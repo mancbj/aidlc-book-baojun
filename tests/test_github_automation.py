@@ -155,12 +155,15 @@ class LinkAndPagesTests(unittest.TestCase):
 
 
 class ReleaseTests(unittest.TestCase):
-    def args(self, output: Path, version="v0.1-rc.1", pdf=None):
+    def args(self, output: Path, version="v0.1-rc.1", pdf=None, book_html=None):
         return argparse.Namespace(
             version=version,
             root=REPO_ROOT,
             output=output,
             pdf=pdf,
+            book_html=book_html,
+            readiness=None,
+            release_notes=None,
             generated_at="2026-07-22T00:00:00Z",
             commit_sha="release-test-sha",
         )

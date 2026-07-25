@@ -1,0 +1,15 @@
+{
+  "experiment_id": "EXP-09-02",
+  "task_name": "非法严重度",
+  "reversibility": "high",
+  "impact_scope": "local",
+  "autonomy_preference": "maximal",
+  "risks": [
+    {
+      "id": "RK-1",
+      "statement": "示例风险",
+      "severity": "urgent",
+      "phase": "design"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-04-02",
+  "baseline": {
+    "standards": {
+      "version": "1.0.0",
+      "rules": [
+        {
+          "id": "STD-TITLE",
+          "kind": "required",
+          "artifact_id": "document",
+          "path": "title"
+        }
+      ]
+    },
+    "generated_artifacts": {
+      "version": "build-1",
+      "snapshots": [
+        {
+          "id": "document",
+          "content": {
+            "title": "first"
+          }
+        },
+        {
+          "id": "document",
+          "content": {
+            "title": "duplicate"
+          }
+        }
+      ]
+    }
+  },
+  "candidate": {
+    "standards": {
+      "version": "1.0.0",
+      "rules": [
+        {
+          "id": "STD-TITLE",
+          "kind": "required",
+          "artifact_id": "document",
+          "path": "title"
+        }
+      ]
+    },
+    "generated_artifacts": {
+      "version": "build-2",
+      "snapshots": []
+    }
+  },
+  "benchmark": {
+    "expected_violation_keys": []
+  }
+}

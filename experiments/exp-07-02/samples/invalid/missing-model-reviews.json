@@ -1,0 +1,25 @@
+{
+  "delivery_candidate": {
+    "id": "CAND-BAD",
+    "summary": "缺少模型评审"
+  },
+  "experiment_id": "EXP-07-02",
+  "human_rubric": {
+    "judgments": [
+      {
+        "criterion": "占位",
+        "rubric_id": "RB-001",
+        "verdict": "pass"
+      }
+    ],
+    "overall_verdict": "approve"
+  },
+  "independent_model_reviews": [],
+  "test_evidence": {
+    "linked_rubric_ids": [
+      "RB-001"
+    ],
+    "status": "passed",
+    "summary": "占位"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "ambiguous_requirement": "无澄清臂却声明澄清轮次",
+  "experiment_id": "EXP-02-02",
+  "sessions": {
+    "no_clarify": {
+      "clarification_rounds": 2,
+      "critical_omissions": [],
+      "decision_log": [
+        {
+          "id": "D-01",
+          "phase": "implement",
+          "summary": "直接实现"
+        }
+      ],
+      "implemented_items": [
+        {
+          "capability": "示例能力",
+          "id": "I-01"
+        }
+      ],
+      "post_impl_requirement_changes": []
+    },
+    "with_clarify": {
+      "clarification_rounds": 1,
+      "critical_omissions": [],
+      "decision_log": [
+        {
+          "id": "D-02",
+          "phase": "clarify",
+          "summary": "澄清"
+        }
+      ],
+      "implemented_items": [
+        {
+          "capability": "示例能力",
+          "id": "I-02"
+        }
+      ],
+      "post_impl_requirement_changes": []
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "experiment_id": "EXP-09-02",
+  "task_name": "缺少可逆性字段",
+  "impact_scope": "team",
+  "autonomy_preference": "balanced",
+  "risks": [
+    {
+      "id": "RK-1",
+      "statement": "示例风险",
+      "severity": "major",
+      "phase": "verify"
+    }
+  ]
+}

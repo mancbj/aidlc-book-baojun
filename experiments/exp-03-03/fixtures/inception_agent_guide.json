@@ -1,0 +1,20 @@
+{
+  "external_source": "https://specs.md/agents/inception-agent",
+  "guide_id": "inception-agent-decomposition",
+  "pinned_version": "sha256:d65ec6e39e641b3009ef88f78cf22aaa19e127a35f75f0e6bcff671dc66f416a",
+  "required_artifacts": [
+    "requirements",
+    "system_context",
+    "units",
+    "stories",
+    "bolt_plan"
+  ],
+  "required_trace_links": [
+    {"from": "system_context", "to": "requirements", "relation": "contextualizes"},
+    {"from": "units", "to": "requirements", "relation": "implements"},
+    {"from": "stories", "to": "units", "relation": "belongs_to"},
+    {"from": "stories", "to": "requirements", "relation": "traces_to"},
+    {"from": "bolt_plan", "to": "stories", "relation": "covers"},
+    {"from": "bolt_plan", "to": "units", "relation": "scoped_by"}
+  ]
+}

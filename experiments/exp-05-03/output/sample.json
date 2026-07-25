@@ -1,0 +1,79 @@
+{
+  "experiment_id": "EXP-05-03",
+  "external_source": "https://specs.md/guides/bolt-types",
+  "guide_digest": "sha256:74569b17295dce993a3afc4fc7855938d094b2034f7b857c39acddbe0bf22f4e",
+  "limitation": "本报告仅对照仓库内冻结的 Bolt 类型检查点指南夹具与输入阶段记录做确定性核对；它不将外部 specs.md 页面或该 pin 写成唯一标准，也不能替代人工 Bolt 类型选择与阶段裁量。",
+  "metrics": {
+    "checkpoint_adherence_percent": 100.0,
+    "stage_completeness_percent": 100.0
+  },
+  "pinned_version": "sha256:32d73fc5231f81eabaf9c881e1c64f3353882c605c729bfbbca9f5bb4aa0b481",
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:c1a2edadab4eec0c1bcf8680ac3ff626b8d955de7f9ed5856cdac889d18cea7f",
+  "tracks": {
+    "ddd": {
+      "bolt_id": "bolt-ledger-reconciliation",
+      "bolt_type": "ddd-construction-bolt",
+      "checkpoint_adherence_percent": 100.0,
+      "stage_completeness_percent": 100.0,
+      "stages": [
+        {
+          "checkpoint_adherence_percent": null,
+          "required": false,
+          "stage_id": "adr-analysis",
+          "status": "missing"
+        },
+        {
+          "checkpoint_adherence_percent": 100.0,
+          "required": true,
+          "stage_id": "domain-model",
+          "status": "completed"
+        },
+        {
+          "checkpoint_adherence_percent": 100.0,
+          "required": true,
+          "stage_id": "implement",
+          "status": "completed"
+        },
+        {
+          "checkpoint_adherence_percent": 100.0,
+          "required": true,
+          "stage_id": "technical-design",
+          "status": "completed"
+        },
+        {
+          "checkpoint_adherence_percent": 100.0,
+          "required": true,
+          "stage_id": "test",
+          "status": "completed"
+        }
+      ]
+    },
+    "simple": {
+      "bolt_id": "bolt-ui-settings-panel",
+      "bolt_type": "simple-construction-bolt",
+      "checkpoint_adherence_percent": 100.0,
+      "stage_completeness_percent": 100.0,
+      "stages": [
+        {
+          "checkpoint_adherence_percent": 100.0,
+          "required": true,
+          "stage_id": "implement",
+          "status": "completed"
+        },
+        {
+          "checkpoint_adherence_percent": 100.0,
+          "required": true,
+          "stage_id": "plan",
+          "status": "completed"
+        },
+        {
+          "checkpoint_adherence_percent": 100.0,
+          "required": true,
+          "stage_id": "test",
+          "status": "completed"
+        }
+      ]
+    }
+  }
+}

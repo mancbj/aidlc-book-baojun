@@ -170,9 +170,9 @@ AI 输出常常具有高流畅度和高结构感。它会让未验证的结果�
 
 ## 05 · Example：以本书 CI 门禁为例
 
-本书项目已经有一个可复用的确定性门禁组合器：`scripts/ci_check.py`。它是 `EXP-07-01 · 仓库确定性门禁组合器` 的已存在实现，当前实验状态为 `ALREADY / ready`。
+本书项目已经有一个可复用的确定性门禁组合器：`scripts/ci_check.py`。它是 `EXP-07-01 · 仓库确定性门禁组合器` 的已存在实现，当前实验状态为 `ALREADY / verified`（triage 仍为 ALREADY，未改写成 SHIP）。
 
-这个脚本做的事很朴素：按固定顺序运行一组 Must 检查，任何子检查失败，整体就以非零退出码失败。它的价值不在于“聪明”，而在于稳定、可重复、可放进 PR 和本地交付流程。
+这个脚本做的事很朴素：按固定顺序运行一组 Must 检查，任何子检查失败，整体就以非零退出码失败。它的价值不在于“聪明”，而在于稳定、可重复、可放进 PR 和本地交付流程。`EXP-07-01` 的合同测试静态解析该脚本的门禁组合，不在实验内重跑全量 CI。
 
 ### 5.1 候选物是什么
 
@@ -184,9 +184,9 @@ AI 输出常常具有高流畅度和高结构感。它会让未验证的结果�
 
 这句话比“有没有报错”更准确。没有报错只是最低门槛；可信输入还要求事实源一致、下钻可用、事件不重复、章节能构建、链接不破。
 
-### 5.2 `ci_check.py` 的六类确定性门禁
+### 5.2 `ci_check.py` 的七类确定性门禁
 
-`ci_check.py` 默认运行六类检查。
+`ci_check.py` 默认运行七类检查。
 
 | Check | Command | 它能证明什么 |
 |---|---|---|
@@ -194,10 +194,11 @@ AI 输出常常具有高流畅度和高结构感。它会让未验证的结果�
 | continuity | `scripts/validate_feedback.py` | 试读反馈与发布连续性记录符合当前约定 |
 | github-config | `scripts/validate_github_config.py` | Issue、PR、Projects、Pages、Release 等 GitHub 配置文件结构有效 |
 | tests | `python -m unittest discover -s tests` | 构建、生成、验证、GitHub 配置等核心行为仍满足测试断言 |
+| verified-experiments | `scripts/run_verified_experiments.py` | 已 verified 且具备合同路径的 SHIP / ALREADY / KEEP-EXT 实验可复现通过 |
 | generation-dry-run | `scripts/generate_progress.py --dry-run --actor ci-check` | 当前事实可生成进度投影，且 dry-run 不写盘、不制造新历史噪声 |
 | internal-links | `scripts/check_internal_links.py` | 仓库内 Markdown/HTML 链接和 fragment 锚点没有断裂 |
 
-这六类门禁共同覆盖了本书项目最容易被 AI 改坏的地方：事实源、自动记录、页面下钻、书稿构建、协作配置和链接网络。尤其是 dry-run 和链接审计，它们抓到的是“表面内容没问题、生成系统却坏了”的那种狡猾错误。
+这七类门禁共同覆盖了本书项目最容易被 AI 改坏的地方：事实源、自动记录、页面下钻、书稿构建、协作配置、已验证实验合同和链接网络。尤其是 dry-run、verified-experiments 和链接审计，它们抓到的是“表面内容没问题、生成或证据系统却坏了”的那种狡猾错误。
 
 ### 5.3 它不能证明什么
 
@@ -207,9 +208,9 @@ AI 输出常常具有高流畅度和高结构感。它会让未验证的结果�
 
 因此，`ci_check.py` 是证据链第一层，而不是整条证据链。它证明“工程约束未破坏”，不证明“内容价值已经被读者验证”。这个边界非常重要：如果把 CI 神化，团队会误以为绿色勾就是正确；如果轻视 CI，团队又会让低级错误反复逃逸。
 
-### 5.4 这次 D21-T02 如何使用它
+### 5.4 本章草稿如何走完这条验证链
 
-本章可读稿完成后，验证路径是：
+本章草稿完成后，验证路径是：
 
 ```text
 CH-07 draft
@@ -223,7 +224,7 @@ ci_check.py
 events / snapshot / dashboard
 ```
 
-这条路径对应了本章自己的主张：先让机器抓确定错误，再把完成状态写入事实源和可视化驾驶舱。D21-T03 还会再增加审校记录，把模型/人工结构化评审补进证据链。
+这条路径对应了本章自己的主张：先让机器抓确定错误，再把完成状态写入事实源和可视化驾驶舱。后续审校记录再把模型/人工结构化评审补进证据链。
 
 ## 06 · Model Review 与 Human Judgment 的协作方式
 
@@ -246,25 +247,31 @@ Human Judgment accepts, rejects, escalates, or defers them.
 
 本章实验入口包括三项：
 
-- `EXP-07-01 · 仓库确定性门禁组合器`：复用 `python3 scripts/ci_check.py`，聚合事实校验、连续性、GitHub 配置、测试、干运行与链接审计。
-- `EXP-07-02 · 独立评审分歧矩阵`：比较交付候选、测试证据、独立模型评审与人工 Rubric，生成多方判断及分歧归因矩阵。
-- `EXP-07-03 · 分层验证检查点复现`：参考官方三阶段与检查点说明，向示例候选注入缺陷，记录缺陷在不同检查层的首次发现位置。
+- `EXP-07-01 · 仓库确定性门禁组合器`：复用 `scripts/ci_check.py`，静态解析并合同化 Must 门禁组合。运行：`python3 experiments/exp-07-01/quickstart.py --sample`。
+- `EXP-07-02 · 独立评审分歧矩阵`：比较交付候选、测试证据、独立模型评审与人工 Rubric，生成多方判断及分歧归因矩阵。运行：`python3 experiments/exp-07-02/quickstart.py --sample`。
+- `EXP-07-03 · 分层验证检查点复现`：对照冻结 pin 指南，向示例候选注入缺陷，记录各层首次发现位置与逃逸数。运行：`python3 experiments/exp-07-03/quickstart.py --sample`。
 
-其中 `EXP-07-01` 当前为 `ALREADY / ready`，因为本项目已经存在可运行的 `scripts/ci_check.py`。它可以作为本章的项目内证据入口：不是模拟一个门禁，而是真的每天被用于任务完成检查。
+其中 `EXP-07-01` 已为 `ALREADY / verified`：样例在 `experiments/exp-07-01/output/sample.json`。它证明 `ci_check.py` 的 Must 门禁组合可被静态解析并稳定复现（含 passed/failed/configured 计数与 missing/extra 对照）；合同测试不得调用 `--live`，也不在实验内重跑全量 CI。它不证明内容质量或读者理解已被充分验证。
 
-`EXP-07-02` 与 `EXP-07-03` 仍为 `planned`，因此本章只把它们作为验证方向，不把指标写成已验证结论。后续如果要把它们升级为正文证据，至少需要补齐实验目录、样例输入、样例输出、测试和结果记录。
+`EXP-07-02` 已 verified：样例在 `experiments/exp-07-02/output/sample.json`。它证明冻结的模型评审与人工 Rubric 可生成分歧归因矩阵，并给出一致率、新增风险数与人工推翻率；模型评审不能替代人工判断。
+
+`EXP-07-03` 已为 `KEEP-EXT / verified`：样例在 `experiments/exp-07-03/output/sample.json`，给出 `escaped_defect_count`、`first_discovery_stage` 与 `verification_seconds`。验证层为 deterministic_checks / independent_tests / model_review / human_judgment。这里的 Verify 属于 CH-07 交付候选验证，不等于 CH-08 Runtime Verify；冻结 pin 不等于唯一标准。
 
 三项实验分别服务于三个问题。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
-| `EXP-07-01` | 固定门禁是否能稳定聚合仓库 Must 检查 | 不证明内容质量或读者理解已经充分验证 |
+| `EXP-07-01` | 固定门禁是否能稳定聚合仓库 Must 检查 | 不证明内容质量或读者理解已经充分验证；ALREADY 不得改写成 SHIP |
 | `EXP-07-02` | 模型评审、测试证据和人工 Rubric 的分歧来自哪里 | 不证明模型评审可以替代人工判断 |
-| `EXP-07-03` | 缺陷在不同验证层的首次发现位置和逃逸情况 | 不把单一示例推广成所有项目的验证成本模型 |
+| `EXP-07-03` | 缺陷在不同验证层的首次发现位置和逃逸情况 | 不把单一示例推广成所有项目的验证成本模型；KEEP-EXT 不得改写成 SHIP |
 
 ## 08 · Figure：分层验证证据链
 
-本章图示方向为“分层验证证据链”：
+本章图示为“分层验证证据链”：
+
+![图 7-1 · 分层验证证据链](images/ch07-verification-evidence-chain.svg){.core-figure width=100%}
+
+源文件：`book/images/ch07-verification-evidence-chain.svg`。结构摘要：
 
 ```text
 Candidate
@@ -274,7 +281,7 @@ Deterministic Checks → Independent Tests → Model Review → Human Judgment
 Machine Evidence       Behavioral Evidence  Risk Findings   Approval / Rejection
 ```
 
-若后续生成独立 SVG，可命名为 `book/images/ch07-verification-evidence-chain.svg`，采用宽屏分层布局：候选物在左，四层证据水平展开，底部汇聚为“Release / Rework / Escalate”三类判定。
+候选物在左，四层证据水平展开，底部汇聚为“Release / Rework / Escalate”三类判定。这里的 Verify 是交付候选验证，不等于 CH-08 的 Runtime Verify。
 
 这张图要让读者看见三件事：
 
@@ -295,6 +302,10 @@ Machine Evidence       Behavioral Evidence  Risk Findings   Approval / Rejection
 第四，本章不主张所有任务都上最高验证强度。验证强度应随风险变化。低风险任务需要快，高风险任务需要稳。
 
 第五，本章不把人类检查点变成形式主义。如果人只是机械点击批准，而没有看到具体风险、证据和取舍，所谓 human-in-the-loop 仍然是空的。
+
+第六，`EXP-07-01` 的 verified 只证明门禁可聚合与合同化复现；绿色 CI 不等于章节论点成立，也不等于 CH-08 Runtime Verify 已通过。
+
+第七，`EXP-07-03` 的 verified 只覆盖冻结分层验证夹具上的缺陷发现/逃逸记录；不得把单一样例推广为所有项目的验证成本模型，也不得与 CH-08 Runtime Verify 混称。
 
 ## Reader Exercise
 
@@ -317,6 +328,8 @@ Machine Evidence       Behavioral Evidence  Risk Findings   Approval / Rejection
 - `scripts/validate_feedback.py`：反馈与发布连续性校验。
 - `scripts/validate_github_config.py`：GitHub 协作与发布配置校验。
 - `scripts/check_internal_links.py`：内部链接审计。
+- `scripts/run_verified_experiments.py`：verified 实验合同测试入口。
+- `experiments/exp-07-01/output/sample.json`：门禁组合合同样例。
 - `tests/test_build_book.py`：书稿构建与源文件清单断言。
 - `progress/experiments.json`：`EXP-07-01`、`EXP-07-02`、`EXP-07-03` 实验治理状态。
 - `book/toc.md`：CH-07 核心问题、读者结果和实验方向。

@@ -1,0 +1,217 @@
+{
+  "attribution_code_catalog": [
+    "ALIGNED_ALL",
+    "TEST_HUMAN_DISAGREEMENT",
+    "TEST_MODEL_DISAGREEMENT",
+    "MODEL_MODEL_DISAGREEMENT",
+    "HUMAN_OVERRIDES_AUTOMATED",
+    "MODEL_ONLY_RISK",
+    "HUMAN_DEFERS_RISK"
+  ],
+  "delivery_candidate_id": "CAND-07-02-SAMPLE",
+  "disagreement_matrix": [
+    {
+      "aligned": true,
+      "attribution_codes": [
+        "ALIGNED_ALL"
+      ],
+      "dimension_id": "RB-001",
+      "dimension_kind": "rubric",
+      "dimension_label": "确定性检查与单元测试全部通过",
+      "parties": {
+        "MODEL-A": {
+          "fixture_label": "frozen-review-alpha-2026-07-18",
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "independent_model_review"
+        },
+        "MODEL-B": {
+          "fixture_label": "frozen-review-beta-2026-07-19",
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "independent_model_review"
+        },
+        "human_rubric": {
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "human_rubric"
+        },
+        "test_evidence": {
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "test_evidence"
+        }
+      }
+    },
+    {
+      "aligned": false,
+      "attribution_codes": [
+        "MODEL_MODEL_DISAGREEMENT",
+        "TEST_MODEL_DISAGREEMENT"
+      ],
+      "dimension_id": "RB-002",
+      "dimension_kind": "rubric",
+      "dimension_label": "无效输入返回稳定 E_* 错误码",
+      "parties": {
+        "MODEL-A": {
+          "fixture_label": "frozen-review-alpha-2026-07-18",
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "independent_model_review"
+        },
+        "MODEL-B": {
+          "fixture_label": "frozen-review-beta-2026-07-19",
+          "release_stance": "reject",
+          "signal": "fail",
+          "source": "independent_model_review"
+        },
+        "human_rubric": {
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "human_rubric"
+        },
+        "test_evidence": {
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "test_evidence"
+        }
+      }
+    },
+    {
+      "aligned": true,
+      "attribution_codes": [
+        "ALIGNED_ALL"
+      ],
+      "dimension_id": "RB-003",
+      "dimension_kind": "rubric",
+      "dimension_label": "输出 limitation 明确 CH-07 Verify 边界",
+      "parties": {
+        "MODEL-A": {
+          "fixture_label": "frozen-review-alpha-2026-07-18",
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "independent_model_review"
+        },
+        "MODEL-B": {
+          "fixture_label": "frozen-review-beta-2026-07-19",
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "independent_model_review"
+        },
+        "human_rubric": {
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "human_rubric"
+        },
+        "test_evidence": {
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "test_evidence"
+        }
+      }
+    },
+    {
+      "aligned": true,
+      "attribution_codes": [
+        "MODEL_ONLY_RISK"
+      ],
+      "dimension_id": "RISK-LEGACY-01",
+      "dimension_kind": "model_risk",
+      "dimension_label": "历史样例输出路径需与 README 同步",
+      "is_new_risk": false,
+      "parties": {
+        "MODEL-A": {
+          "fixture_label": "frozen-review-alpha-2026-07-18",
+          "release_stance": "reject",
+          "signal": "fail",
+          "source": "independent_model_review"
+        },
+        "MODEL-B": {
+          "fixture_label": "frozen-review-beta-2026-07-19",
+          "release_stance": "reject",
+          "signal": "fail",
+          "source": "independent_model_review"
+        },
+        "human_rubric": {
+          "release_stance": "reject",
+          "signal": "fail",
+          "source": "human_rubric"
+        },
+        "test_evidence": {
+          "release_stance": "defer",
+          "signal": "unknown",
+          "source": "test_evidence"
+        }
+      },
+      "severity": "minor"
+    },
+    {
+      "aligned": false,
+      "attribution_codes": [
+        "MODEL_ONLY_RISK",
+        "HUMAN_DEFERS_RISK"
+      ],
+      "dimension_id": "RISK-NEW-02",
+      "dimension_kind": "model_risk",
+      "dimension_label": "模型评审夹具未覆盖空评审数组边界",
+      "is_new_risk": true,
+      "parties": {
+        "MODEL-A": {
+          "fixture_label": "frozen-review-alpha-2026-07-18",
+          "release_stance": "approve",
+          "signal": "pass",
+          "source": "independent_model_review"
+        },
+        "MODEL-B": {
+          "fixture_label": "frozen-review-beta-2026-07-19",
+          "release_stance": "reject",
+          "signal": "fail",
+          "source": "independent_model_review"
+        },
+        "human_rubric": {
+          "release_stance": "defer",
+          "signal": "na",
+          "source": "human_rubric"
+        },
+        "test_evidence": {
+          "release_stance": "defer",
+          "signal": "unknown",
+          "source": "test_evidence"
+        }
+      },
+      "severity": "major"
+    }
+  ],
+  "experiment_id": "EXP-07-02",
+  "limitation": "分歧矩阵仅比较冻结的测试证据、独立模型评审与人工 Rubric 夹具；它不证明模型评审可以替代人工判断，也不构成 Runtime Verify。",
+  "metrics": {
+    "human_override_rate": 0.0,
+    "new_risk_count": 1,
+    "review_agreement_rate": 66.67
+  },
+  "multi_party_summary": {
+    "human_rubric": {
+      "release_stance": "approve"
+    },
+    "independent_model_reviews": [
+      {
+        "fixture_label": "frozen-review-alpha-2026-07-18",
+        "release_stance": "approve",
+        "reviewer_id": "MODEL-A"
+      },
+      {
+        "fixture_label": "frozen-review-beta-2026-07-19",
+        "release_stance": "defer",
+        "reviewer_id": "MODEL-B"
+      }
+    ],
+    "test_evidence": {
+      "release_stance": "approve",
+      "status": "passed"
+    }
+  },
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:5e17ff24bc373769ea01750073f9fdd9691356813e43bbb530a39c4f037b4da8",
+  "valid": true,
+  "verification_framing": "CH-07 delivery candidate verification"
+}

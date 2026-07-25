@@ -1,0 +1,94 @@
+{
+  "drill_timeline": [
+    {
+      "codes": [
+        "DETECT_FROM_MONITORING"
+      ],
+      "ended_at": "2026-07-22T14:12:00Z",
+      "monitoring_signal_ids": [
+        "MON-01",
+        "MON-02"
+      ],
+      "phase": "detect",
+      "runbook_step": {
+        "duration_minutes": 3,
+        "id": "RB-DETECT",
+        "phase": "detect",
+        "started_at": "2026-07-22T14:09:00Z",
+        "title": "确认告警与影响面"
+      },
+      "started_at": "2026-07-22T14:06:30Z"
+    },
+    {
+      "codes": [
+        "PHASE_ANCHORED"
+      ],
+      "ended_at": "2026-07-22T14:17:00Z",
+      "phase": "decide",
+      "runbook_step": {
+        "duration_minutes": 5,
+        "id": "RB-DECIDE",
+        "phase": "decide",
+        "started_at": "2026-07-22T14:12:00Z",
+        "title": "决定回滚 web-api 并暂停 worker 消费"
+      },
+      "started_at": "2026-07-22T14:12:00Z"
+    },
+    {
+      "codes": [
+        "PHASE_ANCHORED"
+      ],
+      "ended_at": "2026-07-22T14:25:00Z",
+      "phase": "rollback",
+      "runbook_step": {
+        "duration_minutes": 8,
+        "id": "RB-ROLLBACK",
+        "phase": "rollback",
+        "started_at": "2026-07-22T14:17:00Z",
+        "target_component_ids": [
+          "web-api"
+        ],
+        "title": "执行 web-api 版本回滚"
+      },
+      "started_at": "2026-07-22T14:17:00Z"
+    },
+    {
+      "codes": [
+        "PHASE_ANCHORED"
+      ],
+      "ended_at": "2026-07-22T14:35:00Z",
+      "phase": "recover",
+      "runbook_step": {
+        "duration_minutes": 10,
+        "id": "RB-RECOVER",
+        "phase": "recover",
+        "started_at": "2026-07-22T14:25:00Z",
+        "title": "Runtime Verify 与监控复核"
+      },
+      "started_at": "2026-07-22T14:25:00Z"
+    }
+  ],
+  "experiment_id": "EXP-08-02",
+  "interpretation": "detect 锚定最早监控信号；若无信号则使用 detect Runbook 或故障发生时刻。decide、rollback、recover 各取最早 Runbook 步骤。data_loss_window_minutes 在 data_impact=true 时度量故障至 rollback 结束窗口；否则为 null。桌面演练不等于 CH-07 Verify，Recover 中的 Runtime Verify 指运行态核验。",
+  "limitation": "桌面演练时间线与 Runbook 缺口只表示演练脚本可复现性；它不证明生产环境真实恢复能力或数据零损失。",
+  "metrics": {
+    "data_loss_window_minutes": 25.0,
+    "detect_to_rollback_minutes": 10.5,
+    "runbook_gap_count": 1
+  },
+  "runbook_gaps": [
+    {
+      "code": "UNCOVERED_AFFECTED_COMPONENT",
+      "detail": "受影响组件未纳入 rollback 目标：worker。"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:b685bdda7b22eeea2440d5f0e62f60fce027f72757bd8112570fb97224309eb2",
+  "summary": {
+    "environment": "production",
+    "fault_scenario_id": "FS-01",
+    "monitoring_signal_count": 2,
+    "runbook_step_count": 4
+  },
+  "valid": true
+}

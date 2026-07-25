@@ -6,9 +6,9 @@
 |-------|-------|
 | Chapter ID | CH-08 |
 | Status Source | `progress/chapters.json` |
-| Writing Sprint Card | D22-T02 · 完成章节可读稿 |
-| Draft Completeness | 正式十章生产线可读稿；等待 D22-T03 审校与证据对齐 |
-| Primary Question | 如何通过 Build、Deploy、Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？ |
+| Writing Sprint Card | D22-T03 · 完成章节审校与证据对齐 |
+| Draft Completeness | 正式十章生产线可读稿；D22-T03 五类审校已完成 |
+| Primary Question | 如何通过 Build、Deploy、Runtime Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？ |
 | Reader Outcome | 能够定义构建凭证、环境门禁、部署策略、冒烟验证、监控指标和回滚 Runbook |
 | Related Experiments | `EXP-08-01`、`EXP-08-02`、`EXP-08-03` |
 
@@ -26,7 +26,7 @@
 
 AI 参与后，这个问题会更明显。AI 可以很快帮你准备 Release Notes、生成部署配置、修复失败脚本，也可以同样快地把错误发布范围扩大。如果 Operations 没有边界，AI 的速度会让“上线”显得像一件轻飘飘的小事；但真正的运行系统从来不是一句“已发布”，而是一套可以追溯、观察和恢复的责任链。
 
-因此，本章的核心问题是：**如何通过 Build、Deploy、Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？**
+因此，本章的核心问题是：**如何通过 Build、Deploy、Runtime Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？**
 
 读完本章，读者应能完成三个动作：
 
@@ -223,7 +223,7 @@ deploy
 
 ### 4.2 Release：版本候选的运行链
 
-Release 链路由 `.github/workflows/release.yml` 描述。它的核心 job 是 `validate`、`readiness`、`build` 和 `publish`。
+Release 链路由 `.github/workflows/release.yml` 描述。它的核心 job 依赖顺序是 `validate` → `readiness` → `build` → `publish`（YAML 声明顺序可能不同，以 `needs` 为准）。
 
 ```text
 validate
@@ -231,16 +231,19 @@ validate
   ci_check.py
 
 readiness
+  needs: validate
   check_release_readiness.py
   render_release_notes.py
   upload v0.1-readiness
 
 build
+  needs: [validate, readiness]
   download exact readiness evidence
   prepare_release.py
   upload release-candidate
 
 publish
+  needs: [validate, readiness, build]
   refuse overwrite
   gh release create ... --draft
 ```
@@ -275,25 +278,31 @@ publish
 
 本章实验入口包括三项：
 
-- `EXP-08-01 · 发布候选来源清单校验器`：复用 `scripts/check_release_readiness.py` 与 `scripts/prepare_release.py`，验证发布候选来源、构建日志、文件哈希与 readiness 是否一致。
-- `EXP-08-02 · 回滚桌面演练模拟器`：根据部署拓扑、故障场景、监控信号与 Runbook，生成发现、决策、回滚和恢复时间线。
-- `EXP-08-03 · Operations 四阶段复现`：参考 Operations Agent 流程与可部署示例，复现 Build、Deploy、Verify、Monitor 四阶段凭证。
+- `EXP-08-01 · 发布候选来源清单校验器`：复用 readiness / manifest 校验模型，验证发布候选来源、必需资产与文件哈希是否一致。运行：`python3 experiments/exp-08-01/quickstart.py --sample`。
+- `EXP-08-02 · 回滚桌面演练模拟器`：根据部署拓扑、故障场景、监控信号与 Runbook，生成发现、决策、回滚和恢复时间线。运行：`python3 experiments/exp-08-02/quickstart.py --sample`。
+- `EXP-08-03 · Operations 四阶段复现`：对照冻结 pin 指南，复现 Build、Deploy、Runtime Verify、Monitor 四阶段凭证与回滚就绪度。运行：`python3 experiments/exp-08-03/quickstart.py --sample`。
 
-其中 `EXP-08-01` 当前为 `ALREADY / ready`，因为本项目已经存在 release readiness 与 release preparation 脚本。它可以作为本章的项目内证据入口：来源一致性和 release manifest 不是想象中的需求，而是已经进入发布链路的真实门禁。
+其中 `EXP-08-01` 已为 `ALREADY / verified`：样例在 `experiments/exp-08-01/output/sample.json`。它证明冻结的 readiness/manifest 输入上，来源一致性、必需资产覆盖与哈希格式可被确定性校验，并给出 `source_completeness_percent` 与 `hash_mismatch_count`。它不证明真实生产环境已经完整可观测，也不把 ALREADY 改写成 SHIP。
 
-`EXP-08-02` 与 `EXP-08-03` 仍为 `planned`，因此本章只把它们作为验证方向，不把回滚指标或阶段完成率写成已验证结论。后续如果要把它们升级为正文证据，至少需要补齐实验目录、样例输入、样例输出、测试和结果记录。
+`EXP-08-02` 已 verified：样例报告在 `experiments/exp-08-02/output/sample.json`。它证明部署拓扑、故障、监控信号与 Runbook 可连成 detect→decide→rollback→recover 时间线，并给出发现到回滚耗时、数据损失窗口与 Runbook 缺口数。桌面演练不等于生产恢复能力。
+
+`EXP-08-03` 已为 `KEEP-EXT / verified`：样例在 `experiments/exp-08-03/output/sample.json`，给出 `stage_completion_percent` 与 `rollback_readiness_percent`。其中 Runtime Verify 属于 CH-08 运行时核验，不等于 CH-07 交付候选验证；冻结 pin 不等于成熟生产能力。
 
 三项实验分别服务于三个问题。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
-| `EXP-08-01` | 发布候选来源、readiness 与 artifact hash 是否一致 | 不证明真实生产环境已经完整可观测 |
+| `EXP-08-01` | 发布候选来源、readiness 与 artifact hash 是否一致 | 不证明真实生产环境已经完整可观测；ALREADY 不得改写成 SHIP |
 | `EXP-08-02` | 发现、决策、回滚和恢复的时间线是否清楚 | 不证明所有故障都能桌面演练覆盖 |
-| `EXP-08-03` | Operations 四阶段凭证是否能按官方流程复现 | 不把 alpha 参考实现写成成熟生产能力 |
+| `EXP-08-03` | Operations 四阶段凭证是否能按冻结指南复现 | 不把 alpha 参考实现写成成熟生产能力；KEEP-EXT 不得改写成 SHIP |
 
 ## 07 · Figure：Operations 运行闭环
 
-本章图示方向为“Operations 运行闭环”：
+本章图示为“Operations 运行闭环”：
+
+![图 8-1 · Operations 运行闭环](images/ch08-operations-loop.svg){.core-figure width=100%}
+
+源文件：`book/images/ch08-operations-loop.svg`。运行链摘要：
 
 ```text
 Verified Candidate
@@ -303,7 +312,7 @@ Build → Deploy → Runtime Verify → Monitor
   └──────── Recover / Rebuild ◀────┘
 ```
 
-若后续生成独立 SVG，可命名为 `book/images/ch08-operations-loop.svg`，采用宽屏运行链布局：左侧为 Verified Candidate，中间为 Build / Deploy / Runtime Verify / Monitor，底部低权重回路为 Recover / Rebuild，右侧为 Sustainable Runtime。
+左侧为 Verified Candidate，中间为 Build / Deploy / Runtime Verify / Monitor，底部低权重回路为 Recover / Rebuild，右侧为 Sustainable Runtime。Runtime Verify 属于运行时核验，不等于 CH-07 的交付候选验证。
 
 这张图要帮助读者看见三件事：
 
@@ -321,9 +330,11 @@ Build → Deploy → Runtime Verify → Monitor
 
 第三，本章不把当前 `memory-bank/operations/` 写成已经存在的成熟目录。当前仓库还没有正式 operations 目录；本章只把它作为方法落点和后续实现方向。
 
-第四，本章不承诺 `EXP-08-02` 和 `EXP-08-03` 已经验证回滚与四阶段复现。它们仍是 planned。
+第四，本章不承诺 `EXP-08-02` 已证明生产恢复能力；`EXP-08-03` 虽已 verified，也只证明冻结四阶段凭证可复现，不证明生产可观测或恢复能力成熟。
 
 第五，本章不把发布自动化当成生产成熟度。自动化只是动作可靠；成熟度还包括环境门禁、监控、恢复、审计和责任。
+
+第六，`EXP-08-01` 的 verified 只证明候选来源与 manifest 一致性校验可复现；它不等于 Runtime Verify 已通过，也不证明监控与恢复能力已经成熟。
 
 ## Reader Exercise
 
@@ -347,5 +358,6 @@ Build → Deploy → Runtime Verify → Monitor
 - `.github/workflows/pages.yml`：Pages 构建、上传、部署和进度记录链路。
 - `.github/workflows/release.yml`：Release readiness、候选构造与草稿发布链路。
 - `planning/releases/v0.1-policy.json`：v0.1 Definition of Done 的机器可读门禁。
+- `experiments/exp-08-01/output/sample.json`：发布候选来源清单校验样例。
 - `progress/experiments.json`：`EXP-08-01`、`EXP-08-02`、`EXP-08-03` 实验治理状态。
 - `book/toc.md`：CH-08 核心问题、读者结果和实验方向。

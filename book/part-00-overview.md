@@ -58,7 +58,7 @@ specs.md 的 AI-DLC Flow 为本书提供了一条可观察的参考路径：
 flowchart LR
     I["Inception<br/>Intent → Unit → Story → Bolt Plan"]
     C["Construction<br/>Model / Plan → Design → Implement → Test"]
-    O["Operations<br/>Build → Deploy → Verify → Monitor"]
+    O["Operations<br/>Build → Deploy → Runtime Verify → Monitor"]
     R["Evidence & Feedback<br/>Walkthrough · Metrics · Runbook · Recovery"]
 
     I --> C
@@ -69,7 +69,7 @@ flowchart LR
 
 - **Inception** 把人的目标转成边界清晰、可验收、可执行的工作。
 - **Construction** 让 AI 在选定的 Bolt 轨道中分阶段生成和验证交付候选。
-- **Operations** 把通过测试的候选物构建、部署、验证并纳入监控。
+- **Operations** 把通过测试的候选物构建、部署，再做 Runtime Verify，并纳入监控。
 - **Evidence & Feedback** 保存变更、测试、指标和恢复凭证，驱动下一轮判断。
 
 ## 0.5 全书叙事结构

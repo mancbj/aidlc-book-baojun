@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "Confirmed ten-chapter structure v3 and author-local specs.md portal crawl",
-  "updated": "2026-07-22T07:05:40Z",
+  "updated": "2026-07-25T10:00:00Z",
   "experiments": [
     {
       "id": "EXP-01-01",
@@ -21,11 +21,12 @@
       ],
       "command": "python3 experiments/exp-01-01/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：多次生成结果与结构化差异报告",
-        "记录指标：结构差异率、测试通过率方差"
+        "基于仓库内冻结 generations 夹具复现结构化差异报告（无在线模型调用）",
+        "记录指标：结构差异率（structure_difference_rate）、测试通过率总体方差（test_pass_rate_variance）",
+        "合同测试与 --sample 字节级可重复"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:20:00Z",
       "repository_path": "experiments/exp-01-01",
       "readme_path": "experiments/exp-01-01/README.md",
       "sample_input": "experiments/exp-01-01/samples/input.json",
@@ -51,11 +52,14 @@
       ],
       "command": "python3 experiments/exp-01-02/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：两组交付记录与证据链对照",
-        "记录指标：人工往返次数、缺陷逃逸数、端到端耗时"
+        "合法样例以退出码 0 生成 valid=true 的 AI-Assisted 与 AI-Driven 并排对照报告",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "记录指标：human_roundtrips（两侧及 human_roundtrip_delta）、escaped_defects（两侧及 escaped_defect_delta）、end_to_end_minutes（两侧及 delta）",
+        "输出包含 limitation，明确不证明某一工作流在全部场景下更优",
+        "重复运行产生字节一致的输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:20:00Z",
       "repository_path": "experiments/exp-01-02",
       "readme_path": "experiments/exp-01-02/README.md",
       "sample_input": "experiments/exp-01-02/samples/input.json",
@@ -78,13 +82,16 @@
         "工件完整率",
         "检查点数量"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-01-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Inception、Construction、Operations 流程轨迹",
-        "记录指标：工件完整率、检查点数量"
+        "合法样例以退出码 0 对照冻结 pin 三阶段指南生成 valid=true 的流程轨迹报告（无外网抓取）",
+        "输入 pinned_version 必须与 experiments/exp-01-03/fixtures/aidlc_three_phase_guide.json 一致",
+        "记录指标：artifact_completeness_percent、checkpoint_count",
+        "输出包含 limitation，明确冻结 pin 复现不等于唯一标准且不验证实时 specs.md portal",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出；重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T09:30:00Z",
       "external_source": "https://specs.md/methodology/what-is-ai-dlc",
       "pinned_version": "sha256:9cd45974f4bd264ca4a357f79e1171e8ea23ea44ddd9d1060c8ab3c24b60ec39",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -93,7 +100,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "Inception、Construction、Operations 流程轨迹"
+      "sample_result": "Inception、Construction、Operations 流程轨迹",
+      "repository_path": "experiments/exp-01-03",
+      "readme_path": "experiments/exp-01-03/README.md",
+      "sample_input": "experiments/exp-01-03/samples/input.json",
+      "sample_output": "experiments/exp-01-03/output/sample.json",
+      "test_path": "experiments/exp-01-03/tests/test_demo.py"
     },
     {
       "id": "EXP-02-01",
@@ -116,8 +128,8 @@
         "生成或复现：人类判断点与责任边界清单",
         "记录指标：判断点覆盖率、未归属责任数"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:11:21Z",
       "repository_path": "experiments/exp-02-01",
       "readme_path": "experiments/exp-02-01/README.md",
       "sample_input": "experiments/exp-02-01/samples/input.json",
@@ -143,11 +155,13 @@
       ],
       "command": "python3 experiments/exp-02-02/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：需求决策日志与实现差异报告",
-        "记录指标：实现后需求变更数、关键遗漏数、澄清轮次"
+        "合法样例以退出码 0 生成确定性需求决策日志与实现差异报告",
+        "记录指标：各臂 clarification_rounds、post_impl_requirement_change_count、critical_omission_count 及 no_clarify−with_clarify 差值",
+        "输出包含 limitation，明确不证明澄清总能减少实现后需求变更",
+        "重复运行产生字节一致输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:20:00Z",
       "repository_path": "experiments/exp-02-02",
       "readme_path": "experiments/exp-02-02/README.md",
       "sample_input": "experiments/exp-02-02/samples/input.json",
@@ -170,13 +184,16 @@
         "检查点遵循率",
         "无依据批准数"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-02-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：路由、提议、人工审批与交接记录",
-        "记录指标：检查点遵循率、无依据批准数"
+        "合法样例以退出码 0 对照冻结 pin 四 Agent 检查点指南生成 valid=true 的会话报告",
+        "记录指标：checkpoint_adherence_percent、ungrounded_approval_count",
+        "输出包含 limitation，明确冻结 pin 复现不等于唯一标准且不替代真人审批",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "仅消费仓库内冻结指南；重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T09:30:00Z",
       "external_source": "https://specs.md/agents/overview",
       "pinned_version": "sha256:37725f7af797f4e7589afb48686349a940384029e0f46d76cda8ddd747141953",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -185,7 +202,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "路由、提议、人工审批与交接记录"
+      "sample_result": "路由、提议、人工审批与交接记录",
+      "repository_path": "experiments/exp-02-03",
+      "readme_path": "experiments/exp-02-03/README.md",
+      "sample_input": "experiments/exp-02-03/samples/input.json",
+      "sample_output": "experiments/exp-02-03/output/sample.json",
+      "test_path": "experiments/exp-02-03/tests/test_demo.py"
     },
     {
       "id": "EXP-03-01",
@@ -241,8 +263,8 @@
         "生成或复现：依赖图与异常报告",
         "记录指标：循环依赖数、跨 Unit 耦合边数、未满足前置数"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:11:21Z",
       "repository_path": "experiments/exp-03-02",
       "readme_path": "experiments/exp-03-02/README.md",
       "sample_input": "experiments/exp-03-02/samples/input.json",
@@ -265,13 +287,16 @@
         "工件完整率",
         "追踪链接覆盖率"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-03-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Requirements、System Context、Units、Stories、Bolt Plan",
-        "记录指标：工件完整率、追踪链接覆盖率"
+        "合法样例以退出码 0 对照冻结 pin Inception 指南生成 Requirements/System Context/Units/Stories/Bolt Plan 完整率与追踪链接覆盖率报告",
+        "记录指标：artifact_completeness_percent、trace_link_coverage_percent",
+        "输出包含 limitation，明确冻结 pin 复现不等于唯一标准",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "仅消费仓库内冻结指南；重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T09:30:00Z",
       "external_source": "https://specs.md/agents/inception-agent",
       "pinned_version": "sha256:d65ec6e39e641b3009ef88f78cf22aaa19e127a35f75f0e6bcff671dc66f416a",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -280,7 +305,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "Requirements、System Context、Units、Stories、Bolt Plan"
+      "sample_result": "Requirements、System Context、Units、Stories、Bolt Plan",
+      "repository_path": "experiments/exp-03-03",
+      "readme_path": "experiments/exp-03-03/README.md",
+      "sample_input": "experiments/exp-03-03/samples/input.json",
+      "sample_output": "experiments/exp-03-03/output/sample.json",
+      "test_path": "experiments/exp-03-03/tests/test_demo.py"
     },
     {
       "id": "EXP-04-01",
@@ -334,8 +364,8 @@
         "生成或复现：规则违反项与版本差异报告",
         "记录指标：规则覆盖率、误报率、漂移项数量"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:11:21Z",
       "repository_path": "experiments/exp-04-02",
       "readme_path": "experiments/exp-04-02/README.md",
       "sample_input": "experiments/exp-04-02/samples/input.json",
@@ -358,13 +388,21 @@
         "必需文件完整率",
         "引用有效率"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-04-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：可由新会话加载的最小 Memory Bank",
-        "记录指标：必需文件完整率、引用有效率"
+        "合法样例以退出码 0 生成 valid=true 的最小 Memory Bank 结构校验报告（无 external_source 网络抓取）",
+        "输入 pinned_version 必须与 experiments/exp-04-03/fixtures/pin/frozen-structure.json 冻结 pin 一致",
+        "记录指标：required_file_completeness_percent、reference_validity_percent",
+        "输出包含 limitation，明确只验证冻结 pin 夹具且 specs.md 为参考实现而非唯一标准",
+        "重复运行产生字节一致输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:45:00Z",
+      "repository_path": "experiments/exp-04-03",
+      "readme_path": "experiments/exp-04-03/README.md",
+      "sample_input": "experiments/exp-04-03/samples/input.json",
+      "sample_output": "experiments/exp-04-03/output/sample.json",
+      "test_path": "experiments/exp-04-03/tests/test_demo.py",
       "external_source": "https://specs.md/core-concepts/memory-bank",
       "pinned_version": "sha256:1ecdfd4c857ede2240282b4a80b57e1bb9f91e2d91894b8fec0f5e6d1a7de978",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -393,11 +431,13 @@
       ],
       "command": "python3 experiments/exp-05-01/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Bolt 范围、预计时长与拆分建议",
-        "记录指标：工期估算误差、范围溢出项数"
+        "合法样例以退出码 0 生成确定性 Bolt 范围、预计时长与拆分建议",
+        "记录指标：工期估算误差（无 actual_hours baseline 时为 null）、范围溢出项数",
+        "输出包含 limitation，明确不证明真实世界排期准确性",
+        "重复运行产生字节一致输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:45:00Z",
       "repository_path": "experiments/exp-05-01",
       "readme_path": "experiments/exp-05-01/README.md",
       "sample_input": "experiments/exp-05-01/samples/input.json",
@@ -423,11 +463,13 @@
       ],
       "command": "python3 experiments/exp-05-02/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Bolt 类型建议与选择依据",
-        "记录指标：专家判断一致率、过度工程化数、不足工程化数"
+        "合法样例以退出码 0 生成确定性 Bolt 类型建议、选择依据与可选灰区拆分/门禁建议",
+        "记录指标：专家判断一致率（无 expert_label 时为 null）、过度工程化数、不足工程化数",
+        "输出包含 limitation，明确不证明选择器可替代人工判断",
+        "重复运行产生字节一致输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:00:00Z",
       "repository_path": "experiments/exp-05-02",
       "readme_path": "experiments/exp-05-02/README.md",
       "sample_input": "experiments/exp-05-02/samples/input.json",
@@ -450,13 +492,16 @@
         "阶段完整率",
         "检查点遵循率"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-05-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：DDD 与 Simple 两条阶段记录",
-        "记录指标：阶段完整率、检查点遵循率"
+        "合法样例以退出码 0 对照冻结 pin 指南生成 Simple/DDD 两轨阶段完整率与检查点遵循率报告",
+        "记录指标：stage_completeness_percent、checkpoint_adherence_percent（总体为两轨算术平均，并输出各轨明细）",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "输出包含 limitation，明确冻结指南复现不等于唯一标准且不替代人工 Bolt 类型选择",
+        "仅消费仓库内冻结指南夹具，不得联网；重复运行产生字节一致输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:45:00Z",
       "external_source": "https://specs.md/guides/bolt-types",
       "pinned_version": "sha256:32d73fc5231f81eabaf9c881e1c64f3353882c605c729bfbbca9f5bb4aa0b481",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -465,7 +510,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "DDD 与 Simple 两条阶段记录"
+      "sample_result": "DDD 与 Simple 两条阶段记录",
+      "repository_path": "experiments/exp-05-03",
+      "readme_path": "experiments/exp-05-03/README.md",
+      "sample_input": "experiments/exp-05-03/samples/input.json",
+      "sample_output": "experiments/exp-05-03/output/sample.json",
+      "test_path": "experiments/exp-05-03/tests/test_demo.py"
     },
     {
       "id": "EXP-06-01",
@@ -488,8 +538,8 @@
         "生成或复现：计划项、实际变更与未声明偏差表",
         "记录指标：交付项覆盖率、未声明变更数"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:11:21Z",
       "repository_path": "experiments/exp-06-01",
       "readme_path": "experiments/exp-06-01/README.md",
       "sample_input": "experiments/exp-06-01/samples/input.json",
@@ -516,10 +566,13 @@
       "command": "python3 experiments/exp-06-02/quickstart.py --sample",
       "acceptance": [
         "生成或复现：按时间排序的修复证据链",
-        "记录指标：修复轮次、回归通过率、证据完整率"
+        "记录指标：修复轮次、回归通过率、证据完整率",
+        "合法样例以退出码 0 生成 valid=true 的确定性证据链报告",
+        "无效样例以退出码 1 返回稳定错误代码且不写入输出",
+        "重复运行产生字节一致的输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:45:00Z",
       "repository_path": "experiments/exp-06-02",
       "readme_path": "experiments/exp-06-02/README.md",
       "sample_input": "experiments/exp-06-02/samples/input.json",
@@ -542,13 +595,16 @@
         "完成耗时",
         "工件完整率"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-06-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：从计划到测试报告的完整 Bolt 工件",
-        "记录指标：完成耗时、工件完整率"
+        "合法样例以退出码 0 对照冻结 pin Bolt 执行指南生成从计划到测试报告的完整率与耗时报告",
+        "记录指标：completion_seconds、artifact_completeness_percent",
+        "输出包含 limitation，明确冻结 pin 复现不等于生产执行耗时保证",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "仅消费仓库内冻结指南；重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T09:30:00Z",
       "external_source": "https://specs.md/learn/aidlc-bolt-execution",
       "pinned_version": "sha256:fe6252a58966ef23ac663a313c1a62094a1d70f08ce1bb536fdc950721f21bb2",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -557,7 +613,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "从计划到测试报告的完整 Bolt 工件"
+      "sample_result": "从计划到测试报告的完整 Bolt 工件",
+      "repository_path": "experiments/exp-06-03",
+      "readme_path": "experiments/exp-06-03/README.md",
+      "sample_input": "experiments/exp-06-03/samples/input.json",
+      "sample_output": "experiments/exp-06-03/output/sample.json",
+      "test_path": "experiments/exp-06-03/tests/test_demo.py"
     },
     {
       "id": "EXP-07-01",
@@ -574,21 +635,30 @@
       "metrics": [
         "通过检查数",
         "失败检查数",
-        "总耗时"
+        "配置检查数"
       ],
-      "command": "python3 scripts/ci_check.py",
+      "command": "python3 experiments/exp-07-01/quickstart.py --sample",
       "acceptance": [
-        "ci_check.py 聚合事实校验、连续性、GitHub 配置、测试、干运行与链接审计",
-        "任一子检查失败时整体以非零退出码失败"
+        "quickstart 静态解析 scripts/ci_check.py 并列出核心 Must 门禁组合",
+        "记录指标：通过检查数、失败检查数、配置检查数及 missing/extra 对照",
+        "合法样例以退出码 0 生成 valid=true 的组合报告，指向 reused_implementation",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码；composition 失败时不视为 valid",
+        "输出 limitation 明确只证明门禁可聚合，不证明内容质量；合同测试不得调用 --live",
+        "重复运行产生字节一致的 composition 报告，测试命令全部通过"
       ],
-      "status": "ready",
-      "updated": "2026-07-22T06:48:12Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:45:00Z",
       "reused_implementation": "scripts/ci_check.py",
       "cross_chapter_references": [
         "CH-04",
         "CH-06",
         "CH-08"
-      ]
+      ],
+      "repository_path": "experiments/exp-07-01",
+      "readme_path": "experiments/exp-07-01/README.md",
+      "sample_input": "experiments/exp-07-01/samples/input.json",
+      "sample_output": "experiments/exp-07-01/output/sample.json",
+      "test_path": "experiments/exp-07-01/tests/test_demo.py"
     },
     {
       "id": "EXP-07-02",
@@ -610,10 +680,15 @@
       "command": "python3 experiments/exp-07-02/quickstart.py --sample",
       "acceptance": [
         "生成或复现：多方判断及分歧归因矩阵",
-        "记录指标：评审一致率、新增风险数、人工推翻率"
+        "记录指标：评审一致率、新增风险数、人工推翻率",
+        "合法样例以退出码 0 生成 valid=true 的确定性 disagreement_matrix 报告",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "输出包含 limitation，明确不证明模型评审可替代人工判断；Verify 指 CH-07 交付候选验证而非 Runtime Verify",
+        "仅消费冻结 independent_model_reviews 与 human_rubric 夹具，不得调用外部模型",
+        "重复运行产生字节一致的输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:20:00Z",
       "repository_path": "experiments/exp-07-02",
       "readme_path": "experiments/exp-07-02/README.md",
       "sample_input": "experiments/exp-07-02/samples/input.json",
@@ -637,13 +712,16 @@
         "首次发现阶段",
         "验证耗时"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-07-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：缺陷在不同检查层的发现记录",
-        "记录指标：缺陷逃逸数、首次发现阶段、验证耗时"
+        "合法样例以退出码 0 对照冻结 pin 分层验证指南生成 valid=true 的缺陷发现记录（无外网抓取）",
+        "记录指标：escaped_defect_count、first_discovery_stage、verification_seconds",
+        "输出 limitation 明确属于 CH-07 Verify，不等于 CH-08 Runtime Verify；冻结 pin 不等于唯一标准",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T10:00:00Z",
       "external_source": "https://specs.md/methodology/three-phases",
       "pinned_version": "sha256:29411a610e2f4466e1c903adb62212d60c048e5918b9d2bb4907fd45bd2e3c44",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -652,7 +730,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "缺陷在不同检查层的发现记录"
+      "sample_result": "缺陷在不同检查层的发现记录",
+      "repository_path": "experiments/exp-07-03",
+      "readme_path": "experiments/exp-07-03/README.md",
+      "sample_input": "experiments/exp-07-03/samples/input.json",
+      "sample_output": "experiments/exp-07-03/output/sample.json",
+      "test_path": "experiments/exp-07-03/tests/test_demo.py"
     },
     {
       "id": "EXP-08-01",
@@ -670,18 +753,27 @@
         "来源完整率",
         "哈希不一致数"
       ],
-      "command": "python3 scripts/check_release_readiness.py && python3 scripts/prepare_release.py --help",
+      "command": "python3 experiments/exp-08-01/quickstart.py --sample",
       "acceptance": [
         "readiness 来源必须与当前事实源一致，否则拒绝构造候选",
-        "生成的 release-manifest.json 记录来源、文件哈希与构建时间"
+        "生成的 release-manifest.json 记录来源、文件哈希与构建时间",
+        "合法样例以退出码 0 生成 valid=true 的确定性 manifest 校验报告",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "输出包含 limitation，明确不证明生产可观测成熟",
+        "重复运行产生字节一致的输出，测试命令全部通过"
       ],
-      "status": "ready",
-      "updated": "2026-07-22T06:48:12Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:45:00Z",
       "reused_implementation": "scripts/check_release_readiness.py; scripts/prepare_release.py",
       "cross_chapter_references": [
         "CH-06",
         "CH-07"
-      ]
+      ],
+      "repository_path": "experiments/exp-08-01",
+      "readme_path": "experiments/exp-08-01/README.md",
+      "sample_input": "experiments/exp-08-01/samples/input.json",
+      "sample_output": "experiments/exp-08-01/output/sample.json",
+      "test_path": "experiments/exp-08-01/tests/test_demo.py"
     },
     {
       "id": "EXP-08-02",
@@ -703,10 +795,14 @@
       "command": "python3 experiments/exp-08-02/quickstart.py --sample",
       "acceptance": [
         "生成或复现：发现、决策、回滚和恢复时间线",
-        "记录指标：发现到回滚耗时、数据损失窗口、Runbook 缺口数"
+        "记录指标：发现到回滚耗时、数据损失窗口、Runbook 缺口数",
+        "合法样例以退出码 0 生成 valid=true 的确定性 drill_timeline 报告",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "输出包含 limitation，明确桌面演练不等于生产恢复能力；Runtime Verify 指 CH-08 运行态核验",
+        "重复运行产生字节一致的输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:00:00Z",
       "repository_path": "experiments/exp-08-02",
       "readme_path": "experiments/exp-08-02/README.md",
       "sample_input": "experiments/exp-08-02/samples/input.json",
@@ -729,13 +825,16 @@
         "阶段完成率",
         "回滚就绪度"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-08-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Build、Deploy、Verify、Monitor 四阶段凭证",
-        "记录指标：阶段完成率、回滚就绪度"
+        "合法样例以退出码 0 对照冻结 pin Operations 指南生成 Build/Deploy/Runtime Verify/Monitor 凭证报告",
+        "记录指标：stage_completion_percent、rollback_readiness_percent",
+        "输出 limitation 明确 Runtime Verify 属于 CH-08，不等于 CH-07 Verify；冻结 pin 不等于成熟生产能力",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T10:00:00Z",
       "external_source": "https://specs.md/agents/operations-agent",
       "pinned_version": "sha256:dfef24406c8875dc920c3223eb5d415cec007afb3ba99e66191446d8b8f95338",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -744,7 +843,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "Build、Deploy、Verify、Monitor 四阶段凭证"
+      "sample_result": "Build、Deploy、Verify、Monitor 四阶段凭证",
+      "repository_path": "experiments/exp-08-03",
+      "readme_path": "experiments/exp-08-03/README.md",
+      "sample_input": "experiments/exp-08-03/samples/input.json",
+      "sample_output": "experiments/exp-08-03/output/sample.json",
+      "test_path": "experiments/exp-08-03/tests/test_demo.py"
     },
     {
       "id": "EXP-09-01",
@@ -764,11 +868,13 @@
       ],
       "command": "python3 experiments/exp-09-01/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Flow 建议、理由与不适用条件",
-        "记录指标：专家判断一致率、选择理由完整率"
+        "合法样例以退出码 0 生成含 Flow 建议、理由与不适用条件的稳定报告",
+        "无效样例以退出码 1 失败并返回稳定错误代码，且不写入输出",
+        "记录指标：专家判断一致率（无 expert_label 时为 null）、选择理由完整率",
+        "重复运行字节一致，单元测试全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:45:00Z",
       "repository_path": "experiments/exp-09-01",
       "readme_path": "experiments/exp-09-01/README.md",
       "sample_input": "experiments/exp-09-01/samples/input.json",
@@ -794,11 +900,13 @@
       ],
       "command": "python3 experiments/exp-09-02/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：检查点数量、位置与成本收益估算",
-        "记录指标：关键风险覆盖率、非必要检查点数、预计审阅成本"
+        "合法样例以退出码 0 生成含检查点数量、位置建议与成本收益估算的稳定报告",
+        "无效样例以退出码 1 失败并返回稳定错误代码，且不写入输出",
+        "记录指标：关键风险覆盖率、非必要检查点数、预计审阅成本",
+        "重复运行字节一致，单元测试全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:00:00Z",
       "repository_path": "experiments/exp-09-02",
       "readme_path": "experiments/exp-09-02/README.md",
       "sample_input": "experiments/exp-09-02/samples/input.json",
@@ -821,13 +929,16 @@
         "决策依据覆盖率",
         "预估流程开销"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-09-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Simple、FIRE、AI-DLC 三方案对照决策",
-        "记录指标：决策依据覆盖率、预估流程开销"
+        "合法样例以退出码 0 对照冻结 pin Flow 选择指南生成 Simple/FIRE/AI-DLC 三方案决策报告",
+        "记录指标：decision_rationale_coverage_percent、estimated_process_overhead_score",
+        "输出 limitation 明确冻结 pin 不等于唯一标准，也不替代人工 Flow 选择",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T10:00:00Z",
       "external_source": "https://specs.md/architecture/choose-flow",
       "pinned_version": "sha256:0af0a8b0344a245e7d2a3a08c92da32a5a6d1076e9a00712420be0a6723db685",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -836,7 +947,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "Simple、FIRE、AI-DLC 三方案对照决策"
+      "sample_result": "Simple、FIRE、AI-DLC 三方案对照决策",
+      "repository_path": "experiments/exp-09-03",
+      "readme_path": "experiments/exp-09-03/README.md",
+      "sample_input": "experiments/exp-09-03/samples/input.json",
+      "sample_output": "experiments/exp-09-03/output/sample.json",
+      "test_path": "experiments/exp-09-03/tests/test_demo.py"
     },
     {
       "id": "EXP-10-01",
@@ -856,11 +972,12 @@
       ],
       "command": "python3 experiments/exp-10-01/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：责任、审批、协作和知会矩阵",
-        "记录指标：无负责人决策数、责任冲突数"
+        "合法样例以退出码 0 生成 RACI 矩阵，且所有 Accountable 均为人类角色",
+        "坏样例以退出码 1 失败并返回稳定错误代码，且不生成报告",
+        "重复运行产生字节一致输出；记录无负责人决策数与责任冲突数"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:45:00Z",
       "repository_path": "experiments/exp-10-01",
       "readme_path": "experiments/exp-10-01/README.md",
       "sample_input": "experiments/exp-10-01/samples/input.json",
@@ -887,11 +1004,12 @@
       ],
       "command": "python3 experiments/exp-10-02/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：周期、质量、审阅负担与业务价值看板",
-        "记录指标：交付周期变化、缺陷逃逸率、人工审阅负担、业务结果变化"
+        "合法样例以退出码 0 生成价值记分卡，覆盖周期、质量、审阅负担与业务结果四维",
+        "坏样例以退出码 1 失败并返回稳定错误代码，且不生成报告",
+        "重复运行产生字节一致输出；记录 cycle_time_change_percent、defect_escape_rate、human_review_burden 与 business_result_change（含空值规则）"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:00:00Z",
       "repository_path": "experiments/exp-10-02",
       "readme_path": "experiments/exp-10-02/README.md",
       "sample_input": "experiments/exp-10-02/samples/input.json",
@@ -915,13 +1033,16 @@
         "决策一致率",
         "协作耗时"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-10-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Mob Elaboration、Mob Construction 与交接日志",
-        "记录指标：交接信息损失率、决策一致率、协作耗时"
+        "合法样例以退出码 0 对照冻结 pin Mob 协作指南生成 Elaboration/Construction 与交接日志报告",
+        "记录指标：handoff_information_loss_percent、decision_agreement_percent、collaboration_seconds",
+        "输出 limitation 明确冻结 pin 不等于唯一标准，也不证明真实组织协作成熟",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T10:00:00Z",
       "external_source": "https://specs.md/methodology/ai-dlc-vs-agile",
       "pinned_version": "sha256:1fffdb9c183ca0f19f2706e466ba2105bb0c54297df705d18d545d874ff35235",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -930,7 +1051,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "Mob Elaboration、Mob Construction 与交接日志"
+      "sample_result": "Mob Elaboration、Mob Construction 与交接日志",
+      "repository_path": "experiments/exp-10-03",
+      "readme_path": "experiments/exp-10-03/README.md",
+      "sample_input": "experiments/exp-10-03/samples/input.json",
+      "sample_output": "experiments/exp-10-03/output/sample.json",
+      "test_path": "experiments/exp-10-03/tests/test_demo.py"
     }
   ]
 }

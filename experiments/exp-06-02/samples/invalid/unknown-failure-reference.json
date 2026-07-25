@@ -1,0 +1,19 @@
+{
+  "commits": [
+    {
+      "failure_id": "FAIL-99",
+      "id": "COMMIT-01",
+      "message": "引用未知失败",
+      "timestamp": "2026-07-20T11:00:00Z"
+    }
+  ],
+  "experiment_id": "EXP-06-02",
+  "failures": [
+    {
+      "id": "FAIL-01",
+      "summary": "已知失败",
+      "timestamp": "2026-07-20T10:00:00Z"
+    }
+  ],
+  "tests": []
+}

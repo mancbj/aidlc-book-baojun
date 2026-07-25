@@ -1,0 +1,25 @@
+{
+  "experiment_id": "EXP-02-01",
+  "project_name": "缺少目标集合",
+  "risks": [
+    {
+      "id": "R-01",
+      "statement": "示例风险",
+      "owner_role": null
+    }
+  ],
+  "constraints": [
+    {
+      "id": "C-01",
+      "statement": "示例约束",
+      "owner_role": "owner"
+    }
+  ],
+  "responsibility_roles": [
+    {
+      "id": "owner",
+      "name": "负责人",
+      "boundary": "作出最终决定。"
+    }
+  ]
+}

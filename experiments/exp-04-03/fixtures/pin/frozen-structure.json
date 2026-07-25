@@ -1,0 +1,14 @@
+{
+  "source_label": "specs.md/core-concepts/memory-bank",
+  "pinned_version": "sha256:1ecdfd4c857ede2240282b4a80b57e1bb9f91e2d91894b8fec0f5e6d1a7de978",
+  "schema_version": "1.0.0",
+  "minimal_required_paths": [
+    "project.yaml",
+    "story-index.md",
+    "standards/coding-standards.md",
+    "standards/tech-stack.md",
+    "intents/001-demo-intent/requirements.md",
+    "intents/001-demo-intent/system-context.md"
+  ],
+  "notes": "Frozen in-repo manifest for the author-local specs.md portal crawl identified by pinned_version; not re-fetched at runtime."
+}

@@ -1,0 +1,65 @@
+{
+  "external_source": "https://specs.md/guides/bolt-types",
+  "guide_id": "bolt-type-checkpoint-guide",
+  "pinned_version": "sha256:32d73fc5231f81eabaf9c881e1c64f3353882c605c729bfbbca9f5bb4aa0b481",
+  "tracks": {
+    "simple": {
+      "bolt_type": "simple-construction-bolt",
+      "stages": [
+        {
+          "stage_id": "plan",
+          "required": true,
+          "artifact": "implementation-plan.md",
+          "checkpoints": ["human_validation"]
+        },
+        {
+          "stage_id": "implement",
+          "required": true,
+          "artifact": "implementation-walkthrough.md",
+          "checkpoints": ["human_validation"]
+        },
+        {
+          "stage_id": "test",
+          "required": true,
+          "artifact": "test-walkthrough.md",
+          "checkpoints": ["human_validation"]
+        }
+      ]
+    },
+    "ddd": {
+      "bolt_type": "ddd-construction-bolt",
+      "stages": [
+        {
+          "stage_id": "domain-model",
+          "required": true,
+          "artifact": "ddd-01-domain-model.md",
+          "checkpoints": ["human_validation"]
+        },
+        {
+          "stage_id": "technical-design",
+          "required": true,
+          "artifact": "ddd-02-technical-design.md",
+          "checkpoints": ["human_validation"]
+        },
+        {
+          "stage_id": "adr-analysis",
+          "required": false,
+          "artifact": "adr-{n}-{slug}.md",
+          "checkpoints": ["human_validation"]
+        },
+        {
+          "stage_id": "implement",
+          "required": true,
+          "artifact": "source-code",
+          "checkpoints": ["human_validation"]
+        },
+        {
+          "stage_id": "test",
+          "required": true,
+          "artifact": "ddd-03-test-report.md",
+          "checkpoints": ["human_validation"]
+        }
+      ]
+    }
+  }
+}

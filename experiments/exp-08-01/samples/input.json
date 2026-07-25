@@ -1,0 +1,29 @@
+{
+  "candidate_assets": [
+    {
+      "bytes": 2048,
+      "name": "book.html",
+      "sha256": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "bytes": 512,
+      "name": "release-manifest.json",
+      "sha256": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    {
+      "bytes": 4096,
+      "name": "site.zip",
+      "sha256": "sha256:3333333333333333333333333333333333333333333333333333333333333333"
+    }
+  ],
+  "expected_source_id": "working-tree-8c6c32f63edc",
+  "experiment_id": "EXP-08-01",
+  "readiness": {
+    "source_id": "working-tree-8c6c32f63edc",
+    "status": "ready"
+  },
+  "required_assets": [
+    "release-manifest.json",
+    "site.zip"
+  ]
+}

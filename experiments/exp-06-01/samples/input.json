@@ -1,0 +1,72 @@
+{
+  "actual_changes": [
+    {
+      "change_type": "added",
+      "path": "src/audit.py",
+      "summary": "实现计划与实际变更对照"
+    },
+    {
+      "change_type": "added",
+      "path": "tests/test_audit.py",
+      "summary": "覆盖正常与失败路径"
+    },
+    {
+      "change_type": "modified",
+      "path": "README.md",
+      "summary": "记录运行方式"
+    },
+    {
+      "change_type": "added",
+      "path": "docs/design-note.md",
+      "summary": "补充审计分类设计说明"
+    },
+    {
+      "change_type": "modified",
+      "path": "config/example.json",
+      "summary": "补充示例开关"
+    }
+  ],
+  "experiment_id": "EXP-06-01",
+  "implementation_plan": {
+    "deliverables": [
+      {
+        "description": "实现偏差审计器",
+        "id": "PLAN-01",
+        "path": "src/audit.py"
+      },
+      {
+        "description": "添加审计器测试",
+        "id": "PLAN-02",
+        "path": "tests/test_audit.py"
+      },
+      {
+        "description": "记录使用方法",
+        "id": "PLAN-03",
+        "path": "README.md"
+      }
+    ],
+    "goal": "交付可复核的 Plan–Walkthrough 偏差审计器"
+  },
+  "walkthrough": {
+    "changes": [
+      {
+        "path": "README.md",
+        "summary": "补充命令与判定说明"
+      },
+      {
+        "path": "src/audit.py",
+        "summary": "实现审计表和指标"
+      },
+      {
+        "path": "tests/test_audit.py",
+        "summary": "验证审计合同"
+      }
+    ],
+    "deviations": [
+      {
+        "path": "docs/design-note.md",
+        "reason": "实现中发现分类边界需要独立说明"
+      }
+    ]
+  }
+}

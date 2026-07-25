@@ -1,0 +1,165 @@
+{
+  "ambiguous_requirement": "给社区诊所做一个线上预约功能，越快上线越好",
+  "experiment_id": "EXP-02-02",
+  "sessions": {
+    "no_clarify": {
+      "clarification_rounds": 0,
+      "critical_omissions": [
+        {
+          "id": "OM-01",
+          "omission": "未定义患者身份核验与重复预约规则"
+        },
+        {
+          "id": "OM-02",
+          "omission": "未说明健康数据保留期限与删除请求"
+        },
+        {
+          "id": "OM-03",
+          "omission": "未约定取消/改期窗口与通知渠道"
+        }
+      ],
+      "decision_log": [
+        {
+          "id": "D-N-01",
+          "phase": "implement",
+          "summary": "按字面需求直接实现表单提交与短信提醒"
+        }
+      ],
+      "implemented_items": [
+        {
+          "capability": "患者填写姓名与手机号提交预约",
+          "id": "I-N-01"
+        },
+        {
+          "capability": "预约成功后发送短信提醒",
+          "id": "I-N-02"
+        },
+        {
+          "capability": "诊所后台列表查看当日预约",
+          "id": "I-N-03"
+        }
+      ],
+      "post_impl_requirement_changes": [
+        {
+          "change": "上线前补加隐私同意勾选与文案",
+          "id": "C-N-01"
+        },
+        {
+          "change": "修正时区导致预约时段错位",
+          "id": "C-N-02"
+        },
+        {
+          "change": "限制可预约字段，避免收集多余健康信息",
+          "id": "C-N-03"
+        },
+        {
+          "change": "增加管理员取消入口与审计记录",
+          "id": "C-N-04"
+        }
+      ],
+      "session_transcript": [
+        {
+          "content": "给社区诊所做一个线上预约功能，越快上线越好",
+          "role": "user"
+        },
+        {
+          "content": "收到，我将直接实现预约表单、短信提醒和后台列表。",
+          "role": "assistant"
+        }
+      ]
+    },
+    "with_clarify": {
+      "clarification_rounds": 3,
+      "critical_omissions": [
+        {
+          "id": "OM-04",
+          "omission": "未覆盖线下电话预约与线上并行的冲突处理"
+        }
+      ],
+      "decision_log": [
+        {
+          "id": "D-W-01",
+          "phase": "clarify",
+          "summary": "确认必须收集的最小字段、身份核验方式与合规边界"
+        },
+        {
+          "id": "D-W-02",
+          "phase": "clarify",
+          "summary": "确认取消窗口、通知渠道与诊所营业时间规则"
+        },
+        {
+          "id": "D-W-03",
+          "phase": "clarify",
+          "summary": "确认需对接现有排班表并保留人工 override"
+        },
+        {
+          "id": "D-W-04",
+          "phase": "implement",
+          "summary": "按已验证边界实现预约、核验、通知与后台管理"
+        }
+      ],
+      "implemented_items": [
+        {
+          "capability": "最小字段预约与手机号 OTP 核验",
+          "id": "I-W-01"
+        },
+        {
+          "capability": "隐私同意、数据保留说明与删除请求入口",
+          "id": "I-W-02"
+        },
+        {
+          "capability": "可配置取消/改期窗口与短信+邮件通知",
+          "id": "I-W-03"
+        },
+        {
+          "capability": "对接排班表并支持人工 override",
+          "id": "I-W-04"
+        },
+        {
+          "capability": "诊所后台预约管理与审计日志",
+          "id": "I-W-05"
+        }
+      ],
+      "post_impl_requirement_changes": [
+        {
+          "change": "澄清后新增候补队列与满号通知",
+          "id": "C-W-01"
+        },
+        {
+          "change": "补充医保卡可选字段及校验规则",
+          "id": "C-W-02"
+        },
+        {
+          "change": "增加英文界面文案以覆盖双语患者",
+          "id": "C-W-03"
+        },
+        {
+          "change": "对接现有 EMR 只读查询接口",
+          "id": "C-W-04"
+        },
+        {
+          "change": "运营要求导出 CSV 报表",
+          "id": "C-W-05"
+        }
+      ],
+      "session_transcript": [
+        {
+          "content": "给社区诊所做一个线上预约功能，越快上线越好",
+          "role": "user"
+        },
+        {
+          "content": "在实现前，我需要确认身份核验、数据保留、取消窗口与排班来源。",
+          "role": "assistant"
+        },
+        {
+          "content": "同意先澄清：OTP 核验、30 天保留、24 小时前可取消、排班来自现有系统。",
+          "role": "user"
+        },
+        {
+          "content": "已记录边界，开始按澄清结论实现。",
+          "role": "assistant"
+        }
+      ]
+    }
+  }
+}

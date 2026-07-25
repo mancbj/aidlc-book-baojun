@@ -1,0 +1,28 @@
+{
+  "external_source": "https://specs.md/methodology/ai-dlc-vs-agile",
+  "guide_id": "mob-elaboration-construction-handoff",
+  "pinned_version": "sha256:1fffdb9c183ca0f19f2706e466ba2105bb0c54297df705d18d545d874ff35235",
+  "mob_sessions": [
+    {
+      "session_id": "mob_elaboration",
+      "required_decisions": ["intent_boundary", "risk_acceptance"]
+    },
+    {
+      "session_id": "mob_construction",
+      "required_decisions": ["implementation_approach", "test_strategy"]
+    }
+  ],
+  "handoff_required_fields": [
+    "from_agent",
+    "to_agent",
+    "intent_summary",
+    "open_risks",
+    "approved_decisions"
+  ],
+  "reference_decisions": {
+    "intent_boundary": "scope-limited-brownfield-patch",
+    "risk_acceptance": "moderate-regression-ok",
+    "implementation_approach": "incremental-with-checkpoints",
+    "test_strategy": "contract-plus-regression"
+  }
+}

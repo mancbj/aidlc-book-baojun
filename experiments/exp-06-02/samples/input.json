@@ -1,0 +1,56 @@
+{
+  "commits": [
+    {
+      "failure_id": "FAIL-01",
+      "id": "COMMIT-01",
+      "message": "修复审计表路径归一化",
+      "timestamp": "2026-07-20T11:05:00Z"
+    },
+    {
+      "failure_id": "FAIL-02",
+      "id": "COMMIT-02",
+      "message": "补充边界用例断言",
+      "timestamp": "2026-07-20T14:20:00Z"
+    },
+    {
+      "id": "COMMIT-03",
+      "message": "文档补充，未绑定具体失败",
+      "timestamp": "2026-07-19T09:00:00Z"
+    }
+  ],
+  "experiment_id": "EXP-06-02",
+  "failures": [
+    {
+      "id": "FAIL-01",
+      "log_ref": "logs/ci-run-1042.txt",
+      "summary": "审计表遗漏未声明变更行",
+      "timestamp": "2026-07-20T10:30:00Z"
+    },
+    {
+      "id": "FAIL-02",
+      "log_ref": "logs/ci-run-1043.txt",
+      "summary": "边界分类与 Walkthrough 不一致",
+      "timestamp": "2026-07-20T13:45:00Z"
+    },
+    {
+      "id": "FAIL-03",
+      "log_ref": "logs/local-run-17.txt",
+      "summary": "样例输入缺少无效样例目录",
+      "timestamp": "2026-07-21T08:15:00Z"
+    }
+  ],
+  "tests": [
+    {
+      "commit_id": "COMMIT-01",
+      "id": "TEST-01",
+      "passed": true,
+      "timestamp": "2026-07-20T11:40:00Z"
+    },
+    {
+      "commit_id": "COMMIT-02",
+      "id": "TEST-02",
+      "passed": false,
+      "timestamp": "2026-07-20T15:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "experiment_id": "EXP-01-03",
+  "pinned_version": "sha256:9cd45974f4bd264ca4a357f79e1171e8ea23ea44ddd9d1060c8ab3c24b60ec39",
+  "trajectory": {
+    "inception": {
+      "artifacts": {
+        "intent_record": true,
+        "requirements": true,
+        "system_context": true,
+        "decomposition_summary": true
+      },
+      "checkpoints": [
+        {"checkpoint_id": "human_validation_intent", "observed": true},
+        {"checkpoint_id": "human_validation_decomposition", "observed": true}
+      ]
+    },
+    "construction": {
+      "artifacts": {
+        "bolt_plan": true,
+        "implementation_evidence": true,
+        "test_evidence": true
+      },
+      "checkpoints": [
+        {"checkpoint_id": "human_validation_bolt_plan", "observed": true},
+        {"checkpoint_id": "human_validation_implementation", "observed": true},
+        {"checkpoint_id": "human_validation_test", "observed": true}
+      ]
+    },
+    "operations": {
+      "artifacts": {
+        "deployment_record": true,
+        "monitoring_baseline": true
+      },
+      "checkpoints": [
+        {"checkpoint_id": "human_validation_release", "observed": true}
+      ]
+    }
+  }
+}

@@ -34,18 +34,39 @@ SOURCE_FILES = (
     Path("book/chapters/ch06-exsecutio.md"),
     Path("book/chapters/ch07-verification.md"),
     Path("book/chapters/ch08-operations.md"),
+    Path("book/chapters/ch09-adaptive-engineering.md"),
+    Path("book/chapters/ch10-organization-metrics.md"),
 )
 SUPPORT_FILES = (
     Path("book/book.css"),
     Path("book/filters/pdf-compat.lua"),
+    Path("book/filters/release-profile.lua"),
+    Path("book/fonts/fraunces.woff2"),
+    Path("book/fonts/source-serif-4.woff2"),
+    Path("book/fonts/ibm-plex-mono-400.woff2"),
+    Path("book/fonts/ibm-plex-mono-500.woff2"),
+    Path("book/templates/skip-link.html"),
+    Path("book/templates/release-pdf-header.tex"),
     Path("book/images/cover.png"),
     Path("book/images/fig0-1.svg"),
+    Path("book/images/chapter-figures.json"),
+    Path("book/images/ch02-human-judgment-gate.svg"),
+    Path("book/images/ch03-intent-to-bolt.svg"),
+    Path("book/images/ch04-memory-bank-stack.svg"),
+    Path("book/images/ch05-bolt-selection-matrix.svg"),
+    Path("book/images/ch06-exsecutio-loop.svg"),
+    Path("book/images/ch07-verification-evidence-chain.svg"),
+    Path("book/images/ch08-operations-loop.svg"),
+    Path("book/images/ch09-risk-ceremony-matrix.svg"),
+    Path("book/images/ch10-org-operating-system.svg"),
 )
+RELEASE_PROFILE_FILTER = Path("book/filters/release-profile.lua")
 MERMAID_BLOCK = re.compile(r"^```mermaid[^\n]*\n(.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL)
 COVER_MARKDOWN = "![《深入理解 AI-DLC》书籍封面](images/cover.png){.book-cover width=42%}"
 PDF_FULL_PAGE_COVER = r"""\newgeometry{margin=0pt}
 \thispagestyle{empty}
-\noindent\makebox[\paperwidth][c]{\includegraphics[width=\paperwidth,height=\paperheight]{\detokenize{__PDF_COVER_PATH__}}}
+\AddToShipoutPictureBG*{\AtPageLowerLeft{\makebox[\paperwidth][c]{\includegraphics[width=0.75\paperheight,height=\paperheight,keepaspectratio=false]{\detokenize{__PDF_COVER_PATH__}}}}}
+\null
 \clearpage
 \restoregeometry"""
 
@@ -235,9 +256,17 @@ def validate_pdf(path: Path) -> None:
         raise RuntimeError("PDF 候选结构或大小异常。")
 
 
-def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dict[str, object]:
+def build(
+    root: Path,
+    output: Path,
+    generated_at: str,
+    build_format: str,
+    profile: str = "dev",
+) -> Dict[str, object]:
     root = root.resolve()
     output = output.resolve()
+    if profile not in {"dev", "release"}:
+        raise RuntimeError(f"未知构建 profile：{profile}")
     missing = [str(path) for path in SOURCE_FILES + SUPPORT_FILES if not (root / path).is_file()]
     if missing:
         raise RuntimeError("缺少构建输入：" + ", ".join(missing))
@@ -251,12 +280,13 @@ def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dic
 
     prepare_output(root, output)
     resource_path = os.pathsep.join((str(root / "book"), str(root)))
+    release_filter = root / RELEASE_PROFILE_FILTER
     outputs: List[Dict[str, str]] = []
     with tempfile.TemporaryDirectory(prefix="aidlc-book-") as directory:
         work = Path(directory)
 
         def common_for(sources: List[str]) -> List[str]:
-            return [
+            command = [
                 pandoc,
                 *sources,
                 "--from=markdown+smart+raw_tex+fenced_divs",
@@ -264,20 +294,27 @@ def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dic
                 f"--resource-path={resource_path}",
                 "--metadata=lang:zh-CN",
             ]
+            if profile == "release":
+                command.append(f"--lua-filter={release_filter}")
+            return command
 
         if build_format in {"html", "all"}:
             html_sources = render_mermaid_sources(root, work, mmdc, browser, "svg")
             html_path = output / HTML_NAME
+            html_args = [
+                "--to=html5",
+                "--toc",
+                "--toc-depth=3",
+                f"--css={root / 'book/book.css'}",
+                "--embed-resources",
+                f"--output={html_path}",
+            ]
+            if profile == "release":
+                html_args.append(
+                    f"--include-before-body={root / 'book/templates/skip-link.html'}"
+                )
             run_pandoc(
-                common_for(html_sources)
-                + [
-                    "--to=html5",
-                    "--toc",
-                    "--toc-depth=3",
-                    f"--css={root / 'book/book.css'}",
-                    "--embed-resources",
-                    f"--output={html_path}",
-                ],
+                common_for(html_sources) + html_args,
                 "Pandoc HTML 构建",
             )
             validate_html(html_path)
@@ -286,21 +323,27 @@ def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dic
         if build_format in {"pdf", "all"}:
             pdf_sources = render_mermaid_sources(root, work, mmdc, browser, "pdf")
             pdf_path = output / PDF_NAME
-            run_pandoc(
-                common_for(pdf_sources)
-                + [
-                    "--to=pdf",
-                    "--pdf-engine=tectonic",
-                    f"--lua-filter={root / 'book/filters/pdf-compat.lua'}",
-                    "--variable=documentclass:ctexbook",
-                    "--variable=classoption:openany",
-                    "--variable=papersize:a4",
-                    "--variable=geometry:margin=24mm",
-                    "--variable=colorlinks:true",
-                    f"--output={pdf_path}",
-                ],
-                "Pandoc PDF 构建",
-            )
+            pdf_command = common_for(pdf_sources) + [
+                "--to=pdf",
+                "--pdf-engine=tectonic",
+                f"--lua-filter={root / 'book/filters/pdf-compat.lua'}",
+                "--variable=documentclass:ctexbook",
+                "--variable=classoption:openany",
+                "--variable=papersize:a4",
+                "--variable=colorlinks:true",
+                f"--output={pdf_path}",
+            ]
+            if profile == "release":
+                pdf_command.extend(
+                    [
+                        "--top-level-division=chapter",
+                        "--variable=geometry:margin=28mm",
+                        f"--include-in-header={root / 'book/templates/release-pdf-header.tex'}",
+                    ]
+                )
+            else:
+                pdf_command.append("--variable=geometry:margin=24mm")
+            run_pandoc(pdf_command, "Pandoc PDF 构建")
             validate_pdf(pdf_path)
             outputs.append({"path": PDF_NAME, "sha256": sha256(pdf_path)})
 
@@ -309,6 +352,7 @@ def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dic
         "title": TITLE,
         "generated_at": generated_at,
         "format": build_format,
+        "profile": profile,
         "pandoc": tool_version(pandoc),
         "diagram_engine": tool_version(mmdc),
         "diagram_browser": Path(browser).name,
@@ -331,6 +375,12 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--output", type=Path, default=Path(".artifacts/book"))
     parser.add_argument("--format", choices=("html", "pdf", "all"), default="html")
+    parser.add_argument(
+        "--profile",
+        choices=("dev", "release"),
+        default="dev",
+        help="dev 保留写作脚手架；release 剥离 Metadata/Gate/Review Notes 等内部信息",
+    )
     parser.add_argument("--generated-at", help="fixed ISO-8601 build time for reproducible tests")
     return parser.parse_args(argv)
 
@@ -341,7 +391,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "+00:00", "Z"
     )
     try:
-        manifest = build(args.root, args.output, generated_at, args.format)
+        manifest = build(args.root, args.output, generated_at, args.format, profile=args.profile)
     except (OSError, RuntimeError, UnicodeError) as exc:
         print(f"[ERROR] {exc}")
         return 1

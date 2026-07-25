@@ -1,0 +1,7 @@
+{
+  "experiment_id": "EXP-09-01",
+  "task_name": "缺少复杂度字段",
+  "codebase_state": "greenfield",
+  "team_scale": "small",
+  "compliance_requirements": "none"
+}

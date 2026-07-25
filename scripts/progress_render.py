@@ -499,7 +499,7 @@ def render_dashboard(projection: Dict[str, Any], recent_events: Sequence[Dict[st
   <main id="main">
     <section class="hero" aria-labelledby="page-title">
       <div>
-        <p class="eyebrow">14-DAY V0.1 · SOURCE {_e(projection['source_id'])}</p>
+        <p class="eyebrow">{_e((projection.get('cycles') or {}).get('active_cycle') or goal['name'])} · SOURCE {_e(projection['source_id'])}</p>
         <h1 id="page-title">写作进度<br><span>鸟瞰驾驶舱</span></h1>
         <p class="hero__intro">一个页面看清当前阶段、阻塞、章节生产线、实验队列，以及现在最值得完成的 Must 任务。</p>
       </div>
@@ -584,13 +584,16 @@ def render_progress_page(
     stage_done = sum(item["done"] for item in stage_totals.values())
     stage_total = sum(item["total"] for item in stage_totals.values())
     experiment_total = sum(projection["experiments"]["status_counts"].values())
-    experiment_done = projection["experiments"]["status_counts"].get("done", 0)
+    experiment_done = projection["experiments"]["status_counts"].get(
+        "verified",
+        projection["experiments"]["status_counts"].get("done", 0),
+    )
     next_action = projection["next_actions"][0] if projection["next_actions"] else None
     pipeline_metrics = "".join(
         [
             _metric_card("时间线", f"D{current_day['day']:02d}", f"{current_day['done']}/{current_day['total']} · {_pct(current_day['percent'])}", "blue"),
             _metric_card("章节生产线", f"{stage_done}/{stage_total}", "十章六阶段完成量"),
-            _metric_card("实验生产线", f"{experiment_done}/{experiment_total}", "done / total"),
+            _metric_card("实验生产线", f"{experiment_done}/{experiment_total}", "verified / total"),
             _metric_card("阻塞", str(len(projection["blockers"])), "影响后续流动的任务", "red" if projection["blockers"] else "green"),
         ]
     )

@@ -1,0 +1,22 @@
+{
+  "experiment_id": "EXP-10-02",
+  "pilot_name": "未知运行引用",
+  "delivery_baseline": {
+    "median_cycle_time_hours": 96,
+    "human_review_minutes_per_delivery": 60
+  },
+  "aidlc_runs": [
+    {
+      "id": "RUN-01",
+      "cycle_time_hours": 72,
+      "human_review_minutes": 75
+    }
+  ],
+  "defects": [
+    {
+      "id": "DEF-01",
+      "run_id": "RUN-99",
+      "escaped": true
+    }
+  ]
+}

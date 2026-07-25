@@ -1,0 +1,14 @@
+{
+  "experiment_id": "EXP-05-03",
+  "pinned_version": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "stage_records": {
+    "simple": {
+      "bolt_id": "x",
+      "stages": []
+    },
+    "ddd": {
+      "bolt_id": "y",
+      "stages": []
+    }
+  }
+}

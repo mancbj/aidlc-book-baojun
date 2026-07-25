@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "core_figure": "book/images/fig0-1.svg",
+  "chapter_figures": [
+    {
+      "chapter": "CH-01",
+      "path": "book/images/fig0-1.svg",
+      "reuse": true,
+      "title": "AI-DLC 核心公式与确定性交付闭环"
+    },
+    {
+      "chapter": "CH-02",
+      "path": "book/images/ch02-human-judgment-gate.svg",
+      "reuse": false,
+      "title": "人类判断门禁"
+    },
+    {
+      "chapter": "CH-03",
+      "path": "book/images/ch03-intent-to-bolt.svg",
+      "reuse": false,
+      "title": "Intent 到 Bolt 追踪链"
+    },
+    {
+      "chapter": "CH-04",
+      "path": "book/images/ch04-memory-bank-stack.svg",
+      "reuse": false,
+      "title": "Memory Bank 恢复栈"
+    },
+    {
+      "chapter": "CH-05",
+      "path": "book/images/ch05-bolt-selection-matrix.svg",
+      "reuse": false,
+      "title": "Bolt 选择矩阵"
+    },
+    {
+      "chapter": "CH-06",
+      "path": "book/images/ch06-exsecutio-loop.svg",
+      "reuse": false,
+      "title": "Exsecutio 执行闭环",
+      "required_text": [
+        "Exsecutio"
+      ]
+    },
+    {
+      "chapter": "CH-07",
+      "path": "book/images/ch07-verification-evidence-chain.svg",
+      "reuse": false,
+      "title": "分层验证证据链"
+    },
+    {
+      "chapter": "CH-08",
+      "path": "book/images/ch08-operations-loop.svg",
+      "reuse": false,
+      "title": "Operations 运行闭环",
+      "required_text": [
+        "Runtime Verify"
+      ]
+    },
+    {
+      "chapter": "CH-09",
+      "path": "book/images/ch09-risk-ceremony-matrix.svg",
+      "reuse": false,
+      "title": "风险—仪式矩阵"
+    },
+    {
+      "chapter": "CH-10",
+      "path": "book/images/ch10-org-operating-system.svg",
+      "reuse": false,
+      "title": "研发操作系统三层图"
+    }
+  ]
+}

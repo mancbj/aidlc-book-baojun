@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated": "2026-07-24T11:50:00Z",
+  "updated": "2026-07-24T13:38:38Z",
   "chapters": [
     {
       "id": "CH-01",
@@ -368,7 +368,7 @@
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
       "evidence_links": [
@@ -386,79 +386,105 @@
         "progress/tasks.json#D22-T02",
         "book/chapters/ch08-operations.md#04--example以本书-pages-与-release-链路为例",
         "book/chapters/ch08-operations.md#06--experiment三个验证方向",
-        "book/chapters/ch08-operations.md#07--figureoperations-运行闭环"
+        "book/chapters/ch08-operations.md#07--figureoperations-运行闭环",
+        "planning/reviews/ch-08-writing-review.md",
+        "progress/tasks.json#D22-T03"
       ],
-      "updated": "2026-07-24T11:50:00Z"
+      "updated": "2026-07-24T13:24:18Z"
     },
     {
       "id": "CH-09",
       "number": 9,
       "title": "适配性工程：选择正确的 Flow 与治理强度",
       "question": "如何根据任务复杂度、代码库现状、监管要求和团队规模，在 Simple、FIRE 与 AI-DLC 之间选择，而不过度或不足工程化？",
-      "reader_outcome": "能够使用风险与仪式矩阵选择 Flow、检查点数量和运行范围并解释选择代价",
+      "reader_outcome": "能够使用风险—仪式矩阵选择 Flow、检查点数量与运行范围并解释选择代价",
       "stages": [
         {
           "name": "question",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "framework",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "example",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "experiment",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "figure",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
-      "evidence_links": [],
-      "updated": "2026-07-22T05:39:06Z"
+      "evidence_links": [
+        "progress/tasks.json#D23-T01",
+        "book/chapters/ch09-adaptive-engineering.md",
+        "progress/experiments.json#EXP-09-01",
+        "progress/experiments.json#EXP-09-02",
+        "progress/experiments.json#EXP-09-03",
+        "progress/tasks.json#D23-T02",
+        "book/chapters/ch09-adaptive-engineering.md#04--example三类任务的-flow-对照与-swap-test",
+        "book/chapters/ch09-adaptive-engineering.md#06--experiment三个验证方向",
+        "book/chapters/ch09-adaptive-engineering.md#07--figure风险—仪式矩阵",
+        "planning/reviews/ch-09-writing-review.md",
+        "progress/tasks.json#D23-T03"
+      ],
+      "updated": "2026-07-24T13:35:57Z"
     },
     {
       "id": "CH-10",
       "number": 10,
       "title": "组织与度量：从 Agent 分工到研发操作系统",
       "question": "如何重构人、Agent、协作节奏与度量体系，并判断哪些 AI-DLC 实践值得在组织内规模化？",
-      "reader_outcome": "能够设计 Agent 与人的责任图、Mob 协作节奏和业务价值记分卡",
+      "reader_outcome": "能够设计 Master/Inception/Construction/Operations 与人的责任图、Mob 协作节奏和业务价值记分卡",
       "stages": [
         {
           "name": "question",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "framework",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "example",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "experiment",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "figure",
-          "status": "pending"
+          "status": "done"
         },
         {
           "name": "review",
-          "status": "pending"
+          "status": "done"
         }
       ],
-      "evidence_links": [],
-      "updated": "2026-07-22T05:39:06Z"
+      "evidence_links": [
+        "progress/tasks.json#D24-T01",
+        "book/chapters/ch10-organization-metrics.md",
+        "progress/experiments.json#EXP-10-01",
+        "progress/experiments.json#EXP-10-02",
+        "progress/experiments.json#EXP-10-03",
+        "progress/tasks.json#D24-T02",
+        "book/chapters/ch10-organization-metrics.md#04--example以本书写作系统试点为例",
+        "book/chapters/ch10-organization-metrics.md#06--experiment三个验证方向",
+        "book/chapters/ch10-organization-metrics.md#07--figure研发操作系统三层图",
+        "planning/reviews/ch-10-writing-review.md",
+        "progress/tasks.json#D24-T03"
+      ],
+      "updated": "2026-07-24T13:38:38Z"
     }
   ]
 }

@@ -392,25 +392,34 @@ def aggregate_progress(
             )
     latest_fact_update = max(timestamps, default="")
 
+    verified_experiments = sum(item.get("status") == "verified" for item in experiments)
+    experiments_closed = bool(experiments) and verified_experiments == len(experiments)
+
     if active_cycle:
-        release_message = "v0.1 已发布；执行下一周期首个 Must"
+        release_message = f"{active_cycle.get('id')} 已激活；执行下一周期首个 Must 或继续处理 known-gap"
     elif not tasks:
         release_message = "尚未创建任务，请先初始化任务事实源"
+    elif all_done and experiments_closed:
+        release_message = "实验与任务已闭环；准备下一 patch 发布，或等待真实回执激活 draft 周期"
     elif all_done:
-        release_message = (
-            "v0.1 已完成；执行下一周期首个 Must"
-            if active_cycle
-            else "准备 v0.1 发布；等待真实发布回执激活下一周期"
-        )
+        release_message = "准备发布；等待真实发布回执激活下一周期"
     else:
         release_message = ""
+
+    if active_cycle:
+        goal_name = f"{active_cycle.get('id')} · 持续更新与维护周期"
+    elif experiments_closed and all_done:
+        goal_name = f"实验 {verified_experiments}/{len(experiments)} verified；patch 维护阶段"
+    else:
+        goal_name = "v0.1 已发布；十章写作冲刺"
+
     return {
         "schema_version": "1.0.0",
         "generated_at": generated_at,
         "source_id": source_id,
         "latest_fact_update": latest_fact_update,
         "goal": {
-            "name": "v0.1 已发布；十章写作冲刺",
+            "name": goal_name,
             "total_days": max_day,
             "current_day": current_day,
             "days_remaining": max(max_day - current_day, 0),

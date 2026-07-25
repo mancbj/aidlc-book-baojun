@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Operations 运行闭环</title>
+  <desc id="desc">Verified Candidate 进入 Build → Deploy → Runtime Verify → Monitor；Monitor 触发 Recover / Rebuild 返回运行链，右侧形成 Sustainable Runtime。Runtime Verify 属于运行时核验，不等于 CH-07 交付候选验证。</desc>
+  <defs>
+    <style>
+      svg {
+        --background: #F7F8FA;
+        --surface: #FFFFFF;
+        --ink: #252A31;
+        --muted: #5F6671;
+        --border: #DDE1E7;
+        --blue: #0F62FE;
+        --green: #24A148;
+        --purple: #8A3FFC;
+      }
+      .canvas { fill: #F7F8FA; fill: var(--background); }
+      .card {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .cell {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .accent-blue { fill: #0F62FE; fill: var(--blue); }
+      .accent-green { fill: #24A148; fill: var(--green); }
+      .accent-purple { fill: #8A3FFC; fill: var(--purple); }
+      .title, .body, .note {
+        font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif;
+        fill: #252A31;
+        fill: var(--ink);
+      }
+      .title { font-size: 26px; font-weight: 700; }
+      .body { font-size: 16px; font-weight: 650; }
+      .note { font-size: 12px; font-weight: 450; fill: #5F6671; fill: var(--muted); }
+      .kicker, .section-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .axis-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .axis {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .flow {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .rail {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .feedback {
+        fill: none;
+        stroke: #0F62FE;
+        stroke: var(--blue);
+        stroke-width: 1.3;
+        stroke-dasharray: 4 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.72;
+        vector-effect: non-scaling-stroke;
+      }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6671"/>
+    </marker>
+    <marker id="feedback-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#0F62FE"/>
+    </marker>
+  </defs>
+  <rect class="canvas" x="0" y="0" width="960" height="540"/>
+
+  <g id="figure-heading" data-role="heading">
+    <text class="note kicker" x="64" y="40">OPERATIONS · 08</text>
+    <text class="title" x="64" y="72">Operations 运行闭环</text>
+  </g>
+
+  <g id="thesis" data-role="thesis" data-card="thesis" transform="translate(64 92)">
+    <rect class="card" x="0" y="0" width="832" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="accent accent-blue" x="0" y="0" width="5" height="56" rx="2"/>
+    <text class="body" x="24" y="24">从已验证候选进入运行链</text>
+    <text class="note" x="24" y="44">Runtime Verify ≠ CH-07 候选验证；Monitor 触发恢复</text>
+  </g>
+
+  <g id="section-labels" data-role="labels">
+    <text class="note section-label" x="48" y="176">INPUT</text>
+    <text class="note section-label" x="280" y="176">RUNTIME CHAIN</text>
+    <text class="note section-label" x="760" y="176">OUTCOME</text>
+  </g>
+
+  <g id="inputs" data-role="inputs">
+    <g data-card="verified-candidate" data-stage="input" transform="translate(48 236)">
+      <rect class="card" x="0" y="0" width="144" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">已验证候选</text>
+      <text class="note" x="16" y="56">CH-07 已批准</text>
+    </g>
+  </g>
+
+  <g id="shared-input-rail" data-role="shared-input">
+    <path class="flow" d="M192 276H224" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+  </g>
+
+  <g id="runtime-chain" data-role="process">
+    <g data-card="build" data-stage="main" transform="translate(224 236)">
+      <rect class="card" x="0" y="0" width="104" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">Build</text>
+      <text class="note" x="16" y="56">可追溯产物</text>
+    </g>
+    <path class="flow" d="M328 276H344" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="deploy" data-stage="main" transform="translate(344 236)">
+      <rect class="card" x="0" y="0" width="104" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">Deploy</text>
+      <text class="note" x="16" y="56">受控发布</text>
+    </g>
+    <path class="flow" d="M448 276H464" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="runtime-verify" data-stage="main" transform="translate(464 236)">
+      <rect class="card" x="0" y="0" width="168" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">Runtime Verify</text>
+      <text class="note" x="16" y="56">运行时核验</text>
+    </g>
+    <path class="flow" d="M632 276H648" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="monitor" data-stage="main" transform="translate(648 236)">
+      <rect class="card" x="0" y="0" width="104" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">Monitor</text>
+      <text class="note" x="16" y="56">观察与告警</text>
+    </g>
+  </g>
+
+  <path class="flow" d="M752 276H776" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+
+  <g id="output" data-role="output">
+    <g data-card="sustainable-runtime" transform="translate(776 236)">
+      <rect class="card" x="0" y="0" width="136" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">可持续运行</text>
+      <text class="note" x="16" y="56">稳定运行态</text>
+    </g>
+  </g>
+
+  <g id="recover" data-role="constraints">
+    <g data-card="recover-rebuild" transform="translate(344 380)">
+      <rect class="card" x="0" y="0" width="288" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">Recover / Rebuild</text>
+      <text class="note" x="16" y="54">运行闭环的一部分，不是补丁</text>
+    </g>
+  </g>
+
+  <path class="flow" d="M700 316V416H632" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+
+  <g id="feedback-loop" data-role="feedback" data-target="shared-input-rail">
+    <path class="feedback" d="M344 416H208V296" marker-end="url(#feedback-arrow)" vector-effect="non-scaling-stroke"/>
+    <text class="note" x="480" y="492" text-anchor="middle">Monitor 触发恢复并回到运行输入</text>
+  </g>
+
+</svg>

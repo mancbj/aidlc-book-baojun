@@ -1,0 +1,245 @@
+{
+  "experiment_id": "EXP-01-01",
+  "generation_context": {
+    "model": "frozen-gpt-example-2026-03",
+    "prompt_id": "todo-crud-v3-system-user",
+    "temperature": 0.2
+  },
+  "generation_count": 3,
+  "generations": [
+    {
+      "canonical_path_count": 7,
+      "canonical_paths": [
+        "api_style",
+        "entities",
+        "operations",
+        "persistence.driver",
+        "persistence.migrations",
+        "tests.integration",
+        "tests.unit"
+      ],
+      "id": "gen-20260301-a",
+      "test_pass": true
+    },
+    {
+      "canonical_path_count": 7,
+      "canonical_paths": [
+        "api_style",
+        "entities",
+        "operations",
+        "persistence.driver",
+        "persistence.migrations",
+        "tests.integration",
+        "tests.unit"
+      ],
+      "id": "gen-20260301-b",
+      "test_pass": true
+    },
+    {
+      "canonical_path_count": 7,
+      "canonical_paths": [
+        "api_style",
+        "entities",
+        "operations",
+        "persistence.driver",
+        "persistence.migrations",
+        "tests.integration",
+        "tests.unit"
+      ],
+      "id": "gen-20260301-c",
+      "test_pass": false
+    }
+  ],
+  "intent": {
+    "id": "INT-TODO-CRUD",
+    "statement": "为团队待办提供 REST CRUD，含持久化与基础单元测试"
+  },
+  "limitation": "本报告仅对仓库内冻结的多次生成快照做结构化差分与通过率方差统计；它不证明模型或流程已稳定到可依赖单次生成交付。",
+  "metrics": {
+    "structure_difference_rate": 0.4762,
+    "test_pass_observations": 3,
+    "test_pass_rate": 0.6667,
+    "test_pass_rate_variance": 0.2222
+  },
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:781d71f2935e23e932277a351165af64aa7bbb3784b4ee97fc75de0ababf07f5",
+  "structure_difference_report": {
+    "difference_rate": 0.4762,
+    "differing_pairs": 10,
+    "pairwise_path_comparisons": [
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-b",
+        "matches": true,
+        "path": "api_style",
+        "value_a": "\"rest\"",
+        "value_b": "\"rest\""
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-b",
+        "matches": true,
+        "path": "entities",
+        "value_a": "[\"TodoItem\"]",
+        "value_b": "[\"TodoItem\"]"
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-b",
+        "matches": true,
+        "path": "operations",
+        "value_a": "[\"create\",\"read\",\"update\",\"delete\"]",
+        "value_b": "[\"create\",\"read\",\"update\",\"delete\"]"
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-b",
+        "matches": false,
+        "path": "persistence.driver",
+        "value_a": "\"sqlite\"",
+        "value_b": "\"postgres\""
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-b",
+        "matches": true,
+        "path": "persistence.migrations",
+        "value_a": "true",
+        "value_b": "true"
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-b",
+        "matches": false,
+        "path": "tests.integration",
+        "value_a": "false",
+        "value_b": "true"
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-b",
+        "matches": true,
+        "path": "tests.unit",
+        "value_a": "true",
+        "value_b": "true"
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-c",
+        "matches": true,
+        "path": "api_style",
+        "value_a": "\"rest\"",
+        "value_b": "\"rest\""
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-c",
+        "matches": false,
+        "path": "entities",
+        "value_a": "[\"TodoItem\"]",
+        "value_b": "[\"Todo\",\"TodoList\"]"
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-c",
+        "matches": false,
+        "path": "operations",
+        "value_a": "[\"create\",\"read\",\"update\",\"delete\"]",
+        "value_b": "[\"create\",\"read\",\"update\"]"
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-c",
+        "matches": true,
+        "path": "persistence.driver",
+        "value_a": "\"sqlite\"",
+        "value_b": "\"sqlite\""
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-c",
+        "matches": false,
+        "path": "persistence.migrations",
+        "value_a": "true",
+        "value_b": "false"
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-c",
+        "matches": true,
+        "path": "tests.integration",
+        "value_a": "false",
+        "value_b": "false"
+      },
+      {
+        "generation_a": "gen-20260301-a",
+        "generation_b": "gen-20260301-c",
+        "matches": true,
+        "path": "tests.unit",
+        "value_a": "true",
+        "value_b": "true"
+      },
+      {
+        "generation_a": "gen-20260301-b",
+        "generation_b": "gen-20260301-c",
+        "matches": true,
+        "path": "api_style",
+        "value_a": "\"rest\"",
+        "value_b": "\"rest\""
+      },
+      {
+        "generation_a": "gen-20260301-b",
+        "generation_b": "gen-20260301-c",
+        "matches": false,
+        "path": "entities",
+        "value_a": "[\"TodoItem\"]",
+        "value_b": "[\"Todo\",\"TodoList\"]"
+      },
+      {
+        "generation_a": "gen-20260301-b",
+        "generation_b": "gen-20260301-c",
+        "matches": false,
+        "path": "operations",
+        "value_a": "[\"create\",\"read\",\"update\",\"delete\"]",
+        "value_b": "[\"create\",\"read\",\"update\"]"
+      },
+      {
+        "generation_a": "gen-20260301-b",
+        "generation_b": "gen-20260301-c",
+        "matches": false,
+        "path": "persistence.driver",
+        "value_a": "\"postgres\"",
+        "value_b": "\"sqlite\""
+      },
+      {
+        "generation_a": "gen-20260301-b",
+        "generation_b": "gen-20260301-c",
+        "matches": false,
+        "path": "persistence.migrations",
+        "value_a": "true",
+        "value_b": "false"
+      },
+      {
+        "generation_a": "gen-20260301-b",
+        "generation_b": "gen-20260301-c",
+        "matches": false,
+        "path": "tests.integration",
+        "value_a": "true",
+        "value_b": "false"
+      },
+      {
+        "generation_a": "gen-20260301-b",
+        "generation_b": "gen-20260301-c",
+        "matches": true,
+        "path": "tests.unit",
+        "value_a": "true",
+        "value_b": "true"
+      }
+    ],
+    "total_pairs": 21
+  },
+  "variance_basis": {
+    "structure_difference_rate": "无序生成对 × 并集路径；值不等或一侧缺失计为差异",
+    "test_pass_rate_variance": "对含 test_pass 的冻结生成使用总体方差（除以 N，非样本 n-1）"
+  }
+}

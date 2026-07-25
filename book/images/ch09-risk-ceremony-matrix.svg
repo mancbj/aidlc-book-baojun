@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">风险—仪式矩阵</title>
+  <desc id="desc">以风险等级与仪式强度构成选型矩阵：低风险倾向 Simple，中风险倾向 FIRE，高风险倾向 AI-DLC；旁侧列出 Complexity、Codebase State、Compliance、Team Scale、Reversibility 五个风险维度，并保留升级与降级触发器。</desc>
+  <defs>
+    <style>
+      svg {
+        --background: #F7F8FA;
+        --surface: #FFFFFF;
+        --ink: #252A31;
+        --muted: #5F6671;
+        --border: #DDE1E7;
+        --blue: #0F62FE;
+        --green: #24A148;
+        --purple: #8A3FFC;
+      }
+      .canvas { fill: #F7F8FA; fill: var(--background); }
+      .card {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .cell {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .accent-blue { fill: #0F62FE; fill: var(--blue); }
+      .accent-green { fill: #24A148; fill: var(--green); }
+      .accent-purple { fill: #8A3FFC; fill: var(--purple); }
+      .title, .body, .note {
+        font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif;
+        fill: #252A31;
+        fill: var(--ink);
+      }
+      .title { font-size: 28px; font-weight: 700; }
+      .body { font-size: 16px; font-weight: 650; }
+      .note { font-size: 12px; font-weight: 450; fill: #5F6671; fill: var(--muted); }
+      .kicker, .section-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .axis-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .axis {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .flow {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .rail {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .feedback {
+        fill: none;
+        stroke: #0F62FE;
+        stroke: var(--blue);
+        stroke-width: 1.3;
+        stroke-dasharray: 4 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.72;
+        vector-effect: non-scaling-stroke;
+      }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6671"/>
+    </marker>
+    <marker id="feedback-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#0F62FE"/>
+    </marker>
+  </defs>
+  <rect class="canvas" x="0" y="0" width="1200" height="675"/>
+
+  <g id="figure-heading" data-role="heading">
+    <text class="note kicker" x="64" y="40">ADAPTIVE ENGINEERING · 09</text>
+    <text class="title" x="64" y="72">风险—仪式矩阵</text>
+  </g>
+
+  <g id="thesis" data-role="thesis" data-card="thesis" transform="translate(64 92)">
+    <rect class="card" x="0" y="0" width="1072" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="accent accent-blue" x="0" y="0" width="5" height="56" rx="2"/>
+    <text class="body" x="24" y="24">典型倾向，不是强制法令</text>
+    <text class="note" x="24" y="44">每个落点都要能回答：为什么、为什么不、检查点预算是什么</text>
+  </g>
+
+  <g id="axes" data-role="labels">
+    <path class="axis" d="M200 560H760" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <path class="axis" d="M200 560V160" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <text class="note axis-label" x="480" y="600" text-anchor="middle">CEREMONY · LOW TO HIGH</text>
+    <text class="note" x="120" y="360" text-anchor="middle" transform="rotate(-90 120 360)">RISK · LOW TO HIGH</text>
+    <text class="note" x="280" y="552" text-anchor="middle">Low Ceremony</text>
+    <text class="note" x="640" y="552" text-anchor="middle">High Ceremony</text>
+  </g>
+
+  <g id="matrix" data-role="process">
+    <rect class="cell" x="220" y="184" width="240" height="96" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="cell" x="500" y="184" width="240" height="96" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="cell" x="220" y="308" width="240" height="96" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="cell" x="500" y="308" width="240" height="96" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="cell" x="220" y="432" width="240" height="96" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="cell" x="500" y="432" width="240" height="96" rx="4" vector-effect="non-scaling-stroke"/>
+
+    <text class="note" x="200" y="232" text-anchor="end">High</text>
+    <text class="note" x="200" y="356" text-anchor="end">Medium</text>
+    <text class="note" x="200" y="480" text-anchor="end">Low</text>
+
+    <g data-card="high-low" transform="translate(240 204)">
+      <rect class="card" x="0" y="0" width="200" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="56" rx="2"/>
+      <text class="body" x="16" y="24">FIRE / AI-DLC</text>
+      <text class="note" x="16" y="44">高风险 · 低仪式预算</text>
+    </g>
+    <g data-card="high-high" transform="translate(520 204)">
+      <rect class="card" x="0" y="0" width="200" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="56" rx="2"/>
+      <text class="body" x="16" y="24">AI-DLC</text>
+      <text class="note" x="16" y="44">高风险 · 完整治理</text>
+    </g>
+    <g data-card="mid-low" transform="translate(240 328)">
+      <rect class="card" x="0" y="0" width="200" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="56" rx="2"/>
+      <text class="body" x="16" y="24">FIRE</text>
+      <text class="note" x="16" y="44">中风险 · 焦点增量</text>
+    </g>
+    <g data-card="mid-high" transform="translate(520 328)">
+      <rect class="card" x="0" y="0" width="200" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="56" rx="2"/>
+      <text class="body" x="16" y="24">FIRE / AI-DLC</text>
+      <text class="note" x="16" y="44">中风险 · 可升级</text>
+    </g>
+    <g data-card="low-low" transform="translate(240 452)">
+      <rect class="card" x="0" y="0" width="200" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="56" rx="2"/>
+      <text class="body" x="16" y="24">Simple</text>
+      <text class="note" x="16" y="44">低风险 · 最小仪式</text>
+    </g>
+    <g data-card="low-high" transform="translate(520 452)">
+      <rect class="card" x="0" y="0" width="200" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="56" rx="2"/>
+      <text class="body" x="16" y="24">Simple / FIRE</text>
+      <text class="note" x="16" y="44">低风险 · 可加重</text>
+    </g>
+  </g>
+
+  <g id="risk-dimensions" data-role="constraints">
+    <g data-card="dimensions" transform="translate(820 184)">
+      <rect class="card" x="0" y="0" width="300" height="88" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="88" rx="2"/>
+      <text class="body" x="16" y="36">五个风险维度</text>
+      <text class="note" x="16" y="60">Complexity · Codebase · Compliance</text>
+    </g>
+    <g data-card="dimensions-more" transform="translate(820 292)">
+      <rect class="card" x="0" y="0" width="300" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">Team · Reversibility</text>
+      <text class="note" x="16" y="54">Scale 与可否回退</text>
+    </g>
+    <g data-card="upgrade" transform="translate(820 388)">
+      <rect class="card" x="0" y="0" width="300" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">升级触发</text>
+      <text class="note" x="16" y="54">跨边界 · 难逆 · 合规上升</text>
+    </g>
+    <g data-card="downgrade" transform="translate(820 484)">
+      <rect class="card" x="0" y="0" width="300" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">降级触发</text>
+      <text class="note" x="16" y="54">范围收缩 · 风险已隔离</text>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,46 @@
+{
+  "external_source": "https://specs.md/methodology/what-is-ai-dlc",
+  "guide_id": "aidlc-three-phase-lifecycle",
+  "pinned_version": "sha256:9cd45974f4bd264ca4a357f79e1171e8ea23ea44ddd9d1060c8ab3c24b60ec39",
+  "phases": [
+    {
+      "phase_id": "inception",
+      "label": "Inception",
+      "required_artifacts": [
+        "intent_record",
+        "requirements",
+        "system_context",
+        "decomposition_summary"
+      ],
+      "checkpoints": [
+        "human_validation_intent",
+        "human_validation_decomposition"
+      ]
+    },
+    {
+      "phase_id": "construction",
+      "label": "Construction",
+      "required_artifacts": [
+        "bolt_plan",
+        "implementation_evidence",
+        "test_evidence"
+      ],
+      "checkpoints": [
+        "human_validation_bolt_plan",
+        "human_validation_implementation",
+        "human_validation_test"
+      ]
+    },
+    {
+      "phase_id": "operations",
+      "label": "Operations",
+      "required_artifacts": [
+        "deployment_record",
+        "monitoring_baseline"
+      ],
+      "checkpoints": [
+        "human_validation_release"
+      ]
+    }
+  ]
+}

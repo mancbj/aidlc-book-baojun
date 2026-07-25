@@ -1,0 +1,37 @@
+{
+  "experiment_id": "EXP-10-03",
+  "pinned_version": "sha256:1fffdb9c183ca0f19f2706e466ba2105bb0c54297df705d18d545d874ff35235",
+  "collaboration_id": "mob-bolt-checkout-refactor",
+  "timing": {
+    "started_at_epoch": 1750100000,
+    "completed_at_epoch": 1750107200
+  },
+  "mob_sessions": [
+    {
+      "session_id": "mob_elaboration",
+      "decisions": {
+        "intent_boundary": "scope-limited-brownfield-patch",
+        "risk_acceptance": "moderate-regression-ok"
+      }
+    },
+    {
+      "session_id": "mob_construction",
+      "decisions": {
+        "implementation_approach": "incremental-with-checkpoints",
+        "test_strategy": "contract-plus-regression"
+      }
+    }
+  ],
+  "handoff_log": {
+    "from_agent": "construction-agent",
+    "to_agent": "operations-agent",
+    "intent_summary": "棕地结账路径增量重构，保留特性开关与回归门禁。",
+    "open_risks": "支付网关沙箱与生产配置差异需在 Runtime Verify 复核。",
+    "approved_decisions": [
+      "implementation_approach",
+      "intent_boundary",
+      "risk_acceptance",
+      "test_strategy"
+    ]
+  }
+}

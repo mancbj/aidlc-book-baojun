@@ -1,0 +1,71 @@
+{
+  "checkpoint_count": 3,
+  "checkpoint_placements": [
+    {
+      "confirms": "人工确认当前增量与风险清单仍一致。",
+      "covers_risk_ids": [],
+      "essential": false,
+      "id": "CP-001",
+      "phase": "implement",
+      "rule_id": "R-CP-BASELINE-MID-SYNC",
+      "trigger": "自治偏好为 balanced，实施中期需要同步检查点"
+    },
+    {
+      "confirms": "人工审阅风险“审计证据链可能不完整”的缓解计划与证据。",
+      "covers_risk_ids": [
+        "RK-REG"
+      ],
+      "essential": true,
+      "id": "CP-002",
+      "phase": "verify",
+      "rule_id": "R-CP-MAJOR-GUARDRAIL",
+      "trigger": "重大风险 RK-REG 在 medium 可逆性与 team 影响面下需要闸门"
+    },
+    {
+      "confirms": "人工确认风险“对账差异可能写入生产账簿”的缓解与剩余暴露可接受。",
+      "covers_risk_ids": [
+        "RK-DATA"
+      ],
+      "essential": true,
+      "id": "CP-003",
+      "phase": "release",
+      "rule_id": "R-CP-MANDATORY-CRITICAL",
+      "trigger": "关键风险 RK-DATA 进入 release 阶段"
+    }
+  ],
+  "cost_benefit_estimate": {
+    "benefit_cost_ratio": 1.18,
+    "estimated_review_cost_hours": 4.25,
+    "estimated_risk_reduction_score": 5.0
+  },
+  "experiment_id": "EXP-09-02",
+  "fired_rule_ids": [
+    "R-CP-BASELINE-MID-SYNC",
+    "R-CP-MAJOR-GUARDRAIL",
+    "R-CP-MANDATORY-CRITICAL"
+  ],
+  "inputs": {
+    "autonomy_preference": "balanced",
+    "impact_scope": "team",
+    "reversibility": "medium",
+    "risk_count": 3
+  },
+  "limitation": "检查点预算仅依据本工具内置确定性加权规则生成，不构成强制治理法令；它不证明所有风险都能被预算公式穷尽，未建模风险仍需人工补充。",
+  "metrics": {
+    "critical_risk_coverage_percent": 100.0,
+    "estimated_review_cost": 4.25,
+    "nonessential_checkpoint_count": 1
+  },
+  "rubric_basis": [
+    "R-CP-MANDATORY-CRITICAL",
+    "R-CP-MAJOR-GUARDRAIL",
+    "R-CP-MINOR-GUARDRAIL",
+    "R-CP-BASELINE-KICKOFF",
+    "R-CP-BASELINE-MID-SYNC",
+    "R-CP-BASELINE-ROLLBACK-VERIFY",
+    "R-CP-BASELINE-PRE-RELEASE"
+  ],
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:c9f770c9008a3ff20bf307d5d6310cd65c39dfea89b4113f71d2356583b572ac",
+  "task_name": "支付对账批处理改造"
+}

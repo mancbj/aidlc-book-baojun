@@ -1,0 +1,18 @@
+{
+  "experiment_id": "EXP-09-03",
+  "pinned_version": "sha256:0af0a8b0344a245e7d2a3a08c92da32a5a6d1076e9a00712420be0a6723db685",
+  "case_id": "x",
+  "chosen_flow": "Simple",
+  "flow_options": [
+    {"flow": "Simple", "feasible": false},
+    {"flow": "FIRE", "feasible": true},
+    {"flow": "AI-DLC", "feasible": true}
+  ],
+  "decision_rationale": [
+    {"dimension_id": "codebase_state", "text": "x"},
+    {"dimension_id": "integration_risk", "text": "x"},
+    {"dimension_id": "compliance_traceability", "text": "x"},
+    {"dimension_id": "team_coordination", "text": "x"},
+    {"dimension_id": "reversibility", "text": "x"}
+  ]
+}

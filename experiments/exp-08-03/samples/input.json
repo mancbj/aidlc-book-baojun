@@ -1,0 +1,49 @@
+{
+  "experiment_id": "EXP-08-03",
+  "pinned_version": "sha256:dfef24406c8875dc920c3223eb5d415cec007afb3ba99e66191446d8b8f95338",
+  "release_id": "v0.8.002-pages-rc",
+  "stages": [
+    {
+      "stage_id": "build",
+      "status": "completed",
+      "credentials": {
+        "source_commit": "abc123def456",
+        "facts_identity": "progress/generated/last-successful-facts.json",
+        "artifact_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+      }
+    },
+    {
+      "stage_id": "deploy",
+      "status": "completed",
+      "credentials": {
+        "target_environment": "github-pages",
+        "deploy_strategy": "workflow_dispatch",
+        "artifact_id": "aidlc-book-v0.8.002-rc"
+      }
+    },
+    {
+      "stage_id": "runtime_verify",
+      "status": "completed",
+      "credentials": {
+        "entrypoint_checked": "index.html",
+        "smoke_checks_passed": "cockpit-and-chapter-links",
+        "manifest_match": "release-manifest.json"
+      }
+    },
+    {
+      "stage_id": "monitor",
+      "status": "completed",
+      "credentials": {
+        "workflow_signal": "pages-build-success",
+        "error_budget_baseline": "24h-zero-critical",
+        "owner_on_call": "release-captain"
+      }
+    }
+  ],
+  "rollback_readiness": {
+    "rollback_target_recorded": true,
+    "runbook_linked": true,
+    "previous_artifact_pinned": true,
+    "post_rollback_check_defined": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "experiment_id": "EXP-07-03",
+  "pinned_version": "sha256:29411a610e2f4466e1c903adb62212d60c048e5918b9d2bb4907fd45bd2e3c44",
+  "delivery_candidate_id": "x",
+  "verification_seconds": 1,
+  "injected_defects": [
+    {
+      "defect_id": "DEF-NOT-REGISTERED",
+      "layer_detections": {
+        "deterministic_checks": true,
+        "independent_tests": false,
+        "model_review": false,
+        "human_judgment": false
+      }
+    }
+  ]
+}

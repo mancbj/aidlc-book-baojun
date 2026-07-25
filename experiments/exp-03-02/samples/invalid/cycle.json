@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "units": [
+    {
+      "id": "UNIT-A",
+      "title": "Unit A"
+    }
+  ],
+  "stories": [
+    {
+      "id": "STORY-A",
+      "unit_id": "UNIT-A",
+      "title": "Story A"
+    },
+    {
+      "id": "STORY-B",
+      "unit_id": "UNIT-A",
+      "title": "Story B"
+    }
+  ],
+  "bolts": [
+    {
+      "id": "BOLT-A",
+      "unit_id": "UNIT-A",
+      "story_ids": [
+        "STORY-A"
+      ],
+      "depends_on": [
+        "BOLT-B"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "BOLT-B",
+      "unit_id": "UNIT-A",
+      "story_ids": [
+        "STORY-B"
+      ],
+      "depends_on": [
+        "BOLT-A"
+      ],
+      "status": "pending"
+    }
+  ]
+}

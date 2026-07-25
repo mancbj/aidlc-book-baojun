@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.7",
+  "publish_threshold": 92,
+  "dimension_minimums": {
+    "experiments": 44
+  },
+  "weights": {
+    "experiments": 50,
+    "chapter_evidence": 15,
+    "reader_feedback": 15,
+    "release": 20
+  },
+  "hard_gates": [
+    "ci_check_pass",
+    "internal_links_errors_zero",
+    "four_target_experiments_verified",
+    "ship_verified_18_of_18",
+    "verified_experiment_tests_in_ci",
+    "no_live_model_calls_in_experiments",
+    "exsecutio_spelling_preserved",
+    "runtime_verify_boundary_preserved",
+    "reader_feedback_not_fabricated",
+    "readiness_ready"
+  ],
+  "baseline_commit": "90007dd",
+  "current_round": "08",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "baseline-and-scope",
+      "decision": "KEEP",
+      "experiments": 28,
+      "chapter_evidence": 10,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 50,
+      "notes": "SHIP verified=14/18。"
+    },
+    {
+      "id": "01",
+      "name": "exp-01-01-verified",
+      "decision": "KEEP",
+      "experiments": 32,
+      "chapter_evidence": 11,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 55,
+      "notes": "EXP-01-01 verified。"
+    },
+    {
+      "id": "02",
+      "name": "exp-01-02-verified",
+      "decision": "KEEP",
+      "experiments": 38,
+      "chapter_evidence": 12,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 62,
+      "notes": "EXP-01-02 verified。"
+    },
+    {
+      "id": "03",
+      "name": "exp-02-02-verified",
+      "decision": "KEEP",
+      "experiments": 42,
+      "chapter_evidence": 13,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 67,
+      "notes": "EXP-02-02 verified。"
+    },
+    {
+      "id": "04",
+      "name": "exp-07-02-verified",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 14,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 74,
+      "notes": "EXP-07-02 verified；SHIP verified=18/18。"
+    },
+    {
+      "id": "05",
+      "name": "chapter-evidence-bounds",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 75,
+      "notes": "CH-01/02/07 证据边界收紧。"
+    },
+    {
+      "id": "06",
+      "name": "reader-feedback-reassessment",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 4,
+      "total": 79,
+      "notes": "FB-005 deferred。"
+    },
+    {
+      "id": "07",
+      "name": "adversarial-audit",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 18,
+      "total": 93,
+      "notes": "硬门禁全过；SHIP 18/18。"
+    },
+    {
+      "id": "08",
+      "name": "v0.7-release",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 20,
+      "total": 95,
+      "notes": "发布 v0.7。"
+    }
+  ]
+}

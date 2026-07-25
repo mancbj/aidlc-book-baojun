@@ -1,0 +1,34 @@
+{
+  "external_source": "https://specs.md/methodology/three-phases",
+  "guide_id": "ch07-layered-delivery-verification",
+  "pinned_version": "sha256:29411a610e2f4466e1c903adb62212d60c048e5918b9d2bb4907fd45bd2e3c44",
+  "verification_framing": "CH-07 delivery candidate verification",
+  "not_runtime_verify": "CH-08 Runtime Verify is out of scope for this experiment",
+  "layers": [
+    {
+      "layer_id": "deterministic_checks",
+      "order": 1,
+      "label": "Deterministic Checks"
+    },
+    {
+      "layer_id": "independent_tests",
+      "order": 2,
+      "label": "Independent Tests"
+    },
+    {
+      "layer_id": "model_review",
+      "order": 3,
+      "label": "Model Review"
+    },
+    {
+      "layer_id": "human_judgment",
+      "order": 4,
+      "label": "Human Judgment"
+    }
+  ],
+  "registered_defects": [
+    {"defect_id": "DEF-SCHEMA", "category": "structure"},
+    {"defect_id": "DEF-BOUNDARY", "category": "logic"},
+    {"defect_id": "DEF-SEMANTIC", "category": "intent"}
+  ]
+}

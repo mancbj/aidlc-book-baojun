@@ -10,7 +10,7 @@
 | Draft Completeness | 正式十章生产线可读稿；D18-T03 五类审校已完成 |
 | Primary Question | 如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？ |
 | Reader Outcome | 能够设计最小 Memory Bank、Standards 目录、工件引用和变更同步规则 |
-| Related Experiments | `EXP-04-01` |
+| Related Experiments | `EXP-04-01`、`EXP-04-02`、`EXP-04-03` |
 
 ## 01 · Question：为什么 AI 需要可恢复的上下文
 
@@ -228,9 +228,33 @@ python3 experiments/exp-04-01/quickstart.py --sample
 
 这正是 AI-DLC 需要实验的地方。我们不要求实验证明“Memory Bank 永远有效”，只要求它把一个可观察差异放到桌面上：同样一句“继续下一任务”，有无工程化上下文，恢复质量可以完全不同。
 
+### `EXP-04-02` · Standards 漂移检测器
+
+`EXP-04-02` 检查版本化 Standards 与生成工件之间的规则违反和版本差异。运行入口：
+
+```bash
+python3 experiments/exp-04-02/quickstart.py --sample
+```
+
+输出位于 `experiments/exp-04-02/output/sample.json`。它只证明声明规则可以被确定性比对；它不证明这些规则适用于所有仓库。没有人工基准标签时，误报率记为 `null`，不得伪装成已经很低。
+
+### `EXP-04-03` · 官方 Memory Bank 结构复现（KEEP-EXT）
+
+`EXP-04-03` 已 verified，但 triage 仍为 `KEEP-EXT`：它只对照仓库内冻结 pin 夹具校验最小 Memory Bank 必需路径与引用有效性，不在 CI 抓取外部 specs.md 页面。运行入口：
+
+```bash
+python3 experiments/exp-04-03/quickstart.py --sample
+```
+
+输出位于 `experiments/exp-04-03/output/sample.json`。样例给出 `required_file_completeness_percent` 与 `reference_validity_percent`；它证明冻结结构可复现加载，不把 specs.md 写成唯一标准，也不证明任意项目的 Memory Bank 语义已经正确。
+
 ## 06 · Figure：新会话冷启动恢复栈
 
-本章图示方向为“新会话冷启动恢复栈”：
+本章图示为“新会话冷启动恢复栈”：
+
+![图 4-1 · Memory Bank 恢复栈](images/ch04-memory-bank-stack.svg){.core-figure width=100%}
+
+源文件：`book/images/ch04-memory-bank-stack.svg`。结构摘要：
 
 ```text
 New Agent Session
@@ -254,7 +278,7 @@ Next Session Recovers from Updated Facts
 2. 二级：Current State、Intent & Scope、Standards、Evidence Links 四类输入。
 3. 三级：Events、Snapshots、Dashboard 等审计输出。
 
-若后续生成独立 SVG，可命名为 `book/images/ch04-memory-bank-stack.svg`，保持技术专著级、宽屏、瑞士网格、IBM Carbon 倾向的克制风格，并避免把 Memory Bank 画成普通资料库。
+不要把 Memory Bank 读成普通资料库：恢复栈的价值在于“下一次会话如何安全继续”。
 
 ## 07 · Boundary：本章不解决什么
 
@@ -267,6 +291,8 @@ Next Session Recovers from Updated Facts
 第三，本章不替代第 8 章的 Operations。事件、快照和驾驶舱可以支撑发布前后的可追踪性，但部署验证、监控和恢复策略仍需要单独展开。
 
 第四，本章不要求所有团队复制本书目录。读者要复制的是原则：当前状态版本化，人的判断标准化，证据路径可追踪，更新协议可自动校验。具体文件名可以不同，但四件事不能缺。
+
+第五，`EXP-04-03` 的 verified 只覆盖冻结 pin 夹具上的结构与引用校验；不得把 KEEP-EXT 复现写成官方规范已全面落地，也不得改写成 SHIP。
 
 ## Reader Exercise
 
@@ -290,4 +316,7 @@ Next Session Recovers from Updated Facts
 - `planning/releases/v0.2-draft.md`：v0.2 持续更新周期草案。
 - `experiments/exp-04-01/README.md`：Memory Bank 冷启动恢复 A/B 实验说明。
 - `experiments/exp-04-01/output/sample.json`：C02-T02 生成的可复现实验输出。
+- `experiments/exp-04-03/README.md`：官方 Memory Bank 结构复现（KEEP-EXT / 冻结 pin）说明。
+- `experiments/exp-04-03/output/sample.json`：冻结 pin 结构与引用校验样例。
+- `progress/experiments.json`：`EXP-04-01`、`EXP-04-02`、`EXP-04-03` 实验治理状态。
 - `planning/reviews/ch-04-writing-review.md`：正式十章生产线 CH-04 五类审校记录。

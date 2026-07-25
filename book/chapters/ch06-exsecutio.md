@@ -273,25 +273,29 @@ Plan 在这里扮演了两个角色：它给 AI 一个清晰任务边界，也�
 
 本章实验入口包括三项：
 
-- `EXP-06-01 · Plan–Walkthrough 偏差审计器`：比较 Implementation Plan、代码变更与 Walkthrough，生成计划项、实际变更与未声明偏差表。
-- `EXP-06-02 · 失败—修复—复测闭环记录器`：根据失败日志、修复提交和测试结果，生成按时间排序的修复证据链。
-- `EXP-06-03 · 端到端 Bolt 执行复现`：参考官方 Bolt 教程与示例 Story，复现从计划到测试报告的完整 Bolt 工件。
+- `EXP-06-01 · Plan–Walkthrough 偏差审计器`：比较 Implementation Plan、代码变更与 Walkthrough，生成计划项、实际变更与未声明偏差表。运行：`python3 experiments/exp-06-01/quickstart.py --sample`。
+- `EXP-06-02 · 失败—修复—复测闭环记录器`：根据失败日志、修复提交和测试结果，生成按时间排序的修复证据链。运行：`python3 experiments/exp-06-02/quickstart.py --sample`。
+- `EXP-06-03 · 端到端 Bolt 执行复现`：对照冻结 pin 的 Bolt 执行指南，复现从计划到测试报告的完整工件与耗时。运行：`python3 experiments/exp-06-03/quickstart.py --sample`。
 
-这些实验当前仍处于 `planned`，因此本章只把它们作为验证方向，不把指标写成已验证结论。D20-T03 审校时必须再次检查：不能把 planned 实验说成已经证明了 Exsecutio 的效果。
+其中 `EXP-06-01`、`EXP-06-02` 与 `EXP-06-03` 均已 verified。`EXP-06-01` 样例在 `experiments/exp-06-01/output/sample.json`，证明计划、实际变更和 Walkthrough 可对齐审计；未声明变更计为 deviation，不自动视为错误。`EXP-06-02` 样例在 `experiments/exp-06-02/output/sample.json`，证明失败、修复提交与复测可连成时间序证据链，并给出修复轮次、回归通过率与证据完整率；证据完整不等于修复质量最优。
 
-三项实验分别服务于本章的三个弱点。
+`EXP-06-03` triage 仍为 `KEEP-EXT`：样例在 `experiments/exp-06-03/output/sample.json`，给出 `completion_seconds` 与 `artifact_completeness_percent`。它只证明冻结指南上的端到端工件可复现，不把外部教程写成唯一实现，也不把样例耗时写成生产性能保证。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
 | `EXP-06-01` | 计划和 Walkthrough 是否一致，是否存在未声明变更 | 不证明所有偏差都一定是错误 |
 | `EXP-06-02` | 失败、修复和复测是否能形成连续证据链 | 不证明一次通过比多轮修复更好 |
-| `EXP-06-03` | 官方 Bolt 执行流程能否被复现为完整工件 | 不把外部教程写成本书唯一实现 |
+| `EXP-06-03` | 冻结 pin 上的 Bolt 执行工件是否完整可复现 | 不把外部教程写成本书唯一实现；KEEP-EXT 不得改写成 SHIP |
 
-真正实验完成后，本章可以增加两个更强的判断：第一，Exsecutio 是否降低陌生审阅者的复核成本；第二，失败记录是否提高后续修复的准确率。在实验完成前，这些都只能作为假设，而不能写成结论。
+前两类审计与第三类冻结复现均已落到可复现工件。陌生审阅者复核成本是否因此下降，仍需真实读者与团队实践补充，不得由冻结样例单独过宣称。
 
 ## 07 · Figure：Exsecutio 执行闭环
 
-本章图示方向为“Exsecutio 执行闭环”：
+本章图示为“Exsecutio 执行闭环”：
+
+![图 6-1 · Exsecutio 执行闭环](images/ch06-exsecutio-loop.svg){.core-figure width=100%}
+
+源文件：`book/images/ch06-exsecutio-loop.svg`。主线与回路：
 
 ```text
 Plan ──▶ Execute ──▶ Verify ──▶ Repair ──▶ Walkthrough
@@ -300,7 +304,7 @@ Plan ──▶ Execute ──▶ Verify ──▶ Repair ──▶ Walkthrough
  └──────────── Evidence / Feedback ◀────── Handoff
 ```
 
-若后续生成独立 SVG，可命名为 `book/images/ch06-exsecutio-loop.svg`，采用宽屏布局：主流程水平展开，Plan、Execute、Verify、Repair、Walkthrough 使用统一卡片；失败回路从 Verify 低权重返回 Repair，再回到 Verify；Walkthrough 输出到下一阶段接收区；反馈线返回共同输入或约束区域，而不是只指向单一节点。
+主流程水平展开；失败回路从 Verify 低权重返回 Repair，再回到 Verify；Walkthrough 输出到下一阶段接收区；反馈线返回共同输入或约束区域，而不是只指向单一节点。
 
 这张图要帮助读者看见三件事：
 
@@ -321,6 +325,8 @@ Plan ──▶ Execute ──▶ Verify ──▶ Repair ──▶ Walkthrough
 第四，本章不要求所有失败都写成长报告。轻量失败可以轻量记录；高风险失败需要完整记录。真正重要的是失败不要消失，复测不要缺席。
 
 第五，本章不把 Walkthrough 当成文档表演。Walkthrough 的目标是降低恢复成本。如果它不能帮助下一位执行者判断“现在能不能继续”，它就只是漂亮总结。
+
+第六，`EXP-06-03` 的 verified 只覆盖仓库内冻结执行指南夹具；不得伪装为实时外网抓取验证，也不得把样例耗时写成通用性能结论。
 
 ## Reader Exercise
 

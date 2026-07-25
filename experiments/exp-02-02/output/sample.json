@@ -1,0 +1,96 @@
+{
+  "ambiguous_requirement": "给社区诊所做一个线上预约功能，越快上线越好",
+  "decision_log_by_arm": {
+    "no_clarify": [
+      {
+        "id": "D-N-01",
+        "phase": "implement",
+        "summary": "按字面需求直接实现表单提交与短信提醒"
+      }
+    ],
+    "with_clarify": [
+      {
+        "id": "D-W-01",
+        "phase": "clarify",
+        "summary": "确认必须收集的最小字段、身份核验方式与合规边界"
+      },
+      {
+        "id": "D-W-02",
+        "phase": "clarify",
+        "summary": "确认取消窗口、通知渠道与诊所营业时间规则"
+      },
+      {
+        "id": "D-W-03",
+        "phase": "clarify",
+        "summary": "确认需对接现有排班表并保留人工 override"
+      },
+      {
+        "id": "D-W-04",
+        "phase": "implement",
+        "summary": "按已验证边界实现预约、核验、通知与后台管理"
+      }
+    ]
+  },
+  "experiment_id": "EXP-02-02",
+  "implementation_difference_report": {
+    "no_clarify_only": [
+      {
+        "capability": "患者填写姓名与手机号提交预约",
+        "id": "I-N-01"
+      },
+      {
+        "capability": "预约成功后发送短信提醒",
+        "id": "I-N-02"
+      },
+      {
+        "capability": "诊所后台列表查看当日预约",
+        "id": "I-N-03"
+      }
+    ],
+    "shared_implementations": [],
+    "unique_implementation_count": 8,
+    "with_clarify_only": [
+      {
+        "capability": "最小字段预约与手机号 OTP 核验",
+        "id": "I-W-01"
+      },
+      {
+        "capability": "隐私同意、数据保留说明与删除请求入口",
+        "id": "I-W-02"
+      },
+      {
+        "capability": "可配置取消/改期窗口与短信+邮件通知",
+        "id": "I-W-03"
+      },
+      {
+        "capability": "对接排班表并支持人工 override",
+        "id": "I-W-04"
+      },
+      {
+        "capability": "诊所后台预约管理与审计日志",
+        "id": "I-W-05"
+      }
+    ]
+  },
+  "limitation": "本报告只对输入中两组冻结会话做确定性对照与差分；它不证明澄清提问总能减少实现后需求变更。",
+  "metrics": {
+    "by_arm": {
+      "no_clarify": {
+        "clarification_rounds": 0,
+        "critical_omission_count": 3,
+        "post_impl_requirement_change_count": 4
+      },
+      "with_clarify": {
+        "clarification_rounds": 3,
+        "critical_omission_count": 1,
+        "post_impl_requirement_change_count": 5
+      }
+    },
+    "delta_no_clarify_minus_with_clarify": {
+      "critical_omission_count": 2,
+      "post_impl_requirement_change_count": -1
+    }
+  },
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:93ccac31e3cdc11cc4b9d65a73154b7ae8cbde93069fd1572d65a6392e0c1f9c"
+}

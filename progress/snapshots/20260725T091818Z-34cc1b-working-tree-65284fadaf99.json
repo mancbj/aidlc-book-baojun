@@ -1,0 +1,1430 @@
+{
+  "captured_at": "2026-07-25T09:18:18Z",
+  "events": [
+    {
+      "actor": "v0.8.003-loop",
+      "after": "active",
+      "before": null,
+      "id": "EVT-6d854005f4561d36",
+      "object_id": "v0.8.003-draft",
+      "object_type": "cycle",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "v0.8.003-draft 已由真实发布回执激活",
+      "type": "cycle_opened"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-5879fa3cb56b7a0a",
+      "object_id": "EXP-01-01:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-01-01 · 同一 Intent 多次生成方差基线 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-0db769798ba5459a",
+      "object_id": "EXP-01-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-01-02 · AI-Assisted 与 AI-Driven 对照实验 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-5578c165c2dadd76",
+      "object_id": "EXP-01-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-01-03 · AI-DLC 三阶段官方流程复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-e0e0a09e373b6457",
+      "object_id": "EXP-02-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-02-02 · 反向对话澄清收益实验 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-abb299576764e11f",
+      "object_id": "EXP-02-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-02-03 · 四 Agent 人机检查点会话复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-b4eb779956c58a18",
+      "object_id": "EXP-03-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-03-03 · Inception Agent 完整分解复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-a27ca3733bf34a3c",
+      "object_id": "EXP-04-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-04-03 · 官方 Memory Bank 结构复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-9b6cf2b6fd5938fa",
+      "object_id": "EXP-05-01:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-05-01 · Bolt 尺寸估算器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-ff962c7fee3f1cce",
+      "object_id": "EXP-05-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-05-02 · DDD 与 Simple Bolt 选择器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-366424c9410ef282",
+      "object_id": "EXP-05-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-05-03 · 官方 Bolt 类型检查点复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-422284cfd4ede728",
+      "object_id": "EXP-06-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-06-02 · 失败—修复—复测闭环记录器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-57b8049913b7fd84",
+      "object_id": "EXP-06-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-06-03 · 端到端 Bolt 执行复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "ready",
+      "id": "EVT-163fb6d5fd0e9e3c",
+      "object_id": "EXP-07-01:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-07-01 · 仓库确定性门禁组合器 · status：ready → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-37fb65e6e0184526",
+      "object_id": "EXP-07-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-07-02 · 独立评审分歧矩阵 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-f4b4a6520abcd6aa",
+      "object_id": "EXP-07-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-07-03 · 分层验证检查点复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "ready",
+      "id": "EVT-8cb4d6db65b391fc",
+      "object_id": "EXP-08-01:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-08-01 · 发布候选来源清单校验器 · status：ready → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-25a9018bc6142416",
+      "object_id": "EXP-08-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-08-02 · 回滚桌面演练模拟器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-374a8971251ea450",
+      "object_id": "EXP-08-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-08-03 · Operations 四阶段复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-d5b93593b756daa8",
+      "object_id": "EXP-09-01:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-09-01 · Simple/FIRE/AI-DLC Flow 选择器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-2c079f52076dc893",
+      "object_id": "EXP-09-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-09-02 · 风险到检查点预算模拟器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-a0dd8ed52e926f83",
+      "object_id": "EXP-09-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-09-03 · Brownfield Flow 选择案例复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-8797e18cd2e34df8",
+      "object_id": "EXP-10-01:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-10-01 · 人–Agent 责任 RACI 生成器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-81897631fd0113de",
+      "object_id": "EXP-10-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-10-02 · AI-DLC 价值记分卡 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-329b584c323d1b75",
+      "object_id": "EXP-10-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-10-03 · Mob 协作与 Agent 交接复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-55fab0cf294ae444",
+      "object_id": "FB-002",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-002 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-5aede4c95f45de4f",
+      "object_id": "FB-003",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-003 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-d570a00b6cf7f55e",
+      "object_id": "FB-004",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-004 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-6ecbd84596b1ac14",
+      "object_id": "FB-005",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-005 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-f2895823ff6d73b1",
+      "object_id": "FB-006",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-006 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-a6950906d7e18fc5",
+      "object_id": "FB-007",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-007 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-03f0e19502a08b6a",
+      "object_id": "FB-008",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-008 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-5803c016485087bf",
+      "object_id": "FB-009",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-009 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "激活 v0.8.003-draft 维护周期并同步实验 30/30 投影",
+      "before": null,
+      "id": "EVT-e49a2c270bd554b3",
+      "object_id": "v0.8.003-draft",
+      "object_type": "project",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "激活 v0.8.003-draft 维护周期并同步实验 30/30 投影",
+      "type": "cycle_opened"
+    }
+  ],
+  "metrics": {
+    "blockers": [],
+    "chapters": {
+      "rows": [
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-01",
+          "id": "CH-01",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 1,
+          "percent": 100.0,
+          "question": "当代码生成成本骤降而输出仍具有概率性时，为什么需要重新设计 SDLC，而不只是给旧流程增加 AI？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "AI 原生 SDLC：从概率智能到确定性交付",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-02",
+          "id": "CH-02",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 2,
+          "percent": 100.0,
+          "question": "当 AI 主动提议、分解和执行时，人应如何设定目的地、保留责任并选择验证检查点？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "人的判断与反向对话",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-03",
+          "id": "CH-03",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 3,
+          "percent": 100.0,
+          "question": "AI 如何把一个高层 Intent 分解成可独立交付的 Unit、可验收的 Story 和可执行的 Bolt，而不丢失人的目标与边界？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "Inception：从 Intent 到可执行计划",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-04",
+          "id": "CH-04",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 4,
+          "percent": 100.0,
+          "question": "如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "上下文工程：Memory Bank 与 Standards",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-05",
+          "id": "CH-05",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 5,
+          "percent": 100.0,
+          "question": "如何按领域复杂度、风险和可逆性选择 Bolt 范围、类型与阶段门禁，使速度提高而错误不级联？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "Bolts：为快速执行选择正确轨道",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-06",
+          "id": "CH-06",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 6,
+          "percent": 100.0,
+          "question": "如何让 AI 沿计划、执行、验证、纠偏和 Walkthrough 持续推进，直到生成物满足完成定义并可被下一阶段接收？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "Exsecutio：把提议贯彻为交付候选",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-07",
+          "id": "CH-07",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 7,
+          "percent": 100.0,
+          "question": "如何组合确定性检查、独立测试、模型评审和人工判断，证明 AI 参与的结果正确，而不是把模型自评当证据？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "验证：把人类检查点变成有效损失函数",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-08",
+          "id": "CH-08",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 8,
+          "percent": 100.0,
+          "question": "如何通过 Build、Deploy、Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "Operations：从交付候选到可持续运行",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-09",
+          "id": "CH-09",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 9,
+          "percent": 100.0,
+          "question": "如何根据任务复杂度、代码库现状、监管要求和团队规模，在 Simple、FIRE 与 AI-DLC 之间选择，而不过度或不足工程化？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "适配性工程：选择正确的 Flow 与治理强度",
+          "total": 6
+        },
+        {
+          "done": 6,
+          "href": "details.html#chapter-CH-10",
+          "id": "CH-10",
+          "next_gap": null,
+          "next_gap_label": "已完成",
+          "number": 10,
+          "percent": 100.0,
+          "question": "如何重构人、Agent、协作节奏与度量体系，并判断哪些 AI-DLC 实践值得在组织内规模化？",
+          "stages": [
+            {
+              "label": "问题",
+              "name": "question",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "框架",
+              "name": "framework",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "案例",
+              "name": "example",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "实验",
+              "name": "experiment",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "图示",
+              "name": "figure",
+              "status": "done",
+              "status_label": "已完成"
+            },
+            {
+              "label": "审校",
+              "name": "review",
+              "status": "done",
+              "status_label": "已完成"
+            }
+          ],
+          "title": "组织与度量：从 Agent 分工到研发操作系统",
+          "total": 6
+        }
+      ],
+      "stage_totals": {
+        "example": {
+          "done": 10,
+          "label": "案例",
+          "percent": 100.0,
+          "total": 10
+        },
+        "experiment": {
+          "done": 10,
+          "label": "实验",
+          "percent": 100.0,
+          "total": 10
+        },
+        "figure": {
+          "done": 10,
+          "label": "图示",
+          "percent": 100.0,
+          "total": 10
+        },
+        "framework": {
+          "done": 10,
+          "label": "框架",
+          "percent": 100.0,
+          "total": 10
+        },
+        "question": {
+          "done": 10,
+          "label": "问题",
+          "percent": 100.0,
+          "total": 10
+        },
+        "review": {
+          "done": 10,
+          "label": "审校",
+          "percent": 100.0,
+          "total": 10
+        }
+      },
+      "total": 10
+    },
+    "cycles": {
+      "active_cycle": "v0.8.003-draft",
+      "href": "details.html#cycles",
+      "preview_count": 0,
+      "rows": [
+        {
+          "carried_gap_total": 1,
+          "carried_task_total": 1,
+          "href": "details.html#cycle-v0.2-draft",
+          "id": "v0.2-draft",
+          "monthly_target": "v0.2 readable release",
+          "status": "complete",
+          "task_done": 3,
+          "task_total": 3
+        },
+        {
+          "carried_gap_total": 1,
+          "carried_task_total": 0,
+          "href": "details.html#cycle-v0.8.003-draft",
+          "id": "v0.8.003-draft",
+          "monthly_target": "v0.8.003 patch maintenance release",
+          "status": "active",
+          "task_done": 4,
+          "task_total": 5
+        }
+      ]
+    },
+    "experiments": {
+      "href": "details.html#experiments",
+      "status_counts": {
+        "verified": 30
+      },
+      "total": 30,
+      "triage_counts": {
+        "ALREADY": 2,
+        "KEEP-EXT": 10,
+        "SHIP": 18
+      }
+    },
+    "feedback": {
+      "decision_counts": {
+        "accepted": 0,
+        "deferred": 9,
+        "pending": 0,
+        "rejected": 0
+      },
+      "href": "details.html#feedback",
+      "reader_counts": {
+        "invited": 3,
+        "not-invited": 0,
+        "responded": 0
+      },
+      "total": 9,
+      "unresolved_accepted": 0
+    },
+    "generated_at": "2026-07-25T09:18:18Z",
+    "goal": {
+      "all_tasks_done": true,
+      "current_day": 24,
+      "days_remaining": 0,
+      "name": "v0.8.003-draft · 持续更新与维护周期",
+      "total_days": 24
+    },
+    "latest_fact_update": "2026-07-25T10:40:00Z",
+    "next_actions": [
+      {
+        "acceptance": [
+          {
+            "passed": false,
+            "text": "tag v0.8.003 公开发布"
+          },
+          {
+            "passed": false,
+            "text": "releases/v0.8.003/release.json 入库"
+          }
+        ],
+        "artifacts": [],
+        "day": "CYCLE",
+        "dependencies": [
+          "C03-T04"
+        ],
+        "href": "details.html#cycle-task-C03-T05",
+        "id": "C03-T05",
+        "owner": "author",
+        "planned_date": "v0.8.003 patch maintenance release",
+        "priority": "must",
+        "scope_label": "v0.8.003-draft",
+        "status": "ready",
+        "status_label": "可开始",
+        "title": "发布 v0.8.003 并写入回执"
+      }
+    ],
+    "recent_events": [
+      {
+        "actor": "v0.8.003-loop",
+        "after": "verified",
+        "before": "planned",
+        "id": "EVT-329b584c323d1b75",
+        "object_id": "EXP-10-03:status",
+        "object_type": "experiment",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "EXP-10-03 · Mob 协作与 Agent 交接复现 · status：planned → verified",
+        "type": "experiment_changed"
+      },
+      {
+        "actor": "v0.8.003-loop",
+        "after": "deferred",
+        "before": null,
+        "id": "EVT-55fab0cf294ae444",
+        "object_id": "FB-002",
+        "object_type": "feedback",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "FB-002 · Reader-A/B/C：deferred",
+        "type": "feedback_decided"
+      },
+      {
+        "actor": "v0.8.003-loop",
+        "after": "deferred",
+        "before": null,
+        "id": "EVT-5aede4c95f45de4f",
+        "object_id": "FB-003",
+        "object_type": "feedback",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "FB-003 · Reader-A/B/C：deferred",
+        "type": "feedback_decided"
+      },
+      {
+        "actor": "v0.8.003-loop",
+        "after": "deferred",
+        "before": null,
+        "id": "EVT-d570a00b6cf7f55e",
+        "object_id": "FB-004",
+        "object_type": "feedback",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "FB-004 · Reader-A/B/C：deferred",
+        "type": "feedback_decided"
+      },
+      {
+        "actor": "v0.8.003-loop",
+        "after": "deferred",
+        "before": null,
+        "id": "EVT-6ecbd84596b1ac14",
+        "object_id": "FB-005",
+        "object_type": "feedback",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "FB-005 · Reader-A/B/C：deferred",
+        "type": "feedback_decided"
+      },
+      {
+        "actor": "v0.8.003-loop",
+        "after": "deferred",
+        "before": null,
+        "id": "EVT-f2895823ff6d73b1",
+        "object_id": "FB-006",
+        "object_type": "feedback",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "FB-006 · Reader-A/B/C：deferred",
+        "type": "feedback_decided"
+      },
+      {
+        "actor": "v0.8.003-loop",
+        "after": "deferred",
+        "before": null,
+        "id": "EVT-a6950906d7e18fc5",
+        "object_id": "FB-007",
+        "object_type": "feedback",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "FB-007 · Reader-A/B/C：deferred",
+        "type": "feedback_decided"
+      },
+      {
+        "actor": "v0.8.003-loop",
+        "after": "deferred",
+        "before": null,
+        "id": "EVT-03f0e19502a08b6a",
+        "object_id": "FB-008",
+        "object_type": "feedback",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "FB-008 · Reader-A/B/C：deferred",
+        "type": "feedback_decided"
+      },
+      {
+        "actor": "v0.8.003-loop",
+        "after": "deferred",
+        "before": null,
+        "id": "EVT-5803c016485087bf",
+        "object_id": "FB-009",
+        "object_type": "feedback",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "FB-009 · Reader-A/B/C：deferred",
+        "type": "feedback_decided"
+      },
+      {
+        "actor": "v0.8.003-loop",
+        "after": "激活 v0.8.003-draft 维护周期并同步实验 30/30 投影",
+        "before": null,
+        "id": "EVT-e49a2c270bd554b3",
+        "object_id": "v0.8.003-draft",
+        "object_type": "project",
+        "occurred_at": "2026-07-25T09:18:18Z",
+        "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+        "summary": "激活 v0.8.003-draft 维护周期并同步实验 30/30 投影",
+        "type": "cycle_opened"
+      }
+    ],
+    "release_message": "v0.8.003-draft 已激活；执行下一周期首个 Must 或继续处理 known-gap",
+    "schema_version": "1.0.0",
+    "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+    "tasks": {
+      "done": 72,
+      "percent": 100.0,
+      "priority": {
+        "could": {
+          "done": 0,
+          "has_sample": false,
+          "percent": 0.0,
+          "total": 0
+        },
+        "must": {
+          "done": 70,
+          "has_sample": true,
+          "percent": 100.0,
+          "total": 70
+        },
+        "should": {
+          "done": 2,
+          "has_sample": true,
+          "percent": 100.0,
+          "total": 2
+        }
+      },
+      "status_counts": {
+        "backlog": 0,
+        "blocked": 0,
+        "done": 72,
+        "in-progress": 0,
+        "ready": 0,
+        "review": 0
+      },
+      "timeline": [
+        {
+          "blocked": 0,
+          "day": 1,
+          "done": 3,
+          "href": "details.html#day-01",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 2,
+          "done": 3,
+          "href": "details.html#day-02",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 3,
+          "done": 3,
+          "href": "details.html#day-03",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 4,
+          "done": 3,
+          "href": "details.html#day-04",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 5,
+          "done": 3,
+          "href": "details.html#day-05",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 6,
+          "done": 3,
+          "href": "details.html#day-06",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 7,
+          "done": 3,
+          "href": "details.html#day-07",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 8,
+          "done": 3,
+          "href": "details.html#day-08",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 9,
+          "done": 3,
+          "href": "details.html#day-09",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 10,
+          "done": 3,
+          "href": "details.html#day-10",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 11,
+          "done": 3,
+          "href": "details.html#day-11",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 12,
+          "done": 3,
+          "href": "details.html#day-12",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 13,
+          "done": 3,
+          "href": "details.html#day-13",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 14,
+          "done": 3,
+          "href": "details.html#day-14",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 15,
+          "done": 3,
+          "href": "details.html#day-15",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 16,
+          "done": 3,
+          "href": "details.html#day-16",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 17,
+          "done": 3,
+          "href": "details.html#day-17",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 18,
+          "done": 3,
+          "href": "details.html#day-18",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 19,
+          "done": 3,
+          "href": "details.html#day-19",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 20,
+          "done": 3,
+          "href": "details.html#day-20",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 21,
+          "done": 3,
+          "href": "details.html#day-21",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 22,
+          "done": 3,
+          "href": "details.html#day-22",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 23,
+          "done": 3,
+          "href": "details.html#day-23",
+          "is_current": false,
+          "percent": 100.0,
+          "total": 3
+        },
+        {
+          "blocked": 0,
+          "day": 24,
+          "done": 3,
+          "href": "details.html#day-24",
+          "is_current": true,
+          "percent": 100.0,
+          "total": 3
+        }
+      ],
+      "total": 72,
+      "weighted_percent": 100.0
+    }
+  },
+  "schema_version": "1.0.0",
+  "source_id": "e99de734cc1b-working-tree-65284fadaf99"
+}

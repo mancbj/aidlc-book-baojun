@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.8.002",
+  "publish_threshold": 92,
+  "dimension_minimums": {
+    "experiments": 44
+  },
+  "weights": {
+    "experiments": 50,
+    "chapter_evidence": 15,
+    "reader_feedback": 15,
+    "release": 20
+  },
+  "hard_gates": [
+    "ci_check_pass",
+    "internal_links_errors_zero",
+    "four_target_experiments_verified",
+    "verified_contract_tests_in_ci",
+    "keepext_not_relabeled_ship",
+    "patch_grain_versioning",
+    "exsecutio_spelling_preserved",
+    "runtime_verify_boundary_preserved",
+    "reader_feedback_not_fabricated",
+    "readiness_ready",
+    "all_experiments_verified"
+  ],
+  "baseline_commit": "f7e6965",
+  "current_round": "08",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "baseline-and-scope",
+      "decision": "KEEP",
+      "experiments": 30,
+      "chapter_evidence": 10,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 52,
+      "notes": "剩余 KEEP-EXT planned=4；patch-grain 继续。"
+    },
+    {
+      "id": "01",
+      "name": "exp-07-03-verified",
+      "decision": "KEEP",
+      "experiments": 36,
+      "chapter_evidence": 10,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 58,
+      "notes": "EXP-07-03 KEEP-EXT→verified。"
+    },
+    {
+      "id": "02",
+      "name": "exp-08-03-verified",
+      "decision": "KEEP",
+      "experiments": 40,
+      "chapter_evidence": 10,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 62,
+      "notes": "EXP-08-03 KEEP-EXT→verified。"
+    },
+    {
+      "id": "03",
+      "name": "exp-09-03-verified",
+      "decision": "KEEP",
+      "experiments": 44,
+      "chapter_evidence": 11,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 67,
+      "notes": "EXP-09-03 KEEP-EXT→verified。"
+    },
+    {
+      "id": "04",
+      "name": "exp-10-03-verified",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 12,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 72,
+      "notes": "EXP-10-03 KEEP-EXT→verified；verified=30/30。"
+    },
+    {
+      "id": "05",
+      "name": "chapter-evidence-bounds",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 75,
+      "notes": "CH-07/08/09/10 证据边界收紧。"
+    },
+    {
+      "id": "06",
+      "name": "reader-feedback-reassessment",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 4,
+      "total": 79,
+      "notes": "FB-008 deferred；responded=0/3。"
+    },
+    {
+      "id": "07",
+      "name": "adversarial-audit",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 18,
+      "total": 93,
+      "notes": "ci_check 通过；30 合同实验绿。"
+    },
+    {
+      "id": "08",
+      "name": "v0.8.002-release",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 20,
+      "total": 95,
+      "notes": "发布 v0.8.002；KEEP-EXT 收尾。"
+    }
+  ]
+}

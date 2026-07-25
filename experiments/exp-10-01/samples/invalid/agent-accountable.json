@@ -1,0 +1,21 @@
+{
+  "experiment_id": "EXP-10-01",
+  "project_name": "Agent 不得为 Accountable",
+  "agents": [
+    {"id": "agent_master", "name": "Master Agent", "kind": "master"},
+    {"id": "agent_inception", "name": "Inception Agent", "kind": "inception"},
+    {"id": "agent_construction", "name": "Construction Agent", "kind": "construction"},
+    {"id": "agent_operations", "name": "Operations Agent", "kind": "operations"}
+  ],
+  "team_roles": [
+    {"id": "product_owner", "name": "产品负责人"}
+  ],
+  "development_activities": [
+    {
+      "id": "ACT-01",
+      "name": "错误地把 Agent 设为 Accountable",
+      "pattern_id": "STAGE_ROUTING",
+      "accountable_role": "agent_master"
+    }
+  ]
+}

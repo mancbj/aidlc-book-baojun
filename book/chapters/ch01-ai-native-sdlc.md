@@ -74,7 +74,7 @@ AI-Driven 的变化不只是“AI 写更多代码”。AI 开始参与工作分�
 
 ### 2.3 Agentic：多个 Agent 沿工程轨道协作
 
-Agentic 开发进一步把 AI 能力扩展为可分工、可恢复、可持续执行的代理系统。Master Agent 可以路由任务；Inception Agent 可以把 Intent 分解成 Requirement、Unit、Story 和 Bolt Plan；Construction Agent 可以沿 Bolt 生成设计、实现、测试和 Walkthrough；Operations Agent 可以把候选物构建、部署、验证并纳入监控。
+Agentic 开发进一步把 AI 能力扩展为可分工、可恢复、可持续执行的代理系统。Master Agent 可以路由任务；Inception Agent 可以把 Intent 分解成 Requirement、Unit、Story 和 Bolt Plan；Construction Agent 可以沿 Bolt 生成设计、实现、测试和 Walkthrough；Operations Agent 可以把候选物构建、部署，再做 Runtime Verify，并纳入监控。
 
 这种模式最迷人的地方在于并行和连续。多个 Agent 可以围绕同一事实源协作，把复杂任务拆成可以推进的局部。但它的风险也更明显：Agent 越多，越不能靠聊天记忆和口头约定维持秩序。否则，多 Agent 只是把不确定性并行化。
 
@@ -152,12 +152,12 @@ Inception
 Construction
   Model / Plan → Design → Implement → Test → Walkthrough
 Operations
-  Build → Deploy → Verify → Monitor → Recovery
+  Build → Deploy → Runtime Verify → Monitor → Recovery
 Evidence & Feedback
   Events → Snapshots → Changelog → Next Intent
 ```
 
-这条链的每一段都在处理同一个问题：AI 可以生成候选物，但候选物必须通过人的判断和工程证据才能继续前进。Inception 不只是写需求，而是把目标变成可追踪的工作结构。Construction 不只是写代码，而是让实现沿着阶段门禁推进。Operations 不只是上线，而是保存构建、验证、监控和恢复凭证。Evidence & Feedback 不只是总结，而是把经验回写成下一轮判断。
+这条链的每一段都在处理同一个问题：AI 可以生成候选物，但候选物必须通过人的判断和工程证据才能继续前进。Inception 不只是写需求，而是把目标变成可追踪的工作结构。Construction 不只是写代码，而是让实现沿着阶段门禁推进。Operations 不只是上线，而是保存构建、Runtime Verify、监控和恢复凭证；这里的 Runtime Verify 不等于第 7 章对交付候选的验证。Evidence & Feedback 不只是总结，而是把经验回写成下一轮判断。
 
 本段的结论是：**AI-DLC 的价值不是“更像 AI 的流程”，而是让 AI 的速度进入可验证、可复现、可发布、可恢复的交付闭环。**
 
@@ -211,29 +211,29 @@ Intent：准备试读反馈入口
 
 ## 06 · Experiment：本章实验入口
 
-本章暂不把实验结果写成结论，只建立三个实验入口。它们当前在 `progress/experiments.json` 中处于治理队列，后续达到验收门禁后才可作为实验证据引用。
+其中 `EXP-01-01`、`EXP-01-02` 与 `EXP-01-03` 均已 verified，且只消费仓库内冻结夹具，不在 CI 中调用外部模型或抓取外网。`EXP-01-03` triage 仍为 `KEEP-EXT`。
 
 ### `EXP-01-01` · 同一 Intent 多次生成方差基线
 
-这个实验回答：当输入相同而模型输出具有概率性时，多次生成之间的结构差异有多大？它关注两个指标：结构差异率和测试通过率方差。
+这个实验回答：当输入相同而多次冻结生成结果具有差异时，结构差异率和测试通过率方差有多大？运行：`python3 experiments/exp-01-01/quickstart.py --sample`。样例在 `experiments/exp-01-01/output/sample.json`。
 
-它支撑本章第二段论证：如果输出存在方差，流程就不能只依赖一次生成结果，而必须建立约束与验证机制。
+它证明同一 Intent 的多次冻结结果可被确定性差分；冻结方差基线不证明某模型“足够稳定”。它支撑本章论证：流程不能只依赖一次生成结果。
 
 ### `EXP-01-02` · AI-Assisted 与 AI-Driven 对照实验
 
-这个实验回答：同一小型功能分别走“对话式生成”和“AI-DLC 闭环”时，人工往返次数、缺陷逃逸数和端到端耗时如何变化？
+这个实验回答：同一小型功能分别走冻结的 AI-Assisted 与 AI-Driven 交付记录时，人工往返、缺陷逃逸与端到端耗时如何对照？运行：`python3 experiments/exp-01-02/quickstart.py --sample`。样例在 `experiments/exp-01-02/output/sample.json`。
 
-它支撑本章第五节案例：AI-DLC 不只是更慢的文档流程，也不是更快的聊天生成，而是用事实源和门禁换取可恢复、可审计和可继续推进的交付能力。
+它证明两组冻结工作流记录可对照；不证明某一工作流普遍更优。它支撑本章案例：AI-DLC 用事实源和门禁换取可恢复、可审计的交付能力。
 
-### `EXP-01-03` · AI-DLC 三阶段官方流程复现
+### `EXP-01-03` · AI-DLC 三阶段官方流程复现（KEEP-EXT）
 
-这个实验回答：以 specs.md 作为参考实现时，Inception、Construction、Operations 三阶段会留下哪些工件和检查点？
+这个实验对照仓库内冻结 pin 指南，核对 Inception、Construction、Operations 三阶段轨迹的工件完整率与检查点数量。运行：`python3 experiments/exp-01-03/quickstart.py --sample`。样例在 `experiments/exp-01-03/output/sample.json`。
 
-它支撑本章边界：specs.md 是本书引用的参考实现，不等同于 AI-DLC 的唯一形态。我们借它观察生命周期如何工程化，而不是把工具说明直接当作方法论证明。
+它证明冻结指南上的三阶段轨迹可确定性复现；不把 specs.md 写成唯一标准，也不验证实时 portal。它支撑本章边界：specs.md 是参考实现，不是方法论本身。
 
 ## 07 · Figure：本章图示入口
 
-本章图示使用全书核心图 `book/images/fig0-1.svg`。它表达的不是一个普通流程图，而是 AI-DLC 的因果结构：
+本章图示继续复用全书核心图 `book/images/fig0-1.svg`（见书稿开篇嵌入）。它表达的不是一个普通流程图，而是 AI-DLC 的因果结构：
 
 ```text
 人的判断 + AI 能力
@@ -247,7 +247,7 @@ Intent：准备试读反馈入口
 
 读图时注意两个位置。第一，人的判断和 AI 能力没有直接指向交付；中间必须经过 `𝓔`。第二，反馈不是附录，而是返回人的判断与工程约束，决定下一轮生命周期如何开始。
 
-如果读者只能记住一张图，就记住这张：AI-DLC 的全部章节都在展开这条链的不同局部。
+如果读者只能记住一张图，就记住这张：AI-DLC 的全部章节都在展开这条链的不同局部。CH-02～CH-10 的独立章节图是这条链的局部展开，而不是替代核心图。
 
 ## 08 · Boundary：本章不展开什么
 
@@ -280,7 +280,7 @@ D15-T03 审校时重点检查五件事：
 
 - 技术边界：不要把 AI-DLC 写成唯一正确流程，也不要把 specs.md 写成本书框架本身。
 - 术语一致性：保留 `𝓔 = Engineering with Exsecutio`，不得自动改为 `Execution`。
-- 证据边界：三个 CH-01 实验仍是入口，不把 planned 实验写成已验证结论。
+- 证据边界：`EXP-01-01` / `EXP-01-02` / `EXP-01-03` 已 verified，但分别只证明冻结夹具上的差分、对照与三阶段轨迹可复现；`EXP-01-03` 不得改写成 SHIP，也不得写成官方流程已全面落地。
 - 结构连贯性：问题、框架、案例、实验、图示和练习必须服务同一核心问题。
 - 相邻章节边界：第 1 章只解释生命周期为什么要重构，不抢第 2–10 章的具体方法。
 

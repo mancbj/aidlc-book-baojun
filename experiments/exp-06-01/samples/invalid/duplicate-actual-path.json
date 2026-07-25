@@ -1,0 +1,23 @@
+{
+  "actual_changes": [
+    {
+      "change_type": "added",
+      "path": "src/audit.py",
+      "summary": "第一次记录"
+    },
+    {
+      "change_type": "modified",
+      "path": "src/audit.py",
+      "summary": "重复记录"
+    }
+  ],
+  "experiment_id": "EXP-06-01",
+  "implementation_plan": {
+    "deliverables": [],
+    "goal": "验证重复路径错误"
+  },
+  "walkthrough": {
+    "changes": [],
+    "deviations": []
+  }
+}

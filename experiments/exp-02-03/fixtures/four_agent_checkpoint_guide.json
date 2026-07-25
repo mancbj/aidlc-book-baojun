@@ -1,0 +1,23 @@
+{
+  "external_source": "https://specs.md/agents/overview",
+  "guide_id": "four-agent-checkpoint-session",
+  "pinned_version": "sha256:37725f7af797f4e7589afb48686349a940384029e0f46d76cda8ddd747141953",
+  "agents": [
+    "master",
+    "inception",
+    "construction",
+    "operations"
+  ],
+  "required_session_checkpoints": [
+    "route_to_inception",
+    "inception_proposal_review",
+    "handoff_to_construction",
+    "construction_proposal_review",
+    "handoff_to_operations",
+    "operations_release_review"
+  ],
+  "approval_requires": [
+    "evidence",
+    "rationale"
+  ]
+}

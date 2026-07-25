@@ -1,0 +1,85 @@
+{
+  "experiment_id": "EXP-10-01",
+  "project_name": "社区诊所预约系统 AI-DLC 试点",
+  "agents": [
+    {
+      "id": "agent_master",
+      "name": "Master Agent",
+      "kind": "master"
+    },
+    {
+      "id": "agent_inception",
+      "name": "Inception Agent",
+      "kind": "inception"
+    },
+    {
+      "id": "agent_construction",
+      "name": "Construction Agent",
+      "kind": "construction"
+    },
+    {
+      "id": "agent_operations",
+      "name": "Operations Agent",
+      "kind": "operations"
+    }
+  ],
+  "team_roles": [
+    {
+      "id": "product_owner",
+      "name": "产品负责人"
+    },
+    {
+      "id": "tech_lead",
+      "name": "技术负责人"
+    },
+    {
+      "id": "quality_owner",
+      "name": "质量负责人"
+    },
+    {
+      "id": "release_owner",
+      "name": "发布负责人"
+    }
+  ],
+  "development_activities": [
+    {
+      "id": "ACT-01",
+      "name": "路由到下一阶段",
+      "pattern_id": "STAGE_ROUTING",
+      "accountable_role": "product_owner"
+    },
+    {
+      "id": "ACT-02",
+      "name": "分解预约 Intent 与 Story",
+      "pattern_id": "INTENT_DECOMPOSITION",
+      "accountable_role": "product_owner"
+    },
+    {
+      "id": "ACT-03",
+      "name": "执行预约 Bolt 与修复失败",
+      "pattern_id": "BOLT_EXECUTION",
+      "accountable_role": "tech_lead"
+    },
+    {
+      "id": "ACT-04",
+      "name": "发布预约系统与回滚",
+      "pattern_id": "RELEASE_ROLLBACK",
+      "accountable_role": "release_owner"
+    },
+    {
+      "id": "ACT-05",
+      "name": "独立评审放行",
+      "pattern_id": "INDEPENDENT_REVIEW",
+      "accountable_role": "quality_owner",
+      "additional_accountable_roles": [
+        "release_owner"
+      ]
+    },
+    {
+      "id": "ACT-06",
+      "name": "短信通知降级决策",
+      "pattern_id": "BOLT_EXECUTION",
+      "accountable_role": null
+    }
+  ]
+}

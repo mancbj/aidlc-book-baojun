@@ -787,3 +787,130 @@
 - **chapter_stage_changed** · CH-08 · Operations：从交付候选到可持续运行 · 图示：pending → done (`EVT-1f9e107441c7adf7`)
 - **task_status_changed** · D22-T02 · CH-08 · 完成章节可读稿：ready → done (`EVT-e79deee64f90df07`)
 - **task_status_changed** · D22-T03 · CH-08 · 完成章节审校与证据对齐：backlog → ready (`EVT-6430e1f2df75e170`)
+
+## 2026-07-24T13:25:13Z · `aae4fb4d21a3-working-tree-9543d484106c`
+
+快照：[`20260724T132513Z-4d21a3-working-tree-9543d484106c.json`](snapshots/20260724T132513Z-4d21a3-working-tree-9543d484106c.json)
+
+- **chapter_stage_changed** · CH-08 · Operations：从交付候选到可持续运行 · 审校：pending → done (`EVT-49a13127502b86e5`)
+- **task_status_changed** · D22-T03 · CH-08 · 完成章节审校与证据对齐：ready → done (`EVT-a0c4e5ceb9a9644c`)
+- **task_status_changed** · D23-T01 · CH-09 · 锁定章节论证骨架：backlog → ready (`EVT-4b268ea2b94cf154`)
+
+## 2026-07-24T13:30:30Z · `e36b75fcc217-working-tree-5ac95c82aa4a`
+
+快照：[`20260724T133030Z-fcc217-working-tree-5ac95c82aa4a.json`](snapshots/20260724T133030Z-fcc217-working-tree-5ac95c82aa4a.json)
+
+- **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 框架：pending → done (`EVT-22bccd2c7dce08e0`)
+- **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 问题：pending → done (`EVT-4b894778a418c5cb`)
+- **task_status_changed** · D23-T01 · CH-09 · 锁定章节论证骨架：ready → done (`EVT-4e078d899ff8008b`)
+- **task_status_changed** · D23-T02 · CH-09 · 完成章节可读稿：backlog → ready (`EVT-15336d3ae6e665ec`)
+
+## 2026-07-24T13:35:10Z · `edaac8aeca94-working-tree-1f9d2304afc7`
+
+快照：[`20260724T133510Z-aeca94-working-tree-1f9d2304afc7.json`](snapshots/20260724T133510Z-aeca94-working-tree-1f9d2304afc7.json)
+
+- **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 案例：pending → done (`EVT-25daedeae5568f91`)
+- **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 实验：pending → done (`EVT-1e6b01394640b4f4`)
+- **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 图示：pending → done (`EVT-0b1b0d42e4075a6b`)
+- **task_status_changed** · D23-T02 · CH-09 · 完成章节可读稿：ready → done (`EVT-1e23a21822554347`)
+- **task_status_changed** · D23-T03 · CH-09 · 完成章节审校与证据对齐：backlog → ready (`EVT-915f24c8d98e81ef`)
+
+## 2026-07-24T13:36:01Z · `3d1db5e83ff4-working-tree-2e5ddccccd33`
+
+快照：[`20260724T133601Z-e83ff4-working-tree-2e5ddccccd33.json`](snapshots/20260724T133601Z-e83ff4-working-tree-2e5ddccccd33.json)
+
+- **chapter_stage_changed** · CH-09 · 适配性工程：选择正确的 Flow 与治理强度 · 审校：pending → done (`EVT-ffa1f8997416f11d`)
+- **task_status_changed** · D23-T03 · CH-09 · 完成章节审校与证据对齐：ready → done (`EVT-4bca3aebeed899d9`)
+- **task_status_changed** · D24-T01 · CH-10 · 锁定章节论证骨架：backlog → ready (`EVT-836738c7e3177730`)
+
+## 2026-07-24T13:36:52Z · `62648787b05b-working-tree-3fd212566612`
+
+快照：[`20260724T133652Z-87b05b-working-tree-3fd212566612.json`](snapshots/20260724T133652Z-87b05b-working-tree-3fd212566612.json)
+
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 框架：pending → done (`EVT-f773aaac4e0125e8`)
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 问题：pending → done (`EVT-7bb667dc08f48c49`)
+- **task_status_changed** · D24-T01 · CH-10 · 锁定章节论证骨架：ready → done (`EVT-65545471bfacf24c`)
+- **task_status_changed** · D24-T02 · CH-10 · 完成章节可读稿：backlog → ready (`EVT-a0047b9747d6cd61`)
+
+## 2026-07-24T13:37:53Z · `7e5db21f2422-working-tree-7f64e8cbf353`
+
+快照：[`20260724T133753Z-1f2422-working-tree-7f64e8cbf353.json`](snapshots/20260724T133753Z-1f2422-working-tree-7f64e8cbf353.json)
+
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 案例：pending → done (`EVT-df55ff9cac01af5f`)
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 实验：pending → done (`EVT-0ada25e62ec3c739`)
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 图示：pending → done (`EVT-48a441304cc8a6be`)
+- **task_status_changed** · D24-T02 · CH-10 · 完成章节可读稿：ready → done (`EVT-bfa89664b88d2f56`)
+- **task_status_changed** · D24-T03 · CH-10 · 完成章节审校与证据对齐：backlog → ready (`EVT-ed9b285e3c45c9f4`)
+
+## 2026-07-24T13:38:41Z · `57eaced8d483-working-tree-8c4ac3b7145a`
+
+快照：[`20260724T133841Z-d8d483-working-tree-8c4ac3b7145a.json`](snapshots/20260724T133841Z-d8d483-working-tree-8c4ac3b7145a.json)
+
+- **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 审校：pending → done (`EVT-7cf955da5ca8a05f`)
+- **task_status_changed** · D24-T03 · CH-10 · 完成章节审校与证据对齐：ready → done (`EVT-99a95d46813cabff`)
+
+## 2026-07-25T07:12:18Z · `0d6255fd3670-working-tree-6f07fd750e74`
+
+快照：[`20260725T071218Z-fd3670-working-tree-6f07fd750e74.json`](snapshots/20260725T071218Z-fd3670-working-tree-6f07fd750e74.json)
+
+- **experiment_changed** · EXP-02-01 · 不可委托判断清单生成器 · status：planned → verified (`EVT-563ff9363186ed13`)
+- **experiment_changed** · EXP-03-02 · Unit 与 Bolt 依赖 DAG 校验器 · status：planned → verified (`EVT-85564d8c75d94bc6`)
+- **experiment_changed** · EXP-04-02 · Standards 漂移检测器 · status：planned → verified (`EVT-7dc6cf5425780633`)
+- **experiment_changed** · EXP-06-01 · Plan–Walkthrough 偏差审计器 · status：planned → verified (`EVT-f68d37a641db7674`)
+
+## 2026-07-25T09:18:18Z · `e99de734cc1b-working-tree-65284fadaf99`
+
+快照：[`20260725T091818Z-34cc1b-working-tree-65284fadaf99.json`](snapshots/20260725T091818Z-34cc1b-working-tree-65284fadaf99.json)
+
+- **cycle_opened** · v0.8.003-draft 已由真实发布回执激活 (`EVT-6d854005f4561d36`)
+- **experiment_changed** · EXP-01-01 · 同一 Intent 多次生成方差基线 · status：planned → verified (`EVT-5879fa3cb56b7a0a`)
+- **experiment_changed** · EXP-01-02 · AI-Assisted 与 AI-Driven 对照实验 · status：planned → verified (`EVT-0db769798ba5459a`)
+- **experiment_changed** · EXP-01-03 · AI-DLC 三阶段官方流程复现 · status：planned → verified (`EVT-5578c165c2dadd76`)
+- **experiment_changed** · EXP-02-02 · 反向对话澄清收益实验 · status：planned → verified (`EVT-e0e0a09e373b6457`)
+- **experiment_changed** · EXP-02-03 · 四 Agent 人机检查点会话复现 · status：planned → verified (`EVT-abb299576764e11f`)
+- **experiment_changed** · EXP-03-03 · Inception Agent 完整分解复现 · status：planned → verified (`EVT-b4eb779956c58a18`)
+- **experiment_changed** · EXP-04-03 · 官方 Memory Bank 结构复现 · status：planned → verified (`EVT-a27ca3733bf34a3c`)
+- **experiment_changed** · EXP-05-01 · Bolt 尺寸估算器 · status：planned → verified (`EVT-9b6cf2b6fd5938fa`)
+- **experiment_changed** · EXP-05-02 · DDD 与 Simple Bolt 选择器 · status：planned → verified (`EVT-ff962c7fee3f1cce`)
+- **experiment_changed** · EXP-05-03 · 官方 Bolt 类型检查点复现 · status：planned → verified (`EVT-366424c9410ef282`)
+- **experiment_changed** · EXP-06-02 · 失败—修复—复测闭环记录器 · status：planned → verified (`EVT-422284cfd4ede728`)
+- **experiment_changed** · EXP-06-03 · 端到端 Bolt 执行复现 · status：planned → verified (`EVT-57b8049913b7fd84`)
+- **experiment_changed** · EXP-07-01 · 仓库确定性门禁组合器 · status：ready → verified (`EVT-163fb6d5fd0e9e3c`)
+- **experiment_changed** · EXP-07-02 · 独立评审分歧矩阵 · status：planned → verified (`EVT-37fb65e6e0184526`)
+- **experiment_changed** · EXP-07-03 · 分层验证检查点复现 · status：planned → verified (`EVT-f4b4a6520abcd6aa`)
+- **experiment_changed** · EXP-08-01 · 发布候选来源清单校验器 · status：ready → verified (`EVT-8cb4d6db65b391fc`)
+- **experiment_changed** · EXP-08-02 · 回滚桌面演练模拟器 · status：planned → verified (`EVT-25a9018bc6142416`)
+- **experiment_changed** · EXP-08-03 · Operations 四阶段复现 · status：planned → verified (`EVT-374a8971251ea450`)
+- **experiment_changed** · EXP-09-01 · Simple/FIRE/AI-DLC Flow 选择器 · status：planned → verified (`EVT-d5b93593b756daa8`)
+- **experiment_changed** · EXP-09-02 · 风险到检查点预算模拟器 · status：planned → verified (`EVT-2c079f52076dc893`)
+- **experiment_changed** · EXP-09-03 · Brownfield Flow 选择案例复现 · status：planned → verified (`EVT-a0dd8ed52e926f83`)
+- **experiment_changed** · EXP-10-01 · 人–Agent 责任 RACI 生成器 · status：planned → verified (`EVT-8797e18cd2e34df8`)
+- **experiment_changed** · EXP-10-02 · AI-DLC 价值记分卡 · status：planned → verified (`EVT-81897631fd0113de`)
+- **experiment_changed** · EXP-10-03 · Mob 协作与 Agent 交接复现 · status：planned → verified (`EVT-329b584c323d1b75`)
+- **feedback_decided** · FB-002 · Reader-A/B/C：deferred (`EVT-55fab0cf294ae444`)
+- **feedback_decided** · FB-003 · Reader-A/B/C：deferred (`EVT-5aede4c95f45de4f`)
+- **feedback_decided** · FB-004 · Reader-A/B/C：deferred (`EVT-d570a00b6cf7f55e`)
+- **feedback_decided** · FB-005 · Reader-A/B/C：deferred (`EVT-6ecbd84596b1ac14`)
+- **feedback_decided** · FB-006 · Reader-A/B/C：deferred (`EVT-f2895823ff6d73b1`)
+- **feedback_decided** · FB-007 · Reader-A/B/C：deferred (`EVT-a6950906d7e18fc5`)
+- **feedback_decided** · FB-008 · Reader-A/B/C：deferred (`EVT-03f0e19502a08b6a`)
+- **feedback_decided** · FB-009 · Reader-A/B/C：deferred (`EVT-5803c016485087bf`)
+- **cycle_opened** · 激活 v0.8.003-draft 维护周期并同步实验 30/30 投影 (`EVT-e49a2c270bd554b3`)
+
+## 2026-07-25T09:21:19Z · `d0083a435a2c-working-tree-4931d0721693`
+
+快照：[`20260725T092119Z-435a2c-working-tree-4931d0721693.json`](snapshots/20260725T092119Z-435a2c-working-tree-4931d0721693.json)
+
+- **release_published** · v0.8.003 已发布；维护周期关闭 (`EVT-fd7f87a3b5d8c50d`)
+
+## 2026-07-25T10:31:47Z · `8dd4569d07f2b34168968685a5103cdef7f1cd21`
+
+快照：[`20260725T103147Z-07f2b34168968685a5103cdef7f1cd21.json`](snapshots/20260725T103147Z-07f2b34168968685a5103cdef7f1cd21.json)
+
+- **release_published** · v0.8.004 已公开发布：PDF 封面全出血与公式排版修复 (`EVT-e9ba84d3c4c99088`)
+
+## 2026-07-25T10:51:36Z · `b157addf8231a174fd73463deb9838ba65cd3de1`
+
+快照：[`20260725T105136Z-8231a174fd73463deb9838ba65cd3de1.json`](snapshots/20260725T105136Z-8231a174fd73463deb9838ba65cd3de1.json)
+
+- **release_published** · v0.8.005 已公开发布：README 开篇致谢 ai-agent-book 与 specs.md (`EVT-6bc022cef5057eaf`)

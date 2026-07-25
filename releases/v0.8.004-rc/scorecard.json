@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.8.004",
+  "publish_threshold": 92,
+  "weights": {
+    "visual_fix": 40,
+    "pdf_verification": 25,
+    "regression": 20,
+    "release": 15
+  },
+  "hard_gates": [
+    "pdf_cover_bottom_white_ratio_zero",
+    "formula_right_side_same_visual_level",
+    "formula_vertical_centered",
+    "ci_check_pass",
+    "content_audit_pass",
+    "readiness_ready",
+    "reader_feedback_not_fabricated"
+  ],
+  "baseline_commit": "c01941c",
+  "current_round": "04",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "reproduce-cover-defects",
+      "decision": "KEEP",
+      "visual_fix": 20,
+      "pdf_verification": 10,
+      "regression": 10,
+      "release": 4,
+      "total": 44,
+      "notes": "确认 v0.8.003 Release 仍为修复前资产。"
+    },
+    {
+      "id": "01",
+      "name": "cover-formula-layout",
+      "decision": "KEEP",
+      "visual_fix": 40,
+      "pdf_verification": 15,
+      "regression": 10,
+      "release": 4,
+      "total": 69,
+      "notes": "等号后正文提升到主公式同级字号并共同垂直居中。"
+    },
+    {
+      "id": "02",
+      "name": "pdf-full-bleed",
+      "decision": "KEEP",
+      "visual_fix": 40,
+      "pdf_verification": 25,
+      "regression": 12,
+      "release": 4,
+      "total": 81,
+      "notes": "A4 底部近白像素比率=0。"
+    },
+    {
+      "id": "03",
+      "name": "regression-audit",
+      "decision": "KEEP",
+      "visual_fix": 40,
+      "pdf_verification": 25,
+      "regression": 20,
+      "release": 10,
+      "total": 95,
+      "notes": "CI 与 PDF content audit 通过。"
+    },
+    {
+      "id": "04",
+      "name": "v0.8.004-release",
+      "decision": "KEEP",
+      "visual_fix": 40,
+      "pdf_verification": 25,
+      "regression": 20,
+      "release": 15,
+      "total": 100,
+      "notes": "发布 v0.8.004 修复版。"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "experiment_id": "EXP-05-03",
+  "pinned_version": "sha256:32d73fc5231f81eabaf9c881e1c64f3353882c605c729bfbbca9f5bb4aa0b481",
+  "stage_records": {
+    "simple": {
+      "bolt_id": "bolt-ui-settings-panel",
+      "stages": [
+        {
+          "stage_id": "plan",
+          "status": "completed",
+          "checkpoints": [
+            {"checkpoint_id": "human_validation", "observed": true}
+          ]
+        },
+        {
+          "stage_id": "implement",
+          "status": "completed",
+          "checkpoints": [
+            {"checkpoint_id": "human_validation", "observed": true}
+          ]
+        },
+        {
+          "stage_id": "test",
+          "status": "completed",
+          "checkpoints": [
+            {"checkpoint_id": "human_validation", "observed": true}
+          ]
+        }
+      ]
+    },
+    "ddd": {
+      "bolt_id": "bolt-ledger-reconciliation",
+      "stages": [
+        {
+          "stage_id": "domain-model",
+          "status": "completed",
+          "checkpoints": [
+            {"checkpoint_id": "human_validation", "observed": true}
+          ]
+        },
+        {
+          "stage_id": "technical-design",
+          "status": "completed",
+          "checkpoints": [
+            {"checkpoint_id": "human_validation", "observed": true}
+          ]
+        },
+        {
+          "stage_id": "implement",
+          "status": "completed",
+          "checkpoints": [
+            {"checkpoint_id": "human_validation", "observed": true}
+          ]
+        },
+        {
+          "stage_id": "test",
+          "status": "completed",
+          "checkpoints": [
+            {"checkpoint_id": "human_validation", "observed": true}
+          ]
+        }
+      ]
+    }
+  }
+}

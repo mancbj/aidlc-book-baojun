@@ -1,0 +1,39 @@
+{
+  "experiment_id": "EXP-04-03",
+  "frozen_pin_fixture": "fixtures/pin/frozen-structure.json",
+  "limitation": "本报告只对仓库内冻结 pin 夹具与给定 Memory Bank 根目录做结构与引用校验；它不验证实时 specs.md portal，也不把 specs.md 视为唯一标准。",
+  "loadable_minimal_memory_bank": true,
+  "memory_bank_root": "fixtures/memory-bank-min",
+  "metrics": {
+    "declared_reference_count": 4,
+    "present_required_path_count": 6,
+    "reference_validity_percent": 100.0,
+    "required_file_completeness_percent": 100.0,
+    "required_path_count": 6,
+    "valid_reference_count": 4
+  },
+  "pinned_version": "sha256:1ecdfd4c857ede2240282b4a80b57e1bb9f91e2d91894b8fec0f5e6d1a7de978",
+  "reference_check": {
+    "invalid": [],
+    "valid": [
+      "intents/001-demo-intent/requirements.md",
+      "intents/001-demo-intent/system-context.md",
+      "standards/coding-standards.md",
+      "standards/tech-stack.md"
+    ]
+  },
+  "required_path_check": {
+    "missing": [],
+    "present": [
+      "project.yaml",
+      "story-index.md",
+      "standards/coding-standards.md",
+      "standards/tech-stack.md",
+      "intents/001-demo-intent/requirements.md",
+      "intents/001-demo-intent/system-context.md"
+    ]
+  },
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:3e14c05f4383396241bd81a8183123c4b95b3426432efb4994888dcbebf1f44a",
+  "valid": true
+}

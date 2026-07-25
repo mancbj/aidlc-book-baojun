@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "version": "v0.2",
+  "tag": "v0.2",
+  "status": "published",
+  "url": "https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.2",
+  "published_at": "2026-07-24T14:02:29Z",
+  "release_id": "359343249",
+  "source_sha": "bbf751157d5b787f081b37c712f374e06939d281",
+  "readiness_source_id": "bbf751157d5b787f081b37c712f374e06939d281",
+  "assets": [
+    {
+      "name": "aidlc-book-v0.2-book.html",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.2/aidlc-book-v0.2-book.html",
+      "content_type": "text/html",
+      "bytes": 5199830,
+      "digest": "sha256:f0c38f76f93c03b5aa05697f83f57974eb15378fcaf6dee90267214869787078"
+    },
+    {
+      "name": "aidlc-book-v0.2-html.zip",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.2/aidlc-book-v0.2-html.zip",
+      "content_type": "application/zip",
+      "bytes": 13279342,
+      "digest": "sha256:31fa3df93d8367292b0ce55f1b6111e2ea1b55a456056195f02f974930ccf971"
+    },
+    {
+      "name": "aidlc-book-v0.2.pdf",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.2/aidlc-book-v0.2.pdf",
+      "content_type": "application/pdf",
+      "bytes": 4902995,
+      "digest": "sha256:d41d8b45dc33300a53b3e818328461e2a8554f0afff2a4a24f3e664c26e64fa0"
+    },
+    {
+      "name": "release-manifest.json",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.2/release-manifest.json",
+      "content_type": "application/json",
+      "bytes": 965,
+      "digest": "sha256:395ea9d2a87d5615d8f9bcb671ab0e9fb672426aad3eb71394a7b43243f7a743"
+    },
+    {
+      "name": "release-notes.md",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.2/release-notes.md",
+      "content_type": "text/markdown",
+      "bytes": 1331,
+      "digest": "sha256:a60c9e102544503cb6bd1a1d950912d6add94473253e2a8a9fa4cefb3cb114ff"
+    }
+  ]
+}

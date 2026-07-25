@@ -1,0 +1,24 @@
+{
+  "external_source": "https://specs.md/architecture/choose-flow",
+  "guide_id": "brownfield-three-flow-decision",
+  "pinned_version": "sha256:0af0a8b0344a245e7d2a3a08c92da32a5a6d1076e9a00712420be0a6723db685",
+  "flow_options": ["Simple", "FIRE", "AI-DLC"],
+  "required_rationale_dimensions": [
+    "codebase_state",
+    "integration_risk",
+    "compliance_traceability",
+    "team_coordination",
+    "reversibility"
+  ],
+  "overhead_weights": {
+    "Simple": 1,
+    "FIRE": 3,
+    "AI-DLC": 5
+  },
+  "case_profile": {
+    "codebase_state": "brownfield",
+    "task_complexity": "medium",
+    "team_scale": "medium",
+    "compliance_requirements": "moderate"
+  }
+}

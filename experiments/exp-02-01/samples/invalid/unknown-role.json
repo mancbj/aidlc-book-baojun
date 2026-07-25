@@ -1,0 +1,32 @@
+{
+  "experiment_id": "EXP-02-01",
+  "project_name": "未知角色引用",
+  "goals": [
+    {
+      "id": "G-01",
+      "statement": "示例目标",
+      "owner_role": "missing_owner"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-01",
+      "statement": "示例风险",
+      "owner_role": null
+    }
+  ],
+  "constraints": [
+    {
+      "id": "C-01",
+      "statement": "示例约束",
+      "owner_role": null
+    }
+  ],
+  "responsibility_roles": [
+    {
+      "id": "owner",
+      "name": "负责人",
+      "boundary": "作出最终决定。"
+    }
+  ]
+}

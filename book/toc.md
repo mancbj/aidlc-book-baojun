@@ -87,7 +87,7 @@ Part 00 是非编号导读，不计入十章正文，也不改变 CH-01 至 CH-1
 
 ### 第 8 章 · Operations：从交付候选到可持续运行
 
-**唯一核心问题：如何通过 Build、Deploy、Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？**
+**唯一核心问题：如何通过 Build、Deploy、Runtime Verify、Monitor 与恢复机制，让通过测试的候选物成为可运行、可观测、可回滚的系统？**
 
 - 读者结果：能够定义构建凭证、环境门禁、部署策略、冒烟验证、监控指标和回滚 Runbook。
 - 参考实现：Operations Agent 与 `memory-bank/operations/`；同时记录该实现当前为 alpha，而非假定工具已经成熟。

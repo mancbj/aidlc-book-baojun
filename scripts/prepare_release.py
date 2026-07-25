@@ -35,6 +35,17 @@ def validate_pdf(path: Path) -> None:
         raise RuntimeError("--pdf 缺少 PDF header/EOF 结构；拒绝把占位文件作为 PDF 发布。")
 
 
+def validate_book_html(path: Path) -> None:
+    """Require a non-empty HTML book candidate before packaging it."""
+    if not path.is_file() or path.suffix.lower() not in {".html", ".htm"}:
+        raise RuntimeError("--book-html 必须指向现有 .html 文件。")
+    if path.stat().st_size < 1024:
+        raise RuntimeError("--book-html 文件过小，不是可发布书稿 HTML。")
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    if "<html" not in text.lower() or "AI-DLC" not in text:
+        raise RuntimeError("--book-html 缺少可识别的书稿 HTML 结构。")
+
+
 def zip_timestamp(value: str) -> tuple[int, int, int, int, int, int]:
     """Use the declared build time instead of filesystem mtimes in release zips."""
     try:
@@ -55,7 +66,12 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--output", type=Path)
     parser.add_argument("--pdf", type=Path, help="已由独立可信构建生成的 PDF；不存在则明确跳过。")
-    parser.add_argument("--readiness", type=Path, help="status=ready 且来源一致的 v0.1 readiness JSON。")
+    parser.add_argument(
+        "--book-html",
+        type=Path,
+        help="已由 scripts/build_book.sh 生成的书稿 HTML；不存在则明确跳过。",
+    )
+    parser.add_argument("--readiness", type=Path, help="status=ready 且来源一致的 readiness JSON。")
     parser.add_argument("--release-notes", type=Path, help="由事实与 readiness 生成的 Release Notes。")
     parser.add_argument("--generated-at")
     parser.add_argument("--commit-sha")
@@ -126,6 +142,26 @@ def build_release(args: argparse.Namespace) -> Dict[str, object]:
                 "retry": "先用书稿构建链路生成并验证 PDF，再以 --pdf <path> 重建候选。",
             }
 
+        book_html_status: Dict[str, object]
+        book_html_arg = getattr(args, "book_html", None)
+        if book_html_arg:
+            book_html = book_html_arg if book_html_arg.is_absolute() else root / book_html_arg
+            validate_book_html(book_html)
+            book_html_target = staged / f"aidlc-book-{args.version}-book.html"
+            shutil.copy2(book_html, book_html_target)
+            book_html_status = {
+                "status": "included",
+                "file": book_html_target.name,
+                "sha256": file_sha256(book_html_target),
+                "bytes": book_html_target.stat().st_size,
+            }
+        else:
+            book_html_status = {
+                "status": "skipped",
+                "reason": "未通过 --book-html 提供经过构建的书稿 HTML。",
+                "retry": "先运行 scripts/build_book.sh .artifacts/book html，再以 --book-html <path> 重建候选。",
+            }
+
         commit = args.commit_sha or os.environ.get("GITHUB_SHA") or source_id(root)
         notes_arg = getattr(args, "release_notes", None)
         if notes_arg:
@@ -139,10 +175,11 @@ def build_release(args: argparse.Namespace) -> Dict[str, object]:
 - Source: `{source_id(root)}`
 - Commit: `{commit}`
 - Generated: `{timestamp}`
-- HTML: `{archive.name}`
+- HTML zip: `{archive.name}`
+- Book HTML: `{book_html_status['status']}`
 - PDF: `{pdf_status['status']}`
 
-本候选由仓库事实、测试和静态页面生成。正式发布前仍需检查已知缺口、反馈入口和 v0.1 人工门禁。
+本候选由仓库事实、测试、书稿构建和静态页面生成。正式发布前仍需检查已知缺口、反馈入口和人工门禁。
 """
         (staged / "release-notes.md").write_text(notes, encoding="utf-8")
         manifest = {
@@ -158,6 +195,7 @@ def build_release(args: argparse.Namespace) -> Dict[str, object]:
                 "bytes": archive.stat().st_size,
                 "pages_file_count": pages_manifest["file_count"],
             },
+            "book_html": book_html_status,
             "pdf": pdf_status,
             "release_notes": "release-notes.md",
             "readiness": {

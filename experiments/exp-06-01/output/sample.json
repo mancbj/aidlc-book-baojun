@@ -1,0 +1,98 @@
+{
+  "audit_table": [
+    {
+      "actual_change": {
+        "change_type": "modified",
+        "path": "README.md",
+        "summary": "记录运行方式"
+      },
+      "classification": "aligned",
+      "codes": [],
+      "path": "README.md",
+      "plan_item": {
+        "description": "记录使用方法",
+        "id": "PLAN-03",
+        "path": "README.md"
+      },
+      "walkthrough_declared_as": "change"
+    },
+    {
+      "actual_change": {
+        "change_type": "modified",
+        "path": "config/example.json",
+        "summary": "补充示例开关"
+      },
+      "classification": "deviation",
+      "codes": [
+        "UNPLANNED_CHANGE",
+        "UNDECLARED_CHANGE"
+      ],
+      "path": "config/example.json",
+      "plan_item": null,
+      "walkthrough_declared_as": null
+    },
+    {
+      "actual_change": {
+        "change_type": "added",
+        "path": "docs/design-note.md",
+        "summary": "补充审计分类设计说明"
+      },
+      "classification": "deviation",
+      "codes": [
+        "UNPLANNED_CHANGE"
+      ],
+      "path": "docs/design-note.md",
+      "plan_item": null,
+      "walkthrough_declared_as": "deviation"
+    },
+    {
+      "actual_change": {
+        "change_type": "added",
+        "path": "src/audit.py",
+        "summary": "实现计划与实际变更对照"
+      },
+      "classification": "aligned",
+      "codes": [],
+      "path": "src/audit.py",
+      "plan_item": {
+        "description": "实现偏差审计器",
+        "id": "PLAN-01",
+        "path": "src/audit.py"
+      },
+      "walkthrough_declared_as": "change"
+    },
+    {
+      "actual_change": {
+        "change_type": "added",
+        "path": "tests/test_audit.py",
+        "summary": "覆盖正常与失败路径"
+      },
+      "classification": "aligned",
+      "codes": [],
+      "path": "tests/test_audit.py",
+      "plan_item": {
+        "description": "添加审计器测试",
+        "id": "PLAN-02",
+        "path": "tests/test_audit.py"
+      },
+      "walkthrough_declared_as": "change"
+    }
+  ],
+  "experiment_id": "EXP-06-01",
+  "interpretation": "deviation 表示计划或声明不一致，需人工审阅，但不自动构成 failure；failure 表示计划交付缺失或 Walkthrough 声明缺少实际证据。",
+  "metrics": {
+    "deliverable_coverage_percent": 100.0,
+    "deviation_count": 2,
+    "failure_count": 0,
+    "undeclared_change_count": 1
+  },
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:5643d12fd2781deff2b7440abf67c1ee4bfc9eb751368cc9246423bdf7529d89",
+  "summary": {
+    "actual_change_count": 5,
+    "delivered_plan_item_count": 3,
+    "planned_deliverable_count": 3,
+    "walkthrough_declaration_count": 4
+  },
+  "valid": true
+}

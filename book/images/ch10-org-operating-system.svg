@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">研发操作系统三层图</title>
+  <desc id="desc">组织操作系统由 Responsibility、Cadence 与 Scorecard 三层构成：Agent 可以 Responsible，Accountable 必须属于人；Dashboard 是观测面；记分卡输出扩大、收缩或停用决策。</desc>
+  <defs>
+    <style>
+      svg {
+        --background: #F7F8FA;
+        --surface: #FFFFFF;
+        --ink: #252A31;
+        --muted: #5F6671;
+        --border: #DDE1E7;
+        --blue: #0F62FE;
+        --green: #24A148;
+        --purple: #8A3FFC;
+      }
+      .canvas { fill: #F7F8FA; fill: var(--background); }
+      .card {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .cell {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .accent-blue { fill: #0F62FE; fill: var(--blue); }
+      .accent-green { fill: #24A148; fill: var(--green); }
+      .accent-purple { fill: #8A3FFC; fill: var(--purple); }
+      .title, .body, .note {
+        font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif;
+        fill: #252A31;
+        fill: var(--ink);
+      }
+      .title { font-size: 26px; font-weight: 700; }
+      .body { font-size: 16px; font-weight: 650; }
+      .note { font-size: 12px; font-weight: 450; fill: #5F6671; fill: var(--muted); }
+      .kicker, .section-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .axis-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .axis {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .flow {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .rail {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .feedback {
+        fill: none;
+        stroke: #0F62FE;
+        stroke: var(--blue);
+        stroke-width: 1.3;
+        stroke-dasharray: 4 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.72;
+        vector-effect: non-scaling-stroke;
+      }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6671"/>
+    </marker>
+    <marker id="feedback-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#0F62FE"/>
+    </marker>
+  </defs>
+  <rect class="canvas" x="0" y="0" width="960" height="540"/>
+
+  <g id="figure-heading" data-role="heading">
+    <text class="note kicker" x="64" y="40">ORGANIZATION · 10</text>
+    <text class="title" x="64" y="72">研发操作系统三层图</text>
+  </g>
+
+  <g id="thesis" data-role="thesis" data-card="thesis" transform="translate(64 92)">
+    <rect class="card" x="0" y="0" width="832" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="accent accent-blue" x="0" y="0" width="5" height="56" rx="2"/>
+    <text class="body" x="24" y="24">Accountable 属于人</text>
+    <text class="note" x="24" y="44">Agent 可 Responsible；Dashboard 只是观测面</text>
+  </g>
+
+  <g id="section-labels" data-role="labels">
+    <text class="note section-label" x="64" y="176">LAYERS</text>
+    <text class="note section-label" x="320" y="176">OPERATING DETAIL</text>
+    <text class="note section-label" x="760" y="176">SCALE</text>
+  </g>
+
+  <g id="layers" data-role="process">
+    <g data-card="responsibility" transform="translate(64 196)">
+      <rect class="card" x="0" y="0" width="200" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="30">Responsibility</text>
+      <text class="note" x="16" y="52">RACI · Accountable=人</text>
+    </g>
+    <path class="flow" d="M164 268V288" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="cadence" transform="translate(64 288)">
+      <rect class="card" x="0" y="0" width="200" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="30">Cadence</text>
+      <text class="note" x="16" y="52">Mob + 异步审阅</text>
+    </g>
+    <path class="flow" d="M164 360V380" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="scorecard" transform="translate(64 380)">
+      <rect class="card" x="0" y="0" width="200" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="30">Scorecard</text>
+      <text class="note" x="16" y="52">价值与可复现性</text>
+    </g>
+  </g>
+
+  <g id="details" data-role="inputs">
+    <g data-card="people-agents" data-stage="input" transform="translate(320 196)">
+      <rect class="card" x="0" y="0" width="200" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="30">People Agents</text>
+      <text class="note" x="16" y="52">AI 可 Responsible</text>
+    </g>
+    <g data-card="collaboration" data-stage="input" transform="translate(320 288)">
+      <rect class="card" x="0" y="0" width="200" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="30">Collaboration</text>
+      <text class="note" x="16" y="52">可交接状态优先</text>
+    </g>
+    <g data-card="evidence-value" data-stage="input" transform="translate(320 380)">
+      <rect class="card" x="0" y="0" width="200" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="30">Evidence Value</text>
+      <text class="note" x="16" y="52">Dashboard 仅观测</text>
+    </g>
+  </g>
+
+  <path class="flow" d="M264 232H320" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+  <path class="flow" d="M264 324H320" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+  <path class="flow" d="M264 416H320" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+
+  <g id="shared-input-rail" data-role="shared-input">
+    <path class="rail" d="M520 232H560" vector-effect="non-scaling-stroke"/>
+    <path class="rail" d="M520 324H560" vector-effect="non-scaling-stroke"/>
+    <path class="rail" d="M520 416H560" vector-effect="non-scaling-stroke"/>
+    <path class="rail" d="M560 232V416" vector-effect="non-scaling-stroke"/>
+    <path class="flow" d="M560 324H744" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+  </g>
+
+  <g id="scale-decision" data-role="output">
+    <g data-card="scale-decision" data-stage="main" transform="translate(744 264)">
+      <rect class="card" x="0" y="0" width="168" height="120" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="120" rx="2"/>
+      <text class="body" x="16" y="48">Scale Decision</text>
+      <text class="note" x="16" y="76">扩大 / 收缩 / 停用</text>
+    </g>
+  </g>
+
+  <g id="feedback-loop" data-role="feedback" data-target="shared-input-rail">
+    <path class="feedback" d="M828 384V496H560V432" marker-end="url(#feedback-arrow)" vector-effect="non-scaling-stroke"/>
+    <text class="note" x="700" y="520" text-anchor="middle">记分卡回流责任与节奏</text>
+  </g>
+
+</svg>

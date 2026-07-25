@@ -1,0 +1,13 @@
+{
+  "experiment_id": "EXP-03-03",
+  "pinned_version": "sha256:d65ec6e39e641b3009ef88f78cf22aaa19e127a35f75f0e6bcff671dc66f416a",
+  "artifacts": {
+    "requirements": true,
+    "system_context": true,
+    "units": true,
+    "stories": true,
+    "bolt_plan": true,
+    "extra_doc": true
+  },
+  "trace_links": []
+}

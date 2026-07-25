@@ -104,11 +104,31 @@ function Code(element)
 end
 
 function CodeBlock(element)
-  if not FORMAT:match("latex") or not element.text:find(protected_e, 1, true) then
-    return nil
+  if not FORMAT:match("latex") then return nil end
+  local text = element.text
+  if text:find(protected_e, 1, true) then
+    -- Verbatim environments cannot contain math nodes. The immediately
+    -- following formula retains the script glyph; the Mermaid source uses E.
+    text = text:gsub(protected_e, "E")
   end
-  -- Verbatim environments cannot contain math nodes. The immediately
-  -- following formula retains the script glyph; the Mermaid source uses E.
-  element.text = element.text:gsub(protected_e, "E")
+  -- Monospace Latin fonts lack box-drawing and arrow glyphs used in
+  -- chapter ASCII diagrams; replace them for PDF only.
+  local replacements = {
+    ["─"] = "-", ["│"] = "|", ["┌"] = "+", ["┐"] = "+", ["└"] = "+", ["┘"] = "+",
+    ["├"] = "+", ["┤"] = "+", ["┬"] = "+", ["┴"] = "+", ["┼"] = "+",
+    ["↑"] = "^", ["↓"] = "v", ["←"] = "<-", ["→"] = "->",
+    ["▲"] = "^", ["▼"] = "v", ["◀"] = "<", ["▶"] = ">",
+    ["↺"] = "<-", ["↻"] = "->",
+  }
+  local changed = text ~= element.text
+  for source, target in pairs(replacements) do
+    local next_text = text:gsub(source, target)
+    if next_text ~= text then
+      text = next_text
+      changed = true
+    end
+  end
+  if not changed then return nil end
+  element.text = text
   return element
 end

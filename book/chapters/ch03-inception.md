@@ -10,7 +10,7 @@
 | Draft Completeness | 正式十章生产线可读稿；D17-T03 五类审校已完成 |
 | Primary Question | AI 如何把一个高层 Intent 分解成可独立交付的 Unit、可验收的 Story 和可执行的 Bolt，而不丢失人的目标与边界？ |
 | Reader Outcome | 能够完成 Intent、Requirements、System Context、Unit、Story 与 Bolt Plan 的可追溯分解 |
-| Related Experiments | `EXP-03-01` |
+| Related Experiments | `EXP-03-01`、`EXP-03-02`、`EXP-03-03` |
 
 ## 01 · Question：为什么 Intent 不能直接交给 AI 执行
 
@@ -145,9 +145,33 @@ python3 -m unittest discover \
 
 这个实验可以被读者改造成自己的检查器。最小练习是：写一个自己的 Intent，列出 2 条 Requirement、1 个 Unit 和 3 个 Story，然后运行类似检查，观察是否有 Story 没有上游目标，是否有 Requirement 从未被实现路径覆盖。
 
+### `EXP-03-02` · Unit 与 Bolt 依赖 DAG 校验器
+
+`EXP-03-02` 继续检查下一层结构：Unit、Story 与 Bolt 的依赖图是否可执行。它输出依赖图，并计数循环依赖、跨 Unit 耦合边和未满足前置。运行入口：
+
+```bash
+python3 experiments/exp-03-02/quickstart.py --sample
+```
+
+样例报告在 `experiments/exp-03-02/output/sample.json`。它证明依赖清单可以被机器复核；它不证明计划最优，也不把跨 Unit 耦合自动判为错误——后者会以警告计数，留给人确认。
+
+### `EXP-03-03` · Inception Agent 完整分解复现（KEEP-EXT）
+
+`EXP-03-03` 已 verified，但 triage 仍为 `KEEP-EXT`：它只对照仓库内冻结 pin 指南，核对 Requirements、System Context、Units、Stories、Bolt Plan 的工件完整率与追踪链接覆盖率。运行：
+
+```bash
+python3 experiments/exp-03-03/quickstart.py --sample
+```
+
+样例在 `experiments/exp-03-03/output/sample.json`。它证明冻结分解包可确定性复现；不把外部 Inception Agent 说明写成唯一标准，也不证明业务语义已经正确。
+
 ## 05 · Figure：向下分解与向上追踪
 
-本章的图应当帮助读者看见两个方向：向下分解，向上追踪。
+本章的图应当帮助读者看见两个方向：向下分解，向上追踪。独立 SVG 把这条链固定为可审计源文件；下面的 Mermaid 保留为构建期可读展开。
+
+![图 3-1 · Intent 到 Bolt 追踪链](images/ch03-intent-to-bolt.svg){.core-figure width=100%}
+
+源文件：`book/images/ch03-intent-to-bolt.svg`。它是全书核心图 `book/images/fig0-1.svg` 的局部展开：把“总结构”落到 Inception 的分解链上。
 
 ```mermaid
 flowchart TB
@@ -161,8 +185,6 @@ flowchart TB
     R -. "目标证据向上回链" .-> I
 ```
 
-当前 v0.1 书稿已包含全书核心图 `book/images/fig0-1.svg`。它解释 AI-DLC 的总结构：人的判断、AI 能力与 Engineering with Exsecutio 如何共同走向确定性交付。本章样章中的 Intent-to-Bolt 图是它的局部展开：把“总结构”落到 Inception 的分解链上。
-
 为了让图不变成装饰，正文中的每个节点都要有证据路径：
 
 | Node | Evidence Entry |
@@ -173,8 +195,6 @@ flowchart TB
 | Stories | `memory-bank/story-index.md` |
 | Bolt Plan | `memory-bank/bolts/001-github-writing-system-ui/bolt.md` |
 | Progress Events | `progress/events/events.jsonl` |
-
-图的生成规则应延续本书 SVG 规约：宽屏优先、严格网格、白色卡片、浅灰边框、语义色竖线、可编辑文本、无外围装饰边框。后续如果为本章单独生成 `book/images/ch03-intent-to-bolt.svg`，必须保留源文件和可再生方法。
 
 ## 06 · Review：可读稿自检与后续审校入口
 
@@ -190,7 +210,7 @@ flowchart TB
 
 第四，术语一致性：Intent、Requirement、System Context、Unit、Story、Bolt、Checkpoint 首次出现时已经定义，之后不要随意改成“目标、需求、模块、任务、执行包”这类近义词混用。中文解释可以灵活，英文术语要稳定。
 
-第五，正文与实验对应：所有实践观点都必须能追到证据入口。本章的证据入口包括 `experiments/sample/README.md`、`experiments/sample/output/sample.json`、五类失败样例、测试命令、`planning/sample-experiment.md` 和 `book/images/fig0-1.svg`。
+第五，正文与实验对应：所有实践观点都必须能追到证据入口。本章的证据入口包括 `experiments/sample/README.md`、`experiments/sample/output/sample.json`、五类失败样例、测试命令、`planning/sample-experiment.md`、`book/images/fig0-1.svg` 和 `book/images/ch03-intent-to-bolt.svg`。
 
 ## Reader Exercise
 
@@ -212,7 +232,11 @@ flowchart TB
 - `experiments/sample/README.md`：实验运行说明与 verified 状态。
 - `experiments/sample/output/sample.json`：合法样例输出证据。
 - `experiments/sample/output/README.md`：成功与失败样例说明。
+- `experiments/exp-03-03/README.md`：Inception Agent 完整分解复现（KEEP-EXT / 冻结 pin）。
+- `experiments/exp-03-03/output/sample.json`：冻结分解完整率与追踪链接覆盖率样例。
+- `progress/experiments.json`：`EXP-03-01`、`EXP-03-02`、`EXP-03-03` 实验治理状态。
 - `book/images/fig0-1.svg`：全书 AI-DLC 核心图。
+- `book/images/ch03-intent-to-bolt.svg`：Intent 到 Bolt 双向追踪图。
 - `book/chapters/sample.md`：v0.1 样章证据副本。
 - `planning/reviews/ch-03-writing-review.md`：正式十章生产线 CH-03 五类审校记录。
 - `progress/chapters.json`：章节事实源与阶段状态。

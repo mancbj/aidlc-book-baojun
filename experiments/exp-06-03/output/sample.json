@@ -1,0 +1,41 @@
+{
+  "bolt_id": "bolt-feedback-widget",
+  "experiment_id": "EXP-06-03",
+  "external_source": "https://specs.md/learn/aidlc-bolt-execution",
+  "guide_digest": "sha256:47821399f13506d625ae808c412f6a9f5d59031a3cc68007ad5949de107d2269",
+  "limitation": "本报告仅对照仓库内冻结的 Bolt 执行指南与输入阶段工件做确定性核对；冻结 pin 不等于唯一标准，且不访问或验证实时 specs.md portal。",
+  "metrics": {
+    "artifact_completeness_percent": 100.0,
+    "completion_seconds": 5400
+  },
+  "pinned_version": "sha256:fe6252a58966ef23ac663a313c1a62094a1d70f08ce1bb536fdc950721f21bb2",
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:875b7d04a6cbf31475e583ae33096df99b3d98c827ff48c1ca4126ac1ccc4c01",
+  "stages": [
+    {
+      "artifact_present": true,
+      "required": true,
+      "stage_id": "plan",
+      "status": "completed"
+    },
+    {
+      "artifact_present": true,
+      "required": true,
+      "stage_id": "implement",
+      "status": "completed"
+    },
+    {
+      "artifact_present": true,
+      "required": true,
+      "stage_id": "test",
+      "status": "completed"
+    },
+    {
+      "artifact_present": false,
+      "required": false,
+      "stage_id": "review",
+      "status": "missing"
+    }
+  ],
+  "valid": true
+}

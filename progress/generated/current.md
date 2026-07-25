@@ -2,21 +2,21 @@
 
 > 本文件由 `python3 scripts/generate_progress.py` 自动生成，请勿手工维护统计数字。
 
-- 目标：v0.1 已发布；十章写作冲刺
-- 当前：Day 22 / 24，剩余 2 个计划日
-- 总进度：65/72（90.3%）
-- 加权进度：90.2%
-- Must：63/70（90.0%）
+- 目标：实验 30/30 verified；patch 维护阶段
+- 当前：Day 24 / 24，剩余 0 个计划日
+- 总进度：72/72（100.0%）
+- 加权进度：100.0%
+- Must：70/70（100.0%）
 - Should：2/2（100.0%）
 - 阻塞：0
-- 反馈：1 条；accepted 0 条
+- 反馈：9 条；accepted 0 条
 - 下一周期：尚未激活
-- 事实最近更新：2026-07-24T11:50:00Z
-- 来源：`6bdf8677302d595aaf30418a359322e193ad1a2e`
+- 事实最近更新：2026-07-25T10:50:00Z
+- 来源：`b157addf8231a174fd73463deb9838ba65cd3de1`
 
 ## 下一动作
 
-1. **D22-T03 · CH-08 · 完成章节审校与证据对齐** — MUST / 可开始 / Day 22
+实验与任务已闭环；准备下一 patch 发布，或等待真实回执激活 draft 周期
 
 ## 阻塞
 
@@ -24,16 +24,16 @@
 
 ## 最近关键更新
 
-- `2026-07-24T11:50:00Z` · D22-T03 · CH-08 · 完成章节审校与证据对齐：backlog → ready (`EVT-6430e1f2df75e170`)
-- `2026-07-24T11:50:00Z` · D22-T02 · CH-08 · 完成章节可读稿：ready → done (`EVT-e79deee64f90df07`)
-- `2026-07-24T11:50:00Z` · CH-08 · Operations：从交付候选到可持续运行 · 图示：pending → done (`EVT-1f9e107441c7adf7`)
-- `2026-07-24T11:50:00Z` · CH-08 · Operations：从交付候选到可持续运行 · 实验：pending → done (`EVT-f44d1186ab7f29b8`)
-- `2026-07-24T11:50:00Z` · CH-08 · Operations：从交付候选到可持续运行 · 案例：pending → done (`EVT-6c9c24ad9fcf1f2d`)
-- `2026-07-24T11:20:00Z` · D22-T02 · CH-08 · 完成章节可读稿：backlog → ready (`EVT-cdfdb9f19d8ab977`)
-- `2026-07-24T11:20:00Z` · D22-T01 · CH-08 · 锁定章节论证骨架：ready → done (`EVT-ac7478b0a9fccc73`)
-- `2026-07-24T11:20:00Z` · CH-08 · Operations：从交付候选到可持续运行 · 问题：pending → done (`EVT-0301c08b7398808c`)
-- `2026-07-24T11:20:00Z` · CH-08 · Operations：从交付候选到可持续运行 · 框架：pending → done (`EVT-eb75ac65d96a7d23`)
-- `2026-07-24T10:50:00Z` · D22-T01 · CH-08 · 锁定章节论证骨架：backlog → ready (`EVT-aea0b5cb811031f2`)
+- `2026-07-25T10:51:36Z` · v0.8.005 已公开发布：README 开篇致谢 ai-agent-book 与 specs.md (`EVT-6bc022cef5057eaf`)
+- `2026-07-25T10:31:47Z` · v0.8.004 已公开发布：PDF 封面全出血与公式排版修复 (`EVT-e9ba84d3c4c99088`)
+- `2026-07-25T09:21:19Z` · v0.8.003 已发布；维护周期关闭 (`EVT-fd7f87a3b5d8c50d`)
+- `2026-07-25T09:18:18Z` · 激活 v0.8.003-draft 维护周期并同步实验 30/30 投影 (`EVT-e49a2c270bd554b3`)
+- `2026-07-25T09:18:18Z` · FB-009 · Reader-A/B/C：deferred (`EVT-5803c016485087bf`)
+- `2026-07-25T09:18:18Z` · FB-008 · Reader-A/B/C：deferred (`EVT-03f0e19502a08b6a`)
+- `2026-07-25T09:18:18Z` · FB-007 · Reader-A/B/C：deferred (`EVT-a6950906d7e18fc5`)
+- `2026-07-25T09:18:18Z` · FB-006 · Reader-A/B/C：deferred (`EVT-f2895823ff6d73b1`)
+- `2026-07-25T09:18:18Z` · FB-005 · Reader-A/B/C：deferred (`EVT-6ecbd84596b1ac14`)
+- `2026-07-25T09:18:18Z` · FB-004 · Reader-A/B/C：deferred (`EVT-d570a00b6cf7f55e`)
 
 ## 下钻入口
 

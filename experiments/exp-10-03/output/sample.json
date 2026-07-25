@@ -1,0 +1,40 @@
+{
+  "collaboration_id": "mob-bolt-checkout-refactor",
+  "experiment_id": "EXP-10-03",
+  "external_source": "https://specs.md/methodology/ai-dlc-vs-agile",
+  "guide_digest": "sha256:5f361af45b56cc1c538a8736ede6066cbd23f1a737cc37ceecd1c23cecd302da",
+  "handoff_log": {
+    "approved_decisions": [
+      "implementation_approach",
+      "intent_boundary",
+      "risk_acceptance",
+      "test_strategy"
+    ],
+    "from_agent": "construction-agent",
+    "intent_summary": "棕地结账路径增量重构，保留特性开关与回归门禁。",
+    "open_risks": "支付网关沙箱与生产配置差异需在 Runtime Verify 复核。",
+    "to_agent": "operations-agent"
+  },
+  "limitation": "本报告仅对照仓库内冻结的 Mob 协作与交接指南与会话记录做确定性核对；冻结 pin 不等于唯一标准，且不访问或验证实时 specs.md portal。",
+  "metrics": {
+    "collaboration_seconds": 7200,
+    "decision_agreement_percent": 100.0,
+    "handoff_information_loss_percent": 0.0
+  },
+  "mob_sessions": [
+    {
+      "decision_agreement_percent": 100.0,
+      "mismatched_decisions": [],
+      "session_id": "mob_construction"
+    },
+    {
+      "decision_agreement_percent": 100.0,
+      "mismatched_decisions": [],
+      "session_id": "mob_elaboration"
+    }
+  ],
+  "pinned_version": "sha256:1fffdb9c183ca0f19f2706e466ba2105bb0c54297df705d18d545d874ff35235",
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:7e697bff5257f051733ff0df8ab503dd89d476b2329341a3ae60c2684dadd6c3",
+  "valid": true
+}

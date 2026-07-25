@@ -166,25 +166,29 @@ Bolt 004
 
 本章实验入口包括三项：
 
-- `EXP-05-01 · Bolt 尺寸估算器`：根据 Stories、复杂度、风险与依赖，生成 Bolt 范围、预计时长与拆分建议。
-- `EXP-05-02 · DDD 与 Simple Bolt 选择器`：根据任务描述、领域复杂度、风险与可逆性，给出 Bolt 类型建议与选择依据。
-- `EXP-05-03 · 官方 Bolt 类型检查点复现`：对照 specs.md 官方 Bolt 类型指南，复现 DDD 与 Simple 两条阶段记录。
+- `EXP-05-01 · Bolt 尺寸估算器`：根据 Stories、复杂度、风险与依赖，生成 Bolt 范围、预计时长与拆分建议。运行：`python3 experiments/exp-05-01/quickstart.py --sample`。
+- `EXP-05-02 · DDD 与 Simple Bolt 选择器`：根据任务描述、领域复杂度、风险与可逆性，给出 Bolt 类型建议与选择依据。运行：`python3 experiments/exp-05-02/quickstart.py --sample`。
+- `EXP-05-03 · 官方 Bolt 类型检查点复现`：对照仓库内冻结的 Bolt 类型指南夹具，复现 DDD 与 Simple 两条阶段记录。运行：`python3 experiments/exp-05-03/quickstart.py --sample`。
 
-这些实验当前仍处于 `planned`，因此本章只把它们作为验证方向，不把指标写成已验证结论。这一点很重要：CH-05 可以基于本书四个已完成 Bolt 总结实践经验，但不能声称 `EXP-05-01` 或 `EXP-05-02` 已经证明了某个估算模型。
+其中 `EXP-05-01`、`EXP-05-02` 与 `EXP-05-03` 均已 verified。`EXP-05-01` 样例在 `experiments/exp-05-01/output/sample.json`，证明 Stories 的复杂度、风险与依赖可换算为范围、估时与拆分建议；有基线时给出工期估算误差，否则为 `null`。`EXP-05-02` 样例在 `experiments/exp-05-02/output/sample.json`，证明规则化 Simple/DDD 建议可附带依据与灰区拆分/门禁建议；有专家标签时给出一致率与过度/不足工程化计数。二者都不替代人工判断。
 
-D19-T02 阶段可以先定义实验应该怎样支撑本章：
+`EXP-05-03` triage 仍为 `KEEP-EXT`：样例在 `experiments/exp-05-03/output/sample.json`，给出 Simple/DDD 两轨的 `stage_completeness_percent` 与 `checkpoint_adherence_percent`。它只证明冻结指南夹具上的阶段/检查点核对可复现，不把外部 specs.md 页面写成唯一标准，也不能替代人工 Bolt 类型选择。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
-| `EXP-05-01` | Bolt 范围和预计时长是否更接近实际执行 | 不证明所有项目都能准确估时 |
+| `EXP-05-01` | Bolt 范围、估时与溢出拆分是否可复现 | 不证明所有项目都能准确估时 |
 | `EXP-05-02` | Simple / DDD 类型选择是否接近专家判断 | 不证明选择器可以替代人工判断 |
-| `EXP-05-03` | specs.md Bolt 类型检查点是否能被复现 | 不把外部参考实现写成本书唯一标准 |
+| `EXP-05-03` | 冻结 pin 指南上的阶段/检查点是否能被复现 | 不把外部参考实现写成本书唯一标准；KEEP-EXT 不得改写成 SHIP |
 
-这三项实验共同服务于一个问题：Bolt 不是靠感觉切分，而是应该能被复杂度、风险、依赖、可逆性和验证成本解释。真正的实验结果要等实验目录、样例输出和测试都准备好后，才能写成正文证据。
+这三项实验共同服务于一个问题：Bolt 不是靠感觉切分，而是应该能被复杂度、风险、依赖、可逆性和验证成本解释。
 
 ## 06 · Figure：Bolt 选择矩阵
 
-本章图示方向为“Bolt 选择矩阵”：
+本章图示为“Bolt 选择矩阵”：
+
+![图 5-1 · Bolt 选择矩阵](images/ch05-bolt-selection-matrix.svg){.core-figure width=100%}
+
+源文件：`book/images/ch05-bolt-selection-matrix.svg`。矩阵读法：
 
 ```text
 Low Complexity / Low Risk / Reversible
@@ -196,7 +200,7 @@ High Domain Complexity / Cross-boundary Risk / Hard to Reverse
   → Model → Design → ADR → Implement → Test
 ```
 
-若后续生成独立 SVG，可命名为 `book/images/ch05-bolt-selection-matrix.svg`，采用宽屏矩阵布局：横轴为领域复杂度，纵轴为风险/不可逆性；左下为 Simple，右上为 DDD，中间区域标注“拆分 Bolt 或增加门禁”。
+横轴为领域复杂度，纵轴为风险/不可逆性；左下为 Simple，右上为 DDD，中间区域标注“拆分 Bolt 或增加门禁”。
 
 这张图的核心不是画两个象限，而是帮助读者做选择。一个任务如果在左下角，Simple Construction 通常够用；如果在右上角，DDD Construction 更稳；如果落在中间灰区，常见处理不是拍脑袋二选一，而是先拆分 Bolt，或者给 Simple Bolt 增加额外门禁。
 
@@ -219,6 +223,8 @@ High Domain Complexity / Cross-boundary Risk / Hard to Reverse
 第三，本章不把估算写成精确预测。Bolt 尺寸估算的意义是让风险显性化，而不是保证每个任务都按小时准确完成。
 
 第四，本章不鼓励 AI 自己决定所有门禁。AI 可以建议门禁，但领域复杂度、风险接受和不可逆性判断仍需要人的确认。
+
+第五，`EXP-05-03` 的 verified 只覆盖仓库内冻结指南夹具；不得把 KEEP-EXT 复现写成官方 Bolt 类型已全面落地，也不得伪装为实时外网抓取验证。
 
 ## Reader Exercise
 

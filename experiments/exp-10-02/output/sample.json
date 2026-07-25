@@ -1,0 +1,69 @@
+{
+  "experiment_id": "EXP-10-02",
+  "limitation": "记分卡仅对输入中的交付基线、运行记录、缺陷与业务结果做确定性汇总；它不证明某次试点的业务价值已被因果证实。",
+  "metrics": {
+    "business_result_change": 5.0,
+    "cycle_time_change_percent": -20.83,
+    "defect_escape_rate": 0.25,
+    "human_review_burden": 1.3333
+  },
+  "pilot_name": "社区诊所预约系统 AI-DLC 试点",
+  "scale_decision": {
+    "allowed_decisions": [
+      "expand",
+      "shrink",
+      "stop"
+    ],
+    "decision": "shrink",
+    "rationale": [
+      "交付周期相对基线变化 -20.83%。",
+      "缺陷逃逸率为 0.2500（逃逸数／交付次数）。",
+      "人工审阅负担比率为 1.3333（观测均值 80.0000 分钟）。",
+      "业务结果相对基线变化 +5.00%。",
+      "信号混合或未同时满足扩大条件；建议收缩试点范围并补齐证据。"
+    ],
+    "reason_codes": [
+      "EXPAND_BUSINESS_UP",
+      "EXPAND_CYCLE_IMPROVED",
+      "SHRINK_ELEVATED_DEFECT_ESCAPE",
+      "SHRINK_REVIEW_BURDEN_HIGH"
+    ]
+  },
+  "schema_version": "1.0.0",
+  "scorecard": {
+    "business_result": {
+      "baseline_value": 1000.0,
+      "business_result_change_percent": 5.0,
+      "current_value": 1050.0,
+      "status": "computed",
+      "unit": "monthly_completed_appointments"
+    },
+    "cycle_time": {
+      "baseline_median_cycle_time_hours": 96.0,
+      "cycle_time_change_percent": -20.83,
+      "observed_median_cycle_time_hours": 76.0,
+      "run_count": 4
+    },
+    "quality": {
+      "defect_escape_rate": 0.25,
+      "defects_escaped": 1,
+      "defects_total": 4,
+      "deliveries_count": 4
+    },
+    "review_burden": {
+      "baseline_human_review_minutes_per_delivery": 60.0,
+      "human_review_burden_ratio": 1.3333,
+      "observed_average_human_review_minutes": 80.0
+    }
+  },
+  "source_digest": "sha256:b1811cca7c2af07ebf0e8b2abf914acfe84e6b3a8e079b5d18d3dc968874a4c7",
+  "threshold_basis": [
+    "BUSINESS_DECLINE_STOP",
+    "CYCLE_TIME_IMPROVE_EXPAND",
+    "CYCLE_TIME_REGRESSION_STOP",
+    "DEFECT_ESCAPE_EXPAND_MAX",
+    "DEFECT_ESCAPE_STOP_MIN",
+    "REVIEW_BURDEN_EXPAND_MAX",
+    "REVIEW_BURDEN_STOP_MIN"
+  ]
+}

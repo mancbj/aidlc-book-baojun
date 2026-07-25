@@ -1,0 +1,17 @@
+{
+  "commits": [],
+  "experiment_id": "EXP-06-02",
+  "failures": [
+    {
+      "id": "FAIL-01",
+      "summary": "第一次失败",
+      "timestamp": "2026-07-20T10:00:00Z"
+    },
+    {
+      "id": "FAIL-01",
+      "summary": "重复 ID",
+      "timestamp": "2026-07-20T11:00:00Z"
+    }
+  ],
+  "tests": []
+}

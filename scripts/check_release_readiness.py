@@ -99,8 +99,21 @@ def build_report(root: Path, policy_path: Path, generated_at: Optional[str] = No
     if responded < 3:
         gap("READER-RESPONSES", "known-gap", "Reader-A/B/C", f"responded={responded}/3", "保留反馈入口；真实邀请/响应后更新匿名槽位。")
 
-    if policy.get("pdf_required") and not (root / "releases/v0.1-rc/ai-dlc-book-v0.1.pdf").is_file():
-        gap("PDF-REQUIRED", "must-blocker", "v0.1.pdf", "policy 要求 PDF，但文件不存在。", "生成并验证 PDF，或经批准修改 policy。")
+    if policy.get("pdf_required"):
+        version = str(policy["version"])
+        pdf_candidates = [
+            root / f"releases/{version}-rc/aidlc-book-{version}.pdf",
+            root / f"releases/{version}-rc/ai-dlc-book-{version}.pdf",
+            root / "releases/v0.1-rc/ai-dlc-book-v0.1.pdf",
+        ]
+        if not any(path.is_file() for path in pdf_candidates):
+            gap(
+                "PDF-REQUIRED",
+                "must-blocker",
+                f"{version}.pdf",
+                "policy 要求 PDF，但 RC 目录中不存在可验证文件。",
+                "生成并验证 PDF，放入 releases/<version>-rc/，或经批准修改 policy。",
+            )
 
     gaps.sort(key=lambda item: (GAP_ORDER[item["priority"]], item["code"], item["object"]))
     blockers = [item for item in gaps if item["priority"] in {"must-blocker", "must-missing", "review-required"}]

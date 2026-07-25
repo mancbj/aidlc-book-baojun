@@ -1,0 +1,38 @@
+{
+  "composition": {
+    "configured_check_count": 7,
+    "extra_checks": [],
+    "failed_check_count": 0,
+    "missing_checks": [],
+    "passed_check_count": 7
+  },
+  "configured_checks": [
+    "facts",
+    "continuity",
+    "github-config",
+    "tests",
+    "verified-experiments",
+    "generation-dry-run",
+    "internal-links"
+  ],
+  "expected_checks": [
+    "facts",
+    "continuity",
+    "github-config",
+    "tests",
+    "verified-experiments",
+    "generation-dry-run",
+    "internal-links"
+  ],
+  "experiment_id": "EXP-07-01",
+  "limitation": "本实验只证明仓库 Must 门禁可被 ci_check.py 稳定聚合与合同化复现；它不证明书稿内容质量、读者理解或生产运行态已被充分验证。",
+  "metrics": {
+    "configured_check_count": 7,
+    "failed_check_count": 0,
+    "passed_check_count": 7
+  },
+  "mode": "composition",
+  "reused_implementation": "scripts/ci_check.py",
+  "schema_version": "1.0.0",
+  "valid": true
+}

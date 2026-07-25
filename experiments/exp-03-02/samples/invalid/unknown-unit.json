@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "units": [
+    {
+      "id": "UNIT-A",
+      "title": "Unit A"
+    }
+  ],
+  "stories": [
+    {
+      "id": "STORY-A",
+      "unit_id": "UNIT-MISSING",
+      "title": "Story A"
+    }
+  ],
+  "bolts": [
+    {
+      "id": "BOLT-A",
+      "unit_id": "UNIT-A",
+      "story_ids": [
+        "STORY-A"
+      ],
+      "depends_on": [],
+      "status": "pending"
+    }
+  ]
+}

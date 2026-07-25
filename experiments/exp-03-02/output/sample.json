@@ -1,0 +1,72 @@
+{
+  "anomalies": [
+    {
+      "code": "W_CROSS_UNIT_COUPLING",
+      "message": "依赖边跨越 Unit，需人工确认耦合是否必要。",
+      "path": "$.bolts",
+      "severity": "warning",
+      "value": {
+        "from": "BOLT-CATALOG-API",
+        "to": "BOLT-ORDER-CREATE"
+      }
+    },
+    {
+      "code": "W_UNMET_PREREQUISITE",
+      "message": "已完成 Bolt 的前置 Bolt 尚未完成。",
+      "path": "$.bolts",
+      "severity": "warning",
+      "value": {
+        "from": "BOLT-ORDER-CREATE",
+        "to": "BOLT-ORDER-RECEIPT"
+      }
+    }
+  ],
+  "dependency_graph": {
+    "edges": [
+      {
+        "from": "BOLT-CATALOG-API",
+        "to": "BOLT-ORDER-CREATE"
+      },
+      {
+        "from": "BOLT-ORDER-CREATE",
+        "to": "BOLT-ORDER-RECEIPT"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "BOLT-CATALOG-API",
+        "status": "pending",
+        "story_ids": [
+          "STORY-CATALOG-API"
+        ],
+        "unit_id": "UNIT-CATALOG"
+      },
+      {
+        "id": "BOLT-ORDER-CREATE",
+        "status": "pending",
+        "story_ids": [
+          "STORY-ORDER-CREATE"
+        ],
+        "unit_id": "UNIT-ORDER"
+      },
+      {
+        "id": "BOLT-ORDER-RECEIPT",
+        "status": "completed",
+        "story_ids": [
+          "STORY-ORDER-RECEIPT"
+        ],
+        "unit_id": "UNIT-ORDER"
+      }
+    ]
+  },
+  "experiment_id": "EXP-03-02",
+  "metrics": {
+    "cross_unit_coupling_edge_count": 1,
+    "cycle_count": 0,
+    "unmet_prerequisite_count": 1
+  },
+  "plan_optimal": false,
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:307dcdea1e0b17a9bec86014c13f7d3ec0c5ffd9af2e5ee76608e78e6b38681f",
+  "structural_valid": true
+}
