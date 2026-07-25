@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.5",
+  "publish_threshold": 92,
+  "dimension_minimums": {
+    "experiments": 44
+  },
+  "weights": {
+    "experiments": 50,
+    "chapter_evidence": 15,
+    "reader_feedback": 15,
+    "release": 20
+  },
+  "hard_gates": [
+    "ci_check_pass",
+    "internal_links_errors_zero",
+    "four_target_experiments_verified",
+    "verified_experiment_tests_in_ci",
+    "exsecutio_spelling_preserved",
+    "runtime_verify_boundary_preserved",
+    "reader_feedback_not_fabricated",
+    "readiness_ready"
+  ],
+  "baseline_commit": "3cb8319",
+  "current_round": "08",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "baseline-and-scope",
+      "decision": "KEEP",
+      "experiments": 18,
+      "chapter_evidence": 8,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 38,
+      "notes": "SHIP verified=6/18；四个目标实验仍 planned；Reader responded=0/3；v0.4 视觉与证据基线可复用。"
+    },
+    {
+      "id": "01",
+      "name": "exp-05-01-verified",
+      "decision": "KEEP",
+      "experiments": 28,
+      "chapter_evidence": 10,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 50,
+      "notes": "EXP-05-01 verified；工期误差可空。"
+    },
+    {
+      "id": "02",
+      "name": "exp-09-01-verified",
+      "decision": "KEEP",
+      "experiments": 36,
+      "chapter_evidence": 12,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 60,
+      "notes": "EXP-09-01 verified；Flow 建议附理由与不适用条件。"
+    },
+    {
+      "id": "03",
+      "name": "exp-10-01-verified",
+      "decision": "KEEP",
+      "experiments": 42,
+      "chapter_evidence": 13,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 67,
+      "notes": "EXP-10-01 verified；Accountable 必须是人。"
+    },
+    {
+      "id": "04",
+      "name": "exp-06-02-verified",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 14,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 72,
+      "notes": "EXP-06-02 verified；SHIP verified=10/18。"
+    },
+    {
+      "id": "05",
+      "name": "chapter-evidence-bounds",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 15,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 73,
+      "notes": "CH-05/06/09/10 证据边界收紧。"
+    },
+    {
+      "id": "06",
+      "name": "reader-feedback-reassessment",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 4,
+      "total": 77,
+      "notes": "FB-003 deferred；responded=0/3。"
+    },
+    {
+      "id": "07",
+      "name": "adversarial-audit",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 18,
+      "total": 91,
+      "notes": "硬门禁全过；readiness ready。"
+    },
+    {
+      "id": "08",
+      "name": "v0.5-release",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 20,
+      "total": 93,
+      "notes": "打包 RC、打 tag、发布 GitHub Release。"
+    }
+  ]
+}
