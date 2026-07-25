@@ -1,0 +1,10 @@
+{
+  "experiment_id": "EXP-10-02",
+  "pilot_name": "无运行记录试点",
+  "delivery_baseline": {
+    "median_cycle_time_hours": 96,
+    "human_review_minutes_per_delivery": 60
+  },
+  "aidlc_runs": [],
+  "defects": []
+}

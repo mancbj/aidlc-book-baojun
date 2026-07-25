@@ -897,11 +897,12 @@
       ],
       "command": "python3 experiments/exp-10-02/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：周期、质量、审阅负担与业务价值看板",
-        "记录指标：交付周期变化、缺陷逃逸率、人工审阅负担、业务结果变化"
+        "合法样例以退出码 0 生成价值记分卡，覆盖周期、质量、审阅负担与业务结果四维",
+        "坏样例以退出码 1 失败并返回稳定错误代码，且不生成报告",
+        "重复运行产生字节一致输出；记录 cycle_time_change_percent、defect_escape_rate、human_review_burden 与 business_result_change（含空值规则）"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:00:00Z",
       "repository_path": "experiments/exp-10-02",
       "readme_path": "experiments/exp-10-02/README.md",
       "sample_input": "experiments/exp-10-02/samples/input.json",

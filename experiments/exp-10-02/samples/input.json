@@ -1,0 +1,57 @@
+{
+  "experiment_id": "EXP-10-02",
+  "pilot_name": "社区诊所预约系统 AI-DLC 试点",
+  "delivery_baseline": {
+    "median_cycle_time_hours": 96,
+    "human_review_minutes_per_delivery": 60
+  },
+  "aidlc_runs": [
+    {
+      "id": "RUN-01",
+      "cycle_time_hours": 72,
+      "human_review_minutes": 75
+    },
+    {
+      "id": "RUN-02",
+      "cycle_time_hours": 80,
+      "human_review_minutes": 90
+    },
+    {
+      "id": "RUN-03",
+      "cycle_time_hours": 68,
+      "human_review_minutes": 85
+    },
+    {
+      "id": "RUN-04",
+      "cycle_time_hours": 84,
+      "human_review_minutes": 70
+    }
+  ],
+  "defects": [
+    {
+      "id": "DEF-01",
+      "run_id": "RUN-01",
+      "escaped": false
+    },
+    {
+      "id": "DEF-02",
+      "run_id": "RUN-02",
+      "escaped": true
+    },
+    {
+      "id": "DEF-03",
+      "run_id": "RUN-03",
+      "escaped": false
+    },
+    {
+      "id": "DEF-04",
+      "run_id": "RUN-04",
+      "escaped": false
+    }
+  ],
+  "business_outcomes": {
+    "baseline_value": 1000,
+    "current_value": 1050,
+    "unit": "monthly_completed_appointments"
+  }
+}
