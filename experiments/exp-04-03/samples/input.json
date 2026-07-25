@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-04-03",
+  "pinned_version": "sha256:1ecdfd4c857ede2240282b4a80b57e1bb9f91e2d91894b8fec0f5e6d1a7de978",
+  "memory_bank_root": "fixtures/memory-bank-min",
+  "required_paths": [
+    "project.yaml",
+    "story-index.md",
+    "standards/coding-standards.md",
+    "standards/tech-stack.md",
+    "intents/001-demo-intent/requirements.md",
+    "intents/001-demo-intent/system-context.md"
+  ],
+  "declared_references": [
+    "intents/001-demo-intent/requirements.md",
+    "intents/001-demo-intent/system-context.md",
+    "standards/coding-standards.md",
+    "standards/tech-stack.md"
+  ]
+}
