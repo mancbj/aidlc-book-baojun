@@ -17,7 +17,7 @@
     "ten_chapters_present"
   ],
   "baseline_commit": "577fec6",
-  "current_round": "11",
+  "current_round": "13",
   "rounds": [
     {
       "id": "00",
@@ -138,6 +138,26 @@
       "pdf": 21,
       "total": 91,
       "notes": "去掉 CH-07 公开标题中的任务号。"
+    },
+    {
+      "id": "12",
+      "name": "adversarial-audit",
+      "decision": "KEEP",
+      "content": 48,
+      "html": 23,
+      "pdf": 22,
+      "total": 93,
+      "notes": "硬门禁全过；达到发布阈值。"
+    },
+    {
+      "id": "13",
+      "name": "v0.3-release",
+      "decision": "KEEP",
+      "content": 48,
+      "html": 23,
+      "pdf": 22,
+      "total": 93,
+      "notes": "打包 RC、打 tag、发布 GitHub Release。"
     }
   ]
 }
