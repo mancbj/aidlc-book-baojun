@@ -1,0 +1,32 @@
+{
+  "book_html": {
+    "bytes": 5574256,
+    "file": "aidlc-book-v0.6-book.html",
+    "sha256": "cc54735148d5f4b7f652bb0b20e330aee19a49cf095c5dee90a3108fc052c3ea",
+    "status": "included"
+  },
+  "commit_sha": "561d4a1995ee15a0c4cce01f8a420d5df55041b6",
+  "generated_at": "2026-07-25T08:20:00Z",
+  "html": {
+    "bytes": 50038198,
+    "file": "aidlc-book-v0.6-html.zip",
+    "pages_file_count": 591,
+    "sha256": "af4d57bbe72756474e06ec6f74343ad027298e4157e8102a0a871bf9cfa373cb",
+    "status": "included"
+  },
+  "pdf": {
+    "bytes": 5091120,
+    "file": "aidlc-book-v0.6.pdf",
+    "sha256": "1d0c4842a104e568b5e0b53271037963f57b939f1b6af76dd5e21035d7ff920e",
+    "status": "included"
+  },
+  "readiness": {
+    "blockers": 0,
+    "source_id": "561d4a1995ee15a0c4cce01f8a420d5df55041b6",
+    "status": "ready"
+  },
+  "release_notes": "release-notes.md",
+  "schema_version": "1.0.0",
+  "source_id": "561d4a1995ee15a0c4cce01f8a420d5df55041b6",
+  "version": "v0.6"
+}
