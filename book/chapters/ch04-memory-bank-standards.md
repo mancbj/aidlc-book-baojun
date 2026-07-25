@@ -10,7 +10,7 @@
 | Draft Completeness | 正式十章生产线可读稿；D18-T03 五类审校已完成 |
 | Primary Question | 如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？ |
 | Reader Outcome | 能够设计最小 Memory Bank、Standards 目录、工件引用和变更同步规则 |
-| Related Experiments | `EXP-04-01`、`EXP-04-02` |
+| Related Experiments | `EXP-04-01`、`EXP-04-02`、`EXP-04-03` |
 
 ## 01 · Question：为什么 AI 需要可恢复的上下文
 
@@ -238,6 +238,16 @@ python3 experiments/exp-04-02/quickstart.py --sample
 
 输出位于 `experiments/exp-04-02/output/sample.json`。它只证明声明规则可以被确定性比对；它不证明这些规则适用于所有仓库。没有人工基准标签时，误报率记为 `null`，不得伪装成已经很低。
 
+### `EXP-04-03` · 官方 Memory Bank 结构复现（KEEP-EXT）
+
+`EXP-04-03` 已 verified，但 triage 仍为 `KEEP-EXT`：它只对照仓库内冻结 pin 夹具校验最小 Memory Bank 必需路径与引用有效性，不在 CI 抓取外部 specs.md 页面。运行入口：
+
+```bash
+python3 experiments/exp-04-03/quickstart.py --sample
+```
+
+输出位于 `experiments/exp-04-03/output/sample.json`。样例给出 `required_file_completeness_percent` 与 `reference_validity_percent`；它证明冻结结构可复现加载，不把 specs.md 写成唯一标准，也不证明任意项目的 Memory Bank 语义已经正确。
+
 ## 06 · Figure：新会话冷启动恢复栈
 
 本章图示为“新会话冷启动恢复栈”：
@@ -282,6 +292,8 @@ Next Session Recovers from Updated Facts
 
 第四，本章不要求所有团队复制本书目录。读者要复制的是原则：当前状态版本化，人的判断标准化，证据路径可追踪，更新协议可自动校验。具体文件名可以不同，但四件事不能缺。
 
+第五，`EXP-04-03` 的 verified 只覆盖冻结 pin 夹具上的结构与引用校验；不得把 KEEP-EXT 复现写成官方规范已全面落地，也不得改写成 SHIP。
+
 ## Reader Exercise
 
 选择你自己的一个项目，用 20 分钟设计一个 6 文件以内的最小 Memory Bank。
@@ -304,4 +316,7 @@ Next Session Recovers from Updated Facts
 - `planning/releases/v0.2-draft.md`：v0.2 持续更新周期草案。
 - `experiments/exp-04-01/README.md`：Memory Bank 冷启动恢复 A/B 实验说明。
 - `experiments/exp-04-01/output/sample.json`：C02-T02 生成的可复现实验输出。
+- `experiments/exp-04-03/README.md`：官方 Memory Bank 结构复现（KEEP-EXT / 冻结 pin）说明。
+- `experiments/exp-04-03/output/sample.json`：冻结 pin 结构与引用校验样例。
+- `progress/experiments.json`：`EXP-04-01`、`EXP-04-02`、`EXP-04-03` 实验治理状态。
 - `planning/reviews/ch-04-writing-review.md`：正式十章生产线 CH-04 五类审校记录。

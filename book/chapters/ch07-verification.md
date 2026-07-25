@@ -170,9 +170,9 @@ AI 输出常常具有高流畅度和高结构感。它会让未验证的结果�
 
 ## 05 · Example：以本书 CI 门禁为例
 
-本书项目已经有一个可复用的确定性门禁组合器：`scripts/ci_check.py`。它是 `EXP-07-01 · 仓库确定性门禁组合器` 的已存在实现，当前实验状态为 `ALREADY / ready`。
+本书项目已经有一个可复用的确定性门禁组合器：`scripts/ci_check.py`。它是 `EXP-07-01 · 仓库确定性门禁组合器` 的已存在实现，当前实验状态为 `ALREADY / verified`（triage 仍为 ALREADY，未改写成 SHIP）。
 
-这个脚本做的事很朴素：按固定顺序运行一组 Must 检查，任何子检查失败，整体就以非零退出码失败。它的价值不在于“聪明”，而在于稳定、可重复、可放进 PR 和本地交付流程。
+这个脚本做的事很朴素：按固定顺序运行一组 Must 检查，任何子检查失败，整体就以非零退出码失败。它的价值不在于“聪明”，而在于稳定、可重复、可放进 PR 和本地交付流程。`EXP-07-01` 的合同测试静态解析该脚本的门禁组合，不在实验内重跑全量 CI。
 
 ### 5.1 候选物是什么
 
@@ -184,9 +184,9 @@ AI 输出常常具有高流畅度和高结构感。它会让未验证的结果�
 
 这句话比“有没有报错”更准确。没有报错只是最低门槛；可信输入还要求事实源一致、下钻可用、事件不重复、章节能构建、链接不破。
 
-### 5.2 `ci_check.py` 的六类确定性门禁
+### 5.2 `ci_check.py` 的七类确定性门禁
 
-`ci_check.py` 默认运行六类检查。
+`ci_check.py` 默认运行七类检查。
 
 | Check | Command | 它能证明什么 |
 |---|---|---|
@@ -194,10 +194,11 @@ AI 输出常常具有高流畅度和高结构感。它会让未验证的结果�
 | continuity | `scripts/validate_feedback.py` | 试读反馈与发布连续性记录符合当前约定 |
 | github-config | `scripts/validate_github_config.py` | Issue、PR、Projects、Pages、Release 等 GitHub 配置文件结构有效 |
 | tests | `python -m unittest discover -s tests` | 构建、生成、验证、GitHub 配置等核心行为仍满足测试断言 |
+| verified-experiments | `scripts/run_verified_experiments.py` | 已 verified 且具备合同路径的 SHIP / ALREADY / KEEP-EXT 实验可复现通过 |
 | generation-dry-run | `scripts/generate_progress.py --dry-run --actor ci-check` | 当前事实可生成进度投影，且 dry-run 不写盘、不制造新历史噪声 |
 | internal-links | `scripts/check_internal_links.py` | 仓库内 Markdown/HTML 链接和 fragment 锚点没有断裂 |
 
-这六类门禁共同覆盖了本书项目最容易被 AI 改坏的地方：事实源、自动记录、页面下钻、书稿构建、协作配置和链接网络。尤其是 dry-run 和链接审计，它们抓到的是“表面内容没问题、生成系统却坏了”的那种狡猾错误。
+这七类门禁共同覆盖了本书项目最容易被 AI 改坏的地方：事实源、自动记录、页面下钻、书稿构建、协作配置、已验证实验合同和链接网络。尤其是 dry-run、verified-experiments 和链接审计，它们抓到的是“表面内容没问题、生成或证据系统却坏了”的那种狡猾错误。
 
 ### 5.3 它不能证明什么
 
@@ -246,19 +247,19 @@ Human Judgment accepts, rejects, escalates, or defers them.
 
 本章实验入口包括三项：
 
-- `EXP-07-01 · 仓库确定性门禁组合器`：复用 `python3 scripts/ci_check.py`，聚合事实校验、连续性、GitHub 配置、测试、干运行与链接审计。
+- `EXP-07-01 · 仓库确定性门禁组合器`：复用 `scripts/ci_check.py`，静态解析并合同化 Must 门禁组合。运行：`python3 experiments/exp-07-01/quickstart.py --sample`。
 - `EXP-07-02 · 独立评审分歧矩阵`：比较交付候选、测试证据、独立模型评审与人工 Rubric，生成多方判断及分歧归因矩阵。运行：`python3 experiments/exp-07-02/quickstart.py --sample`。
 - `EXP-07-03 · 分层验证检查点复现`：参考官方三阶段与检查点说明，向示例候选注入缺陷，记录缺陷在不同检查层的首次发现位置。
 
-其中 `EXP-07-01` 当前为 `ALREADY / ready`（尚未 `verified`），因为本项目已经存在可运行的 `scripts/ci_check.py`。它说明仓库确定性门禁可以被真实调用——例如 PR 与任务完成检查会聚合校验、测试与链接审计——但这还不是一份独立实验报告，也不证明内容质量或读者理解已被充分验证。
+其中 `EXP-07-01` 已为 `ALREADY / verified`：样例在 `experiments/exp-07-01/output/sample.json`。它证明 `ci_check.py` 的 Must 门禁组合可被静态解析并稳定复现（含 passed/failed/configured 计数与 missing/extra 对照）；合同测试不得调用 `--live`，也不在实验内重跑全量 CI。它不证明内容质量或读者理解已被充分验证。
 
-`EXP-07-02` 已 verified：样例在 `experiments/exp-07-02/output/sample.json`。它证明冻结的模型评审与人工 Rubric 可生成分歧归因矩阵，并给出一致率、新增风险数与人工推翻率；模型评审不能替代人工判断。这里的 Verify 属于 CH-07 交付候选验证，不等于 CH-08 Runtime Verify。`EXP-07-03` 仍为 `planned`。
+`EXP-07-02` 已 verified：样例在 `experiments/exp-07-02/output/sample.json`。它证明冻结的模型评审与人工 Rubric 可生成分歧归因矩阵，并给出一致率、新增风险数与人工推翻率；模型评审不能替代人工判断。这里的 Verify 属于 CH-07 交付候选验证，不等于 CH-08 Runtime Verify。`EXP-07-03` 仍为 `KEEP-EXT / planned`。
 
 三项实验分别服务于三个问题。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
-| `EXP-07-01` | 固定门禁是否能稳定聚合仓库 Must 检查 | 不证明内容质量或读者理解已经充分验证 |
+| `EXP-07-01` | 固定门禁是否能稳定聚合仓库 Must 检查 | 不证明内容质量或读者理解已经充分验证；ALREADY 不得改写成 SHIP |
 | `EXP-07-02` | 模型评审、测试证据和人工 Rubric 的分歧来自哪里 | 不证明模型评审可以替代人工判断 |
 | `EXP-07-03` | 缺陷在不同验证层的首次发现位置和逃逸情况 | 不把单一示例推广成所有项目的验证成本模型 |
 
@@ -300,6 +301,8 @@ Machine Evidence       Behavioral Evidence  Risk Findings   Approval / Rejection
 
 第五，本章不把人类检查点变成形式主义。如果人只是机械点击批准，而没有看到具体风险、证据和取舍，所谓 human-in-the-loop 仍然是空的。
 
+第六，`EXP-07-01` 的 verified 只证明门禁可聚合与合同化复现；绿色 CI 不等于章节论点成立，也不等于 CH-08 Runtime Verify 已通过。
+
 ## Reader Exercise
 
 选择一个你最近让 AI 参与完成的交付候选，用 30 分钟设计一条验证证据链。
@@ -321,6 +324,8 @@ Machine Evidence       Behavioral Evidence  Risk Findings   Approval / Rejection
 - `scripts/validate_feedback.py`：反馈与发布连续性校验。
 - `scripts/validate_github_config.py`：GitHub 协作与发布配置校验。
 - `scripts/check_internal_links.py`：内部链接审计。
+- `scripts/run_verified_experiments.py`：verified 实验合同测试入口。
+- `experiments/exp-07-01/output/sample.json`：门禁组合合同样例。
 - `tests/test_build_book.py`：书稿构建与源文件清单断言。
 - `progress/experiments.json`：`EXP-07-01`、`EXP-07-02`、`EXP-07-03` 实验治理状态。
 - `book/toc.md`：CH-07 核心问题、读者结果和实验方向。

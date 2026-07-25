@@ -168,15 +168,17 @@ Bolt 004
 
 - `EXP-05-01 · Bolt 尺寸估算器`：根据 Stories、复杂度、风险与依赖，生成 Bolt 范围、预计时长与拆分建议。运行：`python3 experiments/exp-05-01/quickstart.py --sample`。
 - `EXP-05-02 · DDD 与 Simple Bolt 选择器`：根据任务描述、领域复杂度、风险与可逆性，给出 Bolt 类型建议与选择依据。运行：`python3 experiments/exp-05-02/quickstart.py --sample`。
-- `EXP-05-03 · 官方 Bolt 类型检查点复现`：对照 specs.md 官方 Bolt 类型指南，复现 DDD 与 Simple 两条阶段记录。
+- `EXP-05-03 · 官方 Bolt 类型检查点复现`：对照仓库内冻结的 Bolt 类型指南夹具，复现 DDD 与 Simple 两条阶段记录。运行：`python3 experiments/exp-05-03/quickstart.py --sample`。
 
-其中 `EXP-05-01` 与 `EXP-05-02` 已 verified。`EXP-05-01` 样例在 `experiments/exp-05-01/output/sample.json`，证明 Stories 的复杂度、风险与依赖可换算为范围、估时与拆分建议；有基线时给出工期估算误差，否则为 `null`。`EXP-05-02` 样例在 `experiments/exp-05-02/output/sample.json`，证明规则化 Simple/DDD 建议可附带依据与灰区拆分/门禁建议；有专家标签时给出一致率与过度/不足工程化计数。二者都不替代人工判断。`EXP-05-03` 仍为 `planned`。
+其中 `EXP-05-01`、`EXP-05-02` 与 `EXP-05-03` 均已 verified。`EXP-05-01` 样例在 `experiments/exp-05-01/output/sample.json`，证明 Stories 的复杂度、风险与依赖可换算为范围、估时与拆分建议；有基线时给出工期估算误差，否则为 `null`。`EXP-05-02` 样例在 `experiments/exp-05-02/output/sample.json`，证明规则化 Simple/DDD 建议可附带依据与灰区拆分/门禁建议；有专家标签时给出一致率与过度/不足工程化计数。二者都不替代人工判断。
+
+`EXP-05-03` triage 仍为 `KEEP-EXT`：样例在 `experiments/exp-05-03/output/sample.json`，给出 Simple/DDD 两轨的 `stage_completeness_percent` 与 `checkpoint_adherence_percent`。它只证明冻结指南夹具上的阶段/检查点核对可复现，不把外部 specs.md 页面写成唯一标准，也不能替代人工 Bolt 类型选择。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
 | `EXP-05-01` | Bolt 范围、估时与溢出拆分是否可复现 | 不证明所有项目都能准确估时 |
 | `EXP-05-02` | Simple / DDD 类型选择是否接近专家判断 | 不证明选择器可以替代人工判断 |
-| `EXP-05-03` | specs.md Bolt 类型检查点是否能被复现 | 不把外部参考实现写成本书唯一标准 |
+| `EXP-05-03` | 冻结 pin 指南上的阶段/检查点是否能被复现 | 不把外部参考实现写成本书唯一标准；KEEP-EXT 不得改写成 SHIP |
 
 这三项实验共同服务于一个问题：Bolt 不是靠感觉切分，而是应该能被复杂度、风险、依赖、可逆性和验证成本解释。
 
@@ -221,6 +223,8 @@ High Domain Complexity / Cross-boundary Risk / Hard to Reverse
 第三，本章不把估算写成精确预测。Bolt 尺寸估算的意义是让风险显性化，而不是保证每个任务都按小时准确完成。
 
 第四，本章不鼓励 AI 自己决定所有门禁。AI 可以建议门禁，但领域复杂度、风险接受和不可逆性判断仍需要人的确认。
+
+第五，`EXP-05-03` 的 verified 只覆盖仓库内冻结指南夹具；不得把 KEEP-EXT 复现写成官方 Bolt 类型已全面落地，也不得伪装为实时外网抓取验证。
 
 ## Reader Exercise
 

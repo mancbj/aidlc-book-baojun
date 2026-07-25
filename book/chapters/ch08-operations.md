@@ -278,19 +278,19 @@ publish
 
 本章实验入口包括三项：
 
-- `EXP-08-01 · 发布候选来源清单校验器`：复用 `scripts/check_release_readiness.py` 与 `scripts/prepare_release.py`，验证发布候选来源、构建日志、文件哈希与 readiness 是否一致。
+- `EXP-08-01 · 发布候选来源清单校验器`：复用 readiness / manifest 校验模型，验证发布候选来源、必需资产与文件哈希是否一致。运行：`python3 experiments/exp-08-01/quickstart.py --sample`。
 - `EXP-08-02 · 回滚桌面演练模拟器`：根据部署拓扑、故障场景、监控信号与 Runbook，生成发现、决策、回滚和恢复时间线。运行：`python3 experiments/exp-08-02/quickstart.py --sample`。
 - `EXP-08-03 · Operations 四阶段复现`：参考 Operations Agent 流程与可部署示例，复现 Build、Deploy、Runtime Verify、Monitor 四阶段凭证。
 
-其中 `EXP-08-01` 当前为 `ALREADY / ready`（尚未 `verified`），因为本项目已经存在可复用的 release readiness 与 release preparation 脚本。它说明来源一致性和 release manifest 检查可以进入发布链路，但还不足以证明完整生产可观测或 Operations 能力已经成熟。
+其中 `EXP-08-01` 已为 `ALREADY / verified`：样例在 `experiments/exp-08-01/output/sample.json`。它证明冻结的 readiness/manifest 输入上，来源一致性、必需资产覆盖与哈希格式可被确定性校验，并给出 `source_completeness_percent` 与 `hash_mismatch_count`。它不证明真实生产环境已经完整可观测，也不把 ALREADY 改写成 SHIP。
 
-`EXP-08-02` 已 verified：样例报告在 `experiments/exp-08-02/output/sample.json`。它证明部署拓扑、故障、监控信号与 Runbook 可连成 detect→decide→rollback→recover 时间线，并给出发现到回滚耗时、数据损失窗口与 Runbook 缺口数。桌面演练不等于生产恢复能力。`EXP-08-03` 仍为 `planned`。
+`EXP-08-02` 已 verified：样例报告在 `experiments/exp-08-02/output/sample.json`。它证明部署拓扑、故障、监控信号与 Runbook 可连成 detect→decide→rollback→recover 时间线，并给出发现到回滚耗时、数据损失窗口与 Runbook 缺口数。桌面演练不等于生产恢复能力。`EXP-08-03` 仍为 `KEEP-EXT / planned`。
 
 三项实验分别服务于三个问题。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
-| `EXP-08-01` | 发布候选来源、readiness 与 artifact hash 是否一致 | 不证明真实生产环境已经完整可观测 |
+| `EXP-08-01` | 发布候选来源、readiness 与 artifact hash 是否一致 | 不证明真实生产环境已经完整可观测；ALREADY 不得改写成 SHIP |
 | `EXP-08-02` | 发现、决策、回滚和恢复的时间线是否清楚 | 不证明所有故障都能桌面演练覆盖 |
 | `EXP-08-03` | Operations 四阶段凭证是否能按官方流程复现 | 不把 alpha 参考实现写成成熟生产能力 |
 
@@ -332,6 +332,8 @@ Build → Deploy → Runtime Verify → Monitor
 
 第五，本章不把发布自动化当成生产成熟度。自动化只是动作可靠；成熟度还包括环境门禁、监控、恢复、审计和责任。
 
+第六，`EXP-08-01` 的 verified 只证明候选来源与 manifest 一致性校验可复现；它不等于 Runtime Verify 已通过，也不证明监控与恢复能力已经成熟。
+
 ## Reader Exercise
 
 选择一个你准备发布的候选物，用 30 分钟写一份最小 Operations Runbook。
@@ -354,5 +356,6 @@ Build → Deploy → Runtime Verify → Monitor
 - `.github/workflows/pages.yml`：Pages 构建、上传、部署和进度记录链路。
 - `.github/workflows/release.yml`：Release readiness、候选构造与草稿发布链路。
 - `planning/releases/v0.1-policy.json`：v0.1 Definition of Done 的机器可读门禁。
+- `experiments/exp-08-01/output/sample.json`：发布候选来源清单校验样例。
 - `progress/experiments.json`：`EXP-08-01`、`EXP-08-02`、`EXP-08-03` 实验治理状态。
 - `book/toc.md`：CH-08 核心问题、读者结果和实验方向。
