@@ -1,0 +1,8 @@
+{
+  "experiment_id": "EXP-07-01",
+  "expected_checks": [
+    "facts",
+    "continuity",
+    "nonexistent-gate"
+  ]
+}
