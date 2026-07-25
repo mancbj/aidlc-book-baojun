@@ -17,7 +17,7 @@
     "ten_chapters_present"
   ],
   "baseline_commit": "577fec6",
-  "current_round": "05",
+  "current_round": "11",
   "rounds": [
     {
       "id": "00",
@@ -78,6 +78,66 @@
       "pdf": 14,
       "total": 73,
       "notes": "Exsecutio 公式拼写确认无误；无源码改动。"
+    },
+    {
+      "id": "06",
+      "name": "html-design",
+      "decision": "KEEP",
+      "content": 47,
+      "html": 21,
+      "pdf": 14,
+      "total": 82,
+      "notes": "Fraunces/Source Serif 设计系统与品牌标题。"
+    },
+    {
+      "id": "07",
+      "name": "html-a11y",
+      "decision": "KEEP",
+      "content": 47,
+      "html": 22,
+      "pdf": 14,
+      "total": 83,
+      "notes": "skip-link 与 focus-visible。"
+    },
+    {
+      "id": "08",
+      "name": "pdf-geometry",
+      "decision": "KEEP",
+      "content": 47,
+      "html": 22,
+      "pdf": 18,
+      "total": 87,
+      "notes": "28mm 边距与孤行控制。"
+    },
+    {
+      "id": "09",
+      "name": "pdf-chapters",
+      "decision": "KEEP",
+      "content": 47,
+      "html": 22,
+      "pdf": 20,
+      "total": 89,
+      "notes": "top-level-division=chapter；PDF 88 页。"
+    },
+    {
+      "id": "10",
+      "name": "diagram-compat",
+      "decision": "KEEP",
+      "content": 47,
+      "html": 22,
+      "pdf": 21,
+      "total": 90,
+      "notes": "确认 pdf-compat 与 Mermaid 仍可用。"
+    },
+    {
+      "id": "11",
+      "name": "consistency",
+      "decision": "KEEP",
+      "content": 48,
+      "html": 22,
+      "pdf": 21,
+      "total": 91,
+      "notes": "去掉 CH-07 公开标题中的任务号。"
     }
   ]
 }

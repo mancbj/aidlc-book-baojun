@@ -99,13 +99,17 @@ def discover_files(root: Path, scopes: Sequence[str]) -> List[Path]:
                 if any(part in SKIP_DIRS for part in relative_parts):
                     continue
                 if path.is_file() and path.suffix.lower() in {".md", ".html", ".htm"}:
+                    relative = path.relative_to(root).parts
                     # Packaged book HTML under releases/*-rc/ is a release asset,
                     # not a navigable repo page; skip relative-link audits.
                     if (
-                        "releases" in path.relative_to(root).parts
+                        "releases" in relative
                         and path.name.startswith("aidlc-book-")
                         and path.name.endswith(("-book.html", "-book.htm"))
                     ):
+                        continue
+                    # Pandoc include fragments are not standalone pages.
+                    if "templates" in relative and path.suffix.lower() in {".html", ".htm"}:
                         continue
                     files.add(path.resolve())
     return sorted(files)

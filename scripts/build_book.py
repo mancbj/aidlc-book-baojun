@@ -41,6 +41,12 @@ SUPPORT_FILES = (
     Path("book/book.css"),
     Path("book/filters/pdf-compat.lua"),
     Path("book/filters/release-profile.lua"),
+    Path("book/fonts/fraunces.woff2"),
+    Path("book/fonts/source-serif-4.woff2"),
+    Path("book/fonts/ibm-plex-mono-400.woff2"),
+    Path("book/fonts/ibm-plex-mono-500.woff2"),
+    Path("book/templates/skip-link.html"),
+    Path("book/templates/release-pdf-header.tex"),
     Path("book/images/cover.png"),
     Path("book/images/fig0-1.svg"),
 )
@@ -284,16 +290,20 @@ def build(
         if build_format in {"html", "all"}:
             html_sources = render_mermaid_sources(root, work, mmdc, browser, "svg")
             html_path = output / HTML_NAME
+            html_args = [
+                "--to=html5",
+                "--toc",
+                "--toc-depth=3",
+                f"--css={root / 'book/book.css'}",
+                "--embed-resources",
+                f"--output={html_path}",
+            ]
+            if profile == "release":
+                html_args.append(
+                    f"--include-before-body={root / 'book/templates/skip-link.html'}"
+                )
             run_pandoc(
-                common_for(html_sources)
-                + [
-                    "--to=html5",
-                    "--toc",
-                    "--toc-depth=3",
-                    f"--css={root / 'book/book.css'}",
-                    "--embed-resources",
-                    f"--output={html_path}",
-                ],
+                common_for(html_sources) + html_args,
                 "Pandoc HTML 构建",
             )
             validate_html(html_path)
@@ -309,10 +319,19 @@ def build(
                 "--variable=documentclass:ctexbook",
                 "--variable=classoption:openany",
                 "--variable=papersize:a4",
-                "--variable=geometry:margin=24mm",
                 "--variable=colorlinks:true",
                 f"--output={pdf_path}",
             ]
+            if profile == "release":
+                pdf_command.extend(
+                    [
+                        "--top-level-division=chapter",
+                        "--variable=geometry:margin=28mm",
+                        f"--include-in-header={root / 'book/templates/release-pdf-header.tex'}",
+                    ]
+                )
+            else:
+                pdf_command.append("--variable=geometry:margin=24mm")
             run_pandoc(pdf_command, "Pandoc PDF 构建")
             validate_pdf(pdf_path)
             outputs.append({"path": PDF_NAME, "sha256": sha256(pdf_path)})
