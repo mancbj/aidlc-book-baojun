@@ -247,12 +247,12 @@ Human Judgment accepts, rejects, escalates, or defers them.
 本章实验入口包括三项：
 
 - `EXP-07-01 · 仓库确定性门禁组合器`：复用 `python3 scripts/ci_check.py`，聚合事实校验、连续性、GitHub 配置、测试、干运行与链接审计。
-- `EXP-07-02 · 独立评审分歧矩阵`：比较交付候选、测试证据、独立模型评审与人工 Rubric，生成多方判断及分歧归因矩阵。
+- `EXP-07-02 · 独立评审分歧矩阵`：比较交付候选、测试证据、独立模型评审与人工 Rubric，生成多方判断及分歧归因矩阵。运行：`python3 experiments/exp-07-02/quickstart.py --sample`。
 - `EXP-07-03 · 分层验证检查点复现`：参考官方三阶段与检查点说明，向示例候选注入缺陷，记录缺陷在不同检查层的首次发现位置。
 
 其中 `EXP-07-01` 当前为 `ALREADY / ready`（尚未 `verified`），因为本项目已经存在可运行的 `scripts/ci_check.py`。它说明仓库确定性门禁可以被真实调用——例如 PR 与任务完成检查会聚合校验、测试与链接审计——但这还不是一份独立实验报告，也不证明内容质量或读者理解已被充分验证。
 
-`EXP-07-02` 与 `EXP-07-03` 仍为 `planned`，因此本章只把它们作为验证方向，不把指标写成已验证结论。后续如果要把它们升级为正文证据，至少需要补齐实验目录、样例输入、样例输出、测试和结果记录。
+`EXP-07-02` 已 verified：样例在 `experiments/exp-07-02/output/sample.json`。它证明冻结的模型评审与人工 Rubric 可生成分歧归因矩阵，并给出一致率、新增风险数与人工推翻率；模型评审不能替代人工判断。这里的 Verify 属于 CH-07 交付候选验证，不等于 CH-08 Runtime Verify。`EXP-07-03` 仍为 `planned`。
 
 三项实验分别服务于三个问题。
 

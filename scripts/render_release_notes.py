@@ -24,7 +24,15 @@ def render(root: Path, readiness: dict) -> str:
         for chapter in chapters
         if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
     )
-    if version.startswith("v0.6"):
+    if version.startswith("v0.7"):
+        highlights = [
+            "- 四个冻结证据实验转 verified：`EXP-01-01`、`EXP-01-02`、`EXP-02-02`、`EXP-07-02`（无在线模型调用）。",
+            "- SHIP verified 达到 18/18；CI 合同测试覆盖全部 SHIP。",
+            "- CH-01 / CH-02 / CH-07 证据边界收紧，明确冻结夹具不等于生产模型保证。",
+            "- Reader 反馈诚实重评：无真实回复时保留 `READER-RESPONSES` known-gap，不伪造 responded。",
+        ]
+        next_goal = "v0.8：消化真实 Reader 反馈，并按需推进 KEEP-EXT / ALREADY 实验或新内容周期。"
+    elif version.startswith("v0.6"):
         highlights = [
             "- 四个目标实验转 verified：`EXP-05-02`、`EXP-08-02`、`EXP-09-02`、`EXP-10-02`，并由 CI 执行合同测试。",
             "- SHIP verified 达到 14/18；剩余 planned 主要为需冻结会话/模型证据的批次。",
