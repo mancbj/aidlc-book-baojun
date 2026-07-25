@@ -1,6 +1,6 @@
 # v0.8.004 Release Notes Candidate
 
-> Readiness: **READY** · Source `596ea9eb489aa56edcfb803ec0e24bbd9ace0839` · Generated `2026-07-25T10:09:47Z`
+> Readiness: **READY** · Source `e213913d91d50bee2b07cfff9e4397ee4ee49ce3` · Generated `2026-07-25T10:30:53Z`
 
 ## 新增内容
 
@@ -22,7 +22,7 @@
 
 ## 产物与来源
 
-- Source commit/fingerprint：`596ea9eb489aa56edcfb803ec0e24bbd9ace0839`
+- Source commit/fingerprint：`e213913d91d50bee2b07cfff9e4397ee4ee49ce3`
 - Pages HTML zip：候选 manifest 生成后填写文件名和 SHA-256。
 - 书稿 HTML：通过 `--book-html` 纳入时记录文件名和 SHA-256。
 - PDF：条件式；缺少经过验证的 PDF 时明确 skipped，不创建占位文件。
