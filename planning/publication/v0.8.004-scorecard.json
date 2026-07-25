@@ -18,7 +18,7 @@
     "reader_feedback_not_fabricated"
   ],
   "baseline_commit": "c01941c",
-  "current_round": "04",
+  "current_round": "03",
   "rounds": [
     {
       "id": "00",
@@ -63,17 +63,6 @@
       "release": 10,
       "total": 95,
       "notes": "CI 与 PDF content audit 通过。"
-    },
-    {
-      "id": "04",
-      "name": "v0.8.004-release",
-      "decision": "KEEP",
-      "visual_fix": 40,
-      "pdf_verification": 25,
-      "regression": 20,
-      "release": 15,
-      "total": 100,
-      "notes": "发布 v0.8.004 修复版。"
     }
   ]
 }
