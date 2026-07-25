@@ -1,0 +1,371 @@
+{
+  "accountable_rule": "Accountable 必须为人类角色，不得为 Agent。",
+  "experiment_id": "EXP-10-01",
+  "limitation": "本工具只检查输入活动是否具备可见的 Accountable 与冲突信号；它不证明生成的 RACI 已适合所有组织或团队结构。",
+  "metrics": {
+    "activity_count": 6,
+    "responsibility_conflict_count": 1,
+    "unassigned_accountable_decisions_count": 1
+  },
+  "participants": [
+    {
+      "id": "product_owner",
+      "kind": "human",
+      "name": "产品负责人"
+    },
+    {
+      "id": "tech_lead",
+      "kind": "human",
+      "name": "技术负责人"
+    },
+    {
+      "id": "quality_owner",
+      "kind": "human",
+      "name": "质量负责人"
+    },
+    {
+      "id": "release_owner",
+      "kind": "human",
+      "name": "发布负责人"
+    },
+    {
+      "agent_kind": "master",
+      "id": "agent_master",
+      "kind": "agent",
+      "name": "Master Agent"
+    },
+    {
+      "agent_kind": "inception",
+      "id": "agent_inception",
+      "kind": "agent",
+      "name": "Inception Agent"
+    },
+    {
+      "agent_kind": "construction",
+      "id": "agent_construction",
+      "kind": "agent",
+      "name": "Construction Agent"
+    },
+    {
+      "agent_kind": "operations",
+      "id": "agent_operations",
+      "kind": "agent",
+      "name": "Operations Agent"
+    }
+  ],
+  "pattern_basis": [
+    "BOLT_EXECUTION",
+    "INDEPENDENT_REVIEW",
+    "INTENT_DECOMPOSITION",
+    "RELEASE_ROLLBACK",
+    "STAGE_ROUTING"
+  ],
+  "project_name": "社区诊所预约系统 AI-DLC 试点",
+  "raci_matrix": [
+    {
+      "accountable_roles": [
+        {
+          "id": "product_owner",
+          "name": "产品负责人"
+        }
+      ],
+      "accountable_status": "assigned",
+      "activity": {
+        "id": "ACT-01",
+        "name": "路由到下一阶段",
+        "pattern_id": "STAGE_ROUTING",
+        "pattern_label": "路由到下一阶段"
+      },
+      "assignments": [
+        {
+          "letters": "R",
+          "participant": {
+            "id": "agent_master",
+            "kind": "agent",
+            "name": "Master Agent"
+          }
+        },
+        {
+          "letters": "I",
+          "participant": {
+            "id": "agent_operations",
+            "kind": "agent",
+            "name": "Operations Agent"
+          }
+        },
+        {
+          "letters": "A",
+          "participant": {
+            "id": "product_owner",
+            "kind": "human",
+            "name": "产品负责人"
+          }
+        }
+      ],
+      "conflict_codes": []
+    },
+    {
+      "accountable_roles": [
+        {
+          "id": "product_owner",
+          "name": "产品负责人"
+        }
+      ],
+      "accountable_status": "assigned",
+      "activity": {
+        "id": "ACT-02",
+        "name": "分解预约 Intent 与 Story",
+        "pattern_id": "INTENT_DECOMPOSITION",
+        "pattern_label": "分解 Intent／Unit／Story"
+      },
+      "assignments": [
+        {
+          "letters": "R",
+          "participant": {
+            "id": "agent_inception",
+            "kind": "agent",
+            "name": "Inception Agent"
+          }
+        },
+        {
+          "letters": "I",
+          "participant": {
+            "id": "agent_master",
+            "kind": "agent",
+            "name": "Master Agent"
+          }
+        },
+        {
+          "letters": "A",
+          "participant": {
+            "id": "product_owner",
+            "kind": "human",
+            "name": "产品负责人"
+          }
+        },
+        {
+          "letters": "C",
+          "participant": {
+            "id": "tech_lead",
+            "kind": "human",
+            "name": "技术负责人"
+          }
+        }
+      ],
+      "conflict_codes": []
+    },
+    {
+      "accountable_roles": [
+        {
+          "id": "tech_lead",
+          "name": "技术负责人"
+        }
+      ],
+      "accountable_status": "assigned",
+      "activity": {
+        "id": "ACT-03",
+        "name": "执行预约 Bolt 与修复失败",
+        "pattern_id": "BOLT_EXECUTION",
+        "pattern_label": "执行 Bolt／修复失败"
+      },
+      "assignments": [
+        {
+          "letters": "R",
+          "participant": {
+            "id": "agent_construction",
+            "kind": "agent",
+            "name": "Construction Agent"
+          }
+        },
+        {
+          "letters": "I",
+          "participant": {
+            "id": "agent_master",
+            "kind": "agent",
+            "name": "Master Agent"
+          }
+        },
+        {
+          "letters": "I",
+          "participant": {
+            "id": "agent_operations",
+            "kind": "agent",
+            "name": "Operations Agent"
+          }
+        },
+        {
+          "letters": "AC",
+          "participant": {
+            "id": "tech_lead",
+            "kind": "human",
+            "name": "技术负责人"
+          }
+        }
+      ],
+      "conflict_codes": []
+    },
+    {
+      "accountable_roles": [
+        {
+          "id": "release_owner",
+          "name": "发布负责人"
+        }
+      ],
+      "accountable_status": "assigned",
+      "activity": {
+        "id": "ACT-04",
+        "name": "发布预约系统与回滚",
+        "pattern_id": "RELEASE_ROLLBACK",
+        "pattern_label": "发布与回滚"
+      },
+      "assignments": [
+        {
+          "letters": "I",
+          "participant": {
+            "id": "agent_master",
+            "kind": "agent",
+            "name": "Master Agent"
+          }
+        },
+        {
+          "letters": "R",
+          "participant": {
+            "id": "agent_operations",
+            "kind": "agent",
+            "name": "Operations Agent"
+          }
+        },
+        {
+          "letters": "A",
+          "participant": {
+            "id": "release_owner",
+            "kind": "human",
+            "name": "发布负责人"
+          }
+        },
+        {
+          "letters": "C",
+          "participant": {
+            "id": "tech_lead",
+            "kind": "human",
+            "name": "技术负责人"
+          }
+        }
+      ],
+      "conflict_codes": []
+    },
+    {
+      "accountable_roles": [
+        {
+          "id": "quality_owner",
+          "name": "质量负责人"
+        },
+        {
+          "id": "release_owner",
+          "name": "发布负责人"
+        }
+      ],
+      "accountable_status": "conflict",
+      "activity": {
+        "id": "ACT-05",
+        "name": "独立评审放行",
+        "pattern_id": "INDEPENDENT_REVIEW",
+        "pattern_label": "独立评审与放行"
+      },
+      "assignments": [
+        {
+          "letters": "R",
+          "participant": {
+            "id": "agent_construction",
+            "kind": "agent",
+            "name": "Construction Agent"
+          }
+        },
+        {
+          "letters": "I",
+          "participant": {
+            "id": "agent_inception",
+            "kind": "agent",
+            "name": "Inception Agent"
+          }
+        },
+        {
+          "letters": "I",
+          "participant": {
+            "id": "agent_master",
+            "kind": "agent",
+            "name": "Master Agent"
+          }
+        },
+        {
+          "letters": "AC",
+          "participant": {
+            "id": "quality_owner",
+            "kind": "human",
+            "name": "质量负责人"
+          }
+        },
+        {
+          "letters": "A",
+          "participant": {
+            "id": "release_owner",
+            "kind": "human",
+            "name": "发布负责人"
+          }
+        }
+      ],
+      "conflict_codes": [
+        "MULTIPLE_ACCOUNTABLE"
+      ]
+    },
+    {
+      "accountable_roles": [],
+      "accountable_status": "unassigned",
+      "activity": {
+        "id": "ACT-06",
+        "name": "短信通知降级决策",
+        "pattern_id": "BOLT_EXECUTION",
+        "pattern_label": "执行 Bolt／修复失败"
+      },
+      "assignments": [
+        {
+          "letters": "R",
+          "participant": {
+            "id": "agent_construction",
+            "kind": "agent",
+            "name": "Construction Agent"
+          }
+        },
+        {
+          "letters": "I",
+          "participant": {
+            "id": "agent_master",
+            "kind": "agent",
+            "name": "Master Agent"
+          }
+        },
+        {
+          "letters": "I",
+          "participant": {
+            "id": "agent_operations",
+            "kind": "agent",
+            "name": "Operations Agent"
+          }
+        },
+        {
+          "letters": "C",
+          "participant": {
+            "id": "tech_lead",
+            "kind": "human",
+            "name": "技术负责人"
+          }
+        }
+      ],
+      "conflict_codes": [
+        "MISSING_ACCOUNTABLE"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:67b6f50891836d4e96cf5a49482d09eaebbb878fe13caa2ebc94cfc0566fc0ef"
+}

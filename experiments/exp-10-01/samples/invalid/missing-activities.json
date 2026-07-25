@@ -1,0 +1,14 @@
+{
+  "experiment_id": "EXP-10-01",
+  "project_name": "缺少活动",
+  "agents": [
+    {"id": "agent_master", "name": "Master Agent", "kind": "master"},
+    {"id": "agent_inception", "name": "Inception Agent", "kind": "inception"},
+    {"id": "agent_construction", "name": "Construction Agent", "kind": "construction"},
+    {"id": "agent_operations", "name": "Operations Agent", "kind": "operations"}
+  ],
+  "team_roles": [
+    {"id": "product_owner", "name": "产品负责人"}
+  ],
+  "development_activities": []
+}
