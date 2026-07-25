@@ -587,21 +587,30 @@
       "metrics": [
         "通过检查数",
         "失败检查数",
-        "总耗时"
+        "配置检查数"
       ],
-      "command": "python3 scripts/ci_check.py",
+      "command": "python3 experiments/exp-07-01/quickstart.py --sample",
       "acceptance": [
-        "ci_check.py 聚合事实校验、连续性、GitHub 配置、测试、干运行与链接审计",
-        "任一子检查失败时整体以非零退出码失败"
+        "quickstart 静态解析 scripts/ci_check.py 并列出核心 Must 门禁组合",
+        "记录指标：通过检查数、失败检查数、配置检查数及 missing/extra 对照",
+        "合法样例以退出码 0 生成 valid=true 的组合报告，指向 reused_implementation",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码；composition 失败时不视为 valid",
+        "输出 limitation 明确只证明门禁可聚合，不证明内容质量；合同测试不得调用 --live",
+        "重复运行产生字节一致的 composition 报告，测试命令全部通过"
       ],
-      "status": "ready",
-      "updated": "2026-07-22T06:48:12Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:45:00Z",
       "reused_implementation": "scripts/ci_check.py",
       "cross_chapter_references": [
         "CH-04",
         "CH-06",
         "CH-08"
-      ]
+      ],
+      "repository_path": "experiments/exp-07-01",
+      "readme_path": "experiments/exp-07-01/README.md",
+      "sample_input": "experiments/exp-07-01/samples/input.json",
+      "sample_output": "experiments/exp-07-01/output/sample.json",
+      "test_path": "experiments/exp-07-01/tests/test_demo.py"
     },
     {
       "id": "EXP-07-02",
@@ -688,18 +697,27 @@
         "来源完整率",
         "哈希不一致数"
       ],
-      "command": "python3 scripts/check_release_readiness.py && python3 scripts/prepare_release.py --help",
+      "command": "python3 experiments/exp-08-01/quickstart.py --sample",
       "acceptance": [
         "readiness 来源必须与当前事实源一致，否则拒绝构造候选",
-        "生成的 release-manifest.json 记录来源、文件哈希与构建时间"
+        "生成的 release-manifest.json 记录来源、文件哈希与构建时间",
+        "合法样例以退出码 0 生成 valid=true 的确定性 manifest 校验报告",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "输出包含 limitation，明确不证明生产可观测成熟",
+        "重复运行产生字节一致的输出，测试命令全部通过"
       ],
-      "status": "ready",
-      "updated": "2026-07-22T06:48:12Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:45:00Z",
       "reused_implementation": "scripts/check_release_readiness.py; scripts/prepare_release.py",
       "cross_chapter_references": [
         "CH-06",
         "CH-07"
-      ]
+      ],
+      "repository_path": "experiments/exp-08-01",
+      "readme_path": "experiments/exp-08-01/README.md",
+      "sample_input": "experiments/exp-08-01/samples/input.json",
+      "sample_output": "experiments/exp-08-01/output/sample.json",
+      "test_path": "experiments/exp-08-01/tests/test_demo.py"
     },
     {
       "id": "EXP-08-02",

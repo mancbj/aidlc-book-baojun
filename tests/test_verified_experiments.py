@@ -28,9 +28,27 @@ class VerifiedExperimentGateTest(unittest.TestCase):
                 json.dumps(
                     {
                         "experiments": [
-                            {"id": "EXP-01", "triage": "SHIP", "status": "verified"},
+                            {
+                                "id": "EXP-01",
+                                "triage": "SHIP",
+                                "status": "verified",
+                                "repository_path": "experiments/exp-01",
+                                "readme_path": "experiments/exp-01/README.md",
+                                "sample_input": "experiments/exp-01/samples/input.json",
+                                "sample_output": "experiments/exp-01/output/sample.json",
+                                "test_path": "experiments/exp-01/tests/test_demo.py",
+                            },
                             {"id": "EXP-02", "triage": "SHIP", "status": "planned"},
-                            {"id": "EXP-03", "triage": "ALREADY", "status": "verified"},
+                            {
+                                "id": "EXP-03",
+                                "triage": "ALREADY",
+                                "status": "verified",
+                                "repository_path": "experiments/exp-03",
+                                "readme_path": "experiments/exp-03/README.md",
+                                "sample_input": "experiments/exp-03/samples/input.json",
+                                "sample_output": "experiments/exp-03/output/sample.json",
+                                "test_path": "experiments/exp-03/tests/test_demo.py",
+                            },
                         ]
                     }
                 ),
@@ -40,6 +58,36 @@ class VerifiedExperimentGateTest(unittest.TestCase):
             experiments = MODULE.verified_ship_experiments(root)
 
         self.assertEqual(["EXP-01"], [item["id"] for item in experiments])
+
+    def test_contract_filter_includes_already_and_keepext_with_paths(self):
+        paths = {
+            "repository_path": "experiments/x",
+            "readme_path": "experiments/x/README.md",
+            "sample_input": "experiments/x/samples/input.json",
+            "sample_output": "experiments/x/output/sample.json",
+            "test_path": "experiments/x/tests/test_demo.py",
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "progress").mkdir()
+            (root / "progress/experiments.json").write_text(
+                json.dumps(
+                    {
+                        "experiments": [
+                            {"id": "EXP-SHIP", "triage": "SHIP", "status": "verified", **paths},
+                            {"id": "EXP-ALREADY", "triage": "ALREADY", "status": "verified", **paths},
+                            {"id": "EXP-KEEP", "triage": "KEEP-EXT", "status": "verified", **paths},
+                            {"id": "EXP-ALREADY-BARE", "triage": "ALREADY", "status": "verified"},
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            experiments = MODULE.verified_contract_experiments(root)
+        self.assertEqual(
+            ["EXP-SHIP", "EXP-ALREADY", "EXP-KEEP"],
+            [item["id"] for item in experiments],
+        )
 
     def test_artifact_errors_report_missing_paths(self):
         experiment = {

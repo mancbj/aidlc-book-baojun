@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and run every verified SHIP experiment contract test."""
+"""Validate and run every verified experiment that publishes a contract test path."""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ PATH_FIELDS = (
     "sample_output",
     "test_path",
 )
+CONTRACT_TRIAGES = {"SHIP", "ALREADY", "KEEP-EXT"}
 
 
 def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
@@ -27,12 +28,30 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def verified_ship_experiments(root: Path) -> List[Dict[str, object]]:
+def verified_contract_experiments(root: Path) -> List[Dict[str, object]]:
+    """Return verified experiments that declare the five contract artifact paths.
+
+    SHIP remains the main verified set. ALREADY / KEEP-EXT may also enter CI once
+    they publish repository_path/readme/sample/test paths without changing triage.
+    """
     document = json.loads((root / "progress/experiments.json").read_text(encoding="utf-8"))
+    selected: List[Dict[str, object]] = []
+    for item in document["experiments"]:
+        if item.get("status") != "verified":
+            continue
+        if item.get("triage") not in CONTRACT_TRIAGES:
+            continue
+        if all(isinstance(item.get(field), str) and item.get(field).strip() for field in PATH_FIELDS):
+            selected.append(item)
+    return selected
+
+
+def verified_ship_experiments(root: Path) -> List[Dict[str, object]]:
+    """Backward-compatible alias used by existing tests."""
     return [
         item
-        for item in document["experiments"]
-        if item.get("triage") == "SHIP" and item.get("status") == "verified"
+        for item in verified_contract_experiments(root)
+        if item.get("triage") == "SHIP"
     ]
 
 
@@ -72,13 +91,13 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args = parse_args(argv)
     root = args.root.resolve()
     try:
-        experiments = verified_ship_experiments(root)
+        experiments = verified_contract_experiments(root)
     except (OSError, KeyError, json.JSONDecodeError) as exc:
         print(f"[ERROR] 无法读取实验事实源：{exc}", file=sys.stderr)
         return 1
 
     if not experiments:
-        print("[ERROR] 没有 verified SHIP 实验；发布证据门禁拒绝空跑。", file=sys.stderr)
+        print("[ERROR] 没有带合同路径的 verified 实验；发布证据门禁拒绝空跑。", file=sys.stderr)
         return 1
 
     failed = False

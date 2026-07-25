@@ -1,0 +1,19 @@
+{
+  "candidate_assets": [
+    {
+      "bytes": 512,
+      "name": "release-manifest.json",
+      "sha256": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+    }
+  ],
+  "expected_source_id": "working-tree-8c6c32f63edc",
+  "experiment_id": "EXP-08-01",
+  "readiness": {
+    "source_id": "working-tree-8c6c32f63edc",
+    "status": "ready"
+  },
+  "required_assets": [
+    "release-manifest.json",
+    "site.zip"
+  ]
+}

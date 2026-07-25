@@ -1,0 +1,32 @@
+{
+  "experiment_id": "EXP-08-01",
+  "interpretation": "readiness.source_id 必须与 expected_source_id 一致；required_assets 中的名称必须出现在 candidate_assets；每个 candidate_assets.sha256 必须为 sha256:<64 位小写十六进制>。source_completeness_percent 按来源一致性与必需资产覆盖率计算。",
+  "limitation": "来源与 manifest 资产清单校验只证明输入模型内的可追溯一致性；它不证明真实生产环境可观测能力或 Operations 监控成熟度。",
+  "manifest_assets": [
+    {
+      "bytes": 512,
+      "name": "release-manifest.json",
+      "sha256": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    {
+      "bytes": 4096,
+      "name": "site.zip",
+      "sha256": "sha256:3333333333333333333333333333333333333333333333333333333333333333"
+    }
+  ],
+  "metrics": {
+    "hash_mismatch_count": 0,
+    "source_completeness_percent": 100.0
+  },
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:62885b44a0116c6de1f6695340a381afb3f9e5ba781adb1f7770ff9b526ffb48",
+  "summary": {
+    "candidate_asset_count": 3,
+    "expected_source_id": "working-tree-8c6c32f63edc",
+    "present_required_asset_count": 2,
+    "readiness_source_id": "working-tree-8c6c32f63edc",
+    "readiness_status": "ready",
+    "required_asset_count": 2
+  },
+  "valid": true
+}
