@@ -24,7 +24,15 @@ def render(root: Path, readiness: dict) -> str:
         for chapter in chapters
         if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
     )
-    if version.startswith("v0.3"):
+    if version.startswith("v0.4"):
+        highlights = [
+            "- 四个目标实验转 verified：`EXP-03-02`、`EXP-06-01`、`EXP-02-01`、`EXP-04-02`，并由 CI 执行合同测试。",
+            "- CH-02～CH-10 九张独立可审计章节 SVG；CH-01 继续复用核心图 `fig0-1.svg`。",
+            "- 章节图注册表、构建哈希与 strict audit 门禁进入主线。",
+            "- Reader 反馈诚实重评：无真实回复时保留 `READER-RESPONSES` known-gap，不伪造 responded。",
+        ]
+        next_goal = "v0.5：继续推进剩余 planned 实验，并在收到真实 Reader 回复后关闭反馈缺口。"
+    elif version.startswith("v0.3"):
         highlights = [
             "- 出版质量 Loop：release profile 剥离 Metadata / Gate / Review Notes 等写作脚手架。",
             "- 书稿 HTML 设计系统升级（品牌级标题、衬线字体、青绿强调与可读动效）。",
