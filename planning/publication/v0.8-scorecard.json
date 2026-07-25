@@ -23,7 +23,7 @@
     "readiness_ready"
   ],
   "baseline_commit": "703cb3c",
-  "current_round": "06",
+  "current_round": "08",
   "rounds": [
     {
       "id": "00",
@@ -101,6 +101,28 @@
       "release": 4,
       "total": 79,
       "notes": "FB-006 deferred；responded=0/3。"
+    },
+    {
+      "id": "07",
+      "name": "adversarial-audit",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 18,
+      "total": 93,
+      "notes": "ci_check 通过；22 合同实验绿；triage 未改写。"
+    },
+    {
+      "id": "08",
+      "name": "v0.8-release",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 20,
+      "total": 95,
+      "notes": "发布 v0.8；ALREADY verified=2/2；KEEP-EXT verified+=2。"
     }
   ]
 }
