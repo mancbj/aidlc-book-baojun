@@ -1,0 +1,22 @@
+{
+  "experiment_id": "EXP-01-03",
+  "pinned_version": "sha256:9cd45974f4bd264ca4a357f79e1171e8ea23ea44ddd9d1060c8ab3c24b60ec39",
+  "trajectory": {
+    "inception": {
+      "artifacts": {"intent_record": true},
+      "checkpoints": []
+    },
+    "construction": {
+      "artifacts": {},
+      "checkpoints": []
+    },
+    "operations": {
+      "artifacts": {},
+      "checkpoints": []
+    },
+    "pilot": {
+      "artifacts": {},
+      "checkpoints": []
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "experiment_id": "EXP-06-03",
+  "pinned_version": "sha256:fe6252a58966ef23ac663a313c1a62094a1d70f08ce1bb536fdc950721f21bb2",
+  "bolt_id": "bolt-feedback-widget",
+  "timing": {
+    "started_at_epoch": 1750005400,
+    "completed_at_epoch": 1750000000
+  },
+  "stages": [
+    {"stage_id": "plan", "status": "completed", "artifact_present": true}
+  ]
+}

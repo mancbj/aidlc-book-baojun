@@ -1,0 +1,57 @@
+{
+  "experiment_id": "EXP-02-03",
+  "pinned_version": "sha256:37725f7af797f4e7589afb48686349a940384029e0f46d76cda8ddd747141953",
+  "session_events": [
+    {
+      "agent_id": "master",
+      "action": "route",
+      "checkpoint_id": "route_to_inception"
+    },
+    {
+      "agent_id": "inception",
+      "action": "propose",
+      "checkpoint_id": "inception_proposal_review"
+    },
+    {
+      "agent_id": "master",
+      "action": "human_approval",
+      "checkpoint_id": "inception_proposal_review",
+      "evidence": "requirements.md 与 system-context.md 已落盘",
+      "rationale": "分解范围与 Intent 边界一致"
+    },
+    {
+      "agent_id": "inception",
+      "action": "handoff",
+      "checkpoint_id": "handoff_to_construction"
+    },
+    {
+      "agent_id": "construction",
+      "action": "propose",
+      "checkpoint_id": "construction_proposal_review"
+    },
+    {
+      "agent_id": "master",
+      "action": "human_approval",
+      "checkpoint_id": "construction_proposal_review",
+      "evidence": "bolt plan 与测试门禁已登记",
+      "rationale": "Construction 阶段可启动"
+    },
+    {
+      "agent_id": "construction",
+      "action": "handoff",
+      "checkpoint_id": "handoff_to_operations"
+    },
+    {
+      "agent_id": "operations",
+      "action": "propose",
+      "checkpoint_id": "operations_release_review"
+    },
+    {
+      "agent_id": "master",
+      "action": "human_approval",
+      "checkpoint_id": "operations_release_review",
+      "evidence": "部署记录与监控基线已归档",
+      "rationale": "发布窗口与回滚策略已确认"
+    }
+  ]
+}

@@ -211,7 +211,7 @@ Intent：准备试读反馈入口
 
 ## 06 · Experiment：本章实验入口
 
-其中 `EXP-01-01` 与 `EXP-01-02` 已 verified，且只消费仓库内冻结生成/工作流夹具，不在 CI 中调用外部模型。`EXP-01-03` 仍为 `KEEP-EXT / planned`。
+其中 `EXP-01-01`、`EXP-01-02` 与 `EXP-01-03` 均已 verified，且只消费仓库内冻结夹具，不在 CI 中调用外部模型或抓取外网。`EXP-01-03` triage 仍为 `KEEP-EXT`。
 
 ### `EXP-01-01` · 同一 Intent 多次生成方差基线
 
@@ -225,11 +225,11 @@ Intent：准备试读反馈入口
 
 它证明两组冻结工作流记录可对照；不证明某一工作流普遍更优。它支撑本章案例：AI-DLC 用事实源和门禁换取可恢复、可审计的交付能力。
 
-### `EXP-01-03` · AI-DLC 三阶段官方流程复现
+### `EXP-01-03` · AI-DLC 三阶段官方流程复现（KEEP-EXT）
 
-这个实验回答：以 specs.md 作为参考实现时，Inception、Construction、Operations 三阶段会留下哪些工件和检查点？
+这个实验对照仓库内冻结 pin 指南，核对 Inception、Construction、Operations 三阶段轨迹的工件完整率与检查点数量。运行：`python3 experiments/exp-01-03/quickstart.py --sample`。样例在 `experiments/exp-01-03/output/sample.json`。
 
-它旨在支撑本章边界：specs.md 是本书引用的参考实现，不等同于 AI-DLC 的唯一形态。我们借它观察生命周期如何工程化，而不是把工具说明直接当作方法论证明。
+它证明冻结指南上的三阶段轨迹可确定性复现；不把 specs.md 写成唯一标准，也不验证实时 portal。它支撑本章边界：specs.md 是参考实现，不是方法论本身。
 
 ## 07 · Figure：本章图示入口
 
@@ -280,7 +280,7 @@ D15-T03 审校时重点检查五件事：
 
 - 技术边界：不要把 AI-DLC 写成唯一正确流程，也不要把 specs.md 写成本书框架本身。
 - 术语一致性：保留 `𝓔 = Engineering with Exsecutio`，不得自动改为 `Execution`。
-- 证据边界：`EXP-01-01` / `EXP-01-02` 已 verified，但只证明冻结夹具上的差分与对照可复现；`EXP-01-03` 仍是 planned 入口，不得写成已验证结论。
+- 证据边界：`EXP-01-01` / `EXP-01-02` / `EXP-01-03` 已 verified，但分别只证明冻结夹具上的差分、对照与三阶段轨迹可复现；`EXP-01-03` 不得改写成 SHIP，也不得写成官方流程已全面落地。
 - 结构连贯性：问题、框架、案例、实验、图示和练习必须服务同一核心问题。
 - 相邻章节边界：第 1 章只解释生命周期为什么要重构，不抢第 2–10 章的具体方法。
 

@@ -10,7 +10,7 @@
 | Draft Completeness | 正式十章生产线可读稿；D17-T03 五类审校已完成 |
 | Primary Question | AI 如何把一个高层 Intent 分解成可独立交付的 Unit、可验收的 Story 和可执行的 Bolt，而不丢失人的目标与边界？ |
 | Reader Outcome | 能够完成 Intent、Requirements、System Context、Unit、Story 与 Bolt Plan 的可追溯分解 |
-| Related Experiments | `EXP-03-01`、`EXP-03-02` |
+| Related Experiments | `EXP-03-01`、`EXP-03-02`、`EXP-03-03` |
 
 ## 01 · Question：为什么 Intent 不能直接交给 AI 执行
 
@@ -155,6 +155,16 @@ python3 experiments/exp-03-02/quickstart.py --sample
 
 样例报告在 `experiments/exp-03-02/output/sample.json`。它证明依赖清单可以被机器复核；它不证明计划最优，也不把跨 Unit 耦合自动判为错误——后者会以警告计数，留给人确认。
 
+### `EXP-03-03` · Inception Agent 完整分解复现（KEEP-EXT）
+
+`EXP-03-03` 已 verified，但 triage 仍为 `KEEP-EXT`：它只对照仓库内冻结 pin 指南，核对 Requirements、System Context、Units、Stories、Bolt Plan 的工件完整率与追踪链接覆盖率。运行：
+
+```bash
+python3 experiments/exp-03-03/quickstart.py --sample
+```
+
+样例在 `experiments/exp-03-03/output/sample.json`。它证明冻结分解包可确定性复现；不把外部 Inception Agent 说明写成唯一标准，也不证明业务语义已经正确。
+
 ## 05 · Figure：向下分解与向上追踪
 
 本章的图应当帮助读者看见两个方向：向下分解，向上追踪。独立 SVG 把这条链固定为可审计源文件；下面的 Mermaid 保留为构建期可读展开。
@@ -222,6 +232,9 @@ flowchart TB
 - `experiments/sample/README.md`：实验运行说明与 verified 状态。
 - `experiments/sample/output/sample.json`：合法样例输出证据。
 - `experiments/sample/output/README.md`：成功与失败样例说明。
+- `experiments/exp-03-03/README.md`：Inception Agent 完整分解复现（KEEP-EXT / 冻结 pin）。
+- `experiments/exp-03-03/output/sample.json`：冻结分解完整率与追踪链接覆盖率样例。
+- `progress/experiments.json`：`EXP-03-01`、`EXP-03-02`、`EXP-03-03` 实验治理状态。
 - `book/images/fig0-1.svg`：全书 AI-DLC 核心图。
 - `book/images/ch03-intent-to-bolt.svg`：Intent 到 Bolt 双向追踪图。
 - `book/chapters/sample.md`：v0.1 样章证据副本。

@@ -1,0 +1,16 @@
+{
+  "experiment_id": "EXP-02-03",
+  "pinned_version": "sha256:37725f7af797f4e7589afb48686349a940384029e0f46d76cda8ddd747141953",
+  "session_events": [
+    {
+      "agent_id": "master",
+      "action": "route",
+      "checkpoint_id": "route_to_inception"
+    },
+    {
+      "agent_id": "inception",
+      "action": "human_approval",
+      "checkpoint_id": "inception_proposal_review"
+    }
+  ]
+}

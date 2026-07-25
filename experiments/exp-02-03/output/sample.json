@@ -1,0 +1,33 @@
+{
+  "experiment_id": "EXP-02-03",
+  "external_source": "https://specs.md/agents/overview",
+  "guide_digest": "sha256:9bdeae248d0b9ad716d0b838c594d5537848feca3c0db5612038e9e795500962",
+  "human_approvals": [
+    {
+      "agent_id": "master",
+      "event_index": 2,
+      "grounded": true
+    },
+    {
+      "agent_id": "master",
+      "event_index": 5,
+      "grounded": true
+    },
+    {
+      "agent_id": "master",
+      "event_index": 8,
+      "grounded": true
+    }
+  ],
+  "limitation": "本报告仅对照仓库内冻结的四 Agent 检查点指南与输入会话记录做确定性核对；冻结 pin 不等于唯一标准，且不访问或验证实时 specs.md portal。",
+  "metrics": {
+    "checkpoint_adherence_percent": 100.0,
+    "required_checkpoint_count": 6,
+    "ungrounded_approval_count": 0
+  },
+  "pinned_version": "sha256:37725f7af797f4e7589afb48686349a940384029e0f46d76cda8ddd747141953",
+  "schema_version": "1.0.0",
+  "session_event_count": 9,
+  "source_digest": "sha256:c77b30ad59612d80a2b850f73f805322df131dcaa48d67d6ceb030cca51b9c06",
+  "valid": true
+}

@@ -15,7 +15,8 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence
 
 FEEDBACK_ID_RE = re.compile(r"^FB-\d{3}$")
 LINKED_TASK_RE = re.compile(r"^(?:D\d{2}|C\d{2})-T\d{2}$")
-CYCLE_ID_RE = re.compile(r"^v\d+\.\d+(?:-draft)?$")
+# Allow minor releases (v0.8) and patch-grain releases (v0.8.001), with optional -draft.
+CYCLE_ID_RE = re.compile(r"^v\d+\.\d+(?:\.\d+)?(?:-draft)?$")
 CYCLE_TASK_RE = re.compile(r"^C\d{2}-T\d{2}$")
 DECISIONS = {"pending", "accepted", "rejected", "deferred"}
 READER_STATUSES = {"not-invited", "invited", "responded"}
@@ -172,7 +173,7 @@ def validate_feedback_document(document: Dict[str, Any], source: str) -> List[Co
             add(object_id, "reason", f"{decision} 必须记录理由。", "说明权衡和证据。")
         if decision == "deferred":
             if not isinstance(item.get("target_cycle"), str) or not item["target_cycle"].strip():
-                add(object_id, "target_cycle", "deferred 必须有目标周期。", "例如 v0.2-draft。")
+                add(object_id, "target_cycle", "deferred 必须有目标周期。", "例如 v0.2-draft 或 v0.8.002-draft。")
             if not isinstance(item.get("revisit_when"), str) or not item["revisit_when"].strip():
                 add(object_id, "revisit_when", "deferred 必须有重评条件。", "写明何时重新判断。")
     return issues
@@ -199,7 +200,7 @@ def validate_cycle_document(document: Dict[str, Any], source: str) -> List[Conti
             continue
         cycle_id = cycle.get("id")
         if not isinstance(cycle_id, str) or not CYCLE_ID_RE.fullmatch(cycle_id):
-            add(object_id, "id", "cycle ID 格式非法。", "例如 v0.2-draft。")
+            add(object_id, "id", "cycle ID 格式非法。", "例如 v0.2-draft 或 v0.8.002-draft。")
         elif cycle_id in cycle_ids:
             add(object_id, "id", "cycle ID 重复。", "保留唯一版本周期。")
         cycle_ids.add(cycle_id)

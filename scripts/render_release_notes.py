@@ -24,14 +24,22 @@ def render(root: Path, readiness: dict) -> str:
         for chapter in chapters
         if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
     )
-    if version.startswith("v0.8"):
+    if version.startswith("v0.8."):
+        highlights = [
+            "- 版本颗粒度改为 patch-grain：`v0.8.001`（见 `planning/releases/VERSIONING.md`）。",
+            "- 四个 KEEP-EXT 冻结复现转 verified：`EXP-01-03`、`EXP-02-03`、`EXP-03-03`、`EXP-06-03`（triage 不改写为 SHIP）。",
+            "- CI 合同测试覆盖全部 verified 的 SHIP / ALREADY / KEEP-EXT；SHIP 仍为 18/18。",
+            "- CH-01 / CH-02 / CH-03 / CH-06 证据边界收紧；Reader 无真实回复时保留 `READER-RESPONSES` known-gap。",
+        ]
+        next_goal = "v0.8.002：消化真实 Reader 反馈，并推进剩余 KEEP-EXT（07-03 / 08-03 / 09-03 / 10-03）。"
+    elif version.startswith("v0.8"):
         highlights = [
             "- 两个 ALREADY 实验转 verified：`EXP-07-01`、`EXP-08-01`（triage 保持 ALREADY，不改写为 SHIP）。",
             "- 两个 KEEP-EXT 冻结复现转 verified：`EXP-04-03`、`EXP-05-03`（仅消费仓库内 pin 夹具，CI 不抓外网）。",
             "- CI 合同测试覆盖全部 verified 的 SHIP / ALREADY / KEEP-EXT；SHIP 仍为 18/18。",
             "- CH-04 / CH-05 / CH-07 / CH-08 证据边界收紧；Reader 无真实回复时保留 `READER-RESPONSES` known-gap。",
         ]
-        next_goal = "v0.9：消化真实 Reader 反馈，并按需推进剩余 KEEP-EXT 或新内容周期。"
+        next_goal = "v0.8.001：改用 patch-grain 版本号，继续推进剩余 KEEP-EXT 冻结复现。"
     elif version.startswith("v0.7"):
         highlights = [
             "- 四个冻结证据实验转 verified：`EXP-01-01`、`EXP-01-02`、`EXP-02-02`、`EXP-07-02`（无在线模型调用）。",

@@ -1,0 +1,31 @@
+{
+  "external_source": "https://specs.md/learn/aidlc-bolt-execution",
+  "guide_id": "aidlc-bolt-execution",
+  "pinned_version": "sha256:fe6252a58966ef23ac663a313c1a62094a1d70f08ce1bb536fdc950721f21bb2",
+  "stages": [
+    {
+      "stage_id": "plan",
+      "required": true,
+      "artifact": "implementation-plan.md"
+    },
+    {
+      "stage_id": "implement",
+      "required": true,
+      "artifact": "implementation-walkthrough.md"
+    },
+    {
+      "stage_id": "test",
+      "required": true,
+      "artifact": "test-walkthrough.md"
+    },
+    {
+      "stage_id": "review",
+      "required": false,
+      "artifact": "review-notes.md"
+    }
+  ],
+  "timing_fields": [
+    "started_at_epoch",
+    "completed_at_epoch"
+  ]
+}

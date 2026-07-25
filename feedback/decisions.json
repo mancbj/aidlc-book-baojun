@@ -83,6 +83,20 @@
       "source": "v0.8-round-06",
       "summary": "截至 v0.8 Round 06，三位试读者仍为 invited 且 responded=0/3；继续公开保留 READER-RESPONSES known-gap，不阻断 v0.8。",
       "target_cycle": "v0.9-draft"
+    },
+    {
+      "acceptance": [],
+      "created_at": "2026-07-25T09:40:00Z",
+      "decided_at": "2026-07-25T09:40:00Z",
+      "decision": "deferred",
+      "id": "FB-007",
+      "linked_task": "",
+      "object": "Reader-A/B/C",
+      "reason": "v0.8.001 重评时仍无真实 Reader 回复；不得伪造 responded。",
+      "revisit_when": "任一 Reader 槽位收到真实回复，或 v0.8.002-draft 激活后的第一次反馈整理。",
+      "source": "v0.8.001-round-06",
+      "summary": "截至 v0.8.001 Round 06，三位试读者仍为 invited 且 responded=0/3；继续公开保留 READER-RESPONSES known-gap，不阻断 v0.8.001。",
+      "target_cycle": "v0.8.002-draft"
     }
   ],
   "readers": [
@@ -106,5 +120,5 @@
     }
   ],
   "schema_version": "1.0.0",
-  "updated": "2026-07-25T09:00:00Z"
+  "updated": "2026-07-25T09:40:00Z"
 }

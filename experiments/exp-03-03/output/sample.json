@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "bolt_plan": true,
+    "requirements": true,
+    "stories": true,
+    "system_context": true,
+    "units": true
+  },
+  "experiment_id": "EXP-03-03",
+  "external_source": "https://specs.md/agents/inception-agent",
+  "guide_digest": "sha256:313ae7d50f319c12ea38589cabdc375b6355da16ff8b069aa8e5364370b16eb0",
+  "limitation": "本报告仅对照仓库内冻结的 Inception Agent 分解指南与输入工件包做确定性核对；冻结 pin 不等于唯一标准，且不访问或验证实时 specs.md portal。",
+  "metrics": {
+    "artifact_completeness_percent": 100.0,
+    "covered_trace_link_count": 6,
+    "required_artifact_count": 5,
+    "required_trace_link_count": 6,
+    "trace_link_coverage_percent": 100.0
+  },
+  "missing_trace_links": [],
+  "pinned_version": "sha256:d65ec6e39e641b3009ef88f78cf22aaa19e127a35f75f0e6bcff671dc66f416a",
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:aec5a2292054a1bec26f5a14a3b46742a9f837571069e4552caefc53aee3e65f",
+  "valid": true
+}

@@ -1,0 +1,44 @@
+{
+  "experiment_id": "EXP-01-03",
+  "external_source": "https://specs.md/methodology/what-is-ai-dlc",
+  "guide_digest": "sha256:472dcbb8ebbfd61ccf47992370c833f2ff636f3933817c9c11f607c307c48437",
+  "limitation": "本报告仅对照仓库内冻结的 AI-DLC 三阶段指南夹具与输入轨迹做确定性核对；冻结 pin 不等于唯一标准，且不访问或验证实时 specs.md portal。",
+  "metrics": {
+    "artifact_completeness_percent": 100.0,
+    "checkpoint_count": 6,
+    "satisfied_checkpoint_count": 6
+  },
+  "phases": [
+    {
+      "artifact_completeness_percent": 100.0,
+      "checkpoint_adherence_percent": 100.0,
+      "checkpoint_count": 2,
+      "phase_id": "inception",
+      "present_artifact_count": 4,
+      "required_artifact_count": 4,
+      "satisfied_checkpoint_count": 2
+    },
+    {
+      "artifact_completeness_percent": 100.0,
+      "checkpoint_adherence_percent": 100.0,
+      "checkpoint_count": 3,
+      "phase_id": "construction",
+      "present_artifact_count": 3,
+      "required_artifact_count": 3,
+      "satisfied_checkpoint_count": 3
+    },
+    {
+      "artifact_completeness_percent": 100.0,
+      "checkpoint_adherence_percent": 100.0,
+      "checkpoint_count": 1,
+      "phase_id": "operations",
+      "present_artifact_count": 2,
+      "required_artifact_count": 2,
+      "satisfied_checkpoint_count": 1
+    }
+  ],
+  "pinned_version": "sha256:9cd45974f4bd264ca4a357f79e1171e8ea23ea44ddd9d1060c8ab3c24b60ec39",
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:ef859ca31f243059cefab35de54899e27d15d0068a1b7c50e80a3f0c62a28aa5",
+  "valid": true
+}
