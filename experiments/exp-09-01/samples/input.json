@@ -1,0 +1,9 @@
+{
+  "experiment_id": "EXP-09-01",
+  "task_name": "支付对账批处理改造",
+  "task_complexity": "medium",
+  "codebase_state": "brownfield",
+  "team_scale": "small",
+  "compliance_requirements": "moderate",
+  "expert_label": "FIRE"
+}

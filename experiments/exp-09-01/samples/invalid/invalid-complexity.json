@@ -1,0 +1,8 @@
+{
+  "experiment_id": "EXP-09-01",
+  "task_name": "非法复杂度枚举",
+  "task_complexity": "extreme",
+  "codebase_state": "greenfield",
+  "team_scale": "small",
+  "compliance_requirements": "none"
+}

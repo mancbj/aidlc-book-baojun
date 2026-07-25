@@ -1,0 +1,66 @@
+{
+  "experiment_id": "EXP-09-01",
+  "fired_rule_ids": [
+    "R-FIRE-BROWNFIELD",
+    "R-FIRE-MEDIUM-COMPLEXITY",
+    "R-FIRE-MODERATE-COMPLIANCE"
+  ],
+  "flow_recommendation": "FIRE",
+  "inapplicable_conditions": [
+    {
+      "condition": "当前输入更匹配 FIRE，AI-DLC 全链路治理成本过高。",
+      "flow": "AI-DLC"
+    },
+    {
+      "condition": "代码库状态为 brownfield，Simple 缺少棕地回归检查点。",
+      "flow": "Simple"
+    },
+    {
+      "condition": "任务复杂度为 medium，超出 Simple 低仪式边界。",
+      "flow": "Simple"
+    },
+    {
+      "condition": "合规要求为 moderate，Simple 证据链不足。",
+      "flow": "Simple"
+    }
+  ],
+  "inputs": {
+    "codebase_state": "brownfield",
+    "compliance_requirements": "moderate",
+    "task_complexity": "medium",
+    "team_scale": "small"
+  },
+  "limitation": "Flow 建议仅依据本工具内置确定性量表生成，不构成强制选型法令；它不证明建议已达到专家级一致，最终责任仍在人工判断。",
+  "metrics": {
+    "expert_agreement_rate": 100.0,
+    "reason_completeness_rate": 100.0
+  },
+  "reasons": [
+    {
+      "rule_id": "R-FIRE-MEDIUM-COMPLEXITY",
+      "text": "任务复杂度为 medium，适合 FIRE 的快进快出与检查点平衡。"
+    },
+    {
+      "rule_id": "R-FIRE-BROWNFIELD",
+      "text": "棕地代码库需要回归、集成与发布检查点。"
+    },
+    {
+      "rule_id": "R-FIRE-MODERATE-COMPLIANCE",
+      "text": "中等合规要求需要额外审阅与证据检查点。"
+    }
+  ],
+  "rubric_basis": [
+    "R-AI-DLC-HIGH-COMPLEXITY",
+    "R-AI-DLC-HIGH-COMPLIANCE",
+    "R-AI-DLC-LARGE-BROWNFIELD",
+    "R-DEFAULT-SIMPLE",
+    "R-FIRE-BROWNFIELD",
+    "R-FIRE-LARGE-TEAM",
+    "R-FIRE-MEDIUM-COMPLEXITY",
+    "R-FIRE-MODERATE-COMPLIANCE",
+    "R-SIMPLE-LOW-RISK"
+  ],
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:9908553726f97d5bf07aaf3be70e5d337131a0dd6c2114fecd38e2e02c76d2ad",
+  "task_name": "支付对账批处理改造"
+}
