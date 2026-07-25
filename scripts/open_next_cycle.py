@@ -77,6 +77,13 @@ def activate_cycle(
     target = next((item for item in cycles.get("cycles", []) if item.get("id") == "v0.2-draft"), None)
     if target is None:
         raise ValueError("progress/cycles.json 缺少 v0.2-draft preview")
+    # Patch-grain maintenance cycles may already be active; demote them before
+    # replaying the historical v0.1 → v0.2-draft activation path.
+    for item in cycles.get("cycles", []):
+        if item is target:
+            continue
+        if item.get("status") == "active":
+            item["status"] = "complete"
     target["status"] = "active"
     target["origin_release"] = receipt
     accepted = [item for item in feedback.get("decisions", []) if item.get("decision") == "accepted"]
