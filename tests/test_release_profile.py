@@ -46,9 +46,13 @@ class ReleaseProfileTest(unittest.TestCase):
 
 审校备注。
 
+## Reader Exercise
+
+读者练习应保留。
+
 ## References
 
-- 保留引用
+- `progress/tasks.json`：写作任务卡
 """
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory) / "sample.md"
@@ -70,12 +74,14 @@ class ReleaseProfileTest(unittest.TestCase):
             self.assertEqual(0, result.returncode, result.stderr)
             text = output.read_text(encoding="utf-8")
             self.assertIn("框架正文", text)
-            self.assertIn("保留引用", text)
+            self.assertIn("读者练习应保留", text)
             self.assertNotIn("Writing Sprint Card", text)
             self.assertNotIn("Chapter ID", text)
             self.assertNotIn("核心问题只有一个", text)
             self.assertNotIn("Review Notes", text)
             self.assertNotIn("审校备注", text)
+            self.assertNotIn("progress/tasks.json", text)
+            self.assertNotIn("写作任务卡", text)
 
     def test_lua_filter_keeps_content_gates_heading(self):
         if not HAS_PANDOC:

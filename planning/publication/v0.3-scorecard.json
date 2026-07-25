@@ -17,7 +17,7 @@
     "ten_chapters_present"
   ],
   "baseline_commit": "577fec6",
-  "current_round": "01",
+  "current_round": "02",
   "rounds": [
     {
       "id": "00",
@@ -38,6 +38,16 @@
       "pdf": 14,
       "total": 60,
       "notes": "release-profile.lua 通过卫生审计；PDF 112→103 页；源稿脚手架保留。"
+    },
+    {
+      "id": "02",
+      "name": "strip-internal-references",
+      "decision": "KEEP",
+      "content": 38,
+      "html": 12,
+      "pdf": 14,
+      "total": 64,
+      "notes": "章末 References 从 release 剥离；案例正文中的事实源路径保留。"
     }
   ]
 }

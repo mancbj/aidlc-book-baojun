@@ -39,6 +39,12 @@ local function should_drop_header(header)
     return true
   end
 
+  -- Chapter-end internal path bibliographies read as production notes, not
+  -- published references. Keep in-source; omit from release HTML/PDF.
+  if text == "References" or text == "参考文献" then
+    return true
+  end
+
   return false
 end
 
