@@ -222,7 +222,11 @@ Memory Bank、任务事实源和审校记录解决的是工件层记忆；Mob �
 
 ## 07 · Figure：研发操作系统三层图
 
-本章图示方向为“研发操作系统三层图”：
+本章图示为“研发操作系统三层图”：
+
+![图 10-1 · 研发操作系统三层图](images/ch10-org-operating-system.svg){.core-figure width=100%}
+
+源文件：`book/images/ch10-org-operating-system.svg`。三层结构：
 
 ```text
 People & Agents  →  Responsibility (RACI)
@@ -232,9 +236,7 @@ Collaboration    →  Cadence (Mob + async review)
 Evidence & Value →  Scorecard + Dashboard
 ```
 
-图中必须标出：Accountable 属于人；Agent 可以 Responsible；Dashboard 是观测面而不是责任本身；记分卡输出是扩大／收缩／停用，而不是更多虚荣指标。
-
-若后续生成独立 SVG，可命名为 `book/images/ch10-org-operating-system.svg`，采用宽屏三层布局：上层责任，中层节奏，下层度量与驾驶舱，右侧保留 Scale Decision。
+图中必须标出：Accountable 属于人；Agent 可以 Responsible；Dashboard 是观测面而不是责任本身；记分卡输出是扩大／收缩／停用，而不是更多虚荣指标。右侧保留 Scale Decision。
 
 ## 08 · Boundary：本章不解决什么
 

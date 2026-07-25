@@ -49,6 +49,16 @@ SUPPORT_FILES = (
     Path("book/templates/release-pdf-header.tex"),
     Path("book/images/cover.png"),
     Path("book/images/fig0-1.svg"),
+    Path("book/images/chapter-figures.json"),
+    Path("book/images/ch02-human-judgment-gate.svg"),
+    Path("book/images/ch03-intent-to-bolt.svg"),
+    Path("book/images/ch04-memory-bank-stack.svg"),
+    Path("book/images/ch05-bolt-selection-matrix.svg"),
+    Path("book/images/ch06-exsecutio-loop.svg"),
+    Path("book/images/ch07-verification-evidence-chain.svg"),
+    Path("book/images/ch08-operations-loop.svg"),
+    Path("book/images/ch09-risk-ceremony-matrix.svg"),
+    Path("book/images/ch10-org-operating-system.svg"),
 )
 RELEASE_PROFILE_FILTER = Path("book/filters/release-profile.lua")
 MERMAID_BLOCK = re.compile(r"^```mermaid[^\n]*\n(.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL)

@@ -291,7 +291,11 @@ Plan 在这里扮演了两个角色：它给 AI 一个清晰任务边界，也�
 
 ## 07 · Figure：Exsecutio 执行闭环
 
-本章图示方向为“Exsecutio 执行闭环”：
+本章图示为“Exsecutio 执行闭环”：
+
+![图 6-1 · Exsecutio 执行闭环](images/ch06-exsecutio-loop.svg){.core-figure width=100%}
+
+源文件：`book/images/ch06-exsecutio-loop.svg`。主线与回路：
 
 ```text
 Plan ──▶ Execute ──▶ Verify ──▶ Repair ──▶ Walkthrough
@@ -300,7 +304,7 @@ Plan ──▶ Execute ──▶ Verify ──▶ Repair ──▶ Walkthrough
  └──────────── Evidence / Feedback ◀────── Handoff
 ```
 
-若后续生成独立 SVG，可命名为 `book/images/ch06-exsecutio-loop.svg`，采用宽屏布局：主流程水平展开，Plan、Execute、Verify、Repair、Walkthrough 使用统一卡片；失败回路从 Verify 低权重返回 Repair，再回到 Verify；Walkthrough 输出到下一阶段接收区；反馈线返回共同输入或约束区域，而不是只指向单一节点。
+主流程水平展开；失败回路从 Verify 低权重返回 Repair，再回到 Verify；Walkthrough 输出到下一阶段接收区；反馈线返回共同输入或约束区域，而不是只指向单一节点。
 
 这张图要帮助读者看见三件事：
 

@@ -184,7 +184,11 @@ D19-T02 阶段可以先定义实验应该怎样支撑本章：
 
 ## 06 · Figure：Bolt 选择矩阵
 
-本章图示方向为“Bolt 选择矩阵”：
+本章图示为“Bolt 选择矩阵”：
+
+![图 5-1 · Bolt 选择矩阵](images/ch05-bolt-selection-matrix.svg){.core-figure width=100%}
+
+源文件：`book/images/ch05-bolt-selection-matrix.svg`。矩阵读法：
 
 ```text
 Low Complexity / Low Risk / Reversible
@@ -196,7 +200,7 @@ High Domain Complexity / Cross-boundary Risk / Hard to Reverse
   → Model → Design → ADR → Implement → Test
 ```
 
-若后续生成独立 SVG，可命名为 `book/images/ch05-bolt-selection-matrix.svg`，采用宽屏矩阵布局：横轴为领域复杂度，纵轴为风险/不可逆性；左下为 Simple，右上为 DDD，中间区域标注“拆分 Bolt 或增加门禁”。
+横轴为领域复杂度，纵轴为风险/不可逆性；左下为 Simple，右上为 DDD，中间区域标注“拆分 Bolt 或增加门禁”。
 
 这张图的核心不是画两个象限，而是帮助读者做选择。一个任务如果在左下角，Simple Construction 通常够用；如果在右上角，DDD Construction 更稳；如果落在中间灰区，常见处理不是拍脑袋二选一，而是先拆分 Bolt，或者给 Simple Bolt 增加额外门禁。
 

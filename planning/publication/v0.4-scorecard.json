@@ -27,7 +27,7 @@
     "readiness_ready"
   ],
   "baseline_commit": "d48da3a",
-  "current_round": "06",
+  "current_round": "16",
   "rounds": [
     {
       "id": "00",
@@ -112,6 +112,126 @@
       "release": 2,
       "total": 52,
       "notes": "四个目标实验全部 verified；SHIP verified=6/18。"
+    },
+    {
+      "id": "07",
+      "name": "svg-contract-and-build",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 12,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 62,
+      "notes": "chapter-figures.json、SUPPORT_FILES 与 test_chapter_figures 完成。"
+    },
+    {
+      "id": "08",
+      "name": "ch03-svg",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 15,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 65,
+      "notes": "CH-03 Intent→Bolt SVG 嵌入并通过 audit。"
+    },
+    {
+      "id": "09",
+      "name": "ch06-svg",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 18,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 68,
+      "notes": "CH-06 Exsecutio 闭环 SVG；保留 Exsecutio 拼写。"
+    },
+    {
+      "id": "10",
+      "name": "ch04-svg",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 20,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 70,
+      "notes": "CH-04 Memory Bank 恢复栈 SVG。"
+    },
+    {
+      "id": "11",
+      "name": "ch05-svg",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 22,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 72,
+      "notes": "CH-05 Bolt 选择矩阵 SVG。"
+    },
+    {
+      "id": "12",
+      "name": "ch07-svg",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 24,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 74,
+      "notes": "CH-07 验证证据链 SVG；与 Runtime Verify 边界清楚。"
+    },
+    {
+      "id": "13",
+      "name": "ch08-svg",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 26,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 76,
+      "notes": "CH-08 Operations 闭环 SVG；必含 Runtime Verify。"
+    },
+    {
+      "id": "14",
+      "name": "ch09-svg",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 27,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 77,
+      "notes": "CH-09 风险—仪式矩阵 SVG。"
+    },
+    {
+      "id": "15",
+      "name": "ch10-svg",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 28,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 78,
+      "notes": "CH-10 研发操作系统三层图 SVG。"
+    },
+    {
+      "id": "16",
+      "name": "ch02-svg-and-ch01-reuse",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 28,
+      "reader_feedback": 5,
+      "book_integration": 10,
+      "release": 2,
+      "total": 78,
+      "notes": "CH-02 人类判断门禁 SVG；CH-01 继续复用 fig0-1；九章独立 SVG 齐备。"
     }
   ]
 }

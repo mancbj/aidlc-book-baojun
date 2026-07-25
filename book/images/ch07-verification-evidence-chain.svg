@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">分层验证证据链</title>
+  <desc id="desc">候选物依次经过确定性检查、独立测试、模型评审与人工判断；四层分别产出机器证据、行为证据、风险线索与批准/拒绝，并汇聚为 Release、Rework 或 Escalate。模型评审位于人工判断之前，服务而非替代人的裁决。</desc>
+  <defs>
+    <style>
+      svg {
+        --background: #F7F8FA;
+        --surface: #FFFFFF;
+        --ink: #252A31;
+        --muted: #5F6671;
+        --border: #DDE1E7;
+        --blue: #0F62FE;
+        --green: #24A148;
+        --purple: #8A3FFC;
+      }
+      .canvas { fill: #F7F8FA; fill: var(--background); }
+      .card {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .zone {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .zone-mid {
+        fill: #F7F8FA;
+        fill: var(--background);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        stroke-dasharray: 4 4;
+        vector-effect: non-scaling-stroke;
+      }
+      .cell {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .accent-blue { fill: #0F62FE; fill: var(--blue); }
+      .accent-green { fill: #24A148; fill: var(--green); }
+      .accent-purple { fill: #8A3FFC; fill: var(--purple); }
+      .title, .body, .note {
+        font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif;
+        fill: #252A31;
+        fill: var(--ink);
+      }
+      .title { font-size: 26px; font-weight: 700; }
+      .body { font-size: 16px; font-weight: 650; }
+      .note { font-size: 12px; font-weight: 450; fill: #5F6671; fill: var(--muted); }
+      .kicker, .section-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .axis-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .path-term {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 10px;
+        font-weight: 400;
+      }
+      .formula-term {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      .axis {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .flow {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .rail {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .feedback {
+        fill: none;
+        stroke: #0F62FE;
+        stroke: var(--blue);
+        stroke-width: 1.3;
+        stroke-dasharray: 4 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.72;
+        vector-effect: non-scaling-stroke;
+      }
+      .repair-loop {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.4;
+        stroke-dasharray: 3 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.85;
+        vector-effect: non-scaling-stroke;
+      }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6671"/>
+    </marker>
+    <marker id="feedback-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#0F62FE"/>
+    </marker>
+  </defs>
+  <rect class="canvas" x="0" y="0" width="960" height="540"/>
+
+  <g id="figure-heading" data-role="heading">
+    <text class="note kicker" x="64" y="40">VERIFICATION · 07</text>
+    <text class="title" x="64" y="72">分层验证证据链</text>
+  </g>
+
+  <g id="thesis" data-role="thesis" data-card="thesis" transform="translate(64 92)">
+    <rect class="card" x="0" y="0" width="832" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="accent accent-blue" x="0" y="0" width="5" height="56" rx="2"/>
+    <text class="body" x="24" y="24">验证是证据链，不是单一动作</text>
+    <text class="note" x="24" y="44">模型评审在人工判断之前，服务而不替人盖章</text>
+  </g>
+
+  <g id="section-labels" data-role="labels">
+    <text class="note section-label" x="64" y="176">CANDIDATE</text>
+    <text class="note section-label" x="280" y="176">EVIDENCE LAYERS</text>
+    <text class="note section-label" x="760" y="176">DECISION</text>
+  </g>
+
+  <g id="inputs" data-role="inputs">
+    <g data-card="candidate" data-stage="input" transform="translate(64 220)">
+      <rect class="card" x="0" y="0" width="152" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">Candidate</text>
+      <text class="note" x="16" y="56">待验证候选</text>
+    </g>
+  </g>
+
+  <g id="shared-input-rail" data-role="shared-input">
+    <path class="flow" d="M216 260H248" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+  </g>
+
+  <g id="layers" data-role="process">
+    <g data-card="deterministic" data-stage="main" transform="translate(248 200)">
+      <rect class="card" x="0" y="0" width="120" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">确定性检查</text>
+      <text class="note" x="16" y="56">机器证据</text>
+    </g>
+    <path class="flow" d="M368 240H384" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="independent-tests" data-stage="main" transform="translate(384 200)">
+      <rect class="card" x="0" y="0" width="120" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">独立测试</text>
+      <text class="note" x="16" y="56">行为证据</text>
+    </g>
+    <path class="flow" d="M504 240H520" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="model-review" data-stage="main" transform="translate(520 200)">
+      <rect class="card" x="0" y="0" width="120" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">模型评审</text>
+      <text class="note" x="16" y="56">风险线索</text>
+    </g>
+    <path class="flow" d="M640 240H656" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="human-judgment" data-stage="main" transform="translate(656 200)">
+      <rect class="card" x="0" y="0" width="120" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">人工判断</text>
+      <text class="note" x="16" y="56">批准 / 拒绝</text>
+    </g>
+  </g>
+
+  <path class="flow" d="M776 240H792" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+
+  <g id="decision" data-role="output">
+    <g data-card="release" transform="translate(792 168)">
+      <rect class="card" x="0" y="0" width="120" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="56" rx="2"/>
+      <text class="body" x="16" y="24">Release</text>
+      <text class="note" x="16" y="44">可批准发布</text>
+    </g>
+    <g data-card="rework" transform="translate(792 240)">
+      <rect class="card" x="0" y="0" width="120" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="56" rx="2"/>
+      <text class="body" x="16" y="24">Rework</text>
+      <text class="note" x="16" y="44">返回修复</text>
+    </g>
+    <g data-card="escalate" transform="translate(792 312)">
+      <rect class="card" x="0" y="0" width="120" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="56" rx="2"/>
+      <text class="body" x="16" y="24">Escalate</text>
+      <text class="note" x="16" y="44">升级风险</text>
+    </g>
+  </g>
+
+  <g id="evidence-types" data-role="constraints">
+    <g data-card="evidence-summary" transform="translate(248 372)">
+      <rect class="card" x="0" y="0" width="528" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="20" y="32">四层证据汇聚</text>
+      <text class="note" x="20" y="54">机器 · 行为 · 风险线索 · 人工裁决</text>
+    </g>
+  </g>
+
+  <g id="layer-to-evidence" data-role="process">
+    <path class="rail" d="M308 280V372" vector-effect="non-scaling-stroke"/>
+    <path class="rail" d="M444 280V372" vector-effect="non-scaling-stroke"/>
+    <path class="rail" d="M580 280V372" vector-effect="non-scaling-stroke"/>
+    <path class="rail" d="M716 280V372" vector-effect="non-scaling-stroke"/>
+  </g>
+
+  <g id="feedback-loop" data-role="feedback" data-target="shared-input-rail">
+    <path class="feedback" d="M852 368V488H232V280" marker-end="url(#feedback-arrow)" vector-effect="non-scaling-stroke"/>
+    <text class="note" x="520" y="516" text-anchor="middle">Rework / Escalate 反馈回候选与约束</text>
+  </g>
+
+</svg>

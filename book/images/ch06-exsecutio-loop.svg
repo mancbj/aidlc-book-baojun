@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Exsecutio 执行闭环</title>
+  <desc id="desc">Exsecutio 主线为 Plan → Execute → Verify → Repair → Walkthrough；Verify 与 Repair 形成失败回路，Walkthrough 交接后由 Evidence / Feedback 返回共同约束区。</desc>
+  <defs>
+    <style>
+      svg {
+        --background: #F7F8FA;
+        --surface: #FFFFFF;
+        --ink: #252A31;
+        --muted: #5F6671;
+        --border: #DDE1E7;
+        --blue: #0F62FE;
+        --green: #24A148;
+        --purple: #8A3FFC;
+      }
+      .canvas { fill: #F7F8FA; fill: var(--background); }
+      .card {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .zone {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .zone-mid {
+        fill: #F7F8FA;
+        fill: var(--background);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        stroke-dasharray: 4 4;
+        vector-effect: non-scaling-stroke;
+      }
+      .cell {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .accent-blue { fill: #0F62FE; fill: var(--blue); }
+      .accent-green { fill: #24A148; fill: var(--green); }
+      .accent-purple { fill: #8A3FFC; fill: var(--purple); }
+      .title, .body, .note {
+        font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif;
+        fill: #252A31;
+        fill: var(--ink);
+      }
+      .title { font-size: 26px; font-weight: 700; }
+      .body { font-size: 16px; font-weight: 650; }
+      .note { font-size: 12px; font-weight: 450; fill: #5F6671; fill: var(--muted); }
+      .kicker, .section-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .axis-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .path-term {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 10px;
+        font-weight: 400;
+      }
+      .formula-term {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      .axis {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .flow {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .rail {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .feedback {
+        fill: none;
+        stroke: #0F62FE;
+        stroke: var(--blue);
+        stroke-width: 1.3;
+        stroke-dasharray: 4 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.72;
+        vector-effect: non-scaling-stroke;
+      }
+      .repair-loop {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.4;
+        stroke-dasharray: 3 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.85;
+        vector-effect: non-scaling-stroke;
+      }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6671"/>
+    </marker>
+    <marker id="feedback-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#0F62FE"/>
+    </marker>
+  </defs>
+  <rect class="canvas" x="0" y="0" width="960" height="540"/>
+
+  <g id="figure-heading" data-role="heading">
+    <text class="note kicker" x="64" y="40">EXSECUTIO · 06</text>
+    <text class="title" x="64" y="72">Exsecutio 执行闭环</text>
+  </g>
+
+  <g id="thesis" data-role="thesis" data-card="thesis" transform="translate(64 92)">
+    <rect class="card" x="0" y="0" width="832" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="accent accent-purple" x="0" y="0" width="5" height="56" rx="2"/>
+    <text class="body" x="24" y="24">Exsecutio · Plan to Handoff</text>
+    <text class="note formula-term" x="24" y="44">Engineering with Exsecutio</text>
+  </g>
+
+  <g id="section-labels" data-role="labels">
+    <text class="note section-label" x="64" y="176">CONSTRAINTS</text>
+    <text class="note section-label" x="280" y="176">MAIN LOOP</text>
+    <text class="note section-label" x="760" y="176">HANDOFF</text>
+  </g>
+
+  <g id="constraints" data-role="constraints">
+    <g data-card="bolt-context" transform="translate(64 196)">
+      <rect class="card" x="0" y="0" width="168" height="80" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="80" rx="2"/>
+      <text class="body" x="16" y="34">Bolt Context</text>
+      <text class="note" x="16" y="56">计划、边界、门禁</text>
+    </g>
+  </g>
+
+  <g id="shared-input-rail" data-role="shared-input">
+    <path class="flow" d="M232 236H264" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+  </g>
+
+  <g id="main-loop" data-role="process">
+    <g data-card="plan" data-stage="main" transform="translate(264 200)">
+      <rect class="card" x="0" y="0" width="104" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">Plan</text>
+      <text class="note" x="16" y="52">可执行步骤</text>
+    </g>
+    <path class="flow" d="M368 236H384" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="execute" data-stage="main" transform="translate(384 200)">
+      <rect class="card" x="0" y="0" width="104" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">Execute</text>
+      <text class="note" x="16" y="52">沿计划推进</text>
+    </g>
+    <path class="flow" d="M488 236H504" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="verify" data-stage="main" transform="translate(504 200)">
+      <rect class="card" x="0" y="0" width="104" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">Verify</text>
+      <text class="note" x="16" y="52">可复核证据</text>
+    </g>
+    <path class="flow" d="M608 236H624" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="repair" data-stage="main" transform="translate(624 200)">
+      <rect class="card" x="0" y="0" width="104" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">Repair</text>
+      <text class="note" x="16" y="52">纠偏并复测</text>
+    </g>
+    <path class="flow" d="M728 236H744" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="walkthrough" data-stage="main" transform="translate(744 200)">
+      <rect class="card" x="0" y="0" width="168" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">Walkthrough</text>
+      <text class="note" x="16" y="52">交接说明</text>
+    </g>
+  </g>
+
+  <g id="repair-cycle" data-role="process">
+    <path class="repair-loop" d="M556 272V320H676V272" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <text class="note" x="616" y="312" text-anchor="middle">失败回路</text>
+  </g>
+
+  <g id="output" data-role="output">
+    <g data-card="handoff" transform="translate(680 372)">
+      <rect class="card" x="0" y="0" width="232" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="16" y="32">Handoff</text>
+      <text class="note" x="16" y="54">交付候选与上下文</text>
+    </g>
+  </g>
+
+  <path class="flow" d="M828 272V372" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+
+  <g id="feedback-loop" data-role="feedback" data-target="constraints">
+    <path class="feedback" d="M680 408H148V276" marker-end="url(#feedback-arrow)" vector-effect="non-scaling-stroke"/>
+    <text class="note" x="400" y="456">Evidence / Feedback → 共同约束</text>
+  </g>
+
+</svg>

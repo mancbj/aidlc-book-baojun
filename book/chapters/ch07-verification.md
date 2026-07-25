@@ -264,7 +264,11 @@ Human Judgment accepts, rejects, escalates, or defers them.
 
 ## 08 · Figure：分层验证证据链
 
-本章图示方向为“分层验证证据链”：
+本章图示为“分层验证证据链”：
+
+![图 7-1 · 分层验证证据链](images/ch07-verification-evidence-chain.svg){.core-figure width=100%}
+
+源文件：`book/images/ch07-verification-evidence-chain.svg`。结构摘要：
 
 ```text
 Candidate
@@ -274,7 +278,7 @@ Deterministic Checks → Independent Tests → Model Review → Human Judgment
 Machine Evidence       Behavioral Evidence  Risk Findings   Approval / Rejection
 ```
 
-若后续生成独立 SVG，可命名为 `book/images/ch07-verification-evidence-chain.svg`，采用宽屏分层布局：候选物在左，四层证据水平展开，底部汇聚为“Release / Rework / Escalate”三类判定。
+候选物在左，四层证据水平展开，底部汇聚为“Release / Rework / Escalate”三类判定。这里的 Verify 是交付候选验证，不等于 CH-08 的 Runtime Verify。
 
 这张图要让读者看见三件事：
 

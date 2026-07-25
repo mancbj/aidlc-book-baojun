@@ -157,7 +157,11 @@ python3 experiments/exp-03-02/quickstart.py --sample
 
 ## 05 · Figure：向下分解与向上追踪
 
-本章的图应当帮助读者看见两个方向：向下分解，向上追踪。
+本章的图应当帮助读者看见两个方向：向下分解，向上追踪。独立 SVG 把这条链固定为可审计源文件；下面的 Mermaid 保留为构建期可读展开。
+
+![图 3-1 · Intent 到 Bolt 追踪链](images/ch03-intent-to-bolt.svg){.core-figure width=100%}
+
+源文件：`book/images/ch03-intent-to-bolt.svg`。它是全书核心图 `book/images/fig0-1.svg` 的局部展开：把“总结构”落到 Inception 的分解链上。
 
 ```mermaid
 flowchart TB
@@ -171,8 +175,6 @@ flowchart TB
     R -. "目标证据向上回链" .-> I
 ```
 
-当前 v0.1 书稿已包含全书核心图 `book/images/fig0-1.svg`。它解释 AI-DLC 的总结构：人的判断、AI 能力与 Engineering with Exsecutio 如何共同走向确定性交付。本章样章中的 Intent-to-Bolt 图是它的局部展开：把“总结构”落到 Inception 的分解链上。
-
 为了让图不变成装饰，正文中的每个节点都要有证据路径：
 
 | Node | Evidence Entry |
@@ -183,8 +185,6 @@ flowchart TB
 | Stories | `memory-bank/story-index.md` |
 | Bolt Plan | `memory-bank/bolts/001-github-writing-system-ui/bolt.md` |
 | Progress Events | `progress/events/events.jsonl` |
-
-图的生成规则应延续本书 SVG 规约：宽屏优先、严格网格、白色卡片、浅灰边框、语义色竖线、可编辑文本、无外围装饰边框。后续如果为本章单独生成 `book/images/ch03-intent-to-bolt.svg`，必须保留源文件和可再生方法。
 
 ## 06 · Review：可读稿自检与后续审校入口
 
@@ -200,7 +200,7 @@ flowchart TB
 
 第四，术语一致性：Intent、Requirement、System Context、Unit、Story、Bolt、Checkpoint 首次出现时已经定义，之后不要随意改成“目标、需求、模块、任务、执行包”这类近义词混用。中文解释可以灵活，英文术语要稳定。
 
-第五，正文与实验对应：所有实践观点都必须能追到证据入口。本章的证据入口包括 `experiments/sample/README.md`、`experiments/sample/output/sample.json`、五类失败样例、测试命令、`planning/sample-experiment.md` 和 `book/images/fig0-1.svg`。
+第五，正文与实验对应：所有实践观点都必须能追到证据入口。本章的证据入口包括 `experiments/sample/README.md`、`experiments/sample/output/sample.json`、五类失败样例、测试命令、`planning/sample-experiment.md`、`book/images/fig0-1.svg` 和 `book/images/ch03-intent-to-bolt.svg`。
 
 ## Reader Exercise
 
@@ -223,6 +223,7 @@ flowchart TB
 - `experiments/sample/output/sample.json`：合法样例输出证据。
 - `experiments/sample/output/README.md`：成功与失败样例说明。
 - `book/images/fig0-1.svg`：全书 AI-DLC 核心图。
+- `book/images/ch03-intent-to-bolt.svg`：Intent 到 Bolt 双向追踪图。
 - `book/chapters/sample.md`：v0.1 样章证据副本。
 - `planning/reviews/ch-03-writing-review.md`：正式十章生产线 CH-03 五类审校记录。
 - `progress/chapters.json`：章节事实源与阶段状态。

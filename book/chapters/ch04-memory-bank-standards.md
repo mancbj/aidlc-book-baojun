@@ -240,7 +240,11 @@ python3 experiments/exp-04-02/quickstart.py --sample
 
 ## 06 · Figure：新会话冷启动恢复栈
 
-本章图示方向为“新会话冷启动恢复栈”：
+本章图示为“新会话冷启动恢复栈”：
+
+![图 4-1 · Memory Bank 恢复栈](images/ch04-memory-bank-stack.svg){.core-figure width=100%}
+
+源文件：`book/images/ch04-memory-bank-stack.svg`。结构摘要：
 
 ```text
 New Agent Session
@@ -264,7 +268,7 @@ Next Session Recovers from Updated Facts
 2. 二级：Current State、Intent & Scope、Standards、Evidence Links 四类输入。
 3. 三级：Events、Snapshots、Dashboard 等审计输出。
 
-若后续生成独立 SVG，可命名为 `book/images/ch04-memory-bank-stack.svg`，保持技术专著级、宽屏、瑞士网格、IBM Carbon 倾向的克制风格，并避免把 Memory Bank 画成普通资料库。
+不要把 Memory Bank 读成普通资料库：恢复栈的价值在于“下一次会话如何安全继续”。
 
 ## 07 · Boundary：本章不解决什么
 

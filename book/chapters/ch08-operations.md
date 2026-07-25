@@ -296,7 +296,11 @@ publish
 
 ## 07 · Figure：Operations 运行闭环
 
-本章图示方向为“Operations 运行闭环”：
+本章图示为“Operations 运行闭环”：
+
+![图 8-1 · Operations 运行闭环](images/ch08-operations-loop.svg){.core-figure width=100%}
+
+源文件：`book/images/ch08-operations-loop.svg`。运行链摘要：
 
 ```text
 Verified Candidate
@@ -306,7 +310,7 @@ Build → Deploy → Runtime Verify → Monitor
   └──────── Recover / Rebuild ◀────┘
 ```
 
-若后续生成独立 SVG，可命名为 `book/images/ch08-operations-loop.svg`，采用宽屏运行链布局：左侧为 Verified Candidate，中间为 Build / Deploy / Runtime Verify / Monitor，底部低权重回路为 Recover / Rebuild，右侧为 Sustainable Runtime。
+左侧为 Verified Candidate，中间为 Build / Deploy / Runtime Verify / Monitor，底部低权重回路为 Recover / Rebuild，右侧为 Sustainable Runtime。Runtime Verify 属于运行时核验，不等于 CH-07 的交付候选验证。
 
 这张图要帮助读者看见三件事：
 

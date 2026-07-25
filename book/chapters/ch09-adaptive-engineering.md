@@ -250,7 +250,11 @@ AI 不会自动纠正这种不公平。它只会让错误的流程跑得更快�
 
 ## 07 · Figure：风险—仪式矩阵
 
-本章图示方向为“风险—仪式矩阵”：
+本章图示为“风险—仪式矩阵”：
+
+![图 9-1 · 风险—仪式矩阵](images/ch09-risk-ceremony-matrix.svg){.core-figure width=100%}
+
+源文件：`book/images/ch09-risk-ceremony-matrix.svg`。矩阵读法：
 
 ```text
                 Low Ceremony -------- High Ceremony
@@ -259,9 +263,7 @@ Medium Risk     FIRE                  FIRE / AI-DLC
 Low Risk        Simple                Simple / FIRE
 ```
 
-旁侧应同时列出五个风险维度：Complexity、Codebase State、Compliance、Team Scale、Reversibility。矩阵中的落点是典型倾向，不是强制法令；每个落点都应能追问：为什么、为什么不、检查点预算是什么。
-
-若后续生成独立 SVG，可命名为 `book/images/ch09-risk-ceremony-matrix.svg`，采用宽屏矩阵布局：横轴为仪式强度，纵轴为风险等级，三个 Flow 以克制色块标注典型落点，右侧保留不适用条件与升级／降级触发器。
+旁侧同时列出五个风险维度：Complexity、Codebase State、Compliance、Team Scale、Reversibility。矩阵中的落点是典型倾向，不是强制法令；每个落点都应能追问：为什么、为什么不、检查点预算是什么。右侧保留不适用条件与升级／降级触发器。
 
 ## 08 · Boundary：本章不解决什么
 

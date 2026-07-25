@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Intent 到 Bolt 追踪链</title>
+  <desc id="desc">Intent 向下分解为 Requirements、System Context、Units、Stories 与 Bolt Plan；完成与验收证据沿虚线向上回链。证据路径包括 memory-bank/intents/.../requirements.md、planning/sample-experiment.md、memory-bank/.../units.md、memory-bank/story-index.md、memory-bank/bolts/.../bolt.md、progress/events/events.jsonl。</desc>
+  <defs>
+    <style>
+      svg {
+        --background: #F7F8FA;
+        --surface: #FFFFFF;
+        --ink: #252A31;
+        --muted: #5F6671;
+        --border: #DDE1E7;
+        --blue: #0F62FE;
+        --green: #24A148;
+        --purple: #8A3FFC;
+      }
+      .canvas { fill: #F7F8FA; fill: var(--background); }
+      .card {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .zone {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .zone-mid {
+        fill: #F7F8FA;
+        fill: var(--background);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        stroke-dasharray: 4 4;
+        vector-effect: non-scaling-stroke;
+      }
+      .cell {
+        fill: #FFFFFF;
+        fill: var(--surface);
+        stroke: #DDE1E7;
+        stroke: var(--border);
+        stroke-width: 1;
+        vector-effect: non-scaling-stroke;
+      }
+      .accent-blue { fill: #0F62FE; fill: var(--blue); }
+      .accent-green { fill: #24A148; fill: var(--green); }
+      .accent-purple { fill: #8A3FFC; fill: var(--purple); }
+      .title, .body, .note {
+        font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif;
+        fill: #252A31;
+        fill: var(--ink);
+      }
+      .title { font-size: 26px; font-weight: 700; }
+      .body { font-size: 16px; font-weight: 650; }
+      .note { font-size: 12px; font-weight: 450; fill: #5F6671; fill: var(--muted); }
+      .kicker, .section-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .axis-label {
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+      }
+      .path-term {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 10px;
+        font-weight: 400;
+      }
+      .formula-term {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      .axis {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .flow {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .rail {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .feedback {
+        fill: none;
+        stroke: #0F62FE;
+        stroke: var(--blue);
+        stroke-width: 1.3;
+        stroke-dasharray: 4 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.72;
+        vector-effect: non-scaling-stroke;
+      }
+      .repair-loop {
+        fill: none;
+        stroke: #5F6671;
+        stroke: var(--muted);
+        stroke-width: 1.4;
+        stroke-dasharray: 3 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.85;
+        vector-effect: non-scaling-stroke;
+      }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6671"/>
+    </marker>
+    <marker id="feedback-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" markerUnits="strokeWidth" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#0F62FE"/>
+    </marker>
+  </defs>
+  <rect class="canvas" x="0" y="0" width="960" height="540"/>
+
+  <g id="figure-heading" data-role="heading">
+    <text class="note kicker" x="64" y="40">INCEPTION · 03</text>
+    <text class="title" x="64" y="72">Intent 到 Bolt 追踪链</text>
+  </g>
+
+  <g id="thesis" data-role="thesis" data-card="thesis" transform="translate(64 92)">
+    <rect class="card" x="0" y="0" width="832" height="56" rx="4" vector-effect="non-scaling-stroke"/>
+    <rect class="accent accent-blue" x="0" y="0" width="5" height="56" rx="2"/>
+    <text class="body" x="24" y="24">向下分解 · 向上追踪</text>
+    <text class="note" x="24" y="44">每个节点对应仓库证据路径，避免装饰性分解</text>
+  </g>
+
+  <g id="section-labels" data-role="labels">
+    <text class="note section-label" x="48" y="176">DECOMPOSE</text>
+    <text class="note section-label" x="456" y="176">PLAN</text>
+    <text class="note section-label" x="760" y="176">BOLT</text>
+  </g>
+
+  <g id="decomposition" data-role="process">
+    <g data-card="intent" data-stage="main" transform="translate(48 196)">
+      <rect class="card" x="0" y="0" width="132" height="88" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="88" rx="2"/>
+      <text class="body" x="16" y="34">Intent</text>
+      <text class="note path-term" x="16" y="58">.../req.md</text>
+    </g>
+    <path class="flow" d="M180 240H196" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="requirements" data-stage="main" transform="translate(196 196)">
+      <rect class="card" x="0" y="0" width="132" height="88" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="88" rx="2"/>
+      <text class="body" x="16" y="34">需求</text>
+      <text class="note path-term" x="16" y="58">sample-exp.md</text>
+    </g>
+    <path class="flow" d="M328 240H344" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="context" data-stage="main" transform="translate(344 196)">
+      <rect class="card" x="0" y="0" width="132" height="88" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="88" rx="2"/>
+      <text class="body" x="16" y="34">Context</text>
+      <text class="note path-term" x="16" y="58">interfaces</text>
+    </g>
+    <path class="flow" d="M476 240H492" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="units" data-stage="main" transform="translate(492 196)">
+      <rect class="card" x="0" y="0" width="132" height="88" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-purple" x="0" y="0" width="5" height="88" rx="2"/>
+      <text class="body" x="16" y="34">Units</text>
+      <text class="note path-term" x="16" y="58">.../units.md</text>
+    </g>
+    <path class="flow" d="M624 240H640" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="stories" data-stage="main" transform="translate(640 196)">
+      <rect class="card" x="0" y="0" width="132" height="88" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="88" rx="2"/>
+      <text class="body" x="16" y="34">Stories</text>
+      <text class="note path-term" x="16" y="58">story-index.md</text>
+    </g>
+    <path class="flow" d="M772 240H788" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+    <g data-card="bolt-plan" data-stage="main" transform="translate(788 196)">
+      <rect class="card" x="0" y="0" width="132" height="88" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-green" x="0" y="0" width="5" height="88" rx="2"/>
+      <text class="body" x="16" y="34">Bolt Plan</text>
+      <text class="note path-term" x="16" y="58">.../bolt.md</text>
+    </g>
+  </g>
+
+  <g id="constraints" data-role="constraints">
+    <g data-card="progress-events" transform="translate(288 360)">
+      <rect class="card" x="0" y="0" width="384" height="72" rx="4" vector-effect="non-scaling-stroke"/>
+      <rect class="accent accent-blue" x="0" y="0" width="5" height="72" rx="2"/>
+      <text class="body" x="24" y="32">Progress Events</text>
+      <text class="note path-term" x="24" y="54">progress/events/events.jsonl</text>
+    </g>
+  </g>
+
+  <path class="flow" d="M854 284V360" marker-end="url(#arrow)" vector-effect="non-scaling-stroke"/>
+
+  <g id="feedback-loop" data-role="feedback" data-target="constraints">
+    <path class="feedback" d="M288 396H114V284" marker-end="url(#feedback-arrow)" vector-effect="non-scaling-stroke"/>
+    <text class="note" x="480" y="480" text-anchor="middle">完成与验收证据向上回链至 Intent</text>
+  </g>
+
+</svg>

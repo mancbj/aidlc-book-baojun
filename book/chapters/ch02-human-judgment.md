@@ -255,7 +255,11 @@ python3 experiments/exp-02-01/quickstart.py --sample
 
 ## 07 · Figure：本章图示入口
 
-本章图示可以命名为“人类判断门禁图”。它不是普通审批流程，而是 AI 主动性进入工程轨道前的判断结构。
+本章图示为“人类判断门禁图”。它不是普通审批流程，而是 AI 主动性进入工程轨道前的判断结构。
+
+![图 2-1 · 人类判断门禁](images/ch02-human-judgment-gate.svg){.core-figure width=100%}
+
+源文件：`book/images/ch02-human-judgment-gate.svg`。读图时抓住这条主链：
 
 ```text
 Intent
@@ -271,8 +275,6 @@ Intent
 
 1. AI Proposal 位于 Boundary 之后。AI 可以主动，但主动必须发生在边界之内。
 2. Evidence Record 会反馈回 Intent 与 Boundary。每次执行后的证据都会更新下一次人的判断。
-
-后续如果单独生成 SVG，应延续本书图表规约：宽屏优先、严格网格、白色卡片、浅灰边框、语义色竖线、可编辑文本、无外围装饰边框。
 
 ## 08 · Boundary：本章不展开什么
 
