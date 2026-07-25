@@ -71,3 +71,35 @@ Pages 根入口 `index.html` 是发布成功页，会显示 `Source commit`、`S
 候选目录只能由带 `.aidlc-generated` 标记的构建替换；脚本拒绝覆盖人工目录。正式 Release 已存在时，workflow 在上传前停止。
 
 HTML zip 的 entry 时间统一取 manifest 的 UTC `generated_at`，文件权限固定。相同事实、版本、commit 和生成时间应得到逐字节相同的 archive 与 SHA-256。
+
+
+## Patch-Grain Releases (v0.8.NNN)
+
+自 `v0.8` 起，可读发布采用三位补丁号，见 [`planning/releases/VERSIONING.md`](../planning/releases/VERSIONING.md)。
+
+对每个 patch 版本 `VERSION`（例如 `v0.8.003`）：
+
+```text
+python3 scripts/check_release_readiness.py \
+  --policy planning/releases/${VERSION}-policy.json \
+  --json-report releases/${VERSION}-rc/readiness.json \
+  --markdown-report releases/${VERSION}-rc/readiness.md
+
+python3 scripts/build_release_book.py --format all --output .artifacts/${VERSION}-loop/book-build
+python3 scripts/render_release_notes.py \
+  --readiness releases/${VERSION}-rc/readiness.json \
+  --output releases/${VERSION}-rc/release-notes.md \
+  --require-ready
+python3 scripts/prepare_release.py ${VERSION} \
+  --pdf releases/${VERSION}-rc/aidlc-book-${VERSION}.pdf \
+  --book-html releases/${VERSION}-rc/aidlc-book-${VERSION}-book.html \
+  --readiness releases/${VERSION}-rc/readiness.json \
+  --release-notes releases/${VERSION}-rc/release-notes.md \
+  --output .artifacts/${VERSION}-loop/release-candidate
+```
+
+注意事项：
+
+- `release.yml` 通过 `planning/releases/${VERSION}-policy.json` 解析门禁。
+- `post-release.yml` 目前仍只自动处理历史标签 `v0.1`；`v0.8.NNN` patch 的周期/回执由 Loop 手工写入（例如本仓库的 `v0.8.003-draft`）。
+- zip 只上 GitHub Release，不入库；RC 保留 HTML/PDF/readiness/notes/scorecard/audit。

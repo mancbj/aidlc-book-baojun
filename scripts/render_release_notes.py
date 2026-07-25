@@ -24,7 +24,15 @@ def render(root: Path, readiness: dict) -> str:
         for chapter in chapters
         if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
     )
-    if version.startswith("v0.8.002"):
+    if version.startswith("v0.8.003"):
+        highlights = [
+            "- 驾驶舱与进度投影同步到实验 verified=30/30，并激活 `v0.8.003-draft` 维护周期。",
+            "- patch-grain 文档对齐：`VERSIONING.md`、`docs/RELEASE-AUTOMATION.md`、`releases/README.md`。",
+            "- 全部实验保持 verified=30/30；不新增过宣称，不改写 triage。",
+            "- Reader 无真实回复时保留 `READER-RESPONSES` known-gap；下一版默认 `v0.8.004`。",
+        ]
+        next_goal = "v0.8.004：消化真实 Reader 反馈，或开启新内容周期。"
+    elif version.startswith("v0.8.002"):
         highlights = [
             "- 四个 KEEP-EXT 收尾转 verified：`EXP-07-03`、`EXP-08-03`、`EXP-09-03`、`EXP-10-03`（triage 不改写为 SHIP）。",
             "- 全部实验 verified=30/30；CI 合同测试覆盖全部 verified 的 SHIP / ALREADY / KEEP-EXT。",

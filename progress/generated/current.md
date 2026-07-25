@@ -2,21 +2,21 @@
 
 > 本文件由 `python3 scripts/generate_progress.py` 自动生成，请勿手工维护统计数字。
 
-- 目标：v0.1 已发布；十章写作冲刺
+- 目标：v0.8.003-draft · 持续更新与维护周期
 - 当前：Day 24 / 24，剩余 0 个计划日
 - 总进度：72/72（100.0%）
 - 加权进度：100.0%
 - Must：70/70（100.0%）
 - Should：2/2（100.0%）
 - 阻塞：0
-- 反馈：1 条；accepted 0 条
-- 下一周期：尚未激活
-- 事实最近更新：2026-07-25T07:11:21Z
-- 来源：`0d6255fd3670-working-tree-6f07fd750e74`
+- 反馈：9 条；accepted 0 条
+- 下一周期：v0.8.003-draft
+- 事实最近更新：2026-07-25T10:40:00Z
+- 来源：`e99de734cc1b-working-tree-65284fadaf99`
 
 ## 下一动作
 
-准备 v0.1 发布；等待真实发布回执激活下一周期
+1. **C03-T05 · 发布 v0.8.003 并写入回执** — MUST / 可开始 / v0.8.003-draft
 
 ## 阻塞
 
@@ -24,16 +24,16 @@
 
 ## 最近关键更新
 
-- `2026-07-25T07:12:18Z` · EXP-06-01 · Plan–Walkthrough 偏差审计器 · status：planned → verified (`EVT-f68d37a641db7674`)
-- `2026-07-25T07:12:18Z` · EXP-04-02 · Standards 漂移检测器 · status：planned → verified (`EVT-7dc6cf5425780633`)
-- `2026-07-25T07:12:18Z` · EXP-03-02 · Unit 与 Bolt 依赖 DAG 校验器 · status：planned → verified (`EVT-85564d8c75d94bc6`)
-- `2026-07-25T07:12:18Z` · EXP-02-01 · 不可委托判断清单生成器 · status：planned → verified (`EVT-563ff9363186ed13`)
-- `2026-07-24T13:38:41Z` · D24-T03 · CH-10 · 完成章节审校与证据对齐：ready → done (`EVT-99a95d46813cabff`)
-- `2026-07-24T13:38:41Z` · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 审校：pending → done (`EVT-7cf955da5ca8a05f`)
-- `2026-07-24T13:37:53Z` · D24-T03 · CH-10 · 完成章节审校与证据对齐：backlog → ready (`EVT-ed9b285e3c45c9f4`)
-- `2026-07-24T13:37:53Z` · D24-T02 · CH-10 · 完成章节可读稿：ready → done (`EVT-bfa89664b88d2f56`)
-- `2026-07-24T13:37:53Z` · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 图示：pending → done (`EVT-48a441304cc8a6be`)
-- `2026-07-24T13:37:53Z` · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 实验：pending → done (`EVT-0ada25e62ec3c739`)
+- `2026-07-25T09:18:18Z` · 激活 v0.8.003-draft 维护周期并同步实验 30/30 投影 (`EVT-e49a2c270bd554b3`)
+- `2026-07-25T09:18:18Z` · FB-009 · Reader-A/B/C：deferred (`EVT-5803c016485087bf`)
+- `2026-07-25T09:18:18Z` · FB-008 · Reader-A/B/C：deferred (`EVT-03f0e19502a08b6a`)
+- `2026-07-25T09:18:18Z` · FB-007 · Reader-A/B/C：deferred (`EVT-a6950906d7e18fc5`)
+- `2026-07-25T09:18:18Z` · FB-006 · Reader-A/B/C：deferred (`EVT-f2895823ff6d73b1`)
+- `2026-07-25T09:18:18Z` · FB-005 · Reader-A/B/C：deferred (`EVT-6ecbd84596b1ac14`)
+- `2026-07-25T09:18:18Z` · FB-004 · Reader-A/B/C：deferred (`EVT-d570a00b6cf7f55e`)
+- `2026-07-25T09:18:18Z` · FB-003 · Reader-A/B/C：deferred (`EVT-5aede4c95f45de4f`)
+- `2026-07-25T09:18:18Z` · FB-002 · Reader-A/B/C：deferred (`EVT-55fab0cf294ae444`)
+- `2026-07-25T09:18:18Z` · EXP-10-03 · Mob 协作与 Agent 交接复现 · status：planned → verified (`EVT-329b584c323d1b75`)
 
 ## 下钻入口
 

@@ -544,7 +544,7 @@
     "total": 10
   },
   "cycles": {
-    "active_cycle": null,
+    "active_cycle": "v0.8.003-draft",
     "href": "details.html#cycles",
     "preview_count": 0,
     "rows": [
@@ -557,15 +557,23 @@
         "status": "complete",
         "task_done": 3,
         "task_total": 3
+      },
+      {
+        "carried_gap_total": 1,
+        "carried_task_total": 0,
+        "href": "details.html#cycle-v0.8.003-draft",
+        "id": "v0.8.003-draft",
+        "monthly_target": "v0.8.003 patch maintenance release",
+        "status": "active",
+        "task_done": 4,
+        "task_total": 5
       }
     ]
   },
   "experiments": {
     "href": "details.html#experiments",
     "status_counts": {
-      "planned": 22,
-      "ready": 2,
-      "verified": 6
+      "verified": 30
     },
     "total": 30,
     "triage_counts": {
@@ -577,7 +585,7 @@
   "feedback": {
     "decision_counts": {
       "accepted": 0,
-      "deferred": 1,
+      "deferred": 9,
       "pending": 0,
       "rejected": 0
     },
@@ -587,145 +595,172 @@
       "not-invited": 0,
       "responded": 0
     },
-    "total": 1,
+    "total": 9,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-25T07:12:18Z",
+  "generated_at": "2026-07-25T09:18:18Z",
   "goal": {
     "all_tasks_done": true,
     "current_day": 24,
     "days_remaining": 0,
-    "name": "v0.1 已发布；十章写作冲刺",
+    "name": "v0.8.003-draft · 持续更新与维护周期",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-25T07:11:21Z",
-  "latest_snapshot": "../progress/snapshots/20260725T071218Z-fd3670-working-tree-6f07fd750e74.json",
-  "next_actions": [],
-  "recent_events": [
+  "latest_fact_update": "2026-07-25T10:40:00Z",
+  "latest_snapshot": "../progress/snapshots/20260725T091818Z-34cc1b-working-tree-65284fadaf99.json",
+  "next_actions": [
     {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-0ada25e62ec3c739",
-      "object_id": "CH-10:experiment",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:37:53Z",
-      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
-      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 实验：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-48a441304cc8a6be",
-      "object_id": "CH-10:figure",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:37:53Z",
-      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
-      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 图示：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-bfa89664b88d2f56",
-      "object_id": "D24-T02",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:37:53Z",
-      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
-      "summary": "D24-T02 · CH-10 · 完成章节可读稿：ready → done",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-ed9b285e3c45c9f4",
-      "object_id": "D24-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:37:53Z",
-      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
-      "summary": "D24-T03 · CH-10 · 完成章节审校与证据对齐：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-7cf955da5ca8a05f",
-      "object_id": "CH-10:review",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:38:41Z",
-      "source_id": "57eaced8d483-working-tree-8c4ac3b7145a",
-      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 审校：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-99a95d46813cabff",
-      "object_id": "D24-T03",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:38:41Z",
-      "source_id": "57eaced8d483-working-tree-8c4ac3b7145a",
-      "summary": "D24-T03 · CH-10 · 完成章节审校与证据对齐：ready → done",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "v0.4-loop",
-      "after": "verified",
-      "before": "planned",
-      "id": "EVT-563ff9363186ed13",
-      "object_id": "EXP-02-01:status",
-      "object_type": "experiment",
-      "occurred_at": "2026-07-25T07:12:18Z",
-      "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
-      "summary": "EXP-02-01 · 不可委托判断清单生成器 · status：planned → verified",
-      "type": "experiment_changed"
-    },
-    {
-      "actor": "v0.4-loop",
-      "after": "verified",
-      "before": "planned",
-      "id": "EVT-85564d8c75d94bc6",
-      "object_id": "EXP-03-02:status",
-      "object_type": "experiment",
-      "occurred_at": "2026-07-25T07:12:18Z",
-      "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
-      "summary": "EXP-03-02 · Unit 与 Bolt 依赖 DAG 校验器 · status：planned → verified",
-      "type": "experiment_changed"
-    },
-    {
-      "actor": "v0.4-loop",
-      "after": "verified",
-      "before": "planned",
-      "id": "EVT-7dc6cf5425780633",
-      "object_id": "EXP-04-02:status",
-      "object_type": "experiment",
-      "occurred_at": "2026-07-25T07:12:18Z",
-      "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
-      "summary": "EXP-04-02 · Standards 漂移检测器 · status：planned → verified",
-      "type": "experiment_changed"
-    },
-    {
-      "actor": "v0.4-loop",
-      "after": "verified",
-      "before": "planned",
-      "id": "EVT-f68d37a641db7674",
-      "object_id": "EXP-06-01:status",
-      "object_type": "experiment",
-      "occurred_at": "2026-07-25T07:12:18Z",
-      "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
-      "summary": "EXP-06-01 · Plan–Walkthrough 偏差审计器 · status：planned → verified",
-      "type": "experiment_changed"
+      "acceptance": [
+        {
+          "passed": false,
+          "text": "tag v0.8.003 公开发布"
+        },
+        {
+          "passed": false,
+          "text": "releases/v0.8.003/release.json 入库"
+        }
+      ],
+      "artifacts": [],
+      "day": "CYCLE",
+      "dependencies": [
+        "C03-T04"
+      ],
+      "href": "details.html#cycle-task-C03-T05",
+      "id": "C03-T05",
+      "owner": "author",
+      "planned_date": "v0.8.003 patch maintenance release",
+      "priority": "must",
+      "scope_label": "v0.8.003-draft",
+      "status": "ready",
+      "status_label": "可开始",
+      "title": "发布 v0.8.003 并写入回执"
     }
   ],
-  "release_message": "准备 v0.1 发布；等待真实发布回执激活下一周期",
+  "recent_events": [
+    {
+      "actor": "v0.8.003-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-329b584c323d1b75",
+      "object_id": "EXP-10-03:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "EXP-10-03 · Mob 协作与 Agent 交接复现 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-55fab0cf294ae444",
+      "object_id": "FB-002",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-002 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-5aede4c95f45de4f",
+      "object_id": "FB-003",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-003 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-d570a00b6cf7f55e",
+      "object_id": "FB-004",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-004 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-6ecbd84596b1ac14",
+      "object_id": "FB-005",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-005 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-f2895823ff6d73b1",
+      "object_id": "FB-006",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-006 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-a6950906d7e18fc5",
+      "object_id": "FB-007",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-007 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-03f0e19502a08b6a",
+      "object_id": "FB-008",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-008 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "deferred",
+      "before": null,
+      "id": "EVT-5803c016485087bf",
+      "object_id": "FB-009",
+      "object_type": "feedback",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "FB-009 · Reader-A/B/C：deferred",
+      "type": "feedback_decided"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "激活 v0.8.003-draft 维护周期并同步实验 30/30 投影",
+      "before": null,
+      "id": "EVT-e49a2c270bd554b3",
+      "object_id": "v0.8.003-draft",
+      "object_type": "project",
+      "occurred_at": "2026-07-25T09:18:18Z",
+      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+      "summary": "激活 v0.8.003-draft 维护周期并同步实验 30/30 投影",
+      "type": "cycle_opened"
+    }
+  ],
+  "release_message": "v0.8.003-draft 已激活；执行下一周期首个 Must 或继续处理 known-gap",
   "schema_version": "1.0.0",
-  "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
+  "source_id": "e99de734cc1b-working-tree-65284fadaf99",
   "tasks": {
     "done": 72,
     "percent": 100.0,
