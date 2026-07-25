@@ -1,0 +1,24 @@
+{
+  "ambiguous_requirement": "缺少 with_clarify 臂",
+  "experiment_id": "EXP-02-02",
+  "sessions": {
+    "no_clarify": {
+      "clarification_rounds": 0,
+      "critical_omissions": [],
+      "decision_log": [
+        {
+          "id": "D-01",
+          "phase": "implement",
+          "summary": "直接实现"
+        }
+      ],
+      "implemented_items": [
+        {
+          "capability": "示例能力",
+          "id": "I-01"
+        }
+      ],
+      "post_impl_requirement_changes": []
+    }
+  }
+}
