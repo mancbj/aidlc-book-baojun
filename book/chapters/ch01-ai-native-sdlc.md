@@ -74,7 +74,7 @@ AI-Driven 的变化不只是“AI 写更多代码”。AI 开始参与工作分�
 
 ### 2.3 Agentic：多个 Agent 沿工程轨道协作
 
-Agentic 开发进一步把 AI 能力扩展为可分工、可恢复、可持续执行的代理系统。Master Agent 可以路由任务；Inception Agent 可以把 Intent 分解成 Requirement、Unit、Story 和 Bolt Plan；Construction Agent 可以沿 Bolt 生成设计、实现、测试和 Walkthrough；Operations Agent 可以把候选物构建、部署、验证并纳入监控。
+Agentic 开发进一步把 AI 能力扩展为可分工、可恢复、可持续执行的代理系统。Master Agent 可以路由任务；Inception Agent 可以把 Intent 分解成 Requirement、Unit、Story 和 Bolt Plan；Construction Agent 可以沿 Bolt 生成设计、实现、测试和 Walkthrough；Operations Agent 可以把候选物构建、部署，再做 Runtime Verify，并纳入监控。
 
 这种模式最迷人的地方在于并行和连续。多个 Agent 可以围绕同一事实源协作，把复杂任务拆成可以推进的局部。但它的风险也更明显：Agent 越多，越不能靠聊天记忆和口头约定维持秩序。否则，多 Agent 只是把不确定性并行化。
 
@@ -152,12 +152,12 @@ Inception
 Construction
   Model / Plan → Design → Implement → Test → Walkthrough
 Operations
-  Build → Deploy → Verify → Monitor → Recovery
+  Build → Deploy → Runtime Verify → Monitor → Recovery
 Evidence & Feedback
   Events → Snapshots → Changelog → Next Intent
 ```
 
-这条链的每一段都在处理同一个问题：AI 可以生成候选物，但候选物必须通过人的判断和工程证据才能继续前进。Inception 不只是写需求，而是把目标变成可追踪的工作结构。Construction 不只是写代码，而是让实现沿着阶段门禁推进。Operations 不只是上线，而是保存构建、验证、监控和恢复凭证。Evidence & Feedback 不只是总结，而是把经验回写成下一轮判断。
+这条链的每一段都在处理同一个问题：AI 可以生成候选物，但候选物必须通过人的判断和工程证据才能继续前进。Inception 不只是写需求，而是把目标变成可追踪的工作结构。Construction 不只是写代码，而是让实现沿着阶段门禁推进。Operations 不只是上线，而是保存构建、Runtime Verify、监控和恢复凭证；这里的 Runtime Verify 不等于第 7 章对交付候选的验证。Evidence & Feedback 不只是总结，而是把经验回写成下一轮判断。
 
 本段的结论是：**AI-DLC 的价值不是“更像 AI 的流程”，而是让 AI 的速度进入可验证、可复现、可发布、可恢复的交付闭环。**
 
@@ -217,19 +217,19 @@ Intent：准备试读反馈入口
 
 这个实验回答：当输入相同而模型输出具有概率性时，多次生成之间的结构差异有多大？它关注两个指标：结构差异率和测试通过率方差。
 
-它支撑本章第二段论证：如果输出存在方差，流程就不能只依赖一次生成结果，而必须建立约束与验证机制。
+它旨在支撑本章第二段论证：如果输出存在方差，流程就不能只依赖一次生成结果，而必须建立约束与验证机制。
 
 ### `EXP-01-02` · AI-Assisted 与 AI-Driven 对照实验
 
 这个实验回答：同一小型功能分别走“对话式生成”和“AI-DLC 闭环”时，人工往返次数、缺陷逃逸数和端到端耗时如何变化？
 
-它支撑本章第五节案例：AI-DLC 不只是更慢的文档流程，也不是更快的聊天生成，而是用事实源和门禁换取可恢复、可审计和可继续推进的交付能力。
+它旨在支撑本章第五节案例：AI-DLC 不只是更慢的文档流程，也不是更快的聊天生成，而是用事实源和门禁换取可恢复、可审计和可继续推进的交付能力。
 
 ### `EXP-01-03` · AI-DLC 三阶段官方流程复现
 
 这个实验回答：以 specs.md 作为参考实现时，Inception、Construction、Operations 三阶段会留下哪些工件和检查点？
 
-它支撑本章边界：specs.md 是本书引用的参考实现，不等同于 AI-DLC 的唯一形态。我们借它观察生命周期如何工程化，而不是把工具说明直接当作方法论证明。
+它旨在支撑本章边界：specs.md 是本书引用的参考实现，不等同于 AI-DLC 的唯一形态。我们借它观察生命周期如何工程化，而不是把工具说明直接当作方法论证明。
 
 ## 07 · Figure：本章图示入口
 

@@ -17,7 +17,7 @@
     "ten_chapters_present"
   ],
   "baseline_commit": "577fec6",
-  "current_round": "02",
+  "current_round": "05",
   "rounds": [
     {
       "id": "00",
@@ -48,6 +48,36 @@
       "pdf": 14,
       "total": 64,
       "notes": "章末 References 从 release 剥离；案例正文中的事实源路径保留。"
+    },
+    {
+      "id": "03",
+      "name": "runtime-verify-and-ready-bounds",
+      "decision": "KEEP",
+      "content": 44,
+      "html": 12,
+      "pdf": 14,
+      "total": 70,
+      "notes": "Operations 链统一 Runtime Verify；ready 实验措辞收紧。"
+    },
+    {
+      "id": "04",
+      "name": "planned-language",
+      "decision": "KEEP",
+      "content": 46,
+      "html": 12,
+      "pdf": 14,
+      "total": 72,
+      "notes": "CH-01/CH-02 planned 实验改为“旨在支撑”。"
+    },
+    {
+      "id": "05",
+      "name": "terminology-sweep",
+      "decision": "KEEP",
+      "content": 47,
+      "html": 12,
+      "pdf": 14,
+      "total": 73,
+      "notes": "Exsecutio 公式拼写确认无误；无源码改动。"
     }
   ]
 }
