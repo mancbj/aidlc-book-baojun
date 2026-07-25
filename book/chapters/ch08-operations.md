@@ -279,12 +279,12 @@ publish
 本章实验入口包括三项：
 
 - `EXP-08-01 · 发布候选来源清单校验器`：复用 `scripts/check_release_readiness.py` 与 `scripts/prepare_release.py`，验证发布候选来源、构建日志、文件哈希与 readiness 是否一致。
-- `EXP-08-02 · 回滚桌面演练模拟器`：根据部署拓扑、故障场景、监控信号与 Runbook，生成发现、决策、回滚和恢复时间线。
+- `EXP-08-02 · 回滚桌面演练模拟器`：根据部署拓扑、故障场景、监控信号与 Runbook，生成发现、决策、回滚和恢复时间线。运行：`python3 experiments/exp-08-02/quickstart.py --sample`。
 - `EXP-08-03 · Operations 四阶段复现`：参考 Operations Agent 流程与可部署示例，复现 Build、Deploy、Runtime Verify、Monitor 四阶段凭证。
 
 其中 `EXP-08-01` 当前为 `ALREADY / ready`（尚未 `verified`），因为本项目已经存在可复用的 release readiness 与 release preparation 脚本。它说明来源一致性和 release manifest 检查可以进入发布链路，但还不足以证明完整生产可观测或 Operations 能力已经成熟。
 
-`EXP-08-02` 与 `EXP-08-03` 仍为 `planned`，因此本章只把它们作为验证方向，不把回滚指标或阶段完成率写成已验证结论。后续如果要把它们升级为正文证据，至少需要补齐实验目录、样例输入、样例输出、测试和结果记录。
+`EXP-08-02` 已 verified：样例报告在 `experiments/exp-08-02/output/sample.json`。它证明部署拓扑、故障、监控信号与 Runbook 可连成 detect→decide→rollback→recover 时间线，并给出发现到回滚耗时、数据损失窗口与 Runbook 缺口数。桌面演练不等于生产恢复能力。`EXP-08-03` 仍为 `planned`。
 
 三项实验分别服务于三个问题。
 
@@ -328,7 +328,7 @@ Build → Deploy → Runtime Verify → Monitor
 
 第三，本章不把当前 `memory-bank/operations/` 写成已经存在的成熟目录。当前仓库还没有正式 operations 目录；本章只把它作为方法落点和后续实现方向。
 
-第四，本章不承诺 `EXP-08-02` 和 `EXP-08-03` 已经验证回滚与四阶段复现。它们仍是 planned。
+第四，本章不承诺 `EXP-08-02` 已证明生产恢复能力；也不把仍为 `planned` 的 `EXP-08-03` 写成已验证。
 
 第五，本章不把发布自动化当成生产成熟度。自动化只是动作可靠；成熟度还包括环境门禁、监控、恢复、审计和责任。
 

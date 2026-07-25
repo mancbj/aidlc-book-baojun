@@ -22,7 +22,7 @@
     "readiness_ready"
   ],
   "baseline_commit": "b9534d6",
-  "current_round": "00",
+  "current_round": "08",
   "rounds": [
     {
       "id": "00",
@@ -33,7 +33,95 @@
       "reader_feedback": 8,
       "release": 4,
       "total": 44,
-      "notes": "SHIP verified=10/18；四个目标实验仍 planned；Reader responded=0/3；v0.5 基线可复用。"
+      "notes": "SHIP verified=10/18；四个目标仍 planned。"
+    },
+    {
+      "id": "01",
+      "name": "exp-05-02-verified",
+      "decision": "KEEP",
+      "experiments": 30,
+      "chapter_evidence": 11,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 53,
+      "notes": "EXP-05-02 verified。"
+    },
+    {
+      "id": "02",
+      "name": "exp-08-02-verified",
+      "decision": "KEEP",
+      "experiments": 36,
+      "chapter_evidence": 12,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 60,
+      "notes": "EXP-08-02 verified。"
+    },
+    {
+      "id": "03",
+      "name": "exp-09-02-verified",
+      "decision": "KEEP",
+      "experiments": 42,
+      "chapter_evidence": 13,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 67,
+      "notes": "EXP-09-02 verified。"
+    },
+    {
+      "id": "04",
+      "name": "exp-10-02-verified",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 14,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 72,
+      "notes": "EXP-10-02 verified；SHIP verified=14/18。"
+    },
+    {
+      "id": "05",
+      "name": "chapter-evidence-bounds",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 15,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 73,
+      "notes": "CH-05/08/09/10 证据边界收紧。"
+    },
+    {
+      "id": "06",
+      "name": "reader-feedback-reassessment",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 4,
+      "total": 77,
+      "notes": "FB-004 deferred；responded=0/3。"
+    },
+    {
+      "id": "07",
+      "name": "adversarial-audit",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 18,
+      "total": 91,
+      "notes": "硬门禁全过。"
+    },
+    {
+      "id": "08",
+      "name": "v0.6-release",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 20,
+      "total": 93,
+      "notes": "打包 RC、打 tag、发布 GitHub Release。"
     }
   ]
 }

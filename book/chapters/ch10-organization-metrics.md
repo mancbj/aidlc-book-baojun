@@ -209,10 +209,10 @@ Memory Bank、任务事实源和审校记录解决的是工件层记忆；Mob �
 本章实验入口包括三项：
 
 - `EXP-10-01 · 人–Agent 责任 RACI 生成器`：根据研发活动、四类 Agent 与团队角色，生成责任、审批、协作和知会矩阵。运行：`python3 experiments/exp-10-01/quickstart.py --sample`。
-- `EXP-10-02 · AI-DLC 价值记分卡`：根据交付基线、运行记录、缺陷与业务结果，生成周期、质量、审阅负担与业务价值看板。
+- `EXP-10-02 · AI-DLC 价值记分卡`：根据交付基线、运行记录、缺陷与业务结果，生成周期、质量、审阅负担与业务价值看板。运行：`python3 experiments/exp-10-02/quickstart.py --sample`。
 - `EXP-10-03 · Mob 协作与 Agent 交接复现`：参考官方 AI-DLC 与 Agile 对照及团队协作案例，复现 Mob Elaboration、Mob Construction 与交接日志。
 
-其中 `EXP-10-01` 已 verified：样例报告在 `experiments/exp-10-01/output/sample.json`。它证明关键活动可生成 RACI，并暴露无 Accountable 与责任冲突；Accountable 必须是人，Agent 可以 Responsible。它不证明生成矩阵适合所有组织。`EXP-10-02` 与 `EXP-10-03` 仍为 `planned`；`EXP-10-03` 还需保留外部来源与 pinned version 边界。
+其中 `EXP-10-01` 与 `EXP-10-02` 已 verified。`EXP-10-01` 样例在 `experiments/exp-10-01/output/sample.json`，证明关键活动可生成 RACI，并暴露无 Accountable 与责任冲突；Accountable 必须是人。`EXP-10-02` 样例在 `experiments/exp-10-02/output/sample.json`，证明基线与运行记录可汇总为周期、质量、审阅负担与业务结果变化，并给出扩大／收缩／停用建议。二者都不证明组织已落地或业务价值已被因果证实。`EXP-10-03` 仍为 `planned`，需保留外部来源与 pinned version 边界。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
@@ -246,7 +246,7 @@ Evidence & Value →  Scorecard + Dashboard
 
 第三，本章不把 Dashboard 写成管理控制台神话。驾驶舱让状态可见，但不自动产生正确决策。
 
-第四，本章不承诺 `EXP-10-01` 已证明组织落地效果；也不把仍为 `planned` 的 `EXP-10-02`、`EXP-10-03` 写成已验证。
+第四，本章不承诺 `EXP-10-01` / `EXP-10-02` 已证明组织落地或业务因果；也不把仍为 `planned` 的 `EXP-10-03` 写成已验证。
 
 第五，本章不允许把最终责任外包给模型。AI proposes，human remains accountable。
 

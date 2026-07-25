@@ -237,10 +237,10 @@ AI 不会自动纠正这种不公平。它只会让错误的流程跑得更快�
 本章实验入口包括三项：
 
 - `EXP-09-01 · Simple/FIRE/AI-DLC Flow 选择器`：根据任务复杂度、代码库状态、团队规模与合规要求，生成 Flow 建议、理由与不适用条件。运行：`python3 experiments/exp-09-01/quickstart.py --sample`。
-- `EXP-09-02 · 风险到检查点预算模拟器`：根据风险清单、可逆性、影响范围与自治偏好，生成检查点数量、位置与成本收益估算。
+- `EXP-09-02 · 风险到检查点预算模拟器`：根据风险清单、可逆性、影响范围与自治偏好，生成检查点数量、位置与成本收益估算。运行：`python3 experiments/exp-09-02/quickstart.py --sample`。
 - `EXP-09-03 · Brownfield Flow 选择案例复现`：参考官方 Flow 决策指南与棕地项目案例，复现 Simple、FIRE、AI-DLC 三方案对照决策。
 
-其中 `EXP-09-01` 已 verified：样例报告在 `experiments/exp-09-01/output/sample.json`。它证明规则化 Flow 建议可以附带理由与不适用条件；有专家标签时给出一致率，否则为 `null`。它不把建议写成强制法令，也不证明已达专家级一致。`EXP-09-02` 与 `EXP-09-03` 仍为 `planned`；`EXP-09-03` 还需保留外部来源与 pinned version 边界。
+其中 `EXP-09-01` 与 `EXP-09-02` 已 verified。`EXP-09-01` 样例在 `experiments/exp-09-01/output/sample.json`，证明规则化 Flow 建议可附带理由与不适用条件。`EXP-09-02` 样例在 `experiments/exp-09-02/output/sample.json`，证明风险清单可换算为检查点数量、落点与审阅成本；关键风险覆盖率与非必要检查点可计量。二者都不证明穷尽全部风险或已达专家级一致。`EXP-09-03` 仍为 `planned`，需保留外部来源与 pinned version 边界。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
@@ -273,7 +273,7 @@ Low Risk        Simple                Simple / FIRE
 
 第三，本章不把 Simple、FIRE、AI-DLC 写成互相消灭的阵营。它们是不同治理强度，可以并存于同一产品的不同任务。
 
-第四，本章不承诺 `EXP-09-01` 已证明选型质量达到专家级；也不把仍为 `planned` 的 `EXP-09-02`、`EXP-09-03` 写成已验证。
+第四，本章不承诺 `EXP-09-01` / `EXP-09-02` 已证明选型或预算达到专家级；也不把仍为 `planned` 的 `EXP-09-03` 写成已验证。
 
 第五，本章不提供可替代人工判断的自动选型黑盒。矩阵帮助组织问题，最终责任仍在人。
 

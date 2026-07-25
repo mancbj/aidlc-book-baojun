@@ -167,10 +167,10 @@ Bolt 004
 本章实验入口包括三项：
 
 - `EXP-05-01 · Bolt 尺寸估算器`：根据 Stories、复杂度、风险与依赖，生成 Bolt 范围、预计时长与拆分建议。运行：`python3 experiments/exp-05-01/quickstart.py --sample`。
-- `EXP-05-02 · DDD 与 Simple Bolt 选择器`：根据任务描述、领域复杂度、风险与可逆性，给出 Bolt 类型建议与选择依据。
+- `EXP-05-02 · DDD 与 Simple Bolt 选择器`：根据任务描述、领域复杂度、风险与可逆性，给出 Bolt 类型建议与选择依据。运行：`python3 experiments/exp-05-02/quickstart.py --sample`。
 - `EXP-05-03 · 官方 Bolt 类型检查点复现`：对照 specs.md 官方 Bolt 类型指南，复现 DDD 与 Simple 两条阶段记录。
 
-其中 `EXP-05-01` 已 verified：样例报告在 `experiments/exp-05-01/output/sample.json`。它证明 Stories 的复杂度、风险与依赖可以被确定性换算为范围、估时与拆分建议；有基线时给出工期估算误差，否则为 `null`。它不证明真实项目工期准确。`EXP-05-02` 与 `EXP-05-03` 仍为 `planned`，不得写成已验证结论。
+其中 `EXP-05-01` 与 `EXP-05-02` 已 verified。`EXP-05-01` 样例在 `experiments/exp-05-01/output/sample.json`，证明 Stories 的复杂度、风险与依赖可换算为范围、估时与拆分建议；有基线时给出工期估算误差，否则为 `null`。`EXP-05-02` 样例在 `experiments/exp-05-02/output/sample.json`，证明规则化 Simple/DDD 建议可附带依据与灰区拆分/门禁建议；有专家标签时给出一致率与过度/不足工程化计数。二者都不替代人工判断。`EXP-05-03` 仍为 `planned`。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
