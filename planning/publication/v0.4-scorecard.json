@@ -27,7 +27,7 @@
     "readiness_ready"
   ],
   "baseline_commit": "d48da3a",
-  "current_round": "16",
+  "current_round": "19",
   "rounds": [
     {
       "id": "00",
@@ -232,6 +232,42 @@
       "release": 2,
       "total": 78,
       "notes": "CH-02 人类判断门禁 SVG；CH-01 继续复用 fig0-1；九章独立 SVG 齐备。"
+    },
+    {
+      "id": "17",
+      "name": "reader-feedback-reassessment",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 28,
+      "reader_feedback": 12,
+      "book_integration": 10,
+      "release": 2,
+      "total": 85,
+      "notes": "FB-002 deferred；responded=0/3；不伪造读者结论。"
+    },
+    {
+      "id": "18",
+      "name": "adversarial-audit",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 28,
+      "reader_feedback": 12,
+      "book_integration": 10,
+      "release": 9,
+      "total": 92,
+      "notes": "硬门禁全过；HTML/PDF 卫生与术语边界通过；达到发布阈值。"
+    },
+    {
+      "id": "19",
+      "name": "v0.4-release",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 28,
+      "reader_feedback": 12,
+      "book_integration": 10,
+      "release": 10,
+      "total": 93,
+      "notes": "打包 RC、打 tag、发布 GitHub Release。"
     }
   ]
 }
