@@ -139,7 +139,25 @@ def check_links(root: Path, scopes: Sequence[str]) -> Dict[str, object]:
                 continue
             checked_count += 1
             if parts.path:
-                destination = (source.parent / unquote(parts.path)).resolve()
+                path_text = unquote(parts.path)
+                destination = (source.parent / path_text).resolve()
+                # Book chapters are built with --resource-path including book/,
+                # so markdown image targets like images/*.svg resolve from book/.
+                if not destination.exists():
+                    try:
+                        relative_source = source.relative_to(root)
+                    except ValueError:
+                        relative_source = None
+                    if (
+                        relative_source is not None
+                        and len(relative_source.parts) >= 2
+                        and relative_source.parts[0] == "book"
+                        and relative_source.parts[1] == "chapters"
+                        and path_text.startswith("images/")
+                    ):
+                        candidate = (root / "book" / path_text).resolve()
+                        if candidate.exists():
+                            destination = candidate
                 try:
                     destination.relative_to(root)
                 except ValueError:

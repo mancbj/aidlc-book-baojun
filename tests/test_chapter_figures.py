@@ -68,9 +68,8 @@ class ChapterFiguresTest(unittest.TestCase):
                 self.assertIn("fig0-1.svg", body)
                 continue
             relative = Path(item["path"]).name
-            self.assertIn(
-                f"(images/{relative})",
-                body,
+            self.assertTrue(
+                f"(images/{relative})" in body or f"(../images/{relative})" in body,
                 f"{item['chapter']} must embed {relative}",
             )
             self.assertIn(item["path"], body)

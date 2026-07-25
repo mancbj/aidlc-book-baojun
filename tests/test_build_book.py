@@ -87,7 +87,7 @@ class BuildBookTest(unittest.TestCase):
             self.assertEqual("html", manifest["format"])
             self.assertTrue(manifest["pandoc"].startswith("pandoc "))
             self.assertEqual("11.16.0", manifest["diagram_engine"])
-            self.assertEqual(25, len(manifest["sources"]))
+            self.assertEqual(35, len(manifest["sources"]))
             self.assertEqual({"deep-understanding-ai-dlc.html"}, {item["path"] for item in manifest["outputs"]})
             self.assertTrue(all(len(item["sha256"]) == 64 for item in manifest["sources"] + manifest["outputs"]))
 
