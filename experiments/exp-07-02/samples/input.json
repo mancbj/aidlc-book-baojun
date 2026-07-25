@@ -1,0 +1,99 @@
+{
+  "delivery_candidate": {
+    "id": "CAND-07-02-SAMPLE",
+    "summary": "CH-07 独立评审分歧矩阵 quickstart 与冻结评审夹具"
+  },
+  "experiment_id": "EXP-07-02",
+  "human_rubric": {
+    "acknowledged_risk_ids": [
+      "RISK-LEGACY-01"
+    ],
+    "judgments": [
+      {
+        "criterion": "确定性检查与单元测试全部通过",
+        "rubric_id": "RB-001",
+        "verdict": "pass"
+      },
+      {
+        "criterion": "无效输入返回稳定 E_* 错误码",
+        "rubric_id": "RB-002",
+        "verdict": "pass"
+      },
+      {
+        "criterion": "输出 limitation 明确 CH-07 Verify 边界",
+        "rubric_id": "RB-003",
+        "verdict": "pass"
+      }
+    ],
+    "overall_verdict": "approve"
+  },
+  "independent_model_reviews": [
+    {
+      "dimension_verdicts": [
+        {
+          "rubric_id": "RB-001",
+          "verdict": "pass"
+        },
+        {
+          "rubric_id": "RB-002",
+          "verdict": "pass"
+        },
+        {
+          "rubric_id": "RB-003",
+          "verdict": "pass"
+        }
+      ],
+      "fixture_label": "frozen-review-alpha-2026-07-18",
+      "overall_verdict": "approve",
+      "reviewer_id": "MODEL-A",
+      "risk_findings": [
+        {
+          "id": "RISK-LEGACY-01",
+          "severity": "minor",
+          "statement": "历史样例输出路径需与 README 同步"
+        }
+      ]
+    },
+    {
+      "dimension_verdicts": [
+        {
+          "rubric_id": "RB-001",
+          "verdict": "pass"
+        },
+        {
+          "rubric_id": "RB-002",
+          "verdict": "fail"
+        },
+        {
+          "rubric_id": "RB-003",
+          "verdict": "pass"
+        }
+      ],
+      "fixture_label": "frozen-review-beta-2026-07-19",
+      "overall_verdict": "defer",
+      "reviewer_id": "MODEL-B",
+      "risk_findings": [
+        {
+          "id": "RISK-NEW-02",
+          "severity": "major",
+          "statement": "模型评审夹具未覆盖空评审数组边界"
+        },
+        {
+          "id": "RISK-LEGACY-01",
+          "severity": "minor",
+          "statement": "历史样例输出路径需与 README 同步"
+        }
+      ]
+    }
+  ],
+  "test_evidence": {
+    "confirmed_risk_ids": [],
+    "linked_rubric_ids": [
+      "RB-001",
+      "RB-002",
+      "RB-003"
+    ],
+    "status": "passed",
+    "summary": "experiments/exp-07-02/tests 全部通过；无效样例未写入输出"
+  }
+}

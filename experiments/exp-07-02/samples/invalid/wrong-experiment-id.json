@@ -1,0 +1,38 @@
+{
+  "delivery_candidate": {
+    "id": "CAND-BAD",
+    "summary": "错误实验编号"
+  },
+  "experiment_id": "EXP-06-01",
+  "human_rubric": {
+    "judgments": [
+      {
+        "criterion": "占位",
+        "rubric_id": "RB-001",
+        "verdict": "pass"
+      }
+    ],
+    "overall_verdict": "approve"
+  },
+  "independent_model_reviews": [
+    {
+      "dimension_verdicts": [
+        {
+          "rubric_id": "RB-001",
+          "verdict": "pass"
+        }
+      ],
+      "fixture_label": "frozen-x",
+      "overall_verdict": "approve",
+      "reviewer_id": "MODEL-A",
+      "risk_findings": []
+    }
+  ],
+  "test_evidence": {
+    "linked_rubric_ids": [
+      "RB-001"
+    ],
+    "status": "passed",
+    "summary": "占位"
+  }
+}
