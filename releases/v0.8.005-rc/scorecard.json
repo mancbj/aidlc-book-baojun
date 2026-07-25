@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.8.005",
+  "publish_threshold": 92,
+  "weights": {
+    "content": 40,
+    "regression": 25,
+    "release": 20,
+    "docs": 15
+  },
+  "hard_gates": [
+    "readme_acknowledgments_present",
+    "ci_check_pass",
+    "content_audit_pass",
+    "readiness_ready",
+    "reader_feedback_not_fabricated"
+  ],
+  "baseline_commit": "5571591",
+  "current_round": "03",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "rebase-ack-onto-v08004",
+      "decision": "KEEP",
+      "content": 20,
+      "regression": 10,
+      "release": 4,
+      "docs": 10,
+      "total": 44,
+      "notes": "致谢 rebase 到 v0.8.004 tip。"
+    },
+    {
+      "id": "01",
+      "name": "docs-and-policy",
+      "decision": "KEEP",
+      "content": 40,
+      "regression": 15,
+      "release": 8,
+      "docs": 15,
+      "total": 78,
+      "notes": "VERSIONING/policy/notes 对齐 v0.8.005。"
+    },
+    {
+      "id": "02",
+      "name": "rc-and-ci",
+      "decision": "KEEP",
+      "content": 40,
+      "regression": 25,
+      "release": 12,
+      "docs": 15,
+      "total": 92,
+      "notes": "RC 打包与 CI 通过。"
+    },
+    {
+      "id": "03",
+      "name": "v0.8.005-release",
+      "decision": "KEEP",
+      "content": 40,
+      "regression": 25,
+      "release": 20,
+      "docs": 15,
+      "total": 100,
+      "notes": "公开发布 v0.8.005。"
+    }
+  ]
+}
