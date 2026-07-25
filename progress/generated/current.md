@@ -11,8 +11,8 @@
 - 阻塞：0
 - 反馈：1 条；accepted 0 条
 - 下一周期：尚未激活
-- 事实最近更新：2026-07-24T13:38:38Z
-- 来源：`57eaced8d483-working-tree-8c4ac3b7145a`
+- 事实最近更新：2026-07-25T07:11:21Z
+- 来源：`0d6255fd3670-working-tree-6f07fd750e74`
 
 ## 下一动作
 
@@ -24,16 +24,16 @@
 
 ## 最近关键更新
 
+- `2026-07-25T07:12:18Z` · EXP-06-01 · Plan–Walkthrough 偏差审计器 · status：planned → verified (`EVT-f68d37a641db7674`)
+- `2026-07-25T07:12:18Z` · EXP-04-02 · Standards 漂移检测器 · status：planned → verified (`EVT-7dc6cf5425780633`)
+- `2026-07-25T07:12:18Z` · EXP-03-02 · Unit 与 Bolt 依赖 DAG 校验器 · status：planned → verified (`EVT-85564d8c75d94bc6`)
+- `2026-07-25T07:12:18Z` · EXP-02-01 · 不可委托判断清单生成器 · status：planned → verified (`EVT-563ff9363186ed13`)
 - `2026-07-24T13:38:41Z` · D24-T03 · CH-10 · 完成章节审校与证据对齐：ready → done (`EVT-99a95d46813cabff`)
 - `2026-07-24T13:38:41Z` · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 审校：pending → done (`EVT-7cf955da5ca8a05f`)
 - `2026-07-24T13:37:53Z` · D24-T03 · CH-10 · 完成章节审校与证据对齐：backlog → ready (`EVT-ed9b285e3c45c9f4`)
 - `2026-07-24T13:37:53Z` · D24-T02 · CH-10 · 完成章节可读稿：ready → done (`EVT-bfa89664b88d2f56`)
 - `2026-07-24T13:37:53Z` · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 图示：pending → done (`EVT-48a441304cc8a6be`)
 - `2026-07-24T13:37:53Z` · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 实验：pending → done (`EVT-0ada25e62ec3c739`)
-- `2026-07-24T13:37:53Z` · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 案例：pending → done (`EVT-df55ff9cac01af5f`)
-- `2026-07-24T13:36:52Z` · D24-T02 · CH-10 · 完成章节可读稿：backlog → ready (`EVT-a0047b9747d6cd61`)
-- `2026-07-24T13:36:52Z` · D24-T01 · CH-10 · 锁定章节论证骨架：ready → done (`EVT-65545471bfacf24c`)
-- `2026-07-24T13:36:52Z` · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 问题：pending → done (`EVT-7bb667dc08f48c49`)
 
 ## 下钻入口
 

@@ -715,10 +715,10 @@
           "repository_path": "experiments/exp-02-01",
           "sample_input": "experiments/exp-02-01/samples/input.json",
           "sample_output": "experiments/exp-02-01/output/sample.json",
-          "status": "planned",
+          "status": "verified",
           "test_path": "experiments/exp-02-01/tests/test_demo.py",
           "triage": "SHIP",
-          "updated": "2026-07-22T06:33:31Z"
+          "updated": "2026-07-25T07:11:21Z"
         },
         {
           "acceptance": [
@@ -840,10 +840,10 @@
           "repository_path": "experiments/exp-03-02",
           "sample_input": "experiments/exp-03-02/samples/input.json",
           "sample_output": "experiments/exp-03-02/output/sample.json",
-          "status": "planned",
+          "status": "verified",
           "test_path": "experiments/exp-03-02/tests/test_demo.py",
           "triage": "SHIP",
-          "updated": "2026-07-22T06:33:31Z"
+          "updated": "2026-07-25T07:11:21Z"
         },
         {
           "acceptance": [
@@ -933,10 +933,10 @@
           "repository_path": "experiments/exp-04-02",
           "sample_input": "experiments/exp-04-02/samples/input.json",
           "sample_output": "experiments/exp-04-02/output/sample.json",
-          "status": "planned",
+          "status": "verified",
           "test_path": "experiments/exp-04-02/tests/test_demo.py",
           "triage": "SHIP",
-          "updated": "2026-07-22T06:33:31Z"
+          "updated": "2026-07-25T07:11:21Z"
         },
         {
           "acceptance": [
@@ -1087,10 +1087,10 @@
           "repository_path": "experiments/exp-06-01",
           "sample_input": "experiments/exp-06-01/samples/input.json",
           "sample_output": "experiments/exp-06-01/output/sample.json",
-          "status": "planned",
+          "status": "verified",
           "test_path": "experiments/exp-06-01/tests/test_demo.py",
           "triage": "SHIP",
-          "updated": "2026-07-22T06:33:31Z"
+          "updated": "2026-07-25T07:11:21Z"
         },
         {
           "acceptance": [
@@ -1531,7 +1531,7 @@
       ],
       "schema_version": "1.0.0",
       "source": "Confirmed ten-chapter structure v3 and author-local specs.md portal crawl",
-      "updated": "2026-07-22T07:05:40Z"
+      "updated": "2026-07-25T07:11:21Z"
     },
     "feedback": {
       "decisions": [
@@ -3772,5 +3772,5 @@
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "57eaced8d483-working-tree-8c4ac3b7145a"
+  "source_id": "0d6255fd3670-working-tree-6f07fd750e74"
 }

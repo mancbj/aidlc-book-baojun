@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-04-02",
+  "baseline": {
+    "standards": {
+      "version": "1.0.0",
+      "rules": [
+        {
+          "id": "STD-TITLE",
+          "kind": "required",
+          "artifact_id": "release-manifest",
+          "path": "title"
+        },
+        {
+          "id": "STD-STATUS",
+          "kind": "equals",
+          "artifact_id": "release-manifest",
+          "path": "status",
+          "expected": "verified"
+        }
+      ]
+    },
+    "generated_artifacts": {
+      "version": "build-7",
+      "snapshots": [
+        {
+          "id": "release-manifest",
+          "content": {
+            "title": "Runtime Verify",
+            "status": "verified",
+            "evidence": [
+              "runtime"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "candidate": {
+    "standards": {
+      "version": "1.1.0",
+      "rules": [
+        {
+          "id": "STD-TITLE",
+          "kind": "required",
+          "artifact_id": "release-manifest",
+          "path": "title"
+        },
+        {
+          "id": "STD-STATUS",
+          "kind": "equals",
+          "artifact_id": "release-manifest",
+          "path": "status",
+          "expected": "published"
+        },
+        {
+          "id": "STD-EVIDENCE",
+          "kind": "contains_all",
+          "artifact_id": "release-manifest",
+          "path": "evidence",
+          "expected": [
+            "runtime",
+            "human-review"
+          ]
+        }
+      ]
+    },
+    "generated_artifacts": {
+      "version": "build-8",
+      "snapshots": [
+        {
+          "id": "release-manifest",
+          "content": {
+            "title": "Runtime Verify",
+            "status": "draft",
+            "evidence": [
+              "runtime"
+            ],
+            "generated_by": "deterministic-demo"
+          }
+        }
+      ]
+    }
+  },
+  "benchmark": {
+    "expected_violation_keys": [
+      "STD-EVIDENCE:release-manifest:evidence",
+      "STD-STATUS:release-manifest:status"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_evaluation": {
+    "basis": "仅基于输入 benchmark.expected_violation_keys 标注",
+    "expected_violation_keys": [
+      "STD-EVIDENCE:release-manifest:evidence",
+      "STD-STATUS:release-manifest:status"
+    ],
+    "false_negative_keys": [],
+    "false_positive_keys": [],
+    "predicted_violation_keys": [
+      "STD-EVIDENCE:release-manifest:evidence",
+      "STD-STATUS:release-manifest:status"
+    ]
+  },
+  "compliant": false,
+  "disclaimer": "本实验只验证输入中声明的规则与标注基准，不证明这些规则对其他项目、版本或工件普适。",
+  "experiment_id": "EXP-04-02",
+  "metrics": {
+    "drift_item_count": 2,
+    "evaluated_rule_count": 3,
+    "false_negative_count": 0,
+    "false_positive_count": 0,
+    "false_positive_rate_percent": 0.0,
+    "rule_count": 3,
+    "rule_coverage_percent": 100.0
+  },
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:24cf237b3429818d686e3d21db0976b080f0421610f6bdbf66ff8ec1f90284f0",
+  "valid": true,
+  "version_diff": {
+    "generated_artifacts": {
+      "drift_items": [
+        {
+          "artifact_id": "release-manifest",
+          "kind": "field_added",
+          "path": "$.generated_by"
+        },
+        {
+          "artifact_id": "release-manifest",
+          "kind": "value_changed",
+          "path": "$.status"
+        }
+      ],
+      "from_version": "build-7",
+      "snapshots": {
+        "added": [],
+        "changed": [
+          "release-manifest"
+        ],
+        "removed": []
+      },
+      "to_version": "build-8"
+    },
+    "standards": {
+      "from_version": "1.0.0",
+      "rules": {
+        "added": [
+          "STD-EVIDENCE"
+        ],
+        "changed": [
+          "STD-STATUS"
+        ],
+        "removed": []
+      },
+      "to_version": "1.1.0"
+    }
+  },
+  "violations": [
+    {
+      "actual": [
+        "runtime"
+      ],
+      "artifact_id": "release-manifest",
+      "code": "RULE_VIOLATION",
+      "expected": [
+        "runtime",
+        "human-review"
+      ],
+      "key": "STD-EVIDENCE:release-manifest:evidence",
+      "path": "evidence",
+      "rule_id": "STD-EVIDENCE",
+      "rule_kind": "contains_all"
+    },
+    {
+      "actual": "draft",
+      "artifact_id": "release-manifest",
+      "code": "RULE_VIOLATION",
+      "expected": "published",
+      "key": "STD-STATUS:release-manifest:status",
+      "path": "status",
+      "rule_id": "STD-STATUS",
+      "rule_kind": "equals"
+    }
+  ]
+}

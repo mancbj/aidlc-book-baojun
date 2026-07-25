@@ -563,9 +563,9 @@
   "experiments": {
     "href": "details.html#experiments",
     "status_counts": {
-      "planned": 26,
+      "planned": 22,
       "ready": 2,
-      "verified": 2
+      "verified": 6
     },
     "total": 30,
     "triage_counts": {
@@ -590,7 +590,7 @@
     "total": 1,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-24T13:38:41Z",
+  "generated_at": "2026-07-25T07:12:18Z",
   "goal": {
     "all_tasks_done": true,
     "current_day": 24,
@@ -598,58 +598,10 @@
     "name": "v0.1 已发布；十章写作冲刺",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-24T13:38:38Z",
-  "latest_snapshot": "../progress/snapshots/20260724T133841Z-d8d483-working-tree-8c4ac3b7145a.json",
+  "latest_fact_update": "2026-07-25T07:11:21Z",
+  "latest_snapshot": "../progress/snapshots/20260725T071218Z-fd3670-working-tree-6f07fd750e74.json",
   "next_actions": [],
   "recent_events": [
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-7bb667dc08f48c49",
-      "object_id": "CH-10:question",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:36:52Z",
-      "source_id": "62648787b05b-working-tree-3fd212566612",
-      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 问题：pending → done",
-      "type": "chapter_stage_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "ready",
-      "id": "EVT-65545471bfacf24c",
-      "object_id": "D24-T01",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:36:52Z",
-      "source_id": "62648787b05b-working-tree-3fd212566612",
-      "summary": "D24-T01 · CH-10 · 锁定章节论证骨架：ready → done",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "ready",
-      "before": "backlog",
-      "id": "EVT-a0047b9747d6cd61",
-      "object_id": "D24-T02",
-      "object_type": "task",
-      "occurred_at": "2026-07-24T13:36:52Z",
-      "source_id": "62648787b05b-working-tree-3fd212566612",
-      "summary": "D24-T02 · CH-10 · 完成章节可读稿：backlog → ready",
-      "type": "task_status_changed"
-    },
-    {
-      "actor": "ubuntu",
-      "after": "done",
-      "before": "pending",
-      "id": "EVT-df55ff9cac01af5f",
-      "object_id": "CH-10:example",
-      "object_type": "chapter_stage",
-      "occurred_at": "2026-07-24T13:37:53Z",
-      "source_id": "7e5db21f2422-working-tree-7f64e8cbf353",
-      "summary": "CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 案例：pending → done",
-      "type": "chapter_stage_changed"
-    },
     {
       "actor": "ubuntu",
       "after": "done",
@@ -721,11 +673,59 @@
       "source_id": "57eaced8d483-working-tree-8c4ac3b7145a",
       "summary": "D24-T03 · CH-10 · 完成章节审校与证据对齐：ready → done",
       "type": "task_status_changed"
+    },
+    {
+      "actor": "v0.4-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-563ff9363186ed13",
+      "object_id": "EXP-02-01:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T07:12:18Z",
+      "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
+      "summary": "EXP-02-01 · 不可委托判断清单生成器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.4-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-85564d8c75d94bc6",
+      "object_id": "EXP-03-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T07:12:18Z",
+      "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
+      "summary": "EXP-03-02 · Unit 与 Bolt 依赖 DAG 校验器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.4-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-7dc6cf5425780633",
+      "object_id": "EXP-04-02:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T07:12:18Z",
+      "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
+      "summary": "EXP-04-02 · Standards 漂移检测器 · status：planned → verified",
+      "type": "experiment_changed"
+    },
+    {
+      "actor": "v0.4-loop",
+      "after": "verified",
+      "before": "planned",
+      "id": "EVT-f68d37a641db7674",
+      "object_id": "EXP-06-01:status",
+      "object_type": "experiment",
+      "occurred_at": "2026-07-25T07:12:18Z",
+      "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
+      "summary": "EXP-06-01 · Plan–Walkthrough 偏差审计器 · status：planned → verified",
+      "type": "experiment_changed"
     }
   ],
   "release_message": "准备 v0.1 发布；等待真实发布回执激活下一周期",
   "schema_version": "1.0.0",
-  "source_id": "57eaced8d483-working-tree-8c4ac3b7145a",
+  "source_id": "0d6255fd3670-working-tree-6f07fd750e74",
   "tasks": {
     "done": 72,
     "percent": 100.0,

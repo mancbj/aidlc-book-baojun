@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "units": [
+    {
+      "id": "UNIT-CATALOG",
+      "title": "Catalog"
+    },
+    {
+      "id": "UNIT-ORDER",
+      "title": "Order"
+    }
+  ],
+  "stories": [
+    {
+      "id": "STORY-CATALOG-API",
+      "unit_id": "UNIT-CATALOG",
+      "title": "Publish catalog query API"
+    },
+    {
+      "id": "STORY-ORDER-CREATE",
+      "unit_id": "UNIT-ORDER",
+      "title": "Create an order"
+    },
+    {
+      "id": "STORY-ORDER-RECEIPT",
+      "unit_id": "UNIT-ORDER",
+      "title": "Generate an order receipt"
+    }
+  ],
+  "bolts": [
+    {
+      "id": "BOLT-CATALOG-API",
+      "unit_id": "UNIT-CATALOG",
+      "story_ids": [
+        "STORY-CATALOG-API"
+      ],
+      "depends_on": [],
+      "status": "pending"
+    },
+    {
+      "id": "BOLT-ORDER-CREATE",
+      "unit_id": "UNIT-ORDER",
+      "story_ids": [
+        "STORY-ORDER-CREATE"
+      ],
+      "depends_on": [
+        "BOLT-CATALOG-API"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "BOLT-ORDER-RECEIPT",
+      "unit_id": "UNIT-ORDER",
+      "story_ids": [
+        "STORY-ORDER-RECEIPT"
+      ],
+      "depends_on": [
+        "BOLT-ORDER-CREATE"
+      ],
+      "status": "completed"
+    }
+  ]
+}

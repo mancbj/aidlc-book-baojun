@@ -27,7 +27,7 @@
     "readiness_ready"
   ],
   "baseline_commit": "d48da3a",
-  "current_round": "01",
+  "current_round": "06",
   "rounds": [
     {
       "id": "00",
@@ -52,6 +52,66 @@
       "release": 2,
       "total": 31,
       "notes": "verified/in-progress SHIP 路径真实存在；所有 verified SHIP 合同测试进入核心 CI。"
+    },
+    {
+      "id": "02",
+      "name": "exp-03-02-contract",
+      "decision": "KEEP",
+      "experiments": 16,
+      "svg": 3,
+      "reader_feedback": 5,
+      "book_integration": 9,
+      "release": 2,
+      "total": 35,
+      "notes": "EXP-03-02 合同与失败样例完成。"
+    },
+    {
+      "id": "03",
+      "name": "exp-03-02-verified",
+      "decision": "KEEP",
+      "experiments": 22,
+      "svg": 3,
+      "reader_feedback": 5,
+      "book_integration": 9,
+      "release": 2,
+      "total": 41,
+      "notes": "EXP-03-02 verified 并进入 CI。"
+    },
+    {
+      "id": "04",
+      "name": "exp-06-01-verified",
+      "decision": "KEEP",
+      "experiments": 26,
+      "svg": 3,
+      "reader_feedback": 5,
+      "book_integration": 9,
+      "release": 2,
+      "total": 45,
+      "notes": "EXP-06-01 verified；deviation≠error。"
+    },
+    {
+      "id": "05",
+      "name": "exp-02-01-verified",
+      "decision": "KEEP",
+      "experiments": 30,
+      "svg": 3,
+      "reader_feedback": 5,
+      "book_integration": 9,
+      "release": 2,
+      "total": 49,
+      "notes": "EXP-02-01 verified；覆盖率边界清楚。"
+    },
+    {
+      "id": "06",
+      "name": "exp-04-02-verified",
+      "decision": "KEEP",
+      "experiments": 33,
+      "svg": 3,
+      "reader_feedback": 5,
+      "book_integration": 9,
+      "release": 2,
+      "total": 52,
+      "notes": "四个目标实验全部 verified；SHIP verified=6/18。"
     }
   ]
 }

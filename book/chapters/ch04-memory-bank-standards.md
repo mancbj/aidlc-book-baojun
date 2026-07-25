@@ -10,7 +10,7 @@
 | Draft Completeness | 正式十章生产线可读稿；D18-T03 五类审校已完成 |
 | Primary Question | 如何用版本化事实源和明确标准，让每次全新的 Agent 会话恢复正确上下文并持续遵守工程约束？ |
 | Reader Outcome | 能够设计最小 Memory Bank、Standards 目录、工件引用和变更同步规则 |
-| Related Experiments | `EXP-04-01` |
+| Related Experiments | `EXP-04-01`、`EXP-04-02` |
 
 ## 01 · Question：为什么 AI 需要可恢复的上下文
 
@@ -227,6 +227,16 @@ python3 experiments/exp-04-01/quickstart.py --sample
 这组结果不能证明所有项目都会得到同样数字，也不能证明 AI 一定理解了业务语义。它只能支撑一个更窄、也更可靠的结论：**当关键上下文被写成版本化事实源和 Standards 时，新会话更容易恢复正确行动边界；当上下文只存在于聊天印象里，首个动作错误和术语漂移会更容易出现。**
 
 这正是 AI-DLC 需要实验的地方。我们不要求实验证明“Memory Bank 永远有效”，只要求它把一个可观察差异放到桌面上：同样一句“继续下一任务”，有无工程化上下文，恢复质量可以完全不同。
+
+### `EXP-04-02` · Standards 漂移检测器
+
+`EXP-04-02` 检查版本化 Standards 与生成工件之间的规则违反和版本差异。运行入口：
+
+```bash
+python3 experiments/exp-04-02/quickstart.py --sample
+```
+
+输出位于 `experiments/exp-04-02/output/sample.json`。它只证明声明规则可以被确定性比对；它不证明这些规则适用于所有仓库。没有人工基准标签时，误报率记为 `null`，不得伪装成已经很低。
 
 ## 06 · Figure：新会话冷启动恢复栈
 

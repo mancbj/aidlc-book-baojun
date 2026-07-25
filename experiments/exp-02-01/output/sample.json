@@ -1,0 +1,156 @@
+{
+  "coverage_basis": [
+    "CONSTRAINT_EXCEPTION",
+    "GOAL_APPROVAL",
+    "RISK_ACCEPTANCE"
+  ],
+  "experiment_id": "EXP-02-01",
+  "human_judgment_checkpoints": [
+    {
+      "accountable_role": {
+        "id": "product_owner",
+        "name": "产品负责人"
+      },
+      "delegation_boundary": "AI 可整理候选成功标准和证据，但不得最终批准目标或取舍。",
+      "human_judgment": "由人确认目标“患者可在两分钟内完成预约”的成功标准与最终取舍。",
+      "id": "J-001",
+      "label": "目标验收判断",
+      "responsibility_status": "assigned",
+      "rule_id": "GOAL_APPROVAL",
+      "source": {
+        "id": "G-01",
+        "type": "goal"
+      }
+    },
+    {
+      "accountable_role": {
+        "id": "product_owner",
+        "name": "产品负责人"
+      },
+      "delegation_boundary": "AI 可整理候选成功标准和证据，但不得最终批准目标或取舍。",
+      "human_judgment": "由人确认目标“上线首月预约成功率达到 95%”的成功标准与最终取舍。",
+      "id": "J-002",
+      "label": "目标验收判断",
+      "responsibility_status": "assigned",
+      "rule_id": "GOAL_APPROVAL",
+      "source": {
+        "id": "G-02",
+        "type": "goal"
+      }
+    },
+    {
+      "accountable_role": {
+        "id": "security_owner",
+        "name": "安全负责人"
+      },
+      "delegation_boundary": "AI 可识别风险和比较缓解方案，但不得代表责任人接受剩余风险。",
+      "human_judgment": "由人决定风险“健康信息可能被未授权访问”的缓解措施与剩余风险是否可接受。",
+      "id": "J-003",
+      "label": "风险接受判断",
+      "responsibility_status": "assigned",
+      "rule_id": "RISK_ACCEPTANCE",
+      "source": {
+        "id": "R-01",
+        "type": "risk"
+      }
+    },
+    {
+      "accountable_role": null,
+      "delegation_boundary": "AI 可识别风险和比较缓解方案，但不得代表责任人接受剩余风险。",
+      "human_judgment": "由人决定风险“短信服务中断导致预约通知延迟”的缓解措施与剩余风险是否可接受。",
+      "id": "J-004",
+      "label": "风险接受判断",
+      "responsibility_status": "unassigned",
+      "rule_id": "RISK_ACCEPTANCE",
+      "source": {
+        "id": "R-02",
+        "type": "risk"
+      }
+    },
+    {
+      "accountable_role": {
+        "id": "compliance_owner",
+        "name": "合规负责人"
+      },
+      "delegation_boundary": "AI 可检查规则符合性，但不得自行放宽约束或批准例外。",
+      "human_judgment": "由人确认约束“健康数据必须保存在批准的区域内”的满足证据，并批准任何例外。",
+      "id": "J-005",
+      "label": "约束与例外判断",
+      "responsibility_status": "assigned",
+      "rule_id": "CONSTRAINT_EXCEPTION",
+      "source": {
+        "id": "C-01",
+        "type": "constraint"
+      }
+    },
+    {
+      "accountable_role": {
+        "id": "release_owner",
+        "name": "发布负责人"
+      },
+      "delegation_boundary": "AI 可检查规则符合性，但不得自行放宽约束或批准例外。",
+      "human_judgment": "由人确认约束“发布必须通过变更窗口审批”的满足证据，并批准任何例外。",
+      "id": "J-006",
+      "label": "约束与例外判断",
+      "responsibility_status": "assigned",
+      "rule_id": "CONSTRAINT_EXCEPTION",
+      "source": {
+        "id": "C-02",
+        "type": "constraint"
+      }
+    }
+  ],
+  "limitation": "判断点覆盖率仅表示输入条目命中本工具的内置规则；它不证明已覆盖项目中的全部不可委托判断。",
+  "metrics": {
+    "candidate_input_count": 6,
+    "covered_input_count": 6,
+    "judgment_point_coverage_percent": 100.0,
+    "unassigned_responsibility_count": 1
+  },
+  "project_name": "社区诊所预约系统",
+  "responsibility_boundaries": [
+    {
+      "accountable_checkpoint_ids": [
+        "J-001",
+        "J-002"
+      ],
+      "declared_boundary": "批准业务目标、成功标准及业务取舍。",
+      "role": {
+        "id": "product_owner",
+        "name": "产品负责人"
+      }
+    },
+    {
+      "accountable_checkpoint_ids": [
+        "J-003"
+      ],
+      "declared_boundary": "接受安全剩余风险并批准安全例外。",
+      "role": {
+        "id": "security_owner",
+        "name": "安全负责人"
+      }
+    },
+    {
+      "accountable_checkpoint_ids": [
+        "J-005"
+      ],
+      "declared_boundary": "解释合规约束并批准合规例外。",
+      "role": {
+        "id": "compliance_owner",
+        "name": "合规负责人"
+      }
+    },
+    {
+      "accountable_checkpoint_ids": [
+        "J-006"
+      ],
+      "declared_boundary": "批准发布窗口、回滚条件与上线决定。",
+      "role": {
+        "id": "release_owner",
+        "name": "发布负责人"
+      }
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:19645dbf4ab89ebf4701bb035436cc5dfc1917e5d8c21546ea0559721765f9c4"
+}

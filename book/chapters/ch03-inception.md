@@ -10,7 +10,7 @@
 | Draft Completeness | 正式十章生产线可读稿；D17-T03 五类审校已完成 |
 | Primary Question | AI 如何把一个高层 Intent 分解成可独立交付的 Unit、可验收的 Story 和可执行的 Bolt，而不丢失人的目标与边界？ |
 | Reader Outcome | 能够完成 Intent、Requirements、System Context、Unit、Story 与 Bolt Plan 的可追溯分解 |
-| Related Experiments | `EXP-03-01` |
+| Related Experiments | `EXP-03-01`、`EXP-03-02` |
 
 ## 01 · Question：为什么 Intent 不能直接交给 AI 执行
 
@@ -144,6 +144,16 @@ python3 -m unittest discover \
 ```
 
 这个实验可以被读者改造成自己的检查器。最小练习是：写一个自己的 Intent，列出 2 条 Requirement、1 个 Unit 和 3 个 Story，然后运行类似检查，观察是否有 Story 没有上游目标，是否有 Requirement 从未被实现路径覆盖。
+
+### `EXP-03-02` · Unit 与 Bolt 依赖 DAG 校验器
+
+`EXP-03-02` 继续检查下一层结构：Unit、Story 与 Bolt 的依赖图是否可执行。它输出依赖图，并计数循环依赖、跨 Unit 耦合边和未满足前置。运行入口：
+
+```bash
+python3 experiments/exp-03-02/quickstart.py --sample
+```
+
+样例报告在 `experiments/exp-03-02/output/sample.json`。它证明依赖清单可以被机器复核；它不证明计划最优，也不把跨 Unit 耦合自动判为错误——后者会以警告计数，留给人确认。
 
 ## 05 · Figure：向下分解与向上追踪
 

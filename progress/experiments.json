@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "Confirmed ten-chapter structure v3 and author-local specs.md portal crawl",
-  "updated": "2026-07-22T07:05:40Z",
+  "updated": "2026-07-25T07:11:21Z",
   "experiments": [
     {
       "id": "EXP-01-01",
@@ -116,8 +116,8 @@
         "生成或复现：人类判断点与责任边界清单",
         "记录指标：判断点覆盖率、未归属责任数"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:11:21Z",
       "repository_path": "experiments/exp-02-01",
       "readme_path": "experiments/exp-02-01/README.md",
       "sample_input": "experiments/exp-02-01/samples/input.json",
@@ -241,8 +241,8 @@
         "生成或复现：依赖图与异常报告",
         "记录指标：循环依赖数、跨 Unit 耦合边数、未满足前置数"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:11:21Z",
       "repository_path": "experiments/exp-03-02",
       "readme_path": "experiments/exp-03-02/README.md",
       "sample_input": "experiments/exp-03-02/samples/input.json",
@@ -334,8 +334,8 @@
         "生成或复现：规则违反项与版本差异报告",
         "记录指标：规则覆盖率、误报率、漂移项数量"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:11:21Z",
       "repository_path": "experiments/exp-04-02",
       "readme_path": "experiments/exp-04-02/README.md",
       "sample_input": "experiments/exp-04-02/samples/input.json",
@@ -488,8 +488,8 @@
         "生成或复现：计划项、实际变更与未声明偏差表",
         "记录指标：交付项覆盖率、未声明变更数"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T07:11:21Z",
       "repository_path": "experiments/exp-06-01",
       "readme_path": "experiments/exp-06-01/README.md",
       "sample_input": "experiments/exp-06-01/samples/input.json",

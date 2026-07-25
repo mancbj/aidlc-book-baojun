@@ -1,0 +1,62 @@
+{
+  "experiment_id": "EXP-02-01",
+  "project_name": "社区诊所预约系统",
+  "goals": [
+    {
+      "id": "G-01",
+      "statement": "患者可在两分钟内完成预约",
+      "owner_role": "product_owner"
+    },
+    {
+      "id": "G-02",
+      "statement": "上线首月预约成功率达到 95%",
+      "owner_role": "product_owner"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-01",
+      "statement": "健康信息可能被未授权访问",
+      "owner_role": "security_owner"
+    },
+    {
+      "id": "R-02",
+      "statement": "短信服务中断导致预约通知延迟",
+      "owner_role": null
+    }
+  ],
+  "constraints": [
+    {
+      "id": "C-01",
+      "statement": "健康数据必须保存在批准的区域内",
+      "owner_role": "compliance_owner"
+    },
+    {
+      "id": "C-02",
+      "statement": "发布必须通过变更窗口审批",
+      "owner_role": "release_owner"
+    }
+  ],
+  "responsibility_roles": [
+    {
+      "id": "product_owner",
+      "name": "产品负责人",
+      "boundary": "批准业务目标、成功标准及业务取舍。"
+    },
+    {
+      "id": "security_owner",
+      "name": "安全负责人",
+      "boundary": "接受安全剩余风险并批准安全例外。"
+    },
+    {
+      "id": "compliance_owner",
+      "name": "合规负责人",
+      "boundary": "解释合规约束并批准合规例外。"
+    },
+    {
+      "id": "release_owner",
+      "name": "发布负责人",
+      "boundary": "批准发布窗口、回滚条件与上线决定。"
+    }
+  ]
+}

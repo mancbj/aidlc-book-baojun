@@ -848,3 +848,12 @@
 
 - **chapter_stage_changed** · CH-10 · 组织与度量：从 Agent 分工到研发操作系统 · 审校：pending → done (`EVT-7cf955da5ca8a05f`)
 - **task_status_changed** · D24-T03 · CH-10 · 完成章节审校与证据对齐：ready → done (`EVT-99a95d46813cabff`)
+
+## 2026-07-25T07:12:18Z · `0d6255fd3670-working-tree-6f07fd750e74`
+
+快照：[`20260725T071218Z-fd3670-working-tree-6f07fd750e74.json`](snapshots/20260725T071218Z-fd3670-working-tree-6f07fd750e74.json)
+
+- **experiment_changed** · EXP-02-01 · 不可委托判断清单生成器 · status：planned → verified (`EVT-563ff9363186ed13`)
+- **experiment_changed** · EXP-03-02 · Unit 与 Bolt 依赖 DAG 校验器 · status：planned → verified (`EVT-85564d8c75d94bc6`)
+- **experiment_changed** · EXP-04-02 · Standards 漂移检测器 · status：planned → verified (`EVT-7dc6cf5425780633`)
+- **experiment_changed** · EXP-06-01 · Plan–Walkthrough 偏差审计器 · status：planned → verified (`EVT-f68d37a641db7674`)
