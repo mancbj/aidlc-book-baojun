@@ -1,0 +1,15 @@
+{
+  "deployment_topology": {
+    "components": [
+      {
+        "current_version": "1.0.0",
+        "id": "api",
+        "rollback_target": "0.9.0"
+      }
+    ],
+    "environment": "staging"
+  },
+  "experiment_id": "EXP-08-02",
+  "monitoring_signals": [],
+  "runbook_steps": []
+}

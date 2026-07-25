@@ -1,0 +1,24 @@
+{
+  "deployment_topology": {
+    "components": [
+      {
+        "current_version": "1.0.0",
+        "id": "api",
+        "rollback_target": "0.9.0"
+      }
+    ],
+    "environment": "staging"
+  },
+  "experiment_id": "EXP-08-99",
+  "fault_scenario": {
+    "affected_component_ids": [
+      "api"
+    ],
+    "data_impact": false,
+    "id": "FS-01",
+    "occurred_at": "2026-07-22T10:00:00Z",
+    "summary": "错误实验编号"
+  },
+  "monitoring_signals": [],
+  "runbook_steps": []
+}

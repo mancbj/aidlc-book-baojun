@@ -1,0 +1,76 @@
+{
+  "deployment_topology": {
+    "components": [
+      {
+        "current_version": "2.4.1",
+        "id": "web-api",
+        "rollback_target": "2.4.0"
+      },
+      {
+        "current_version": "1.2.0",
+        "id": "worker"
+      }
+    ],
+    "environment": "production"
+  },
+  "experiment_id": "EXP-08-02",
+  "fault_scenario": {
+    "affected_component_ids": [
+      "web-api",
+      "worker"
+    ],
+    "data_impact": true,
+    "id": "FS-01",
+    "occurred_at": "2026-07-22T14:00:00Z",
+    "summary": "部署后 API 5xx 激增并阻塞异步任务"
+  },
+  "monitoring_signals": [
+    {
+      "fault_scenario_id": "FS-01",
+      "id": "MON-01",
+      "observed_at": "2026-07-22T14:06:30Z",
+      "signal": "http_5xx_rate",
+      "source": "alertmanager"
+    },
+    {
+      "fault_scenario_id": "FS-01",
+      "id": "MON-02",
+      "observed_at": "2026-07-22T14:08:00Z",
+      "signal": "checkout_smoke_failed",
+      "source": "synthetic"
+    }
+  ],
+  "runbook_steps": [
+    {
+      "duration_minutes": 3,
+      "id": "RB-DETECT",
+      "phase": "detect",
+      "started_at": "2026-07-22T14:09:00Z",
+      "title": "确认告警与影响面"
+    },
+    {
+      "duration_minutes": 5,
+      "id": "RB-DECIDE",
+      "phase": "decide",
+      "started_at": "2026-07-22T14:12:00Z",
+      "title": "决定回滚 web-api 并暂停 worker 消费"
+    },
+    {
+      "duration_minutes": 8,
+      "id": "RB-ROLLBACK",
+      "phase": "rollback",
+      "started_at": "2026-07-22T14:17:00Z",
+      "target_component_ids": [
+        "web-api"
+      ],
+      "title": "执行 web-api 版本回滚"
+    },
+    {
+      "duration_minutes": 10,
+      "id": "RB-RECOVER",
+      "phase": "recover",
+      "started_at": "2026-07-22T14:25:00Z",
+      "title": "Runtime Verify 与监控复核"
+    }
+  ]
+}

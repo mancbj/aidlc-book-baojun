@@ -1,0 +1,39 @@
+{
+  "deployment_topology": {
+    "components": [
+      {
+        "current_version": "1.0.0",
+        "id": "api",
+        "rollback_target": "0.9.0"
+      }
+    ],
+    "environment": "staging"
+  },
+  "experiment_id": "EXP-08-02",
+  "fault_scenario": {
+    "affected_component_ids": [
+      "api"
+    ],
+    "data_impact": false,
+    "id": "FS-01",
+    "occurred_at": "2026-07-22T10:00:00Z",
+    "summary": "重复信号 ID"
+  },
+  "monitoring_signals": [
+    {
+      "fault_scenario_id": "FS-01",
+      "id": "MON-DUP",
+      "observed_at": "2026-07-22T10:05:00Z",
+      "signal": "latency",
+      "source": "apm"
+    },
+    {
+      "fault_scenario_id": "FS-01",
+      "id": "MON-DUP",
+      "observed_at": "2026-07-22T10:06:00Z",
+      "signal": "errors",
+      "source": "apm"
+    }
+  ],
+  "runbook_steps": []
+}
