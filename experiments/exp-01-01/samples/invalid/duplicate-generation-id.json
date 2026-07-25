@@ -1,0 +1,27 @@
+{
+  "experiment_id": "EXP-01-01",
+  "intent": {
+    "id": "INT-01",
+    "statement": "重复 run id"
+  },
+  "generation_context": {
+    "model": "frozen-model",
+    "prompt_id": "prompt-v1"
+  },
+  "generations": [
+    {
+      "id": "gen-dup",
+      "structured_output": {
+        "operations": ["create", "read"]
+      },
+      "test_pass": true
+    },
+    {
+      "id": "gen-dup",
+      "structured_output": {
+        "operations": ["create", "delete"]
+      },
+      "test_pass": false
+    }
+  ]
+}

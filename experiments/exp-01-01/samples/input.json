@@ -1,0 +1,65 @@
+{
+  "experiment_id": "EXP-01-01",
+  "intent": {
+    "id": "INT-TODO-CRUD",
+    "statement": "为团队待办提供 REST CRUD，含持久化与基础单元测试"
+  },
+  "generation_context": {
+    "model": "frozen-gpt-example-2026-03",
+    "prompt_id": "todo-crud-v3-system-user",
+    "temperature": 0.2
+  },
+  "generations": [
+    {
+      "id": "gen-20260301-a",
+      "structured_output": {
+        "api_style": "rest",
+        "entities": ["TodoItem"],
+        "operations": ["create", "read", "update", "delete"],
+        "persistence": {
+          "driver": "sqlite",
+          "migrations": true
+        },
+        "tests": {
+          "unit": true,
+          "integration": false
+        }
+      },
+      "test_pass": true
+    },
+    {
+      "id": "gen-20260301-b",
+      "structured_output": {
+        "api_style": "rest",
+        "entities": ["TodoItem"],
+        "operations": ["create", "read", "update", "delete"],
+        "persistence": {
+          "driver": "postgres",
+          "migrations": true
+        },
+        "tests": {
+          "unit": true,
+          "integration": true
+        }
+      },
+      "test_pass": true
+    },
+    {
+      "id": "gen-20260301-c",
+      "structured_output": {
+        "api_style": "rest",
+        "entities": ["Todo", "TodoList"],
+        "operations": ["create", "read", "update"],
+        "persistence": {
+          "driver": "sqlite",
+          "migrations": false
+        },
+        "tests": {
+          "unit": true,
+          "integration": false
+        }
+      },
+      "test_pass": false
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "experiment_id": "EXP-01-01",
+  "intent": {
+    "id": "INT-01",
+    "statement": "仅一次生成不足以做方差基线"
+  },
+  "generation_context": {
+    "model": "frozen-model",
+    "prompt_id": "prompt-v1"
+  },
+  "generations": [
+    {
+      "id": "gen-only",
+      "structured_output": {
+        "operations": ["create"]
+      },
+      "test_pass": true
+    }
+  ]
+}
