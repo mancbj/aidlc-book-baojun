@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.8",
+  "publish_threshold": 92,
+  "dimension_minimums": {
+    "experiments": 44
+  },
+  "weights": {
+    "experiments": 50,
+    "chapter_evidence": 15,
+    "reader_feedback": 15,
+    "release": 20
+  },
+  "hard_gates": [
+    "ci_check_pass",
+    "internal_links_errors_zero",
+    "four_target_experiments_verified",
+    "verified_contract_tests_in_ci",
+    "already_keepext_not_relabeled_ship",
+    "exsecutio_spelling_preserved",
+    "runtime_verify_boundary_preserved",
+    "reader_feedback_not_fabricated",
+    "readiness_ready"
+  ],
+  "baseline_commit": "703cb3c",
+  "current_round": "00",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "baseline-and-scope",
+      "decision": "KEEP",
+      "experiments": 30,
+      "chapter_evidence": 10,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 52,
+      "notes": "SHIP verified=18/18；ALREADY ready=2；KEEP-EXT planned=10；Reader responded=0/3。"
+    }
+  ]
+}
