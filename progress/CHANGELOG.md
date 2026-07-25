@@ -896,3 +896,9 @@
 - **feedback_decided** · FB-008 · Reader-A/B/C：deferred (`EVT-03f0e19502a08b6a`)
 - **feedback_decided** · FB-009 · Reader-A/B/C：deferred (`EVT-5803c016485087bf`)
 - **cycle_opened** · 激活 v0.8.003-draft 维护周期并同步实验 30/30 投影 (`EVT-e49a2c270bd554b3`)
+
+## 2026-07-25T09:21:19Z · `d0083a435a2c-working-tree-4931d0721693`
+
+快照：[`20260725T092119Z-435a2c-working-tree-4931d0721693.json`](snapshots/20260725T092119Z-435a2c-working-tree-4931d0721693.json)
+
+- **release_published** · v0.8.003 已发布；维护周期关闭 (`EVT-fd7f87a3b5d8c50d`)

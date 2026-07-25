@@ -491,7 +491,7 @@
       "updated": "2026-07-24T13:38:38Z"
     },
     "cycles": {
-      "active_cycle": "v0.8.003-draft",
+      "active_cycle": null,
       "cycles": [
         {
           "accepted_feedback": [],
@@ -677,7 +677,7 @@
             "url": "https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.8.002",
             "version": "v0.8.002"
           },
-          "status": "active",
+          "status": "complete",
           "tasks": [
             {
               "acceptance": [
@@ -744,14 +744,14 @@
               "id": "C03-T05",
               "kind": "build-review",
               "priority": "must",
-              "status": "ready",
+              "status": "done",
               "title": "发布 v0.8.003 并写入回执"
             }
           ]
         }
       ],
       "schema_version": "1.0.0",
-      "updated": "2026-07-25T10:40:00Z"
+      "updated": "2026-07-25T10:50:00Z"
     },
     "experiments": {
       "experiments": [
@@ -4166,5 +4166,5 @@
     }
   },
   "schema_version": "1.0.0",
-  "source_id": "e99de734cc1b-working-tree-65284fadaf99"
+  "source_id": "d0083a435a2c-working-tree-4931d0721693"
 }

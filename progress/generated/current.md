@@ -2,7 +2,7 @@
 
 > 本文件由 `python3 scripts/generate_progress.py` 自动生成，请勿手工维护统计数字。
 
-- 目标：v0.8.003-draft · 持续更新与维护周期
+- 目标：实验 30/30 verified；patch 维护阶段
 - 当前：Day 24 / 24，剩余 0 个计划日
 - 总进度：72/72（100.0%）
 - 加权进度：100.0%
@@ -10,13 +10,13 @@
 - Should：2/2（100.0%）
 - 阻塞：0
 - 反馈：9 条；accepted 0 条
-- 下一周期：v0.8.003-draft
-- 事实最近更新：2026-07-25T10:40:00Z
-- 来源：`e99de734cc1b-working-tree-65284fadaf99`
+- 下一周期：尚未激活
+- 事实最近更新：2026-07-25T10:50:00Z
+- 来源：`d0083a435a2c-working-tree-4931d0721693`
 
 ## 下一动作
 
-1. **C03-T05 · 发布 v0.8.003 并写入回执** — MUST / 可开始 / v0.8.003-draft
+实验与任务已闭环；准备下一 patch 发布，或等待真实回执激活 draft 周期
 
 ## 阻塞
 
@@ -24,6 +24,7 @@
 
 ## 最近关键更新
 
+- `2026-07-25T09:21:19Z` · v0.8.003 已发布；维护周期关闭 (`EVT-fd7f87a3b5d8c50d`)
 - `2026-07-25T09:18:18Z` · 激活 v0.8.003-draft 维护周期并同步实验 30/30 投影 (`EVT-e49a2c270bd554b3`)
 - `2026-07-25T09:18:18Z` · FB-009 · Reader-A/B/C：deferred (`EVT-5803c016485087bf`)
 - `2026-07-25T09:18:18Z` · FB-008 · Reader-A/B/C：deferred (`EVT-03f0e19502a08b6a`)
@@ -33,7 +34,6 @@
 - `2026-07-25T09:18:18Z` · FB-004 · Reader-A/B/C：deferred (`EVT-d570a00b6cf7f55e`)
 - `2026-07-25T09:18:18Z` · FB-003 · Reader-A/B/C：deferred (`EVT-5aede4c95f45de4f`)
 - `2026-07-25T09:18:18Z` · FB-002 · Reader-A/B/C：deferred (`EVT-55fab0cf294ae444`)
-- `2026-07-25T09:18:18Z` · EXP-10-03 · Mob 协作与 Agent 交接复现 · status：planned → verified (`EVT-329b584c323d1b75`)
 
 ## 下钻入口
 

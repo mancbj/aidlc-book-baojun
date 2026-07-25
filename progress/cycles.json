@@ -1,5 +1,5 @@
 {
-  "active_cycle": "v0.8.003-draft",
+  "active_cycle": null,
   "cycles": [
     {
       "accepted_feedback": [],
@@ -103,7 +103,7 @@
     },
     {
       "id": "v0.8.003-draft",
-      "status": "active",
+      "status": "complete",
       "monthly_target": "v0.8.003 patch maintenance release",
       "origin_release": {
         "schema_version": "1.0.0",
@@ -246,7 +246,7 @@
           "title": "发布 v0.8.003 并写入回执",
           "kind": "build-review",
           "priority": "must",
-          "status": "ready",
+          "status": "done",
           "dependencies": [
             "C03-T04"
           ],
@@ -259,5 +259,5 @@
     }
   ],
   "schema_version": "1.0.0",
-  "updated": "2026-07-25T10:40:00Z"
+  "updated": "2026-07-25T10:50:00Z"
 }

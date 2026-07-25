@@ -544,7 +544,7 @@
     "total": 10
   },
   "cycles": {
-    "active_cycle": "v0.8.003-draft",
+    "active_cycle": null,
     "href": "details.html#cycles",
     "preview_count": 0,
     "rows": [
@@ -564,8 +564,8 @@
         "href": "details.html#cycle-v0.8.003-draft",
         "id": "v0.8.003-draft",
         "monthly_target": "v0.8.003 patch maintenance release",
-        "status": "active",
-        "task_done": 4,
+        "status": "complete",
+        "task_done": 5,
         "task_total": 5
       }
     ]
@@ -598,57 +598,18 @@
     "total": 9,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-25T09:18:18Z",
+  "generated_at": "2026-07-25T09:21:19Z",
   "goal": {
     "all_tasks_done": true,
     "current_day": 24,
     "days_remaining": 0,
-    "name": "v0.8.003-draft · 持续更新与维护周期",
+    "name": "实验 30/30 verified；patch 维护阶段",
     "total_days": 24
   },
-  "latest_fact_update": "2026-07-25T10:40:00Z",
-  "latest_snapshot": "../progress/snapshots/20260725T091818Z-34cc1b-working-tree-65284fadaf99.json",
-  "next_actions": [
-    {
-      "acceptance": [
-        {
-          "passed": false,
-          "text": "tag v0.8.003 公开发布"
-        },
-        {
-          "passed": false,
-          "text": "releases/v0.8.003/release.json 入库"
-        }
-      ],
-      "artifacts": [],
-      "day": "CYCLE",
-      "dependencies": [
-        "C03-T04"
-      ],
-      "href": "details.html#cycle-task-C03-T05",
-      "id": "C03-T05",
-      "owner": "author",
-      "planned_date": "v0.8.003 patch maintenance release",
-      "priority": "must",
-      "scope_label": "v0.8.003-draft",
-      "status": "ready",
-      "status_label": "可开始",
-      "title": "发布 v0.8.003 并写入回执"
-    }
-  ],
+  "latest_fact_update": "2026-07-25T10:50:00Z",
+  "latest_snapshot": "../progress/snapshots/20260725T092119Z-435a2c-working-tree-4931d0721693.json",
+  "next_actions": [],
   "recent_events": [
-    {
-      "actor": "v0.8.003-loop",
-      "after": "verified",
-      "before": "planned",
-      "id": "EVT-329b584c323d1b75",
-      "object_id": "EXP-10-03:status",
-      "object_type": "experiment",
-      "occurred_at": "2026-07-25T09:18:18Z",
-      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
-      "summary": "EXP-10-03 · Mob 协作与 Agent 交接复现 · status：planned → verified",
-      "type": "experiment_changed"
-    },
     {
       "actor": "v0.8.003-loop",
       "after": "deferred",
@@ -756,11 +717,23 @@
       "source_id": "e99de734cc1b-working-tree-65284fadaf99",
       "summary": "激活 v0.8.003-draft 维护周期并同步实验 30/30 投影",
       "type": "cycle_opened"
+    },
+    {
+      "actor": "v0.8.003-loop",
+      "after": "v0.8.003 已发布；维护周期关闭",
+      "before": null,
+      "id": "EVT-fd7f87a3b5d8c50d",
+      "object_id": "v0.8.003",
+      "object_type": "project",
+      "occurred_at": "2026-07-25T09:21:19Z",
+      "source_id": "d0083a435a2c-working-tree-4931d0721693",
+      "summary": "v0.8.003 已发布；维护周期关闭",
+      "type": "release_published"
     }
   ],
-  "release_message": "v0.8.003-draft 已激活；执行下一周期首个 Must 或继续处理 known-gap",
+  "release_message": "实验与任务已闭环；准备下一 patch 发布，或等待真实回执激活 draft 周期",
   "schema_version": "1.0.0",
-  "source_id": "e99de734cc1b-working-tree-65284fadaf99",
+  "source_id": "d0083a435a2c-working-tree-4931d0721693",
   "tasks": {
     "done": 72,
     "percent": 100.0,
