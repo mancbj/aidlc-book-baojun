@@ -1,0 +1,38 @@
+{
+  "bolt_type_recommendation": "DDD",
+  "experiment_id": "EXP-05-02",
+  "fired_rule_ids": [
+    "R-DDD-CROSS-BOUNDARY"
+  ],
+  "gray_zone": false,
+  "inputs": {
+    "cross_boundary_risk": true,
+    "domain_complexity": "medium",
+    "reversibility": "moderate",
+    "risk": "medium"
+  },
+  "limitation": "Bolt 类型建议仅依据本工具内置确定性量表生成；它不证明建议已达到专家级一致，也不能替代人工判断与领域评审。",
+  "metrics": {
+    "expert_agreement_rate": 100.0,
+    "over_engineering_count": 0,
+    "under_engineering_count": 0
+  },
+  "rubric_basis": [
+    "R-DDD-CROSS-BOUNDARY",
+    "R-DDD-HARD-REVERSE",
+    "R-DDD-HIGH-COMPLEXITY",
+    "R-DDD-HIGH-RISK",
+    "R-GRAY-GATES",
+    "R-GRAY-SPLIT",
+    "R-SIMPLE-LOW-RISK"
+  ],
+  "schema_version": "1.0.0",
+  "selection_rationale": [
+    {
+      "rule_id": "R-DDD-CROSS-BOUNDARY",
+      "text": "存在跨边界风险，需要 DDD 显式上下文与集成契约。"
+    }
+  ],
+  "source_digest": "sha256:5f0927f03833649ccc1d8a3273cf4c4a4f94f5f6e54676a1290b59157a25126a",
+  "task_description": "支付对账批处理与账务子域状态同步"
+}

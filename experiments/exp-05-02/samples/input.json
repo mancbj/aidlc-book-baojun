@@ -1,0 +1,9 @@
+{
+  "experiment_id": "EXP-05-02",
+  "task_description": "支付对账批处理与账务子域状态同步",
+  "domain_complexity": "medium",
+  "risk": "medium",
+  "reversibility": "moderate",
+  "cross_boundary_risk": true,
+  "expert_label": "DDD"
+}
