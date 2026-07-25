@@ -710,10 +710,14 @@
       "command": "python3 experiments/exp-08-02/quickstart.py --sample",
       "acceptance": [
         "生成或复现：发现、决策、回滚和恢复时间线",
-        "记录指标：发现到回滚耗时、数据损失窗口、Runbook 缺口数"
+        "记录指标：发现到回滚耗时、数据损失窗口、Runbook 缺口数",
+        "合法样例以退出码 0 生成 valid=true 的确定性 drill_timeline 报告",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "输出包含 limitation，明确桌面演练不等于生产恢复能力；Runtime Verify 指 CH-08 运行态核验",
+        "重复运行产生字节一致的输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:00:00Z",
       "repository_path": "experiments/exp-08-02",
       "readme_path": "experiments/exp-08-02/README.md",
       "sample_input": "experiments/exp-08-02/samples/input.json",
@@ -803,11 +807,13 @@
       ],
       "command": "python3 experiments/exp-09-02/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：检查点数量、位置与成本收益估算",
-        "记录指标：关键风险覆盖率、非必要检查点数、预计审阅成本"
+        "合法样例以退出码 0 生成含检查点数量、位置建议与成本收益估算的稳定报告",
+        "无效样例以退出码 1 失败并返回稳定错误代码，且不写入输出",
+        "记录指标：关键风险覆盖率、非必要检查点数、预计审阅成本",
+        "重复运行字节一致，单元测试全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:00:00Z",
       "repository_path": "experiments/exp-09-02",
       "readme_path": "experiments/exp-09-02/README.md",
       "sample_input": "experiments/exp-09-02/samples/input.json",

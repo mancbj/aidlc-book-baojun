@@ -1,0 +1,27 @@
+{
+  "experiment_id": "EXP-09-02",
+  "task_name": "支付对账批处理改造",
+  "reversibility": "medium",
+  "impact_scope": "team",
+  "autonomy_preference": "balanced",
+  "risks": [
+    {
+      "id": "RK-DATA",
+      "statement": "对账差异可能写入生产账簿",
+      "severity": "critical",
+      "phase": "release"
+    },
+    {
+      "id": "RK-PERF",
+      "statement": "批处理窗口可能超时影响日切",
+      "severity": "minor",
+      "phase": "implement"
+    },
+    {
+      "id": "RK-REG",
+      "statement": "审计证据链可能不完整",
+      "severity": "major",
+      "phase": "verify"
+    }
+  ]
+}
