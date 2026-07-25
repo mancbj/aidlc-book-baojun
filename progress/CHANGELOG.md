@@ -908,3 +908,9 @@
 快照：[`20260725T103147Z-07f2b34168968685a5103cdef7f1cd21.json`](snapshots/20260725T103147Z-07f2b34168968685a5103cdef7f1cd21.json)
 
 - **release_published** · v0.8.004 已公开发布：PDF 封面全出血与公式排版修复 (`EVT-e9ba84d3c4c99088`)
+
+## 2026-07-25T10:51:36Z · `b157addf8231a174fd73463deb9838ba65cd3de1`
+
+快照：[`20260725T105136Z-8231a174fd73463deb9838ba65cd3de1.json`](snapshots/20260725T105136Z-8231a174fd73463deb9838ba65cd3de1.json)
+
+- **release_published** · v0.8.005 已公开发布：README 开篇致谢 ai-agent-book 与 specs.md (`EVT-6bc022cef5057eaf`)
