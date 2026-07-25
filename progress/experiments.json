@@ -21,11 +21,12 @@
       ],
       "command": "python3 experiments/exp-01-01/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：多次生成结果与结构化差异报告",
-        "记录指标：结构差异率、测试通过率方差"
+        "基于仓库内冻结 generations 夹具复现结构化差异报告（无在线模型调用）",
+        "记录指标：结构差异率（structure_difference_rate）、测试通过率总体方差（test_pass_rate_variance）",
+        "合同测试与 --sample 字节级可重复"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:20:00Z",
       "repository_path": "experiments/exp-01-01",
       "readme_path": "experiments/exp-01-01/README.md",
       "sample_input": "experiments/exp-01-01/samples/input.json",
@@ -51,11 +52,14 @@
       ],
       "command": "python3 experiments/exp-01-02/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：两组交付记录与证据链对照",
-        "记录指标：人工往返次数、缺陷逃逸数、端到端耗时"
+        "合法样例以退出码 0 生成 valid=true 的 AI-Assisted 与 AI-Driven 并排对照报告",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "记录指标：human_roundtrips（两侧及 human_roundtrip_delta）、escaped_defects（两侧及 escaped_defect_delta）、end_to_end_minutes（两侧及 delta）",
+        "输出包含 limitation，明确不证明某一工作流在全部场景下更优",
+        "重复运行产生字节一致的输出，测试命令全部通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T08:20:00Z",
       "repository_path": "experiments/exp-01-02",
       "readme_path": "experiments/exp-01-02/README.md",
       "sample_input": "experiments/exp-01-02/samples/input.json",

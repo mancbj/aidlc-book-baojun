@@ -1,0 +1,18 @@
+{
+  "experiment_id": "EXP-01-02",
+  "feature": {
+    "id": "FEAT-READER-FEEDBACK",
+    "name": "试读反馈入口",
+    "intent_summary": "读者可提交章节试读反馈。"
+  },
+  "workflow_records": [
+    {
+      "record_id": "WF-ASSISTED-ONLY",
+      "workflow_mode": "ai_assisted",
+      "human_roundtrips": 1,
+      "escaped_defects": 0,
+      "elapsed_minutes": 10,
+      "evidence_links": ["chat/session.json"]
+    }
+  ]
+}
