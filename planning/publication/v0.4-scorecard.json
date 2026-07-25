@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.4",
+  "publish_threshold": 92,
+  "dimension_minimums": {
+    "experiments": 31,
+    "svg": 26
+  },
+  "weights": {
+    "experiments": 35,
+    "svg": 30,
+    "reader_feedback": 15,
+    "book_integration": 10,
+    "release": 10
+  },
+  "hard_gates": [
+    "ci_check_pass",
+    "internal_links_errors_zero",
+    "four_target_experiments_verified",
+    "verified_experiment_tests_in_ci",
+    "nine_chapter_svgs_audited_and_referenced",
+    "release_content_hygiene_pass",
+    "pdf_no_missing_glyphs",
+    "exsecutio_spelling_preserved",
+    "runtime_verify_boundary_preserved",
+    "reader_feedback_not_fabricated",
+    "readiness_ready"
+  ],
+  "baseline_commit": "d48da3a",
+  "current_round": "01",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "baseline-and-scope",
+      "decision": "KEEP",
+      "experiments": 8,
+      "svg": 3,
+      "reader_feedback": 5,
+      "book_integration": 9,
+      "release": 2,
+      "total": 27,
+      "notes": "2/18 SHIP verified；四个目标实验仍 planned；章节独立 SVG 为 0；Reader responded=0/3；v0.3 出版基线可复用。"
+    },
+    {
+      "id": "01",
+      "name": "verified-experiment-governance",
+      "decision": "KEEP",
+      "experiments": 12,
+      "svg": 3,
+      "reader_feedback": 5,
+      "book_integration": 9,
+      "release": 2,
+      "total": 31,
+      "notes": "verified/in-progress SHIP 路径真实存在；所有 verified SHIP 合同测试进入核心 CI。"
+    }
+  ]
+}

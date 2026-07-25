@@ -31,6 +31,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         ("continuity", [python, "scripts/validate_feedback.py"]),
         ("github-config", [python, "scripts/validate_github_config.py"]),
         ("tests", [python, "-m", "unittest", "discover", "-s", "tests"]),
+        ("verified-experiments", [python, "scripts/run_verified_experiments.py"]),
         (
             "generation-dry-run",
             [python, "scripts/generate_progress.py", "--dry-run", "--actor", "ci-check"],
