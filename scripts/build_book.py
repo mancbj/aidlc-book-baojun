@@ -40,9 +40,11 @@ SOURCE_FILES = (
 SUPPORT_FILES = (
     Path("book/book.css"),
     Path("book/filters/pdf-compat.lua"),
+    Path("book/filters/release-profile.lua"),
     Path("book/images/cover.png"),
     Path("book/images/fig0-1.svg"),
 )
+RELEASE_PROFILE_FILTER = Path("book/filters/release-profile.lua")
 MERMAID_BLOCK = re.compile(r"^```mermaid[^\n]*\n(.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL)
 COVER_MARKDOWN = "![《深入理解 AI-DLC》书籍封面](images/cover.png){.book-cover width=42%}"
 PDF_FULL_PAGE_COVER = r"""\newgeometry{margin=0pt}
@@ -237,9 +239,17 @@ def validate_pdf(path: Path) -> None:
         raise RuntimeError("PDF 候选结构或大小异常。")
 
 
-def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dict[str, object]:
+def build(
+    root: Path,
+    output: Path,
+    generated_at: str,
+    build_format: str,
+    profile: str = "dev",
+) -> Dict[str, object]:
     root = root.resolve()
     output = output.resolve()
+    if profile not in {"dev", "release"}:
+        raise RuntimeError(f"未知构建 profile：{profile}")
     missing = [str(path) for path in SOURCE_FILES + SUPPORT_FILES if not (root / path).is_file()]
     if missing:
         raise RuntimeError("缺少构建输入：" + ", ".join(missing))
@@ -253,12 +263,13 @@ def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dic
 
     prepare_output(root, output)
     resource_path = os.pathsep.join((str(root / "book"), str(root)))
+    release_filter = root / RELEASE_PROFILE_FILTER
     outputs: List[Dict[str, str]] = []
     with tempfile.TemporaryDirectory(prefix="aidlc-book-") as directory:
         work = Path(directory)
 
         def common_for(sources: List[str]) -> List[str]:
-            return [
+            command = [
                 pandoc,
                 *sources,
                 "--from=markdown+smart+raw_tex+fenced_divs",
@@ -266,6 +277,9 @@ def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dic
                 f"--resource-path={resource_path}",
                 "--metadata=lang:zh-CN",
             ]
+            if profile == "release":
+                command.append(f"--lua-filter={release_filter}")
+            return command
 
         if build_format in {"html", "all"}:
             html_sources = render_mermaid_sources(root, work, mmdc, browser, "svg")
@@ -288,21 +302,18 @@ def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dic
         if build_format in {"pdf", "all"}:
             pdf_sources = render_mermaid_sources(root, work, mmdc, browser, "pdf")
             pdf_path = output / PDF_NAME
-            run_pandoc(
-                common_for(pdf_sources)
-                + [
-                    "--to=pdf",
-                    "--pdf-engine=tectonic",
-                    f"--lua-filter={root / 'book/filters/pdf-compat.lua'}",
-                    "--variable=documentclass:ctexbook",
-                    "--variable=classoption:openany",
-                    "--variable=papersize:a4",
-                    "--variable=geometry:margin=24mm",
-                    "--variable=colorlinks:true",
-                    f"--output={pdf_path}",
-                ],
-                "Pandoc PDF 构建",
-            )
+            pdf_command = common_for(pdf_sources) + [
+                "--to=pdf",
+                "--pdf-engine=tectonic",
+                f"--lua-filter={root / 'book/filters/pdf-compat.lua'}",
+                "--variable=documentclass:ctexbook",
+                "--variable=classoption:openany",
+                "--variable=papersize:a4",
+                "--variable=geometry:margin=24mm",
+                "--variable=colorlinks:true",
+                f"--output={pdf_path}",
+            ]
+            run_pandoc(pdf_command, "Pandoc PDF 构建")
             validate_pdf(pdf_path)
             outputs.append({"path": PDF_NAME, "sha256": sha256(pdf_path)})
 
@@ -311,6 +322,7 @@ def build(root: Path, output: Path, generated_at: str, build_format: str) -> Dic
         "title": TITLE,
         "generated_at": generated_at,
         "format": build_format,
+        "profile": profile,
         "pandoc": tool_version(pandoc),
         "diagram_engine": tool_version(mmdc),
         "diagram_browser": Path(browser).name,
@@ -333,6 +345,12 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--output", type=Path, default=Path(".artifacts/book"))
     parser.add_argument("--format", choices=("html", "pdf", "all"), default="html")
+    parser.add_argument(
+        "--profile",
+        choices=("dev", "release"),
+        default="dev",
+        help="dev 保留写作脚手架；release 剥离 Metadata/Gate/Review Notes 等内部信息",
+    )
     parser.add_argument("--generated-at", help="fixed ISO-8601 build time for reproducible tests")
     return parser.parse_args(argv)
 
@@ -343,7 +361,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "+00:00", "Z"
     )
     try:
-        manifest = build(args.root, args.output, generated_at, args.format)
+        manifest = build(args.root, args.output, generated_at, args.format, profile=args.profile)
     except (OSError, RuntimeError, UnicodeError) as exc:
         print(f"[ERROR] {exc}")
         return 1
