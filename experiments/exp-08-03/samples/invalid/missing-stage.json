@@ -1,0 +1,22 @@
+{
+  "experiment_id": "EXP-08-03",
+  "pinned_version": "sha256:dfef24406c8875dc920c3223eb5d415cec007afb3ba99e66191446d8b8f95338",
+  "release_id": "x",
+  "stages": [
+    {
+      "stage_id": "build",
+      "status": "completed",
+      "credentials": {
+        "source_commit": "a",
+        "facts_identity": "b",
+        "artifact_hash": "c"
+      }
+    }
+  ],
+  "rollback_readiness": {
+    "rollback_target_recorded": true,
+    "runbook_linked": true,
+    "previous_artifact_pinned": true,
+    "post_rollback_check_defined": true
+  }
+}

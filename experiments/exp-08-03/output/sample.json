@@ -1,0 +1,48 @@
+{
+  "experiment_id": "EXP-08-03",
+  "external_source": "https://specs.md/agents/operations-agent",
+  "guide_digest": "sha256:455d4b720fb1d127b793064e0407987fda9e55abab3fe8529a923a5e660872e3",
+  "limitation": "本报告仅对照仓库内冻结的 Operations 四阶段指南与输入阶段凭证做确定性核对；其中 runtime_verify 指 CH-08 Runtime Verify，不等于 CH-07 交付候选验证；冻结 pin 不等于唯一标准，且不访问或验证实时 specs.md portal。",
+  "metrics": {
+    "rollback_readiness_percent": 100.0,
+    "stage_completion_percent": 100.0
+  },
+  "pinned_version": "sha256:dfef24406c8875dc920c3223eb5d415cec007afb3ba99e66191446d8b8f95338",
+  "release_id": "v0.8.002-pages-rc",
+  "rollback_readiness": {
+    "post_rollback_check_defined": true,
+    "previous_artifact_pinned": true,
+    "rollback_target_recorded": true,
+    "runbook_linked": true
+  },
+  "runtime_verify_framing": "runtime_verify stage is CH-08 Runtime Verify, not CH-07 delivery candidate verification",
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:15834f0b6b745f4eeacebc7bc7dc6418f532110a06bdbc9e05555dfb1604d434",
+  "stages": [
+    {
+      "credentials_complete": true,
+      "required": true,
+      "stage_id": "build",
+      "status": "completed"
+    },
+    {
+      "credentials_complete": true,
+      "required": true,
+      "stage_id": "deploy",
+      "status": "completed"
+    },
+    {
+      "credentials_complete": true,
+      "required": true,
+      "stage_id": "runtime_verify",
+      "status": "completed"
+    },
+    {
+      "credentials_complete": true,
+      "required": true,
+      "stage_id": "monitor",
+      "status": "completed"
+    }
+  ],
+  "valid": true
+}

@@ -1,0 +1,8 @@
+{
+  "experiment_id": "EXP-10-03",
+  "pinned_version": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "collaboration_id": "x",
+  "timing": {"started_at_epoch": 1, "completed_at_epoch": 2},
+  "mob_sessions": [],
+  "handoff_log": {}
+}

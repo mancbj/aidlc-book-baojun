@@ -280,11 +280,13 @@ publish
 
 - `EXP-08-01 · 发布候选来源清单校验器`：复用 readiness / manifest 校验模型，验证发布候选来源、必需资产与文件哈希是否一致。运行：`python3 experiments/exp-08-01/quickstart.py --sample`。
 - `EXP-08-02 · 回滚桌面演练模拟器`：根据部署拓扑、故障场景、监控信号与 Runbook，生成发现、决策、回滚和恢复时间线。运行：`python3 experiments/exp-08-02/quickstart.py --sample`。
-- `EXP-08-03 · Operations 四阶段复现`：参考 Operations Agent 流程与可部署示例，复现 Build、Deploy、Runtime Verify、Monitor 四阶段凭证。
+- `EXP-08-03 · Operations 四阶段复现`：对照冻结 pin 指南，复现 Build、Deploy、Runtime Verify、Monitor 四阶段凭证与回滚就绪度。运行：`python3 experiments/exp-08-03/quickstart.py --sample`。
 
 其中 `EXP-08-01` 已为 `ALREADY / verified`：样例在 `experiments/exp-08-01/output/sample.json`。它证明冻结的 readiness/manifest 输入上，来源一致性、必需资产覆盖与哈希格式可被确定性校验，并给出 `source_completeness_percent` 与 `hash_mismatch_count`。它不证明真实生产环境已经完整可观测，也不把 ALREADY 改写成 SHIP。
 
-`EXP-08-02` 已 verified：样例报告在 `experiments/exp-08-02/output/sample.json`。它证明部署拓扑、故障、监控信号与 Runbook 可连成 detect→decide→rollback→recover 时间线，并给出发现到回滚耗时、数据损失窗口与 Runbook 缺口数。桌面演练不等于生产恢复能力。`EXP-08-03` 仍为 `KEEP-EXT / planned`。
+`EXP-08-02` 已 verified：样例报告在 `experiments/exp-08-02/output/sample.json`。它证明部署拓扑、故障、监控信号与 Runbook 可连成 detect→decide→rollback→recover 时间线，并给出发现到回滚耗时、数据损失窗口与 Runbook 缺口数。桌面演练不等于生产恢复能力。
+
+`EXP-08-03` 已为 `KEEP-EXT / verified`：样例在 `experiments/exp-08-03/output/sample.json`，给出 `stage_completion_percent` 与 `rollback_readiness_percent`。其中 Runtime Verify 属于 CH-08 运行时核验，不等于 CH-07 交付候选验证；冻结 pin 不等于成熟生产能力。
 
 三项实验分别服务于三个问题。
 
@@ -292,7 +294,7 @@ publish
 |---|---|---|
 | `EXP-08-01` | 发布候选来源、readiness 与 artifact hash 是否一致 | 不证明真实生产环境已经完整可观测；ALREADY 不得改写成 SHIP |
 | `EXP-08-02` | 发现、决策、回滚和恢复的时间线是否清楚 | 不证明所有故障都能桌面演练覆盖 |
-| `EXP-08-03` | Operations 四阶段凭证是否能按官方流程复现 | 不把 alpha 参考实现写成成熟生产能力 |
+| `EXP-08-03` | Operations 四阶段凭证是否能按冻结指南复现 | 不把 alpha 参考实现写成成熟生产能力；KEEP-EXT 不得改写成 SHIP |
 
 ## 07 · Figure：Operations 运行闭环
 
@@ -328,7 +330,7 @@ Build → Deploy → Runtime Verify → Monitor
 
 第三，本章不把当前 `memory-bank/operations/` 写成已经存在的成熟目录。当前仓库还没有正式 operations 目录；本章只把它作为方法落点和后续实现方向。
 
-第四，本章不承诺 `EXP-08-02` 已证明生产恢复能力；也不把仍为 `planned` 的 `EXP-08-03` 写成已验证。
+第四，本章不承诺 `EXP-08-02` 已证明生产恢复能力；`EXP-08-03` 虽已 verified，也只证明冻结四阶段凭证可复现，不证明生产可观测或恢复能力成熟。
 
 第五，本章不把发布自动化当成生产成熟度。自动化只是动作可靠；成熟度还包括环境门禁、监控、恢复、审计和责任。
 

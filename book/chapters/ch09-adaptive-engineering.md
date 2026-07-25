@@ -238,15 +238,17 @@ AI 不会自动纠正这种不公平。它只会让错误的流程跑得更快�
 
 - `EXP-09-01 · Simple/FIRE/AI-DLC Flow 选择器`：根据任务复杂度、代码库状态、团队规模与合规要求，生成 Flow 建议、理由与不适用条件。运行：`python3 experiments/exp-09-01/quickstart.py --sample`。
 - `EXP-09-02 · 风险到检查点预算模拟器`：根据风险清单、可逆性、影响范围与自治偏好，生成检查点数量、位置与成本收益估算。运行：`python3 experiments/exp-09-02/quickstart.py --sample`。
-- `EXP-09-03 · Brownfield Flow 选择案例复现`：参考官方 Flow 决策指南与棕地项目案例，复现 Simple、FIRE、AI-DLC 三方案对照决策。
+- `EXP-09-03 · Brownfield Flow 选择案例复现`：对照冻结 pin 指南，复现 Simple、FIRE、AI-DLC 三方案对照决策。运行：`python3 experiments/exp-09-03/quickstart.py --sample`。
 
-其中 `EXP-09-01` 与 `EXP-09-02` 已 verified。`EXP-09-01` 样例在 `experiments/exp-09-01/output/sample.json`，证明规则化 Flow 建议可附带理由与不适用条件。`EXP-09-02` 样例在 `experiments/exp-09-02/output/sample.json`，证明风险清单可换算为检查点数量、落点与审阅成本；关键风险覆盖率与非必要检查点可计量。二者都不证明穷尽全部风险或已达专家级一致。`EXP-09-03` 仍为 `planned`，需保留外部来源与 pinned version 边界。
+其中 `EXP-09-01`、`EXP-09-02` 与 `EXP-09-03` 均已 verified。`EXP-09-01` 样例在 `experiments/exp-09-01/output/sample.json`，证明规则化 Flow 建议可附带理由与不适用条件。`EXP-09-02` 样例在 `experiments/exp-09-02/output/sample.json`，证明风险清单可换算为检查点数量、落点与审阅成本；关键风险覆盖率与非必要检查点可计量。二者都不证明穷尽全部风险或已达专家级一致。
+
+`EXP-09-03` triage 仍为 `KEEP-EXT`：样例在 `experiments/exp-09-03/output/sample.json`，给出 `decision_rationale_coverage_percent` 与 `estimated_process_overhead_score`。它只证明冻结棕地案例上的三方案决策可复现，不把外部指南写成唯一标准，也不替代人工 Flow 选择。
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
 | `EXP-09-01` | Flow 建议是否带理由和不适用条件 | 不证明建议已达到专家级一致 |
 | `EXP-09-02` | 检查点预算是否覆盖关键风险且不过度 | 不证明所有风险都能被预算公式穷尽 |
-| `EXP-09-03` | Brownfield 场景能否对照三种 Flow 做决策 | 不把外部指南复现写成已完成生产验证 |
+| `EXP-09-03` | Brownfield 场景能否对照三种 Flow 做决策 | 不把外部指南复现写成已完成生产验证；KEEP-EXT 不得改写成 SHIP |
 
 ## 07 · Figure：风险—仪式矩阵
 
@@ -273,7 +275,7 @@ Low Risk        Simple                Simple / FIRE
 
 第三，本章不把 Simple、FIRE、AI-DLC 写成互相消灭的阵营。它们是不同治理强度，可以并存于同一产品的不同任务。
 
-第四，本章不承诺 `EXP-09-01` / `EXP-09-02` 已证明选型或预算达到专家级；也不把仍为 `planned` 的 `EXP-09-03` 写成已验证。
+第四，本章不承诺 `EXP-09-01` / `EXP-09-02` 已证明选型或预算达到专家级；`EXP-09-03` 虽已 verified，也只证明冻结案例决策可复现，不替代人工 Flow 选择。
 
 第五，本章不提供可替代人工判断的自动选型黑盒。矩阵帮助组织问题，最终责任仍在人。
 

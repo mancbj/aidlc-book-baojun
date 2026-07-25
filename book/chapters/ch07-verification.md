@@ -249,11 +249,13 @@ Human Judgment accepts, rejects, escalates, or defers them.
 
 - `EXP-07-01 · 仓库确定性门禁组合器`：复用 `scripts/ci_check.py`，静态解析并合同化 Must 门禁组合。运行：`python3 experiments/exp-07-01/quickstart.py --sample`。
 - `EXP-07-02 · 独立评审分歧矩阵`：比较交付候选、测试证据、独立模型评审与人工 Rubric，生成多方判断及分歧归因矩阵。运行：`python3 experiments/exp-07-02/quickstart.py --sample`。
-- `EXP-07-03 · 分层验证检查点复现`：参考官方三阶段与检查点说明，向示例候选注入缺陷，记录缺陷在不同检查层的首次发现位置。
+- `EXP-07-03 · 分层验证检查点复现`：对照冻结 pin 指南，向示例候选注入缺陷，记录各层首次发现位置与逃逸数。运行：`python3 experiments/exp-07-03/quickstart.py --sample`。
 
 其中 `EXP-07-01` 已为 `ALREADY / verified`：样例在 `experiments/exp-07-01/output/sample.json`。它证明 `ci_check.py` 的 Must 门禁组合可被静态解析并稳定复现（含 passed/failed/configured 计数与 missing/extra 对照）；合同测试不得调用 `--live`，也不在实验内重跑全量 CI。它不证明内容质量或读者理解已被充分验证。
 
-`EXP-07-02` 已 verified：样例在 `experiments/exp-07-02/output/sample.json`。它证明冻结的模型评审与人工 Rubric 可生成分歧归因矩阵，并给出一致率、新增风险数与人工推翻率；模型评审不能替代人工判断。这里的 Verify 属于 CH-07 交付候选验证，不等于 CH-08 Runtime Verify。`EXP-07-03` 仍为 `KEEP-EXT / planned`。
+`EXP-07-02` 已 verified：样例在 `experiments/exp-07-02/output/sample.json`。它证明冻结的模型评审与人工 Rubric 可生成分歧归因矩阵，并给出一致率、新增风险数与人工推翻率；模型评审不能替代人工判断。
+
+`EXP-07-03` 已为 `KEEP-EXT / verified`：样例在 `experiments/exp-07-03/output/sample.json`，给出 `escaped_defect_count`、`first_discovery_stage` 与 `verification_seconds`。验证层为 deterministic_checks / independent_tests / model_review / human_judgment。这里的 Verify 属于 CH-07 交付候选验证，不等于 CH-08 Runtime Verify；冻结 pin 不等于唯一标准。
 
 三项实验分别服务于三个问题。
 
@@ -261,7 +263,7 @@ Human Judgment accepts, rejects, escalates, or defers them.
 |---|---|---|
 | `EXP-07-01` | 固定门禁是否能稳定聚合仓库 Must 检查 | 不证明内容质量或读者理解已经充分验证；ALREADY 不得改写成 SHIP |
 | `EXP-07-02` | 模型评审、测试证据和人工 Rubric 的分歧来自哪里 | 不证明模型评审可以替代人工判断 |
-| `EXP-07-03` | 缺陷在不同验证层的首次发现位置和逃逸情况 | 不把单一示例推广成所有项目的验证成本模型 |
+| `EXP-07-03` | 缺陷在不同验证层的首次发现位置和逃逸情况 | 不把单一示例推广成所有项目的验证成本模型；KEEP-EXT 不得改写成 SHIP |
 
 ## 08 · Figure：分层验证证据链
 
@@ -302,6 +304,8 @@ Machine Evidence       Behavioral Evidence  Risk Findings   Approval / Rejection
 第五，本章不把人类检查点变成形式主义。如果人只是机械点击批准，而没有看到具体风险、证据和取舍，所谓 human-in-the-loop 仍然是空的。
 
 第六，`EXP-07-01` 的 verified 只证明门禁可聚合与合同化复现；绿色 CI 不等于章节论点成立，也不等于 CH-08 Runtime Verify 已通过。
+
+第七，`EXP-07-03` 的 verified 只覆盖冻结分层验证夹具上的缺陷发现/逃逸记录；不得把单一样例推广为所有项目的验证成本模型，也不得与 CH-08 Runtime Verify 混称。
 
 ## Reader Exercise
 

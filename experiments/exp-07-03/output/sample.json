@@ -1,0 +1,44 @@
+{
+  "defect_records": [
+    {
+      "defect_id": "DEF-BOUNDARY",
+      "escaped": false,
+      "first_discovery_stage": "independent_tests"
+    },
+    {
+      "defect_id": "DEF-SCHEMA",
+      "escaped": false,
+      "first_discovery_stage": "deterministic_checks"
+    },
+    {
+      "defect_id": "DEF-SEMANTIC",
+      "escaped": false,
+      "first_discovery_stage": "model_review"
+    }
+  ],
+  "delivery_candidate_id": "candidate-invoice-export-v2",
+  "experiment_id": "EXP-07-03",
+  "external_source": "https://specs.md/methodology/three-phases",
+  "guide_digest": "sha256:9d545e6a6abd55461e812723a878bb7be080c7010112a68c3c520e535924e2e3",
+  "layers": [
+    "deterministic_checks",
+    "independent_tests",
+    "model_review",
+    "human_judgment"
+  ],
+  "limitation": "本报告仅对照仓库内冻结的分层交付验证指南与注入缺陷记录做确定性核对；属于 CH-07 交付候选验证，不等于 CH-08 Runtime Verify；冻结 pin 不等于唯一标准，且不访问或验证实时 specs.md portal。",
+  "metrics": {
+    "escaped_defect_count": 0,
+    "first_discovery_stage": {
+      "DEF-BOUNDARY": "independent_tests",
+      "DEF-SCHEMA": "deterministic_checks",
+      "DEF-SEMANTIC": "model_review"
+    },
+    "verification_seconds": 5400
+  },
+  "pinned_version": "sha256:29411a610e2f4466e1c903adb62212d60c048e5918b9d2bb4907fd45bd2e3c44",
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:6b572b9e27203359b74f6b9fd65bb19b059558bdc81305d1d650f387f84d87ba",
+  "valid": true,
+  "verification_framing": "CH-07 delivery candidate verification"
+}

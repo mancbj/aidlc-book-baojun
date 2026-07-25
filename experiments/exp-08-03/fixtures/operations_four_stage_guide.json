@@ -1,0 +1,51 @@
+{
+  "external_source": "https://specs.md/agents/operations-agent",
+  "guide_id": "operations-four-stage-lifecycle",
+  "pinned_version": "sha256:dfef24406c8875dc920c3223eb5d415cec007afb3ba99e66191446d8b8f95338",
+  "verification_framing": "CH-08 Operations",
+  "runtime_verify_note": "runtime_verify stage is CH-08 Runtime Verify, not CH-07 delivery candidate verification",
+  "stages": [
+    {
+      "stage_id": "build",
+      "required": true,
+      "credential_fields": [
+        "source_commit",
+        "facts_identity",
+        "artifact_hash"
+      ]
+    },
+    {
+      "stage_id": "deploy",
+      "required": true,
+      "credential_fields": [
+        "target_environment",
+        "deploy_strategy",
+        "artifact_id"
+      ]
+    },
+    {
+      "stage_id": "runtime_verify",
+      "required": true,
+      "credential_fields": [
+        "entrypoint_checked",
+        "smoke_checks_passed",
+        "manifest_match"
+      ]
+    },
+    {
+      "stage_id": "monitor",
+      "required": true,
+      "credential_fields": [
+        "workflow_signal",
+        "error_budget_baseline",
+        "owner_on_call"
+      ]
+    }
+  ],
+  "rollback_readiness_fields": [
+    "rollback_target_recorded",
+    "runbook_linked",
+    "previous_artifact_pinned",
+    "post_rollback_check_defined"
+  ]
+}

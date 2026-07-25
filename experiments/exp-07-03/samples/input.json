@@ -1,0 +1,35 @@
+{
+  "experiment_id": "EXP-07-03",
+  "pinned_version": "sha256:29411a610e2f4466e1c903adb62212d60c048e5918b9d2bb4907fd45bd2e3c44",
+  "delivery_candidate_id": "candidate-invoice-export-v2",
+  "verification_seconds": 5400,
+  "injected_defects": [
+    {
+      "defect_id": "DEF-SCHEMA",
+      "layer_detections": {
+        "deterministic_checks": true,
+        "independent_tests": false,
+        "model_review": false,
+        "human_judgment": false
+      }
+    },
+    {
+      "defect_id": "DEF-BOUNDARY",
+      "layer_detections": {
+        "deterministic_checks": false,
+        "independent_tests": true,
+        "model_review": false,
+        "human_judgment": false
+      }
+    },
+    {
+      "defect_id": "DEF-SEMANTIC",
+      "layer_detections": {
+        "deterministic_checks": false,
+        "independent_tests": false,
+        "model_review": true,
+        "human_judgment": false
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "source": "Confirmed ten-chapter structure v3 and author-local specs.md portal crawl",
-  "updated": "2026-07-25T09:30:00Z",
+  "updated": "2026-07-25T10:00:00Z",
   "experiments": [
     {
       "id": "EXP-01-01",
@@ -712,13 +712,16 @@
         "首次发现阶段",
         "验证耗时"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-07-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：缺陷在不同检查层的发现记录",
-        "记录指标：缺陷逃逸数、首次发现阶段、验证耗时"
+        "合法样例以退出码 0 对照冻结 pin 分层验证指南生成 valid=true 的缺陷发现记录（无外网抓取）",
+        "记录指标：escaped_defect_count、first_discovery_stage、verification_seconds",
+        "输出 limitation 明确属于 CH-07 Verify，不等于 CH-08 Runtime Verify；冻结 pin 不等于唯一标准",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T10:00:00Z",
       "external_source": "https://specs.md/methodology/three-phases",
       "pinned_version": "sha256:29411a610e2f4466e1c903adb62212d60c048e5918b9d2bb4907fd45bd2e3c44",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -727,7 +730,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "缺陷在不同检查层的发现记录"
+      "sample_result": "缺陷在不同检查层的发现记录",
+      "repository_path": "experiments/exp-07-03",
+      "readme_path": "experiments/exp-07-03/README.md",
+      "sample_input": "experiments/exp-07-03/samples/input.json",
+      "sample_output": "experiments/exp-07-03/output/sample.json",
+      "test_path": "experiments/exp-07-03/tests/test_demo.py"
     },
     {
       "id": "EXP-08-01",
@@ -817,13 +825,16 @@
         "阶段完成率",
         "回滚就绪度"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-08-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Build、Deploy、Verify、Monitor 四阶段凭证",
-        "记录指标：阶段完成率、回滚就绪度"
+        "合法样例以退出码 0 对照冻结 pin Operations 指南生成 Build/Deploy/Runtime Verify/Monitor 凭证报告",
+        "记录指标：stage_completion_percent、rollback_readiness_percent",
+        "输出 limitation 明确 Runtime Verify 属于 CH-08，不等于 CH-07 Verify；冻结 pin 不等于成熟生产能力",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T10:00:00Z",
       "external_source": "https://specs.md/agents/operations-agent",
       "pinned_version": "sha256:dfef24406c8875dc920c3223eb5d415cec007afb3ba99e66191446d8b8f95338",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -832,7 +843,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "Build、Deploy、Verify、Monitor 四阶段凭证"
+      "sample_result": "Build、Deploy、Verify、Monitor 四阶段凭证",
+      "repository_path": "experiments/exp-08-03",
+      "readme_path": "experiments/exp-08-03/README.md",
+      "sample_input": "experiments/exp-08-03/samples/input.json",
+      "sample_output": "experiments/exp-08-03/output/sample.json",
+      "test_path": "experiments/exp-08-03/tests/test_demo.py"
     },
     {
       "id": "EXP-09-01",
@@ -913,13 +929,16 @@
         "决策依据覆盖率",
         "预估流程开销"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-09-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Simple、FIRE、AI-DLC 三方案对照决策",
-        "记录指标：决策依据覆盖率、预估流程开销"
+        "合法样例以退出码 0 对照冻结 pin Flow 选择指南生成 Simple/FIRE/AI-DLC 三方案决策报告",
+        "记录指标：decision_rationale_coverage_percent、estimated_process_overhead_score",
+        "输出 limitation 明确冻结 pin 不等于唯一标准，也不替代人工 Flow 选择",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T10:00:00Z",
       "external_source": "https://specs.md/architecture/choose-flow",
       "pinned_version": "sha256:0af0a8b0344a245e7d2a3a08c92da32a5a6d1076e9a00712420be0a6723db685",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -928,7 +947,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "Simple、FIRE、AI-DLC 三方案对照决策"
+      "sample_result": "Simple、FIRE、AI-DLC 三方案对照决策",
+      "repository_path": "experiments/exp-09-03",
+      "readme_path": "experiments/exp-09-03/README.md",
+      "sample_input": "experiments/exp-09-03/samples/input.json",
+      "sample_output": "experiments/exp-09-03/output/sample.json",
+      "test_path": "experiments/exp-09-03/tests/test_demo.py"
     },
     {
       "id": "EXP-10-01",
@@ -1009,13 +1033,16 @@
         "决策一致率",
         "协作耗时"
       ],
-      "command": "See reproduction_steps",
+      "command": "python3 experiments/exp-10-03/quickstart.py --sample",
       "acceptance": [
-        "生成或复现：Mob Elaboration、Mob Construction 与交接日志",
-        "记录指标：交接信息损失率、决策一致率、协作耗时"
+        "合法样例以退出码 0 对照冻结 pin Mob 协作指南生成 Elaboration/Construction 与交接日志报告",
+        "记录指标：handoff_information_loss_percent、decision_agreement_percent、collaboration_seconds",
+        "输出 limitation 明确冻结 pin 不等于唯一标准，也不证明真实组织协作成熟",
+        "无效样例以退出码 1 返回稳定 E_* 错误代码且不写入输出",
+        "重复运行字节一致，测试通过"
       ],
-      "status": "planned",
-      "updated": "2026-07-22T06:33:31Z",
+      "status": "verified",
+      "updated": "2026-07-25T10:00:00Z",
       "external_source": "https://specs.md/methodology/ai-dlc-vs-agile",
       "pinned_version": "sha256:1fffdb9c183ca0f19f2706e466ba2105bb0c54297df705d18d545d874ff35235",
       "configuration": "以作者本地 specs.md portal 固定抓取副本核对公开页面；本地副本不进入 GitHub 仓库",
@@ -1024,7 +1051,12 @@
         "按本实验 inputs 执行参考流程并保留阶段工件",
         "用 metrics 对 sample_result 进行记录和比较"
       ],
-      "sample_result": "Mob Elaboration、Mob Construction 与交接日志"
+      "sample_result": "Mob Elaboration、Mob Construction 与交接日志",
+      "repository_path": "experiments/exp-10-03",
+      "readme_path": "experiments/exp-10-03/README.md",
+      "sample_input": "experiments/exp-10-03/samples/input.json",
+      "sample_output": "experiments/exp-10-03/output/sample.json",
+      "test_path": "experiments/exp-10-03/tests/test_demo.py"
     }
   ]
 }

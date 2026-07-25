@@ -1,0 +1,52 @@
+{
+  "case_id": "brownfield-legacy-billing-api",
+  "chosen_flow": "FIRE",
+  "decision_rationale": [
+    {
+      "dimension_id": "codebase_state",
+      "text": "棕地遗留计费 API，存在隐式耦合与缺失契约测试。"
+    },
+    {
+      "dimension_id": "compliance_traceability",
+      "text": "中等合规要求需要审阅记录，但不必启动完整 AI-DLC 治理栈。"
+    },
+    {
+      "dimension_id": "integration_risk",
+      "text": "与账务与通知子系统交叉，需要回归与集成检查点。"
+    },
+    {
+      "dimension_id": "reversibility",
+      "text": "可通过特性开关分批发布，失败可回滚到上一服务版本。"
+    },
+    {
+      "dimension_id": "team_coordination",
+      "text": "中等规模团队需同步后端、QA 与发布窗口。"
+    }
+  ],
+  "experiment_id": "EXP-09-03",
+  "external_source": "https://specs.md/architecture/choose-flow",
+  "flow_options": [
+    {
+      "feasible": true,
+      "flow": "AI-DLC"
+    },
+    {
+      "feasible": true,
+      "flow": "FIRE"
+    },
+    {
+      "feasible": false,
+      "flow": "Simple"
+    }
+  ],
+  "guide_digest": "sha256:ef4c206f81dccf3358b9a4daf58b0a432f521be7d70c6a209f7dad7b40ec1e4f",
+  "limitation": "本报告仅对照仓库内冻结的棕地 Flow 决策指南与输入三方案案例做确定性核对；冻结 pin 不等于唯一标准，且不访问或验证实时 specs.md portal。",
+  "metrics": {
+    "decision_rationale_coverage_percent": 100.0,
+    "estimated_process_overhead_score": 30.0
+  },
+  "pinned_version": "sha256:0af0a8b0344a245e7d2a3a08c92da32a5a6d1076e9a00712420be0a6723db685",
+  "schema_version": "1.0.0",
+  "source_digest": "sha256:8fd2614bf7c2b3cc58f710f3a5c3aed1ef5a3877d69a4baddcf255f0818a2934",
+  "valid": true
+}

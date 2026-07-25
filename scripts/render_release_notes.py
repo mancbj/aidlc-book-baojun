@@ -24,7 +24,18 @@ def render(root: Path, readiness: dict) -> str:
         for chapter in chapters
         if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
     )
-    if version.startswith("v0.8."):
+    if version.startswith("v0.8.002") or version.startswith("v0.8.00") and not version.startswith("v0.8.001"):
+        # Prefer exact patch notes for v0.8.002+; fall through carefully below for 001.
+        pass
+    if version.startswith("v0.8.002"):
+        highlights = [
+            "- 四个 KEEP-EXT 收尾转 verified：`EXP-07-03`、`EXP-08-03`、`EXP-09-03`、`EXP-10-03`（triage 不改写为 SHIP）。",
+            "- 全部实验 verified=30/30；CI 合同测试覆盖全部 verified 的 SHIP / ALREADY / KEEP-EXT。",
+            "- CH-07 / CH-08 / CH-09 / CH-10 证据边界收紧；明确 CH-07 Verify ≠ CH-08 Runtime Verify。",
+            "- Reader 无真实回复时保留 `READER-RESPONSES` known-gap；下一版默认 `v0.8.003`。",
+        ]
+        next_goal = "v0.8.003：消化真实 Reader 反馈，或开启新内容/度量周期。"
+    elif version.startswith("v0.8.001"):
         highlights = [
             "- 版本颗粒度改为 patch-grain：`v0.8.001`（见 `planning/releases/VERSIONING.md`）。",
             "- 四个 KEEP-EXT 冻结复现转 verified：`EXP-01-03`、`EXP-02-03`、`EXP-03-03`、`EXP-06-03`（triage 不改写为 SHIP）。",
@@ -32,6 +43,14 @@ def render(root: Path, readiness: dict) -> str:
             "- CH-01 / CH-02 / CH-03 / CH-06 证据边界收紧；Reader 无真实回复时保留 `READER-RESPONSES` known-gap。",
         ]
         next_goal = "v0.8.002：消化真实 Reader 反馈，并推进剩余 KEEP-EXT（07-03 / 08-03 / 09-03 / 10-03）。"
+    elif version.startswith("v0.8.") :
+        highlights = [
+            "- 继续 patch-grain 发布（见 `planning/releases/VERSIONING.md`）。",
+            "- 推进 KEEP-EXT / Reader 反馈治理，并保持合同测试可复现。",
+            "- 章节证据边界与过宣称条款保持收紧。",
+            "- Reader 无真实回复时保留 `READER-RESPONSES` known-gap。",
+        ]
+        next_goal = "下一 patch：消化真实 Reader 反馈或开启新内容周期。"
     elif version.startswith("v0.8"):
         highlights = [
             "- 两个 ALREADY 实验转 verified：`EXP-07-01`、`EXP-08-01`（triage 保持 ALREADY，不改写为 SHIP）。",
