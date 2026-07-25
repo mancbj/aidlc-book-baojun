@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.8.003",
+  "publish_threshold": 92,
+  "dimension_minimums": {
+    "experiments": 44
+  },
+  "weights": {
+    "experiments": 50,
+    "chapter_evidence": 15,
+    "reader_feedback": 15,
+    "release": 20
+  },
+  "hard_gates": [
+    "ci_check_pass",
+    "internal_links_errors_zero",
+    "dashboard_matches_experiment_facts",
+    "active_cycle_v0_8_003_draft",
+    "patch_docs_updated",
+    "exsecutio_spelling_preserved",
+    "runtime_verify_boundary_preserved",
+    "reader_feedback_not_fabricated",
+    "readiness_ready"
+  ],
+  "baseline_commit": "e99de73",
+  "current_round": "06",
+  "rounds": [
+    {
+      "id": "00",
+      "name": "baseline-and-scope",
+      "decision": "KEEP",
+      "experiments": 40,
+      "chapter_evidence": 12,
+      "reader_feedback": 8,
+      "release": 4,
+      "total": 64,
+      "notes": "verified=30/30；驾驶舱仍陈旧。"
+    },
+    {
+      "id": "01",
+      "name": "dashboard-fact-sync",
+      "decision": "KEEP",
+      "experiments": 44,
+      "chapter_evidence": 13,
+      "reader_feedback": 8,
+      "release": 6,
+      "total": 71,
+      "notes": "投影与驾驶舱同步到 30/30。"
+    },
+    {
+      "id": "02",
+      "name": "activate-draft-cycle",
+      "decision": "KEEP",
+      "experiments": 46,
+      "chapter_evidence": 14,
+      "reader_feedback": 8,
+      "release": 8,
+      "total": 76,
+      "notes": "激活 v0.8.003-draft。"
+    },
+    {
+      "id": "03",
+      "name": "docs-release-hygiene",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 8,
+      "release": 12,
+      "total": 83,
+      "notes": "patch 文档对齐。"
+    },
+    {
+      "id": "04",
+      "name": "reader-feedback-reassessment",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 12,
+      "total": 87,
+      "notes": "FB-009 deferred。"
+    },
+    {
+      "id": "05",
+      "name": "adversarial-audit",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 18,
+      "total": 93,
+      "notes": "ci_check 通过。"
+    },
+    {
+      "id": "06",
+      "name": "v0.8.003-release",
+      "decision": "KEEP",
+      "experiments": 48,
+      "chapter_evidence": 15,
+      "reader_feedback": 12,
+      "release": 20,
+      "total": 95,
+      "notes": "发布 v0.8.003。"
+    }
+  ]
+}
