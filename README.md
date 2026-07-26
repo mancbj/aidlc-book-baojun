@@ -34,6 +34,34 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
   </a>
 </p>
 
+## 3 分钟开始
+
+### 只想读书
+
+1. 用 10 分钟阅读 [Part 00 · 鸟瞰 AI-DLC](book/part-00-overview.md)。
+2. 从[最新 Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest)下载 PDF 或 HTML。
+3. 按你的目标选择[管理者、研发系统设计者或实践者路线](docs/READER-GUIDE.md)。
+
+### 想复现实验或参与写作
+
+需要 Python 3.10+；无需数据库或远程服务。
+
+```bash
+git clone https://github.com/mancbj/aidlc-book-baojun.git
+cd aidlc-book-baojun
+python3 experiments/exp-01-01/quickstart.py --sample
+python3 scripts/ci_check.py --budget-seconds 60
+```
+
+## 你会得到什么
+
+- **不再把一次生成当成交付** —— 用独立验证、失败—修复—复测和 Walkthrough 形成证据链。
+- **不再让 AI 猜目标和边界** —— 把 Intent、Requirements、Stories 与人的判断点连接起来。
+- **不再靠聊天记录恢复上下文** —— 用 Memory Bank、Standards 和版本化事实源接续工作。
+- **不再用同一种流程处理所有任务** —— 按复杂度、风险和可逆性选择 Simple、FIRE 或 AI-DLC。
+- **不止讨论方法论** —— 30 项实验均有确定性合同测试、样例输出与明确的证据边界。
+- **不在部署前结束** —— 把 Build、Deploy、Runtime Verify、Monitor 和恢复纳入交付闭环。
+
 ## 核心公式
 
 > **AI-DLC = 𝓔（人的判断 + AI 能力）**  
@@ -43,151 +71,73 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 
 这里的 Exsecutio 表达“贯彻到底”：将 AI 的概率性生成沿工程路径持续推进，转化为可验证、可复现、可追溯、可恢复并可持续演进的软件系统。完整解释与范围边界见[核心宣言](book/manifesto.md)。
 
-## 这本书写给谁
+## 生命周期与阅读路径
 
-主要读者是：**正在把生成式 AI 从个人编码助手升级为团队级交付能力的软件研发负责人和技术负责人。**
+```mermaid
+flowchart LR
+    A[人的判断] --> B[Inception]
+    B --> C[Construction]
+    C --> D[独立验证]
+    D --> E[Operations]
+    E --> F[运行反馈]
+    F --> A
+```
 
-也适合以下读者：
-
-- 希望从个人 AI 编程进入团队协作的资深开发者和架构师。
-- 负责 AI 工具链、研发效能或内部平台的工程团队。
-- 需要理解 AI 研发边界、指标和治理方式的技术产品负责人。
-
-本书不是 Prompt 技巧合集，也不承诺 AI 自动替代需求判断、架构取舍和最终责任人。完整读者结果与非目标范围见[目标读者定义](planning/readers.md)。
-
-## 第一次阅读：先看 Part 0
-
-[Part 00 · 鸟瞰 AI-DLC](book/part-00-overview.md)用约 10 分钟交代：
-
-- 核心公式和确定性交付闭环。
-- Inception → Construction → Operations 生命周期。
-- Part 1–5 的叙事结构。
-- 管理判断、研发系统设计和最小闭环实践三条阅读路线。
-- 本书框架、方法论来源、specs.md 参考实现和实验证据的区别。
-
-如果只准备跑通一次最小闭环，建议按 **Part 0 → 第 3、4、5、6、7、8 章**阅读。
-
-## 全书叙事结构
-
-| 部分 | 叙事任务 | 包含章节 |
+| 如果你是… | 建议路径 | 你将解决 |
 | --- | --- | --- |
-| Part 0 · 鸟瞰 | 先建立核心公式、生命周期和阅读地图 | 非编号导读 |
-| Part 1 · 人的判断 | 解释为什么要重构 SDLC，以及人必须保留什么责任 | 第 1–2 章 |
-| Part 2 · AI 能力 | 展示 AI 如何分解工作并通过事实源保持上下文 | 第 3–4 章 |
-| Part 3 · Engineering × Exsecutio | 选择工程轨道，并把提议贯彻为交付候选 | 第 5–6 章 |
-| Part 4 · 验证反馈 | 用独立证据证明正确，再进入可观测、可恢复的运行系统 | 第 7–8 章 |
-| Part 5 · 规模化 | 按风险选择治理强度，并重构 Agent 分工和组织度量 | 第 9–10 章 |
+| 研发负责人 / 管理者 | Part 0 → 第 1、2、9、10 章 | 责任边界、Flow 选型、组织与度量 |
+| 架构师 / 平台负责人 | Part 0 → 第 3–8 章 | 上下文、执行、验证与运行闭环 |
+| 想跑最小闭环的实践者 | Part 0 → 第 3、4、5、6、7、8 章 | 从 Intent 到可验证、可运行交付 |
 
-## 十章目录
+<details>
+<summary><strong>展开全书结构（Part 0 + 10 章）</strong></summary>
 
-| 章 | 主题 | 唯一核心问题 |
-| --- | --- | --- |
-| 1 | AI 原生 SDLC：从概率智能到确定性交付 | 当代码生成成本骤降而输出仍具有概率性时，为什么需要重新设计 SDLC？ |
-| 2 | 人的判断与反向对话 | 当 AI 主动提议、分解和执行时，人应如何设定目的地、保留责任并选择验证检查点？ |
-| 3 | Inception：从 Intent 到可执行计划 | AI 如何把 Intent 分解为 Unit、Story 和 Bolt，而不丢失人的目标与边界？ |
-| 4 | 上下文工程：Memory Bank 与 Standards | 如何让全新的 Agent 会话恢复正确上下文并持续遵守工程约束？ |
-| 5 | Bolts：为快速执行选择正确轨道 | 如何按复杂度、风险和可逆性选择 Bolt 范围、类型与门禁？ |
-| 6 | Exsecutio：把提议贯彻为交付候选 | 如何沿计划、执行、验证、纠偏和 Walkthrough 推进到完成定义？ |
-| 7 | 验证：把人类检查点变成有效损失函数 | 如何证明 AI 参与的结果正确，而不是把模型自评当证据？ |
-| 8 | Operations：从交付候选到可持续运行 | 如何通过 Build、Deploy、Verify、Monitor 与恢复机制完成生产交付？ |
-| 9 | 适配性工程：选择正确的 Flow 与治理强度 | 如何在 Simple、FIRE 与 AI-DLC 之间选择，而不过度或不足工程化？ |
-| 10 | 组织与度量：从 Agent 分工到研发操作系统 | 如何重构人、Agent、协作节奏与度量体系，并判断什么值得规模化？ |
+| 部分 | 内容 |
+| --- | --- |
+| Part 0 · 鸟瞰 | 核心公式、生命周期和阅读地图 |
+| Part 1 · 人的判断 | 第 1–2 章：SDLC 重构、人的责任与反向对话 |
+| Part 2 · AI 能力 | 第 3–4 章：Inception、Memory Bank 与 Standards |
+| Part 3 · Engineering × Exsecutio | 第 5–6 章：Bolt 选型与执行闭环 |
+| Part 4 · 验证反馈 | 第 7–8 章：独立验证与 Operations |
+| Part 5 · 规模化 | 第 9–10 章：适配性工程、组织与度量 |
 
-每章都有唯一问题、读者结果、参考实现和实验方向。边界审计及完整版见[十章目录 v3](book/toc.md)。
+</details>
+
+每章都有唯一问题、读者结果、实验和证据边界。详见[完整目录](book/toc.md)与[读者指南](docs/READER-GUIDE.md)。
 
 ## 实验与证据
 
-影响读者实践的观点，必须至少关联以下一项：
+本书不是只靠观点成立。当前 30 项实验均为 `verified`，并进入统一合同测试：
 
-- 可运行实验或最小 Demo。
-- 可复现的外部实现与固定版本。
-- 图表或机器可读结果。
-- 明确的读者练习和二元验收。
+- **18 × SHIP** —— 仓库内提供最小可运行实现。
+- **10 × KEEP-EXT** —— 对外部参考固定版本、配置与证据边界。
+- **2 × ALREADY** —— 复用仓库中已存在且可验证的实现。
 
-实验统一采用三种治理状态：
+每项实验都说明“证明什么”与“不能证明什么”，避免把冻结样例、外部参考或模型评审写成普遍结论。查看[实验事实源](progress/experiments.json)、[治理规则](EXPERIMENT_TRIAGE.md)与[样例输出](experiments/)。
 
-- `SHIP`：在本仓库提供最小可运行实现。
-- `KEEP-EXT`：保留外部来源、固定版本、配置和复现步骤。
-- `ALREADY`：复用仓库中已经存在并可验证的实现。
+## 当前状态
 
-当前 [30 项实验事实](progress/experiments.json)仍包含早期游戏 DLC 探索，只用于保持历史结构完整，**尚未构成新版十章的实验承诺**。Day 3 的 D03-T01 与 D03-T02 将按新版目录重建并重新分类实验池。规则见[实验治理说明](EXPERIMENT_TRIAGE.md)。
-
-## 两周 v0.1 目标
-
-项目在 14 天内形成可公开试读、可复现实验、可追踪进度的 v0.1：
-
-1. 一个完成审校的可读样章。
-2. Part 0 与十章结构。
-3. 一个新读者可在 10 分钟内复现的实验。
-4. 一张核心图。
-5. 一个可重复运行的 HTML-first 构建入口；PDF 条件满足时生成。
-6. 一个自动聚合的进度鸟瞰页。
-7. 关键事件、历史快照和 Changelog。
-8. 反馈入口、Release Notes 和下一更新周期。
-
-v0.1 逐日任务见[14 天行动计划](planning/14-day-v0.1.md)。后续十章写作冲刺继续沿用同一任务事实源：任务状态、依赖、产物和验收的唯一权威源是 [progress/tasks.json](progress/tasks.json)。
-
-## 从这里开始
-
-### 读者
-
-1. 阅读 [Part 0](book/part-00-overview.md)。
-2. 从[十章目录](book/toc.md)选择阅读路径。
-3. 查看[试读与复现说明](docs/READER-GUIDE.md)。
-4. 样章和最小实验开放后，按 README 运行并提交反馈。
-
-### 作者与协作者
-
-1. 打开[鸟瞰驾驶舱](site/index.html)，确认当前任务、阻塞和下一动作。
-2. 在[任务事实源](progress/tasks.json)中更新对应稳定 Task ID。
-3. 修改声明的内容或工程产物。
-4. 运行校验与进度生成器。
-5. 通过 Issue 或 Pull Request 提交，并关联任务、产物和验收。
-
-## 自动进度与鸟瞰入口
-
-- [鸟瞰驾驶舱](site/index.html)：任务时间线、章节矩阵、实验治理、阻塞和下一动作。
-- [对象下钻](site/details.html)：逐任务、十章写作卡片、逐章节和逐实验检查事实。
-- [GitHub 文字摘要](progress/generated/current.md)：无需打开 HTML 即可查看当前状态。
-- [关键更新日志](progress/CHANGELOG.md)：自动追加的人类可读历史。
-- [机器事件账本](progress/events/events.jsonl)：稳定 ID 的 JSONL 审计记录。
-- [自动记录规则](docs/PROGRESS-AUTOMATION.md)：指标、事件、快照和失败安全约定。
-
-README 不手工维护完成率；所有数字从版本化事实源自动生成。
-
-## 权威事实源
-
-| 内容 | 唯一权威来源 | 人类入口或投影 |
+| 信号 | 当前事实 | 查看 |
 | --- | --- | --- |
-| 书稿、Part 0 与目录 | `book/` | README、未来 HTML/PDF |
-| 路线图任务、写作卡片、依赖与验收 | `progress/tasks.json` | 行动计划、Dashboard、对象下钻、GitHub Projects |
-| 十章六阶段生产状态 | `progress/chapters.json` | Dashboard 章节矩阵 |
-| 实验池与分类 | `progress/experiments.json` | 实验治理说明、Release Notes |
-| 反馈决定 | `feedback/decisions.json` | 反馈摘要和修订任务 |
-| 持续更新周期 | `progress/cycles.json` | 下一周期入口 |
-| AI-DLC 开发生命周期 | `memory-bank/` | specs.md Dashboard 与开发日志 |
+| 正式书稿 | Part 0 + 10 章 | [书稿目录](book/) |
+| 章节生产线 | 10 / 10 完成六阶段 | [章节事实](progress/chapters.json) |
+| 可复现实验 | 30 / 30 verified | [实验事实](progress/experiments.json) |
+| 自动化门禁 | facts、tests、links、generation、实验合同 | [CI workflow](.github/workflows/validate.yml) |
+| 可下载版本 | PDF、单页 HTML、站点 zip | [Latest Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) |
 
-完整目录职责、人工源、生成投影和不可变历史边界见[仓库指南](docs/REPOSITORY-GUIDE.md)。
+完成率不在 README 手工维护；权威数字来自版本化事实源并投影到[鸟瞰驾驶舱](site/index.html)、[对象下钻](site/details.html)和[文字摘要](progress/generated/current.md)。事实源边界见[仓库指南](docs/REPOSITORY-GUIDE.md)。
 
-## 本地校验
+## 维护者验证
 
-需要 Python 3.10+，当前仓库不要求数据库或远程服务。
+修改书稿、实验或事实源后，按以下顺序验证：
 
 ```bash
-# 校验任务、章节、实验、反馈和周期事实
 python3 scripts/validate_project.py
-
-# 更新事件、快照、文字摘要和静态驾驶舱
-python3 scripts/generate_progress.py
-
-# 运行与 Pull Request 相同的完整门禁
+python3 scripts/generate_progress.py --dry-run --actor readme
 python3 scripts/ci_check.py --budget-seconds 60
-
-# 诊断真实 v0.1 发布条件
-python3 scripts/check_release_readiness.py --allow-blocked
 ```
 
-校验会阻止重复 ID、未知或循环依赖、非法状态、虚假完成、缺失产物、不带时区的时间戳以及不完整的实验分类数据。
+完整门禁会检查事实一致性、单元测试、30 项实验合同、内部链接和生成投影。
 
 ## GitHub 协作
 
