@@ -598,7 +598,7 @@
     "total": 9,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-25T10:57:39Z",
+  "generated_at": "2026-07-26T02:23:29Z",
   "goal": {
     "all_tasks_done": true,
     "current_day": 24,
@@ -607,21 +607,9 @@
     "total_days": 24
   },
   "latest_fact_update": "2026-07-25T10:50:00Z",
-  "latest_snapshot": "../progress/snapshots/20260725T105739Z-ff2aa1776c01f48b835c6783992bea6c.json",
+  "latest_snapshot": "../progress/snapshots/20260726T022329Z-c450b92c17aa24591f2be7417bb8594d.json",
   "next_actions": [],
   "recent_events": [
-    {
-      "actor": "v0.8.003-loop",
-      "after": "deferred",
-      "before": null,
-      "id": "EVT-d570a00b6cf7f55e",
-      "object_id": "FB-004",
-      "object_type": "feedback",
-      "occurred_at": "2026-07-25T09:18:18Z",
-      "source_id": "e99de734cc1b-working-tree-65284fadaf99",
-      "summary": "FB-004 · Reader-A/B/C：deferred",
-      "type": "feedback_decided"
-    },
     {
       "actor": "v0.8.003-loop",
       "after": "deferred",
@@ -729,11 +717,23 @@
       "source_id": "b157addf8231a174fd73463deb9838ba65cd3de1",
       "summary": "v0.8.005 已公开发布：README 开篇致谢 ai-agent-book 与 specs.md",
       "type": "release_published"
+    },
+    {
+      "actor": "cursor-agent",
+      "after": "v0.8.006 已公开发布：README 三阶段转化、结构与信任优化",
+      "before": null,
+      "id": "EVT-2f1a46baa04f2b9f",
+      "object_id": "v0.8.006",
+      "object_type": "project",
+      "occurred_at": "2026-07-26T02:23:29Z",
+      "source_id": "bf8e8e62c450b92c17aa24591f2be7417bb8594d",
+      "summary": "v0.8.006 已公开发布：README 三阶段转化、结构与信任优化",
+      "type": "release_published"
     }
   ],
   "release_message": "实验与任务已闭环；准备下一 patch 发布，或等待真实回执激活 draft 周期",
   "schema_version": "1.0.0",
-  "source_id": "1e1e1e66ff2aa1776c01f48b835c6783992bea6c",
+  "source_id": "bf8e8e62c450b92c17aa24591f2be7417bb8594d",
   "tasks": {
     "done": 72,
     "percent": 100.0,

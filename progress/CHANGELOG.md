@@ -914,3 +914,9 @@
 快照：[`20260725T105136Z-8231a174fd73463deb9838ba65cd3de1.json`](snapshots/20260725T105136Z-8231a174fd73463deb9838ba65cd3de1.json)
 
 - **release_published** · v0.8.005 已公开发布：README 开篇致谢 ai-agent-book 与 specs.md (`EVT-6bc022cef5057eaf`)
+
+## 2026-07-26T02:23:29Z · `bf8e8e62c450b92c17aa24591f2be7417bb8594d`
+
+快照：[`20260726T022329Z-c450b92c17aa24591f2be7417bb8594d.json`](snapshots/20260726T022329Z-c450b92c17aa24591f2be7417bb8594d.json)
+
+- **release_published** · v0.8.006 已公开发布：README 三阶段转化、结构与信任优化 (`EVT-2f1a46baa04f2b9f`)
