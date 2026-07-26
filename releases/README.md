@@ -12,7 +12,7 @@
 
 ## Patch-Grain Evidence (v0.8+)
 
-- `v0.8/`、`v0.8.001/`、`v0.8.002/`、`v0.8.003/` …：各版本正式回执 `release.json`
+- `v0.8/` 至 `v0.8.006/`：各版本正式回执 `release.json`
 - 对应 `*-rc/`：readiness、Release Notes、书稿 HTML/PDF、scorecard、content-audit
 - 版本策略：[`planning/releases/VERSIONING.md`](../planning/releases/VERSIONING.md)
 - HTML zip 只存在于 GitHub Release 资产，不进入本目录
