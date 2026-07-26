@@ -12,6 +12,7 @@
 <p align="center">
   <a href="https://github.com/mancbj/aidlc-book-baojun/actions/workflows/validate.yml"><img alt="CI" src="https://github.com/mancbj/aidlc-book-baojun/actions/workflows/validate.yml/badge.svg"></a>
   <a href="https://github.com/mancbj/aidlc-book-baojun/releases/latest"><img alt="Latest Release" src="https://img.shields.io/github/v/release/mancbj/aidlc-book-baojun"></a>
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/github/license/mancbj/aidlc-book-baojun"></a>
   <a href="https://github.com/mancbj/aidlc-book-baojun/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/mancbj/aidlc-book-baojun?style=flat"></a>
   <a href="https://github.com/mancbj/aidlc-book-baojun/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/mancbj/aidlc-book-baojun"></a>
 </p>
@@ -164,7 +165,7 @@ README、Part 0 和机器可读事实源为 AI Agent 提供了结构化入口。
 
 ## 许可
 
-本仓库目前**尚未声明 SPDX 开源许可证**。在许可证明确之前，请勿假定书稿、图片、代码或第三方参考材料可以自由再分发或商用；引用和贡献仍需保留来源，并遵守对应上游材料的许可。
+本项目采用 [Apache License 2.0](LICENSE)，版权声明为 `Copyright 2026 mancbj`。你可以在许可证条款下使用、修改和分发本项目内容；请保留许可证与必要声明。仓库中另有来源或单独许可说明的第三方材料，仍以其原始许可条款为准。
 
 ## 致谢
 
