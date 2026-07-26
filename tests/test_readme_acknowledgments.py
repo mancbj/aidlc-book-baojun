@@ -45,7 +45,8 @@ class ReadmeAcknowledgmentsTest(unittest.TestCase):
         self.assertIn("https://github.com/bojieli/ai-agent-book", en)
         self.assertIn("https://specs.md", en)
         self.assertNotIn("## 3 分钟开始", en)
-        self.assertIn("[中文 README](README.md)", en)
+        self.assertIn('href="README.md"', en)
+        self.assertIn("中文 README", en)
         self.text.index("README.en.md")
 
 
