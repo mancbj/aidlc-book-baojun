@@ -23,7 +23,7 @@ HTML 是必交产物。PDF 只有在独立构建、打开检查和内容验证�
 
 ## Tag Workflow
 
-`release.yml` 只接受 `vMAJOR.MINOR[.PATCH][-suffix]`。它先运行核心 CI 和 v0.1 readiness，始终上传 readiness 或排序阻断报告；只有门禁通过才构造候选。工作流随后检查同名 Release 不存在，最后以 draft 形式创建并上传资产。
+`release.yml` 只接受 `vMAJOR.MINOR[.PATCH][-suffix]`。它先运行核心 CI 和 v0.1 readiness，始终上传 readiness 或排序阻断报告；只有门禁通过才构造候选。工作流随后检查同名 Release 不存在：显式 push 经过审阅的版本 tag 视为最终发布批准并创建公开 Release；`workflow_dispatch` 的 `publish=true` 仍只创建 draft，供人工复核。
 
 D11-T03 的本地候选包 smoke test 与安全边界记录见 [`planning/reviews/tag-release-gate.md`](../planning/reviews/tag-release-gate.md)。
 
@@ -47,7 +47,7 @@ D11-T03 的本地候选包 smoke test 与安全边界记录见 [`planning/review
 - 自动生成事件、快照、变更日志和驾驶舱；
 - 通过 Pull Request 提交变更，权限不足时保留 30 天可恢复 artifact。
 
-普通本地命令、tag push 和 draft Release 都不能激活下一周期。
+普通本地命令和 draft Release 不能激活下一周期；tag push 只有在门禁通过并成功创建公开 Release 后，才会产生 `release.published` 事件。
 
 Pages 构建树包含只读的 `.github` 配置证据并写入 `.nojekyll`，因此驾驶舱可以直接下钻到 Issue、PR 和 workflow 定义；这些公开文件不得包含 secret 或个人信息。
 

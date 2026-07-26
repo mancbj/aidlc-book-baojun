@@ -169,10 +169,11 @@ jobs:
         with:
           name: release-candidate
           path: .artifacts/candidate
-      - name: Refuse overwrite and create draft Release
+      - name: Refuse overwrite and create Release
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ needs.validate.outputs.version }}
+          EVENT_NAME: ${{ github.event_name }}
         shell: bash
         run: |
           set -euo pipefail
@@ -180,10 +181,15 @@ jobs:
             echo "Release $VERSION already exists; refusing overwrite." >&2
             exit 1
           fi
-          gh release create "$VERSION" .artifacts/candidate/* \
-            --repo "$GITHUB_REPOSITORY" \
-            --target "$GITHUB_SHA" \
-            --title "$VERSION" \
-            --draft \
-            --generate-notes \
+          release_args=(
+            --repo "$GITHUB_REPOSITORY"
+            --target "$GITHUB_SHA"
+            --title "$VERSION"
+            --generate-notes
             --notes-file .artifacts/candidate/release-notes.md
+          )
+          if [ "$EVENT_NAME" != "push" ]; then
+            release_args+=(--draft)
+          fi
+          gh release create "$VERSION" .artifacts/candidate/* \
+            "${release_args[@]}"

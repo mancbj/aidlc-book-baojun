@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "version": "v0.8.006",
+  "tag": "v0.8.006",
+  "status": "published",
+  "url": "https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.8.006",
+  "published_at": "2026-07-26T02:22:45Z",
+  "release_id": "RE_kwDOTg7wic4Vc79A",
+  "source_sha": "bf8e8e62c450b92c17aa24591f2be7417bb8594d",
+  "readiness_source_id": "bf8e8e62c450b92c17aa24591f2be7417bb8594d",
+  "scorecard_total": 100,
+  "known_gaps": [
+    "READER-RESPONSES"
+  ],
+  "assets": [
+    {
+      "name": "aidlc-book-v0.8.006-book.html",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.8.006/aidlc-book-v0.8.006-book.html",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 5305669,
+      "digest": "sha256:e30e16f03ea6570b61563fa2ffccff0e82faa97b37658cacea60584d23413c47"
+    },
+    {
+      "name": "aidlc-book-v0.8.006-html.zip",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.8.006/aidlc-book-v0.8.006-html.zip",
+      "content_type": "application/zip",
+      "bytes": 121339479,
+      "digest": "sha256:c085a3362096b80004d07766809dae0033fdf733c2b9649f54fc1c4b1b5adff0"
+    },
+    {
+      "name": "aidlc-book-v0.8.006.pdf",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.8.006/aidlc-book-v0.8.006.pdf",
+      "content_type": "application/pdf",
+      "bytes": 4897278,
+      "digest": "sha256:bdbaf351b31cb9766544e499ac4899697da8aa5d4d5f4b0ab32ab89bdbf9ae12"
+    },
+    {
+      "name": "release-manifest.json",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.8.006/release-manifest.json",
+      "content_type": "application/json",
+      "bytes": 982,
+      "digest": "sha256:7a5c8e527e4673a7aa966a8d700e9f91070b0de719a472f3d19b197ab58505be"
+    },
+    {
+      "name": "release-notes.md",
+      "url": "https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.8.006/release-notes.md",
+      "content_type": "text/markdown; charset=utf-8",
+      "bytes": 1441,
+      "digest": "sha256:7a72431ef73e8d2d5f612d806cbe7eda36771864086e67b66407021adee10ac0"
+    }
+  ]
+}

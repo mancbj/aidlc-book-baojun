@@ -24,7 +24,15 @@ def render(root: Path, readiness: dict) -> str:
         for chapter in chapters
         if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
     )
-    if version.startswith("v0.8.005"):
+    if version.startswith("v0.8.006"):
+        highlights = [
+            "- README 首屏重构：双语 tagline、CI/Release/Stars/Last Commit 信任信号与 3.5 秒 Star CTA。",
+            "- Quick Start 前移，新增痛点式读者收益、生命周期图、精简阅读路径与当前证据状态。",
+            "- 新增 AI Agent / Cursor、贡献、社区、诚实许可状态与 Star History；致谢移出首屏但完整保留。",
+            "- 删除过期 v0.1 / Day 3 叙述；实验保持 verified=30/30，Reader 继续保留 `READER-RESPONSES` known-gap。",
+        ]
+        next_goal = "v0.8.007：消化真实 Reader 反馈，或开启新内容周期。"
+    elif version.startswith("v0.8.005"):
         highlights = [
             "- README 开篇致谢 [ai-agent-book](https://github.com/bojieli/ai-agent-book)：开源书写作思路参考。",
             "- README 开篇致谢 [specs.md](https://specs.md)：AI-DLC skill 与方法论支持计划与初版（`v0.2`）。",
