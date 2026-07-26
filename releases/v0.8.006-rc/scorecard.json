@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.8.006",
+  "publish_threshold": 92,
+  "weights": {
+    "first_screen": 30,
+    "information_architecture": 30,
+    "trust_and_community": 25,
+    "release": 15
+  },
+  "hard_gates": [
+    "three_phase_commits_present",
+    "readme_contract_tests_pass",
+    "star_cta_duration_3_to_5_seconds",
+    "ci_check_pass",
+    "content_audit_pass",
+    "readiness_ready",
+    "license_status_not_fabricated"
+  ],
+  "baseline_commit": "5a10cab",
+  "current_round": "04",
+  "rounds": [
+    {
+      "id": "01",
+      "name": "first-screen-conversion",
+      "decision": "KEEP",
+      "first_screen": 30,
+      "information_architecture": 5,
+      "trust_and_community": 5,
+      "release": 2,
+      "total": 42,
+      "notes": "双语 tagline、badges、问题开场与 Star CTA。"
+    },
+    {
+      "id": "02",
+      "name": "reader-information-architecture",
+      "decision": "KEEP",
+      "first_screen": 30,
+      "information_architecture": 30,
+      "trust_and_community": 8,
+      "release": 4,
+      "total": 72,
+      "notes": "Quick Start、读者收益、生命周期、阅读路径与证据现状。"
+    },
+    {
+      "id": "03",
+      "name": "trust-community-and-review",
+      "decision": "KEEP",
+      "first_screen": 30,
+      "information_architecture": 30,
+      "trust_and_community": 25,
+      "release": 8,
+      "total": 93,
+      "notes": "Agent、贡献、社区、许可、致谢、Star History 与全量 CI。"
+    },
+    {
+      "id": "04",
+      "name": "v0.8.006-release",
+      "decision": "KEEP",
+      "first_screen": 30,
+      "information_architecture": 30,
+      "trust_and_community": 25,
+      "release": 15,
+      "total": 100,
+      "notes": "公开发布 v0.8.006 并同步 main。"
+    }
+  ]
+}
