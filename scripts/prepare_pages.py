@@ -183,6 +183,7 @@ def build_pages(
             _copy_if_exists(root, relative, temporary)
         for relative in (
             "README.md",
+            "README.en.md",
             "LICENSE",
             "EXPERIMENT_TRIAGE.md",
             "memory-bank/intents/001-github-writing-system/inception-log.md",

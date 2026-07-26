@@ -37,6 +37,18 @@ class ReadmeAcknowledgmentsTest(unittest.TestCase):
         self.assertNotIn("尚未声明 SPDX 开源许可证", self.text)
         self.assertNotIn("## 两周 v0.1 目标", self.text)
 
+    def test_english_readme_is_pure_english_entrypoint(self) -> None:
+        en = (REPO_ROOT / "README.en.md").read_text(encoding="utf-8")
+        self.assertIn("## Get started in 3 minutes", en)
+        self.assertIn("[Apache License 2.0](LICENSE)", en)
+        self.assertIn("README.md", en)
+        self.assertIn("https://github.com/bojieli/ai-agent-book", en)
+        self.assertIn("https://specs.md", en)
+        self.assertNotIn("## 3 分钟开始", en)
+        self.assertIn('href="README.md"', en)
+        self.assertIn("中文 README", en)
+        self.text.index("README.en.md")
+
 
 if __name__ == "__main__":
     unittest.main()

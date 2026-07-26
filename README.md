@@ -10,6 +10,10 @@
 </p>
 
 <p align="center">
+  <a href="README.en.md"><strong>English README</strong></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/mancbj/aidlc-book-baojun/actions/workflows/validate.yml"><img alt="CI" src="https://github.com/mancbj/aidlc-book-baojun/actions/workflows/validate.yml/badge.svg"></a>
   <a href="https://github.com/mancbj/aidlc-book-baojun/releases/latest"><img alt="Latest Release" src="https://img.shields.io/github/v/release/mancbj/aidlc-book-baojun"></a>
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/github/license/mancbj/aidlc-book-baojun"></a>
