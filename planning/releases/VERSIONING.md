@@ -24,4 +24,5 @@ v0.<minor>.<patch:000-999>
 | `v0.8.003` | 度量/发布卫生：驾驶舱同步、draft 周期、patch 文档 |
 | `v0.8.004` | PDF 封面全出血与公式排版修复 |
 | `v0.8.005` | README 开篇致谢 ai-agent-book 与 specs.md |
-| `v0.8.006` | （下一 Loop）真实 Reader 反馈或新内容周期 |
+| `v0.8.006` | README 三阶段转化、结构与信任优化 |
+| `v0.8.007` | （下一 Loop）真实 Reader 反馈或新内容周期 |
