@@ -2,20 +2,37 @@
   <img src="book/images/cover.png" alt="《深入理解 AI-DLC》封面" width="420">
 </p>
 
-# 深入理解 AI-DLC
+<h1 align="center">深入理解 AI-DLC</h1>
 
-> 从概率智能到确定性交付——AI 驱动规模化开发的理论与实践
+<p align="center">
+  <strong>Open-source AI-DLC book for deterministic, team-scale software delivery.</strong><br>
+  从概率智能到确定性交付：面向研发团队的 AI-DLC 开源工程书。
+</p>
 
-## 致谢
+<p align="center">
+  <a href="https://github.com/mancbj/aidlc-book-baojun/actions/workflows/validate.yml"><img alt="CI" src="https://github.com/mancbj/aidlc-book-baojun/actions/workflows/validate.yml/badge.svg"></a>
+  <a href="https://github.com/mancbj/aidlc-book-baojun/releases/latest"><img alt="Latest Release" src="https://img.shields.io/github/v/release/mancbj/aidlc-book-baojun"></a>
+  <a href="https://github.com/mancbj/aidlc-book-baojun/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/mancbj/aidlc-book-baojun?style=flat"></a>
+  <a href="https://github.com/mancbj/aidlc-book-baojun/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/mancbj/aidlc-book-baojun"></a>
+</p>
 
-本开源书在起步阶段受益于两位先行者，特此致谢：
+AI 可以快速生成代码，却不会自动带来正确、可审计、可恢复的交付。本书面向正在把 AI 从个人助手升级为团队级工程能力的研发负责人、架构师和资深开发者，给出从 **Inception → Construction → Operations** 的完整方法、30 项可复现实验与持续验证机制。
 
-1. **[ai-agent-book](https://github.com/bojieli/ai-agent-book)** —— 为如何写一本开源书提供了高度参考与借鉴。
-2. **[specs.md](https://specs.md)** —— 其 skill 与 AI-DLC 方法论，为本项目的计划与初版（`v0.2` 完成）提供了理论与实践支持。
+AI can generate code quickly, but speed alone does not make delivery correct, auditable, or recoverable. This book turns AI-assisted development into an engineering lifecycle with explicit human judgment, executable evidence, and production feedback.
 
-这是一本帮助软件研发团队把 AI 从“个人生成工具”升级为“可约束、可验证、可追溯的规模化交付系统”的开源工程书。
+<p align="center">
+  <a href="#3-分钟开始"><strong>立即开始阅读</strong></a>
+  ·
+  <a href="https://github.com/mancbj/aidlc-book-baojun/releases/latest"><strong>下载最新版</strong></a>
+  ·
+  <a href="site/index.html"><strong>查看项目驾驶舱</strong></a>
+</p>
 
-本书不把 AI 生成物当作终点。它研究的是：人如何保留目标、边界和最终责任，AI 如何放大提议与执行能力，以及工程系统如何持续约束、验证、纠偏和推进，直到结果真正可以交付。
+<p align="center">
+  <a href="https://github.com/mancbj/aidlc-book-baojun">
+    <img src="book/images/star-this-repo.gif" alt="如果本书对你有帮助，欢迎 Star" width="520">
+  </a>
+</p>
 
 ## 核心公式
 
