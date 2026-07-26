@@ -139,29 +139,53 @@ python3 scripts/ci_check.py --budget-seconds 60
 
 完整门禁会检查事实一致性、单元测试、30 项实验合同、内部链接和生成投影。
 
-## GitHub 协作
+## AI Agent / Cursor 使用
 
-- [写作 Issue](.github/ISSUE_TEMPLATE/writing.yml)：章节、公式、案例和术语修订。
-- [实验 Issue](.github/ISSUE_TEMPLATE/experiment.yml)：新实验、复现失败和指标改进。
-- [反馈 Issue](.github/ISSUE_TEMPLATE/feedback.yml)：试读、阅读路径和理解障碍。
-- [Bug Issue](.github/ISSUE_TEMPLATE/bug.yml)：构建、校验、Dashboard 或自动化问题。
-- [Pull Request 模板](.github/pull_request_template.md)：必须填写 Task ID、产物、验收和验证结果。
-- [协作说明](docs/GITHUB-COLLABORATION.md)：标签、里程碑、Issue/PR 和单向同步规则。
+README、Part 0 和机器可读事实源为 AI Agent 提供了结构化入口。在 Cursor、Claude Code 或其他仓库级 Agent 中，可以直接使用：
 
-GitHub Issues 与 Projects 是协作投影，不能静默反向覆盖仓库事实源。
+```text
+阅读 @README.md 与 @book/part-00-overview.md，
+根据 @progress/generated/current.json 说明项目当前状态，
+再为我选择一条阅读路径或一个可复现实验。
+```
 
-## 研究资料与本地工作稿
+若要贡献代码或书稿，继续要求 Agent 读取 [`docs/REPOSITORY-GUIDE.md`](docs/REPOSITORY-GUIDE.md) 和 [`docs/GITHUB-COLLABORATION.md`](docs/GITHUB-COLLABORATION.md)，并在提交前运行完整 CI。结构化标题、表格、命令与 JSON 事实源也便于 AI 系统准确引用，而不需要猜测项目状态。
 
-本书允许使用官网存档、外部参考仓库和作者工作稿作为研究入口，但它们不自动成为结论或公开构建依赖。作者本地的 `working-book/`、`specs.md-portal/` 和外部参考仓库均由 `.gitignore` 排除，不进入 GitHub。
+## 贡献
 
-官网效率数字、竞争性结论和工具能力必须回到原始来源核验；已知限制必须保留。例如 specs.md 当前将 Operations Agent 标为 alpha，本书不会把它描述为成熟生产能力。
+欢迎修正文稿、复现实验、改进图示或完善自动化。提交前请阅读[协作说明](docs/GITHUB-COLLABORATION.md)，使用仓库的 [Issue 模板](.github/ISSUE_TEMPLATE/)或 [Pull Request 模板](.github/pull_request_template.md)，并附上 Task ID、产物和验证结果。
 
-## 安全、隐私与许可
+## 社区与支持
 
+- **阅读反馈** —— 使用[反馈 Issue](.github/ISSUE_TEMPLATE/feedback.yml)报告理解障碍、阅读路径或练习体验。
+- **内容与实验** —— 使用[写作 Issue](.github/ISSUE_TEMPLATE/writing.yml)或[实验 Issue](.github/ISSUE_TEMPLATE/experiment.yml)提出改进。
+- **构建问题** —— 使用 [Bug Issue](.github/ISSUE_TEMPLATE/bug.yml)报告构建、Dashboard 或自动化故障。
+- **持续关注** —— [Star 本仓库](https://github.com/mancbj/aidlc-book-baojun)并查看[最新 Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest)。
+
+## 许可
+
+本仓库目前**尚未声明 SPDX 开源许可证**。在许可证明确之前，请勿假定书稿、图片、代码或第三方参考材料可以自由再分发或商用；引用和贡献仍需保留来源，并遵守对应上游材料的许可。
+
+## 致谢
+
+本开源书在起步阶段受益于两个先行项目，特此致谢：
+
+1. **[ai-agent-book](https://github.com/bojieli/ai-agent-book)** —— 为如何写一本开源书提供了高度参考与借鉴。
+2. **[specs.md](https://specs.md)** —— 其 skill 与 AI-DLC 方法论，为本项目的计划与初版（`v0.2` 完成）提供了理论与实践支持。
+
+<details>
+<summary><strong>研究、事实源与安全边界</strong></summary>
+
+- 外部参考不会自动成为结论或公开构建依赖；效率数字、工具能力和竞争性结论必须回到原始来源核验。
+- GitHub Issues 与 Projects 是协作投影，不能静默覆盖仓库事实源。
 - 不提交 Token、Cookie、API Key、`.env`、个人联系方式或未经许可的私密原文。
-- 外部实验固定版本和配置，秘密只通过运行环境注入。
-- 参考仓库和官网材料不是默认可复制内容；引用前确认许可并保留来源。
-- 正式书籍许可和最终贡献条款将在 v0.1 发布前确认；在此之前不要假定第三方内容可以重新分发。
+- 详见[仓库指南](docs/REPOSITORY-GUIDE.md)与[自动记录规则](docs/PROGRESS-AUTOMATION.md)。
+
+</details>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=mancbj/aidlc-book-baojun&type=Date)](https://star-history.com/#mancbj/aidlc-book-baojun&Date)
 
 ---
 
