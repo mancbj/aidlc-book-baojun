@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "gr-readme": {
+      "source": "gingiris-1031/gingiris-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gr-readme/SKILL.md",
+      "computedHash": "1809eefae4a83a0390d50c1fb240ee99b6d89ab381f78b1b2a954e29ad5b7cd1"
+    }
+  }
+}
