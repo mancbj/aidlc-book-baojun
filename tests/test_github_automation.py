@@ -136,6 +136,7 @@ class LinkAndPagesTests(unittest.TestCase):
             self.assertTrue((output / "tests/test_validate_project.py").is_file())
             self.assertTrue((output / "docs/CI-RUNBOOK.md").is_file())
             self.assertTrue((output / "experiments/sample/README.md").is_file())
+            self.assertTrue((output / "LICENSE").is_file())
             self.assertEqual([], report["issues"])
             index = (output / "index.html").read_text(encoding="utf-8")
             self.assertIn("Source commit", index)
