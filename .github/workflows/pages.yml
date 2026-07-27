@@ -21,6 +21,11 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.13"
+      - uses: actions/setup-node@49933ea5286caeca8642d813edb033d753d179fa # v4.4.0
+        with:
+          node-version: "20"
+      - name: Install book build tools
+        uses: ./.github/actions/book-build-tools
       - run: python3 scripts/ci_check.py --budget-seconds 180
 
   build:
@@ -35,6 +40,11 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.13"
+      - uses: actions/setup-node@49933ea5286caeca8642d813edb033d753d179fa # v4.4.0
+        with:
+          node-version: "20"
+      - name: Install book build tools
+        uses: ./.github/actions/book-build-tools
       - name: Generate progress from the source commit
         run: python3 scripts/generate_progress.py --actor github-actions
       - name: Build the publish tree
