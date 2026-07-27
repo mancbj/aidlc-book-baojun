@@ -94,6 +94,7 @@ jobs:
           if [ -z "${PDF_PATH}" ]; then
             for candidate in \
               "releases/${VERSION}-rc/aidlc-book-${VERSION}.pdf" \
+              "releases/${VERSION}-rc/aidlc-book-${VERSION}-en.pdf" \
               "releases/${VERSION}-rc/ai-dlc-book-${VERSION}.pdf"
             do
               if [ -f "$candidate" ]; then
@@ -106,6 +107,9 @@ jobs:
             args+=(--pdf "$PDF_PATH")
           fi
           book_html="releases/${VERSION}-rc/aidlc-book-${VERSION}-book.html"
+          if [ ! -f "$book_html" ]; then
+            book_html="releases/${VERSION}-rc/aidlc-book-${VERSION}-en-book.html"
+          fi
           if [ -f "$book_html" ]; then
             args+=(--book-html "$book_html")
           fi

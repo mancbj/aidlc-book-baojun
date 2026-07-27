@@ -103,6 +103,7 @@ def build_report(root: Path, policy_path: Path, generated_at: Optional[str] = No
         version = str(policy["version"])
         pdf_candidates = [
             root / f"releases/{version}-rc/aidlc-book-{version}.pdf",
+            root / f"releases/{version}-rc/aidlc-book-{version}-en.pdf",
             root / f"releases/{version}-rc/ai-dlc-book-{version}.pdf",
             root / "releases/v0.1-rc/ai-dlc-book-v0.1.pdf",
         ]
