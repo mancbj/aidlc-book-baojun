@@ -31,7 +31,7 @@ def render(root: Path, readiness: dict) -> str:
             "- 新增 `docs/WORKING-WITH-AIDLC-MAP.md`；`book/toc.md` 官方参考表；Operations alpha 与实验 evidence 边界保持不变。",
             "- 实验保持 verified=30/30；Reader 继续保留 `READER-RESPONSES` known-gap。",
         ]
-        next_goal = "v0.8.011：消化真实 Reader 反馈，或开启新内容周期。"
+        next_goal = "v0.9.001：英文书稿构建脊柱（locale 与源树）；详见 planning/releases/v0.9-roadmap.md。"
     elif version.startswith("v0.8.006"):
         highlights = [
             "- README 首屏重构：双语 tagline、CI/Release/Stars/Last Commit 信任信号与 3.5 秒 Star CTA。",

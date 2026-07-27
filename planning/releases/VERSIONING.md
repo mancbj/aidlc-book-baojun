@@ -26,4 +26,14 @@ v0.<minor>.<patch:000-999>
 | `v0.8.005` | README 开篇致谢 ai-agent-book 与 specs.md |
 | `v0.8.006` | README 三阶段转化、结构与信任优化 |
 | `v0.8.010` | 官方来源三角、workflow 映射与中文章节摘要增补 |
-| `v0.8.011` | （下一 Loop）真实 Reader 反馈或新内容周期 |
+| `v0.9` | **新 minor 主题线**：英文出版物 + Carbon 可视化 GitHub Pages |
+| `v0.9.001` | 英文书稿构建脊柱（locale、源树、CI） |
+| `v0.9.002` | 英文 Part 0 + CH01–03 |
+| `v0.9.003` | 英文 CH04–06 |
+| `v0.9.004` | 英文 CH07–10 + 首次英文 Release PDF/HTML |
+| `v0.9.005` | Carbon 站点信息架构与着陆页 |
+| `v0.9.006` | 可视化章节阅读器 v1 |
+| `v0.9.007` | 中英切换与 a11y |
+| `v0.9.008` | Pages 阅读站与 Release 构建同源 |
+
+`v0.8.011` 及「以真实 Reader 反馈为下一稿主题」的规划 **已取消**；`READER-RESPONSES` 仍为 known-gap，不驱动 tag 主题。详见 [`v0.9-roadmap.md`](v0.9-roadmap.md)。
