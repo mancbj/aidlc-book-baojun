@@ -220,7 +220,14 @@ README、Part 0 和机器可读事实源为 AI Agent 提供了结构化入口。
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=mancbj/aidlc-book-baojun&type=Date)](https://star-history.com/#mancbj/aidlc-book-baojun&Date)
+<a href="https://star-history.com/#mancbj/aidlc-book-baojun&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/star-history-dark.png">
+    <img src="assets/star-history-light.png" alt="Star history for mancbj/aidlc-book-baojun" width="720">
+  </picture>
+</a>
+
+<p align="center"><sub>每日由 GitHub Actions 更新 · <code>scripts/gen_star_history.py</code></sub></p>
 
 ---
 

@@ -9,8 +9,9 @@
 | `release.yml` | `v*` tag、手动 | `contents: read` | 构建不可变候选；授权后创建 draft Release |
 | `project-sync.yml` | 仅手动 | `contents: read` | 默认 dry-run 的仓库→GitHub Project 单向投影 |
 | `post-release.yml` | `release.published` | `contents: read` | 生成发布回执、v0.2 周期和可视事件；以 PR 或 artifact 交付 |
+| `star-history.yml` | 每日 cron、手动 | `contents: read` | 渲染 Star History PNG 并提交 `assets/`（`[skip ci]`） |
 
-写权限只在具体 job 提升：进度记录与 Release 使用 `contents: write`，Pages 部署使用 `pages: write` / `id-token: write`。PR 门禁不使用秘密，也不使用 `pull_request_target`，因此 Fork 代码不会进入特权上下文。Project dry-run 与 apply 是互斥步骤，只有显式 `apply=true` 的步骤声明 `PROJECT_TOKEN`。
+写权限只在具体 job 提升：进度记录与 Release 使用 `contents: write`，Pages 部署使用 `pages: write` / `id-token: write`，Star History 更新 job 使用 `contents: write`。PR 门禁不使用秘密，也不使用 `pull_request_target`，因此 Fork 代码不会进入特权上下文。Project dry-run 与 apply 是互斥步骤，只有显式 `apply=true` 的步骤声明 `PROJECT_TOKEN`。
 
 本地等价门禁：
 
