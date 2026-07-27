@@ -18,7 +18,7 @@
 python3 scripts/ci_check.py --budget-seconds 60
 ```
 
-分支保护阻止机器人写入时，`pages.yml` 会保留 `progress-record` artifact，维护者可下载后通过 PR 合并。Pages 未启用时构建产物仍可审阅；Project 缺少目标或 Token 时只输出降级报告；PDF 未提供或未验证时 Release 明确标记为跳过，不伪造 PDF。
+分支保护阻止机器人写入时，`pages.yml` 会保留 `progress-record` artifact，维护者可下载后通过 PR 合并。Pages 未启用时见 [Pages 启用与排障](../../docs/GITHUB-PAGES-SETUP.md)；`deploy` job 会尝试 `configure-pages` 自动启用。Project 缺少目标或 Token 时只输出降级报告；PDF 未提供或未验证时 Release 明确标记为跳过，不伪造 PDF。
 
 `release.yml` 会在候选构建前运行 v0.1 readiness。blocked 报告总会保留，但 build/publish 不继续。只有维护者把 draft v0.1 真正公开后，`post-release.yml` 才在特权 job 中申请 `contents: write` / `pull-requests: write`。
 

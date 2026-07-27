@@ -45,6 +45,8 @@ def validate_workflows(errors: list[str]) -> None:
             "scripts/prepare_pages.py",
             "--commit-sha \"$GITHUB_SHA\"",
             "actions/upload-pages-artifact@",
+            "actions/configure-pages@",
+            "enablement: true",
             "actions/deploy-pages@",
             "id-token: write",
             "progress-record.tgz",

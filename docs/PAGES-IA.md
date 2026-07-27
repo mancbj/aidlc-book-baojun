@@ -3,7 +3,8 @@
 > Loop 编排：[`v0.9-loop-orchestration.md`](../planning/publication/v0.9-loop-orchestration.md)
 
 **对外基址（README / 分享链接请用完整 URL）：** `https://mancbj.github.io/aidlc-book-baojun/`  
-在 GitHub 仓库页点击相对路径 `book-site/index.html` 会进入源码视图，不会渲染为网页；克隆仓库后本地可 `python3 scripts/build_book_site.py` 再用浏览器打开 `book-site/index.html`。
+在 GitHub 仓库页点击相对路径 `book-site/index.html` 会进入源码视图，不会渲染为网页；克隆仓库后本地可 `python3 scripts/build_book_site.py` 再用浏览器打开 `book-site/index.html`。  
+若 `github.io` 提示无站点，说明 Pages 尚未成功部署，见 [`GITHUB-PAGES-SETUP.md`](GITHUB-PAGES-SETUP.md)。
 
 ## URL 结构（Pages 根 = 仓库 GitHub Pages）
 
