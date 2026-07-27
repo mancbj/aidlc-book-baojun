@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Dict, Optional, Sequence
 
 from prepare_pages import GENERATED_MARKER, build_pages, file_sha256, now_utc, source_id
+from release_book_assets import asset_filenames, rc_paths
 
 
 VERSION_RE = re.compile(r"^v\d+\.\d+(?:\.\d+)?(?:-[0-9A-Za-z.-]+)?$")
@@ -33,6 +34,79 @@ def validate_pdf(path: Path) -> None:
         trailer = handle.read()
     if not header.startswith(b"%PDF-") or b"%%EOF" not in trailer:
         raise RuntimeError("--pdf 缺少 PDF header/EOF 结构；拒绝把占位文件作为 PDF 发布。")
+
+
+def stage_book_assets(
+    staged: Path,
+    root: Path,
+    version: str,
+    pdf_arg: Optional[Path],
+    book_html_arg: Optional[Path],
+) -> tuple[Dict[str, object], Dict[str, object], Dict[str, object]]:
+    """Copy zh/en HTML and PDF into the candidate when present in RC or via explicit args."""
+    names = asset_filenames(version)
+    discovered = rc_paths(root, version)
+    overrides: Dict[str, Optional[Path]] = {
+        "zh_html": book_html_arg,
+        "zh_pdf": pdf_arg,
+        "en_html": None,
+        "en_pdf": None,
+    }
+    book_assets: Dict[str, Dict[str, object]] = {}
+    for key, filename in names.items():
+        explicit = overrides.get(key)
+        if explicit is not None:
+            src = explicit if explicit.is_absolute() else root / explicit
+        else:
+            src = discovered[key]
+        if not src.is_file():
+            continue
+        if key.endswith("_pdf"):
+            validate_pdf(src)
+        else:
+            validate_book_html(src)
+        target = staged / filename
+        shutil.copy2(src, target)
+        entry: Dict[str, object] = {
+            "status": "included",
+            "file": target.name,
+            "sha256": file_sha256(target),
+            "bytes": target.stat().st_size,
+            "locale": "zh" if key.startswith("zh_") else "en",
+            "kind": "pdf" if key.endswith("_pdf") else "html",
+        }
+        book_assets[key] = entry
+
+    zh_html = book_assets.get("zh_html")
+    en_html = book_assets.get("en_html")
+    zh_pdf = book_assets.get("zh_pdf")
+    en_pdf = book_assets.get("en_pdf")
+
+    book_html_status: Dict[str, object]
+    if zh_html:
+        book_html_status = dict(zh_html)
+    elif en_html:
+        book_html_status = dict(en_html)
+    else:
+        book_html_status = {
+            "status": "skipped",
+            "reason": "未在 RC 目录或 --book-html 中找到书稿 HTML。",
+            "retry": "运行 scripts/stage_release_rc_assets.py 或提供 --book-html。",
+        }
+
+    pdf_status: Dict[str, object]
+    if zh_pdf:
+        pdf_status = dict(zh_pdf)
+    elif en_pdf:
+        pdf_status = dict(en_pdf)
+    else:
+        pdf_status = {
+            "status": "skipped",
+            "reason": "未通过 --pdf 或 RC 目录提供可验证 PDF。",
+            "retry": "运行 scripts/stage_release_rc_assets.py 或提供 --pdf。",
+        }
+
+    return book_assets, book_html_status, pdf_status
 
 
 def validate_book_html(path: Path) -> None:
@@ -123,44 +197,14 @@ def build_release(args: argparse.Namespace) -> Dict[str, object]:
                     info.external_attr = 0o100644 << 16
                     bundle.writestr(info, path.read_bytes())
 
-        pdf_status: Dict[str, object]
-        if args.pdf:
-            pdf = args.pdf if args.pdf.is_absolute() else root / args.pdf
-            validate_pdf(pdf)
-            pdf_target = staged / f"aidlc-book-{args.version}.pdf"
-            shutil.copy2(pdf, pdf_target)
-            pdf_status = {
-                "status": "included",
-                "file": pdf_target.name,
-                "sha256": file_sha256(pdf_target),
-                "bytes": pdf_target.stat().st_size,
-            }
-        else:
-            pdf_status = {
-                "status": "skipped",
-                "reason": "未通过 --pdf 提供经过独立构建和验证的 PDF；当前 policy 不要求 PDF。",
-                "retry": "先用书稿构建链路生成并验证 PDF，再以 --pdf <path> 重建候选。",
-            }
-
-        book_html_status: Dict[str, object]
         book_html_arg = getattr(args, "book_html", None)
-        if book_html_arg:
-            book_html = book_html_arg if book_html_arg.is_absolute() else root / book_html_arg
-            validate_book_html(book_html)
-            book_html_target = staged / f"aidlc-book-{args.version}-book.html"
-            shutil.copy2(book_html, book_html_target)
-            book_html_status = {
-                "status": "included",
-                "file": book_html_target.name,
-                "sha256": file_sha256(book_html_target),
-                "bytes": book_html_target.stat().st_size,
-            }
-        else:
-            book_html_status = {
-                "status": "skipped",
-                "reason": "未通过 --book-html 提供经过构建的书稿 HTML。",
-                "retry": "先运行 scripts/build_book.sh .artifacts/book html，再以 --book-html <path> 重建候选。",
-            }
+        book_assets, book_html_status, pdf_status = stage_book_assets(
+            staged,
+            root,
+            args.version,
+            args.pdf,
+            book_html_arg,
+        )
 
         commit = args.commit_sha or os.environ.get("GITHUB_SHA") or source_id(root)
         notes_arg = getattr(args, "release_notes", None)
@@ -196,6 +240,7 @@ def build_release(args: argparse.Namespace) -> Dict[str, object]:
                 "pages_file_count": pages_manifest["file_count"],
             },
             "book_html": book_html_status,
+            "book_assets": book_assets,
             "pdf": pdf_status,
             "release_notes": "release-notes.md",
             "readiness": {

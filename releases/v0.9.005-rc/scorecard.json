@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.9.005",
+  "publish_threshold": 92,
+  "weights": {
+    "bilingual_release": 40,
+    "release": 25,
+    "ci_release": 25,
+    "evidence_boundary": 10
+  },
+  "hard_gates": [
+    "bilingual_four_assets",
+    "content_audit_pass",
+    "readiness_ready",
+    "verified_experiments_30_30"
+  ],
+  "baseline_commit": "main",
+  "current_round": "01",
+  "rounds": [
+    {
+      "id": "01",
+      "name": "bilingual-release-four-assets",
+      "decision": "KEEP",
+      "bilingual_release": 40,
+      "release": 25,
+      "ci_release": 25,
+      "evidence_boundary": 10,
+      "total": 100,
+      "notes": "zh+en HTML/PDF in RC; stage_release_rc_assets.py + prepare_release book_assets."
+    }
+  ]
+}

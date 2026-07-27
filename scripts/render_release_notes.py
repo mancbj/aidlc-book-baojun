@@ -40,6 +40,14 @@ def render(root: Path, readiness: dict) -> str:
             "- Reader 仍为 known-gap；下一目标为 v0.9.009+ 维护（图/实验可视化），非反馈驱动 tag。",
         ]
         next_goal = "v0.9.009-draft：维护循环（图示优化、实验可视化、Pages 性能）；见 planning/publication/v0.9-loop-orchestration.md。"
+    elif version.startswith("v0.9.005"):
+        highlights = [
+            "- **双语 Release 四类资产**：中文/英文各一份单页 HTML 与 PDF（`-book.html` / `-en-book.html` / `.pdf` / `-en.pdf`）。",
+            "- 构建：`scripts/stage_release_rc_assets.py v0.9.005`；Release workflow 在缺失 RC 文件时同源重构建。",
+            "- 继承 v0.9.004 英文全书与 v0.9.008 Pages 阅读站；实验 verified=30/30。",
+            "- Reader 仍为 known-gap。",
+        ]
+        next_goal = "v0.9.006+：阅读器与 Release 体验维护；见 planning/publication/v0.9-loop-orchestration.md。"
     elif version.startswith("v0.9.004"):
         highlights = [
             "- 首次 **英文全书** release-profile HTML/PDF（`build_book --locale en` / `build_release_book.py --locale en`）。",
