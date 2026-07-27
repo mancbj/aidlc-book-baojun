@@ -11,17 +11,24 @@ import re
 import shutil
 import subprocess
 import tempfile
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
-from typing import Dict, List, Optional, Sequence
+from typing import Dict, List, Optional, Sequence, Tuple
 
 
-TITLE = "深入理解 AI-DLC"
-HTML_NAME = "deep-understanding-ai-dlc.html"
-PDF_NAME = "deep-understanding-ai-dlc.pdf"
 MARKER_NAME = ".book-build-root"
-SOURCE_FILES = (
+RELEASE_PROFILE_FILTER = Path("book/filters/release-profile.lua")
+MERMAID_BLOCK = re.compile(r"^```mermaid[^\n]*\n(.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL)
+PDF_FULL_PAGE_COVER = r"""\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\AddToShipoutPictureBG*{\AtPageLowerLeft{\makebox[\paperwidth][c]{\includegraphics[width=0.75\paperheight,height=\paperheight,keepaspectratio=false]{\detokenize{__PDF_COVER_PATH__}}}}}
+\null
+\clearpage
+\restoregeometry"""
+
+SOURCE_FILES_ZH: Tuple[Path, ...] = (
     Path("book/build-frontmatter.md"),
     Path("book/manifesto.md"),
     Path("book/part-00-overview.md"),
@@ -37,7 +44,16 @@ SOURCE_FILES = (
     Path("book/chapters/ch09-adaptive-engineering.md"),
     Path("book/chapters/ch10-organization-metrics.md"),
 )
-SUPPORT_FILES = (
+
+SOURCE_FILES_EN: Tuple[Path, ...] = (
+    Path("book/en/build-frontmatter.md"),
+    Path("book/en/manifesto.md"),
+    Path("book/en/part-00-overview.md"),
+    Path("book/en/toc.md"),
+    Path("book/en/glossary.md"),
+)
+
+SUPPORT_FILES: Tuple[Path, ...] = (
     Path("book/book.css"),
     Path("book/filters/pdf-compat.lua"),
     Path("book/filters/release-profile.lua"),
@@ -60,15 +76,84 @@ SUPPORT_FILES = (
     Path("book/images/ch09-risk-ceremony-matrix.svg"),
     Path("book/images/ch10-org-operating-system.svg"),
 )
-RELEASE_PROFILE_FILTER = Path("book/filters/release-profile.lua")
-MERMAID_BLOCK = re.compile(r"^```mermaid[^\n]*\n(.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL)
+
+# Backward-compatible defaults (Chinese locale).
+TITLE = "深入理解 AI-DLC"
+HTML_NAME = "deep-understanding-ai-dlc.html"
+PDF_NAME = "deep-understanding-ai-dlc.pdf"
+SOURCE_FILES = SOURCE_FILES_ZH
 COVER_MARKDOWN = "![《深入理解 AI-DLC》书籍封面](images/cover.png){.book-cover width=42%}"
-PDF_FULL_PAGE_COVER = r"""\newgeometry{margin=0pt}
-\thispagestyle{empty}
-\AddToShipoutPictureBG*{\AtPageLowerLeft{\makebox[\paperwidth][c]{\includegraphics[width=0.75\paperheight,height=\paperheight,keepaspectratio=false]{\detokenize{__PDF_COVER_PATH__}}}}}
-\null
-\clearpage
-\restoregeometry"""
+COVER_MARKDOWN_EN = (
+    "![Deep Understanding AI-DLC book cover](../images/cover.png){.book-cover width=42%}"
+)
+
+SUPPORTED_LOCALES = ("zh", "en")
+
+
+@dataclass(frozen=True)
+class BookLocaleConfig:
+    code: str
+    title: str
+    html_name: str
+    pdf_name: str
+    pandoc_lang: str
+    source_files: Tuple[Path, ...]
+    resource_path_parts: Tuple[str, ...]
+    frontmatter_path: Path
+    cover_markdown: str
+    cover_image_path: Path
+    pdf_documentclass: str
+    html_required_phrases: Tuple[str, ...]
+    min_embedded_images: int
+    mermaid_caption_prefix: str
+
+
+def get_book_locale(locale: str) -> BookLocaleConfig:
+    if locale == "zh":
+        return BookLocaleConfig(
+            code="zh",
+            title=TITLE,
+            html_name=HTML_NAME,
+            pdf_name=PDF_NAME,
+            pandoc_lang="zh-CN",
+            source_files=SOURCE_FILES_ZH,
+            resource_path_parts=("book", ""),
+            frontmatter_path=Path("book/build-frontmatter.md"),
+            cover_markdown=COVER_MARKDOWN,
+            cover_image_path=Path("book/images/cover.png"),
+            pdf_documentclass="ctexbook",
+            html_required_phrases=(
+                TITLE,
+                "𝓔 = Engineering with Exsecutio",
+                "Part 00 · 鸟瞰 AI-DLC",
+                "第 10 章",
+            ),
+            min_embedded_images=5,
+            mermaid_caption_prefix="Part 0 鸟瞰图",
+        )
+    if locale == "en":
+        return BookLocaleConfig(
+            code="en",
+            title="Deep Understanding AI-DLC",
+            html_name="deep-understanding-ai-dlc-en.html",
+            pdf_name="deep-understanding-ai-dlc-en.pdf",
+            pandoc_lang="en-US",
+            source_files=SOURCE_FILES_EN,
+            resource_path_parts=("book/en", "book", ""),
+            frontmatter_path=Path("book/en/build-frontmatter.md"),
+            cover_markdown=COVER_MARKDOWN_EN,
+            cover_image_path=Path("book/images/cover.png"),
+            pdf_documentclass="book",
+            html_required_phrases=(
+                "Deep Understanding AI-DLC",
+                "Engineering with Exsecutio",
+                "Part 00",
+                "English edition scope",
+            ),
+            min_embedded_images=4,
+            mermaid_caption_prefix="Part 0 diagram",
+        )
+    raise RuntimeError(f"未知 locale：{locale}；支持：{', '.join(SUPPORTED_LOCALES)}")
 
 
 def sha256(path: Path) -> str:
@@ -101,6 +186,7 @@ def find_chromium_browser() -> str:
         "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
         shutil.which("chromium"),
         shutil.which("google-chrome"),
+        shutil.which("chromium-browser"),
     ]
     for candidate in candidates:
         if candidate and Path(candidate).is_file() and os.access(candidate, os.X_OK):
@@ -135,7 +221,12 @@ def run_pandoc(command: List[str], label: str) -> None:
 
 
 def render_mermaid_sources(
-    root: Path, work: Path, mmdc: str, browser: str, output_format: str
+    root: Path,
+    work: Path,
+    mmdc: str,
+    browser: str,
+    output_format: str,
+    book_locale: BookLocaleConfig,
 ) -> List[str]:
     rendered_sources: List[str] = []
     diagram_number = 0
@@ -157,16 +248,18 @@ def render_mermaid_sources(
                 },
             },
             ensure_ascii=False,
-        ) + "\n",
+        )
+        + "\n",
         encoding="utf-8",
     )
-    for source_number, relative_path in enumerate(SOURCE_FILES, start=1):
+    for source_number, relative_path in enumerate(book_locale.source_files, start=1):
         source_path = root / relative_path
         source_text = source_path.read_text(encoding="utf-8")
         source_changed = False
-        if output_format == "pdf" and relative_path == Path("book/build-frontmatter.md"):
-            next_text = source_text.replace(COVER_MARKDOWN, PDF_FULL_PAGE_COVER)
-            next_text = next_text.replace("__PDF_COVER_PATH__", (root / "book/images/cover.png").as_posix())
+        if output_format == "pdf" and relative_path == book_locale.frontmatter_path:
+            cover_path = (root / book_locale.cover_image_path).as_posix()
+            next_text = source_text.replace(book_locale.cover_markdown, PDF_FULL_PAGE_COVER)
+            next_text = next_text.replace("__PDF_COVER_PATH__", cover_path)
             source_changed = next_text != source_text
             source_text = next_text
 
@@ -178,11 +271,16 @@ def render_mermaid_sources(
             diagram_source.write_text(match.group(1).strip() + "\n", encoding="utf-8")
             command = [
                 mmdc,
-                "--input", str(diagram_source),
-                "--output", str(diagram_output),
-                "--theme", "neutral",
-                "--configFile", str(mermaid_config),
-                "--puppeteerConfigFile", str(puppeteer_config),
+                "--input",
+                str(diagram_source),
+                "--output",
+                str(diagram_output),
+                "--theme",
+                "neutral",
+                "--configFile",
+                str(mermaid_config),
+                "--puppeteerConfigFile",
+                str(puppeteer_config),
                 "--quiet",
             ]
             if output_format == "pdf":
@@ -201,7 +299,7 @@ def render_mermaid_sources(
                 )
                 raise RuntimeError(f"Mermaid 图 {diagram_number} 渲染失败：\n{diagnostics}")
             return (
-                f"![Part 0 鸟瞰图 {diagram_number}](<{diagram_output.as_posix()}>)"
+                f"![{book_locale.mermaid_caption_prefix} {diagram_number}](<{diagram_output.as_posix()}>)"
                 "{.mermaid-diagram width=100%}"
             )
 
@@ -236,18 +334,20 @@ class HtmlCandidate(HTMLParser):
         self.text_parts.append(data)
 
 
-def validate_html(path: Path) -> None:
+def validate_html(path: Path, book_locale: BookLocaleConfig) -> None:
     text = path.read_text(encoding="utf-8")
     parser = HtmlCandidate()
     parser.feed(text)
     visible_text = re.sub(r"\s+", " ", " ".join(parser.text_parts))
-    for required in (TITLE, "𝓔 = Engineering with Exsecutio", "Part 00 · 鸟瞰 AI-DLC", "第 10 章"):
+    for required in book_locale.html_required_phrases:
         if required not in visible_text:
             raise RuntimeError(f"HTML 候选缺少必需内容：{required}")
     if "TOC" not in parser.ids:
         raise RuntimeError("HTML 候选缺少目录导航。")
-    if len(parser.images) < 5 or not all(source.startswith("data:image/") for source in parser.images):
-        raise RuntimeError("HTML 候选没有完整内嵌封面、核心图与三张鸟瞰图。")
+    if len(parser.images) < book_locale.min_embedded_images or not all(
+        source.startswith("data:image/") for source in parser.images
+    ):
+        raise RuntimeError("HTML 候选没有完整内嵌封面、核心图与 Mermaid 图。")
 
 
 def validate_pdf(path: Path) -> None:
@@ -262,12 +362,18 @@ def build(
     generated_at: str,
     build_format: str,
     profile: str = "dev",
+    locale: str = "zh",
 ) -> Dict[str, object]:
     root = root.resolve()
     output = output.resolve()
     if profile not in {"dev", "release"}:
         raise RuntimeError(f"未知构建 profile：{profile}")
-    missing = [str(path) for path in SOURCE_FILES + SUPPORT_FILES if not (root / path).is_file()]
+    book_locale = get_book_locale(locale)
+    missing = [
+        str(path)
+        for path in book_locale.source_files + SUPPORT_FILES
+        if not (root / path).is_file()
+    ]
     if missing:
         raise RuntimeError("缺少构建输入：" + ", ".join(missing))
 
@@ -279,7 +385,7 @@ def build(
         tectonic = require_tool("tectonic", "macOS 可运行：brew install tectonic")
 
     prepare_output(root, output)
-    resource_path = os.pathsep.join((str(root / "book"), str(root)))
+    resource_path = os.pathsep.join(str(root / part) for part in book_locale.resource_path_parts if part != "")
     release_filter = root / RELEASE_PROFILE_FILTER
     outputs: List[Dict[str, str]] = []
     with tempfile.TemporaryDirectory(prefix="aidlc-book-") as directory:
@@ -292,15 +398,17 @@ def build(
                 "--from=markdown+smart+raw_tex+fenced_divs",
                 "--standalone",
                 f"--resource-path={resource_path}",
-                "--metadata=lang:zh-CN",
+                f"--metadata=lang:{book_locale.pandoc_lang}",
             ]
             if profile == "release":
                 command.append(f"--lua-filter={release_filter}")
             return command
 
         if build_format in {"html", "all"}:
-            html_sources = render_mermaid_sources(root, work, mmdc, browser, "svg")
-            html_path = output / HTML_NAME
+            html_sources = render_mermaid_sources(
+                root, work, mmdc, browser, "svg", book_locale
+            )
+            html_path = output / book_locale.html_name
             html_args = [
                 "--to=html5",
                 "--toc",
@@ -317,17 +425,19 @@ def build(
                 common_for(html_sources) + html_args,
                 "Pandoc HTML 构建",
             )
-            validate_html(html_path)
-            outputs.append({"path": HTML_NAME, "sha256": sha256(html_path)})
+            validate_html(html_path, book_locale)
+            outputs.append({"path": book_locale.html_name, "sha256": sha256(html_path)})
 
         if build_format in {"pdf", "all"}:
-            pdf_sources = render_mermaid_sources(root, work, mmdc, browser, "pdf")
-            pdf_path = output / PDF_NAME
+            pdf_sources = render_mermaid_sources(
+                root, work, mmdc, browser, "pdf", book_locale
+            )
+            pdf_path = output / book_locale.pdf_name
             pdf_command = common_for(pdf_sources) + [
                 "--to=pdf",
                 "--pdf-engine=tectonic",
                 f"--lua-filter={root / 'book/filters/pdf-compat.lua'}",
-                "--variable=documentclass:ctexbook",
+                f"--variable=documentclass:{book_locale.pdf_documentclass}",
                 "--variable=classoption:openany",
                 "--variable=papersize:a4",
                 "--variable=colorlinks:true",
@@ -345,11 +455,12 @@ def build(
                 pdf_command.append("--variable=geometry:margin=24mm")
             run_pandoc(pdf_command, "Pandoc PDF 构建")
             validate_pdf(pdf_path)
-            outputs.append({"path": PDF_NAME, "sha256": sha256(pdf_path)})
+            outputs.append({"path": book_locale.pdf_name, "sha256": sha256(pdf_path)})
 
     manifest = {
         "schema_version": "1.0.0",
-        "title": TITLE,
+        "locale": book_locale.code,
+        "title": book_locale.title,
         "generated_at": generated_at,
         "format": build_format,
         "profile": profile,
@@ -357,10 +468,12 @@ def build(
         "diagram_engine": tool_version(mmdc),
         "diagram_browser": Path(browser).name,
         "pdf_engine": tool_version(tectonic) if tectonic else None,
-        "entrypoint": HTML_NAME if build_format in {"html", "all"} else PDF_NAME,
+        "entrypoint": book_locale.html_name
+        if build_format in {"html", "all"}
+        else book_locale.pdf_name,
         "sources": [
             {"path": path.as_posix(), "sha256": sha256(root / path)}
-            for path in SOURCE_FILES + SUPPORT_FILES
+            for path in book_locale.source_files + SUPPORT_FILES
         ],
         "outputs": outputs,
     }
@@ -381,6 +494,12 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
         default="dev",
         help="dev 保留写作脚手架；release 剥离 Metadata/Gate/Review Notes 等内部信息",
     )
+    parser.add_argument(
+        "--locale",
+        choices=SUPPORTED_LOCALES,
+        default="zh",
+        help="zh 中文全书；en 英文 spine（Part 0 + 前言，v0.9.001+）",
+    )
     parser.add_argument("--generated-at", help="fixed ISO-8601 build time for reproducible tests")
     return parser.parse_args(argv)
 
@@ -391,7 +510,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "+00:00", "Z"
     )
     try:
-        manifest = build(args.root, args.output, generated_at, args.format, profile=args.profile)
+        manifest = build(
+            args.root,
+            args.output,
+            generated_at,
+            args.format,
+            profile=args.profile,
+            locale=args.locale,
+        )
     except (OSError, RuntimeError, UnicodeError) as exc:
         print(f"[ERROR] {exc}")
         return 1
@@ -399,6 +525,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     for item in manifest["outputs"]:
         print(f"[OK] Candidate: {output / item['path']}")
     print(f"[OK] Build manifest: {output / 'build-manifest.json'}")
+    print(f"[OK] Locale: {manifest['locale']}")
     return 0
 
 

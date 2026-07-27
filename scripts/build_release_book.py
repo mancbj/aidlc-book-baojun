@@ -19,6 +19,12 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument("--output", type=Path, default=Path(".artifacts/book-release"))
     parser.add_argument("--format", choices=("html", "pdf", "all"), default="all")
     parser.add_argument("--generated-at", help="fixed ISO-8601 build time for reproducible tests")
+    parser.add_argument(
+        "--locale",
+        choices=("zh", "en"),
+        default="zh",
+        help="book locale passed to build_book.py",
+    )
     return parser.parse_args(argv)
 
 
@@ -34,6 +40,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             generated_at,
             args.format,
             profile="release",
+            locale=args.locale,
         )
     except (OSError, RuntimeError, UnicodeError) as exc:
         print(f"[ERROR] {exc}")
