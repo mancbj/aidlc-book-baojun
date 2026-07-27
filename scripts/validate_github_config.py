@@ -82,11 +82,13 @@ def validate_workflows(errors: list[str]) -> None:
         combined += text + "\n"
         require_tokens(path, text, tokens, errors)
         for action in ANY_ACTION_RE.findall(text):
+            if action.startswith("./"):
+                continue
             if not re.fullmatch(r"[^\s@]+@[0-9a-f]{40}", action):
                 errors.append(
                     f"{path.relative_to(ROOT)}: Action 未锁定到 40 位提交 SHA：{action}"
                 )
-        uses_count = len(ANY_ACTION_RE.findall(text))
+        uses_count = len([a for a in ANY_ACTION_RE.findall(text) if not a.startswith("./")])
         pinned_count = len(PINNED_ACTION_RE.findall(text))
         if uses_count != pinned_count:
             errors.append(
