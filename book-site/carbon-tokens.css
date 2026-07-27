@@ -1,0 +1,48 @@
+/* IBM Carbon-inspired design tokens (static subset, no @carbon/styles runtime). */
+:root {
+  color-scheme: light dark;
+  --cds-background: #ffffff;
+  --cds-background-hover: #e8e8e8;
+  --cds-layer-01: #f4f4f4;
+  --cds-layer-02: #ffffff;
+  --cds-field-01: #f4f4f4;
+  --cds-border-subtle: #e0e0e0;
+  --cds-text-primary: #161616;
+  --cds-text-secondary: #525252;
+  --cds-text-helper: #6f6f6f;
+  --cds-link-primary: #0f62fe;
+  --cds-link-primary-hover: #0043ce;
+  --cds-focus: #0f62fe;
+  --cds-interactive: #0f62fe;
+  --cds-spacing-03: 0.5rem;
+  --cds-spacing-05: 1rem;
+  --cds-spacing-07: 2rem;
+  --cds-spacing-09: 3rem;
+  --cds-body-compact-01: 400 0.875rem/1.29 "IBM Plex Sans", "Noto Sans SC", system-ui, sans-serif;
+  --cds-heading-04: 400 1.75rem/1.29 "IBM Plex Sans", "Noto Sans SC", system-ui, sans-serif;
+  --cds-heading-05: 400 2rem/1.25 "IBM Plex Sans", "Noto Sans SC", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cds-background: #161616;
+    --cds-background-hover: #353535;
+    --cds-layer-01: #262626;
+    --cds-layer-02: #393939;
+    --cds-field-01: #262626;
+    --cds-border-subtle: #525252;
+    --cds-text-primary: #f4f4f4;
+    --cds-text-secondary: #c6c6c6;
+    --cds-text-helper: #a8a8a8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

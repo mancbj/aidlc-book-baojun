@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>深入理解 AI-DLC · 阅读入口</title>
+  <link rel="alternate" hreflang="zh" href="index.html">
+  <link rel="alternate" hreflang="en" href="index.html?lang=en">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <main id="main" class="hero">
+    <div>
+      <img class="hero-cover" src="../book/images/cover.png" width="420" height="560" alt="《深入理解 AI-DLC》封面">
+    </div>
+    <div>
+      <p data-i18n="eyebrow" style="color:var(--cds-link-primary);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.75rem;margin:0 0 .5rem">AI-DLC Book · Carbon Reading</p>
+      <h1 data-i18n="title">深入理解 AI-DLC</h1>
+      <p data-i18n="subtitle">从概率智能到确定性交付 — 三阶段生命周期、30 项可复现实验与 Exsecutio 工程边界。</p>
+      <div class="formula" data-i18n="formula">
+        AI-DLC = 𝓔（人的判断 + AI 能力）<br>
+        𝓔 = Engineering with Exsecutio
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="reader.html?locale=zh" data-i18n="readZh">中文可视化阅读</a>
+        <a class="btn btn-secondary" href="reader.html?locale=en" data-i18n="readEn">English reader</a>
+        <a class="btn btn-secondary" href="../site/index.html" data-i18n="ops">项目驾驶舱</a>
+      </div>
+    </div>
+    <div class="diagram" aria-label="AI-DLC core figure">
+      <object data="../book/images/fig0-1.svg" type="image/svg+xml" width="100%" role="img">
+        <img src="../book/images/fig0-1.svg" alt="AI-DLC 核心公式与三阶段生命周期">
+      </object>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <span data-i18n="footer">Pages 阅读站 · 与 Release 构建同源（v0.9.008）</span>
+  </footer>
+  <script>
+    const STR = {
+      zh: {
+        eyebrow: "AI-DLC Book · Carbon 阅读",
+        title: "深入理解 AI-DLC",
+        subtitle: "从概率智能到确定性交付 — 三阶段生命周期、30 项可复现实验与 Exsecutio 工程边界。",
+        formula: "AI-DLC = 𝓔（人的判断 + AI 能力）\n𝓔 = Engineering with Exsecutio",
+        readZh: "中文可视化阅读",
+        readEn: "English reader",
+        ops: "项目驾驶舱",
+        footer: "Pages 阅读站 · 与 Release 构建同源（v0.9.008）"
+      },
+      en: {
+        eyebrow: "AI-DLC Book · Carbon reading",
+        title: "Deep Understanding AI-DLC",
+        subtitle: "From probabilistic intelligence to deterministic delivery — lifecycle, 30 experiments, Exsecutio boundaries.",
+        formula: "AI-DLC = 𝓔 (human judgment + AI capability)\n𝓔 = Engineering with Exsecutio",
+        readZh: "Read in Chinese",
+        readEn: "English reader",
+        ops: "Project dashboard",
+        footer: "GitHub Pages reader · same build hash as Release (v0.9.008)"
+      }
+    };
+    const params = new URLSearchParams(location.search);
+    const lang = params.get("lang") || localStorage.getItem("aidlc-ui-lang") || (navigator.language.startsWith("zh") ? "zh" : "en");
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+    for (const el of document.querySelectorAll("[data-i18n]")) {
+      const key = el.getAttribute("data-i18n");
+      const text = (STR[lang] || STR.zh)[key] || "";
+      el.textContent = text.includes("\n") ? "" : text;
+      if (text.includes("\n")) el.innerHTML = text.split("\n").join("<br>");
+    }
+  </script>
+</body>
+</html>

@@ -39,11 +39,13 @@ TIMESTAMP = "2026-07-22T04:00:00Z"
 FIXTURE_DIRS = (
     ".github",
     "book",
+    "book-site",
     "docs",
     "feedback",
     "planning",
     "progress",
     "releases",
+    "scripts",
     "site",
     "tests",
     "writer-chats",

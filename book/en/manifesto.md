@@ -19,6 +19,6 @@ The goal is not “generate faster,” but **deliver correctly, faster**.
 4. Hiding failure modes and evidence boundaries is not engineering.
 5. AI-DLC is not a tool wrapper—it is a lifecycle with deterministic delivery loops.
 
-## English edition scope (v0.9.001)
+## English edition scope (v0.9.004)
 
-This locale build is the **publication spine** for the English book. Full chapter translations ship in patches `v0.9.002`–`v0.9.004`. The Chinese tree under `book/` remains the canonical authoring source until chapters are explicitly mirrored in `book/en/chapters/`.
+This locale build is the **full English mirror** (Part 0 + chapters 1–10 + glossary). Release-profile PDF/HTML ship under `v0.9.004` tags. Chinese `book/` remains the canonical authoring source.

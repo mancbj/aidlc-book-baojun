@@ -23,6 +23,16 @@ EN_REQUIRED_PATHS = (
     "book/en/toc.md",
     "book/en/glossary.md",
     "book/en/chapters/README.md",
+    "book/en/chapters/ch01-ai-native-sdlc.md",
+    "book/en/chapters/ch02-human-judgment.md",
+    "book/en/chapters/ch03-inception.md",
+    "book/en/chapters/ch04-memory-bank-standards.md",
+    "book/en/chapters/ch05-bolts.md",
+    "book/en/chapters/ch06-exsecutio.md",
+    "book/en/chapters/ch07-verification.md",
+    "book/en/chapters/ch08-operations.md",
+    "book/en/chapters/ch09-adaptive-engineering.md",
+    "book/en/chapters/ch10-organization-metrics.md",
     "docs/BOOK-LOCALES.md",
 )
 
@@ -39,13 +49,13 @@ class BookLocaleLayoutTest(unittest.TestCase):
         self.assertIn('html_name="deep-understanding-ai-dlc-en.html"', source)
         self.assertIn("SOURCE_FILES_EN", source)
 
-    def test_v09001_policy_defers_en_pdf_release(self) -> None:
+    def test_v09004_policy_requires_en_pdf_release(self) -> None:
         policy = json.loads(
-            (REPO_ROOT / "planning/releases/v0.9.001-policy.json").read_text(encoding="utf-8")
+            (REPO_ROOT / "planning/releases/v0.9.004-policy.json").read_text(encoding="utf-8")
         )
-        self.assertEqual("v0.9.001", policy["version"])
-        self.assertFalse(policy["pdf_required"])
-        self.assertEqual("v0.9.002-draft", policy["next_version"])
+        self.assertEqual("v0.9.004", policy["version"])
+        self.assertTrue(policy["pdf_required"])
+        self.assertEqual("v0.9.005-draft", policy["next_version"])
 
 
 @unittest.skipUnless(HAS_PANDOC and HAS_MERMAID, "English build smoke requires pandoc and mmdc")
@@ -86,6 +96,8 @@ class EnglishBuildSmokeTest(unittest.TestCase):
             html = (output / "deep-understanding-ai-dlc-en.html").read_text(encoding="utf-8")
             self.assertIn("Part 00 · Bird", html)
             self.assertIn("Engineering with Exsecutio", html)
+            self.assertIn("Chapter 1", html)
+            self.assertIn("Chapter 6", html)
 
 
 if __name__ == "__main__":

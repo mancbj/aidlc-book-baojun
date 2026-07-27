@@ -1,5 +1,5 @@
-# English chapters (v0.9.002+)
+# English chapters
 
-Chapter markdown will live here as `ch01-*.md` … `ch10-*.md`, mirroring `book/chapters/` structure.
+Mirrored from `book/chapters/` starting v0.9.002. Current build includes CH-01–CH-03; CH-04+ arrive in later v0.9 patches.
 
-**v0.9.001** intentionally ships Part 0 + front matter only in locale builds.
+Chapter files follow `ch01-*.md` … `ch10-*.md`, mirroring `book/chapters/` structure.

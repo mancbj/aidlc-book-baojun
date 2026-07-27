@@ -9,6 +9,8 @@ import html
 import json
 import os
 import shutil
+import subprocess
+import sys
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -143,7 +145,8 @@ def _publish_index(source: str, commit: str, generated_at: str, workflow_run: st
       <dt>Generated at</dt><dd>{html.escape(generated_at)}</dd>
       <dt>Workflow run</dt><dd>{html.escape(workflow_run)}</dd>
     </dl>
-    <a class="button" href="site/index.html">打开写作进度驾驶舱 →</a>
+    <a class="button" href="book-site/index.html">打开可视化阅读站 →</a>
+    <a class="button" href="site/index.html" style="margin-left:12px;background:#393939">写作驾驶舱 →</a>
   </main>
 </body>
 </html>
@@ -169,6 +172,7 @@ def build_pages(
         for relative in (
             ".github",
             "site",
+            "book-site",
             "progress",
             "book",
             "experiments",
@@ -194,6 +198,33 @@ def build_pages(
         commit = commit_sha or os.environ.get("GITHUB_SHA") or source_id(root)
         source = source_id(root)
         run_id = workflow_run or os.environ.get("GITHUB_RUN_ID", "local")
+        site_assets = temporary / "book-site" / "assets"
+        if site_assets.exists():
+            shutil.rmtree(site_assets)
+        site_assets.mkdir(parents=True, exist_ok=True)
+        build_site = root / "scripts" / "build_book_site.py"
+        site_result = subprocess.run(
+            [
+                sys.executable,
+                str(build_site),
+                "--root",
+                str(root),
+                "--output",
+                str(site_assets),
+                "--generated-at",
+                timestamp,
+            ],
+            cwd=root,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if site_result.returncode:
+            raise RuntimeError(f"book-site build failed: {site_result.stdout}{site_result.stderr}")
+        book_site_manifest = {}
+        site_meta = site_assets / "build-site-manifest.json"
+        if site_meta.is_file():
+            book_site_manifest = json.loads(site_meta.read_text(encoding="utf-8"))
         (temporary / ".nojekyll").write_text("", encoding="utf-8")
         (temporary / "index.html").write_text(
             _publish_index(source, commit, timestamp, run_id),
@@ -210,7 +241,8 @@ def build_pages(
             "commit_sha": commit,
             "generated_at": timestamp,
             "workflow_run": run_id,
-            "entrypoint": "site/index.html",
+            "entrypoint": "book-site/index.html",
+            "book_site": book_site_manifest,
             "file_count": len(files),
             "files": files,
         }

@@ -15,18 +15,31 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 12
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: "true"
+      PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.13"
-      - run: python3 scripts/ci_check.py --budget-seconds 60
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "20"
+      - name: Install Pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+      - name: Install Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli@11.16.0
+      - run: python3 scripts/ci_check.py --budget-seconds 360
 
   build:
     needs: validate
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 8
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: "true"
+      PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
     permissions:
       contents: read
       pages: read
@@ -35,6 +48,13 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.13"
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "20"
+      - name: Install Pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+      - name: Install Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli@11.16.0
       - name: Generate progress from the source commit
         run: python3 scripts/generate_progress.py --actor github-actions
       - name: Build the publish tree
