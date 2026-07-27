@@ -96,6 +96,7 @@ class BuildBookTest(unittest.TestCase):
             manifest = json.loads((output / "build-manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(FIXED_TIME, manifest["generated_at"])
             self.assertEqual("html", manifest["format"])
+            self.assertEqual("zh", manifest.get("locale", "zh"))
             self.assertTrue(manifest["pandoc"].startswith("pandoc "))
             self.assertEqual("11.16.0", manifest["diagram_engine"])
             self.assertEqual(35, len(manifest["sources"]))

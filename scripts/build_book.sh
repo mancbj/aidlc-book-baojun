@@ -5,8 +5,9 @@ script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 repo_root="$(cd -- "$script_dir/.." && pwd)"
 output_dir="${1:-$repo_root/.artifacts/book}"
 build_format="${2:-${BOOK_BUILD_FORMAT:-html}}"
+locale="${3:-${BOOK_BUILD_LOCALE:-zh}}"
 
-args=(--root "$repo_root" --output "$output_dir" --format "$build_format")
+args=(--root "$repo_root" --output "$output_dir" --format "$build_format" --locale "$locale")
 if [[ -n "${BOOK_BUILD_GENERATED_AT:-}" ]]; then
   args+=(--generated-at "$BOOK_BUILD_GENERATED_AT")
 fi

@@ -48,6 +48,8 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 
 Requires Python 3.10+. No database or remote service required.
 
+English book spine (Part 0): see [Book locales](docs/BOOK-LOCALES.md) and `python3 scripts/build_book.py --locale en`.
+
 ```bash
 git clone https://github.com/mancbj/aidlc-book-baojun.git
 cd aidlc-book-baojun
