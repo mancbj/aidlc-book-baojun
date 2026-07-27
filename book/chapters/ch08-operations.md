@@ -336,6 +336,10 @@ Build → Deploy → Runtime Verify → Monitor
 
 第六，`EXP-08-01` 的 verified 只证明候选来源与 manifest 一致性校验可复现；它不等于 Runtime Verify 已通过，也不证明监控与恢复能力已经成熟。
 
+### Operations 阶段与官方方法（摘要）
+
+AWS AI-DLC **Operations** 强调：AI 分析 metrics/logs/traces、对接 runbook 提议扩缩容/调优/隔离，并在**人批准后**执行；Deployment Units 含镜像/Serverless/IaC 等，并生成功能、安全与负载测试（摘要见 [白皮书](https://prod.d13rzhkk8cj2z0.amplifyapp.com)）。本书第 8 章用 Build→Deploy→Runtime Verify→Monitor→Recover 表达同类闭环，并**明确 specs.md Operations Agent / `memory-bank/operations/` 仍为 alpha 参考**——不得因官方白皮书描述而写成「工具已生产成熟」。本书仓库的 Pages/Release 自动化是教学级 Operations 样例，不是 AWS 部署单元的替代实现。
+
 ## Reader Exercise
 
 选择一个你准备发布的候选物，用 30 分钟写一份最小 Operations Runbook。
@@ -361,3 +365,4 @@ Build → Deploy → Runtime Verify → Monitor
 - `experiments/exp-08-01/output/sample.json`：发布候选来源清单校验样例。
 - `progress/experiments.json`：`EXP-08-01`、`EXP-08-02`、`EXP-08-03` 实验治理状态。
 - `book/toc.md`：CH-08 核心问题、读者结果和实验方向。
+- [AWS AI-DLC 方法定义（Amplify）](https://prod.d13rzhkk8cj2z0.amplifyapp.com)：Operations 阶段摘要（非 mature 工具宣称）。

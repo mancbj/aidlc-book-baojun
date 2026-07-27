@@ -66,6 +66,12 @@ Inception 是否可靠，可以用四条不变量检查。
 
 在 Inception 阶段，Engineering 指的是把意图、边界、依赖、验收和证据显式化；Exsecutio 的前提是形成一条 AI 能沿着贯彻、而人仍能验证和纠偏的执行轨道。没有 Inception，执行越快，偏差可能越快扩大。
 
+### Mob Elaboration 与 workflow 双输入（摘要）
+
+官方 Inception 仪式 **Mob Elaboration** 的典型产出包括：Units、User Stories、NFR、风险描述（可对齐组织 Risk Register）、追溯业务 Intent 的度量标准，以及建议 Bolts；可选 PRFAQ 用于对齐业务叙述（详见 [Amplify 白皮书](https://prod.d13rzhkk8cj2z0.amplifyapp.com) 与 [AWS 博文](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/)）。
+
+[aidlc-workflows](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) 补充两类应尽早固化的输入：**Vision**（产品/业务意图）与 **Tech Environment**（技术栈、约束与棕场上下文）。它们对应本书的 Intent + System Context，并强调 Inception 阶段同样遵守 Question→Doc→Approval——计划 md 经批准后再进入 Construction。章节与 workflow 条目的对照见 [WORKING-WITH-AIDLC-MAP.md](../../docs/WORKING-WITH-AIDLC-MAP.md)。
+
 ## 03 · Example：本书项目的 Inception 分解
 
 我们用本书项目自身作为例子。原始 Intent 可以写成一句话：
@@ -240,3 +246,4 @@ flowchart TB
 - `book/chapters/sample.md`：v0.1 样章证据副本。
 - `planning/reviews/ch-03-writing-review.md`：正式十章生产线 CH-03 五类审校记录。
 - `progress/chapters.json`：章节事实源与阶段状态。
+- [AWS AI-DLC 方法定义（Amplify）](https://prod.d13rzhkk8cj2z0.amplifyapp.com)、[WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md)、`docs/WORKING-WITH-AIDLC-MAP.md`：Mob Elaboration 与双输入摘要。

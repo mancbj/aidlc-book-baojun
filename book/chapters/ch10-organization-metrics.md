@@ -125,6 +125,15 @@ Dashboard（进度驾驶舱、Bird's-Eye 视图、事件与快照）属于节奏
 
 本层结论：**只有能同时解释速度、质量与注意力成本的实践，才值得扩大。**
 
+### 2.4 采用 AI-DLC：官方建议与本书边界（摘要）
+
+AWS 白皮书 **Adopting AI-DLC** 提出两条路径（摘要，详见 [Amplify 白皮书](https://prod.d13rzhkk8cj2z0.amplifyapp.com) 与 [AWS 博文](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/)）：
+
+1. **Learning by Practicing** —— 以 Mob Elaboration、Mob Construction 等仪式在真实场景中带练（AWS 现场 offering 称 AI-DLC Unicorn Gym），而非仅靠文档培训。
+2. **Embedding in Developer Experience Tooling** —— 将 AI-DLC 嵌入跨 SDLC 编排工具，使开发者在统一 DX 中无感实践。
+
+本书第十章的 Agent 分工、Mob 节奏与记分卡与上述方向一致，但**不宣称**本书仓库或 specs.md 即成熟「研发操作系统」；30/30 实验与 KEEP-EXT 边界仍然有效。若团队从 [aidlc-workflows](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) 起步，应把 Question→Doc→Approval 与组织记分卡一起落地，而不是只复制 Agent 名称。
+
 ## 03 · Three-Part Argument：为什么组织层决定规模化成败
 
 ### 第一段：无人负责的自动化会制造系统性推诿
@@ -277,3 +286,4 @@ Evidence & Value →  Scorecard + Dashboard
 - `site/`：进度驾驶舱作为观测面参考。
 - `progress/experiments.json`：`EXP-10-01`、`EXP-10-02`、`EXP-10-03`。
 - `https://specs.md/methodology/ai-dlc-vs-agile`：`EXP-10-03` 外部对照入口；本地 portal 副本不进入仓库。
+- [AWS AI-DLC 方法定义（Amplify）](https://prod.d13rzhkk8cj2z0.amplifyapp.com)、[AWS DevOps 博文](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/)、[WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md)：Adoption 与 Mob 摘要。

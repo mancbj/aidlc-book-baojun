@@ -55,6 +55,33 @@ python3 experiments/exp-01-01/quickstart.py --sample
 python3 scripts/ci_check.py --budget-seconds 60
 ```
 
+## Official sources and two paths
+
+`𝓔 = Engineering with Exsecutio` is **this book’s explanatory framework**. AWS’s published AI-DLC method definition and the community **aidlc-workflows** repo are **alignable method sources and operational references**—not interchangeable with the book framework.
+
+| Source | Role | Link |
+| --- | --- | --- |
+| AWS AI-DLC method definition (whitepaper SPA) | Ten principles, Intent/Unit/Bolt, three phases, Green/Brown-field walkthroughs | [Amplify entry](https://prod.d13rzhkk8cj2z0.amplifyapp.com) |
+| AWS DevOps blog post | AI-Driven positioning, Mob rituals, persisted artifacts, adoption pointers | [AI-Driven Development Life Cycle](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/) |
+| aidlc-workflows | Question→Doc→Approval, phase gates, two-phase Construction | [WORKING-WITH-AIDLC.md](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) |
+
+**Read the book**: start with [Part 00](book/part-00-overview.md) and the [table of contents](book/toc.md); download PDF/HTML from the [latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest).
+
+**Run a workflow**: follow [WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) in your repo; Chapters 3–6 plus the [operation map](docs/WORKING-WITH-AIDLC-MAP.md) connect concepts to that guide.
+
+<details>
+<summary><strong>Terminology quick reference</strong></summary>
+
+| Term | One line |
+| --- | --- |
+| **Intent** | High-level purpose statement—not an implementation plan |
+| **Unit** | Independently deliverable, loosely coupled capability block |
+| **Bolt** | Hours-to-days iteration unit (AI-era rename of the Sprint idea) |
+| **Mob Elaboration** | Inception ritual: shared screen; AI proposes decomposition; mob validates |
+| **Question–Doc–Approval** | Clarify → persist in markdown → human approval before execution |
+
+</details>
+
 ## What you get
 
 - **Stop treating one generation as delivery** — build evidence chains with independent verification, fix–retest loops, and walkthroughs.

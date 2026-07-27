@@ -24,7 +24,15 @@ def render(root: Path, readiness: dict) -> str:
         for chapter in chapters
         if all(stage.get("status") == "done" for stage in chapter.get("stages", []))
     )
-    if version.startswith("v0.8.006"):
+    if version.startswith("v0.8.010"):
+        highlights = [
+            "- README 中英新增官方来源三角、读书 vs workflow 双路径与术语快查（Amplify / AWS 博文 / aidlc-workflows）。",
+            "- Part 0 与 CH-01–06、CH-08、CH-10 增补 AWS 白皮书与 WORKING-WITH-AIDLC 中文摘要 + 链接；不粘贴 Appendix A 全文。",
+            "- 新增 `docs/WORKING-WITH-AIDLC-MAP.md`；`book/toc.md` 官方参考表；Operations alpha 与实验 evidence 边界保持不变。",
+            "- 实验保持 verified=30/30；Reader 继续保留 `READER-RESPONSES` known-gap。",
+        ]
+        next_goal = "v0.8.011：消化真实 Reader 反馈，或开启新内容周期。"
+    elif version.startswith("v0.8.006"):
         highlights = [
             "- README 首屏重构：双语 tagline、CI/Release/Stars/Last Commit 信任信号与 3.5 秒 Star CTA。",
             "- Quick Start 前移，新增痛点式读者收益、生命周期图、精简阅读路径与当前证据状态。",

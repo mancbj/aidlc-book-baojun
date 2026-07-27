@@ -142,6 +142,12 @@ AI 可以列选项、解释代价、指出遗漏、生成对照表；但它不�
 
 这也是 specs.md 参考实现里 Master Agent、Inception Agent、Construction Agent 和 Operations Agent 分工的价值所在。Master 负责路由和上下文判断，Inception 负责把意图变成可执行计划，Construction 负责沿 Bolt 推进，Operations 负责发布和运行。每个 Agent 都可以主动提议，但每个关键推进都应该留下人的验证与工程记录。
 
+### 3.1 Mob Elaboration 与 Question–Doc–Approval（摘要）
+
+AWS 方法定义将 **Mob Elaboration** 描述为 Inception 的核心仪式：同一房间、共享屏幕，由 facilitator 带领 PO、开发、QA 等 stakeholders（mob）；AI 先基于 Intent 提议 User Stories、验收标准、Units 与建议 Bolts，团队再修正欠/过度工程化部分并对齐 NFR、风险与度量。这与本章「反向对话」一致：**AI 先暴露缺口与选项，人验证边界与检查点**。
+
+社区仓库 [aidlc-workflows · WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) 把同类约束操作化为 **Question→Doc→Approval**：关键结论必须先写入 md 工件并经人批准，才允许进入 Construction；阶段切换时应用「门控」清理无关聊天 context，避免旧假设污染下一 Bolt。本书第 4 章展开 Memory Bank；第 3 章只要求读者在 Inception 输出中已包含可批准、可链接的 Story/Unit/Bolt 工件，而不是在聊天里「口头同意」。
+
 ## 04 · Three-Part Argument：为什么人的判断必须前置
 
 ### 第一段：AI 主动性改变了人的工作位置
@@ -330,3 +336,4 @@ D16-T03 审校时重点检查五件事：
 - `progress/tasks.json`：D16-T01、D16-T02、D16-T03 写作任务卡。
 - `specs.md-portal/pages/agents/overview.md`：四 Agent 职责说明的本地抓取副本。
 - `specs.md-portal/pages/faq.md`：AI proposes, human validates 与 Mob Elaboration 相关说明的本地抓取副本。
+- [aidlc-workflows · WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md)、`docs/WORKING-WITH-AIDLC-MAP.md`：Question→Doc→Approval 操作映射。

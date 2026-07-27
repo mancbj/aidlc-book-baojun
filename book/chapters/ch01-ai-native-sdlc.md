@@ -90,6 +90,24 @@ Agentic 开发进一步把 AI 能力扩展为可分工、可恢复、可持续�
 
 这张表的重点不是给团队贴标签，而是帮助团队识别下一步该补什么。如果你仍处于 AI-Assisted，就不要假装已经拥有 Agentic 交付能力；如果你已经让 AI 参与分解和执行，就必须开始补事实源、门禁和证据链。
 
+### 2.5 方法来源：AWS AI-DLC 方法定义（摘要）
+
+[Raja SP · AWS AI-DLC 方法定义](https://prod.d13rzhkk8cj2z0.amplifyapp.com)（亦可从 [AWS DevOps 博文](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/) 进入）与本书第 1 章问题高度同构，但表述来自 AWS 官方白皮书，此处只摘要对读要点，**不替代原文**：
+
+| 原则（节选） | 对 SDLC 的含义 |
+| --- | --- |
+| Reimagine rather than retrofit | 迭代从「周/月」转向「小时/天」；许多传统仪式（如 story point 速度）需用业务价值等重新思考 |
+| Reverse the conversation | 人给出 Intent（目的地），AI 提供分解与路线（类似导航逐步指引），人保留 oversight |
+| Integration of design into the core | DDD/BDD/TDD 等 flavor 内嵌于计划与分解，而非团队自选白区 |
+| Align with AI capability | 采用 AI-Driven 平衡：AI 编排，人负责验证、安全与最终责任 |
+| Cater to complex systems | 面向高架构复杂度与多团队系统；极简/low-code 场景不在该方法范围内 |
+| Retain what enhances symbiosis | 保留 User Story、Risk Register 等利于人类验证的工件，并优化为实时可用 |
+| Facilitate transition through familiarity | Bolt 等有意识重命名，降低从 Agile 联想学习的成本 |
+| Minimise stages, maximise flow | 阶段尽量少，但在关键决策点保留人的「损失函数」式验证 |
+| No hard-wired SDLC workflows | AI 按 pathway（绿场/棕场/缺陷等）生成 Level 1 Plan，人逐级验证 Level 2+ |
+
+本书的 **AI-DLC = 𝓔（人的判断 + AI 能力）** 是对上述官方方法论的**工程化解释层**，不是 AWS 文档的逐字翻译。specs.md、aidlc-workflows 与本书实验各自标注证据边界，避免把白皮书附录中的 prompt 模板当作全书唯一操作标准。
+
 ## 03 · Core Formula：从概率智能到确定性交付
 
 本书把 AI-DLC 的分水岭压缩为一个公式：
@@ -296,3 +314,4 @@ D15-T03 审校时重点检查五件事：
 - `progress/chapters.json`：章节事实源与六阶段状态。
 - `progress/experiments.json`：`EXP-01-01`、`EXP-01-02`、`EXP-01-03` 的实验治理记录。
 - `progress/tasks.json`：D15-T01、D15-T02、D15-T03 写作任务卡。
+- [AWS AI-DLC 方法定义（Amplify）](https://prod.d13rzhkk8cj2z0.amplifyapp.com)、[AWS DevOps 博文](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/)：方法论来源摘要（CH-01 §2.5）。
