@@ -284,9 +284,9 @@ This chapter’s experiment entries:
 
 `EXP-08-01` is `ALREADY / verified`: sample at `experiments/exp-08-01/output/sample.json`. On frozen readiness/manifest inputs it proves source consistency, required asset coverage, and hash format are deterministically checkable, with `source_completeness_percent` and `hash_mismatch_count`. It does not prove full production observability; ALREADY must not be rewritten as SHIP.
 
-`EXP-08-02` is verified: sample report at `experiments/exp-08-02/output/sample.json`. It proves topology, failure, monitor signals, and runbook connect into detect→decide→rollback→recover timeline with time-to-rollback, data-loss window, and runbook gap count. Tabletop exercise ≠ production recovery capability.
+`EXP-08-02` is verified: sample report at `experiments/exp-08-02/output/sample.json`. It proves topology, failure, monitor signals, and runbook connect into detect→decide→rollback→recover timeline with time-to-rollback, data-loss window, and runbook gap count. Tabletop exercise != production recovery capability.
 
-`EXP-08-03` is `KEEP-EXT / verified`: sample at `experiments/exp-08-03/output/sample.json` with `stage_completion_percent` and `rollback_readiness_percent`. Runtime Verify here is CH-08 runtime verification—not CH-07 delivery-candidate verification; frozen pin ≠ mature production capability.
+`EXP-08-03` is `KEEP-EXT / verified`: sample at `experiments/exp-08-03/output/sample.json` with `stage_completion_percent` and `rollback_readiness_percent`. Runtime Verify here is CH-08 runtime verification—not CH-07 delivery-candidate verification; frozen pin != mature production capability.
 
 | Experiment | It should test | It must not overclaim |
 |---|---|---|
@@ -332,7 +332,7 @@ Fourth, this chapter does not promise `EXP-08-02` proves production recovery; `E
 
 Fifth, this chapter does not treat release automation as production maturity. Automation is reliable action; maturity also needs environment gates, monitoring, recovery, audit, and accountability.
 
-Sixth, `EXP-08-01` verified only proves candidate source and manifest consistency checks reproduce; it ≠ Runtime Verify passed and ≠ mature monitoring/recovery.
+Sixth, `EXP-08-01` verified only proves candidate source and manifest consistency checks reproduce; it != Runtime Verify passed and != mature monitoring/recovery.
 
 ### Operations phase and official method (summary)
 

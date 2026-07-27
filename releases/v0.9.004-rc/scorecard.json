@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.9.004",
+  "publish_threshold": 92,
+  "weights": {
+    "english_publication": 45,
+    "release": 25,
+    "ci_release": 20,
+    "evidence_boundary": 10
+  },
+  "hard_gates": [
+    "en_release_profile_build",
+    "content_audit_pass",
+    "readiness_ready",
+    "verified_experiments_30_30"
+  ],
+  "baseline_commit": "main",
+  "current_round": "01",
+  "rounds": [
+    {
+      "id": "01",
+      "name": "english-full-book-release",
+      "decision": "KEEP",
+      "english_publication": 45,
+      "release": 25,
+      "ci_release": 20,
+      "evidence_boundary": 10,
+      "total": 100,
+      "notes": "RC PDF/HTML from release-profile en build; tag v0.9.004."
+    }
+  ]
+}
