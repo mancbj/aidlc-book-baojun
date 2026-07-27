@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI-DLC Book · Reader</title>
+  <link rel="stylesheet" href="reader.css">
+  <link rel="alternate" hreflang="zh" href="reader.html?locale=zh">
+  <link rel="alternate" hreflang="en" href="reader.html?locale=en">
+</head>
+<body>
+  <a class="skip-link" href="#book-frame">跳到书稿正文</a>
+  <div class="shell">
+    <header class="shell-header">
+      <h1 id="reader-title">AI-DLC Book</h1>
+      <div class="lang-switch" role="group" aria-label="Book locale">
+        <button type="button" data-locale="zh" aria-pressed="false">中文</button>
+        <button type="button" data-locale="en" aria-pressed="false">English</button>
+      </div>
+      <a href="index.html" data-i18n="home">着陆页</a>
+    </header>
+    <nav class="side-nav" aria-label="Table of contents">
+      <h2>TOC</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+    <div class="reader-main">
+      <div class="reader-toolbar">
+        <button type="button" id="prev-chapter">← Prev</button>
+        <button type="button" id="next-chapter">Next →</button>
+      </div>
+      <iframe id="book-frame" class="reader-frame" title="Book content" src="about:blank"></iframe>
+    </div>
+  </div>
+  <div id="figure-modal" class="figure-modal" role="dialog" aria-modal="true" aria-label="Enlarged figure" data-open="false">
+    <button type="button" id="modal-close" style="position:absolute;top:1rem;right:1rem">Close</button>
+    <div id="modal-body"></div>
+  </div>
+  <script src="reader.js"></script>
+</body>
+</html>

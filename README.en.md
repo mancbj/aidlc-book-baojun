@@ -25,6 +25,8 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 <p align="center">
   <a href="#get-started-in-3-minutes"><strong>Start reading</strong></a>
   ·
+  <a href="book-site/index.html"><strong>Online reader (Pages)</strong></a>
+  ·
   <a href="https://github.com/mancbj/aidlc-book-baojun/releases/latest"><strong>Download latest release</strong></a>
   ·
   <a href="site/index.html"><strong>Open project dashboard</strong></a>
@@ -40,15 +42,18 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 
 ### Read only
 
-1. Spend 10 minutes on [Part 00 · AI-DLC overview](book/part-00-overview.md).
-2. Download PDF or HTML from the [latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest).
-3. Pick a path in the [reader guide](docs/READER-GUIDE.md): leader, system designer, or hands-on practitioner.
+1. Open the **[Carbon reader](book-site/index.html)** (default on GitHub Pages; build hash aligned with Release as of v0.9.008).
+2. Spend 10 minutes on [Part 00 · AI-DLC overview](book/en/part-00-overview.md) or the [Chinese Part 00](book/part-00-overview.md).
+3. Download PDF or HTML from the [latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) (offline archive; English full book from **v0.9.004**).
+4. Pick a path in the [reader guide](docs/READER-GUIDE.md): leader, system designer, or hands-on practitioner.
 
 ### Reproduce experiments or contribute
 
 Requires Python 3.10+. No database or remote service required.
 
 English book spine (Part 0): see [Book locales](docs/BOOK-LOCALES.md) and `python3 scripts/build_book.py --locale en`.
+
+Full English chapters ship in **v0.9.004**; build with `python3 scripts/build_release_book.py --locale en --format all`.
 
 ```bash
 git clone https://github.com/mancbj/aidlc-book-baojun.git
