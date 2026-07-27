@@ -221,7 +221,14 @@ Two upstream projects helped early on:
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=mancbj/aidlc-book-baojun&type=Date)](https://star-history.com/#mancbj/aidlc-book-baojun&Date)
+<a href="https://star-history.com/#mancbj/aidlc-book-baojun&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/star-history-dark.png">
+    <img src="assets/star-history-light.png" alt="Star history for mancbj/aidlc-book-baojun" width="720">
+  </picture>
+</a>
+
+<p align="center"><sub>Updated daily via GitHub Actions · <code>scripts/gen_star_history.py</code></sub></p>
 
 ---
 
