@@ -1,0 +1,26 @@
+{
+  "assets": {
+    "en_html": "aidlc-book-v0.9.005-en-book.html",
+    "en_pdf": "aidlc-book-v0.9.005-en.pdf",
+    "zh_html": "aidlc-book-v0.9.005-book.html",
+    "zh_pdf": "aidlc-book-v0.9.005.pdf"
+  },
+  "generated_at": "2026-07-27T08:16:19Z",
+  "locales": {
+    "en": {
+      "html": "aidlc-book-v0.9.005-en-book.html",
+      "html_sha256": "08b84261d8c9abd0aee904dd5273a89729d7e728d747f080cfc0cadd673d265d",
+      "pdf": "aidlc-book-v0.9.005-en.pdf",
+      "pdf_sha256": "d7b8974cc4a6e78d657cb47db6f0b9f868d72f51c8bda04337e532f85f8a7ca8"
+    },
+    "zh": {
+      "html": "aidlc-book-v0.9.005-book.html",
+      "html_sha256": "0305b560e259eb2904fea36584e809bde42da03795379cde3627072b41240839",
+      "pdf": "aidlc-book-v0.9.005.pdf",
+      "pdf_sha256": "8634e9ea5c0b141631d350b66161157eb0e28176894b0e8bf3a956f42c82a0c8"
+    }
+  },
+  "ok": true,
+  "schema_version": "1.0.0",
+  "version": "v0.9.005"
+}

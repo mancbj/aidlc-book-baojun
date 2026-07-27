@@ -101,20 +101,38 @@ def build_report(root: Path, policy_path: Path, generated_at: Optional[str] = No
 
     if policy.get("pdf_required"):
         version = str(policy["version"])
-        pdf_candidates = [
-            root / f"releases/{version}-rc/aidlc-book-{version}.pdf",
-            root / f"releases/{version}-rc/aidlc-book-{version}-en.pdf",
-            root / f"releases/{version}-rc/ai-dlc-book-{version}.pdf",
-            root / "releases/v0.1-rc/ai-dlc-book-v0.1.pdf",
-        ]
-        if not any(path.is_file() for path in pdf_candidates):
-            gap(
-                "PDF-REQUIRED",
-                "must-blocker",
-                f"{version}.pdf",
-                "policy 要求 PDF，但 RC 目录中不存在可验证文件。",
-                "生成并验证 PDF，放入 releases/<version>-rc/，或经批准修改 policy。",
-            )
+        if policy.get("bilingual_book_assets"):
+            rc_dir = root / f"releases/{version}-rc"
+            required = [
+                f"aidlc-book-{version}-book.html",
+                f"aidlc-book-{version}-en-book.html",
+                f"aidlc-book-{version}.pdf",
+                f"aidlc-book-{version}-en.pdf",
+            ]
+            missing = [name for name in required if not (rc_dir / name).is_file()]
+            if missing:
+                gap(
+                    "BILINGUAL-ASSETS-MISSING",
+                    "must-blocker",
+                    f"{version}-rc",
+                    f"缺少：{', '.join(sorted(missing))}",
+                    "运行 scripts/stage_release_rc_assets.py <version> 生成四类书稿资产。",
+                )
+        else:
+            pdf_candidates = [
+                root / f"releases/{version}-rc/aidlc-book-{version}.pdf",
+                root / f"releases/{version}-rc/aidlc-book-{version}-en.pdf",
+                root / f"releases/{version}-rc/ai-dlc-book-{version}.pdf",
+                root / "releases/v0.1-rc/ai-dlc-book-v0.1.pdf",
+            ]
+            if not any(path.is_file() for path in pdf_candidates):
+                gap(
+                    "PDF-REQUIRED",
+                    "must-blocker",
+                    f"{version}.pdf",
+                    "policy 要求 PDF，但 RC 目录中不存在可验证文件。",
+                    "生成并验证 PDF，放入 releases/<version>-rc/，或经批准修改 policy。",
+                )
 
     gaps.sort(key=lambda item: (GAP_ORDER[item["priority"]], item["code"], item["object"]))
     blockers = [item for item in gaps if item["priority"] in {"must-blocker", "must-missing", "review-required"}]

@@ -57,6 +57,8 @@ def validate_workflows(errors: list[str]) -> None:
             "scripts/check_release_readiness.py",
             "scripts/render_release_notes.py",
             "scripts/prepare_release.py",
+            "scripts/stage_release_rc_assets.py",
+            "Ensure bilingual RC book assets",
             "release-notes.md",
             "release-candidate",
             "gh release create",
