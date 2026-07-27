@@ -50,6 +50,9 @@ SOURCE_FILES_EN: Tuple[Path, ...] = (
     Path("book/en/manifesto.md"),
     Path("book/en/part-00-overview.md"),
     Path("book/en/toc.md"),
+    Path("book/en/chapters/ch01-ai-native-sdlc.md"),
+    Path("book/en/chapters/ch02-human-judgment.md"),
+    Path("book/en/chapters/ch03-inception.md"),
     Path("book/en/glossary.md"),
 )
 
@@ -148,9 +151,10 @@ def get_book_locale(locale: str) -> BookLocaleConfig:
                 "Deep Understanding AI-DLC",
                 "Engineering with Exsecutio",
                 "Part 00",
-                "English edition scope",
+                "Chapter 1",
+                "Chapter 3",
             ),
-            min_embedded_images=4,
+            min_embedded_images=6,
             mermaid_caption_prefix="Part 0 diagram",
         )
     raise RuntimeError(f"未知 locale：{locale}；支持：{', '.join(SUPPORTED_LOCALES)}")
@@ -498,7 +502,7 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
         "--locale",
         choices=SUPPORTED_LOCALES,
         default="zh",
-        help="zh 中文全书；en 英文 spine（Part 0 + 前言，v0.9.001+）",
+        help="zh 中文全书；en 英文书稿（Part 0 + 章节，v0.9.002 起含 CH01–03）",
     )
     parser.add_argument("--generated-at", help="fixed ISO-8601 build time for reproducible tests")
     return parser.parse_args(argv)

@@ -148,16 +148,21 @@ def check_links(root: Path, scopes: Sequence[str]) -> Dict[str, object]:
                         relative_source = source.relative_to(root)
                     except ValueError:
                         relative_source = None
-                    if (
-                        relative_source is not None
-                        and len(relative_source.parts) >= 2
-                        and relative_source.parts[0] == "book"
-                        and relative_source.parts[1] == "chapters"
-                        and path_text.startswith("images/")
-                    ):
-                        candidate = (root / "book" / path_text).resolve()
-                        if candidate.exists():
-                            destination = candidate
+                    if relative_source is not None and path_text.startswith("images/"):
+                        source_parts = relative_source.parts
+                        if (
+                            len(source_parts) >= 2
+                            and source_parts[0] == "book"
+                            and source_parts[1] == "chapters"
+                        ) or (
+                            len(source_parts) >= 3
+                            and source_parts[0] == "book"
+                            and source_parts[1] == "en"
+                            and source_parts[2] == "chapters"
+                        ):
+                            candidate = (root / "book" / path_text).resolve()
+                            if candidate.exists():
+                                destination = candidate
                 try:
                     destination.relative_to(root)
                 except ValueError:

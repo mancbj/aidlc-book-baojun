@@ -1,6 +1,6 @@
-# Table of contents · English edition (planned)
+# Table of contents · English edition
 
-> **Status (v0.9.001):** Part 0 and front matter build in English; chapters CH-01–CH-10 arrive in `v0.9.002`–`v0.9.004`.
+> **Status (v0.9.002):** Part 0 and chapters CH-01–CH-03 build in English; CH-04–CH-10 ship in `v0.9.003`–`v0.9.004`.
 
 ## Part 00 · Overview
 
@@ -8,12 +8,12 @@
 
 ## Part 01 · Human judgment
 
-- CH-01 · AI-native SDLC — *planned v0.9.002*
-- CH-02 · Human judgment and reverse dialogue — *planned v0.9.002*
+- [CH-01 · AI-native SDLC](chapters/ch01-ai-native-sdlc.md) — **available in this build**
+- [CH-02 · Human judgment and reverse dialogue](chapters/ch02-human-judgment.md) — **available in this build**
 
 ## Part 02 · AI capability
 
-- CH-03 · Inception — *planned v0.9.002*
+- [CH-03 · Inception](chapters/ch03-inception.md) — **available in this build**
 - CH-04 · Memory Bank and Standards — *planned v0.9.003*
 
 ## Part 03 · Engineering × Exsecutio
