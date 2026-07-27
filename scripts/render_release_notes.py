@@ -32,6 +32,29 @@ def render(root: Path, readiness: dict) -> str:
             "- 实验保持 verified=30/30；Reader 继续保留 `READER-RESPONSES` known-gap。",
         ]
         next_goal = "v0.9.001：英文书稿构建脊柱（locale 与源树）；详见 planning/releases/v0.9-roadmap.md。"
+    elif version.startswith("v0.9.008"):
+        highlights = [
+            "- GitHub Pages 默认入口：`book-site/` Carbon 着陆页 + 章节阅读器；`publish-manifest.json` 含 `book_site` 与书稿 sha256。",
+            "- README / README.en 首屏 CTA 指向在线阅读；Release 仍为离线 PDF/HTML 归档。",
+            "- 中英文书稿由同一 `build_book` / `build_book_site` 链构建；实验 verified=30/30 不变。",
+            "- Reader 仍为 known-gap；下一目标为 v0.9.009+ 维护（图/实验可视化），非反馈驱动 tag。",
+        ]
+        next_goal = "v0.9.009-draft：维护循环（图示优化、实验可视化、Pages 性能）；见 planning/publication/v0.9-loop-orchestration.md。"
+    elif version.startswith("v0.9.004"):
+        highlights = [
+            "- 首次 **英文全书** release-profile HTML/PDF（`build_book --locale en` / `build_release_book.py --locale en`）。",
+            "- 英文十章 + Part 0 与中文同构结构；术语 Exsecutio / Bolt / Memory Bank 边界一致。",
+            "- 资产示例：`aidlc-book-v0.9.004-en.pdf`、单页 HTML；content-audit 剥离 Metadata/Gate。",
+            "- 实验 verified=30/30；Reader 非发布驱动。",
+        ]
+        next_goal = "v0.9.005–008：Carbon 可视化阅读站与 Pages/Release 同源（见 v0.9-roadmap.md）。"
+    elif version.startswith("v0.9.00"):
+        highlights = [
+            "- v0.9 英文出版物 + Pages 体验主线 patch（见 planning/releases/v0.9-roadmap.md）。",
+            "- 构建链支持 locale=en；policy 按 patch 递增。",
+            "- 实验 verified=30/30；不降级 triage。",
+        ]
+        next_goal = "后续 v0.9.00x：见 planning/publication/v0.9-loop-orchestration.md。"
     elif version.startswith("v0.8.006"):
         highlights = [
             "- README 首屏重构：双语 tagline、CI/Release/Stars/Last Commit 信任信号与 3.5 秒 Star CTA。",
