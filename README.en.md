@@ -25,11 +25,11 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 <p align="center">
   <a href="#get-started-in-3-minutes"><strong>Start reading</strong></a>
   ·
-  <a href="book-site/index.html"><strong>Online reader (Pages)</strong></a>
+  <a href="https://mancbj.github.io/aidlc-book-baojun/book-site/index.html"><strong>Online reader (Pages)</strong></a>
   ·
   <a href="https://github.com/mancbj/aidlc-book-baojun/releases/latest"><strong>Download latest release</strong></a>
   ·
-  <a href="site/index.html"><strong>Open project dashboard</strong></a>
+  <a href="https://mancbj.github.io/aidlc-book-baojun/site/index.html"><strong>Open project dashboard</strong></a>
 </p>
 
 <p align="center">
@@ -42,7 +42,7 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 
 ### Read only
 
-1. Open the **[Carbon reader](book-site/index.html)** (default on GitHub Pages; build hash aligned with Release as of v0.9.008).
+1. Open the **[Carbon reader](https://mancbj.github.io/aidlc-book-baojun/book-site/index.html)** (GitHub Pages; build hash aligned with Release as of v0.9.008—do not use repo-relative `book-site/` links on github.com; they open raw HTML source).
 2. Spend 10 minutes on [Part 00 · AI-DLC overview](book/en/part-00-overview.md) or the [Chinese Part 00](book/part-00-overview.md).
 3. Download PDF or HTML from the [latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) (offline archive; English full book from **v0.9.004**).
 4. Pick a path in the [reader guide](docs/READER-GUIDE.md): leader, system designer, or hands-on practitioner.
@@ -161,7 +161,7 @@ Each experiment states what it proves and what it does not prove. See [experimen
 | Automation gates | facts, tests, links, generation, experiment contracts | [CI workflow](.github/workflows/validate.yml) |
 | Downloadable builds | PDF, single-page HTML, site zip | [Latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) |
 
-Completion rates are not edited by hand in this README. Authoritative numbers come from versioned fact sources and project to the [dashboard](site/index.html), [detail drill-down](site/details.html), and [text summary](progress/generated/current.md). See the [repository guide](docs/REPOSITORY-GUIDE.md).
+Completion rates are not edited by hand in this README. Authoritative numbers come from versioned fact sources and project to the [dashboard](https://mancbj.github.io/aidlc-book-baojun/site/index.html), [detail drill-down](https://mancbj.github.io/aidlc-book-baojun/site/details.html), and [text summary](progress/generated/current.md). See the [repository guide](docs/REPOSITORY-GUIDE.md).
 
 ## Maintainer verification
 

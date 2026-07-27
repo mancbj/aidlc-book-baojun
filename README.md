@@ -28,11 +28,11 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 <p align="center">
   <a href="#3-分钟开始"><strong>立即开始阅读</strong></a>
   ·
-  <a href="book-site/index.html"><strong>在线可视化阅读（Pages）</strong></a>
+  <a href="https://mancbj.github.io/aidlc-book-baojun/book-site/index.html"><strong>在线可视化阅读（Pages）</strong></a>
   ·
   <a href="https://github.com/mancbj/aidlc-book-baojun/releases/latest"><strong>下载最新版</strong></a>
   ·
-  <a href="site/index.html"><strong>查看项目驾驶舱</strong></a>
+  <a href="https://mancbj.github.io/aidlc-book-baojun/site/index.html"><strong>查看项目驾驶舱</strong></a>
 </p>
 
 <p align="center">
@@ -45,7 +45,7 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 
 ### 只想读书
 
-1. 打开 **[可视化阅读站](book-site/index.html)**（GitHub Pages 默认可浏览面，v0.9.008 与 Release 构建同源）。
+1. 打开 **[可视化阅读站](https://mancbj.github.io/aidlc-book-baojun/book-site/index.html)**（GitHub Pages 默认可浏览面，v0.9.008 与 Release 构建同源；勿在仓库页点相对路径 `book-site/`，会显示 HTML 源码）。
 2. 用 10 分钟阅读 [Part 00 · 鸟瞰 AI-DLC](book/part-00-overview.md)。
 3. 从[最新 Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest)下载 PDF 或 HTML（离线归档）。
 4. 按你的目标选择[管理者、研发系统设计者或实践者路线](docs/READER-GUIDE.md)。
@@ -160,7 +160,7 @@ flowchart LR
 | 自动化门禁 | facts、tests、links、generation、实验合同 | [CI workflow](.github/workflows/validate.yml) |
 | 可下载版本 | PDF、单页 HTML、站点 zip | [Latest Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) |
 
-完成率不在 README 手工维护；权威数字来自版本化事实源并投影到[鸟瞰驾驶舱](site/index.html)、[对象下钻](site/details.html)和[文字摘要](progress/generated/current.md)。事实源边界见[仓库指南](docs/REPOSITORY-GUIDE.md)。
+完成率不在 README 手工维护；权威数字来自版本化事实源并投影到[鸟瞰驾驶舱](https://mancbj.github.io/aidlc-book-baojun/site/index.html)、[对象下钻](https://mancbj.github.io/aidlc-book-baojun/site/details.html)和[文字摘要](progress/generated/current.md)。事实源边界见[仓库指南](docs/REPOSITORY-GUIDE.md)。
 
 ## 维护者验证
 

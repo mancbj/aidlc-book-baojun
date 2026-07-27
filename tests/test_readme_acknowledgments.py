@@ -28,6 +28,10 @@ class ReadmeAcknowledgmentsTest(unittest.TestCase):
         self.assertIn('alt="License: Apache-2.0"', first_screen)
         self.assertIn("book/images/star-this-repo.gif", first_screen)
         self.assertIn("## 3 分钟开始", first_screen)
+        self.assertIn(
+            "https://mancbj.github.io/aidlc-book-baojun/book-site/index.html",
+            first_screen,
+        )
 
     def test_readme_has_agent_community_and_honest_license_sections(self) -> None:
         for heading in ("## AI Agent / Cursor 使用", "## 贡献", "## 社区与支持", "## 许可"):
