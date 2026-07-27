@@ -2,6 +2,9 @@
 
 > Loop 编排：[`v0.9-loop-orchestration.md`](../planning/publication/v0.9-loop-orchestration.md)
 
+**对外基址（README / 分享链接请用完整 URL）：** `https://mancbj.github.io/aidlc-book-baojun/`  
+在 GitHub 仓库页点击相对路径 `book-site/index.html` 会进入源码视图，不会渲染为网页；克隆仓库后本地可 `python3 scripts/build_book_site.py` 再用浏览器打开 `book-site/index.html`。
+
 ## URL 结构（Pages 根 = 仓库 GitHub Pages）
 
 | 路径 | 用途 | 语言 |
