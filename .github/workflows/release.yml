@@ -51,7 +51,7 @@ jobs:
               raise SystemExit("invalid release version")
           PY
           echo "value=$version" >> "$GITHUB_OUTPUT"
-      - uses: actions/setup-node@49933ea5286caeca8642d813edb033d753d179fa # v4.4.0
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
       - name: Install book build tools
