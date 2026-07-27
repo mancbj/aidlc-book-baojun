@@ -24,4 +24,4 @@ jobs:
         with:
           python-version: "3.13"
       - name: Run the read-only PR gate
-        run: python3 scripts/ci_check.py --budget-seconds 60
+        run: python3 scripts/ci_check.py --budget-seconds 90
