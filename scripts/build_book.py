@@ -53,6 +53,9 @@ SOURCE_FILES_EN: Tuple[Path, ...] = (
     Path("book/en/chapters/ch01-ai-native-sdlc.md"),
     Path("book/en/chapters/ch02-human-judgment.md"),
     Path("book/en/chapters/ch03-inception.md"),
+    Path("book/en/chapters/ch04-memory-bank-standards.md"),
+    Path("book/en/chapters/ch05-bolts.md"),
+    Path("book/en/chapters/ch06-exsecutio.md"),
     Path("book/en/glossary.md"),
 )
 
@@ -150,11 +153,11 @@ def get_book_locale(locale: str) -> BookLocaleConfig:
             html_required_phrases=(
                 "Deep Understanding AI-DLC",
                 "Engineering with Exsecutio",
-                "Part 00",
-                "Chapter 1",
-                "Chapter 3",
+                "Chapter 4",
+                "Chapter 6",
+                "Memory Bank",
             ),
-            min_embedded_images=6,
+            min_embedded_images=9,
             mermaid_caption_prefix="Part 0 diagram",
         )
     raise RuntimeError(f"未知 locale：{locale}；支持：{', '.join(SUPPORTED_LOCALES)}")

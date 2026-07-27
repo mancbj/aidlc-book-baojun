@@ -150,6 +150,49 @@ class ReleaseProfileTest(unittest.TestCase):
             manifest = json.loads((output / "build-manifest.json").read_text(encoding="utf-8"))
             self.assertEqual("release", manifest["profile"])
 
+    @unittest.skipUnless(HAS_PANDOC and HAS_MERMAID, "release build requires pandoc and mmdc")
+    def test_en_release_html_passes_content_audit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "release-en"
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(REPO_ROOT / "scripts" / "build_release_book.py"),
+                    "--root",
+                    str(REPO_ROOT),
+                    "--output",
+                    str(output),
+                    "--format",
+                    "html",
+                    "--locale",
+                    "en",
+                    "--generated-at",
+                    "2026-07-27T08:00:00Z",
+                ],
+                cwd=REPO_ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+                env=dict(os.environ),
+            )
+            self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+            html = output / "deep-understanding-ai-dlc-en.html"
+            audit = subprocess.run(
+                [
+                    "python3",
+                    str(REPO_ROOT / "scripts" / "audit_release_content.py"),
+                    "--html",
+                    str(html),
+                ],
+                cwd=REPO_ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(0, audit.returncode, audit.stdout + audit.stderr)
+            manifest = json.loads((output / "build-manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual("en", manifest["locale"])
+
 
 if __name__ == "__main__":
     unittest.main()

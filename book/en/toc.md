@@ -1,6 +1,6 @@
 # Table of contents · English edition
 
-> **Status (v0.9.002):** Part 0 and chapters CH-01–CH-03 build in English; CH-04–CH-10 ship in `v0.9.003`–`v0.9.004`.
+> **Status (v0.9.003):** Part 0 and chapters CH-01–CH-06 build in English; CH-07–CH-10 ship in `v0.9.004`.
 
 ## Part 00 · Overview
 
@@ -14,12 +14,12 @@
 ## Part 02 · AI capability
 
 - [CH-03 · Inception](chapters/ch03-inception.md) — **available in this build**
-- CH-04 · Memory Bank and Standards — *planned v0.9.003*
+- [CH-04 · Memory Bank and Standards](chapters/ch04-memory-bank-standards.md) — **available in this build**
 
 ## Part 03 · Engineering × Exsecutio
 
-- CH-05 · Bolts — *planned v0.9.003*
-- CH-06 · Exsecutio — *planned v0.9.003*
+- [CH-05 · Bolts](chapters/ch05-bolts.md) — **available in this build**
+- [CH-06 · Exsecutio](chapters/ch06-exsecutio.md) — **available in this build**
 
 ## Part 04 · Verification and feedback
 

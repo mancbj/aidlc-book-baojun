@@ -26,6 +26,9 @@ EN_REQUIRED_PATHS = (
     "book/en/chapters/ch01-ai-native-sdlc.md",
     "book/en/chapters/ch02-human-judgment.md",
     "book/en/chapters/ch03-inception.md",
+    "book/en/chapters/ch04-memory-bank-standards.md",
+    "book/en/chapters/ch05-bolts.md",
+    "book/en/chapters/ch06-exsecutio.md",
     "docs/BOOK-LOCALES.md",
 )
 
@@ -42,13 +45,13 @@ class BookLocaleLayoutTest(unittest.TestCase):
         self.assertIn('html_name="deep-understanding-ai-dlc-en.html"', source)
         self.assertIn("SOURCE_FILES_EN", source)
 
-    def test_v09002_policy_defers_en_pdf_release(self) -> None:
+    def test_v09003_policy_defers_en_pdf_release(self) -> None:
         policy = json.loads(
-            (REPO_ROOT / "planning/releases/v0.9.002-policy.json").read_text(encoding="utf-8")
+            (REPO_ROOT / "planning/releases/v0.9.003-policy.json").read_text(encoding="utf-8")
         )
-        self.assertEqual("v0.9.002", policy["version"])
+        self.assertEqual("v0.9.003", policy["version"])
         self.assertFalse(policy["pdf_required"])
-        self.assertEqual("v0.9.003-draft", policy["next_version"])
+        self.assertEqual("v0.9.004-draft", policy["next_version"])
 
 
 @unittest.skipUnless(HAS_PANDOC and HAS_MERMAID, "English build smoke requires pandoc and mmdc")
@@ -90,7 +93,7 @@ class EnglishBuildSmokeTest(unittest.TestCase):
             self.assertIn("Part 00 · Bird", html)
             self.assertIn("Engineering with Exsecutio", html)
             self.assertIn("Chapter 1", html)
-            self.assertIn("Human judgment gate", html)
+            self.assertIn("Chapter 6", html)
 
 
 if __name__ == "__main__":

@@ -2,10 +2,10 @@
 
 The repository supports two Pandoc build locales via `scripts/build_book.py --locale`.
 
-| Locale | Source tree | Output HTML | Output PDF | Scope (v0.9.002) |
+| Locale | Source tree | Output HTML | Output PDF | Scope (v0.9.003) |
 | --- | --- | --- | --- | --- |
 | `zh` (default) | `book/` | `deep-understanding-ai-dlc.html` | `deep-understanding-ai-dlc.pdf` | Full Part 0 + 10 chapters |
-| `en` | `book/en/` | `deep-understanding-ai-dlc-en.html` | `deep-understanding-ai-dlc-en.pdf` | Part 0 + CH01–03 + glossary; CH04–10 in v0.9.003+ |
+| `en` | `book/en/` | `deep-understanding-ai-dlc-en.html` | `deep-understanding-ai-dlc-en.pdf` | Part 0 + CH01–06 + glossary; CH07–10 in v0.9.004 |
 
 ## Commands
 
