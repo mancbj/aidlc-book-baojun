@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.8.010",
+  "publish_threshold": 92,
+  "weights": {
+    "official_sources_readme": 25,
+    "chapter_alignment_cn": 35,
+    "workflow_map": 20,
+    "release": 20
+  },
+  "hard_gates": [
+    "official_source_links_present",
+    "readme_contract_tests_pass",
+    "ci_check_pass",
+    "content_audit_pass",
+    "readiness_ready",
+    "no_appendix_a_full_paste"
+  ],
+  "baseline_commit": "main",
+  "current_round": "01",
+  "rounds": [
+    {
+      "id": "01",
+      "name": "official-sources-abcd",
+      "decision": "KEEP",
+      "official_sources_readme": 25,
+      "chapter_alignment_cn": 35,
+      "workflow_map": 20,
+      "release": 20,
+      "total": 100,
+      "notes": "A+B+C+D 合入；合并 main 后打 tag v0.8.010。"
+    }
+  ]
+}

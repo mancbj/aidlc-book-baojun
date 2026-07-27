@@ -134,6 +134,16 @@ Part 00 是非编号导读，不计入十章正文，也不改变 CH-01 至 CH-1
 4. 官网的效率数字和竞争性结论必须回到原始研究核验，不能只引用产品页面。
 5. 工具已知限制必须保留；尤其不能把 alpha 状态的 Operations 实现写成成熟生产能力。
 
+## 官方参考链接（摘要入口）
+
+| 资源 | 本书中的主要落点 |
+| --- | --- |
+| [AWS AI-DLC 方法定义（Amplify）](https://prod.d13rzhkk8cj2z0.amplifyapp.com) | CH-01 原则摘要；CH-02 Mob；CH-05 Bolt；CH-08 Operations；CH-10 采用策略 |
+| [AWS DevOps 博文（中文）](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/) | Part 0 来源三角；CH-01 AI-Driven 语境 |
+| [aidlc-workflows · WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) | CH-02/03/04/06 操作对齐；[映射表](../docs/WORKING-WITH-AIDLC-MAP.md) |
+
+全书正文仅保留摘要与链接，不粘贴白皮书 Appendix A 全文 prompt 模板。
+
 ## v0.1 边界
 
 - v0.1 固化十章结构、唯一核心问题和读者结果，不承诺十章完稿。

@@ -58,6 +58,33 @@ python3 experiments/exp-01-01/quickstart.py --sample
 python3 scripts/ci_check.py --budget-seconds 60
 ```
 
+## 官方来源与两条路径
+
+本书的 `𝓔 = Engineering with Exsecutio` 是**解释框架**；AWS 公布的 AI-DLC 方法定义与社区 workflow 是**可对齐的方法来源与操作参考**，三者不应混为一谈。
+
+| 来源 | 用途 | 链接 |
+| --- | --- | --- |
+| AWS AI-DLC 方法定义（白皮书 SPA） | 十条原则、Intent/Unit/Bolt、三阶段仪式、Green/Brown-field  walkthrough | [Amplify 入口](https://prod.d13rzhkk8cj2z0.amplifyapp.com) |
+| AWS DevOps 博文 | 中文语境下的 AI-Driven 定位、Mob、持久化工件与 adoption 入口 | [AI-Driven Development Life Cycle](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/) |
+| aidlc-workflows | Question→Doc→Approval、阶段门控、Construction 两段式等**操作级**约定 | [WORKING-WITH-AIDLC.md](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) |
+
+**读书**：从 [Part 00](book/part-00-overview.md) 与 [目录](book/toc.md) 进入十章；需要 PDF/HTML 时用[最新 Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest)。
+
+**跑 workflow**：在真实仓库里按 [WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) 组织 `aidlc-docs/` 与门控；本书第 3–6 章与[操作映射表](docs/WORKING-WITH-AIDLC-MAP.md)说明概念如何落到该指南。
+
+<details>
+<summary><strong>术语快查（与 AWS / specs.md 对齐）</strong></summary>
+
+| 术语 | 一句话 |
+| --- | --- |
+| **Intent** | 高层目的陈述，是 AI 分解的起点，不是实现方案 |
+| **Unit** | 可独立交付、松耦合的能力块（类似 DDD 子域或 Epic） |
+| **Bolt** | 小时到天级迭代单元，对应传统 Sprint 的 AI 时代重命名 |
+| **Mob Elaboration** | Inception 仪式：同室共屏，AI 先提议分解，mob 验证与修正 |
+| **Question–Doc–Approval** | 先澄清→写入 md 工件→人批准后再执行，避免「Vibe Code」 |
+
+</details>
+
 ## 你会得到什么
 
 - **不再把一次生成当成交付** —— 用独立验证、失败—修复—复测和 Walkthrough 形成证据链。

@@ -93,6 +93,10 @@ Bolt 完成不能只靠一句“已完成”。它至少要留下四类证据：
 
 这些证据让 Bolt 既能被关闭，也能被恢复。没有证据的完成，只是聊天里的乐观判断。
 
+### 2.5 Bolt 与 Sprint：AWS 官方命名（摘要）
+
+AWS AI-DLC 将传统 Scrum **Sprint** 重命名为 **Bolt**，强调小时到天级、高强度、可并行的迭代单元，而不是 4–6 周的长周期（见 [方法定义白皮书](https://prod.d13rzhkk8cj2z0.amplifyapp.com)）。一个 Unit 可由一个或多个 Bolt 顺序或并行完成；AI 规划 Bolts，开发/PO 验证。本书沿用了同一术语，并在第 6 章用 `Exsecutio` 描述 Bolt 内部的贯彻闭环——**Bolt 是范围与门禁单位，Exsecutio 是执行动力学**。
+
 ## 03 · Three-Part Argument：为什么 Bolt 是速度的工程单位
 
 ### 第一段：AI 的速度需要批次边界
@@ -248,3 +252,4 @@ High Domain Complexity / Cross-boundary Risk / Hard to Reverse
 - `progress/experiments.json`：`EXP-05-01`、`EXP-05-02`、`EXP-05-03` 实验治理状态。
 - `book/toc.md`：CH-05 核心问题、读者结果和实验方向。
 - `planning/reviews/ch-05-writing-review.md`：正式十章生产线 CH-05 五类审校记录。
+- [AWS AI-DLC 方法定义（Amplify）](https://prod.d13rzhkk8cj2z0.amplifyapp.com)：Bolt 与 Sprint 官方命名摘要。

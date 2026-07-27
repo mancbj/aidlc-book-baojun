@@ -136,6 +136,12 @@ Walkthrough 的好坏，可以用一句话测试：
 
 如果答案是不能，Exsecutio 还没有完成。
 
+### 2.6 Construction 两段式与 Mob Construction（摘要）
+
+AWS **Construction** 阶段沿 Domain Design → Logical Design（含 ADR）→ Code/Unit Tests 推进，棕场场景需先把代码提升为静态/动态模型再进入同构绿场路径；并推荐 **Mob Construction**（同室协作、交换集成规格、分 Unit 交付 Bolts），与 Inception 的 Mob Elaboration 成对出现（摘要见 [Amplify 白皮书](https://prod.d13rzhkk8cj2z0.amplifyapp.com)）。
+
+[aidlc-workflows](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) 在操作层把 Construction 固化为**两段式**：先产出带 checkbox 的 **Implementation Plan** md，经 Question→Doc→Approval 批准后再 codegen；报告类产物（如 validation report）与 `aidlc-docs/` 计划分离，避免与 Memory Bank 事实源混淆。本章五段闭环（Plan→Execute→Verify→Repair→Walkthrough）与两段式兼容：第一段 Plan 对应「可批准计划」，Execute 仅在批准后启动。
+
 ## 03 · Three-Part Argument：为什么 Exsecutio 是 AI-DLC 的贯彻层
 
 ### 第一段：AI 的提议需要被贯彻到工件
@@ -350,3 +356,4 @@ Plan ──▶ Execute ──▶ Verify ──▶ Repair ──▶ Walkthrough
 - `memory-bank/bolts/001-github-writing-system-ui/bolt.md`：基础事实源 Bolt。
 - `progress/experiments.json`：`EXP-06-01`、`EXP-06-02`、`EXP-06-03` 实验治理状态。
 - `book/toc.md`：CH-06 核心问题、读者结果和实验方向。
+- [AWS AI-DLC 方法定义（Amplify）](https://prod.d13rzhkk8cj2z0.amplifyapp.com)、[WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md)：Mob Construction 与两段式 Construction 摘要。

@@ -37,6 +37,22 @@ class ReadmeAcknowledgmentsTest(unittest.TestCase):
         self.assertNotIn("尚未声明 SPDX 开源许可证", self.text)
         self.assertNotIn("## 两周 v0.1 目标", self.text)
 
+    def test_readme_lists_official_ai_dlc_sources(self) -> None:
+        for url in (
+            "https://prod.d13rzhkk8cj2z0.amplifyapp.com",
+            "https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/",
+            "https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md",
+        ):
+            self.assertIn(url, self.text)
+        self.assertIn("docs/WORKING-WITH-AIDLC-MAP.md", self.text)
+        self.assertIn("## 官方来源与两条路径", self.text)
+
+    def test_english_readme_lists_official_sources(self) -> None:
+        en = (REPO_ROOT / "README.en.md").read_text(encoding="utf-8")
+        self.assertIn("## Official sources and two paths", en)
+        self.assertIn("https://prod.d13rzhkk8cj2z0.amplifyapp.com", en)
+        self.assertIn("WORKING-WITH-AIDLC-MAP.md", en)
+
     def test_english_readme_is_pure_english_entrypoint(self) -> None:
         en = (REPO_ROOT / "README.en.md").read_text(encoding="utf-8")
         self.assertIn("## Get started in 3 minutes", en)

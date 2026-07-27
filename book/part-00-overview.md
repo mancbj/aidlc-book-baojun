@@ -50,6 +50,18 @@ flowchart LR
 
 参考实现帮助我们把理论落地，但任何单一工具都不等于 AI-DLC 本身。
 
+### 0.3.1 官方方法来源三角
+
+与本书并行、可对齐的三条公开入口如下（正文仅摘要，全文以链接为准）：
+
+1. **[AWS AI-DLC 方法定义（Amplify 白皮书）](https://prod.d13rzhkk8cj2z0.amplifyapp.com)** —— 强调 *Reimagine rather than retrofit*：不为旧 SDLC/Scrum「外挂 AI」，而按 AI 的小时/天级节奏重设阶段、角色与仪式；提出 *Reverse the conversation*（AI 发起澄清与分解，人验证与拍板）、将 DDD 等设计技法嵌入核心、Bolt 取代长周期 Sprint，以及 Inception / Construction / Operations 三阶段与 Mob Elaboration、Mob Construction。
+2. **[AWS DevOps 博文（中文）](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/)** —— 从 AI-Assisted 到 AI-Driven 的语境说明，并链向白皮书与社区实践。
+3. **[aidlc-workflows · WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md)** —— 操作层约定：Question→Doc→Approval、阶段切换时清理聊天 context、Vision / Tech Environment 双输入、Construction 先计划批准再 codegen、以及 *Never Vibe Code*（无工件、无批准则不执行）。
+
+**本书定位**：用 `Engineering with Exsecutio` 解释「如何把概率输出推入可验证交付」；AWS 文本是方法论来源；specs.md 与 aidlc-workflows 是参考实现与操作指南。实验 30/30 与 evidence 边界不因官方材料而改写为「已全部 SHIP 落地」。
+
+**两条路径**：只读方法论 → Part 0 与十章；要在仓库里跑通 → 读书第 3–6 章并对照 [WORKING-WITH-AIDLC 映射表](../docs/WORKING-WITH-AIDLC-MAP.md)。
+
 ## 0.4 生命周期鸟瞰
 
 specs.md 的 AI-DLC Flow 为本书提供了一条可观察的参考路径：

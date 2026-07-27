@@ -125,6 +125,12 @@ Update Protocol
 - [x] 本章不把 Memory Bank 写成“更长聊天历史”或“万能长期记忆”。
 - [x] 本章不展开 Bolt 内部执行、发布监控或多 Agent 组织治理。
 
+### Question–Doc–Approval 与 Never Vibe Code（摘要）
+
+[WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) 将上下文纪律概括为：**Question→Doc→Approval**（澄清写入版本化工件→人批准→再执行）与 **Never Vibe Code**（没有批准的计划/Story，就不应开始 codegen）。阶段门控还建议在新 Bolt 或新阶段开始时**主动清理**与当前工件无关的聊天 context，迫使 Agent 从 Memory Bank、Standards 与 `aidlc-docs/`（或本书的 `progress/`、`memory-bank/`）冷启动，而不是从冗长对话里猜状态。
+
+这与本章五层上下文栈一致：Memory Bank 回答「下一会话继承什么」，Standards 回答「什么不能顺手改」，Update Protocol 回答「批准后如何写回事实源」。本书不复制 workflow 全文目录结构；读者若采用 aidlc-workflows，应保留与本章相同的证据边界——聊天不是交付凭证。
+
 ## 03 · Three-Part Argument：为什么上下文工程决定连续交付
 
 ### 第一段：聊天历史不能承担工程事实源
@@ -320,3 +326,4 @@ Next Session Recovers from Updated Facts
 - `experiments/exp-04-03/output/sample.json`：冻结 pin 结构与引用校验样例。
 - `progress/experiments.json`：`EXP-04-01`、`EXP-04-02`、`EXP-04-03` 实验治理状态。
 - `planning/reviews/ch-04-writing-review.md`：正式十章生产线 CH-04 五类审校记录。
+- [WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md)、`docs/WORKING-WITH-AIDLC-MAP.md`：Question→Doc→Approval 与 Never Vibe Code。
