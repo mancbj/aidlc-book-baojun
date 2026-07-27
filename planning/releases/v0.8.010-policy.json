@@ -29,6 +29,6 @@
     "Lorem ipsum",
     "TODO"
   ],
-  "next_version": "v0.8.011-draft",
-  "notes": "v0.8.010：官方来源（Amplify/AWS 博文/aidlc-workflows）README+中文章节摘要与 WORKING-WITH-AIDLC 映射；实验保持 30/30；Reader known-gap。"
+  "next_version": "v0.9.001-draft",
+  "notes": "v0.8.010：官方来源对齐。下一主线 v0.9 英文化+Carbon 站；Reader 反馈非发布驱动。"
 }
