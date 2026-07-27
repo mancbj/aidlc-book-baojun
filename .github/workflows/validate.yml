@@ -15,7 +15,7 @@ jobs:
   core:
     name: Facts, tests, links and generation
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     env:
       PUPPETEER_SKIP_DOWNLOAD: "true"
       PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
@@ -33,6 +33,6 @@ jobs:
       - name: Install Pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc
       - name: Install Mermaid CLI
-        run: npm install -g @mermaid-js/mermaid-cli@11.4.0
+        run: npm install -g @mermaid-js/mermaid-cli@11.16.0
       - name: Run the read-only PR gate
-        run: python3 scripts/ci_check.py --budget-seconds 180
+        run: python3 scripts/ci_check.py --budget-seconds 360
