@@ -105,7 +105,7 @@ def discover_files(root: Path, scopes: Sequence[str]) -> List[Path]:
                     if (
                         "releases" in relative
                         and path.name.startswith("aidlc-book-")
-                        and path.name.endswith(("-book.html", "-book.htm"))
+                        and path.name.endswith(("-book.html", "-book.htm", "-book.md", "-en-book.md"))
                     ):
                         continue
                     # Pandoc include fragments are not standalone pages.
