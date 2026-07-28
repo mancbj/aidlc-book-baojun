@@ -40,6 +40,14 @@ def render(root: Path, readiness: dict) -> str:
             "- Reader 仍为 known-gap；下一目标为 v0.9.009+ 维护（图/实验可视化），非反馈驱动 tag。",
         ]
         next_goal = "v0.9.009-draft：维护循环（图示优化、实验可视化、Pages 性能）；见 planning/publication/v0.9-loop-orchestration.md。"
+    elif version.startswith("v0.9.006"):
+        highlights = [
+            "- **新增双语 Markdown 全书**：`aidlc-book-v0.9.006-book.md`（中文）与 `-en-book.md`（英文），与 HTML/PDF 同源章节拼接。",
+            "- 继续包含 v0.9.005 四类 HTML/PDF 资产 + Pages zip；GitHub Release **标题**含本版摘要。",
+            "- 构建：`scripts/build_release_markdown.py` + `stage_release_rc_assets.py`；实验 verified=30/30。",
+            "- Reader 仍为 known-gap。",
+        ]
+        next_goal = "v0.9.007+：阅读体验与 Release 维护；见 planning/publication/v0.9-loop-orchestration.md。"
     elif version.startswith("v0.9.005"):
         highlights = [
             "- **双语 Release 四类资产**：中文/英文各一份单页 HTML 与 PDF（`-book.html` / `-en-book.html` / `.pdf` / `-en.pdf`）。",
@@ -220,11 +228,29 @@ def render(root: Path, readiness: dict) -> str:
     )
 
 
+def release_title(readiness: dict) -> str:
+    version = str(readiness.get("version", "v0.1"))
+    summaries = (
+        ("v0.9.006", "中英 Markdown 全书 + 双语 HTML/PDF"),
+        ("v0.9.005", "双语 HTML/PDF 四类书稿"),
+        ("v0.9.004", "英文全书 HTML/PDF 首次 Release"),
+    )
+    for prefix, summary in summaries:
+        if version.startswith(prefix):
+            return f"{version} · {summary}"
+    return version
+
+
 def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="从 readiness 与 progress 生成 Release Notes。")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--readiness", type=Path, default=Path("releases/v0.1-rc/readiness.json"))
     parser.add_argument("--output", type=Path, default=Path("releases/v0.1-rc/release-notes.md"))
+    parser.add_argument(
+        "--title-output",
+        type=Path,
+        help="写入 GitHub Release 标题（单行，含版本与摘要）",
+    )
     parser.add_argument("--require-ready", action="store_true")
     return parser.parse_args(argv)
 
@@ -240,6 +266,12 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             raise ValueError("readiness 不是 ready，拒绝生成可发布 Notes")
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(render(root, readiness), encoding="utf-8")
+        if args.title_output:
+            title_path = (
+                args.title_output if args.title_output.is_absolute() else root / args.title_output
+            )
+            title_path.parent.mkdir(parents=True, exist_ok=True)
+            title_path.write_text(release_title(readiness) + "\n", encoding="utf-8")
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"[ERROR] Release Notes failed: {exc}")
         return 1

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "release_target": "v0.9.006",
+  "publish_threshold": 92,
+  "weights": {
+    "bilingual_markdown": 35,
+    "bilingual_release": 25,
+    "release": 20,
+    "ci_release": 20
+  },
+  "hard_gates": [
+    "bilingual_six_assets",
+    "readiness_ready",
+    "release_title_with_summary",
+    "verified_experiments_30_30"
+  ],
+  "baseline_commit": "main",
+  "current_round": "01",
+  "rounds": [
+    {
+      "id": "01",
+      "name": "bilingual-markdown-release",
+      "decision": "KEEP",
+      "bilingual_markdown": 35,
+      "bilingual_release": 25,
+      "release": 20,
+      "ci_release": 20,
+      "total": 100,
+      "notes": "zh/en .md + HTML/PDF; release-title.txt for GitHub Release heading."
+    }
+  ]
+}

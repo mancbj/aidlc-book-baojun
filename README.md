@@ -47,7 +47,7 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 
 1. 打开 **[可视化阅读站](https://mancbj.github.io/aidlc-book-baojun/book-site/index.html)**（GitHub Pages 默认可浏览面，v0.9.008 与 Release 构建同源；勿在仓库页点相对路径 `book-site/`，会显示 HTML 源码）。
 2. 用 10 分钟阅读 [Part 00 · 鸟瞰 AI-DLC](book/part-00-overview.md)。
-3. 从[最新 Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest)下载 PDF 或 HTML（自 **v0.9.005** 起含中/英各一份 HTML 与 PDF，共 4 个文件）。
+3. 从[最新 Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest)下载 PDF、HTML 或 Markdown（自 **v0.9.006** 起含中/英 `.md` 全书；**v0.9.005** 起含 HTML/PDF 共 4 个文件）。
 4. 按你的目标选择[管理者、研发系统设计者或实践者路线](docs/READER-GUIDE.md)。
 
 ### 想复现实验或参与写作

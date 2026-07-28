@@ -115,6 +115,15 @@ jobs:
           if [ "${missing}" -eq 1 ]; then
             python3 scripts/stage_release_rc_assets.py "${VERSION}"
           fi
+          for name in \
+            "aidlc-book-${VERSION}-book.md" \
+            "aidlc-book-${VERSION}-en-book.md"
+          do
+            if [ ! -f "${rc}/${name}" ]; then
+              python3 scripts/build_release_markdown.py "${VERSION}"
+              break
+            fi
+          done
       - name: Prepare immutable release candidate
         env:
           VERSION: ${{ needs.validate.outputs.version }}
@@ -170,6 +179,7 @@ jobs:
           python3 scripts/render_release_notes.py
           --readiness .artifacts/readiness/readiness.json
           --output .artifacts/readiness/release-notes.md
+          --title-output .artifacts/readiness/release-title.txt
           --require-ready
       - name: Upload readiness or the sorted blocker report
         if: always()
@@ -213,8 +223,13 @@ jobs:
           release_args=(
             --repo "$GITHUB_REPOSITORY"
             --target "$GITHUB_SHA"
-            --title "$VERSION"
-            --generate-notes
+          )
+          TITLE="$VERSION"
+          if [ -f .artifacts/candidate/release-title.txt ]; then
+            TITLE=$(head -n 1 .artifacts/candidate/release-title.txt | tr -d '\r')
+          fi
+          release_args+=(--title "$TITLE")
+          release_args+=(
             --notes-file .artifacts/candidate/release-notes.md
           )
           if [ "$EVENT_NAME" != "push" ]; then
