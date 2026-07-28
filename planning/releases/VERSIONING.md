@@ -32,6 +32,7 @@ v0.<minor>.<patch:000-999>
 | `v0.9.003` | 英文 CH04–06 |
 | `v0.9.004` | 英文 CH07–10 + 首次英文 Release PDF/HTML |
 | `v0.9.005` | **双语 Release**：zh/en 各 HTML+PDF 四类 GitHub Release 资产 |
+| `v0.9.006` | 双语 **Markdown 全书** + 保留 HTML/PDF；Release 标题含摘要 |
 | `v0.9.005`（原规划） | Carbon 站点信息架构（已在 v0.9.005–008 Loop 提前合入 main） |
 | `v0.9.006` | 可视化章节阅读器 v1 |
 | `v0.9.007` | 中英切换与 a11y |

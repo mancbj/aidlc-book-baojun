@@ -109,14 +109,25 @@ def build_report(root: Path, policy_path: Path, generated_at: Optional[str] = No
                 f"aidlc-book-{version}.pdf",
                 f"aidlc-book-{version}-en.pdf",
             ]
+            if policy.get("bilingual_markdown_assets"):
+                required.extend(
+                    [
+                        f"aidlc-book-{version}-book.md",
+                        f"aidlc-book-{version}-en-book.md",
+                    ]
+                )
             missing = [name for name in required if not (rc_dir / name).is_file()]
             if missing:
+                fix = (
+                    "运行 scripts/stage_release_rc_assets.py 与 scripts/build_release_markdown.py "
+                    f"<version> 生成书稿资产。"
+                )
                 gap(
                     "BILINGUAL-ASSETS-MISSING",
                     "must-blocker",
                     f"{version}-rc",
                     f"缺少：{', '.join(sorted(missing))}",
-                    "运行 scripts/stage_release_rc_assets.py <version> 生成四类书稿资产。",
+                    fix,
                 )
         else:
             pdf_candidates = [

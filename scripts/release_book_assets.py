@@ -13,7 +13,18 @@ def asset_filenames(version: str) -> Dict[str, str]:
         "en_html": f"aidlc-book-{version}-en-book.html",
         "zh_pdf": f"aidlc-book-{version}.pdf",
         "en_pdf": f"aidlc-book-{version}-en.pdf",
+        "zh_md": f"aidlc-book-{version}-book.md",
+        "en_md": f"aidlc-book-{version}-en-book.md",
     }
+
+
+def markdown_filenames(version: str) -> Dict[str, str]:
+    names = asset_filenames(version)
+    return {"zh_md": names["zh_md"], "en_md": names["en_md"]}
+
+
+def bilingual_required_filenames(version: str) -> list[str]:
+    return list(asset_filenames(version).values())
 
 
 def rc_paths(root: Path, version: str) -> Dict[str, Path]:

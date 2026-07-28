@@ -44,7 +44,7 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 
 1. Open the **[Carbon reader](https://mancbj.github.io/aidlc-book-baojun/book-site/index.html)** (GitHub Pages; build hash aligned with Release as of v0.9.008—do not use repo-relative `book-site/` links on github.com; they open raw HTML source).
 2. Spend 10 minutes on [Part 00 · AI-DLC overview](book/en/part-00-overview.md) or the [Chinese Part 00](book/part-00-overview.md).
-3. Download PDF or HTML from the [latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) (from **v0.9.005**, zh/en HTML + PDF — four files; English full book since **v0.9.004**).
+3. Download PDF, HTML, or Markdown from the [latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) (from **v0.9.006**, zh/en full-book `.md`; from **v0.9.005**, four HTML/PDF files).
 4. Pick a path in the [reader guide](docs/READER-GUIDE.md): leader, system designer, or hands-on practitioner.
 
 ### Reproduce experiments or contribute

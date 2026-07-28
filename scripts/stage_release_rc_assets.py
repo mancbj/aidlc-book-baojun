@@ -117,6 +117,15 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         if path.suffix == ".html" or (args.format in {"pdf", "all"} and path.suffix == ".pdf"):
             if path.is_file():
                 print(f"[OK] {path.relative_to(root)} ({path.stat().st_size} bytes)")
+
+    md_cmd = [python, str(root / "scripts/build_release_markdown.py"), version]
+    completed = subprocess.run(md_cmd, cwd=str(root), text=True)
+    if completed.returncode:
+        raise RuntimeError("build_release_markdown.py 失败")
+    for key in ("zh_md", "en_md"):
+        path = targets[key]
+        if path.is_file():
+            print(f"[OK] {path.relative_to(root)} ({path.stat().st_size} bytes)")
     return 0
 
 

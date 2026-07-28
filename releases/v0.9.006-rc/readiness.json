@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "chapters": 10,
+    "html_required": true,
+    "must_done": 70,
+    "must_total": 70,
+    "pdf_required": true,
+    "responded_readers": 0,
+    "tasks_total": 72
+  },
+  "gaps": [
+    {
+      "code": "READER-RESPONSES",
+      "evidence": "responded=0/3",
+      "fix": "保留反馈入口；真实邀请/响应后更新匿名槽位。",
+      "object": "Reader-A/B/C",
+      "owner": "author",
+      "priority": "known-gap"
+    }
+  ],
+  "generated_at": "2026-07-28T00:16:48Z",
+  "next_action": "构造同源候选并执行人工发布审阅。",
+  "policy": "planning/releases/v0.9.006-policy.json",
+  "schema_version": "1.0.0",
+  "source_id": "795c1f0ad55725814b09c84ba6f601c2df9a583e",
+  "status": "ready",
+  "summary": {
+    "blockers": 0,
+    "known_gaps": 1,
+    "total_gaps": 1
+  },
+  "version": "v0.9.006"
+}

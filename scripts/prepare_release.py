@@ -63,6 +63,8 @@ def stage_book_assets(
             continue
         if key.endswith("_pdf"):
             validate_pdf(src)
+        elif key.endswith("_md"):
+            validate_book_markdown(src)
         else:
             validate_book_html(src)
         target = staged / filename
@@ -73,7 +75,7 @@ def stage_book_assets(
             "sha256": file_sha256(target),
             "bytes": target.stat().st_size,
             "locale": "zh" if key.startswith("zh_") else "en",
-            "kind": "pdf" if key.endswith("_pdf") else "html",
+            "kind": "markdown" if key.endswith("_md") else ("pdf" if key.endswith("_pdf") else "html"),
         }
         book_assets[key] = entry
 
@@ -107,6 +109,16 @@ def stage_book_assets(
         }
 
     return book_assets, book_html_status, pdf_status
+
+
+def validate_book_markdown(path: Path) -> None:
+    if not path.is_file() or path.suffix.lower() != ".md":
+        raise RuntimeError("书稿 Markdown 必须是 .md 文件。")
+    if path.stat().st_size < 5000:
+        raise RuntimeError("书稿 Markdown 过短。")
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    if "AI-DLC" not in text:
+        raise RuntimeError("书稿 Markdown 缺少 AI-DLC 标识。")
 
 
 def validate_book_html(path: Path) -> None:
@@ -226,6 +238,11 @@ def build_release(args: argparse.Namespace) -> Dict[str, object]:
 本候选由仓库事实、测试、书稿构建和静态页面生成。正式发布前仍需检查已知缺口、反馈入口和人工门禁。
 """
         (staged / "release-notes.md").write_text(notes, encoding="utf-8")
+        if notes_arg:
+            notes_path = notes_arg if notes_arg.is_absolute() else root / notes_arg
+            title_sidecar = notes_path.with_name("release-title.txt")
+            if title_sidecar.is_file():
+                shutil.copy2(title_sidecar, staged / "release-title.txt")
         manifest = {
             "schema_version": "1.0.0",
             "version": args.version,
