@@ -237,3 +237,20 @@ jobs:
           fi
           gh release create "$VERSION" .artifacts/candidate/* \
             "${release_args[@]}"
+      - name: Sync README release download links
+        if: github.event_name == 'push'
+        env:
+          VERSION: ${{ needs.validate.outputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/update_readme_release_downloads.py --version "$VERSION"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md README.en.md
+          if git diff --cached --quiet; then
+            echo "README download table already up to date."
+            exit 0
+          fi
+          git commit -m "[readme] sync release downloads for ${VERSION} [skip ci]"
+          git push origin HEAD:main

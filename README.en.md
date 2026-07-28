@@ -38,16 +38,33 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
   </a>
 </p>
 
-## Get started in 3 minutes
+## Latest release downloads
 
-### Read only
+<!-- RELEASE-DOWNLOADS-BEGIN -->
+Latest: **[v0.9.006](https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.9.006)** · [All release assets](https://github.com/mancbj/aidlc-book-baojun/releases/latest)
 
-1. Open the **[Carbon reader](https://mancbj.github.io/aidlc-book-baojun/book-site/index.html)** (GitHub Pages; build hash aligned with Release as of v0.9.008—do not use repo-relative `book-site/` links on github.com; they open raw HTML source).
+| Locale | PDF | Single-page HTML | Full-book Markdown |
+| --- | --- | --- | --- |
+| Chinese | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006.pdf) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-book.html) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-book.md) |
+| English | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en.pdf) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en-book.html) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en-book.md) |
+<!-- RELEASE-DOWNLOADS-END -->
+
+<a id="get-started-in-3-minutes"></a>
+<details>
+<summary><strong>Get started in 3 minutes</strong></summary>
+
+<details>
+<summary><strong>Read only</strong></summary>
+
+1. Open the **[Carbon reader](https://mancbj.github.io/aidlc-book-baojun/book-site/index.html)** (GitHub Pages; do not use repo-relative `book-site/` links on github.com—they open raw HTML source).
 2. Spend 10 minutes on [Part 00 · AI-DLC overview](book/en/part-00-overview.md) or the [Chinese Part 00](book/part-00-overview.md).
-3. Download PDF, HTML, or Markdown from the [latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) (from **v0.9.006**, zh/en full-book `.md`; from **v0.9.005**, four HTML/PDF files).
+3. For offline reading, use the **[Latest release downloads](#latest-release-downloads)** table (PDF / HTML / Markdown).
 4. Pick a path in the [reader guide](docs/READER-GUIDE.md): leader, system designer, or hands-on practitioner.
 
-### Reproduce experiments or contribute
+</details>
+
+<details>
+<summary><strong>Reproduce experiments or contribute</strong></summary>
 
 Requires Python 3.10+. No database or remote service required.
 
@@ -62,7 +79,12 @@ python3 experiments/exp-01-01/quickstart.py --sample
 python3 scripts/ci_check.py --budget-seconds 60
 ```
 
-## Official sources and two paths
+</details>
+
+</details>
+
+<details>
+<summary><strong>Official sources and two paths</strong></summary>
 
 `𝓔 = Engineering with Exsecutio` is **this book’s explanatory framework**. AWS’s published AI-DLC method definition and the community **aidlc-workflows** repo are **alignable method sources and operational references**—not interchangeable with the book framework.
 
@@ -72,7 +94,7 @@ python3 scripts/ci_check.py --budget-seconds 60
 | AWS DevOps blog post | AI-Driven positioning, Mob rituals, persisted artifacts, adoption pointers | [AI-Driven Development Life Cycle](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/) |
 | aidlc-workflows | Question→Doc→Approval, phase gates, two-phase Construction | [WORKING-WITH-AIDLC.md](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) |
 
-**Read the book**: start with [Part 00](book/part-00-overview.md) and the [table of contents](book/toc.md); download PDF/HTML from the [latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest).
+**Read the book**: start with [Part 00](book/part-00-overview.md) and the [table of contents](book/toc.md); offline bundles are in **[Latest release downloads](#latest-release-downloads)**.
 
 **Run a workflow**: follow [WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) in your repo; Chapters 3–6 plus the [operation map](docs/WORKING-WITH-AIDLC-MAP.md) connect concepts to that guide.
 
@@ -86,6 +108,8 @@ python3 scripts/ci_check.py --budget-seconds 60
 | **Bolt** | Hours-to-days iteration unit (AI-era rename of the Sprint idea) |
 | **Mob Elaboration** | Inception ritual: shared screen; AI proposes decomposition; mob validates |
 | **Question–Doc–Approval** | Clarify → persist in markdown → human approval before execution |
+
+</details>
 
 </details>
 
@@ -141,7 +165,8 @@ flowchart LR
 
 Each chapter has one core question, reader outcomes, experiments, and evidence bounds. See the [full table of contents](book/toc.md) and [reader guide](docs/READER-GUIDE.md).
 
-## Experiments and evidence
+<details>
+<summary><strong>Experiments and evidence</strong></summary>
 
 Claims that affect practice must be backed by runnable experiments, pinned external references, figures, or reader exercises. All **30 experiments are `verified`** and run through unified contract tests:
 
@@ -151,7 +176,10 @@ Claims that affect practice must be backed by runnable experiments, pinned exter
 
 Each experiment states what it proves and what it does not prove. See [experiment facts](progress/experiments.json), [triage rules](EXPERIMENT_TRIAGE.md), and [sample outputs](experiments/).
 
-## Current status
+</details>
+
+<details>
+<summary><strong>Current status</strong></summary>
 
 | Signal | Current fact | View |
 | --- | --- | --- |
@@ -159,11 +187,14 @@ Each experiment states what it proves and what it does not prove. See [experimen
 | Chapter pipeline | 10 / 10 six-stage complete | [Chapter facts](progress/chapters.json) |
 | Reproducible experiments | 30 / 30 verified | [Experiment facts](progress/experiments.json) |
 | Automation gates | facts, tests, links, generation, experiment contracts | [CI workflow](.github/workflows/validate.yml) |
-| Downloadable builds | PDF, single-page HTML, site zip | [Latest release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) |
+| Downloadable builds | PDF, HTML, Markdown, site zip | [Latest release downloads](#latest-release-downloads) |
 
 Completion rates are not edited by hand in this README. Authoritative numbers come from versioned fact sources and project to the [dashboard](https://mancbj.github.io/aidlc-book-baojun/site/index.html), [detail drill-down](https://mancbj.github.io/aidlc-book-baojun/site/details.html), and [text summary](progress/generated/current.md). See the [repository guide](docs/REPOSITORY-GUIDE.md).
 
-## Maintainer verification
+</details>
+
+<details>
+<summary><strong>Maintainer verification</strong></summary>
 
 After changing manuscript, experiments, or fact sources, run in order:
 
@@ -175,7 +206,10 @@ python3 scripts/ci_check.py --budget-seconds 60
 
 Full CI checks fact consistency, unit tests, all 30 experiment contracts, internal links, and generated projections.
 
-## AI Agent / Cursor usage
+</details>
+
+<details>
+<summary><strong>AI Agent / Cursor usage</strong></summary>
 
 This README, Part 0, and machine-readable fact sources give agents a structured entry point. In Cursor, Claude Code, or other repo-level agents:
 
@@ -186,6 +220,8 @@ then suggest a reading path or a reproducible experiment.
 ```
 
 For contributions, also load [`docs/REPOSITORY-GUIDE.md`](docs/REPOSITORY-GUIDE.md) and [`docs/GITHUB-COLLABORATION.md`](docs/GITHUB-COLLABORATION.md), and run full CI before opening a PR.
+
+</details>
 
 ## Contributing
 
