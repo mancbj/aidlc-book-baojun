@@ -15,19 +15,21 @@ class ReadmeAcknowledgmentsTest(unittest.TestCase):
 
     def test_readme_thanks_ai_agent_book_and_specsmd(self) -> None:
         self.assertIn("## 致谢", self.text)
-        self.assertGreater(self.text.index("## 致谢"), self.text.index("## 当前状态"))
+        self.assertGreater(self.text.index("## 致谢"), self.text.index("当前状态"))
         self.assertIn("https://github.com/bojieli/ai-agent-book", self.text)
         self.assertIn("https://specs.md", self.text)
         self.assertIn("v0.2", self.text)
 
     def test_first_screen_has_trust_and_action_signals(self) -> None:
-        first_screen = self.text[:3000]
+        first_screen = self.text[:5000]
         self.assertIn("Open-source AI-DLC book", first_screen)
         self.assertIn("actions/workflows/validate.yml/badge.svg", first_screen)
         self.assertIn("releases/latest", first_screen)
         self.assertIn('alt="License: Apache-2.0"', first_screen)
         self.assertIn("book/images/star-this-repo.gif", first_screen)
-        self.assertIn("## 3 分钟开始", first_screen)
+        self.assertIn("## 最新版下载", first_screen)
+        self.assertIn("RELEASE-DOWNLOADS-BEGIN", first_screen)
+        self.assertIn("3 分钟开始", self.text)
         self.assertIn(
             "https://mancbj.github.io/aidlc-book-baojun/book-site/index.html",
             first_screen,
@@ -36,7 +38,7 @@ class ReadmeAcknowledgmentsTest(unittest.TestCase):
         self.assertIn("assets/star-history-dark.png", self.text)
 
     def test_readme_has_agent_community_and_honest_license_sections(self) -> None:
-        for heading in ("## AI Agent / Cursor 使用", "## 贡献", "## 社区与支持", "## 许可"):
+        for heading in ("AI Agent / Cursor 使用", "贡献", "社区与支持", "许可"):
             self.assertIn(heading, self.text)
         self.assertIn("[Apache License 2.0](LICENSE)", self.text)
         self.assertIn("Copyright 2026 mancbj", self.text)
@@ -51,17 +53,17 @@ class ReadmeAcknowledgmentsTest(unittest.TestCase):
         ):
             self.assertIn(url, self.text)
         self.assertIn("docs/WORKING-WITH-AIDLC-MAP.md", self.text)
-        self.assertIn("## 官方来源与两条路径", self.text)
+        self.assertIn("官方来源与两条路径", self.text)
 
     def test_english_readme_lists_official_sources(self) -> None:
         en = (REPO_ROOT / "README.en.md").read_text(encoding="utf-8")
-        self.assertIn("## Official sources and two paths", en)
+        self.assertIn("Official sources and two paths", en)
         self.assertIn("https://prod.d13rzhkk8cj2z0.amplifyapp.com", en)
         self.assertIn("WORKING-WITH-AIDLC-MAP.md", en)
 
     def test_english_readme_is_pure_english_entrypoint(self) -> None:
         en = (REPO_ROOT / "README.en.md").read_text(encoding="utf-8")
-        self.assertIn("## Get started in 3 minutes", en)
+        self.assertIn("Get started in 3 minutes", en)
         self.assertIn("[Apache License 2.0](LICENSE)", en)
         self.assertIn("README.md", en)
         self.assertIn("https://github.com/bojieli/ai-agent-book", en)

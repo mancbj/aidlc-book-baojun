@@ -41,16 +41,33 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
   </a>
 </p>
 
-## 3 分钟开始
+## 最新版下载
 
-### 只想读书
+<!-- RELEASE-DOWNLOADS-BEGIN -->
+当前版本：**[v0.9.006](https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.9.006)** · [查看全部 Release 资产](https://github.com/mancbj/aidlc-book-baojun/releases/latest)
 
-1. 打开 **[可视化阅读站](https://mancbj.github.io/aidlc-book-baojun/book-site/index.html)**（GitHub Pages 默认可浏览面，v0.9.008 与 Release 构建同源；勿在仓库页点相对路径 `book-site/`，会显示 HTML 源码）。
+| 语言 | PDF | 单页 HTML | Markdown 全书 |
+| --- | --- | --- | --- |
+| 中文 | [下载](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006.pdf) | [下载](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-book.html) | [下载](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-book.md) |
+| English | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en.pdf) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en-book.html) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en-book.md) |
+<!-- RELEASE-DOWNLOADS-END -->
+
+<a id="3-分钟开始"></a>
+<details>
+<summary><strong>3 分钟开始</strong></summary>
+
+<details>
+<summary><strong>只想读书</strong></summary>
+
+1. 打开 **[可视化阅读站](https://mancbj.github.io/aidlc-book-baojun/book-site/index.html)**（GitHub Pages 默认可浏览面；勿在仓库页点相对路径 `book-site/`，会显示 HTML 源码）。
 2. 用 10 分钟阅读 [Part 00 · 鸟瞰 AI-DLC](book/part-00-overview.md)。
-3. 从[最新 Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest)下载 PDF、HTML 或 Markdown（自 **v0.9.006** 起含中/英 `.md` 全书；**v0.9.005** 起含 HTML/PDF 共 4 个文件）。
+3. 离线阅读请用上方 **[最新版下载](#最新版下载)** 表格中的 PDF / HTML / Markdown。
 4. 按你的目标选择[管理者、研发系统设计者或实践者路线](docs/READER-GUIDE.md)。
 
-### 想复现实验或参与写作
+</details>
+
+<details>
+<summary><strong>想复现实验或参与写作</strong></summary>
 
 需要 Python 3.10+；无需数据库或远程服务。
 
@@ -61,7 +78,12 @@ python3 experiments/exp-01-01/quickstart.py --sample
 python3 scripts/ci_check.py --budget-seconds 60
 ```
 
-## 官方来源与两条路径
+</details>
+
+</details>
+
+<details>
+<summary><strong>官方来源与两条路径</strong></summary>
 
 本书的 `𝓔 = Engineering with Exsecutio` 是**解释框架**；AWS 公布的 AI-DLC 方法定义与社区 workflow 是**可对齐的方法来源与操作参考**，三者不应混为一谈。
 
@@ -71,7 +93,7 @@ python3 scripts/ci_check.py --budget-seconds 60
 | AWS DevOps 博文 | 中文语境下的 AI-Driven 定位、Mob、持久化工件与 adoption 入口 | [AI-Driven Development Life Cycle](https://aws.amazon.com/cn/blogs/devops/ai-driven-development-life-cycle/) |
 | aidlc-workflows | Question→Doc→Approval、阶段门控、Construction 两段式等**操作级**约定 | [WORKING-WITH-AIDLC.md](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) |
 
-**读书**：从 [Part 00](book/part-00-overview.md) 与 [目录](book/toc.md) 进入十章；需要 PDF/HTML 时用[最新 Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest)。
+**读书**：从 [Part 00](book/part-00-overview.md) 与 [目录](book/toc.md) 进入十章；离线包见 **[最新版下载](#最新版下载)**。
 
 **跑 workflow**：在真实仓库里按 [WORKING-WITH-AIDLC](https://github.com/mancbj/aidlc-workflows/blob/main/docs/WORKING-WITH-AIDLC.md) 组织 `aidlc-docs/` 与门控；本书第 3–6 章与[操作映射表](docs/WORKING-WITH-AIDLC-MAP.md)说明概念如何落到该指南。
 
@@ -85,6 +107,8 @@ python3 scripts/ci_check.py --budget-seconds 60
 | **Bolt** | 小时到天级迭代单元，对应传统 Sprint 的 AI 时代重命名 |
 | **Mob Elaboration** | Inception 仪式：同室共屏，AI 先提议分解，mob 验证与修正 |
 | **Question–Doc–Approval** | 先澄清→写入 md 工件→人批准后再执行，避免「Vibe Code」 |
+
+</details>
 
 </details>
 
@@ -140,7 +164,8 @@ flowchart LR
 
 每章都有唯一问题、读者结果、实验和证据边界。详见[完整目录](book/toc.md)与[读者指南](docs/READER-GUIDE.md)。
 
-## 实验与证据
+<details>
+<summary><strong>实验与证据</strong></summary>
 
 本书不是只靠观点成立。当前 30 项实验均为 `verified`，并进入统一合同测试：
 
@@ -150,7 +175,10 @@ flowchart LR
 
 每项实验都说明“证明什么”与“不能证明什么”，避免把冻结样例、外部参考或模型评审写成普遍结论。查看[实验事实源](progress/experiments.json)、[治理规则](EXPERIMENT_TRIAGE.md)与[样例输出](experiments/)。
 
-## 当前状态
+</details>
+
+<details>
+<summary><strong>当前状态</strong></summary>
 
 | 信号 | 当前事实 | 查看 |
 | --- | --- | --- |
@@ -158,11 +186,14 @@ flowchart LR
 | 章节生产线 | 10 / 10 完成六阶段 | [章节事实](progress/chapters.json) |
 | 可复现实验 | 30 / 30 verified | [实验事实](progress/experiments.json) |
 | 自动化门禁 | facts、tests、links、generation、实验合同 | [CI workflow](.github/workflows/validate.yml) |
-| 可下载版本 | PDF、单页 HTML、站点 zip | [Latest Release](https://github.com/mancbj/aidlc-book-baojun/releases/latest) |
+| 可下载版本 | PDF、HTML、Markdown、站点 zip | [最新版下载](#最新版下载) |
 
 完成率不在 README 手工维护；权威数字来自版本化事实源并投影到[鸟瞰驾驶舱](https://mancbj.github.io/aidlc-book-baojun/site/index.html)、[对象下钻](https://mancbj.github.io/aidlc-book-baojun/site/details.html)和[文字摘要](progress/generated/current.md)。事实源边界见[仓库指南](docs/REPOSITORY-GUIDE.md)。
 
-## 维护者验证
+</details>
+
+<details>
+<summary><strong>维护者验证</strong></summary>
 
 修改书稿、实验或事实源后，按以下顺序验证：
 
@@ -174,7 +205,10 @@ python3 scripts/ci_check.py --budget-seconds 60
 
 完整门禁会检查事实一致性、单元测试、30 项实验合同、内部链接和生成投影。
 
-## AI Agent / Cursor 使用
+</details>
+
+<details>
+<summary><strong>AI Agent / Cursor 使用</strong></summary>
 
 README、Part 0 和机器可读事实源为 AI Agent 提供了结构化入口。在 Cursor、Claude Code 或其他仓库级 Agent 中，可以直接使用：
 
@@ -185,6 +219,8 @@ README、Part 0 和机器可读事实源为 AI Agent 提供了结构化入口。
 ```
 
 若要贡献代码或书稿，继续要求 Agent 读取 [`docs/REPOSITORY-GUIDE.md`](docs/REPOSITORY-GUIDE.md) 和 [`docs/GITHUB-COLLABORATION.md`](docs/GITHUB-COLLABORATION.md)，并在提交前运行完整 CI。结构化标题、表格、命令与 JSON 事实源也便于 AI 系统准确引用，而不需要猜测项目状态。
+
+</details>
 
 ## 贡献
 
