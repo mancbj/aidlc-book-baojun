@@ -173,6 +173,7 @@ def build_pages(
             ".github",
             "site",
             "book-site",
+            "assets",
             "progress",
             "book",
             "experiments",
