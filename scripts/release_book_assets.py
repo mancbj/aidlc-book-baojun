@@ -6,8 +6,16 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Dict, Tuple
 
+BOOK_ASSET_KEYS = ("zh_html", "en_html", "zh_pdf", "en_pdf", "zh_md", "en_md")
+
 
 def asset_filenames(version: str) -> Dict[str, str]:
+    names = book_asset_filenames(version)
+    names["en_infographics_zip"] = f"aidlc-book-{version}-en-infographics.zip"
+    return names
+
+
+def book_asset_filenames(version: str) -> Dict[str, str]:
     return {
         "zh_html": f"aidlc-book-{version}-book.html",
         "en_html": f"aidlc-book-{version}-en-book.html",
@@ -15,7 +23,6 @@ def asset_filenames(version: str) -> Dict[str, str]:
         "en_pdf": f"aidlc-book-{version}-en.pdf",
         "zh_md": f"aidlc-book-{version}-book.md",
         "en_md": f"aidlc-book-{version}-en-book.md",
-        "en_infographics_zip": f"aidlc-book-{version}-en-infographics.zip",
     }
 
 
@@ -25,12 +32,17 @@ def markdown_filenames(version: str) -> Dict[str, str]:
 
 
 def bilingual_required_filenames(version: str) -> list[str]:
-    return list(asset_filenames(version).values())
+    return list(book_asset_filenames(version).values())
 
 
 def rc_paths(root: Path, version: str) -> Dict[str, Path]:
     rc = root / f"releases/{version}-rc"
     return {key: rc / name for key, name in asset_filenames(version).items()}
+
+
+def rc_book_paths(root: Path, version: str) -> Dict[str, Path]:
+    rc = root / f"releases/{version}-rc"
+    return {key: rc / name for key, name in book_asset_filenames(version).items()}
 
 
 def locale_for_key(key: str) -> str:

@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Dict, Optional, Sequence
 
 from prepare_pages import GENERATED_MARKER, build_pages, file_sha256, now_utc, source_id
-from release_book_assets import asset_filenames, rc_paths
+from release_book_assets import asset_filenames, book_asset_filenames, rc_book_paths
 
 
 VERSION_RE = re.compile(r"^v\d+\.\d+(?:\.\d+)?(?:-[0-9A-Za-z.-]+)?$")
@@ -44,8 +44,8 @@ def stage_book_assets(
     book_html_arg: Optional[Path],
 ) -> tuple[Dict[str, object], Dict[str, object], Dict[str, object]]:
     """Copy zh/en HTML and PDF into the candidate when present in RC or via explicit args."""
-    names = asset_filenames(version)
-    discovered = rc_paths(root, version)
+    names = book_asset_filenames(version)
+    discovered = rc_book_paths(root, version)
     overrides: Dict[str, Optional[Path]] = {
         "zh_html": book_html_arg,
         "zh_pdf": pdf_arg,
