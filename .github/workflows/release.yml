@@ -132,6 +132,8 @@ jobs:
           set -euo pipefail
           policy="planning/releases/${VERSION}-policy.json"
           if [ -f "$policy" ] && python3 -c "import json,sys; p=json.load(open('$policy')); sys.exit(0 if p.get('english_infographic_assets') else 1)"; then
+            sudo apt-get update
+            sudo apt-get install -y librsvg2-bin
             python3 scripts/build_infographic_assets.py --force --zip-version "$VERSION"
           fi
       - name: Prepare immutable release candidate
