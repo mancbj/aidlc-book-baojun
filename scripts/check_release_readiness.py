@@ -144,6 +144,17 @@ def build_report(root: Path, policy_path: Path, generated_at: Optional[str] = No
                     "policy 要求 PDF，但 RC 目录中不存在可验证文件。",
                     "生成并验证 PDF，放入 releases/<version>-rc/，或经批准修改 policy。",
                 )
+        if policy.get("english_infographic_assets"):
+            zip_name = f"aidlc-book-{version}-en-infographics.zip"
+            zip_path = root / f"releases/{version}-rc" / zip_name
+            if not zip_path.is_file():
+                gap(
+                    "INFOGRAPHIC-ZIP-MISSING",
+                    "must-blocker",
+                    f"{version}-rc",
+                    f"缺少 {zip_name}",
+                    "运行 scripts/build_infographic_assets.py --zip-version <version>",
+                )
 
     gaps.sort(key=lambda item: (GAP_ORDER[item["priority"]], item["code"], item["object"]))
     blockers = [item for item in gaps if item["priority"] in {"must-blocker", "must-missing", "review-required"}]

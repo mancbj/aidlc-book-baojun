@@ -124,6 +124,16 @@ jobs:
               break
             fi
           done
+      - name: Build English infographic assets
+        env:
+          VERSION: ${{ needs.validate.outputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          policy="planning/releases/${VERSION}-policy.json"
+          if [ -f "$policy" ] && python3 -c "import json,sys; p=json.load(open('$policy')); sys.exit(0 if p.get('english_infographic_assets') else 1)"; then
+            python3 scripts/build_infographic_assets.py --force --zip-version "$VERSION"
+          fi
       - name: Prepare immutable release candidate
         env:
           VERSION: ${{ needs.validate.outputs.version }}

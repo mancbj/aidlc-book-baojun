@@ -42,48 +42,63 @@ def resolve_version(repo: str, version: Optional[str]) -> str:
     raise RuntimeError("无法解析最新 Release 版本；请传入 --version 或配置 gh。")
 
 
-def block_zh(repo: str, version: str, names: dict[str, str]) -> str:
+def block_zh(repo: str, version: str, names: dict[str, str], *, infographics: bool) -> str:
     base = f"https://github.com/{repo}/releases"
-    return "\n".join(
-        [
-            BEGIN,
-            f"当前版本：**[{version}]({base}/tag/{version})** · [查看全部 Release 资产]({base}/latest)",
-            "",
-            "| 语言 | PDF | 单页 HTML | Markdown 全书 |",
-            "| --- | --- | --- | --- |",
-            "| 中文 | "
-            f"[下载]({download_url(repo, version, names['zh_pdf'])}) | "
-            f"[下载]({download_url(repo, version, names['zh_html'])}) | "
-            f"[下载]({download_url(repo, version, names['zh_md'])}) |",
-            "| English | "
-            f"[Download]({download_url(repo, version, names['en_pdf'])}) | "
-            f"[Download]({download_url(repo, version, names['en_html'])}) | "
-            f"[Download]({download_url(repo, version, names['en_md'])}) |",
-            END,
-        ]
-    )
+    lines = [
+        BEGIN,
+        f"当前版本：**[{version}]({base}/tag/{version})** · [查看全部 Release 资产]({base}/latest)",
+        "",
+        "| 语言 | PDF | 单页 HTML | Markdown 全书 |",
+        "| --- | --- | --- | --- |",
+        "| 中文 | "
+        f"[下载]({download_url(repo, version, names['zh_pdf'])}) | "
+        f"[下载]({download_url(repo, version, names['zh_html'])}) | "
+        f"[下载]({download_url(repo, version, names['zh_md'])}) |",
+        "| English | "
+        f"[Download]({download_url(repo, version, names['en_pdf'])}) | "
+        f"[Download]({download_url(repo, version, names['en_html'])}) | "
+        f"[Download]({download_url(repo, version, names['en_md'])}) |",
+    ]
+    if infographics:
+        lines.extend(
+            [
+                "",
+                f"英文章节信息图（PNG 合集）：[下载 ZIP]({download_url(repo, version, names['en_infographics_zip'])}) · "
+                f"[在仓库中浏览](assets/infographics/en/)",
+            ]
+        )
+    lines.append(END)
+    return "\n".join(lines)
 
 
-def block_en(repo: str, version: str, names: dict[str, str]) -> str:
+def block_en(repo: str, version: str, names: dict[str, str], *, infographics: bool) -> str:
     base = f"https://github.com/{repo}/releases"
-    return "\n".join(
-        [
-            BEGIN,
-            f"Latest: **[{version}]({base}/tag/{version})** · [All release assets]({base}/latest)",
-            "",
-            "| Locale | PDF | Single-page HTML | Full-book Markdown |",
-            "| --- | --- | --- | --- |",
-            "| Chinese | "
-            f"[Download]({download_url(repo, version, names['zh_pdf'])}) | "
-            f"[Download]({download_url(repo, version, names['zh_html'])}) | "
-            f"[Download]({download_url(repo, version, names['zh_md'])}) |",
-            "| English | "
-            f"[Download]({download_url(repo, version, names['en_pdf'])}) | "
-            f"[Download]({download_url(repo, version, names['en_html'])}) | "
-            f"[Download]({download_url(repo, version, names['en_md'])}) |",
-            END,
-        ]
-    )
+    lines = [
+        BEGIN,
+        f"Latest: **[{version}]({base}/tag/{version})** · [All release assets]({base}/latest)",
+        "",
+        "| Locale | PDF | Single-page HTML | Full-book Markdown |",
+        "| --- | --- | --- | --- |",
+        "| Chinese | "
+        f"[Download]({download_url(repo, version, names['zh_pdf'])}) | "
+        f"[Download]({download_url(repo, version, names['zh_html'])}) | "
+        f"[Download]({download_url(repo, version, names['zh_md'])}) |",
+        "| English | "
+        f"[Download]({download_url(repo, version, names['en_pdf'])}) | "
+        f"[Download]({download_url(repo, version, names['en_html'])}) | "
+        f"[Download]({download_url(repo, version, names['en_md'])}) |",
+    ]
+    if infographics:
+        lines.extend(
+            [
+                "",
+                f"English chapter infographics (PNG bundle): "
+                f"[Download ZIP]({download_url(repo, version, names['en_infographics_zip'])}) · "
+                f"[Browse in repo](assets/infographics/en/)",
+            ]
+        )
+    lines.append(END)
+    return "\n".join(lines)
 
 
 def patch_file(path: Path, new_block: str) -> bool:
@@ -112,8 +127,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     root = args.root.resolve()
     version = resolve_version(args.repo, args.version)
     names = asset_filenames(version)
-    zh_block = block_zh(args.repo, version, names)
-    en_block = block_en(args.repo, version, names)
+    policy_path = root / f"planning/releases/{version}-policy.json"
+    infographics = False
+    if policy_path.is_file():
+        infographics = bool(
+            json.loads(policy_path.read_text(encoding="utf-8")).get("english_infographic_assets")
+        )
+    zh_block = block_zh(args.repo, version, names, infographics=infographics)
+    en_block = block_en(args.repo, version, names, infographics=infographics)
     changed = patch_file(root / "README.md", zh_block)
     changed |= patch_file(root / "README.en.md", en_block)
     if args.json_out:

@@ -22,12 +22,17 @@ class ReadmeReleaseDownloadsTest(unittest.TestCase):
 
     def test_block_contains_six_download_urls(self) -> None:
         names = asset_filenames("v9.9.9")
-        block = updater.block_zh("owner/repo", "v9.9.9", names)
+        block = updater.block_zh("owner/repo", "v9.9.9", names, infographics=False)
         self.assertEqual(block.count("/releases/download/v9.9.9/"), 6)
+
+    def test_block_includes_infographic_zip_when_enabled(self) -> None:
+        names = asset_filenames("v0.9.007")
+        block = updater.block_zh(updater.DEFAULT_REPO, "v0.9.007", names, infographics=True)
+        self.assertIn("en-infographics.zip", block)
 
     def test_patch_is_idempotent(self) -> None:
         names = asset_filenames("v0.9.006")
-        block = updater.block_zh(updater.DEFAULT_REPO, "v0.9.006", names)
+        block = updater.block_zh(updater.DEFAULT_REPO, "v0.9.006", names, infographics=False)
         sample = f"pre\n{block}\npost"
         pattern = __import__("re").compile(
             __import__("re").escape(updater.BEGIN) + r".*?" + __import__("re").escape(updater.END),

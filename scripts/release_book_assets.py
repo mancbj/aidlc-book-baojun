@@ -15,6 +15,7 @@ def asset_filenames(version: str) -> Dict[str, str]:
         "en_pdf": f"aidlc-book-{version}-en.pdf",
         "zh_md": f"aidlc-book-{version}-book.md",
         "en_md": f"aidlc-book-{version}-en-book.md",
+        "en_infographics_zip": f"aidlc-book-{version}-en-infographics.zip",
     }
 
 
