@@ -218,6 +218,27 @@ def build_release(args: argparse.Namespace) -> Dict[str, object]:
             book_html_arg,
         )
 
+        infographic_zip_name = f"aidlc-book-{args.version}-en-infographics.zip"
+        infographic_src = root / f"releases/{args.version}-rc" / infographic_zip_name
+        infographic_status: Dict[str, object]
+        if infographic_src.is_file():
+            target = staged / infographic_zip_name
+            shutil.copy2(infographic_src, target)
+            infographic_status = {
+                "status": "included",
+                "file": target.name,
+                "sha256": file_sha256(target),
+                "bytes": target.stat().st_size,
+                "locale": "en",
+                "kind": "infographics",
+            }
+        else:
+            infographic_status = {
+                "status": "skipped",
+                "reason": f"未在 releases/{args.version}-rc/ 找到 {infographic_zip_name}。",
+                "retry": "运行 scripts/build_infographic_assets.py --zip-version <version>",
+            }
+
         commit = args.commit_sha or os.environ.get("GITHUB_SHA") or source_id(root)
         notes_arg = getattr(args, "release_notes", None)
         if notes_arg:
@@ -258,6 +279,7 @@ def build_release(args: argparse.Namespace) -> Dict[str, object]:
             },
             "book_html": book_html_status,
             "book_assets": book_assets,
+            "infographics": infographic_status,
             "pdf": pdf_status,
             "release_notes": "release-notes.md",
             "readiness": {

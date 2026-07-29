@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "locale": "en",
+  "items": [
+    {
+      "id": "cover",
+      "chapter": null,
+      "file": "cover-understanding-ai-dlc.png",
+      "title": "Understanding AI-DLC · From probabilistic intelligence to deterministic delivery"
+    },
+    {
+      "id": "ch01",
+      "chapter": "CH-01",
+      "file": "ch01-ai-native-sdlc-infographic.png",
+      "title": "AI-Native SDLC: From Probabilistic Intelligence to Deterministic Delivery"
+    },
+    {
+      "id": "ch02",
+      "chapter": "CH-02",
+      "file": "ch02-human-judgment-reverse-conversation.png",
+      "title": "Human Judgment and Reverse Conversation"
+    },
+    {
+      "id": "ch03",
+      "chapter": "CH-03",
+      "file": "ch03-inception-executable-plan.png",
+      "title": "Inception: From Intent to an Executable Plan"
+    },
+    {
+      "id": "ch04",
+      "chapter": "CH-04",
+      "file": "ch04-context-engineering-memory-bank.png",
+      "title": "Context Engineering: Memory Bank and Standards"
+    },
+    {
+      "id": "ch05",
+      "chapter": "CH-05",
+      "file": "ch05-bolts-fast-execution.png",
+      "title": "Bolts: Choosing the Right Track for Fast Execution"
+    },
+    {
+      "id": "ch06",
+      "chapter": "CH-06",
+      "file": "ch06-exsecutio-delivery-candidate.png",
+      "title": "Exsecutio: From Proposal to Delivery Candidate"
+    },
+    {
+      "id": "ch07",
+      "chapter": "CH-07",
+      "file": "ch07-verification-loss-functions.png",
+      "title": "Verification: Turning Human Checkpoints into Effective Loss Functions"
+    },
+    {
+      "id": "ch08",
+      "chapter": "CH-08",
+      "file": "ch08-operations-sustainable-runtime.png",
+      "title": "Operations: From Delivery Candidate to Sustainable Runtime"
+    },
+    {
+      "id": "ch09",
+      "chapter": "CH-09",
+      "file": "ch09-adaptive-engineering-flow-governance.png",
+      "title": "Adaptive Engineering: Choosing the Right Flow and Governance Intensity"
+    },
+    {
+      "id": "ch10",
+      "chapter": "CH-10",
+      "file": "ch10-organization-metrics-operating-system.png",
+      "title": "Organization and Metrics: From Agent Roles to an R&D Operating System"
+    }
+  ]
+}

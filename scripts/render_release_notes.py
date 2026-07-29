@@ -40,6 +40,14 @@ def render(root: Path, readiness: dict) -> str:
             "- Reader 仍为 known-gap；下一目标为 v0.9.009+ 维护（图/实验可视化），非反馈驱动 tag。",
         ]
         next_goal = "v0.9.009-draft：维护循环（图示优化、实验可视化、Pages 性能）；见 planning/publication/v0.9-loop-orchestration.md。"
+    elif version.startswith("v0.9.007"):
+        highlights = [
+            "- **英文信息图资产**：`aidlc-book-v0.9.007-en-infographics.zip`（封面 *Understanding AI-DLC* + CH-01–CH-10 高清 PNG）。",
+            "- 仓库内浏览：`assets/infographics/en/` + README 信息图章节；中文版信息图后续追加。",
+            "- 继承 v0.9.006 双语书稿 HTML/PDF/Markdown 与 Pages zip；实验 verified=30/30。",
+            "- Reader 仍为 known-gap。",
+        ]
+        next_goal = "v0.9.008+：Carbon 阅读站与信息图中文版；见 planning/publication/v0.9-loop-orchestration.md。"
     elif version.startswith("v0.9.006"):
         highlights = [
             "- **新增双语 Markdown 全书**：`aidlc-book-v0.9.006-book.md`（中文）与 `-en-book.md`（英文），与 HTML/PDF 同源章节拼接。",
@@ -231,6 +239,7 @@ def render(root: Path, readiness: dict) -> str:
 def release_title(readiness: dict) -> str:
     version = str(readiness.get("version", "v0.1"))
     summaries = (
+        ("v0.9.007", "英文信息图 ZIP + 双语书稿"),
         ("v0.9.006", "中英 Markdown 全书 + 双语 HTML/PDF"),
         ("v0.9.005", "双语 HTML/PDF 四类书稿"),
         ("v0.9.004", "英文全书 HTML/PDF 首次 Release"),

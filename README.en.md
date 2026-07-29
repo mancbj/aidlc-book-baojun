@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="book/images/cover.png" alt="Deep Understanding AI-DLC book cover" width="420">
+  <img src="assets/infographics/en/cover-understanding-ai-dlc.png" alt="Understanding AI-DLC book cover" width="420">
 </p>
 
 <h1 align="center">Deep Understanding AI-DLC</h1>
@@ -41,13 +41,38 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 ## Latest release downloads
 
 <!-- RELEASE-DOWNLOADS-BEGIN -->
-Latest: **[v0.9.006](https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.9.006)** · [All release assets](https://github.com/mancbj/aidlc-book-baojun/releases/latest)
+Latest: **[v0.9.007](https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.9.007)** · [All release assets](https://github.com/mancbj/aidlc-book-baojun/releases/latest)
 
 | Locale | PDF | Single-page HTML | Full-book Markdown |
 | --- | --- | --- | --- |
-| Chinese | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006.pdf) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-book.html) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-book.md) |
-| English | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en.pdf) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en-book.html) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en-book.md) |
+| Chinese | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007.pdf) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-book.html) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-book.md) |
+| English | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-en.pdf) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-en-book.html) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-en-book.md) |
+
+English chapter infographics (PNG bundle): [Download ZIP](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-en-infographics.zip) · [Browse in repo](assets/infographics/en/)
 <!-- RELEASE-DOWNLOADS-END -->
+
+## Chapter infographics (English)
+
+English-only high-resolution posters (cover + ten chapters) ship in this release; Simplified Chinese posters will follow in a later version. Download the **English infographics ZIP** from [Latest release downloads](#latest-release-downloads), or browse PNGs under [`assets/infographics/en/`](assets/infographics/en/).
+
+<details>
+<summary><strong>Browse CH-01–CH-10 (open each link for full size)</strong></summary>
+
+| Chapter | Infographic |
+| --- | --- |
+| Overview | [Understanding AI-DLC](assets/infographics/en/cover-understanding-ai-dlc.png) |
+| CH-01 | [AI-Native SDLC](assets/infographics/en/ch01-ai-native-sdlc-infographic.png) |
+| CH-02 | [Human Judgment](assets/infographics/en/ch02-human-judgment-reverse-conversation.png) |
+| CH-03 | [Inception](assets/infographics/en/ch03-inception-executable-plan.png) |
+| CH-04 | [Memory Bank & Standards](assets/infographics/en/ch04-context-engineering-memory-bank.png) |
+| CH-05 | [Bolts](assets/infographics/en/ch05-bolts-fast-execution.png) |
+| CH-06 | [Exsecutio](assets/infographics/en/ch06-exsecutio-delivery-candidate.png) |
+| CH-07 | [Verification](assets/infographics/en/ch07-verification-loss-functions.png) |
+| CH-08 | [Operations](assets/infographics/en/ch08-operations-sustainable-runtime.png) |
+| CH-09 | [Adaptive Engineering](assets/infographics/en/ch09-adaptive-engineering-flow-governance.png) |
+| CH-10 | [Organization & Metrics](assets/infographics/en/ch10-organization-metrics-operating-system.png) |
+
+</details>
 
 <a id="get-started-in-3-minutes"></a>
 <details>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="book/images/cover.png" alt="《深入理解 AI-DLC》封面" width="420">
+  <img src="assets/infographics/en/cover-understanding-ai-dlc.png" alt="Understanding AI-DLC · 从概率智能到确定性交付" width="420">
 </p>
 
 <h1 align="center">深入理解 AI-DLC</h1>
@@ -44,13 +44,38 @@ AI can generate code quickly, but speed alone does not make delivery correct, au
 ## 最新版下载
 
 <!-- RELEASE-DOWNLOADS-BEGIN -->
-当前版本：**[v0.9.006](https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.9.006)** · [查看全部 Release 资产](https://github.com/mancbj/aidlc-book-baojun/releases/latest)
+当前版本：**[v0.9.007](https://github.com/mancbj/aidlc-book-baojun/releases/tag/v0.9.007)** · [查看全部 Release 资产](https://github.com/mancbj/aidlc-book-baojun/releases/latest)
 
 | 语言 | PDF | 单页 HTML | Markdown 全书 |
 | --- | --- | --- | --- |
-| 中文 | [下载](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006.pdf) | [下载](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-book.html) | [下载](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-book.md) |
-| English | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en.pdf) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en-book.html) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.006/aidlc-book-v0.9.006-en-book.md) |
+| 中文 | [下载](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007.pdf) | [下载](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-book.html) | [下载](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-book.md) |
+| English | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-en.pdf) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-en-book.html) | [Download](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-en-book.md) |
+
+英文章节信息图（PNG 合集）：[下载 ZIP](https://github.com/mancbj/aidlc-book-baojun/releases/download/v0.9.007/aidlc-book-v0.9.007-en-infographics.zip) · [在仓库中浏览](assets/infographics/en/)
 <!-- RELEASE-DOWNLOADS-END -->
+
+## 章节信息图（English）
+
+当前仅提供**英文**高清信息图（封面 + 十章）；中文版后续追加。离线包见上方 [最新版下载](#最新版下载) 中的 **英文章节信息图 ZIP**，或在仓库 [`assets/infographics/en/`](assets/infographics/en/) 直接浏览 PNG。
+
+<details>
+<summary><strong>展开浏览 CH-01–CH-10（点击缩略图查看大图）</strong></summary>
+
+| 章节 | 信息图 |
+| --- | --- |
+| 总览 | [Understanding AI-DLC](assets/infographics/en/cover-understanding-ai-dlc.png) |
+| CH-01 | [AI-Native SDLC](assets/infographics/en/ch01-ai-native-sdlc-infographic.png) |
+| CH-02 | [Human Judgment](assets/infographics/en/ch02-human-judgment-reverse-conversation.png) |
+| CH-03 | [Inception](assets/infographics/en/ch03-inception-executable-plan.png) |
+| CH-04 | [Memory Bank & Standards](assets/infographics/en/ch04-context-engineering-memory-bank.png) |
+| CH-05 | [Bolts](assets/infographics/en/ch05-bolts-fast-execution.png) |
+| CH-06 | [Exsecutio](assets/infographics/en/ch06-exsecutio-delivery-candidate.png) |
+| CH-07 | [Verification](assets/infographics/en/ch07-verification-loss-functions.png) |
+| CH-08 | [Operations](assets/infographics/en/ch08-operations-sustainable-runtime.png) |
+| CH-09 | [Adaptive Engineering](assets/infographics/en/ch09-adaptive-engineering-flow-governance.png) |
+| CH-10 | [Organization & Metrics](assets/infographics/en/ch10-organization-metrics-operating-system.png) |
+
+</details>
 
 <a id="3-分钟开始"></a>
 <details>
