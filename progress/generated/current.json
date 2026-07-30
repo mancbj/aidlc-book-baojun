@@ -598,7 +598,7 @@
     "total": 9,
     "unresolved_accepted": 0
   },
-  "generated_at": "2026-07-29T03:05:30Z",
+  "generated_at": "2026-07-30T08:36:09Z",
   "goal": {
     "all_tasks_done": true,
     "current_day": 24,
@@ -607,7 +607,7 @@
     "total_days": 24
   },
   "latest_fact_update": "2026-07-25T10:50:00Z",
-  "latest_snapshot": "../progress/snapshots/20260729T030530Z-9d91b869d63253106f0338a1a48a02ba.json",
+  "latest_snapshot": "../progress/snapshots/20260730T083609Z-340f04f30d395199542b7d78f5be1c9d.json",
   "next_actions": [],
   "recent_events": [
     {
@@ -733,7 +733,7 @@
   ],
   "release_message": "实验与任务已闭环；准备下一 patch 发布，或等待真实回执激活 draft 周期",
   "schema_version": "1.0.0",
-  "source_id": "8588d63d9d91b869d63253106f0338a1a48a02ba",
+  "source_id": "bf70784d340f04f30d395199542b7d78f5be1c9d",
   "tasks": {
     "done": 72,
     "percent": 100.0,
